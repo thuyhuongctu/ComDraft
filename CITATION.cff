@@ -1,0 +1,37 @@
+cff-version: 1.2.0
+message: "If you use these teaching materials in your work, please cite them as below."
+title: "ComDraft: teaching materials for Communication and Document Drafting Skills (EC1103)"
+abstract: >-
+  ComDraft is a complete teaching package for a three-credit undergraduate course in
+  business communication and document drafting, taught face to face at Vinh Long
+  University of Technology Education. It holds five lecture decks covering the nature of
+  communication, professional communication skills, communication in specific settings,
+  business negotiation and the drafting of administrative and commercial documents; three
+  computer-lab workbooks that take students from document formality through administrative
+  documents to a full commercial document set; a bank of two hundred multiple-choice
+  questions in lecturer and student editions, graded across three cognitive levels and
+  supplied both as Word documents and as structured data; eight short revision and
+  walkthrough videos; and eight diagrams drawn from code, including a labelled map of the
+  nine formality components required by Decree 30/2020/ND-CP. Every slide carries a
+  speaker-note script for use in Presenter View, and a single business case runs through
+  the negotiation role-play, the document chain and both lab assignments so that students
+  follow one continuous professional workflow.
+type: dataset
+version: "1.0"
+date-released: "2026-08-18"
+repository-code: "https://github.com/thuyhuongctu/ComDraft"
+license-url: "https://github.com/thuyhuongctu/ComDraft/blob/main/LICENSE"
+authors:
+  - family-names: "Do"
+    given-names: "Thuy Huong"
+    email: "thuyhuongctu@gmail.com"
+    orcid: "https://orcid.org/0000-0002-7711-2487"
+    affiliation: "Vinh Long University of Technology Education; Can Tho University (PhD Candidate)"
+keywords:
+  - business communication
+  - document drafting
+  - administrative documents
+  - negotiation skills
+  - teaching materials
+  - higher education
+  - Vietnam
