@@ -3,6 +3,19 @@
 Tài liệu này dành riêng cho tác giả. Làm đúng thứ tự dưới đây thì bộ học liệu sẽ có một
 mã DOI vĩnh viễn, tự động cập nhật mỗi lần phát hành phiên bản mới.
 
+## ✅ Tình trạng hiện tại — hoàn tất ngày 19/08/2026
+
+| Mục | Giá trị |
+|---|---|
+| **Concept DOI** — dùng khi trích dẫn | [10.5281/zenodo.22003676](https://doi.org/10.5281/zenodo.22003676) |
+| DOI riêng của bản v1.0 | [10.5281/zenodo.22003677](https://doi.org/10.5281/zenodo.22003677) |
+| Chế độ truy cập | `open` — ai cũng tải được tệp |
+| Giấy phép | `other-closed` — Bảo lưu mọi quyền |
+| Tác giả | Do, Thuy Huong — ORCID 0000-0002-7711-2487 |
+
+Bước 1–4 dưới đây **đã làm xong**; giữ lại để tham khảo khi phát hành phiên bản sau.
+Việc còn lại của cô là **Bước 5** — gắn DOI vào hồ sơ ORCID và trang học thuật cá nhân.
+
 ## Bước 1 — Bật liên kết GitHub ↔ Zenodo (làm một lần)
 
 1. Vào <https://zenodo.org>, chọn **Log in with GitHub**, cho phép Zenodo truy cập.
@@ -65,9 +78,18 @@ Zenodo sẽ tự tải bản phát hành về và cấp DOI trong vòng vài ph�
          description: "Zenodo concept DOI — luôn trỏ tới phiên bản mới nhất"
      ```
 
-   - `.zenodo.json`: thêm vào `related_identifiers` mục `{"identifier": "10.5281/zenodo.XXXXXXXX", "relation": "isVersionOf", "scheme": "doi"}`
+   - `.zenodo.json`: **không cần** thêm quan hệ `isVersionOf` trỏ về chính Concept DOI —
+     Zenodo tự nối phiên bản với Concept DOI và hiển thị ở mục *Versions*; khai thêm bằng
+     tay có thể bị từ chối vì bản ghi tự trỏ vào chính nó.
 
 4. Commit và đẩy các thay đổi này lên GitHub.
+
+**Phân biệt hai mã** — đây là chỗ hay nhầm:
+
+- **Concept DOI** `…22003676` không gắn với phiên bản nào cả. Ai bấm vào cũng tới bản mới
+  nhất. Đây là mã ghi trong bài báo, CV, hồ sơ ORCID, chữ ký email.
+- **Version DOI** `…22003677` chỉ trỏ tới đúng bản v1.0. Dùng khi cần chỉ rõ *"tôi dùng
+  bản này, ngày này"* — ví dụ khi cần bằng chứng nội dung tại một thời điểm xác định.
 
 ## Bước 5 — Gắn lên hồ sơ khoa học
 

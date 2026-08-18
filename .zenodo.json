@@ -30,7 +30,7 @@
     },
     {
       "identifier": "10.5281/zenodo.21850735",
-      "relation": "isPartOf",
+      "relation": "references",
       "scheme": "doi"
     }
   ]

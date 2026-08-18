@@ -18,7 +18,15 @@ abstract: >-
   follow one continuous professional workflow.
 type: dataset
 version: "1.0"
-date-released: "2026-08-18"
+date-released: "2026-08-19"
+doi: "10.5281/zenodo.22003676"
+identifiers:
+  - type: doi
+    value: "10.5281/zenodo.22003676"
+    description: "Zenodo concept DOI — always resolves to the latest release"
+  - type: doi
+    value: "10.5281/zenodo.22003677"
+    description: "Zenodo DOI for release v1.0"
 repository-code: "https://github.com/thuyhuongctu/ComDraft"
 license-url: "https://github.com/thuyhuongctu/ComDraft/blob/main/LICENSE"
 authors:
