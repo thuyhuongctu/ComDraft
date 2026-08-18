@@ -112,9 +112,18 @@ DIVIDERS = [
 ]
 
 
+# Slide mục lục và slide mục tiêu liệt kê tên mọi mục của chương, nên chúng
+# khớp với hầu hết mọi cụm dùng để định vị. Nếu không loại trừ, slide phân cách
+# sẽ bị chèn ngay trước mục lục thay vì trước mục nội dung tương ứng — lỗi đã
+# xảy ra ở Chương 3 và Chương 4.
+SLIDE_KHUNG = ("Chúng ta sẽ đi qua", "sinh viên có thể")
+
+
 def find_idx(prs, needle):
     for i, s in enumerate(prs.slides):
         t = " ".join(sh.text_frame.text for sh in s.shapes if sh.has_text_frame)
+        if any(k in t for k in SLIDE_KHUNG):
+            continue
         if needle in t:
             return i
     return None

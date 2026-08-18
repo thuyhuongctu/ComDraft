@@ -124,6 +124,27 @@ PLAN = {
 }
 
 
+# Slide mục lục và slide mục tiêu liệt kê tên các mục của chương, nên chúng
+# chứa gần như mọi từ khóa dùng để tìm slide đích. Nếu dò theo toàn bộ chữ trên
+# slide thì hình minh họa sẽ rơi vào đúng hai slide này và xóa mất nội dung —
+# lỗi đã xảy ra với mục lục Chương 4. Vì vậy chỉ dò trong vùng tiêu đề, và bỏ
+# qua hẳn hai slide khung này.
+SLIDE_KHUNG = ("Chúng ta sẽ đi qua", "sinh viên có thể")
+
+
+def tieu_de_slide(s):
+    """Chữ nằm ở vùng tiêu đề (mép trên dưới 1,6 inch)."""
+    return " ".join(
+        sh.text_frame.text for sh in s.shapes
+        if sh.has_text_frame and sh.top is not None and sh.top < Inches(1.6)
+    )
+
+
+def la_slide_khung(s):
+    t = " ".join(sh.text_frame.text for sh in s.shapes if sh.has_text_frame)
+    return any(k in t for k in SLIDE_KHUNG)
+
+
 def process(fn, items):
     prs = Presentation(fn)
     n_fig = 0
@@ -140,12 +161,13 @@ def process(fn, items):
     for needle, img, cap in items:
         idx, s = None, None
         for i, sl in enumerate(prs.slides):
-            tt = " ".join(sh.text_frame.text for sh in sl.shapes if sh.has_text_frame)
-            if needle in tt:
+            if la_slide_khung(sl):
+                continue
+            if needle in tieu_de_slide(sl):
                 idx, s = i, sl
                 break
         if s is None:
-            print(f"  ! không tìm thấy slide chứa: {needle}")
+            print(f"  ! không tìm thấy slide có tiêu đề chứa: {needle}")
             continue
         clear_body(s)
         cap_y = 1.62
