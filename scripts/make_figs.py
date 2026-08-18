@@ -339,15 +339,20 @@ FIGS["c4-tien-trinh-dam-phan"] = ("""
 <div class="sub">Bảy mươi phần trăm kết quả được quyết định trước khi hai bên ngồi vào bàn</div>
 <div class="row">
   <div class="ph big"><div class="pc">70%</div><div class="nm">1. CHUẨN BỊ</div>
-    <div class="ds">Mục tiêu 3 mức • BATNA • ZOPA • hiểu đối tác và người có thẩm quyền quyết định</div></div>
+    <div class="ds">Mục tiêu 3 mức • BATNA • ZOPA • hiểu đối tác và người có thẩm quyền quyết định</div>
+    <div class="out"><span>Rời giai đoạn này với</span>bảng mục tiêu ba mức và BATNA đã viết ra giấy</div></div>
   <div class="ph"><div class="nm">2. MỞ ĐẦU</div>
-    <div class="ds">Tạo không khí, thăm dò, thống nhất chương trình làm việc</div></div>
+    <div class="ds">Tạo không khí, thăm dò, thống nhất chương trình làm việc</div>
+    <div class="out"><span>Rời giai đoạn này với</span>chương trình làm việc hai bên cùng đồng ý</div></div>
   <div class="ph"><div class="nm">3. THƯƠNG LƯỢNG</div>
-    <div class="ds">Đề nghị có căn cứ, nhượng bộ có điều kiện, xử lý bế tắc</div></div>
+    <div class="ds">Đề nghị có căn cứ, nhượng bộ có điều kiện, xử lý bế tắc</div>
+    <div class="out"><span>Rời giai đoạn này với</span>danh sách điều khoản đã chốt và điều khoản còn treo</div></div>
   <div class="ph"><div class="nm">4. KẾT THÚC</div>
-    <div class="ds">Nhận tín hiệu chốt, tóm tắt và văn bản hóa thành hợp đồng</div></div>
+    <div class="ds">Nhận tín hiệu chốt, tóm tắt và văn bản hóa thành hợp đồng</div>
+    <div class="out"><span>Rời giai đoạn này với</span>biên bản hoặc hợp đồng có chữ ký hai bên</div></div>
   <div class="ph"><div class="nm">5. SAU ĐÀM PHÁN</div>
-    <div class="ds">Thực hiện cam kết, giữ quan hệ, rút kinh nghiệm</div></div>
+    <div class="ds">Thực hiện cam kết, giữ quan hệ, rút kinh nghiệm</div>
+    <div class="out"><span>Rời giai đoạn này với</span>hồ sơ theo dõi thực hiện và bài học rút ra</div></div>
 </div>
 <div class="tip"><b>Nhượng bộ có điều kiện:</b> “Nếu anh tăng số lượng lên 500 chiếc, chúng tôi sẽ giảm 3%.”
   — không bao giờ cho không, và nhượng bộ nhỏ dần để phát tín hiệu đã chạm giới hạn.</div>
@@ -361,9 +366,13 @@ FIGS["c4-tien-trinh-dam-phan"] = ("""
 .pc{font-family:'Liberation Serif',serif;font-size:40px;font-weight:700;color:#fff;opacity:.55;line-height:1;margin-bottom:4px}
 .nm{font-weight:800;font-size:14.5px;color:%(RUST)s;letter-spacing:.5px}
 .ds{font-size:12.5px;line-height:1.5;margin-top:10px;color:%(INK)s}
+.out{margin-top:12px;padding-top:10px;border-top:1px dashed %(BLUSH)s;font-size:11.5px;line-height:1.45;color:%(INK)s}
+.out span{display:block;font-size:9.5px;font-weight:800;letter-spacing:.7px;text-transform:uppercase;color:%(RUST)s;margin-bottom:3px}
+.ph.big .out{border-top-color:rgba(255,255,255,.5);color:#fff}
+.ph.big .out span{color:rgba(255,255,255,.85)}
 .tip{background:%(BLUSH_SOFT)s;border:1.5px solid %(BLUSH)s;border-radius:12px;padding:14px 16px;font-size:13px;line-height:1.55}
 .tip b{color:%(RUST)s}
-""" % dict(BLUSH=BLUSH, BLUSH_SOFT=BLUSH_SOFT, CORAL=CORAL, RUST=RUST, INK=INK), 1240, 450)
+""" % dict(BLUSH=BLUSH, BLUSH_SOFT=BLUSH_SOFT, CORAL=CORAL, RUST=RUST, INK=INK), 1240, 545)
 
 
 NO_TITLE_CSS = "h1,.sub{display:none!important}.wrap{padding-top:22px;padding-bottom:22px}"

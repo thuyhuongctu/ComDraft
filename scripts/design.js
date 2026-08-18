@@ -92,7 +92,10 @@ function grid2(slide, cells, opt = {}) {
 function numList(slide, items, opt = {}) {
   const x = opt.x ?? 0.55, w = opt.w ?? 12.25;
   const y0 = opt.y0 ?? 1.6, y1 = opt.y1 ?? 6.8;
-  const step = (y1 - y0) / items.length;
+  // Chia đều toàn bộ chiều cao thì chương ít mục sẽ giãn dòng gấp rưỡi chương
+  // nhiều mục, khiến các chương trông không cùng một nhịp. Giới hạn bước nhảy
+  // để mọi danh sách đọc lên đều như nhau, dù 3 mục hay 5 mục.
+  const step = Math.min((y1 - y0) / items.length, opt.maxStep ?? 1.05);
   items.forEach((t, i) => {
     const y = y0 + i * step;
     slide.addShape("ellipse", { x, y: y + 0.02, w: 0.42, h: 0.42, fill: { color: CORAL } });
