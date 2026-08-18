@@ -1,8 +1,0 @@
-node_modules/
-_tmp/
-.DS_Store
-
-# PDF thường là tệp tạm sinh ra khi dựng, không cần theo dõi…
-*.pdf
-# …trừ ngân hàng câu hỏi: bản PDF là sản phẩm phát cho sinh viên và giảng viên.
-!quiz/*.pdf
