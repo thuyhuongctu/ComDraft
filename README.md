@@ -3,7 +3,7 @@
 **Teaching materials for *Communication and Document Drafting Skills* (EC1103)**
 Bộ học liệu giảng dạy trực tiếp — Học phần Kỹ năng giao tiếp và soạn thảo văn bản
 
-[![DOI](https://img.shields.io/badge/DOI-pending-lightgrey?style=flat-square)](https://zenodo.org)
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.22003676.svg)](https://doi.org/10.5281/zenodo.22003676)
 ![course](https://img.shields.io/badge/course-EC1103-AC4D33?style=flat-square)
 ![credits](https://img.shields.io/badge/credits-3%20(2%3A1)-DC756A?style=flat-square)
 ![license](https://img.shields.io/badge/license-All%20rights%20reserved-red?style=flat-square)
@@ -87,7 +87,11 @@ permission.
 When you use anything from this repository, cite it. See `CITATION.cff`, or:
 
 > Do, T. H. (2026). *ComDraft: teaching materials for Communication and Document Drafting
-> Skills (EC1103)*. Vinh Long University of Technology Education.
+> Skills (EC1103)* (Version 1.0) [Data set]. Vinh Long University of Technology Education.
+> https://doi.org/10.5281/zenodo.22003676
+
+The DOI above is the *concept DOI* — it always resolves to the newest release. To cite
+this exact release instead, use [10.5281/zenodo.22003677](https://doi.org/10.5281/zenodo.22003677).
 
 ---
 
