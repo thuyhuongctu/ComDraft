@@ -76,6 +76,49 @@ def kiem_so_slide():
 
 
 # ------------------------------------------------------- kiểm tra trên trình duyệt
+# Tên các cơ sở đào tạo. Giấy do trình duyệt sinh ra với cái tên người học tự
+# gõ thì không xác thực được gì, nên không được mang tên trường nào.
+TEN_TRUONG = ["Vĩnh Long", "Cần Thơ", "Sư phạm Kỹ thuật", "VLUTE",
+              "Trường Đại học", "University", "Khoa "]
+# Những chữ chỉ được xuất hiện trong câu phủ nhận, không được ở chỗ nào khác.
+CHU_VAN_BANG = ["chứng chỉ", "văn bằng", "certificate", "diploma"]
+
+
+def kiem_chan_trang(p):
+    """Chân trang phải còn tên tác giả và DOI — điều khoản 3b của LICENSE
+    dựa vào đó, và đây là dấu duy nhất đi theo học liệu khi bị sao chép."""
+    chu = p.locator("footer .chu-thich").inner_text()
+    thieu = [s for s in ("Đỗ Thùy Hương", "0000-0002-7711-2487",
+                         "10.5281/zenodo") if s not in chu]
+    ghi("Chân trang còn tên tác giả, ORCID và DOI", not thieu,
+        "" if not thieu else "thiếu: %s" % thieu)
+
+
+def kiem_giay(p):
+    """Giấy ghi nhận không được tự nhận là chứng chỉ, không mang tên trường."""
+    cac_chu = p.evaluate("() => window.__chu_giay || []")
+    gop = " ".join(cac_chu)
+    luu_y = p.evaluate("() => window.I18n.t('giay.luuy')")
+
+    # Câu phủ nhận bị ngắt dòng theo bề ngang nên phải ghép lại rồi mới so.
+    co_luu_y = " ".join(luu_y.split()) in " ".join(gop.split())
+    # Bỏ câu phủ nhận ra rồi mới soi: chính nó có chữ "chứng chỉ", "văn bằng".
+    con_lai = " ".join(gop.split()).replace(" ".join(luu_y.split()), " ")
+    tu_nhan = [s for s in CHU_VAN_BANG if s.lower() in con_lai.lower()]
+    ten_truong = [s for s in TEN_TRUONG if s.lower() in gop.lower()]
+
+    dat = co_luu_y and not tu_nhan and not ten_truong
+    vi_sao = []
+    if not co_luu_y:
+        vi_sao.append("thiếu câu phủ nhận")
+    if tu_nhan:
+        vi_sao.append("tự nhận là %s" % tu_nhan)
+    if ten_truong:
+        vi_sao.append("có tên trường %s" % ten_truong)
+    ghi("Giấy ghi nhận không tự nhận là chứng chỉ", dat,
+        "%d dòng chữ" % len(cac_chu) if dat else "; ".join(vi_sao))
+
+
 def kiem_tren_trinh_duyet(pw):
     from playwright.sync_api import Error as LoiPW  # noqa: F401
 
@@ -98,6 +141,7 @@ def kiem_tren_trinh_duyet(pw):
     ghi("Trang chủ dựng đủ 5 chương", p.locator(".chuong").count() == 5)
     ghi("Ngân hàng nạp đủ 200 câu",
         p.eval_on_selector_all(".o-so b", "n => n.map(x => x.textContent)")[1] == "200")
+    kiem_chan_trang(p)
 
     # hero: bóng thoại không đè chữ, không che mặt, bản đồ nằm trong khối
     r = p.evaluate("""() => {
@@ -174,7 +218,18 @@ def kiem_tren_trinh_duyet(pw):
         p.locator(".huy-hieu .hh:not(.khoa)").count() == 7)
     ghi("Năm chương đạt chuẩn có giấy ghi nhận",
         p.locator(".tai-nguyen button").count() == 5)
+    # Chữ trên giấy nằm trong canvas nên không đọc được bằng bộ chọn; ghi lại
+    # mọi lần gọi fillText để biết đúng những gì người học nhìn thấy.
+    p.evaluate("""() => {
+      window.__chu_giay = [];
+      const goc = CanvasRenderingContext2D.prototype.fillText;
+      CanvasRenderingContext2D.prototype.fillText = function (s) {
+        window.__chu_giay.push(String(s));
+        return goc.apply(this, arguments);
+      };
+    }""")
     p.locator(".tai-nguyen button").first.click(); p.wait_for_timeout(500)
+    kiem_giay(p)
     with p.expect_download() as sk:
         p.get_by_role("button", name=re.compile("Tải ảnh")).click()
     ghi("Giấy ghi nhận tải về được ảnh PNG",

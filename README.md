@@ -127,9 +127,12 @@ this exact release instead, use [10.5281/zenodo.22003677](https://doi.org/10.528
   revision app for an Entrepreneurship course
   ([10.5281/zenodo.21850735](https://doi.org/10.5281/zenodo.21850735))
 
----
+## Luật của dự án
 
-© 2026 Do Thuy Huong. All rights reserved. See `LICENSE`.
+Những ràng buộc phải giữ khi sửa repo này — không thu thập dữ liệu sinh viên,
+chỉ đưa lên học liệu do tác giả biên soạn, giữ dấu tác giả, và những việc phải
+làm trước khi báo là xong — được ghi trong [`CLAUDE.md`](CLAUDE.md). Ai sửa gì
+ở đây, người hay trợ lý, đọc trang đó trước.
 
 ## Kiểm tra tự động
 
@@ -140,11 +143,17 @@ pip install playwright && python -m playwright install chromium
 python3 tests/kiem_tra.py
 ```
 
-Hai mươi hai phép, gồm: khoá từ vựng Việt–Anh khớp nhau, phụ đề khớp
+Hai mươi bốn phép, gồm: khoá từ vựng Việt–Anh khớp nhau, phụ đề khớp
 nguyên văn kịch bản thuyết minh, số ảnh slide đúng như khai báo, trình xem
 slide và video, cổng ghi danh, bài tập thể thức, huy hiệu và giấy ghi nhận,
-tour Hương AI, bố cục trên màn điện thoại, và hai điều kiện ràng buộc của
-dự án: **không gửi yêu cầu nào ra ngoài trang** và **không lỗi JavaScript**.
+tour Hương AI, bố cục trên màn điện thoại, và bốn điều kiện ràng buộc của
+dự án: **không gửi yêu cầu nào ra ngoài trang**, **không lỗi JavaScript**,
+**chân trang còn tên tác giả và DOI**, và **giấy ghi nhận không tự nhận là
+chứng chỉ**.
 
 Bộ này cũng chạy tự động trên GitHub mỗi lần đẩy mã
 (`.github/workflows/kiem-tra.yml`).
+
+---
+
+© 2026 Do Thuy Huong. All rights reserved. See `LICENSE`.
