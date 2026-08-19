@@ -564,6 +564,33 @@ html[data-theme="dark"] .xem { background: rgba(0, 0, 0, .72); }
 .the-thuc .bao.tot { color: var(--dung); }
 .the-thuc .bao.chua { color: var(--sai); }
 
+/* ---------------------------------------------------------------- hồ sơ */
+.o-ten label { display: block; font-size: 13px; font-weight: 600; color: var(--chinh); margin-bottom: 8px; }
+.o-ten input {
+  width: 100%; font-family: var(--body); font-size: 15.5px; color: var(--chu);
+  background: var(--mat-2); border: none; border-radius: var(--bo-nho);
+  box-shadow: var(--clay-lom); padding: 12px 15px; outline: none;
+}
+.o-ten input:focus { box-shadow: var(--clay-lom), 0 0 0 2px var(--coral-nhat); }
+p.rieng { font-size: 12.5px; color: var(--chu-mo); margin-top: 10px; line-height: 1.5; }
+
+.huy-hieu { display: grid; gap: 12px; grid-template-columns: repeat(auto-fit, minmax(148px, 1fr)); }
+.huy-hieu .hh {
+  background: var(--mat); border-radius: var(--bo); box-shadow: var(--clay);
+  padding: 16px 13px; text-align: center;
+}
+.huy-hieu .hh .bt { display: block; font-size: 34px; line-height: 1.1; }
+.huy-hieu .hh b { display: block; font-size: 14.5px; margin-top: 7px; color: var(--coral-dam); }
+.huy-hieu .hh small { display: block; font-size: 11.5px; color: var(--chu-mo); margin-top: 3px; line-height: 1.35; }
+.huy-hieu .hh.khoa { box-shadow: var(--clay-lom); background: var(--mat-2); }
+.huy-hieu .hh.khoa .bt, .huy-hieu .hh.khoa b { opacity: .5; }
+.huy-hieu .hh.khoa b { color: var(--chu-nhat); }
+
+.xem .to-giay {
+  max-width: 100%; max-height: 100%; width: auto; height: auto;
+  border-radius: 10px; box-shadow: var(--clay-nho); background: #FAF0EA;
+}
+
 .an { display: none !important; }
 @media (prefers-reduced-motion: reduce) { * { transition: none !important; } }
 
