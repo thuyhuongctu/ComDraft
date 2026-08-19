@@ -26,9 +26,17 @@
     </span>
   </a>
 
+  <!-- Ba con số theo dõi thường xuyên, luôn thấy dù đang ở trang nào.
+       Màn hẹp thì giấu đi vì thanh trên đã chật. -->
+  <div class="dong-ho" id="dong-ho">
+    <div><span data-i18n="hud.luot">lượt luyện</span><b id="hud-luot">0</b></div>
+    <div><span data-i18n="hud.chuong">chương</span><b id="hud-chuong">0/5</b></div>
+    <div><span data-i18n="hud.diem">điểm TB</span><b id="hud-diem">—</b></div>
+  </div>
+
   <!-- Thương hiệu cá nhân của giảng viên, đứng cạnh logo học liệu -->
   <span class="thuong-hieu">
-    <span class="ten"><i>je m’appelle</i><b>hương</b></span>
+    <span class="ten"><i>je m’appelle</i> <b>hương</b></span>
     <img src="./assets/icons/persona.png" alt="Đỗ Thùy Hương" width="42" height="42">
   </span>
 </header>
@@ -63,6 +71,15 @@
   </main>
 
 </div>
+
+<!-- Thanh dưới cho điện thoại: cột trái bị đẩy xuống dưới nội dung trên màn
+     hẹp nên phải có chỗ chuyển trang luôn trong tầm ngón tay cái. -->
+<nav class="thanh-duoi" aria-label="Điều hướng">
+  <button type="button" data-trang="nha"><span class="bt">🏠</span><span data-i18n="nav.nha">Trang chủ</span></button>
+  <button type="button" data-trang="bai"><span class="bt">📖</span><span data-i18n="nav.bai">Bài giảng</span></button>
+  <button type="button" data-trang="on"><span class="bt">📝</span><span data-i18n="nav.on">Ôn tập</span></button>
+  <button type="button" data-trang="hs"><span class="bt">🏅</span><span data-i18n="nav.hs">Hồ sơ</span></button>
+</nav>
 
 <!-- i18n và app phải nạp trước: chúng định nghĩa registerBank và registerLectures
      mà các tệp dữ liệu bên dưới gọi tới -->
