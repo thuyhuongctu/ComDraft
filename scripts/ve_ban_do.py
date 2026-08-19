@@ -81,7 +81,7 @@ TRUONG_SA = [(114.36, 10.37), (113.85, 9.68), (114.85, 9.20), (115.55, 9.85),
              (112.90, 8.85), (114.10, 8.65), (115.20, 10.72), (113.30, 9.90)]
 
 TAY, DONG = 101.4, 116.6
-BAC, NAM = 23.9, 8.0
+BAC, NAM = 24.6, 8.0   # chừa chỗ phía trên cho cột cờ Lũng Cú
 CO = 42
 CO_NGANG = CO * math.cos(math.radians(15.5))
 
@@ -196,6 +196,28 @@ def ve(mau, ten):
         r.append('  <text x="%.1f" y="%.1f" font-size="10.5" text-anchor="%s" fill="%s" '
                  'font-family="Calibri,\'Segoe UI\',sans-serif">%s</text>'
                  % (x + dx, y + 3.6, neo, mau["chu"], ten_tp))
+
+    # cột cờ Lũng Cú — điểm cực bắc, cắm ngay trên chỏm bản đồ
+    fx, fy = xy(105.32, 23.36)
+    cao_cot, rong_co, cao_co = 26.0, 21.0, 14.0
+    r.append('  <g>')
+    r.append('    <line x1="%.1f" y1="%.1f" x2="%.1f" y2="%.1f" stroke="%s" '
+             'stroke-width="1.6" stroke-linecap="round"/>'
+             % (fx, fy, fx, fy - cao_cot, mau["chu"]))
+    r.append('    <rect x="%.1f" y="%.1f" width="%.1f" height="%.1f" rx="1.2" fill="#DA251D"/>'
+             % (fx + 1, fy - cao_cot, rong_co, cao_co))
+    # ngôi sao vàng năm cánh giữa lá cờ
+    sx, sy, bk_sao = fx + 1 + rong_co / 2, fy - cao_cot + cao_co / 2, cao_co * 0.36
+    diem = []
+    for k in range(10):
+        goc = -math.pi / 2 + k * math.pi / 5
+        b = bk_sao if k % 2 == 0 else bk_sao * 0.42
+        diem.append("%.2f,%.2f" % (sx + b * math.cos(goc), sy + b * math.sin(goc)))
+    r.append('    <polygon points="%s" fill="#FFCD00"/>' % " ".join(diem))
+    r.append('    <text x="%.1f" y="%.1f" font-size="9" text-anchor="end" fill="%s" '
+             'fill-opacity=".85" font-family="Calibri,\'Segoe UI\',sans-serif">'
+             'Cột cờ Lũng Cú</text>' % (fx - 5, fy - cao_cot + 10, mau["chu"]))
+    r.append('  </g>')
 
     # hoa gió ở góc dưới bên phải
     cx, cy, bk = W - 52, H - 54, 24
