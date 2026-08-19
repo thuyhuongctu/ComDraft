@@ -18,6 +18,29 @@ a colleague's material.
 
 ---
 
+## The revision app
+
+The repository root is also a small offline-first web app for students —
+**ComDraft**, published from this repository via GitHub Pages. It serves the whole
+200-question bank with the explanation for every question, and needs no account, no
+server and no network once it has been opened for the first time.
+
+- **Practice mode** marks each answer immediately and shows why it is right or wrong;
+  **test mode** withholds the marking until the end.
+- Pick a single chapter or mix all five, choose 10 / 20 / 40 / all questions, and
+  filter by cognitive level (recall, comprehension, application).
+- Questions and options are shuffled, so a second attempt is not the same paper.
+- The result screen breaks the score down by cognitive level and reprints every
+  missed question with its explanation; one button re-runs just the ones missed.
+- Students can star hard questions and drill only those later.
+- Progress and best scores live in the browser's own storage — nothing leaves the
+  device, so no student data is collected.
+- Installable to a phone's home screen, and works fully offline.
+
+Built as plain HTML, CSS and JavaScript with no framework and no build step: the
+question data is the same `registerBank(...)` format used by the author's earlier
+EnQuiz app, so a chapter can be edited and reloaded without touching the code.
+
 ## What this repository holds
 
 A complete, ready-to-teach package for a 3-credit undergraduate course (2 credits of

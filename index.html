@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="vi">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>ComDraft — Ôn tập EC1103</title>
+<meta name="description" content="Ứng dụng ôn tập 200 câu trắc nghiệm học phần Kỹ năng giao tiếp và soạn thảo văn bản (EC1103), do GV. Đỗ Thùy Hương biên soạn.">
+<meta name="author" content="Đỗ Thùy Hương">
+<meta name="theme-color" content="#DC756A">
+<link rel="manifest" href="./manifest.webmanifest">
+<link rel="icon" href="./assets/icons/favicon-32.png" sizes="32x32">
+<link rel="apple-touch-icon" href="./assets/icons/apple-touch-icon.png">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-title" content="ComDraft">
+<link rel="stylesheet" href="./assets/css/style.css">
+</head>
+<body>
+
+<header>
+  <div class="bọc dau">
+    <img src="./assets/icons/icon-192.png" alt="">
+    <div>
+      <h1>ComDraft</h1>
+      <p>Ôn tập EC1103 · GV. Đỗ Thùy Hương</p>
+    </div>
+  </div>
+</header>
+
+<main class="bọc" id="khung">
+  <noscript>
+    <div class="the" style="margin-top:24px">
+      <b>Cần bật JavaScript</b>
+      <p style="color:var(--gray);margin-top:6px">Ứng dụng ôn tập chạy hoàn toàn trong trình duyệt nên cần JavaScript.</p>
+    </div>
+  </noscript>
+</main>
+
+<footer class="bọc">
+  <p><b>Kỹ năng giao tiếp và soạn thảo văn bản (EC1103)</b> — 3 tín chỉ (2:1), lớp 261b, học kỳ 1 năm học 2026–2027.</p>
+  <p>Biên soạn: <b>Đỗ Thùy Hương</b>, Khoa Kinh tế – Luật, Trường Đại học Sư phạm Kỹ thuật Vĩnh Long ·
+     <a href="https://orcid.org/0000-0002-7711-2487" rel="noopener">ORCID 0000-0002-7711-2487</a></p>
+  <p>Trích dẫn: <a href="https://doi.org/10.5281/zenodo.22003676" rel="noopener">10.5281/zenodo.22003676</a> ·
+     Mã nguồn và học liệu: <a href="https://github.com/thuyhuongctu/ComDraft" rel="noopener">github.com/thuyhuongctu/ComDraft</a></p>
+  <p>© 2026 Đỗ Thùy Hương. Bảo lưu mọi quyền. Được dùng tự do cho việc học của sinh viên học phần này;
+     mọi sử dụng khác cần sự đồng ý bằng văn bản của tác giả.</p>
+</footer>
+
+<!-- app.js phải nạp trước: nó định nghĩa registerBank mà các tệp dữ liệu gọi tới -->
+<script src="./assets/js/app.js"></script>
+<script src="./data/ch1.js"></script>
+<script src="./data/ch2.js"></script>
+<script src="./data/ch3.js"></script>
+<script src="./data/ch4.js"></script>
+<script src="./data/ch5.js"></script>
+</body>
+</html>
