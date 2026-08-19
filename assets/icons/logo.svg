@@ -1,30 +1,32 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-label="ComDraft">
   <title>ComDraft</title>
-  <!-- Khối đất sét màu san hô của bộ nhận diện, bên trong là một bóng thoại
-       (giao tiếp) đồng thời là trang văn bản có dòng chữ (soạn thảo).
+  <!-- Cùng họ với con dấu tròn "Je m'appelle Huong · Lecturer & Researcher":
+       đĩa tròn màu san hô, vành sáng mảnh bên trong, giữa là trang văn bản
+       gấp góc — chữ viết ra giấy, đúng nghĩa soạn thảo văn bản.
        © Đỗ Thùy Hương, 2026. -->
   <defs>
-    <linearGradient id="cd-than" x1="8" y1="4" x2="54" y2="60" gradientUnits="userSpaceOnUse">
+    <linearGradient id="cd-dia" x1="10" y1="6" x2="54" y2="58" gradientUnits="userSpaceOnUse">
       <stop offset="0" stop-color="#EFA095"/>
-      <stop offset=".52" stop-color="#DC756A"/>
+      <stop offset=".5" stop-color="#DC756A"/>
       <stop offset="1" stop-color="#B54B39"/>
     </linearGradient>
-    <linearGradient id="cd-to" x1="16" y1="13" x2="46" y2="48" gradientUnits="userSpaceOnUse">
+    <linearGradient id="cd-to" x1="20" y1="14" x2="44" y2="52" gradientUnits="userSpaceOnUse">
       <stop offset="0" stop-color="#FFFDFC"/>
-      <stop offset="1" stop-color="#F4E0D7"/>
+      <stop offset="1" stop-color="#F3DED4"/>
     </linearGradient>
   </defs>
 
-  <rect x="2" y="2" width="60" height="60" rx="18" fill="url(#cd-than)"/>
-  <rect x="3.1" y="3.1" width="57.8" height="57.8" rx="16.9"
-        fill="none" stroke="#FFFFFF" stroke-opacity=".34" stroke-width="2.2"/>
+  <circle cx="32" cy="32" r="30" fill="url(#cd-dia)"/>
+  <circle cx="32" cy="32" r="26.6" fill="none" stroke="#FFFFFF" stroke-opacity=".42" stroke-width="1.7"/>
 
-  <path d="M17 14h30a6 6 0 0 1 6 6v17a6 6 0 0 1-6 6H32l-9.5 8.4V43H17a6 6 0 0 1-6-6V20a6 6 0 0 1 6-6Z"
-        fill="#B54B39" fill-opacity=".22" transform="translate(0 1.6)"/>
-  <path d="M17 14h30a6 6 0 0 1 6 6v17a6 6 0 0 1-6 6H32l-9.5 8.4V43H17a6 6 0 0 1-6-6V20a6 6 0 0 1 6-6Z"
+  <!-- trang giấy, góc trên bên phải gấp lại -->
+  <path d="M22 15h13.4L45 24.4V47a2.6 2.6 0 0 1-2.6 2.6H22A2.6 2.6 0 0 1 19.4 47V17.6A2.6 2.6 0 0 1 22 15Z"
+        fill="#8E3A28" fill-opacity=".26" transform="translate(0 1.5)"/>
+  <path d="M22 15h13.4L45 24.4V47a2.6 2.6 0 0 1-2.6 2.6H22A2.6 2.6 0 0 1 19.4 47V17.6A2.6 2.6 0 0 1 22 15Z"
         fill="url(#cd-to)"/>
+  <path d="M35.4 15 45 24.4h-7a2.6 2.6 0 0 1-2.6-2.6V15Z" fill="#E4C3B6"/>
 
-  <rect x="18" y="21.4" width="15.5" height="4.2" rx="2.1" fill="#C05340"/>
-  <rect x="18" y="29.4" width="28" height="3.6" rx="1.8" fill="#DC756A" fill-opacity=".6"/>
-  <rect x="18" y="35.6" width="21" height="3.6" rx="1.8" fill="#DC756A" fill-opacity=".6"/>
+  <rect x="24" y="28.4" width="9.6" height="3.2" rx="1.6" fill="#C05340"/>
+  <rect x="24" y="35" width="16" height="2.7" rx="1.35" fill="#DC756A" fill-opacity=".62"/>
+  <rect x="24" y="40.6" width="12.4" height="2.7" rx="1.35" fill="#DC756A" fill-opacity=".62"/>
 </svg>

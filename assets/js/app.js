@@ -99,15 +99,27 @@
   function di(t_) {
     trang = t_;
     phien = null;
-    document.querySelectorAll('.menu button').forEach(function (b) {
+    document.querySelectorAll('.menu button, .thanh-duoi button').forEach(function (b) {
       if (b.dataset.trang === t_) b.setAttribute('aria-current', 'page');
       else b.removeAttribute('aria-current');
     });
     ve();
   }
 
+  // Ba con số ở thanh trên, cập nhật mỗi lần vẽ lại trang.
+  function cap_nhat_dong_ho() {
+    var s = so_lieu();
+    var d = { 'hud-luot': String(s.lam), 'hud-chuong': s.da + '/' + KHO.length,
+              'hud-diem': s.tb == null ? '—' : s.tb + '%' };
+    Object.keys(d).forEach(function (k) {
+      var n = document.getElementById(k);
+      if (n) n.textContent = d[k];
+    });
+  }
+
   function ve() {
     if (phien) return;
+    cap_nhat_dong_ho();
     if (trang === 'nha') ve_nha();
     else if (trang === 'bai') ve_bai();
     else if (trang === 'hs') ve_ho_so();
@@ -143,6 +155,10 @@
   // Khối chào ở trang chủ: cô Hương đứng bên phải, bóng thoại bên trái.
   function khoi_chao() {
     var c = el('div', 'chao');
+    // Bản đồ Việt Nam chìm sau khối chào, phủ thêm một lớp mờ chuyển từ trái
+    // sang để nét bản đồ không chạy xuyên qua chữ.
+    c.appendChild(el('div', 'ban-do')).setAttribute('aria-hidden', 'true');
+    c.appendChild(el('div', 'man-mo')).setAttribute('aria-hidden', 'true');
     var l = el('div', 'loi');
     l.appendChild(el('h1', null, t('nha.chao')));
     l.appendChild(el('p', null, t('nha.mo'))).style.cssText =
@@ -154,6 +170,30 @@
     i.alt = 'Cô Đỗ Thùy Hương';
     c.appendChild(i);
     return c;
+  }
+
+  // Khung phim ở trang chủ: một video ôn tập mở sẵn để người mới vào có thứ
+  // xem ngay, không phải lần mò qua ba lớp menu.
+  function khung_phim() {
+    var b = BAI[0];
+    var k = el('div', 'khung-phim');
+    if (!b || !b.video) return k;
+    var o = el('button', 'man'); o.type = 'button';
+    var a = el('img');
+    a.src = './assets/slides/' + (b.slide ? b.slide.bo : 'ch1') + '/001.jpg';
+    a.alt = ''; a.loading = 'lazy';
+    o.appendChild(a);
+    o.appendChild(el('span', 'nut-phat', '▶'));
+    var c = el('span', 'loi-phim');
+    c.appendChild(el('small', null, t('phim.moi')));
+    c.appendChild(el('b', null, (ngu() === 'en' ? 'Chapter 1 — ' : 'Chương 1 — ') +
+                                (ngu() === 'en' ? b.en : b.vi)));
+    o.appendChild(c);
+    o.addEventListener('click', function () {
+      xem_video(t('bai.video') + ' — ' + (ngu() === 'en' ? b.en : b.vi), b.video.tep, b.video.taiVe);
+    });
+    k.appendChild(o);
+    return k;
   }
 
   function ve_nha() {
@@ -179,6 +219,7 @@
     the.appendChild(o);
     v.appendChild(the);
 
+    v.appendChild(khung_phim());
     v.appendChild(el('h2', 'muc', t('bai.tieude')));
     var luoi = el('div', 'luoi');
     BAI.forEach(function (b) { luoi.appendChild(the_chuong(b, function () { ve_chi_tiet(b); })); });
@@ -1065,11 +1106,17 @@
         ('0' + (d.getMonth() + 1)).slice(-2) + '/' + d.getFullYear(),
         700, 22, '#9A8580', false, 'Calibri, "Segoe UI", sans-serif');
 
-    g.font = 'italic ' + Math.round(24 * k) + 'px Cambria, Georgia, serif';
-    g.fillStyle = '#9A8580';
-    g.fillText('je m’appelle', rong / 2, 800 * k);
-    chu('hương', 838, 32, '#AC4D33', true);
-    chu(t('giay.gv'), 878, 20, '#9A8580', false, 'Calibri, "Segoe UI", sans-serif');
+    // chữ ký thương hiệu để trên một dòng
+    var f1 = 'italic ' + Math.round(28 * k) + 'px Cambria, Georgia, serif';
+    var f2 = 'bold ' + Math.round(34 * k) + 'px Cambria, "Times New Roman", Georgia, serif';
+    g.font = f1; var w1 = g.measureText('je m’appelle ').width;
+    g.font = f2; var w2 = g.measureText('hương').width;
+    var x0 = rong / 2 - (w1 + w2) / 2;
+    g.textAlign = 'left';
+    g.font = f1; g.fillStyle = '#9A8580'; g.fillText('je m’appelle ', x0, 820 * k);
+    g.font = f2; g.fillStyle = '#AC4D33'; g.fillText('hương', x0 + w1, 820 * k);
+    g.textAlign = 'center';
+    chu(t('giay.gv'), 862, 20, '#9A8580', false, 'Calibri, "Segoe UI", sans-serif');
 
     // Nói rõ đây là gì, để không ai hiểu nhầm là văn bằng của nhà trường.
     g.font = Math.round(18 * k) + 'px Calibri, "Segoe UI", sans-serif';
@@ -1121,11 +1168,14 @@
 
     var k = el('div', 'ky');
     k.appendChild(el('i', null, 'je m’appelle'));
+    k.appendChild(document.createTextNode(' '));
     k.appendChild(el('b', null, 'hương'));
     d.appendChild(k);
 
-    var nv = el('img', 'mat-nv');
-    nv.src = './assets/icons/persona.png'; nv.alt = 'Đỗ Thùy Hương';
+    // con dấu thương hiệu của giảng viên, đọc rõ trên cả nền sáng lẫn nền tối
+    var nv = el('img', 'dau-nv');
+    nv.src = './assets/img/dau-huong.png';
+    nv.alt = 'Je m’appelle Huong — Lecturer & Researcher';
     d.appendChild(nv);
     return d;
   }
@@ -1176,7 +1226,7 @@
     document.querySelectorAll('[data-theme-btn]').forEach(function (b) {
       b.addEventListener('click', function () { dat_theme(b.dataset.themeBtn); });
     });
-    document.querySelectorAll('.menu button').forEach(function (b) {
+    document.querySelectorAll('.menu button, .thanh-duoi button').forEach(function (b) {
       b.addEventListener('click', function () { di(b.dataset.trang); });
     });
     window.addEventListener('doi-ngu', function () { if (!phien) ve(); });

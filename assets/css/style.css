@@ -126,15 +126,26 @@ body {
   background: var(--mat); border-radius: 999px;
   box-shadow: var(--clay-nho); padding: 6px 8px 6px 18px;
 }
-.thuong-hieu .ten { text-align: right; line-height: 1.15; }
+/* Chữ ký thương hiệu nằm gọn trên một dòng */
+.thuong-hieu .ten { white-space: nowrap; line-height: 1.2; }
 .thuong-hieu .ten i {
-  display: block; font-family: var(--head); font-style: italic;
-  font-size: 12px; color: var(--chu-mo); letter-spacing: .3px;
+  font-family: var(--head); font-style: italic;
+  font-size: 14px; color: var(--chu-mo); letter-spacing: .3px;
 }
 .thuong-hieu .ten b {
-  display: block; font-family: var(--head); font-size: 19px;
+  font-family: var(--head); font-size: 19px;
   color: var(--coral-dam); letter-spacing: .2px;
 }
+
+/* Ba con số ở thanh trên */
+.dong-ho { display: flex; gap: 10px; }
+.dong-ho div {
+  background: var(--mat); border-radius: var(--bo-nho); box-shadow: var(--clay-nho);
+  padding: 7px 14px; text-align: center; min-width: 76px;
+}
+.dong-ho span { display: block; font-size: 10.5px; color: var(--chu-mo); letter-spacing: .3px; }
+.dong-ho b { display: block; font-family: var(--head); font-size: 17px; color: var(--chinh); line-height: 1.15; }
+@media (max-width: 900px) { .dong-ho { display: none; } }
 .thuong-hieu img {
   width: 42px; height: 42px; border-radius: 50%; flex: none;
   box-shadow: var(--clay-nho);
@@ -409,13 +420,13 @@ footer .chu-thich { padding: 0 4px; }
   display: block; font-family: var(--head); font-size: 19px; color: var(--coral-dam); line-height: 1.15;
 }
 .chan-hieu .goc span { display: block; font-size: 12px; color: var(--chu-mo); }
-.chan-hieu .ky { text-align: right; line-height: 1.15; }
+.chan-hieu .ky { white-space: nowrap; line-height: 1.2; }
 .chan-hieu .ky i {
-  display: block; font-family: var(--head); font-style: italic;
-  font-size: 12px; color: var(--chu-mo); letter-spacing: .3px;
+  font-family: var(--head); font-style: italic;
+  font-size: 13.5px; color: var(--chu-mo); letter-spacing: .3px;
 }
-.chan-hieu .ky b { display: block; font-family: var(--head); font-size: 18px; color: var(--coral-dam); }
-.chan-hieu .mat-nv { width: 40px; height: 40px; border-radius: 50%; flex: none; box-shadow: var(--clay-nho); }
+.chan-hieu .ky b { font-family: var(--head); font-size: 18px; color: var(--coral-dam); }
+.chan-hieu .dau-nv { height: 46px; width: auto; flex: none; }
 
 /* ---------------------------------------------------------------- trình xem */
 /* Lớp phủ mở ngay trong ứng dụng: slide lật từng trang, video phát tại chỗ. */
@@ -591,6 +602,86 @@ p.rieng { font-size: 12.5px; color: var(--chu-mo); margin-top: 10px; line-height
   border-radius: 10px; box-shadow: var(--clay-nho); background: #FAF0EA;
 }
 
+/* ------------------------------------------------- bản đồ chìm, khung phim */
+/* Bản đồ dùng làm mặt nạ chứ không dán thẳng, nhờ vậy màu lấy từ biến giao
+   diện nên đổi theo chế độ sáng tối. */
+.chao .ban-do {
+  /* phải nằm trọn trong khối, nếu tràn ra thì bị cắt mất đầu và mũi Cà Mau,
+     nhìn thành một mảng loang chứ không ra hình đất nước */
+  position: absolute; right: 12%; top: 5%; width: 42%; height: 90%;
+  background: var(--coral);
+  -webkit-mask: url('../img/viet-nam.svg') no-repeat center/contain;
+  mask: url('../img/viet-nam.svg') no-repeat center/contain;
+  opacity: .16; pointer-events: none;
+}
+html[data-theme="dark"] .chao .ban-do { opacity: .2; }
+/* Lớp mờ chuyển từ trái sang để nét bản đồ không chạy xuyên qua chữ */
+.chao .man-mo {
+  position: absolute; inset: 0; pointer-events: none;
+  background: linear-gradient(100deg, var(--mat) 0%, var(--mat) 34%,
+              rgba(254, 248, 245, 0) 72%);
+}
+html[data-theme="dark"] .chao .man-mo {
+  background: linear-gradient(100deg, var(--mat) 0%, var(--mat) 34%,
+              rgba(46, 37, 35, 0) 72%);
+}
+.chao .loi, .chao .nv { position: relative; z-index: 1; }
+
+.khung-phim { margin-top: 16px; }
+.khung-phim .man {
+  position: relative; display: block; width: 100%; border: none; padding: 0;
+  border-radius: var(--bo); overflow: hidden; cursor: pointer;
+  box-shadow: var(--clay); background: var(--mat);
+  transition: transform .18s ease;
+}
+.khung-phim .man:hover { transform: translateY(-3px); }
+.khung-phim img { display: block; width: 100%; height: auto; }
+.khung-phim .nut-phat {
+  position: absolute; left: 50%; top: 50%; transform: translate(-50%, -50%);
+  width: 68px; height: 68px; border-radius: 50%;
+  background: var(--mat); color: var(--chinh);
+  display: grid; place-items: center; font-size: 25px; padding-left: 5px;
+  box-shadow: var(--clay);
+}
+.khung-phim .loi-phim {
+  position: absolute; left: 0; right: 0; bottom: 0; text-align: left;
+  padding: 26px 20px 14px;
+  background: linear-gradient(to top, rgba(58, 43, 40, .82), rgba(58, 43, 40, 0));
+  color: #fff;
+}
+.khung-phim .loi-phim small {
+  display: block; font-size: 11px; letter-spacing: .8px; text-transform: uppercase;
+  opacity: .82;
+}
+.khung-phim .loi-phim b { display: block; font-family: var(--head); font-size: 18px; margin-top: 2px; }
+
+/* ---------------------------------------------------- thanh dưới điện thoại */
+.thanh-duoi { display: none; }
+@media (max-width: 840px) {
+  .thanh-duoi {
+    display: grid; grid-template-columns: repeat(4, 1fr);
+    position: fixed; left: 0; right: 0; bottom: 0; z-index: 30;
+    background: var(--mat); border-radius: 22px 22px 0 0;
+    box-shadow: 0 -5px 22px rgba(172, 77, 51, .16);
+    padding: 7px 6px calc(7px + env(safe-area-inset-bottom));
+  }
+  html[data-theme="dark"] .thanh-duoi { box-shadow: 0 -5px 22px rgba(0, 0, 0, .5); }
+  .thanh-duoi button {
+    display: flex; flex-direction: column; align-items: center; gap: 2px;
+    border: none; background: transparent; cursor: pointer;
+    font-family: var(--body); font-size: 11px; font-weight: 600;
+    color: var(--chu-mo); padding: 7px 2px; border-radius: 15px;
+  }
+  .thanh-duoi button .bt { font-size: 19px; line-height: 1; }
+  .thanh-duoi button[aria-current="page"] {
+    color: var(--chinh); background: var(--mat-2); box-shadow: var(--clay-lom);
+  }
+  /* chừa chỗ cho thanh dưới, không để nó che mất chân trang */
+  body { padding-bottom: 74px; }
+  /* cột trái trên màn hẹp chỉ còn hai nút đổi ngôn ngữ và sáng tối */
+  .canh .menu { display: none; }
+}
+
 .an { display: none !important; }
 @media (prefers-reduced-motion: reduce) { * { transition: none !important; } }
 
@@ -598,6 +689,7 @@ p.rieng { font-size: 12.5px; color: var(--chu-mo); margin-top: 10px; line-height
 /* Cô Hương xuất hiện ở trang chủ và màn kết quả, kèm một bóng thoại đất sét.
    Trên màn hẹp thì ẩn nhân vật đi để nhường chỗ cho nội dung. */
 .chao {
+  position: relative;          /* mốc cho bản đồ chìm và lớp mờ bên trong */
   display: flex; align-items: flex-end; gap: 20px;
   background: var(--mat); border-radius: var(--bo-lon);
   box-shadow: var(--clay); padding: 24px 26px 0; margin-bottom: 16px;
