@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>ComDraft — Ôn tập EC1103</title>
-<meta name="description" content="Ứng dụng ôn tập 200 câu trắc nghiệm học phần Kỹ năng giao tiếp và soạn thảo văn bản (EC1103), do GV. Đỗ Thùy Hương biên soạn.">
+<meta name="description" content="Bài giảng và 200 câu trắc nghiệm học phần Kỹ năng giao tiếp và soạn thảo văn bản (EC1103), do GV. Đỗ Thùy Hương biên soạn.">
 <meta name="author" content="Đỗ Thùy Hương">
 <meta name="theme-color" content="#DC756A">
 <link rel="manifest" href="./manifest.webmanifest">
@@ -16,37 +16,49 @@
 </head>
 <body>
 
-<header>
-  <div class="bọc dau">
-    <img src="./assets/icons/icon-192.png" alt="">
-    <div>
-      <h1>ComDraft</h1>
-      <p>Ôn tập EC1103 · GV. Đỗ Thùy Hương</p>
+<div class="khung">
+
+  <aside class="canh">
+    <div class="hieu">
+      <img src="./assets/icons/icon-192.png" alt="">
+      <div>
+        <b data-i18n="app.ten">ComDraft</b>
+        <span data-i18n="app.phu">Ôn tập EC1103</span>
+      </div>
     </div>
-  </div>
-</header>
 
-<main class="bọc" id="khung">
-  <noscript>
-    <div class="the" style="margin-top:24px">
-      <b>Cần bật JavaScript</b>
-      <p style="color:var(--gray);margin-top:6px">Ứng dụng ôn tập chạy hoàn toàn trong trình duyệt nên cần JavaScript.</p>
+    <nav class="menu">
+      <button type="button" data-trang="nha"><span class="bt">🏠</span><span data-i18n="nav.nha">Trang chủ</span></button>
+      <button type="button" data-trang="bai"><span class="bt">📖</span><span data-i18n="nav.bai">Bài giảng</span></button>
+      <button type="button" data-trang="on"><span class="bt">📝</span><span data-i18n="nav.on">Ôn tập</span></button>
+    </nav>
+
+    <div class="cong-cu">
+      <span class="ngu" role="group" aria-label="Ngôn ngữ / Language">
+        <button type="button" data-lang="vi">VI</button><button type="button" data-lang="en">EN</button>
+      </span>
+      <span class="sang-toi" role="group" aria-label="Sáng / tối">
+        <button type="button" data-theme-btn="light" title="Sáng">☀</button><button type="button" data-theme-btn="dark" title="Tối">☾</button>
+      </span>
     </div>
-  </noscript>
-</main>
+  </aside>
 
-<footer class="bọc">
-  <p><b>Kỹ năng giao tiếp và soạn thảo văn bản (EC1103)</b> — 3 tín chỉ (2:1), lớp 261b, học kỳ 1 năm học 2026–2027.</p>
-  <p>Biên soạn: <b>Đỗ Thùy Hương</b>, Khoa Kinh tế – Luật, Trường Đại học Sư phạm Kỹ thuật Vĩnh Long ·
-     <a href="https://orcid.org/0000-0002-7711-2487" rel="noopener">ORCID 0000-0002-7711-2487</a></p>
-  <p>Trích dẫn: <a href="https://doi.org/10.5281/zenodo.22003676" rel="noopener">10.5281/zenodo.22003676</a> ·
-     Mã nguồn và học liệu: <a href="https://github.com/thuyhuongctu/ComDraft" rel="noopener">github.com/thuyhuongctu/ComDraft</a></p>
-  <p>© 2026 Đỗ Thùy Hương. Bảo lưu mọi quyền. Được dùng tự do cho việc học của sinh viên học phần này;
-     mọi sử dụng khác cần sự đồng ý bằng văn bản của tác giả.</p>
-</footer>
+  <main id="khung">
+    <noscript>
+      <div class="the">
+        <b>Cần bật JavaScript — JavaScript required</b>
+        <p style="color:var(--chu-mo);margin-top:6px">Ứng dụng chạy hoàn toàn trong trình duyệt nên cần JavaScript.</p>
+      </div>
+    </noscript>
+  </main>
 
-<!-- app.js phải nạp trước: nó định nghĩa registerBank mà các tệp dữ liệu gọi tới -->
+</div>
+
+<!-- i18n và app phải nạp trước: chúng định nghĩa registerBank và registerLectures
+     mà các tệp dữ liệu bên dưới gọi tới -->
+<script src="./assets/js/i18n.js"></script>
 <script src="./assets/js/app.js"></script>
+<script src="./data/lectures.js"></script>
 <script src="./data/ch1.js"></script>
 <script src="./data/ch2.js"></script>
 <script src="./data/ch3.js"></script>
