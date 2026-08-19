@@ -130,3 +130,21 @@ this exact release instead, use [10.5281/zenodo.22003677](https://doi.org/10.528
 ---
 
 © 2026 Do Thuy Huong. All rights reserved. See `LICENSE`.
+
+## Kiểm tra tự động
+
+Repo có sẵn một bộ kiểm tra chạy thật trên trình duyệt:
+
+```bash
+pip install playwright && python -m playwright install chromium
+python3 tests/kiem_tra.py
+```
+
+Hai mươi hai phép, gồm: khoá từ vựng Việt–Anh khớp nhau, phụ đề khớp
+nguyên văn kịch bản thuyết minh, số ảnh slide đúng như khai báo, trình xem
+slide và video, cổng ghi danh, bài tập thể thức, huy hiệu và giấy ghi nhận,
+tour Hương AI, bố cục trên màn điện thoại, và hai điều kiện ràng buộc của
+dự án: **không gửi yêu cầu nào ra ngoài trang** và **không lỗi JavaScript**.
+
+Bộ này cũng chạy tự động trên GitHub mỗi lần đẩy mã
+(`.github/workflows/kiem-tra.yml`).
