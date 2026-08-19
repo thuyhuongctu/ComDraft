@@ -10,7 +10,6 @@ Bộ học liệu giảng dạy trực tiếp — Học phần Kỹ năng giao t
 ![license](https://img.shields.io/badge/license-All%20rights%20reserved-red?style=flat-square)
 
 **Author** — Do Thuy Huong (Đỗ Thùy Hương), [ORCID 0000-0002-7711-2487](https://orcid.org/0000-0002-7711-2487)
-Lecturer, Faculty of Economics and Law, Vinh Long University of Technology Education;
 PhD Candidate, School of Economics, Can Tho University.
 
 Every slide, figure, question, script and video in this repository was authored by the
@@ -113,7 +112,7 @@ permission.
 When you use anything from this repository, cite it. See `CITATION.cff`, or:
 
 > Do, T. H. (2026). *ComDraft: teaching materials for Communication and Document Drafting
-> Skills (EC1103)* (Version 1.0) [Data set]. Vinh Long University of Technology Education.
+> Skills (EC1103)* (Version 1.0) [Data set]. Zenodo.
 > https://doi.org/10.5281/zenodo.22003676
 
 The DOI above is the *concept DOI* — it always resolves to the newest release. To cite

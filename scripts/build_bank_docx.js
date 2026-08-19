@@ -33,7 +33,7 @@ function bankDoc(chapters, fileName, opts = {}) {
   }));
   children.push(p("HỌC PHẦN: KỸ NĂNG GIAO TIẾP VÀ SOẠN THẢO VĂN BẢN (EC1103)", { align: AlignmentType.CENTER, bold: true, size: 28, after: 30 }));
   children.push(p("Trình độ đại học – Hệ chính quy  •  Số tín chỉ: 03 (2:1)", { align: AlignmentType.CENTER, size: 25, after: 30 }));
-  children.push(p("Biên soạn: GV. Đỗ Thùy Hương – Khoa Kinh tế - Luật, Trường Đại học Sư phạm Kỹ thuật Vĩnh Long", { align: AlignmentType.CENTER, size: 25, after: 30 }));
+  children.push(p("Biên soạn: Đỗ Thùy Hương", { align: AlignmentType.CENTER, size: 25, after: 30 }));
   children.push(p(withAnswers ? "BẢN CÓ ĐÁP ÁN VÀ GIẢI THÍCH – DÙNG CHO GIẢNG VIÊN" : "BẢN ĐỀ – DÙNG CHO SINH VIÊN ÔN TẬP",
     { align: AlignmentType.CENTER, bold: true, size: 25, color: CORAL, after: 200 }));
 
