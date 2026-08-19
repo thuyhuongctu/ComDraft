@@ -158,6 +158,7 @@
     // Nền là hai lớp: dải màu chảy mềm, và bản đồ Việt Nam chìm phía sau chữ.
     c.appendChild(el('div', 'hero-nen')).setAttribute('aria-hidden', 'true');
     c.appendChild(el('div', 'hero-ban-do')).setAttribute('aria-hidden', 'true');
+    c.appendChild(el('div', 'hero-man')).setAttribute('aria-hidden', 'true');
 
     var l = el('div', 'hero-chu');
     l.appendChild(el('span', 'nhan', t('hero.nhan')));
@@ -1120,8 +1121,10 @@
         700, 22, '#9A8580', false, 'Calibri, "Segoe UI", sans-serif');
 
     // chữ ký thương hiệu để trên một dòng
-    var f1 = 'italic ' + Math.round(28 * k) + 'px Cambria, Georgia, serif';
-    var f2 = 'bold ' + Math.round(34 * k) + 'px Cambria, "Times New Roman", Georgia, serif';
+    // hai vế cùng cỡ chữ, chỉ khác kiểu nghiêng và màu
+    var co_ky = Math.round(32 * k);
+    var f1 = 'italic ' + co_ky + 'px Cambria, "Times New Roman", Georgia, serif';
+    var f2 = 'bold ' + co_ky + 'px Cambria, "Times New Roman", Georgia, serif';
     g.font = f1; var w1 = g.measureText('je m’appelle ').width;
     g.font = f2; var w2 = g.measureText('hương').width;
     var x0 = rong / 2 - (w1 + w2) / 2;

@@ -26,8 +26,9 @@ DAM = "/usr/share/fonts/truetype/liberation/LiberationSerif-Bold.ttf"
 
 def mot_dong(ve, canh, y, co):
     """Vẽ 'Je m'appelle Hương' trên một dòng, canh giữa theo bề ngang."""
+    # hai vế cùng cỡ chữ, chỉ khác kiểu nghiêng và màu
     f1 = ImageFont.truetype(NGHIENG, co)
-    f2 = ImageFont.truetype(DAM, round(co * 1.16))
+    f2 = ImageFont.truetype(DAM, co)
     t1, t2 = "Je m’appelle ", "Hương"
     w1 = ve.textlength(t1, font=f1)
     w2 = ve.textlength(t2, font=f2)
