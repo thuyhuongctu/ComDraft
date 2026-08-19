@@ -4,6 +4,7 @@
 Bộ học liệu giảng dạy trực tiếp — Học phần Kỹ năng giao tiếp và soạn thảo văn bản
 
 [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.22003676.svg)](https://doi.org/10.5281/zenodo.22003676)
+[![app](https://img.shields.io/badge/app-thuyhuongctu.github.io%2FComDraft-DC756A?style=flat-square)](https://thuyhuongctu.github.io/ComDraft/)
 ![course](https://img.shields.io/badge/course-EC1103-AC4D33?style=flat-square)
 ![credits](https://img.shields.io/badge/credits-3%20(2%3A1)-DC756A?style=flat-square)
 ![license](https://img.shields.io/badge/license-All%20rights%20reserved-red?style=flat-square)
@@ -19,6 +20,8 @@ a colleague's material.
 ---
 
 ## The revision app
+
+### ▶ [thuyhuongctu.github.io/ComDraft](https://thuyhuongctu.github.io/ComDraft/)
 
 The repository root is also a small offline-first web app for students —
 **ComDraft**, published from this repository via GitHub Pages. It serves the whole
