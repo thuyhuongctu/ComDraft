@@ -154,21 +154,34 @@
   // ---------------------------------------------------------------- trang chủ
   // Khối chào ở trang chủ: cô Hương đứng bên phải, bóng thoại bên trái.
   function khoi_chao() {
-    var c = el('div', 'chao');
-    // Bản đồ Việt Nam chìm sau khối chào, phủ thêm một lớp mờ chuyển từ trái
-    // sang để nét bản đồ không chạy xuyên qua chữ.
-    c.appendChild(el('div', 'ban-do')).setAttribute('aria-hidden', 'true');
-    c.appendChild(el('div', 'man-mo')).setAttribute('aria-hidden', 'true');
-    var l = el('div', 'loi');
+    var c = el('div', 'hero');
+    // Nền là hai lớp: dải màu chảy mềm, và bản đồ Việt Nam chìm phía sau chữ.
+    c.appendChild(el('div', 'hero-nen')).setAttribute('aria-hidden', 'true');
+    c.appendChild(el('div', 'hero-ban-do')).setAttribute('aria-hidden', 'true');
+
+    var l = el('div', 'hero-chu');
+    l.appendChild(el('span', 'nhan', t('hero.nhan')));
     l.appendChild(el('h1', null, t('nha.chao')));
-    l.appendChild(el('p', null, t('nha.mo'))).style.cssText =
-      'color:var(--chu-mo);font-size:14.5px;margin-top:6px';
-    l.appendChild(el('div', 'bong', t('nv.chao')));
+    l.appendChild(el('p', null, t('nha.mo')));
+
+    var nut = el('div', 'hero-nut');
+    var b1 = el('button', 'nut chinh', t('hero.batdau')); b1.type = 'button';
+    b1.addEventListener('click', function () { di('on'); });
+    var b2 = el('button', 'nut', t('hero.xembai')); b2.type = 'button';
+    b2.addEventListener('click', function () { di('bai'); });
+    nut.appendChild(b1); nut.appendChild(b2);
+    l.appendChild(nut);
     c.appendChild(l);
-    var i = el('img', 'nv');
+
+    var nv = el('div', 'hero-nv');
+    // lời chào trong hero để ngắn: bóng thoại dài sẽ trùm xuống mặt cô,
+    // và hai nút bên dưới đã nói rõ việc cần làm rồi
+    nv.appendChild(el('div', 'bong', t('hero.chao')));
+    var i = el('img');
     i.src = './assets/icons/co-huong-dung.png';
     i.alt = 'Cô Đỗ Thùy Hương';
-    c.appendChild(i);
+    nv.appendChild(i);
+    c.appendChild(nv);
     return c;
   }
 

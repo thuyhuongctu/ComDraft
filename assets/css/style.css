@@ -602,31 +602,6 @@ p.rieng { font-size: 12.5px; color: var(--chu-mo); margin-top: 10px; line-height
   border-radius: 10px; box-shadow: var(--clay-nho); background: #FAF0EA;
 }
 
-/* ------------------------------------------------- bản đồ chìm, khung phim */
-/* Bản đồ dùng làm mặt nạ chứ không dán thẳng, nhờ vậy màu lấy từ biến giao
-   diện nên đổi theo chế độ sáng tối. */
-.chao .ban-do {
-  /* phải nằm trọn trong khối, nếu tràn ra thì bị cắt mất đầu và mũi Cà Mau,
-     nhìn thành một mảng loang chứ không ra hình đất nước */
-  position: absolute; right: 12%; top: 5%; width: 42%; height: 90%;
-  background: var(--coral);
-  -webkit-mask: url('../img/viet-nam.svg') no-repeat center/contain;
-  mask: url('../img/viet-nam.svg') no-repeat center/contain;
-  opacity: .16; pointer-events: none;
-}
-html[data-theme="dark"] .chao .ban-do { opacity: .2; }
-/* Lớp mờ chuyển từ trái sang để nét bản đồ không chạy xuyên qua chữ */
-.chao .man-mo {
-  position: absolute; inset: 0; pointer-events: none;
-  background: linear-gradient(100deg, var(--mat) 0%, var(--mat) 34%,
-              rgba(254, 248, 245, 0) 72%);
-}
-html[data-theme="dark"] .chao .man-mo {
-  background: linear-gradient(100deg, var(--mat) 0%, var(--mat) 34%,
-              rgba(46, 37, 35, 0) 72%);
-}
-.chao .loi, .chao .nv { position: relative; z-index: 1; }
-
 .khung-phim { margin-top: 16px; }
 .khung-phim .man {
   position: relative; display: block; width: 100%; border: none; padding: 0;
@@ -685,33 +660,102 @@ html[data-theme="dark"] .chao .man-mo {
 .an { display: none !important; }
 @media (prefers-reduced-motion: reduce) { * { transition: none !important; } }
 
-/* ---------------------------------------------------------------- nhân vật */
-/* Cô Hương xuất hiện ở trang chủ và màn kết quả, kèm một bóng thoại đất sét.
-   Trên màn hẹp thì ẩn nhân vật đi để nhường chỗ cho nội dung. */
-.chao {
-  position: relative;          /* mốc cho bản đồ chìm và lớp mờ bên trong */
-  display: flex; align-items: flex-end; gap: 20px;
-  background: var(--mat); border-radius: var(--bo-lon);
-  box-shadow: var(--clay); padding: 24px 26px 0; margin-bottom: 16px;
+/* ---------------------------------------------------------------- hero */
+/* Cách bày của Google DeepMind: một khối lớn gần như không viền, chữ tiêu đề
+   cỡ rất to, nhiều khoảng thở, nền là dải màu chảy mềm. Ở đây giữ bảng màu
+   san hô của bộ nhận diện, thêm bản đồ Việt Nam chìm và cô Hương đứng tràn
+   xuống mép dưới. */
+.hero {
+  position: relative;
+  isolation: isolate;
+  border-radius: 34px;
   overflow: hidden;
+  margin-bottom: 18px;
+  padding: clamp(30px, 5vw, 62px) clamp(24px, 4.4vw, 60px) 0;
+  min-height: clamp(330px, 42vw, 460px);
+  display: flex; align-items: flex-end; gap: 26px;
+  box-shadow: var(--clay);
 }
-.chao .loi { flex: 1; min-width: 0; padding-bottom: 24px; }
-.chao h1 { font-family: var(--head); font-size: 26px; color: var(--coral-dam); line-height: 1.25; }
-.chao .bong {
-  position: relative; margin-top: 14px;
-  background: var(--chinh-nen); border-radius: var(--bo);
-  box-shadow: var(--clay-nho); padding: 14px 17px;
-  font-size: 14.5px; color: var(--chu);
+/* Dải màu chảy: bốn vệt sáng chồng lên nhau, không dùng ảnh nên đổi màu
+   theo chế độ sáng tối mà không phải làm hai tệp. */
+.hero-nen {
+  position: absolute; inset: 0; z-index: -2;
+  background:
+    radial-gradient(118% 92% at 82% 12%, rgba(220, 117, 106, .40) 0%, transparent 58%),
+    radial-gradient(96% 84% at 8% 92%, rgba(226, 168, 96, .30) 0%, transparent 62%),
+    radial-gradient(78% 72% at 46% -6%, rgba(251, 206, 201, .62) 0%, transparent 64%),
+    radial-gradient(60% 60% at 96% 78%, rgba(200, 90, 72, .22) 0%, transparent 60%),
+    linear-gradient(158deg, var(--mat) 0%, var(--nen-sau) 100%);
 }
-.chao .bong::after {
-  content: ''; position: absolute; right: 34px; bottom: -11px;
-  border: 11px solid transparent; border-top-color: var(--chinh-nen);
-  border-bottom: 0;
+html[data-theme="dark"] .hero-nen {
+  background:
+    radial-gradient(118% 92% at 82% 12%, rgba(232, 145, 135, .26) 0%, transparent 58%),
+    radial-gradient(96% 84% at 8% 92%, rgba(227, 188, 99, .16) 0%, transparent 62%),
+    radial-gradient(78% 72% at 46% -6%, rgba(120, 62, 54, .48) 0%, transparent 64%),
+    radial-gradient(60% 60% at 96% 78%, rgba(232, 145, 135, .14) 0%, transparent 60%),
+    linear-gradient(158deg, var(--mat) 0%, var(--nen-sau) 100%);
 }
-/* Ảnh nhân vật cao gấp ba lần bề ngang, nên phải khống chế theo CHIỀU CAO;
-   đặt theo chiều rộng sẽ kéo cả khối chào cao vống lên. */
-.chao .nv { height: 252px; width: auto; flex: none; align-self: flex-end; display: block; }
-@media (max-width: 760px) { .chao .nv { display: none; } .chao { padding-bottom: 24px; } }
+/* Bản đồ phải nằm trọn trong khối; tràn ra là cắt mất chỏm bắc và mũi Cà Mau,
+   nhìn thành một mảng loang chứ không ra hình đất nước. */
+.hero-ban-do {
+  position: absolute; z-index: -1; right: 3%; top: 6%; width: 38%; height: 88%;
+  background: var(--coral-dam);
+  -webkit-mask: url('../img/viet-nam.svg') no-repeat center/contain;
+  mask: url('../img/viet-nam.svg') no-repeat center/contain;
+  opacity: .13; pointer-events: none;
+}
+html[data-theme="dark"] .hero-ban-do { background: var(--coral); opacity: .17; }
+
+.hero-chu { flex: 1 1 auto; min-width: 0; padding-bottom: clamp(30px, 5vw, 62px); }
+.hero-chu .nhan {
+  display: inline-block; font-size: 11.5px; font-weight: 700;
+  letter-spacing: 2.2px; text-transform: uppercase; color: var(--chinh);
+  background: var(--mat); border-radius: 999px; padding: 6px 16px;
+  box-shadow: var(--clay-nho); margin-bottom: 20px;
+}
+.hero-chu h1 {
+  font-family: var(--head);
+  font-size: clamp(31px, 5.4vw, 60px);
+  line-height: 1.04;
+  letter-spacing: -.6px;
+  color: var(--coral-dam);
+  max-width: 19ch;
+  text-wrap: balance;
+}
+.hero-chu p {
+  margin-top: 18px; max-width: 48ch;
+  font-size: clamp(14.5px, 1.35vw, 17px); line-height: 1.6; color: var(--chu-nhat);
+}
+.hero-nut { display: flex; gap: 12px; flex-wrap: wrap; margin-top: 26px; }
+.hero-nut .nut { padding: 13px 26px; font-size: 15.5px; }
+
+/* Không đặt position ở đây: bóng thoại cần neo theo khối hero, còn khối nhân
+   vật thì chỉ cao bằng bức ảnh và nằm sát đáy. */
+.hero-nv { flex: none; align-self: flex-end; }
+.hero-nv img { height: clamp(230px, 26vw, 330px); width: auto; display: block; }
+/* Bóng thoại đặt phía trên đầu nhân vật. Để bên trái thì nó thò sang cột chữ
+   và đè lên đoạn mô tả. */
+/* Neo theo mép trên của khối hero chứ không theo đầu nhân vật: lời chào dài
+   ngắn thế nào thì bóng thoại cũng không thể thò lên khỏi khối rồi bị cắt. */
+.hero-nv .bong {
+  position: absolute; bottom: auto;
+  right: clamp(24px, 4.4vw, 60px); top: clamp(26px, 4.4vw, 54px);
+  /* hẹp vừa đủ để không thò sang vùng hộp của tiêu đề */
+  width: max-content; max-width: 196px;
+  background: var(--mat); border-radius: var(--bo);
+  box-shadow: var(--clay-nho); padding: 11px 14px;
+  font-size: 13px; line-height: 1.45; color: var(--chu);
+}
+.hero-nv .bong::after {
+  content: ''; position: absolute; right: 42px; bottom: -10px;
+  border: 10px solid transparent; border-top-color: var(--mat); border-bottom: 0;
+}
+@media (max-width: 1180px) { .hero-nv .bong { display: none; } }
+@media (max-width: 760px) {
+  .hero { min-height: 0; padding-bottom: clamp(30px, 5vw, 62px); }
+  .hero-nv { display: none; }
+  .hero-ban-do { right: -6%; width: 56%; opacity: .1; }
+}
 
 .ket-nv { display: flex; align-items: flex-end; gap: 18px; justify-content: center; margin-top: 6px; }
 .ket-nv img { height: 190px; width: auto; flex: none; }
