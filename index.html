@@ -81,9 +81,46 @@
   <button type="button" data-trang="hs"><span class="bt">🏅</span><span data-i18n="nav.hs">Hồ sơ</span></button>
 </nav>
 
+<!-- Hương AI: nút gọi và bảng thuyết minh của tour hướng dẫn -->
+<button class="tour-goi" id="tour-goi" type="button">
+  <img src="./assets/icons/persona.png" alt="" width="30" height="30">
+  <span id="tour-nhan">Hương AI hướng dẫn</span>
+</button>
+
+<div class="tour-bang an" id="tour-bang" role="dialog" aria-live="polite">
+  <div class="dinh">
+    <img src="./assets/icons/persona.png" alt="" width="34" height="34">
+    <span>
+      <b id="tour-ai">Hương AI</b><br>
+      <small id="tour-buoc"></small>
+    </span>
+    <button class="dong" id="tour-dong" type="button" aria-label="Đóng">✕</button>
+  </div>
+  <img class="nv" id="tour-nv" src="./assets/icons/co-huong-dung.png" alt="" aria-hidden="true">
+
+  <div class="an" id="tour-xong">
+    <p class="loi" data-i18n="tour.xong.loi"></p>
+    <div class="nut-hang">
+      <button class="nut chinh" id="tour-lam" type="button" data-i18n="tour.xong.lam"></button>
+      <button class="nut" id="tour-lai" type="button" data-i18n="tour.xong.lai"></button>
+    </div>
+  </div>
+
+  <div id="tour-cac-buoc">
+    <p class="loi" id="tour-chu"></p>
+    <div class="nut-hang">
+      <button class="nut nho" id="tour-truoc" type="button"></button>
+      <button class="nut chinh nho" id="tour-sau" type="button"></button>
+      <button class="nut nho" id="tour-phat" type="button"></button>
+    </div>
+    <p class="nhac an" id="tour-nhac"></p>
+  </div>
+</div>
+
 <!-- i18n và app phải nạp trước: chúng định nghĩa registerBank và registerLectures
      mà các tệp dữ liệu bên dưới gọi tới -->
 <script src="./assets/js/i18n.js"></script>
+<script src="./assets/js/tour.js"></script>
 <script src="./assets/js/app.js"></script>
 <script src="./data/lectures.js"></script>
 <script src="./data/slides.js"></script>

@@ -161,7 +161,6 @@
     c.appendChild(el('div', 'hero-man')).setAttribute('aria-hidden', 'true');
 
     var l = el('div', 'hero-chu');
-    l.appendChild(el('span', 'nhan', t('hero.nhan')));
     l.appendChild(el('h1', null, t('nha.chao')));
     l.appendChild(el('p', null, t('nha.mo')));
 
@@ -184,6 +183,183 @@
     nv.appendChild(i);
     c.appendChild(nv);
     return c;
+  }
+
+  // ------------------------------------------------- đồng hồ và nhạc
+  // Hai múi giờ vì tác giả làm việc giữa Việt Nam và Pháp, giống bên EnQuiz.
+  var nhip_gio = null;
+  var MUI = [
+    { ma: 'gio.vn', tz: 'Asia/Ho_Chi_Minh' },
+    { ma: 'gio.fr', tz: 'Europe/Paris' }
+  ];
+
+  function dong_ho_nhac() {
+    var v = el('div', 'gio-nhac');
+
+    // --- đồng hồ
+    var g = el('div', 'khoi-gio');
+    g.appendChild(el('h3', null, t('gio.tieude')));
+    var hang = el('div', 'cac-mui');
+    var o_gio = [];
+    MUI.forEach(function (m) {
+      var d = el('div', 'mui');
+      d.appendChild(el('span', 'ten', t(m.ma)));
+      var b = el('b'); d.appendChild(b);
+      var n = el('small'); d.appendChild(n);
+      o_gio.push({ tz: m.tz, b: b, n: n });
+      hang.appendChild(d);
+    });
+    g.appendChild(hang);
+    var lech = el('p', 'lech');
+    g.appendChild(lech);
+    v.appendChild(g);
+
+    function chay() {
+      var nay = new Date();
+      var dia = ngu() === 'en' ? 'en-GB' : 'vi-VN';
+      var so = [];
+      o_gio.forEach(function (x) {
+        x.b.textContent = nay.toLocaleTimeString(dia, {
+          hour: '2-digit', minute: '2-digit', second: '2-digit',
+          timeZone: x.tz, hour12: false });
+        x.n.textContent = nay.toLocaleDateString(dia, {
+          weekday: 'long', day: '2-digit', month: '2-digit', year: 'numeric',
+          timeZone: x.tz });
+        so.push(+nay.toLocaleString('en-GB', { hour: '2-digit', hour12: false, timeZone: x.tz }));
+      });
+      lech.textContent = t('gio.lech', { n: (so[0] - so[1] + 24) % 24 });
+    }
+    chay();
+    if (nhip_gio) clearInterval(nhip_gio);
+    nhip_gio = setInterval(function () {
+      if (!v.isConnected) { clearInterval(nhip_gio); nhip_gio = null; return; }
+      chay();
+    }, 1000);
+
+    // --- nhạc: bản nhạc do chính giảng viên sáng tác
+    var n = el('div', 'khoi-nhac');
+    n.appendChild(el('h3', null, t('nhac.tieude')));
+    n.appendChild(el('p', 'gioi-thieu', t('nhac.mo')));
+
+    var au = document.createElement('audio');
+    au.preload = 'none';
+    au.loop = true;
+    au.src = './assets/audio/mekong-sunfire.mp3';
+
+    var nut_phat = el('button', 'nut chinh phat', '▶'); nut_phat.type = 'button';
+    nut_phat.setAttribute('aria-label', t('nhac.phat'));
+    var ten_bai = el('span', 'ten-bai', 'Mekong Sunfire');
+    var gio_bai = el('span', 'gio-bai', '0:00');
+
+    nut_phat.addEventListener('click', function () {
+      if (au.paused) au.play().catch(function () {}); else au.pause();
+    });
+    function dong_bo() {
+      nut_phat.textContent = au.paused ? '▶' : '❚❚';
+      nut_phat.classList.toggle('dang-phat', !au.paused);
+      gio_bai.textContent = mmss(Math.floor(au.currentTime || 0));
+    }
+    ['play', 'pause', 'timeupdate', 'ended'].forEach(function (e) {
+      au.addEventListener(e, dong_bo);
+    });
+
+    var dieu = el('div', 'dieu-nhac');
+    dieu.appendChild(nut_phat);
+    var chu = el('span', 'chu-nhac');
+    chu.appendChild(ten_bai);
+    chu.appendChild(gio_bai);
+    dieu.appendChild(chu);
+    n.appendChild(dieu);
+    n.appendChild(au);
+    dong_bo();
+
+    v.appendChild(n);
+    return v;
+  }
+
+  // ------------------------------------------------- ghi danh để tải tệp gốc
+  // Xem học liệu ngay trong ứng dụng thì ai cũng được; tải tệp gốc thì phải
+  // ghi danh bằng email. Ứng dụng không có máy chủ nên thông tin ghi danh chỉ
+  // nằm trong trình duyệt của người học, không gửi đi đâu.
+  function da_ghi_danh() {
+    return !!(luu.ghi_danh && luu.ghi_danh.email);
+  }
+  function email_hop_le(e) {
+    return /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(e);
+  }
+
+  function mo_ghi_danh(xong) {
+    var lop = el('div', 'xem lop-ghi-danh');
+    lop.setAttribute('role', 'dialog');
+    lop.setAttribute('aria-modal', 'true');
+    var hop = el('div', 'hop');
+
+    var dinh = el('div', 'dinh');
+    dinh.appendChild(el('b', null, t('gd.tieude')));
+    var x = el('button', 'dong', '✕'); x.type = 'button';
+    x.setAttribute('aria-label', t('xem.dong'));
+    function tat() { lop.remove(); document.body.style.overflow = ''; }
+    x.addEventListener('click', tat);
+    dinh.appendChild(x);
+    hop.appendChild(dinh);
+
+    var than = el('div', 'than than-rong');
+    var form = document.createElement('form');
+    form.className = 'phieu';
+    // tự kiểm lấy để lời báo lỗi hiện bằng đúng ngôn ngữ đang chọn, chứ
+    // không để trình duyệt chặn submit rồi bung chú thích tiếng máy
+    form.noValidate = true;
+    form.appendChild(el('p', 'mo', t('gd.mo')));
+
+    function o_nhap(nhan, kieu, goi_y, gia_tri) {
+      var b = el('label', 'o');
+      b.appendChild(el('span', null, nhan));
+      var i = document.createElement('input');
+      i.type = kieu; i.placeholder = goi_y;
+      i.value = gia_tri || ''; i.maxLength = 80;
+      b.appendChild(i);
+      form.appendChild(b);
+      return i;
+    }
+    var cu = luu.ghi_danh || {};
+    var o_ten = o_nhap(t('gd.ten'), 'text', t('gd.ten.goiy'), cu.ten || luu.ten);
+    var o_mail = o_nhap(t('gd.email'), 'email', t('gd.email.goiy'), cu.email);
+
+    var dong_y = el('label', 'dong-y');
+    var tick = document.createElement('input'); tick.type = 'checkbox';
+    dong_y.appendChild(tick);
+    dong_y.appendChild(el('span', null, t('gd.camket')));
+    form.appendChild(dong_y);
+    form.appendChild(el('p', 'rieng', t('gd.rieng')));
+
+    var loi = el('p', 'loi-gd');
+    form.appendChild(loi);
+
+    var hang = el('div', 'nut-hang');
+    var gui = el('button', 'nut chinh', t('gd.gui')); gui.type = 'submit';
+    hang.appendChild(gui);
+    form.appendChild(hang);
+
+    form.addEventListener('submit', function (e) {
+      e.preventDefault();
+      var ten = o_ten.value.trim(), mail = o_mail.value.trim();
+      if (!ten) { loi.textContent = t('gd.loi.ten'); return; }
+      if (!email_hop_le(mail)) { loi.textContent = t('gd.loi.email'); return; }
+      if (!tick.checked) { loi.textContent = t('gd.loi.camket'); return; }
+      luu.ghi_danh = { ten: ten, email: mail, ngay: hom_nay() };
+      if (!luu.ten) luu.ten = ten;
+      ghi_luu();
+      tat();
+      if (xong) xong();
+    });
+
+    than.appendChild(form);
+    hop.appendChild(than);
+    lop.appendChild(hop);
+    lop.addEventListener('click', function (e) { if (e.target === lop) tat(); });
+    document.body.appendChild(lop);
+    document.body.style.overflow = 'hidden';
+    o_ten.focus();
   }
 
   // Khung phim ở trang chủ: một video ôn tập mở sẵn để người mới vào có thứ
@@ -233,6 +409,7 @@
     the.appendChild(o);
     v.appendChild(the);
 
+    v.appendChild(dong_ho_nhac());
     v.appendChild(khung_phim());
     v.appendChild(el('h2', 'muc', t('bai.tieude')));
     var luoi = el('div', 'luoi');
@@ -368,10 +545,26 @@
     var day = el('div', 'day');
     hop.appendChild(day);
 
+    // Tệp gốc chỉ dành cho người đã ghi danh; khách ghé ngang vẫn xem được
+    // trọn vẹn ngay trong ứng dụng.
     if (tai_ve) {
-      var a = el('a', 'tai', t('xem.tai'));
-      a.href = tai_ve; a.rel = 'noopener';
-      day.appendChild(a);
+      if (da_ghi_danh()) {
+        var a = el('a', 'tai', t('xem.tai'));
+        a.href = tai_ve; a.rel = 'noopener';
+        day.appendChild(a);
+      } else {
+        var kh = el('button', 'tai khoa', t('xem.tai.khoa')); kh.type = 'button';
+        kh.addEventListener('click', function () {
+          mo_ghi_danh(function () {
+            kh.replaceWith((function () {
+              var b = el('a', 'tai', t('xem.tai'));
+              b.href = tai_ve; b.rel = 'noopener';
+              return b;
+            })());
+          });
+        });
+        day.appendChild(kh);
+      }
     }
 
     n.appendChild(hop);
@@ -1008,6 +1201,32 @@
     the_ten.appendChild(el('p', 'rieng', t('hs.rieng')));
     v.appendChild(the_ten);
 
+    // --- ghi danh
+    var the_gd = el('div', 'the o-ten');
+    the_gd.appendChild(el('label', null, t('gd.muc')));
+    if (da_ghi_danh()) {
+      var p = el('p', 'da-gd');
+      p.appendChild(el('b', null, luu.ghi_danh.ten));
+      p.appendChild(document.createTextNode(' · ' + luu.ghi_danh.email));
+      the_gd.appendChild(p);
+      var hg = el('div', 'nut-hang');
+      var sua = el('button', 'nut nho', t('gd.sua')); sua.type = 'button';
+      sua.addEventListener('click', function () { mo_ghi_danh(ve_ho_so); });
+      var huy = el('button', 'nut nho', t('gd.huy')); huy.type = 'button';
+      huy.addEventListener('click', function () {
+        if (!confirm(t('gd.huy.hoi'))) return;
+        delete luu.ghi_danh; ghi_luu(); ve_ho_so();
+      });
+      hg.appendChild(sua); hg.appendChild(huy);
+      the_gd.appendChild(hg);
+    } else {
+      the_gd.appendChild(el('p', 'rieng', t('gd.chua')));
+      var mo_n = el('button', 'nut chinh', t('gd.gui')); mo_n.type = 'button';
+      mo_n.addEventListener('click', function () { mo_ghi_danh(ve_ho_so); });
+      the_gd.appendChild(mo_n);
+    }
+    v.appendChild(the_gd);
+
     var os = el('div', 'o-so');
     [[s.da + '/' + KHO.length, 'nha.dalam'],
      [s.tb == null ? '—' : s.tb + '%', 'nha.trungbinh'],
@@ -1245,7 +1464,11 @@
     document.querySelectorAll('.menu button, .thanh-duoi button').forEach(function (b) {
       b.addEventListener('click', function () { di(b.dataset.trang); });
     });
-    window.addEventListener('doi-ngu', function () { if (!phien) ve(); });
+    window.addEventListener('doi-ngu', function () {
+      if (!phien) ve();
+      if (window.Tour) Tour.lam_moi();
+    });
+    if (window.Tour) Tour.khoi_dong();
 
     if (!KHO.length) {
       $('#khung').innerHTML = '<div class="the"><b>' + thoat(t('loi.chuanap')) + '</b>' +
