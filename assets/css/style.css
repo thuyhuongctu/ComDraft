@@ -1,0 +1,194 @@
+/* ComDraft — ứng dụng ôn tập học phần EC1103
+   Hệ màu và kiểu chữ lấy đúng từ bộ nhận diện của bài giảng (scripts/design.js),
+   để app và slide nhìn ra cùng một tác giả.
+   © Đỗ Thùy Hương, 2026. */
+
+:root {
+  --coral: #DC756A;
+  --rust: #AC4D33;
+  --blush: #FBCEC9;
+  --blush-soft: #FDF1EF;
+  --cream: #FDFBF8;
+  --ink: #3A2B28;
+  --gray: #8A7A76;
+  --white: #FFFFFF;
+  --dung: #2E7D53;
+  --dung-nen: #E9F5EE;
+  --sai: #C0392B;
+  --sai-nen: #FBEAE7;
+  --vien: #EFE2DE;
+  --bong: 0 2px 14px rgba(172, 77, 51, .07);
+  --bo: 14px;
+  --head: Cambria, "Times New Roman", Georgia, serif;
+  --body: Calibri, "Segoe UI", system-ui, -apple-system, sans-serif;
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+body {
+  font-family: var(--body);
+  background: var(--cream);
+  color: var(--ink);
+  line-height: 1.55;
+  -webkit-font-smoothing: antialiased;
+  padding-bottom: env(safe-area-inset-bottom);
+}
+
+.bọc { max-width: 860px; margin: 0 auto; padding: 0 18px; }
+main.bọc { padding-bottom: 18px; }
+
+/* ---------------------------------------------------------------- đầu trang */
+header {
+  background: var(--white);
+  border-bottom: 1px solid var(--vien);
+  position: sticky; top: 0; z-index: 20;
+}
+.dau { display: flex; align-items: center; gap: 12px; padding: 12px 0; }
+.dau img { width: 40px; height: 40px; border-radius: 50%; flex: none; }
+.dau h1 { font-family: var(--head); font-size: 20px; color: var(--rust); font-weight: 700; }
+.dau p { font-size: 12.5px; color: var(--gray); }
+.dau .day { margin-left: auto; display: flex; gap: 8px; align-items: center; }
+
+/* ---------------------------------------------------------------- nút */
+.nut {
+  font-family: var(--body); font-size: 15px; font-weight: 600;
+  padding: 11px 20px; border-radius: 999px; border: 1.5px solid var(--coral);
+  background: var(--white); color: var(--rust); cursor: pointer;
+  transition: background .15s, color .15s, transform .08s;
+}
+.nut:hover { background: var(--blush-soft); }
+.nut:active { transform: translateY(1px); }
+.nut.chinh { background: var(--coral); color: var(--white); border-color: var(--coral); }
+.nut.chinh:hover { background: var(--rust); border-color: var(--rust); }
+.nut.nho { font-size: 13px; padding: 7px 14px; }
+.nut:disabled { opacity: .45; cursor: not-allowed; }
+.nut.phang { border-color: var(--vien); color: var(--gray); }
+
+/* ---------------------------------------------------------------- thẻ */
+.the {
+  background: var(--white); border: 1.5px solid var(--vien);
+  border-radius: var(--bo); box-shadow: var(--bong); padding: 18px;
+}
+.luoi { display: grid; gap: 14px; }
+@media (min-width: 620px) { .luoi.hai { grid-template-columns: 1fr 1fr; } }
+
+/* ---------------------------------------------------------------- trang chủ */
+.gioi-thieu { padding: 26px 0 8px; }
+.gioi-thieu h2 { font-family: var(--head); font-size: 27px; color: var(--rust); }
+.gioi-thieu p { color: var(--gray); margin-top: 6px; font-size: 15px; }
+
+.chuong {
+  display: flex; gap: 14px; align-items: center; text-align: left;
+  width: 100%; cursor: pointer; font-family: var(--body);
+}
+.chuong:hover { border-color: var(--coral); }
+.chuong .so {
+  width: 44px; height: 44px; border-radius: 50%; flex: none;
+  background: var(--coral); color: var(--white);
+  display: grid; place-items: center; font-size: 19px; font-weight: 700;
+  font-family: var(--head);
+}
+.chuong > span { min-width: 0; }
+.chuong .ten { display: block; font-weight: 600; font-size: 15.5px; color: var(--ink); }
+.chuong .phu { display: block; font-size: 13px; color: var(--gray); margin-top: 3px; }
+.chuong .diem {
+  margin-left: auto; text-align: right; flex: none;
+  font-size: 13px; color: var(--rust); font-weight: 600;
+}
+
+.thanh { height: 6px; background: var(--blush-soft); border-radius: 99px; overflow: hidden; margin-top: 8px; }
+.thanh i { display: block; height: 100%; background: var(--coral); border-radius: 99px; transition: width .3s; }
+
+/* ---------------------------------------------------------------- thiết lập */
+.nhom { margin-top: 16px; }
+.nhom > b { display: block; font-size: 13px; letter-spacing: .4px;
+  text-transform: uppercase; color: var(--coral); margin-bottom: 8px; }
+.chon { display: flex; flex-wrap: wrap; gap: 8px; }
+.chon button {
+  font-family: var(--body); font-size: 14px; padding: 8px 15px;
+  border-radius: 999px; border: 1.5px solid var(--vien);
+  background: var(--white); color: var(--ink); cursor: pointer;
+}
+.chon button[aria-pressed="true"] {
+  background: var(--blush-soft); border-color: var(--coral); color: var(--rust); font-weight: 600;
+}
+
+/* ---------------------------------------------------------------- làm bài */
+.tien-do { display: flex; align-items: center; gap: 12px; padding: 12px 0; font-size: 13.5px; color: var(--gray); }
+.tien-do .thanh { flex: 1; margin: 0; }
+
+.cau { font-size: 17.5px; font-weight: 600; line-height: 1.5; }
+.muc {
+  display: inline-block; font-size: 11.5px; font-weight: 700; letter-spacing: .5px;
+  text-transform: uppercase; color: var(--rust); background: var(--blush-soft);
+  border: 1px solid var(--blush); border-radius: 99px; padding: 3px 11px; margin-bottom: 10px;
+}
+
+.dap-an { display: grid; gap: 10px; margin-top: 16px; }
+.dap-an button {
+  display: flex; gap: 12px; align-items: flex-start; text-align: left;
+  font-family: var(--body); font-size: 15.5px; line-height: 1.5;
+  padding: 13px 15px; border-radius: 12px; border: 1.5px solid var(--vien);
+  background: var(--white); color: var(--ink); cursor: pointer; width: 100%;
+  transition: border-color .15s, background .15s;
+}
+.dap-an button:hover:not(:disabled) { border-color: var(--coral); background: var(--blush-soft); }
+.dap-an button .ky {
+  flex: none; width: 26px; height: 26px; border-radius: 50%;
+  background: var(--blush-soft); color: var(--rust); border: 1px solid var(--blush);
+  display: grid; place-items: center; font-size: 13px; font-weight: 700;
+}
+.dap-an button[data-tt="chon"] { border-color: var(--coral); background: var(--blush-soft); }
+.dap-an button[data-tt="chon"] .ky { background: var(--coral); color: var(--white); border-color: var(--coral); }
+.dap-an button[data-tt="dung"] { border-color: var(--dung); background: var(--dung-nen); }
+.dap-an button[data-tt="dung"] .ky { background: var(--dung); color: var(--white); border-color: var(--dung); }
+.dap-an button[data-tt="sai"] { border-color: var(--sai); background: var(--sai-nen); }
+.dap-an button[data-tt="sai"] .ky { background: var(--sai); color: var(--white); border-color: var(--sai); }
+.dap-an button:disabled { cursor: default; }
+
+.giai-thich {
+  margin-top: 14px; padding: 13px 15px; border-radius: 12px;
+  background: var(--blush-soft); border: 1px solid var(--blush); font-size: 14.5px;
+}
+.giai-thich b { color: var(--rust); }
+
+.dieu-huong { display: flex; gap: 10px; align-items: center; margin-top: 18px; }
+.dieu-huong .day-phai { margin-left: auto; display: flex; gap: 10px; }
+
+.danh-dau {
+  background: none; border: none; cursor: pointer; font-size: 21px;
+  line-height: 1; padding: 4px; color: var(--vien);
+}
+.danh-dau[aria-pressed="true"] { color: #E0A500; }
+
+/* ---------------------------------------------------------------- kết quả */
+.diem-lon { font-family: var(--head); font-size: 58px; font-weight: 700; color: var(--coral); line-height: 1; }
+.o-so { display: grid; grid-template-columns: repeat(auto-fit, minmax(120px, 1fr)); gap: 12px; margin-top: 16px; }
+.o-so div { background: var(--blush-soft); border: 1px solid var(--blush); border-radius: 12px; padding: 12px; text-align: center; }
+.o-so b { display: block; font-family: var(--head); font-size: 24px; color: var(--rust); }
+.o-so span { font-size: 12.5px; color: var(--gray); }
+
+.xem-lai { margin-top: 8px; }
+.xem-lai details {
+  border: 1.5px solid var(--vien); border-radius: 12px; padding: 12px 15px;
+  margin-bottom: 10px; background: var(--white);
+}
+.xem-lai summary { cursor: pointer; font-weight: 600; font-size: 15px; }
+.xem-lai .ghi { font-size: 14.5px; margin-top: 8px; }
+.xem-lai .ghi p { margin: 5px 0; }
+.xem-lai .ghi .d { color: var(--dung); font-weight: 600; }
+.xem-lai .ghi .s { color: var(--sai); text-decoration: line-through; }
+
+/* ---------------------------------------------------------------- chân trang */
+footer {
+  margin-top: 40px; padding: 22px 0 30px;
+  border-top: 1px solid var(--vien); font-size: 12.5px; color: var(--gray);
+}
+footer a { color: var(--rust); }
+footer p + p { margin-top: 5px; }
+
+.an { display: none !important; }
+
+@media (prefers-reduced-motion: reduce) {
+  * { transition: none !important; }
+}

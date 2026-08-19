@@ -1,0 +1,490 @@
+/* Chương 3 – Giao tiếp trong các tình huống đặc thù
+   Do GV. Đỗ Thùy Hương biên soạn theo đề cương chi tiết học phần EC1103.
+   © Đỗ Thùy Hương, 2026. Tệp sinh tự động — sửa tại nguồn rồi tạo lại. */
+registerBank({
+  "id": "ch3",
+  "title": "Chương 3 – Giao tiếp trong các tình huống đặc thù",
+  "order": 3,
+  "questions": [
+    {
+      "q": "Khi được cấp trên giao nhiệm vụ, việc làm nào sau đây là phù hợp nhất?",
+      "a": [
+        "Nhận việc ngay và im lặng, tự suy đoán các yêu cầu chưa rõ để tỏ ra chủ động",
+        "Chỉ ghi nhớ trong đầu vì hỏi lại nhiều sẽ khiến cấp trên đánh giá là kém năng lực",
+        "Lắng nghe, ghi chú và hỏi lại cho rõ yêu cầu – thời hạn – nguồn lực, sau đó xác nhận lại bằng tin nhắn/email",
+        "Chờ đến khi bắt tay vào làm gặp vướng mắc mới quay lại hỏi cấp trên từng chi tiết"
+      ],
+      "correct": 2,
+      "level": "nhan_biet",
+      "explain": "Mục 3.1 – giao tiếp với cấp trên khi nhận nhiệm vụ: lắng nghe, ghi chú, hỏi lại cho rõ yêu cầu – thời hạn – nguồn lực và xác nhận lại bằng văn bản."
+    },
+    {
+      "q": "Theo nguyên tắc báo cáo công việc với cấp trên, trình tự trình bày hợp lý là:",
+      "a": [
+        "Nêu kết quả trước, sau đó mới diễn giải quá trình và nguyên nhân",
+        "Kể chi tiết quá trình thực hiện trước, kết quả để cuối cùng cho hấp dẫn",
+        "Nêu khó khăn và lý do khách quan trước để cấp trên thông cảm",
+        "Trình bày đề xuất tăng nguồn lực trước, kết quả nói sau nếu còn thời gian"
+      ],
+      "correct": 0,
+      "level": "nhan_biet",
+      "explain": "Mục 3.1 – khi báo cáo: chủ động, đúng hạn, kết quả trước, diễn giải sau."
+    },
+    {
+      "q": "Khi công việc phát sinh sự cố xấu, cách xử lý đúng với cấp trên là:",
+      "a": [
+        "Giấu kín và tự khắc phục, chỉ báo khi mọi việc đã hoàn toàn ổn thỏa",
+        "Chờ đến kỳ báo cáo định kỳ gần nhất mới đưa vào mục rủi ro để báo",
+        "Báo cho đồng nghiệp cùng phòng trước để tìm người chịu trách nhiệm chung",
+        "Báo tin xấu sớm nhất có thể, kèm theo phương án xử lý đề xuất"
+      ],
+      "correct": 3,
+      "level": "nhan_biet",
+      "explain": "Mục 3.1 – nguyên tắc báo cáo: báo tin xấu sớm kèm phương án xử lý."
+    },
+    {
+      "q": "Khi có ý kiến khác với quyết định của cấp trên, cách ứng xử phù hợp là:",
+      "a": [
+        "Phản biện ngay giữa cuộc họp đông người để mọi người cùng biết quan điểm của mình",
+        "Chọn đúng lúc đúng chỗ, thường là trao đổi riêng, dựa trên dữ liệu và lợi ích chung",
+        "Giữ im lặng tuyệt đối và làm theo, sau đó phàn nàn với đồng nghiệp cho nhẹ lòng",
+        "Gửi email cho toàn thể công ty để tạo áp lực dư luận buộc thay đổi quyết định"
+      ],
+      "correct": 1,
+      "level": "nhan_biet",
+      "explain": "Mục 3.1 – khi có ý kiến khác: chọn đúng lúc đúng chỗ, thường là riêng tư, dựa trên dữ liệu và lợi ích chung, tôn trọng quyết định cuối cùng."
+    },
+    {
+      "q": "Khi giao việc cho cấp dưới, nhà quản lý cần làm rõ trước hết những yếu tố nào?",
+      "a": [
+        "Mục tiêu – thời hạn – tiêu chuẩn kết quả, kèm nguồn lực cần thiết",
+        "Mức thưởng – mức phạt – thứ hạng thi đua của từng cá nhân trong nhóm",
+        "Danh sách những người từng làm hỏng việc tương tự để rút kinh nghiệm",
+        "Lịch kiểm tra tiến độ theo từng giờ để bảo đảm nhân viên không lơ là"
+      ],
+      "correct": 0,
+      "level": "nhan_biet",
+      "explain": "Mục 3.1 – giao việc: rõ mục tiêu – thời hạn – tiêu chuẩn, kèm niềm tin và nguồn lực, không quản lý vụn vặt."
+    },
+    {
+      "q": "Nguyên tắc khen và phê bình nhân viên được nêu trong chương là:",
+      "a": [
+        "Khen riêng tư cho kín đáo, phê bình công khai để răn đe người khác",
+        "Khen và phê bình đều nên làm công khai để bảo đảm sự công bằng",
+        "Khen công khai, kịp thời và cụ thể; phê bình riêng tư, nhắm vào hành vi",
+        "Khen và phê bình đều nên gộp vào kỳ đánh giá cuối năm cho tiện theo dõi"
+      ],
+      "correct": 2,
+      "level": "nhan_biet",
+      "explain": "Mục 3.1 – giao tiếp với cấp dưới: khen công khai kịp thời cụ thể, phê bình riêng tư nhắm vào hành vi kèm hướng khắc phục."
+    },
+    {
+      "q": "Yếu tố nào sau đây là dấu hiệu của một cuộc họp hiệu quả?",
+      "a": [
+        "Kéo dài đến khi nào mọi người đều đã phát biểu hết cảm nghĩ cá nhân",
+        "Không cần chương trình trước để cuộc họp diễn ra tự nhiên, cởi mở",
+        "Chỉ cần người chủ trì ghi nhớ nội dung, không nhất thiết lập biên bản",
+        "Có chương trình gửi trước, bắt đầu đúng giờ, phát biểu ngắn gọn, kết thúc có kết luận – biên bản – người chịu trách nhiệm"
+      ],
+      "correct": 3,
+      "level": "nhan_biet",
+      "explain": "Mục 3.1 – họp hiệu quả: chương trình gửi trước, đúng giờ, phát biểu ngắn gọn, có kết luận – biên bản – người chịu trách nhiệm."
+    },
+    {
+      "q": "Quy trình LAST trong xử lý phàn nàn của khách hàng gồm các bước theo thứ tự:",
+      "a": [
+        "Look – Ask – Speak – Try (Quan sát – Hỏi – Nói – Thử)",
+        "Listen – Apologize – Solve – Thank (Lắng nghe – Xin lỗi – Giải quyết – Cảm ơn)",
+        "Learn – Analyze – Support – Track (Học – Phân tích – Hỗ trợ – Theo dõi)",
+        "Listen – Argue – Sell – Thank (Lắng nghe – Tranh luận – Bán hàng – Cảm ơn)"
+      ],
+      "correct": 1,
+      "level": "nhan_biet",
+      "explain": "Mục 3.2 – quy trình LAST: Listen – Apologize – Solve – Thank."
+    },
+    {
+      "q": "Trong quy trình LAST, bước \"A – Apologize\" được hiểu là:",
+      "a": [
+        "Xin lỗi chân thành về trải nghiệm chưa tốt của khách, kể cả khi chưa rõ lỗi thuộc về ai",
+        "Chỉ xin lỗi sau khi đã điều tra và xác định chắc chắn lỗi thuộc về công ty",
+        "Xin lỗi kèm giải thích dài về quy định để khách hiểu công ty không có lỗi",
+        "Nhận toàn bộ trách nhiệm pháp lý và cam kết bồi thường ngay cho khách"
+      ],
+      "correct": 0,
+      "level": "nhan_biet",
+      "explain": "Mục 3.2 – bước A: xin lỗi chân thành về trải nghiệm chưa tốt, kể cả khi lỗi chưa rõ thuộc về ai."
+    },
+    {
+      "q": "Đâu là một trong những \"nguyên tắc vàng\" khi giao tiếp với khách hàng?",
+      "a": [
+        "Giới thiệu thật nhanh và đầy đủ mọi sản phẩm ngay khi khách vừa bước vào",
+        "Hứa vượt khả năng để giữ chân khách, phần còn lại tính sau",
+        "Lắng nghe nhu cầu của khách trước khi giới thiệu sản phẩm, dịch vụ",
+        "Tránh gọi tên khách để giữ khoảng cách chuyên nghiệp, lịch sự"
+      ],
+      "correct": 2,
+      "level": "nhan_biet",
+      "explain": "Mục 3.2 – nguyên tắc vàng: chào đón niềm nở, gọi tên khách, lắng nghe nhu cầu trước khi giới thiệu, nói sự thật, giữ lời hứa."
+    },
+    {
+      "q": "Điều nào sau đây thuộc nhóm \"tối kỵ\" trong giao tiếp với khách hàng?",
+      "a": [
+        "Chào đón niềm nở và gọi đúng tên khách hàng khi trò chuyện",
+        "Nói sự thật về khả năng đáp ứng của sản phẩm, dịch vụ",
+        "Chủ động liên hệ lại với khách sau khi bán hàng để hỏi thăm",
+        "Tranh cãi thắng – thua với khách, hứa quá khả năng và đổ lỗi cho khách"
+      ],
+      "correct": 3,
+      "level": "nhan_biet",
+      "explain": "Mục 3.2 – tối kỵ: tranh cãi thắng – thua, hứa quá khả năng, đổ lỗi, bỏ mặc khách sau bán hàng."
+    },
+    {
+      "q": "Khi giao tiếp, làm việc với cơ quan nhà nước, yêu cầu cơ bản là:",
+      "a": [
+        "Tìm mối quan hệ quen biết để rút ngắn thủ tục cho nhanh gọn",
+        "Đúng thủ tục, đúng thẩm quyền, hồ sơ chuẩn thể thức, tác phong nghiêm túc và đúng hẹn",
+        "Gửi hồ sơ sơ bộ trước, thiếu phần nào sẽ bổ sung dần trong quá trình xử lý",
+        "Nhờ bên thứ ba làm thay toàn bộ để tránh phải tiếp xúc trực tiếp"
+      ],
+      "correct": 1,
+      "level": "nhan_biet",
+      "explain": "Mục 3.2 – với cơ quan nhà nước: đúng thủ tục, đúng thẩm quyền, hồ sơ chuẩn thể thức, nghiêm túc đúng hẹn, không \"đi tắt\" trái quy định."
+    },
+    {
+      "q": "Nguyên tắc quan trọng nhất khi tổ chức giao tiếp với báo chí, truyền thông là:",
+      "a": [
+        "Chỉ người được ủy quyền phát ngôn mới cung cấp thông tin, bảo đảm thông tin nhất quán và trung thực",
+        "Mọi nhân viên đều có thể trả lời để thông tin đến công chúng nhanh nhất",
+        "Từ chối mọi tiếp xúc với báo chí cho đến khi sự việc lắng xuống hẳn",
+        "Cung cấp thông tin có lợi và trì hoãn phần bất lợi cho đến khi bị phát hiện"
+      ],
+      "correct": 0,
+      "level": "nhan_biet",
+      "explain": "Mục 3.2 – truyền thông: chỉ người được ủy quyền phát ngôn, thông tin nhất quán và trung thực."
+    },
+    {
+      "q": "Trên bàn tiệc, vị trí ngồi của khách thường mang ý nghĩa gì?",
+      "a": [
+        "Chỉ nhằm phân bố đều số người quanh bàn cho cân đối về mặt thẩm mỹ",
+        "Do khách tự chọn theo sở thích, không mang ý nghĩa xã giao nào",
+        "Thể hiện thứ bậc và sự trân trọng, nên chờ chủ tiệc mời và xếp chỗ",
+        "Được xác định theo thứ tự đến trước – đến sau của từng khách mời"
+      ],
+      "correct": 2,
+      "level": "nhan_biet",
+      "explain": "Mục 3.3 – trước bữa tiệc: chờ chủ tiệc mời và xếp chỗ, vị trí ngồi thể hiện thứ bậc."
+    },
+    {
+      "q": "Trong bữa tiệc theo nghi thức phương Tây, thứ tự sử dụng dao – dĩa – thìa là:",
+      "a": [
+        "Dùng từ trong ra ngoài, bắt đầu bằng bộ gần đĩa nhất",
+        "Dùng tùy ý, miễn là thao tác gọn gàng và không gây tiếng động",
+        "Dùng theo đúng bộ mà người ngồi đối diện đang cầm trên tay",
+        "Dùng từ ngoài vào trong, tương ứng với thứ tự các món được phục vụ"
+      ],
+      "correct": 3,
+      "level": "nhan_biet",
+      "explain": "Mục 3.3 – trong bữa ăn: chủ tiệc bắt đầu trước, dùng dụng cụ từ ngoài vào trong."
+    },
+    {
+      "q": "Nhóm quốc gia nào sau đây thường được xếp vào văn hóa giao tiếp \"nói thẳng\"?",
+      "a": [
+        "Nhật Bản, Hàn Quốc, Việt Nam",
+        "Đức, Mỹ, Hà Lan",
+        "Trung Quốc, Thái Lan, Indonesia",
+        "Ấn Độ, Philippines, Malaysia"
+      ],
+      "correct": 1,
+      "level": "nhan_biet",
+      "explain": "Mục 3.4 – cách nói: văn hóa nói thẳng (Đức, Mỹ, Hà Lan) đối lập với văn hóa nói vòng (Nhật, Hàn, Việt)."
+    },
+    {
+      "q": "Vì sao sau khi nhận nhiệm vụ nên xác nhận lại với cấp trên bằng tin nhắn hoặc email?",
+      "a": [
+        "Vì tạo ra bản ghi chung để hai bên đối chiếu, hạn chế hiểu sai về yêu cầu và thời hạn",
+        "Vì đó là thủ tục hành chính bắt buộc trong mọi tổ chức, không làm sẽ bị kỷ luật",
+        "Vì giúp nhân viên có bằng chứng đổ lỗi cho cấp trên khi công việc thất bại",
+        "Vì email trang trọng hơn nên thể hiện sự phục tùng đối với người quản lý"
+      ],
+      "correct": 0,
+      "level": "thong_hieu",
+      "explain": "Mục 3.1 – xác nhận lại bằng văn bản giúp thống nhất cách hiểu về yêu cầu – thời hạn – nguồn lực, tránh sai lệch."
+    },
+    {
+      "q": "Nguyên tắc \"kết quả trước, diễn giải sau\" khi báo cáo mang lại lợi ích chủ yếu nào?",
+      "a": [
+        "Giúp người báo cáo che bớt những phần công việc chưa hoàn thành",
+        "Giúp cấp trên nắm ngay tình hình để ra quyết định, tiết kiệm thời gian",
+        "Giúp bài báo cáo dài hơn và thể hiện được khối lượng công việc đã làm",
+        "Giúp tránh phải trả lời các câu hỏi chất vấn từ những người dự họp"
+      ],
+      "correct": 1,
+      "level": "thong_hieu",
+      "explain": "Mục 3.1 – báo cáo đưa kết quả lên trước giúp cấp trên nắm trọng tâm và ra quyết định nhanh."
+    },
+    {
+      "q": "\"Không quản lý vụn vặt\" khi giao việc cho cấp dưới được hiểu là:",
+      "a": [
+        "Giao việc xong thì buông hẳn, không cần theo dõi hay hỗ trợ gì thêm",
+        "Chỉ giao những việc nhỏ, đơn giản để nhân viên khỏi mắc sai sót lớn",
+        "Trao quyền và niềm tin trong khuôn khổ mục tiêu – tiêu chuẩn đã thống nhất, không can thiệp vào từng thao tác",
+        "Để nhân viên tự đặt ra mục tiêu, thời hạn và tiêu chuẩn công việc của mình"
+      ],
+      "correct": 2,
+      "level": "thong_hieu",
+      "explain": "Mục 3.1 – giao việc kèm niềm tin và nguồn lực, kiểm soát theo mục tiêu chứ không soi từng thao tác."
+    },
+    {
+      "q": "Phê bình \"nhắm vào hành vi, không nhắm vào con người\" nghĩa là:",
+      "a": [
+        "Chỉ nhắc nhở chung chung trước tập thể để người mắc lỗi tự hiểu",
+        "Nêu lại toàn bộ lỗi cũ của nhân viên để chứng minh tính hệ thống của vấn đề",
+        "Đánh giá tính cách nhân viên để họ nhận ra bản chất vấn đề của mình",
+        "Nói rõ hành vi cụ thể sai lệch và hệ quả của nó, kèm hướng khắc phục, không quy chụp phẩm chất cá nhân"
+      ],
+      "correct": 3,
+      "level": "thong_hieu",
+      "explain": "Mục 3.1 – phê bình riêng tư, nhắm vào hành vi kèm hướng khắc phục, không công kích con người."
+    },
+    {
+      "q": "Trong quan hệ với đồng nghiệp, cách tranh luận đúng đắn về công việc là:",
+      "a": [
+        "Tập trung vào nội dung, dữ liệu và giải pháp, không công kích cá nhân người khác",
+        "Giữ quan điểm đến cùng và lôi kéo thêm người ủng hộ để tạo ưu thế số đông",
+        "Tránh mọi tranh luận để giữ hòa khí, ai nói gì cũng đồng ý cho êm chuyện",
+        "Chuyển vấn đề lên cấp trên ngay từ đầu để khỏi mất lòng nhau khi trao đổi"
+      ],
+      "correct": 0,
+      "level": "thong_hieu",
+      "explain": "Mục 3.1 – với đồng nghiệp: hợp tác, chia sẻ thông tin, tranh luận về công việc chứ không công kích cá nhân, tránh bè phái."
+    },
+    {
+      "q": "Vì sao biên bản họp cần ghi rõ người chịu trách nhiệm cho từng đầu việc?",
+      "a": [
+        "Để lưu hồ sơ đối phó khi có thanh tra, kiểm tra của cấp trên",
+        "Để kết luận cuộc họp chuyển thành hành động cụ thể, có người theo dõi và có căn cứ đánh giá tiến độ",
+        "Để chia đều khối lượng công việc cho tất cả những người tham dự cuộc họp",
+        "Để người vắng mặt trong cuộc họp không phải nhận thêm nhiệm vụ nào"
+      ],
+      "correct": 1,
+      "level": "thong_hieu",
+      "explain": "Mục 3.1 – họp hiệu quả phải kết thúc bằng kết luận, biên bản và người chịu trách nhiệm rõ ràng."
+    },
+    {
+      "q": "Vì sao ở bước Apologize nhân viên nên xin lỗi ngay cả khi chưa xác định được lỗi thuộc về ai?",
+      "a": [
+        "Vì xin lỗi trước sẽ giúp doanh nghiệp giảm mức bồi thường phải chi trả",
+        "Vì quy định pháp luật buộc bên bán phải xin lỗi khi khách có khiếu nại",
+        "Vì lời xin lỗi hướng vào trải nghiệm chưa tốt của khách, giúp hạ nhiệt cảm xúc để hai bên cùng tìm giải pháp",
+        "Vì khách hàng luôn đúng nên mọi khiếu nại đều phải được chấp nhận vô điều kiện"
+      ],
+      "correct": 2,
+      "level": "thong_hieu",
+      "explain": "Mục 3.2 – bước A của LAST: xin lỗi về trải nghiệm chưa tốt, không đồng nghĩa với nhận lỗi về trách nhiệm."
+    },
+    {
+      "q": "Vì sao khách hàng từng phàn nàn và được xử lý tốt thường trung thành hơn khách chưa từng gặp vấn đề?",
+      "a": [
+        "Vì họ thường được giảm giá sâu nên gắn bó với doanh nghiệp vì lợi ích vật chất",
+        "Vì họ ngại chuyển sang nhà cung cấp khác sau khi đã mất công khiếu nại",
+        "Vì họ không còn kỳ vọng cao nên dễ chấp nhận chất lượng dịch vụ hơn trước",
+        "Vì họ đã trực tiếp kiểm chứng được cách doanh nghiệp giữ lời và chịu trách nhiệm, nên niềm tin được củng cố"
+      ],
+      "correct": 3,
+      "level": "thong_hieu",
+      "explain": "Mục 3.2 – mỗi điểm tiếp xúc xây hoặc phá niềm tin; xử lý phàn nàn tốt biến sự cố thành cơ hội củng cố niềm tin."
+    },
+    {
+      "q": "Vì sao \"hứa quá khả năng\" bị xem là điều tối kỵ trong giao tiếp với khách hàng?",
+      "a": [
+        "Vì lời hứa không thực hiện được sẽ phá vỡ niềm tin, thiệt hại lớn hơn nhiều so với cái lợi trước mắt",
+        "Vì lời hứa miệng với khách hàng đều có giá trị ràng buộc pháp lý như hợp đồng",
+        "Vì nhân viên sẽ bị trừ lương và khách sẽ được bồi thường theo quy định chung",
+        "Vì khách hàng thường không nhớ nội dung lời hứa nên hứa cũng không có tác dụng"
+      ],
+      "correct": 0,
+      "level": "thong_hieu",
+      "explain": "Mục 3.2 – nói sự thật và giữ lời hứa là nguyên tắc vàng; hứa quá khả năng thuộc nhóm tối kỵ vì phá niềm tin."
+    },
+    {
+      "q": "Quan điểm \"quan hệ lâu dài quan trọng hơn lợi thế ngắn hạn\" với đối tác thể hiện ở hành vi nào?",
+      "a": [
+        "Tận dụng thế mạnh đàm phán để ép đối tác nhận điều khoản bất lợi nhất có thể",
+        "Minh bạch thông tin, giữ đúng cam kết, chấp nhận nhượng bộ hợp lý để duy trì hợp tác bền vững",
+        "Giữ kín mọi thông tin bất lợi của mình cho đến khi hợp đồng đã được ký kết",
+        "Chỉ hợp tác từng thương vụ riêng lẻ, xong việc thì cắt liên lạc để tránh ràng buộc"
+      ],
+      "correct": 1,
+      "level": "thong_hieu",
+      "explain": "Mục 3.2 – với đối tác: bình đẳng, giữ chữ tín, minh bạch, đặt quan hệ lâu dài trên lợi thế ngắn hạn."
+    },
+    {
+      "q": "Trong xử lý khủng hoảng truyền thông, \"thông tin nhất quán\" được hiểu là:",
+      "a": [
+        "Chỉ đưa những thông tin có lợi và lặp lại nhiều lần trên mọi kênh",
+        "Mỗi bộ phận tự chủ động phát ngôn theo cách hiểu của mình cho kịp thời",
+        "Mọi kênh và mọi lần phát ngôn đều thống nhất một nội dung đã được kiểm chứng, không mâu thuẫn nhau",
+        "Giữ nguyên bản thông cáo đầu tiên, không cập nhật dù có dữ liệu mới"
+      ],
+      "correct": 2,
+      "level": "thong_hieu",
+      "explain": "Mục 3.2 – truyền thông: thông tin nhất quán, trung thực; khủng hoảng thì phản hồi nhanh và nhận trách nhiệm đúng phần của mình."
+    },
+    {
+      "q": "Vì sao khách mời nên chờ chủ tiệc mời và xếp chỗ thay vì tự chọn chỗ ngồi?",
+      "a": [
+        "Vì chủ tiệc cần đếm chính xác số người để bố trí suất ăn cho phù hợp",
+        "Vì khách đến sau sẽ không còn chỗ nếu người đến trước tự do chọn chỗ",
+        "Vì đó là quy định bắt buộc trong mọi nhà hàng có phục vụ tiệc",
+        "Vì sơ đồ chỗ ngồi đã được sắp đặt theo thứ bậc và ý đồ của chủ tiệc, tự ý ngồi có thể gây thất thố"
+      ],
+      "correct": 3,
+      "level": "thong_hieu",
+      "explain": "Mục 3.3 – trước bữa tiệc: chờ chủ tiệc mời và xếp chỗ vì vị trí ngồi thể hiện thứ bậc."
+    },
+    {
+      "q": "Vì sao trên bàn tiệc nên tránh các chủ đề chính trị, tôn giáo, thu nhập, đời tư?",
+      "a": [
+        "Vì đây là những chủ đề dễ gây bất đồng, chạm vào sự riêng tư, làm mất không khí thoải mái chung",
+        "Vì những chủ đề này đòi hỏi kiến thức chuyên sâu mà ít người theo kịp",
+        "Vì pháp luật cấm bàn các chủ đề này ở nơi công cộng như nhà hàng",
+        "Vì các chủ đề này thường khiến bữa ăn kéo dài quá thời gian dự kiến"
+      ],
+      "correct": 0,
+      "level": "thong_hieu",
+      "explain": "Mục 3.3 – câu chuyện trên bàn tiệc nên nhẹ nhàng (ẩm thực, thể thao, du lịch, quê quán), tránh chủ đề dễ gây bất đồng hoặc riêng tư."
+    },
+    {
+      "q": "Trong văn hóa nói vòng, câu \"Để chúng tôi xem xét thêm\" thường hàm ý điều gì?",
+      "a": [
+        "Đối tác chắc chắn sẽ đồng ý, chỉ cần hoàn tất thủ tục nội bộ",
+        "Có thể là một cách từ chối lịch sự nhằm giữ thể diện cho cả hai bên",
+        "Đối tác yêu cầu giảm giá và mong bên kia chủ động đưa mức mới",
+        "Đối tác chưa hiểu đề xuất và muốn được thuyết trình lại từ đầu"
+      ],
+      "correct": 1,
+      "level": "thong_hieu",
+      "explain": "Mục 3.4 – trong văn hóa nói vòng (Nhật, Hàn, Việt), \"để chúng tôi xem xét\" có thể là lời từ chối."
+    },
+    {
+      "q": "Đặc điểm \"ra quyết định tập thể\" ở một số nước như Nhật, Hàn, Trung Quốc dẫn tới hệ quả nào trong đàm phán?",
+      "a": [
+        "Người dự họp có cấp bậc cao nhất luôn chốt phương án ngay tại bàn đàm phán",
+        "Mọi thành viên đều có quyền phủ quyết ngang nhau nên đàm phán thường bế tắc",
+        "Quá trình quyết định thường lâu hơn vì cần tham vấn và tạo đồng thuận nội bộ trước khi trả lời chính thức",
+        "Kết quả đàm phán không cần văn bản vì tập thể đã thống nhất bằng miệng"
+      ],
+      "correct": 2,
+      "level": "thong_hieu",
+      "explain": "Mục 3.4 – thứ bậc và ra quyết định: các nền văn hóa coi trọng tôn ti thường quyết định tập thể, cần thời gian tạo đồng thuận."
+    },
+    {
+      "q": "Nguyên tắc \"không suy diễn theo chuẩn của mình\" trong giao tiếp đa văn hóa nghĩa là:",
+      "a": [
+        "Từ chối mọi tập quán khác biệt và kiên trì giữ nguyên phong cách của mình",
+        "Bắt buộc đối tác giải thích rõ mọi hành vi khác lạ trước khi tiếp tục làm việc",
+        "Áp dụng chuẩn mực của nền văn hóa mạnh hơn để hai bên có một mốc chung",
+        "Không mặc định hành vi của người khác mang ý nghĩa như trong văn hóa của mình, mà tìm hiểu và quan sát để hiểu đúng"
+      ],
+      "correct": 3,
+      "level": "thong_hieu",
+      "explain": "Mục 3.4 – nguyên tắc thích ứng: tìm hiểu trước, quan sát và điều chỉnh, không suy diễn theo chuẩn của mình."
+    },
+    {
+      "q": "Trưởng phòng giao bạn hoàn thành báo cáo trong 2 ngày, nhưng khối lượng thực tế cần ít nhất 5 ngày. Cách xử lý phù hợp nhất là:",
+      "a": [
+        "Gặp riêng trưởng phòng, trình bày khối lượng công việc bằng số liệu cụ thể và đề xuất phương án: giãn thời hạn, thu hẹp phạm vi hoặc bổ sung nhân lực",
+        "Nhận lời ngay để giữ hình ảnh tích cực, đến hạn không xong thì giải thích sau",
+        "Phát biểu ngay trong cuộc họp toàn phòng rằng thời hạn này là bất khả thi",
+        "Âm thầm làm qua loa cho kịp hạn, chất lượng đến đâu thì chấp nhận đến đó"
+      ],
+      "correct": 0,
+      "level": "van_dung",
+      "explain": "Mục 3.1 – nêu ý kiến khác nên chọn riêng tư, dựa trên dữ liệu và lợi ích chung; đồng thời khi nhận nhiệm vụ phải làm rõ thời hạn – nguồn lực."
+    },
+    {
+      "q": "Một nhân viên trong nhóm bạn phụ trách đi làm muộn ba lần trong tuần. Cách xử lý phù hợp nhất là:",
+      "a": [
+        "Nhắc chung trong nhóm chat rằng \"có người hay đi muộn\" để người đó tự hiểu",
+        "Gặp riêng nhân viên, nêu cụ thể ba lần đi muộn và ảnh hưởng tới công việc, cùng thống nhất cách khắc phục",
+        "Nêu tên nhân viên trong cuộc họp giao ban để làm gương cho cả nhóm",
+        "Bỏ qua vì đây là chuyện cá nhân, chỉ xử lý khi kết quả công việc sụt giảm"
+      ],
+      "correct": 1,
+      "level": "van_dung",
+      "explain": "Mục 3.1 – phê bình riêng tư, nhắm vào hành vi cụ thể và kèm hướng khắc phục."
+    },
+    {
+      "q": "Một khách hàng đến quầy, lớn tiếng phàn nàn về sản phẩm lỗi trước nhiều người. Việc đầu tiên bạn nên làm là:",
+      "a": [
+        "Giải thích ngay quy định bảo hành để khách hiểu công ty làm đúng quy trình",
+        "Đề nghị khách hạ giọng vì đang làm ảnh hưởng đến các khách hàng khác",
+        "Lắng nghe trọn vẹn, không ngắt lời, không phòng thủ, để khách trình bày hết vấn đề",
+        "Gọi ngay quản lý ra thay mình tiếp khách rồi rời khỏi vị trí"
+      ],
+      "correct": 2,
+      "level": "van_dung",
+      "explain": "Mục 3.2 – bước L (Listen) của LAST: lắng nghe trọn vẹn, không ngắt lời, không phòng thủ."
+    },
+    {
+      "q": "Khách yêu cầu hoàn tiền toàn bộ nhưng mức này vượt thẩm quyền của bạn. Cách xử lý đúng theo bước Solve là:",
+      "a": [
+        "Từ chối dứt khoát vì bạn không có quyền quyết định khoản hoàn tiền đó",
+        "Hứa sẽ hoàn tiền để khách yên tâm ra về, sau đó tìm cách xử lý nội bộ",
+        "Đề nghị khách tự liên hệ tổng đài và trình bày lại từ đầu vụ việc",
+        "Nói rõ giới hạn thẩm quyền, chuyển vụ việc đến đúng người có thẩm quyền và hẹn mốc thời gian phản hồi cụ thể"
+      ],
+      "correct": 3,
+      "level": "van_dung",
+      "explain": "Mục 3.2 – bước S (Solve): đưa phương án cụ thể, thời hạn rõ; vượt thẩm quyền thì chuyển đúng người."
+    },
+    {
+      "q": "Bạn là nhân viên kỹ thuật, một phóng viên gọi điện hỏi về sự cố mất dữ liệu của công ty. Bạn nên:",
+      "a": [
+        "Lịch sự từ chối trả lời, hướng dẫn phóng viên liên hệ người được ủy quyền phát ngôn và báo lại nội bộ",
+        "Trả lời theo hiểu biết kỹ thuật của mình để thông tin đến công chúng nhanh và chính xác",
+        "Nói rằng công ty hoàn toàn không có sự cố nào để trấn an dư luận",
+        "Cúp máy ngay và không thông báo cho ai trong công ty để tránh liên lụy"
+      ],
+      "correct": 0,
+      "level": "van_dung",
+      "explain": "Mục 3.2 – truyền thông: chỉ người được ủy quyền phát ngôn; nhân viên khác chuyển đúng đầu mối để bảo đảm thông tin nhất quán."
+    },
+    {
+      "q": "Trong bữa tiệc, một vị khách liên tục ép bạn uống rượu trong khi bạn phải lái xe. Cách ứng xử phù hợp nhất là:",
+      "a": [
+        "Uống cho hết ly để giữ hòa khí, sau đó tự lái xe về thật cẩn thận",
+        "Cảm ơn thiện chí, nêu ngắn gọn lý do, xin nâng ly bằng nước và chúc chân thành",
+        "Im lặng đẩy ly rượu ra xa và quay sang trò chuyện với người ngồi bên cạnh",
+        "Phê bình ngay tại bàn rằng ép rượu là hành vi thiếu văn hóa giao tiếp"
+      ],
+      "correct": 1,
+      "level": "van_dung",
+      "explain": "Mục 3.3 – chúc rượu: tôn trọng người không dùng rượu bia, không ép; ứng xử vẫn cần lịch thiệp, giữ không khí chung."
+    },
+    {
+      "q": "Bạn là nhân viên mới, được mời cụng ly với giám đốc trong tiệc tất niên. Cách làm đúng nghi thức là:",
+      "a": [
+        "Nâng ly cao hơn ly của giám đốc để thể hiện sự nhiệt tình, hào hứng",
+        "Chúc một bài dài, kể lại thành tích cả năm của phòng để gây ấn tượng",
+        "Nâng ly thấp hơn ly của giám đốc khi cụng và nói lời chúc ngắn gọn, trân trọng",
+        "Chờ giám đốc uống xong rồi mới nâng ly chúc lại cho khỏi thất lễ"
+      ],
+      "correct": 2,
+      "level": "van_dung",
+      "explain": "Mục 3.3 – chúc rượu: người ở vị thế thấp hơn nâng ly thấp hơn khi cụng, lời chúc ngắn gọn."
+    },
+    {
+      "q": "Sau buổi làm việc, đối tác Nhật Bản nói: \"Đề xuất rất thú vị, chúng tôi sẽ xem xét thêm.\" Bạn nên:",
+      "a": [
+        "Xem như đã đạt thỏa thuận và bắt đầu chuẩn bị nguồn lực triển khai hợp đồng",
+        "Thúc giục đối tác trả lời dứt khoát ngay trong ngày để kịp tiến độ dự án",
+        "Kết luận là đối tác đã từ chối và chuyển sang tìm nhà cung cấp khác",
+        "Không suy diễn theo cách hiểu của mình; gửi email tóm tắt nội dung, hỏi rõ bước tiếp theo và mốc thời gian phản hồi"
+      ],
+      "correct": 3,
+      "level": "van_dung",
+      "explain": "Mục 3.4 – trong văn hóa nói vòng, câu này có thể là từ chối; nguyên tắc thích ứng là không suy diễn và xác nhận lại bằng văn bản."
+    }
+  ]
+});
