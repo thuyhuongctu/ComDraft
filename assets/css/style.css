@@ -120,22 +120,20 @@ body {
 }
 .dau-trang .chu span { display: block; font-size: 12px; color: var(--chu-mo); margin-top: 2px; }
 
-/* "je m'appelle hương": chữ nghiêng nhỏ ở trên, tên riêng nổi bật bên dưới */
+/* "je m'appelle hương" — chữ ký thương hiệu cá nhân của giảng viên */
 .thuong-hieu {
   display: flex; align-items: center; gap: 11px;
   background: var(--mat); border-radius: 999px;
   box-shadow: var(--clay-nho); padding: 6px 8px 6px 18px;
 }
-/* Chữ ký thương hiệu nằm gọn trên một dòng */
-.thuong-hieu .ten { white-space: nowrap; line-height: 1.2; }
-.thuong-hieu .ten i {
-  font-family: var(--head); font-style: italic;
-  font-size: 14px; color: var(--chu-mo); letter-spacing: .3px;
+/* Chữ ký thương hiệu: một dòng, hai vế cùng một cỡ chữ, chỉ khác nhau ở
+   kiểu nghiêng và màu. */
+.thuong-hieu .ten {
+  white-space: nowrap; line-height: 1.2;
+  font-family: var(--head); font-size: 17px; letter-spacing: .2px;
 }
-.thuong-hieu .ten b {
-  font-family: var(--head); font-size: 19px;
-  color: var(--coral-dam); letter-spacing: .2px;
-}
+.thuong-hieu .ten i { font-style: italic; font-weight: 400; color: var(--chu-mo); }
+.thuong-hieu .ten b { font-weight: 700; color: var(--coral-dam); }
 
 /* Ba con số ở thanh trên */
 .dong-ho { display: flex; gap: 10px; }
@@ -154,7 +152,7 @@ body {
   .dau-trang { padding: 12px 12px 0; gap: 10px; }
   .dau-trang .chu span { display: none; }
   .thuong-hieu { padding: 5px 6px 5px 14px; gap: 9px; }
-  .thuong-hieu .ten b { font-size: 17px; }
+  .thuong-hieu .ten { font-size: 15.5px; }
   .thuong-hieu img { width: 36px; height: 36px; }
 }
 
@@ -420,12 +418,12 @@ footer .chu-thich { padding: 0 4px; }
   display: block; font-family: var(--head); font-size: 19px; color: var(--coral-dam); line-height: 1.15;
 }
 .chan-hieu .goc span { display: block; font-size: 12px; color: var(--chu-mo); }
-.chan-hieu .ky { white-space: nowrap; line-height: 1.2; }
-.chan-hieu .ky i {
-  font-family: var(--head); font-style: italic;
-  font-size: 13.5px; color: var(--chu-mo); letter-spacing: .3px;
+.chan-hieu .ky {
+  white-space: nowrap; line-height: 1.2;
+  font-family: var(--head); font-size: 16.5px; letter-spacing: .2px;
 }
-.chan-hieu .ky b { font-family: var(--head); font-size: 18px; color: var(--coral-dam); }
+.chan-hieu .ky i { font-style: italic; font-weight: 400; color: var(--chu-mo); }
+.chan-hieu .ky b { font-weight: 700; color: var(--coral-dam); }
 .chan-hieu .dau-nv { height: 46px; width: auto; flex: none; }
 
 /* ---------------------------------------------------------------- trình xem */
@@ -695,16 +693,32 @@ html[data-theme="dark"] .hero-nen {
     radial-gradient(60% 60% at 96% 78%, rgba(232, 145, 135, .14) 0%, transparent 60%),
     linear-gradient(158deg, var(--mat) 0%, var(--nen-sau) 100%);
 }
-/* Bản đồ phải nằm trọn trong khối; tràn ra là cắt mất chỏm bắc và mũi Cà Mau,
-   nhìn thành một mảng loang chứ không ra hình đất nước. */
+/* Bản đồ dán thẳng chứ không dùng làm mặt nạ nữa: có sông, tên thành phố,
+   lưới kinh vĩ tuyến và hoa gió, nên phải giữ đủ màu của chính nó. Vì thế
+   phải có hai tệp, một cho nền sáng một cho nền tối. Bản đồ nằm trọn trong
+   khối; tràn ra là cắt mất chỏm bắc và mũi Cà Mau. */
 .hero-ban-do {
-  position: absolute; z-index: -1; right: 3%; top: 6%; width: 38%; height: 88%;
-  background: var(--coral-dam);
-  -webkit-mask: url('../img/viet-nam.svg') no-repeat center/contain;
-  mask: url('../img/viet-nam.svg') no-repeat center/contain;
-  opacity: .13; pointer-events: none;
+  position: absolute; z-index: -1; right: 9%; top: 4%; width: 46%; height: 92%;
+  background: url('../img/viet-nam.svg') no-repeat center right / contain;
+  opacity: .5; pointer-events: none;
 }
-html[data-theme="dark"] .hero-ban-do { background: var(--coral); opacity: .17; }
+html[data-theme="dark"] .hero-ban-do {
+  background-image: url('../img/viet-nam-toi.svg');
+  opacity: .6;
+}
+/* Màn mờ chuyển từ trái sang: nét bản đồ chạy xuyên qua tiêu đề thì chữ khó
+   đọc, nên nửa trái phải chìm hẳn, nửa phải mới để lộ hình. */
+.hero-man {
+  position: absolute; inset: 0; z-index: -1; pointer-events: none;
+  background: linear-gradient(96deg,
+              rgba(254, 248, 245, .94) 0%, rgba(254, 248, 245, .86) 38%,
+              rgba(254, 248, 245, .30) 68%, rgba(254, 248, 245, 0) 88%);
+}
+html[data-theme="dark"] .hero-man {
+  background: linear-gradient(96deg,
+              rgba(36, 29, 27, .92) 0%, rgba(36, 29, 27, .84) 38%,
+              rgba(36, 29, 27, .28) 68%, rgba(36, 29, 27, 0) 88%);
+}
 
 .hero-chu { flex: 1 1 auto; min-width: 0; padding-bottom: clamp(30px, 5vw, 62px); }
 .hero-chu .nhan {
