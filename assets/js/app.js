@@ -344,6 +344,15 @@
     v.preload = 'metadata';
     v.setAttribute('playsinline', '');
     v.src = tep;
+    // Phụ đề tiếng Việt đặt cạnh video, cùng tên, đuôi .vi.vtt. Bật sẵn để ai
+    // xem ở chỗ đông người hoặc nghe không rõ vẫn theo được bài.
+    var pd = document.createElement('track');
+    pd.kind = 'subtitles';
+    pd.srclang = 'vi';
+    pd.label = 'Tiếng Việt';
+    pd.default = true;
+    pd.src = tep.replace(/\.mp4$/, '.vi.vtt');
+    v.appendChild(pd);
     // Máy nào không phát được (thiếu bộ giải mã, mạng đứt) thì nói rõ và
     // đưa đường dẫn tải về, chứ không để khung đen im lặng.
     v.addEventListener('error', function () {
