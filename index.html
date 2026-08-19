@@ -3,12 +3,13 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<title>ComDraft — Ôn tập EC1103</title>
-<meta name="description" content="Bài giảng và 200 câu trắc nghiệm học phần Kỹ năng giao tiếp và soạn thảo văn bản (EC1103), do GV. Đỗ Thùy Hương biên soạn.">
+<title>ComDraft — Communication and Document Drafting Skills</title>
+<meta name="description" content="Bài giảng và 200 câu trắc nghiệm học phần Kỹ năng giao tiếp và soạn thảo văn bản, do GV. Đỗ Thùy Hương biên soạn.">
 <meta name="author" content="Đỗ Thùy Hương">
 <meta name="theme-color" content="#DC756A">
 <link rel="manifest" href="./manifest.webmanifest">
-<link rel="icon" href="./assets/icons/favicon-32.png" sizes="32x32">
+<link rel="icon" href="./assets/icons/logo.svg" type="image/svg+xml">
+<link rel="alternate icon" href="./assets/icons/favicon-32.png" sizes="32x32">
 <link rel="apple-touch-icon" href="./assets/icons/apple-touch-icon.png">
 <meta name="apple-mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-title" content="ComDraft">
@@ -16,17 +17,25 @@
 </head>
 <body>
 
+<header class="dau-trang">
+  <a class="hieu" href="./" aria-label="ComDraft">
+    <img class="logo" src="./assets/icons/logo.svg" alt="" width="46" height="46">
+    <span class="chu">
+      <b data-i18n="app.ten">ComDraft</b>
+      <span data-i18n="app.phu">Kỹ năng giao tiếp và soạn thảo văn bản</span>
+    </span>
+  </a>
+
+  <!-- Thương hiệu cá nhân của giảng viên, đứng cạnh logo học liệu -->
+  <span class="thuong-hieu">
+    <span class="ten"><i>je m’appelle</i><b>hương</b></span>
+    <img src="./assets/icons/persona.png" alt="Đỗ Thùy Hương" width="42" height="42">
+  </span>
+</header>
+
 <div class="khung">
 
   <aside class="canh">
-    <div class="hieu">
-      <img src="./assets/icons/icon-192.png" alt="">
-      <div>
-        <b data-i18n="app.ten">ComDraft</b>
-        <span data-i18n="app.phu">Ôn tập EC1103</span>
-      </div>
-    </div>
-
     <nav class="menu">
       <button type="button" data-trang="nha"><span class="bt">🏠</span><span data-i18n="nav.nha">Trang chủ</span></button>
       <button type="button" data-trang="bai"><span class="bt">📖</span><span data-i18n="nav.bai">Bài giảng</span></button>
@@ -59,6 +68,7 @@
 <script src="./assets/js/i18n.js"></script>
 <script src="./assets/js/app.js"></script>
 <script src="./data/lectures.js"></script>
+<script src="./data/slides.js"></script>
 <script src="./data/ch1.js"></script>
 <script src="./data/ch2.js"></script>
 <script src="./data/ch3.js"></script>

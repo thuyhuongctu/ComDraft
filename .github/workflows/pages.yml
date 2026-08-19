@@ -32,14 +32,16 @@ jobs:
         with:
           enablement: true
 
-      # Chỉ đưa lên những gì ứng dụng cần: bỏ slide, video, tài liệu Word cho
-      # nhẹ trang và nhanh tải trên điện thoại của sinh viên.
+      # Đưa lên đủ thứ để sinh viên xem học liệu ngay trong ứng dụng: mã nguồn,
+      # ảnh slide đã xuất sẵn (assets/slides) và video. Tệp PowerPoint gốc vẫn
+      # nằm trong repo, ai cần bản đầy đủ thì tải qua đường dẫn ở trình xem.
       - name: Gom tệp của ứng dụng
         run: |
           mkdir -p _site
           cp index.html manifest.webmanifest sw.js .nojekyll _site/
-          cp -r assets data _site/
-          ls -R _site | head -40
+          cp -r assets data videos _site/
+          rm -f _site/videos/kich_ban_video.json
+          du -sh _site _site/videos _site/assets/slides
 
       - uses: actions/upload-pages-artifact@v3
         with:

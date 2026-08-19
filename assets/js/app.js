@@ -7,8 +7,10 @@
 
   var KHO = [];        // ngân hàng câu hỏi theo chương
   var BAI = [];        // danh mục bài giảng
+  var SO_SLIDE = {};   // số trang của mỗi bộ slide đã xuất thành ảnh
   window.registerBank = function (b) { KHO.push(b); };
   window.registerLectures = function (ds) { BAI = ds; };
+  window.registerSlides = function (d) { SO_SLIDE = d; };
 
   var MUC = { nhan_biet: 'muc.nhanbiet', thong_hieu: 'muc.thonghieu', van_dung: 'muc.vandung' };
   var KY = ['A', 'B', 'C', 'D'];
@@ -86,8 +88,12 @@
     h.appendChild(c);
     if (anh !== false) {
       var i = el('img');
-      // ảnh nhân vật cả người thì để cao hơn ảnh đại diện tròn
-      if (typeof anh === 'string') {
+      if (anh && anh.khung) {
+        // ảnh có nền lấp lánh: đóng khung bo góc
+        i.src = anh.khung;
+        i.className = 'canh-anh';
+      } else if (typeof anh === 'string') {
+        // ảnh nhân vật đã tách nền, cả người, để cao hơn ảnh đại diện tròn
         i.src = anh;
         i.style.cssText = 'width:auto;height:118px;border-radius:0;box-shadow:none';
       } else {
@@ -181,25 +187,40 @@
   function ve_chi_tiet(b) {
     var v = $('#khung'); v.innerHTML = '';
     v.appendChild(mu((ngu() === 'en' ? 'Chapter ' : 'Chương ') + b.so + ' — ' + (ngu() === 'en' ? b.en : b.vi),
-                     ngu() === 'en' ? b.tomTatEn : b.tomTatVi));
+                     ngu() === 'en' ? b.tomTatEn : b.tomTatVi,
+                     { khung: './assets/icons/co-huong-chi.jpg' }));
 
     var the = el('div', 'the');
     var ds = el('div', 'tai-nguyen');
 
-    function muc_tn(bt, ten, phu, url) {
-      var a = el('a');
-      a.href = url; a.rel = 'noopener';
+    // Mỗi mục là một nút mở trình xem ngay trong ứng dụng, không phải
+    // đường dẫn tải tệp về máy.
+    function muc_tn(bt, ten, phu, mo) {
+      var a = el('button'); a.type = 'button';
       a.appendChild(el('span', 'bt', bt));
       var x = el('span');
       x.appendChild(el('b', null, ten));
       x.appendChild(el('small', null, phu));
       a.appendChild(x);
+      a.addEventListener('click', mo);
       return a;
     }
-    if (b.slide) ds.appendChild(muc_tn('📊', t('bai.slide'), t('bai.slide.phu'), b.slide));
-    if (b.video) ds.appendChild(muc_tn('▶', t('bai.video'), t('bai.video.phu'), b.video));
+    function muc_slide(ten, s) {
+      var n = SO_SLIDE[s.bo] || 0;
+      return muc_tn('📊', ten, t('bai.slide.phu') + (n ? ' · ' + n + ' ' + t('xem.trangs') : ''),
+                    function () { xem_slide(ten, s.bo, s.taiVe); });
+    }
+    function muc_video(ten, v) {
+      return muc_tn('▶', ten, t('bai.video.phu'),
+                    function () { xem_video(ten, v.tep, v.taiVe); });
+    }
+
+    if (b.slide) ds.appendChild(muc_slide(t('bai.slide'), b.slide));
+    if (b.video) ds.appendChild(muc_video(t('bai.video'), b.video));
     (b.thucHanh || []).forEach(function (x) {
-      ds.appendChild(muc_tn('🧪', ngu() === 'en' ? x.en : x.vi, t('bai.thuchanh.phu'), x.url));
+      var ten = ngu() === 'en' ? x.en : x.vi;
+      if (x.slide) ds.appendChild(muc_slide(ten, x.slide));
+      if (x.video) ds.appendChild(muc_video(ten + ' — ' + t('bai.huongdan'), x.video));
     });
     the.appendChild(ds);
 
@@ -217,10 +238,128 @@
     them_chan(v);
   }
 
+  // ---------------------------------------------------------------- trình xem
+  // Bấm vào học liệu là xem ngay trong ứng dụng: slide lật từng trang bằng ảnh,
+  // video phát thẳng tại chỗ. Tệp gốc vẫn tải được qua đường dẫn nhỏ ở dưới.
+  var dang_xem = null;
+
+  function dong_xem() {
+    if (!dang_xem) return;
+    var v = dang_xem.querySelector('video');
+    if (v) { v.pause(); v.removeAttribute('src'); v.load(); }
+    dang_xem.remove();
+    dang_xem = null;
+    document.body.style.overflow = '';
+  }
+
+  function khung_xem(ten, tai_ve) {
+    dong_xem();
+    var n = el('div', 'xem');
+    n.setAttribute('role', 'dialog');
+    n.setAttribute('aria-modal', 'true');
+    n.setAttribute('aria-label', ten);
+
+    var hop = el('div', 'hop');
+    var dinh = el('div', 'dinh');
+    dinh.appendChild(el('b', null, ten));
+    var x = el('button', 'dong', '✕'); x.type = 'button';
+    x.setAttribute('aria-label', t('xem.dong'));
+    x.title = t('xem.dong');
+    x.addEventListener('click', dong_xem);
+    dinh.appendChild(x);
+    hop.appendChild(dinh);
+
+    var than = el('div', 'than');
+    hop.appendChild(than);
+
+    var day = el('div', 'day');
+    hop.appendChild(day);
+
+    if (tai_ve) {
+      var a = el('a', 'tai', t('xem.tai'));
+      a.href = tai_ve; a.rel = 'noopener';
+      day.appendChild(a);
+    }
+
+    n.appendChild(hop);
+    n.addEventListener('click', function (e) { if (e.target === n) dong_xem(); });
+    document.body.appendChild(n);
+    document.body.style.overflow = 'hidden';
+    dang_xem = n;
+    x.focus();
+    return { hop: hop, than: than, day: day };
+  }
+
+  function xem_slide(ten, bo, tai_ve) {
+    var so = SO_SLIDE[bo] || 0;
+    if (!so) { window.open(tai_ve, '_blank', 'noopener'); return; }
+    var k = khung_xem(ten, tai_ve);
+    var i = 1;
+
+    var anh = el('img', 'trang');
+    anh.alt = '';
+    k.than.appendChild(anh);
+
+    var dk = el('div', 'dieu-khien');
+    var tr = el('button', 'nut nho', '‹'); tr.type = 'button';
+    tr.setAttribute('aria-label', t('xem.truoc'));
+    var sa = el('button', 'nut nho', '›'); sa.type = 'button';
+    sa.setAttribute('aria-label', t('xem.sau'));
+    var dem = el('span', 'dem');
+    var thanh = el('input');
+    thanh.type = 'range'; thanh.min = 1; thanh.max = so; thanh.step = 1;
+    thanh.setAttribute('aria-label', t('xem.trang'));
+
+    function hien() {
+      anh.src = './assets/slides/' + bo + '/' + ('00' + i).slice(-3) + '.jpg';
+      dem.textContent = t('xem.trang') + ' ' + i + '/' + so;
+      thanh.value = i;
+      tr.disabled = i === 1;
+      sa.disabled = i === so;
+      // nạp sẵn trang kế để lật không phải chờ
+      if (i < so) new Image().src = './assets/slides/' + bo + '/' + ('00' + (i + 1)).slice(-3) + '.jpg';
+    }
+    function di_toi(n) { i = Math.min(so, Math.max(1, n)); hien(); }
+
+    tr.addEventListener('click', function () { di_toi(i - 1); });
+    sa.addEventListener('click', function () { di_toi(i + 1); });
+    thanh.addEventListener('input', function () { di_toi(+thanh.value); });
+    anh.addEventListener('click', function () { di_toi(i + 1); });
+
+    dk.appendChild(tr); dk.appendChild(dem); dk.appendChild(sa); dk.appendChild(thanh);
+    k.day.insertBefore(dk, k.day.firstChild);
+    k.than._lat = di_toi;
+    k.than._vi_tri = function () { return i; };
+    hien();
+  }
+
+  function xem_video(ten, tep, tai_ve) {
+    var k = khung_xem(ten, tai_ve);
+    var v = document.createElement('video');
+    v.controls = true;
+    v.preload = 'metadata';
+    v.setAttribute('playsinline', '');
+    v.src = tep;
+    // Máy nào không phát được (thiếu bộ giải mã, mạng đứt) thì nói rõ và
+    // đưa đường dẫn tải về, chứ không để khung đen im lặng.
+    v.addEventListener('error', function () {
+      var b = el('div', 'loi-xem');
+      b.appendChild(el('b', null, t('xem.loi')));
+      b.appendChild(el('p', null, t('xem.loi.phu')));
+      var a = el('a', 'nut', t('xem.tai'));
+      a.href = tai_ve || tep; a.rel = 'noopener';
+      b.appendChild(a);
+      k.than.innerHTML = '';
+      k.than.appendChild(b);
+    });
+    k.than.appendChild(v);
+    v.play().catch(function () {});   // trình duyệt chặn tự phát thì thôi
+  }
+
   // ---------------------------------------------------------------- ôn tập
   function ve_on() {
     var v = $('#khung'); v.innerHTML = '';
-    v.appendChild(mu(t('on.tieude'), t('on.mo')));
+    v.appendChild(mu(t('on.tieude'), t('on.mo'), { khung: './assets/icons/co-huong-nghi.jpg' }));
 
     var luoi = el('div', 'luoi');
     BAI.forEach(function (b) { luoi.appendChild(the_chuong(b, function () { ve_thiet_lap(b.id); })); });
@@ -484,7 +623,9 @@
     var kn = el('div', 'ket-nv');
     kn.appendChild(el('div', 'bong', t(ty >= 80 ? 'nv.gioi' : (ty >= 50 ? 'nv.kha' : 'nv.canco'))));
     var ai = el('img');
-    ai.src = './assets/icons/co-huong-di.png';
+    // đạt từ 80% thì cô Hương giơ cúp chúc mừng
+    if (ty >= 80) { ai.src = './assets/icons/co-huong-cup.jpg'; ai.className = 'canh-anh'; }
+    else ai.src = './assets/icons/co-huong-di.png';
     ai.alt = '';
     kn.appendChild(ai);
     the.appendChild(kn);
@@ -536,20 +677,47 @@
   }
 
   // ---------------------------------------------------------------- chân trang
+  // Dải nhận diện ở chân trang, lặp lại đúng bộ đôi của đầu trang:
+  // logo học liệu bên trái, thương hiệu cá nhân của giảng viên bên phải.
+  function dai_hieu() {
+    var d = el('div', 'chan-hieu');
+    var lg = el('img', 'logo');
+    lg.src = './assets/icons/logo.svg'; lg.alt = '';
+    d.appendChild(lg);
+
+    var g = el('div', 'goc');
+    g.appendChild(el('b', null, 'ComDraft'));
+    g.appendChild(el('span', null, t('app.phu')));
+    d.appendChild(g);
+
+    var k = el('div', 'ky');
+    k.appendChild(el('i', null, 'je m’appelle'));
+    k.appendChild(el('b', null, 'hương'));
+    d.appendChild(k);
+
+    var nv = el('img', 'mat-nv');
+    nv.src = './assets/icons/persona.png'; nv.alt = 'Đỗ Thùy Hương';
+    d.appendChild(nv);
+    return d;
+  }
+
   function them_chan(v) {
     var f = el('footer');
-    f.appendChild(el('p', null, t('ct.hocphan')));
+    f.appendChild(dai_hieu());
+    var ct = el('div', 'chu-thich');
+    f.appendChild(ct);
+    ct.appendChild(el('p', null, t('ct.hocphan')));
     var p2 = el('p');
     p2.innerHTML = thoat(t('ct.biensoan')) + ': <b>Đỗ Thùy Hương</b> · ' +
       '<a href="https://orcid.org/0000-0002-7711-2487" rel="noopener">ORCID 0000-0002-7711-2487</a>';
-    f.appendChild(p2);
+    ct.appendChild(p2);
     var p3 = el('p');
     p3.innerHTML = thoat(t('ct.trichdan')) +
       ': <a href="https://doi.org/10.5281/zenodo.22003676" rel="noopener">10.5281/zenodo.22003676</a> · ' +
       thoat(t('ct.manguon')) +
       ': <a href="https://github.com/thuyhuongctu/ComDraft" rel="noopener">github.com/thuyhuongctu/ComDraft</a>';
-    f.appendChild(p3);
-    f.appendChild(el('p', null, t('ct.banquyen')));
+    ct.appendChild(p3);
+    ct.appendChild(el('p', null, t('ct.banquyen')));
     v.appendChild(f);
   }
 
@@ -593,6 +761,17 @@
   }
 
   document.addEventListener('keydown', function (e) {
+    // Trình xem đang mở thì phím dành cho nó: Esc đóng, mũi tên lật slide.
+    if (dang_xem) {
+      var th = dang_xem.querySelector('.than');
+      if (e.key === 'Escape') { dong_xem(); e.preventDefault(); }
+      else if (th && th._lat && (e.key === 'ArrowRight' || e.key === ' ')) {
+        th._lat(th._vi_tri() + 1); e.preventDefault();
+      } else if (th && th._lat && e.key === 'ArrowLeft') {
+        th._lat(th._vi_tri() - 1); e.preventDefault();
+      }
+      return;
+    }
     if (!phien || !$('.dap-an')) return;
     var nut = $('.dap-an').children;
     if (e.key >= '1' && e.key <= '4') {
