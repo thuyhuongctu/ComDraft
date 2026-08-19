@@ -1,7 +1,7 @@
 /* ComDraft — service worker cho phép ôn tập khi không có mạng.
    Đổi PHIEN_BAN mỗi lần phát hành để trình duyệt tải lại tài nguyên mới.
    © Đỗ Thùy Hương, 2026. */
-const PHIEN_BAN = 'comdraft-v6';
+const PHIEN_BAN = 'comdraft-v7';
 
 const VO = [
   './',
@@ -18,6 +18,8 @@ const VO = [
   './assets/icons/co-huong-nghi.jpg',
   './assets/icons/co-huong-chi.jpg',
   './assets/icons/co-huong-cup.jpg',
+  './assets/icons/hoc-nhom.jpg',
+  './assets/icons/lop-hoc.jpg',
   './data/lectures.js',
   './data/slides.js',
   './assets/icons/favicon-32.png',

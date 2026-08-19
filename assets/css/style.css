@@ -481,6 +481,89 @@ html[data-theme="dark"] .xem { background: rgba(0, 0, 0, .72); }
   .xem .dem { min-width: 76px; font-size: 12px; }
 }
 
+/* ------------------------------------------------- bài tập thể thức văn bản */
+/* Tờ A4 chia chín ô đúng theo sơ đồ ở slide 5.2. Chạm chọn khối rồi chạm ô để
+   đặt — làm được trên điện thoại, khác với kéo thả bằng chuột. */
+.xem .than-rong { display: block; place-items: unset; overflow-y: auto; }
+.the-thuc { padding: 4px 2px 2px; }
+
+.the-thuc .loi-nhac {
+  display: flex; align-items: center; gap: 16px; margin-bottom: 16px;
+  background: var(--mat); border-radius: var(--bo);
+  box-shadow: var(--clay-nho); padding: 12px 16px;
+}
+.the-thuc .loi-nhac img { width: 108px; border-radius: 14px; flex: none; }
+.the-thuc .loi-nhac b { font-family: var(--head); font-size: 16px; color: var(--coral-dam); }
+.the-thuc .loi-nhac p { font-size: 13.5px; color: var(--chu-nhat); margin-top: 3px; }
+@media (max-width: 600px) { .the-thuc .loi-nhac img { display: none; } }
+
+.the-thuc .san { display: grid; gap: 16px; }
+@media (min-width: 860px) { .the-thuc .san { grid-template-columns: 1.15fr 1fr; align-items: start; } }
+
+.to-a4 {
+  background: var(--mat); border-radius: 12px; box-shadow: var(--clay);
+  padding: 18px; display: grid; gap: 9px;
+  grid-template-columns: 1fr 1fr;
+  grid-template-areas:
+    'tren-trai tren-phai'
+    'duoi-trai duoi-phai'
+    'giua      giua'
+    'than      than'
+    'cuoi-trai cuoi-phai'
+    'cuoi-trai dau';
+}
+.to-a4 .o {
+  border: 2px dashed var(--vien); border-radius: 12px;
+  background: var(--mat-2); min-height: 46px; padding: 7px 9px;
+  display: grid; place-items: center; text-align: center; cursor: pointer;
+  transition: background .15s, border-color .15s, transform .15s;
+}
+.to-a4 .o:hover { transform: translateY(-1px); }
+.to-a4 .o .goi-y { font-size: 11px; color: var(--chu-mo); line-height: 1.3; }
+.to-a4 .o .ten-khoi { font-size: 12.5px; font-weight: 600; color: var(--chu); line-height: 1.3; }
+.to-a4 .o.cho-tha { border-color: var(--chinh); background: var(--chinh-nen); }
+.to-a4 .o.dung { border-style: solid; border-color: var(--dung); background: var(--dung-nen); }
+.to-a4 .o.sai { border-style: solid; border-color: var(--sai); background: var(--sai-nen); }
+.to-a4 .o.sai .ten-khoi { text-decoration: line-through; color: var(--sai); }
+.to-a4 .o .dap-dung {
+  display: block; font-size: 11.5px; font-weight: 600;
+  color: var(--dung); line-height: 1.3; margin-top: 3px;
+}
+.to-a4 .tren-trai { grid-area: tren-trai; }
+.to-a4 .tren-phai { grid-area: tren-phai; }
+.to-a4 .duoi-trai { grid-area: duoi-trai; }
+.to-a4 .duoi-phai { grid-area: duoi-phai; }
+.to-a4 .giua { grid-area: giua; }
+.to-a4 .than-bai { grid-area: than; min-height: 76px; }
+.to-a4 .cuoi-trai { grid-area: cuoi-trai; }
+.to-a4 .cuoi-phai { grid-area: cuoi-phai; }
+.to-a4 .con-dau { grid-area: dau; }
+
+.hop-khoi {
+  background: var(--mat); border-radius: var(--bo);
+  box-shadow: var(--clay); padding: 14px 16px;
+}
+.hop-khoi h4 {
+  font-family: var(--head); font-size: 15px; color: var(--coral-dam); margin-bottom: 10px;
+}
+.day-khoi { display: grid; gap: 8px; }
+.day-khoi .khoi {
+  text-align: left; width: 100%; border: none; cursor: pointer;
+  font-family: var(--body); background: var(--mat-2);
+  border-radius: var(--bo-nho); box-shadow: var(--clay-nho); padding: 9px 13px;
+  color: var(--chu); transition: transform .14s, box-shadow .14s, background .14s;
+}
+.day-khoi .khoi:hover:not(:disabled) { transform: translateY(-2px); }
+.day-khoi .khoi b { display: block; font-size: 13.5px; }
+.day-khoi .khoi small { display: block; font-size: 11px; color: var(--chu-mo); margin-top: 2px; }
+.day-khoi .khoi.dang-cam { background: var(--chinh); color: var(--tren-chinh); box-shadow: var(--clay-lom); }
+.day-khoi .khoi.dang-cam small { color: rgba(255, 255, 255, .8); }
+.day-khoi .khoi.da-dung { opacity: .38; cursor: default; }
+
+.the-thuc .bao { margin-top: 14px; font-size: 14.5px; font-weight: 600; text-align: center; }
+.the-thuc .bao.tot { color: var(--dung); }
+.the-thuc .bao.chua { color: var(--sai); }
+
 .an { display: none !important; }
 @media (prefers-reduced-motion: reduce) { * { transition: none !important; } }
 
