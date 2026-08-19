@@ -1,0 +1,49 @@
+# Phát hành ứng dụng ôn tập ComDraft lên GitHub Pages.
+# Bước configure-pages với enablement: true sẽ tự bật Pages cho repo nếu chưa
+# bật, nên không cần vào Settings thao tác tay.
+name: Phát hành GitHub Pages
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+# Chỉ chạy một lượt phát hành tại một thời điểm; lần đẩy mới không huỷ lần
+# đang chạy dở để bản đã lên không bị bỏ giữa chừng.
+concurrency:
+  group: pages
+  cancel-in-progress: false
+
+jobs:
+  phat-hanh:
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.trien-khai.outputs.page_url }}
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/configure-pages@v5
+        with:
+          enablement: true
+
+      # Chỉ đưa lên những gì ứng dụng cần: bỏ slide, video, tài liệu Word cho
+      # nhẹ trang và nhanh tải trên điện thoại của sinh viên.
+      - name: Gom tệp của ứng dụng
+        run: |
+          mkdir -p _site
+          cp index.html manifest.webmanifest sw.js .nojekyll _site/
+          cp -r assets data _site/
+          ls -R _site | head -40
+
+      - uses: actions/upload-pages-artifact@v3
+        with:
+          path: _site
+
+      - id: trien-khai
+        uses: actions/deploy-pages@v4
