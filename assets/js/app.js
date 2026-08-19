@@ -177,7 +177,7 @@
   // ---------------------------------------------------------------- bài giảng
   function ve_bai() {
     var v = $('#khung'); v.innerHTML = '';
-    v.appendChild(mu(t('bai.tieude'), t('bai.mo'), './assets/icons/co-huong-ipad.png'));
+    v.appendChild(mu(t('bai.tieude'), t('bai.mo'), { khung: './assets/icons/lop-hoc.jpg' }));
     var luoi = el('div', 'luoi');
     BAI.forEach(function (b) { luoi.appendChild(the_chuong(b, function () { ve_chi_tiet(b); })); });
     v.appendChild(luoi);
@@ -222,6 +222,10 @@
       if (x.slide) ds.appendChild(muc_slide(ten, x.slide));
       if (x.video) ds.appendChild(muc_video(ten + ' — ' + t('bai.huongdan'), x.video));
     });
+    if (b.id === 'ch5') {
+      ds.appendChild(muc_tn('🧩', t('tt.ten'), t('tt.phu'),
+                            function () { xem_the_thuc(t('tt.ten')); }));
+    }
     the.appendChild(ds);
 
     var dh = el('div', 'dieu-huong');
@@ -354,6 +358,184 @@
     });
     k.than.appendChild(v);
     v.play().catch(function () {});   // trình duyệt chặn tự phát thì thôi
+  }
+
+  // ------------------------------------------------- bài tập thể thức văn bản
+  // Chín thành phần và vị trí lấy đúng theo slide 5.2 của bài giảng Chương 5
+  // (Nghị định 30/2020/NĐ-CP). Cách chơi là chạm chọn rồi chạm đặt — kéo thả
+  // chuột không dùng được trên điện thoại, mà phần lớn sinh viên học bằng điện
+  // thoại.
+  var THE_THUC = [
+    { ma: 1, o: 'o1', vi: 'Quốc hiệu và Tiêu ngữ', en: 'National title and motto',
+      mau: 'CỘNG HÒA XÃ HỘI CHỦ NGHĨA VIỆT NAM · Độc lập – Tự do – Hạnh phúc' },
+    { ma: 2, o: 'o2', vi: 'Tên cơ quan, tổ chức ban hành', en: 'Issuing body',
+      mau: 'TÊN CƠ QUAN CHỦ QUẢN · TÊN CƠ QUAN BAN HÀNH' },
+    { ma: 3, o: 'o3', vi: 'Số, ký hiệu của văn bản', en: 'Reference number',
+      mau: 'Số: 15/QĐ-CTAP' },
+    { ma: 4, o: 'o4', vi: 'Địa danh và thời gian ban hành', en: 'Place and date',
+      mau: 'Vĩnh Long, ngày 05 tháng 12 năm 2026' },
+    { ma: 5, o: 'o5', vi: 'Tên loại và trích yếu nội dung', en: 'Document type and subject',
+      mau: 'QUYẾT ĐỊNH · Về việc mua sắm thiết bị văn phòng' },
+    { ma: 6, o: 'o6', vi: 'Nội dung văn bản', en: 'Body of the document',
+      mau: 'Căn cứ… · Điều 1… · Điều 2…' },
+    { ma: 7, o: 'o7', vi: 'Chức vụ, họ tên, chữ ký người có thẩm quyền', en: 'Position, name and signature',
+      mau: 'GIÁM ĐỐC · Nguyễn Văn A' },
+    { ma: 8, o: 'o8', vi: 'Dấu, chữ ký số của cơ quan', en: 'Seal or digital signature',
+      mau: '(chữ ký, dấu)' },
+    { ma: 9, o: 'o9', vi: 'Nơi nhận', en: 'Recipients',
+      mau: 'Nơi nhận: – Như Điều 3; – Lưu: VT.' }
+  ];
+
+  function xem_the_thuc(ten) {
+    var k = khung_xem(ten, null);
+    var dat = {};        // ô -> mã thành phần đang đặt
+    var chon = null;     // mã thành phần đang cầm trên tay
+    var da_cham = false;
+
+    var b = el('div', 'the-thuc');
+
+    var loi = el('div', 'loi-nhac');
+    var ah = el('img');
+    ah.src = './assets/icons/hoc-nhom.jpg'; ah.alt = '';
+    loi.appendChild(ah);
+    var lt = el('div');
+    lt.appendChild(el('b', null, t('tt.nhac')));
+    lt.appendChild(el('p', null, t('tt.nhac.phu')));
+    loi.appendChild(lt);
+    b.appendChild(loi);
+
+    var san = el('div', 'san');
+
+    // tờ A4 với chín ô đúng vị trí của sơ đồ trong bài giảng
+    var to = el('div', 'to-a4');
+    var o_dom = {};
+    function them_o(ma_o, lop, nhan) {
+      var d = el('div', 'o ' + lop);
+      d.dataset.o = ma_o;
+      d.appendChild(el('span', 'goi-y', nhan));
+      d.addEventListener('click', function () { bam_o(ma_o); });
+      o_dom[ma_o] = d;
+      to.appendChild(d);
+    }
+    them_o('o2', 'tren-trai', t('tt.o.tren-trai'));
+    them_o('o1', 'tren-phai', t('tt.o.tren-phai'));
+    them_o('o3', 'duoi-trai', t('tt.o.duoi-trai'));
+    them_o('o4', 'duoi-phai', t('tt.o.duoi-phai'));
+    them_o('o5', 'giua', t('tt.o.giua'));
+    them_o('o6', 'than-bai', t('tt.o.than'));
+    them_o('o9', 'cuoi-trai', t('tt.o.cuoi-trai'));
+    them_o('o7', 'cuoi-phai', t('tt.o.cuoi-phai'));
+    them_o('o8', 'con-dau', t('tt.o.dau'));
+    san.appendChild(to);
+
+    // hộp chín khối thành phần
+    var hop = el('div', 'hop-khoi');
+    hop.appendChild(el('h4', null, t('tt.khoi')));
+    var day = el('div', 'day-khoi');
+    var khoi_dom = {};
+    THE_THUC.forEach(function (x) {
+      var n = el('button', 'khoi'); n.type = 'button';
+      n.appendChild(el('b', null, ngu() === 'en' ? x.en : x.vi));
+      n.appendChild(el('small', null, x.mau));
+      n.addEventListener('click', function () { bam_khoi(x.ma); });
+      khoi_dom[x.ma] = n;
+      day.appendChild(n);
+    });
+    hop.appendChild(day);
+    san.appendChild(hop);
+    b.appendChild(san);
+
+    function tim(ma) {
+      for (var i = 0; i < THE_THUC.length; i++) if (THE_THUC[i].ma === ma) return THE_THUC[i];
+      return null;
+    }
+    function da_dat(ma) {
+      for (var o in dat) if (dat[o] === ma) return o;
+      return null;
+    }
+
+    function bam_khoi(ma) {
+      if (da_dat(ma)) return;
+      chon = chon === ma ? null : ma;
+      ve_lai();
+    }
+    function bam_o(ma_o) {
+      if (dat[ma_o]) {            // bấm vào ô đã có thì nhấc khối ra
+        chon = null;
+        delete dat[ma_o];
+      } else if (chon) {
+        dat[ma_o] = chon;
+        chon = null;
+      }
+      da_cham = false;
+      ve_lai();
+    }
+
+    function ve_lai() {
+      THE_THUC.forEach(function (x) {
+        var n = khoi_dom[x.ma];
+        n.classList.toggle('dang-cam', chon === x.ma);
+        n.classList.toggle('da-dung', !!da_dat(x.ma));
+        n.disabled = !!da_dat(x.ma);
+      });
+      Object.keys(o_dom).forEach(function (ma_o) {
+        var d = o_dom[ma_o], ma = dat[ma_o];
+        d.className = 'o ' + d.className.split(' ')[1];
+        d.innerHTML = '';
+        if (ma) {
+          var x = tim(ma);
+          var dung_o = x.o === ma_o;
+          d.appendChild(el('span', 'ten-khoi', ngu() === 'en' ? x.en : x.vi));
+          if (da_cham) {
+            d.classList.add(dung_o ? 'dung' : 'sai');
+            if (!dung_o) {
+              // chỉ luôn thành phần lẽ ra thuộc ô này, để sinh viên sửa được
+              var d_ok = null;
+              THE_THUC.forEach(function (y) { if (y.o === ma_o) d_ok = y; });
+              if (d_ok) d.appendChild(el('span', 'dap-dung',
+                '→ ' + (ngu() === 'en' ? d_ok.en : d_ok.vi)));
+            }
+          }
+        } else {
+          d.appendChild(el('span', 'goi-y', o_dom[ma_o]._nhan));
+          if (chon) d.classList.add('cho-tha');
+        }
+      });
+      nut_cham.disabled = Object.keys(dat).length < THE_THUC.length;
+    }
+
+    var dh = el('div', 'dieu-huong');
+    var lam_lai = el('button', 'nut', t('tt.lamlai')); lam_lai.type = 'button';
+    lam_lai.addEventListener('click', function () {
+      dat = {}; chon = null; da_cham = false; bao.textContent = ''; bao.className = 'bao';
+      ve_lai();
+    });
+    dh.appendChild(lam_lai);
+    var phai = el('div', 'phai');
+    var nut_cham = el('button', 'nut chinh', t('tt.cham')); nut_cham.type = 'button';
+    nut_cham.addEventListener('click', function () {
+      da_cham = true;
+      var dung = 0;
+      THE_THUC.forEach(function (x) { if (dat[x.o] === x.ma) dung++; });
+      bao.textContent = t('tt.ketqua', { d: dung, n: THE_THUC.length }) +
+        (dung === THE_THUC.length ? ' ' + t('tt.tron') : ' ' + t('tt.conlai'));
+      bao.className = 'bao ' + (dung === THE_THUC.length ? 'tot' : 'chua');
+      ve_lai();
+    });
+    phai.appendChild(nut_cham); dh.appendChild(phai);
+
+    var bao = el('div', 'bao');
+    b.appendChild(bao);
+    b.appendChild(dh);
+
+    // nhớ nhãn gợi ý của từng ô để vẽ lại sau khi nhấc khối ra
+    Object.keys(o_dom).forEach(function (ma_o) {
+      o_dom[ma_o]._nhan = o_dom[ma_o].querySelector('.goi-y').textContent;
+    });
+
+    k.than.className = 'than than-rong';
+    k.than.appendChild(b);
+    ve_lai();
   }
 
   // ---------------------------------------------------------------- ôn tập
