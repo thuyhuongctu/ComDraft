@@ -345,3 +345,44 @@ footer p + p { margin-top: 5px; }
 
 .an { display: none !important; }
 @media (prefers-reduced-motion: reduce) { * { transition: none !important; } }
+
+/* ---------------------------------------------------------------- nhân vật */
+/* Cô Hương xuất hiện ở trang chủ và màn kết quả, kèm một bóng thoại đất sét.
+   Trên màn hẹp thì ẩn nhân vật đi để nhường chỗ cho nội dung. */
+.chao {
+  display: flex; align-items: flex-end; gap: 20px;
+  background: var(--mat); border-radius: var(--bo-lon);
+  box-shadow: var(--clay); padding: 24px 26px 0; margin-bottom: 16px;
+  overflow: hidden;
+}
+.chao .loi { flex: 1; min-width: 0; padding-bottom: 24px; }
+.chao h1 { font-family: var(--head); font-size: 26px; color: var(--coral-dam); line-height: 1.25; }
+.chao .bong {
+  position: relative; margin-top: 14px;
+  background: var(--chinh-nen); border-radius: var(--bo);
+  box-shadow: var(--clay-nho); padding: 14px 17px;
+  font-size: 14.5px; color: var(--chu);
+}
+.chao .bong::after {
+  content: ''; position: absolute; right: 34px; bottom: -11px;
+  border: 11px solid transparent; border-top-color: var(--chinh-nen);
+  border-bottom: 0;
+}
+/* Ảnh nhân vật cao gấp ba lần bề ngang, nên phải khống chế theo CHIỀU CAO;
+   đặt theo chiều rộng sẽ kéo cả khối chào cao vống lên. */
+.chao .nv { height: 252px; width: auto; flex: none; align-self: flex-end; display: block; }
+@media (max-width: 760px) { .chao .nv { display: none; } .chao { padding-bottom: 24px; } }
+
+.ket-nv { display: flex; align-items: flex-end; gap: 18px; justify-content: center; margin-top: 6px; }
+.ket-nv img { height: 190px; width: auto; flex: none; }
+.ket-nv .bong {
+  position: relative; background: var(--chinh-nen); border-radius: var(--bo);
+  box-shadow: var(--clay-nho); padding: 13px 16px; font-size: 14.5px;
+  max-width: 320px; margin-bottom: 26px; text-align: left;
+}
+.ket-nv .bong::after {
+  content: ''; position: absolute; right: -10px; bottom: 18px;
+  border: 10px solid transparent; border-left-color: var(--chinh-nen);
+  border-right: 0;
+}
+@media (max-width: 600px) { .ket-nv img { display: none; } .ket-nv .bong { margin-bottom: 0; } }

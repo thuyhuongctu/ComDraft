@@ -86,7 +86,13 @@
     h.appendChild(c);
     if (anh !== false) {
       var i = el('img');
-      i.src = './assets/icons/persona.png';
+      // ảnh nhân vật cả người thì để cao hơn ảnh đại diện tròn
+      if (typeof anh === 'string') {
+        i.src = anh;
+        i.style.cssText = 'width:auto;height:118px;border-radius:0;box-shadow:none';
+      } else {
+        i.src = './assets/icons/persona.png';
+      }
       i.alt = '';
       h.appendChild(i);
     }
@@ -94,9 +100,25 @@
   }
 
   // ---------------------------------------------------------------- trang chủ
+  // Khối chào ở trang chủ: cô Hương đứng bên phải, bóng thoại bên trái.
+  function khoi_chao() {
+    var c = el('div', 'chao');
+    var l = el('div', 'loi');
+    l.appendChild(el('h1', null, t('nha.chao')));
+    l.appendChild(el('p', null, t('nha.mo'))).style.cssText =
+      'color:var(--chu-mo);font-size:14.5px;margin-top:6px';
+    l.appendChild(el('div', 'bong', t('nv.chao')));
+    c.appendChild(l);
+    var i = el('img', 'nv');
+    i.src = './assets/icons/co-huong-dung.png';
+    i.alt = 'Cô Đỗ Thùy Hương';
+    c.appendChild(i);
+    return c;
+  }
+
   function ve_nha() {
     var v = $('#khung'); v.innerHTML = '';
-    v.appendChild(mu(t('nha.chao'), t('nha.mo')));
+    v.appendChild(khoi_chao());
 
     var da = KHO.filter(function (b) { return (luu[b.id] || {}).ty != null; });
     var tb = da.length
@@ -149,7 +171,7 @@
   // ---------------------------------------------------------------- bài giảng
   function ve_bai() {
     var v = $('#khung'); v.innerHTML = '';
-    v.appendChild(mu(t('bai.tieude'), t('bai.mo')));
+    v.appendChild(mu(t('bai.tieude'), t('bai.mo'), './assets/icons/co-huong-ipad.png'));
     var luoi = el('div', 'luoi');
     BAI.forEach(function (b) { luoi.appendChild(the_chuong(b, function () { ve_chi_tiet(b); })); });
     v.appendChild(luoi);
@@ -458,6 +480,15 @@
       o.appendChild(d);
     });
     the.appendChild(o);
+
+    var kn = el('div', 'ket-nv');
+    kn.appendChild(el('div', 'bong', t(ty >= 80 ? 'nv.gioi' : (ty >= 50 ? 'nv.kha' : 'nv.canco'))));
+    var ai = el('img');
+    ai.src = './assets/icons/co-huong-di.png';
+    ai.alt = '';
+    kn.appendChild(ai);
+    the.appendChild(kn);
+
     v.appendChild(the);
 
     if (sai.length) {
