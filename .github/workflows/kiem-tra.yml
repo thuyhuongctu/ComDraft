@@ -1,0 +1,31 @@
+# Chạy bộ kiểm tra mỗi lần đẩy mã lên, trước khi bản mới ra tới sinh viên.
+# Có phép nào hỏng thì lần đẩy ấy bị đánh dấu đỏ ngay trên GitHub.
+name: Kiểm tra ComDraft
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+  workflow_dispatch:
+
+jobs:
+  kiem-tra:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      - name: Cài Playwright và Chromium
+        run: |
+          python -m pip install --upgrade pip
+          pip install playwright
+          python -m playwright install --with-deps chromium
+
+      # Để trống CHROME_PATH thì Playwright tự dùng Chromium nó vừa cài.
+      - name: Chạy kiểm tra
+        env:
+          CHROME_PATH: ''
+        run: python3 tests/kiem_tra.py
