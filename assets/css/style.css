@@ -97,6 +97,56 @@ body {
   min-height: 100vh;
 }
 
+/* ---------------------------------------------------------------- đầu trang */
+/* Thanh nhận diện chạy suốt bề ngang: bên trái là logo và tên học liệu,
+   bên phải là thương hiệu cá nhân của giảng viên. */
+.dau-trang {
+  display: flex; align-items: center; gap: 16px; flex-wrap: wrap;
+  max-width: 1180px; margin: 0 auto; padding: 14px 18px 0;
+}
+.dau-trang .hieu {
+  display: flex; align-items: center; gap: 12px;
+  text-decoration: none; color: inherit; margin-right: auto;
+}
+.dau-trang .logo {
+  width: 46px; height: 46px; flex: none;
+  filter: drop-shadow(4px 6px 12px rgba(172, 77, 51, .22));
+  transition: transform .18s ease;
+}
+.dau-trang .hieu:hover .logo { transform: translateY(-2px) rotate(-3deg); }
+.dau-trang .chu b {
+  display: block; font-family: var(--head); font-size: 23px;
+  color: var(--coral-dam); line-height: 1.1; letter-spacing: .2px;
+}
+.dau-trang .chu span { display: block; font-size: 12px; color: var(--chu-mo); margin-top: 2px; }
+
+/* "je m'appelle hương": chữ nghiêng nhỏ ở trên, tên riêng nổi bật bên dưới */
+.thuong-hieu {
+  display: flex; align-items: center; gap: 11px;
+  background: var(--mat); border-radius: 999px;
+  box-shadow: var(--clay-nho); padding: 6px 8px 6px 18px;
+}
+.thuong-hieu .ten { text-align: right; line-height: 1.15; }
+.thuong-hieu .ten i {
+  display: block; font-family: var(--head); font-style: italic;
+  font-size: 12px; color: var(--chu-mo); letter-spacing: .3px;
+}
+.thuong-hieu .ten b {
+  display: block; font-family: var(--head); font-size: 19px;
+  color: var(--coral-dam); letter-spacing: .2px;
+}
+.thuong-hieu img {
+  width: 42px; height: 42px; border-radius: 50%; flex: none;
+  box-shadow: var(--clay-nho);
+}
+@media (max-width: 560px) {
+  .dau-trang { padding: 12px 12px 0; gap: 10px; }
+  .dau-trang .chu span { display: none; }
+  .thuong-hieu { padding: 5px 6px 5px 14px; gap: 9px; }
+  .thuong-hieu .ten b { font-size: 17px; }
+  .thuong-hieu img { width: 36px; height: 36px; }
+}
+
 /* ---------------------------------------------------------------- bố cục */
 .khung {
   display: grid;
@@ -120,11 +170,6 @@ body {
   position: sticky; top: 18px;
 }
 @media (max-width: 840px) { .canh { position: static; } }
-
-.hieu { display: flex; align-items: center; gap: 11px; padding: 0 6px 16px; }
-.hieu img { width: 46px; height: 46px; border-radius: 50%; box-shadow: var(--clay-nho); }
-.hieu b { font-family: var(--head); font-size: 20px; color: var(--coral-dam); display: block; }
-.hieu span { font-size: 11.5px; color: var(--chu-mo); }
 
 .menu { display: grid; gap: 7px; }
 .menu button {
@@ -170,6 +215,12 @@ main { min-width: 0; }
 .mu h1 { font-family: var(--head); font-size: 25px; color: var(--coral-dam); line-height: 1.25; }
 .mu p { color: var(--chu-mo); font-size: 14.5px; margin-top: 5px; }
 .mu img { width: 82px; height: 82px; border-radius: 50%; flex: none; box-shadow: var(--clay-nho); }
+/* Ba dáng mới của cô Hương có nền lấp lánh cùng tông áo dài nên không tách
+   rời được; đóng khung bo góc thì giữ trọn chi tiết mà vẫn hợp khối đất sét. */
+.mu img.canh-anh {
+  width: auto; height: 124px; border-radius: 20px;
+  box-shadow: var(--clay-nho); object-fit: cover;
+}
 @media (max-width: 600px) { .mu img { display: none; } }
 
 .the {
@@ -231,13 +282,15 @@ h2.muc {
 
 /* ---------------------------------------------------------------- tài nguyên */
 .tai-nguyen { display: grid; gap: 10px; margin-top: 14px; }
-.tai-nguyen a {
+.tai-nguyen a, .tai-nguyen button {
   display: flex; align-items: center; gap: 12px; text-decoration: none;
+  width: 100%; text-align: left; border: none; cursor: pointer;
+  font-family: var(--body); font-size: 15px;
   background: var(--mat-2); border-radius: var(--bo-nho);
   box-shadow: var(--clay-nho); padding: 12px 15px; color: var(--chu);
   transition: transform .16s ease;
 }
-.tai-nguyen a:hover { transform: translateY(-2px); }
+.tai-nguyen a:hover, .tai-nguyen button:hover { transform: translateY(-2px); }
 .tai-nguyen .bt {
   width: 38px; height: 38px; border-radius: 12px; flex: none;
   background: var(--chinh-nen); color: var(--chinh);
@@ -339,9 +392,94 @@ h2.muc {
 }
 
 /* ---------------------------------------------------------------- chân trang */
-footer { margin-top: 30px; padding: 20px 4px 26px; font-size: 12.5px; color: var(--chu-mo); }
+footer { margin-top: 30px; padding: 0 0 26px; font-size: 12.5px; color: var(--chu-mo); }
 footer a { color: var(--chinh); }
 footer p + p { margin-top: 5px; }
+footer .chu-thich { padding: 0 4px; }
+
+/* Dải nhận diện ở chân trang: lặp lại logo và thương hiệu của đầu trang */
+.chan-hieu {
+  display: flex; align-items: center; gap: 14px; flex-wrap: wrap;
+  background: var(--mat); border-radius: var(--bo);
+  box-shadow: var(--clay-nho); padding: 15px 20px; margin-bottom: 16px;
+}
+.chan-hieu .logo { width: 40px; height: 40px; flex: none; }
+.chan-hieu .goc { margin-right: auto; }
+.chan-hieu .goc b {
+  display: block; font-family: var(--head); font-size: 19px; color: var(--coral-dam); line-height: 1.15;
+}
+.chan-hieu .goc span { display: block; font-size: 12px; color: var(--chu-mo); }
+.chan-hieu .ky { text-align: right; line-height: 1.15; }
+.chan-hieu .ky i {
+  display: block; font-family: var(--head); font-style: italic;
+  font-size: 12px; color: var(--chu-mo); letter-spacing: .3px;
+}
+.chan-hieu .ky b { display: block; font-family: var(--head); font-size: 18px; color: var(--coral-dam); }
+.chan-hieu .mat-nv { width: 40px; height: 40px; border-radius: 50%; flex: none; box-shadow: var(--clay-nho); }
+
+/* ---------------------------------------------------------------- trình xem */
+/* Lớp phủ mở ngay trong ứng dụng: slide lật từng trang, video phát tại chỗ. */
+.xem {
+  position: fixed; inset: 0; z-index: 40;
+  background: rgba(58, 43, 40, .62); backdrop-filter: blur(3px);
+  display: grid; place-items: center; padding: 18px;
+}
+html[data-theme="dark"] .xem { background: rgba(0, 0, 0, .72); }
+
+.xem .hop {
+  background: var(--mat); border-radius: var(--bo-lon);
+  box-shadow: var(--clay); width: min(1080px, 100%);
+  max-height: 100%; display: flex; flex-direction: column; overflow: hidden;
+}
+.xem .dinh {
+  display: flex; align-items: center; gap: 12px;
+  padding: 14px 16px 12px 20px; border-bottom: 1px solid var(--vien);
+}
+.xem .dinh b {
+  flex: 1; min-width: 0; font-family: var(--head); font-size: 17px;
+  color: var(--coral-dam); overflow: hidden; text-overflow: ellipsis; white-space: nowrap;
+}
+.xem .dong {
+  flex: none; width: 36px; height: 36px; border: none; border-radius: 50%;
+  background: var(--mat-2); color: var(--chinh); font-size: 16px; cursor: pointer;
+  box-shadow: var(--clay-nho);
+}
+.xem .dong:active { box-shadow: var(--clay-lom); }
+
+.xem .than {
+  flex: 1; min-height: 0; display: grid; place-items: center;
+  background: var(--nen-sau); padding: 12px;
+}
+.xem .than img.trang {
+  max-width: 100%; max-height: 100%; width: auto; height: auto;
+  border-radius: 12px; box-shadow: var(--clay-nho); cursor: pointer;
+}
+.xem .than video {
+  max-width: 100%; max-height: 100%; width: 100%;
+  border-radius: 12px; background: #000;
+}
+
+.xem .loi-xem { text-align: center; padding: 30px 22px; max-width: 460px; }
+.xem .loi-xem b { display: block; font-family: var(--head); font-size: 18px; color: var(--coral-dam); }
+.xem .loi-xem p { margin: 8px 0 16px; font-size: 14px; color: var(--chu-nhat); }
+
+.xem .day {
+  display: flex; align-items: center; gap: 14px; flex-wrap: wrap;
+  padding: 12px 18px 14px; border-top: 1px solid var(--vien);
+}
+.xem .day .tai { margin-left: auto; font-size: 12.5px; color: var(--chinh); }
+.xem .dieu-khien { display: flex; align-items: center; gap: 10px; flex: 1; min-width: 240px; }
+.xem .dieu-khien .nut { padding: 7px 15px; font-size: 17px; line-height: 1; }
+.xem .dem { font-size: 13px; color: var(--chu-nhat); white-space: nowrap; min-width: 92px; text-align: center; }
+.xem .dieu-khien input[type="range"] { flex: 1; min-width: 90px; accent-color: var(--chinh); }
+
+@media (max-width: 600px) {
+  .xem { padding: 0; }
+  .xem .hop { border-radius: 0; height: 100%; width: 100%; }
+  .xem .day { padding: 10px 12px 12px; gap: 10px; }
+  .xem .dieu-khien { min-width: 0; }
+  .xem .dem { min-width: 76px; font-size: 12px; }
+}
 
 .an { display: none !important; }
 @media (prefers-reduced-motion: reduce) { * { transition: none !important; } }
@@ -375,6 +513,7 @@ footer p + p { margin-top: 5px; }
 
 .ket-nv { display: flex; align-items: flex-end; gap: 18px; justify-content: center; margin-top: 6px; }
 .ket-nv img { height: 190px; width: auto; flex: none; }
+.ket-nv img.canh-anh { border-radius: 20px; box-shadow: var(--clay-nho); }
 .ket-nv .bong {
   position: relative; background: var(--chinh-nen); border-radius: var(--bo);
   box-shadow: var(--clay-nho); padding: 13px 16px; font-size: 14.5px;

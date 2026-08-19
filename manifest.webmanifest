@@ -1,7 +1,7 @@
 {
-  "name": "ComDraft — Ôn tập EC1103",
+  "name": "ComDraft — Communication and Document Drafting Skills",
   "short_name": "ComDraft",
-  "description": "200 câu trắc nghiệm ôn tập học phần Kỹ năng giao tiếp và soạn thảo văn bản, do GV. Đỗ Thùy Hương biên soạn.",
+  "description": "Bài giảng và 200 câu trắc nghiệm học phần Kỹ năng giao tiếp và soạn thảo văn bản, do GV. Đỗ Thùy Hương biên soạn.",
   "lang": "vi",
   "start_url": "./",
   "scope": "./",

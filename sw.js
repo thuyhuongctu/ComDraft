@@ -1,7 +1,7 @@
 /* ComDraft — service worker cho phép ôn tập khi không có mạng.
    Đổi PHIEN_BAN mỗi lần phát hành để trình duyệt tải lại tài nguyên mới.
    © Đỗ Thùy Hương, 2026. */
-const PHIEN_BAN = 'comdraft-v4';
+const PHIEN_BAN = 'comdraft-v6';
 
 const VO = [
   './',
@@ -10,11 +10,16 @@ const VO = [
   './assets/css/style.css',
   './assets/js/app.js',
   './assets/js/i18n.js',
+  './assets/icons/logo.svg',
   './assets/icons/persona.png',
   './assets/icons/co-huong-dung.png',
   './assets/icons/co-huong-di.png',
   './assets/icons/co-huong-ipad.png',
+  './assets/icons/co-huong-nghi.jpg',
+  './assets/icons/co-huong-chi.jpg',
+  './assets/icons/co-huong-cup.jpg',
   './data/lectures.js',
+  './data/slides.js',
   './assets/icons/favicon-32.png',
   './assets/icons/apple-touch-icon.png',
   './assets/icons/icon-192.png',
@@ -48,6 +53,10 @@ self.addEventListener('fetch', (e) => {
   if (e.request.method !== 'GET') return;
   const u = new URL(e.request.url);
   if (u.origin !== location.origin) return;
+  // Video để trình duyệt tự lo: nó tải theo từng đoạn (Range) mà bộ nhớ đệm
+  // chỉ giữ được nguyên tệp, trả nguyên tệp cho một yêu cầu Range sẽ làm hỏng
+  // thanh tua. Ảnh slide thì vẫn lưu để xem lại được khi mất mạng.
+  if (u.pathname.indexOf('/videos/') >= 0 || e.request.headers.has('range')) return;
   e.respondWith(
     caches.match(e.request).then((san) => san || fetch(e.request).then((res) => {
       if (res && res.ok) {
