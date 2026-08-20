@@ -3,8 +3,7 @@ message: "If you use these teaching materials in your work, please cite them as 
 title: "ComDraft: teaching materials for Communication and Document Drafting Skills (EC1103)"
 abstract: >-
   ComDraft is a complete teaching package for a three-credit undergraduate course in
-  business communication and document drafting, taught face to face at Vinh Long
-  University of Technology Education. It holds five lecture decks covering the nature of
+  business communication and document drafting, taught face to face. It holds five lecture decks covering the nature of
   communication, professional communication skills, communication in specific settings,
   business negotiation and the drafting of administrative and commercial documents; three
   computer-lab workbooks that take students from document formality through administrative
@@ -34,7 +33,7 @@ authors:
     given-names: "Thuy Huong"
     email: "thuyhuongctu@gmail.com"
     orcid: "https://orcid.org/0000-0002-7711-2487"
-    affiliation: "Vinh Long University of Technology Education; Can Tho University (PhD Candidate)"
+    affiliation: "Can Tho University (PhD Candidate)"
 keywords:
   - business communication
   - document drafting
