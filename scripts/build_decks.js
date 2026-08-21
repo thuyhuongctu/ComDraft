@@ -46,9 +46,11 @@ function agenda(slide, items) {
   D.numList(slide, items, { y0: 1.75, y1: 6.7, maxStep: items.length <= 3 ? 1.4 : 1.05 });
 }
 
-function summary(slide, rows) {
+// opt để chương nào rút gọn chữ thì phóng to cỡ chữ tương ứng; chương chưa rút
+// gọn không truyền gì và giữ nguyên như cũ.
+function summary(slide, rows, opt = {}) {
   D.slideTitle(slide, "Tổng kết", "Ba điều cần nhớ của chương");
-  D.cardsRows(slide, rows, { y0: 1.6, y1: 6.85 });
+  D.cardsRows(slide, rows, { y0: 1.6, y1: 6.85, ...opt });
 }
 
 function questionsPrep(slide, qs, prep) {
@@ -82,12 +84,10 @@ function buildC1() {
   s = pptx.addSlide(); D.chrome(s, ++pg, CH);
   D.slideTitle(s, "Lộ trình học phần", "Chúng ta sẽ học cùng nhau thế nào?");
   D.cardsRows(s, [
-    ["Lý thuyết – 10 buổi sáng Thứ 7 & Chủ nhật (05/12/2026 – 03/01/2027, phòng C0105)",
-     "Chương 1: Tổng quan giao tiếp  •  Chương 2: Kỹ năng giao tiếp chuyên nghiệp  •  Chương 3: Tình huống đặc thù  •  Chương 4: Đàm phán trong kinh doanh  •  Chương 5: Soạn thảo và trình bày văn bản."],
-    ["Thực hành – chiều Thứ 7 / Chủ nhật (26/12 – 24/01, phòng A0105 Mô phỏng Kinh tế)",
-     "Bài 1: Thể thức văn bản  •  Bài 2: Soạn thảo văn bản hành chính  •  Bài 3: Soạn thảo văn bản thương mại."],
-    ["Đánh giá", "Chuyên cần (dự lớp ≥ 80%, bài tập đầy đủ)  •  Quá trình: trắc nghiệm + tự luận + thực hành  •  Cuối kỳ: bài thi thực hành."],
-  ], { y0: 1.6, y1: 6.85, bodySize: 12.5 });
+    ["Lý thuyết — 10 buổi", "Sáng T7 & CN  •  5 chương  •  phòng C0105"],
+    ["Thực hành — 3 bài", "Chiều T7 / CN  •  phòng A0105 Mô phỏng Kinh tế"],
+    ["Đánh giá — 3 cột điểm", "Chuyên cần  •  Quá trình  •  Thi cuối kỳ"],
+  ], { y0: 2.1, y1: 5.9, headSize: 20, bodySize: 15 });
 
   s = pptx.addSlide(); D.chrome(s, ++pg, CH);
   objectives(s, [
@@ -109,83 +109,93 @@ function buildC1() {
   s = pptx.addSlide(); D.chrome(s, ++pg, CH);
   D.slideTitle(s, "1.1", "Giao tiếp và giao tiếp trong kinh doanh");
   D.cardsRows(s, [
-    ["Giao tiếp là gì?", "Quá trình trao đổi thông tin, tư tưởng, tình cảm giữa con người với con người nhằm đạt được mục đích nhất định — diễn ra bằng cả lời nói, chữ viết và hành vi không lời."],
-    ["Giao tiếp trong kinh doanh", "Hoạt động giao tiếp gắn với quá trình kinh doanh: giữa doanh nghiệp với khách hàng, đối tác, cơ quan quản lý và giữa các thành viên trong tổ chức — hướng tới mục tiêu kinh doanh cụ thể."],
-    ["Vì sao phải học?", "Khảo sát nhà tuyển dụng nhiều năm liền xếp kỹ năng giao tiếp trong nhóm kỹ năng được yêu cầu cao nhất — bán được ý tưởng trước khi bán được sản phẩm."],
-  ]);
+    ["Giao tiếp là gì?", "Trao đổi thông tin để đạt một mục đích"],
+    ["Trong kinh doanh?", "Gắn với mục tiêu công việc, có ràng buộc"],
+    ["Vì sao phải học?", "Nhà tuyển dụng xếp vào nhóm đòi hỏi cao nhất"],
+  ], { y0: 2.1, y1: 5.9, headSize: 20, bodySize: 15 });
 
   s = pptx.addSlide(); D.chrome(s, ++pg, CH);
   D.slideTitle(s, "1.1", "Đặc điểm của giao tiếp trong kinh doanh");
   D.grid2(s, [
-    ["Luôn có mục đích rõ ràng", "Mỗi cuộc gặp, cuộc gọi, email đều phục vụ một mục tiêu công việc: bán hàng, hợp tác, giải quyết vấn đề."],
-    ["Đa dạng chủ thể và vai vế", "Cùng lúc giao tiếp với khách hàng, cấp trên, đồng nghiệp, cơ quan nhà nước — mỗi đối tượng một chuẩn mực riêng."],
-    ["Chịu ràng buộc lợi ích và pháp lý", "Lời nói, văn bản trong kinh doanh có thể tạo ra nghĩa vụ, hợp đồng, trách nhiệm — phải cẩn trọng và chuẩn mực."],
-    ["Vừa khoa học, vừa nghệ thuật", "Có nguyên tắc, quy trình để học; nhưng vận dụng linh hoạt theo con người, hoàn cảnh mới tạo nên hiệu quả."],
-  ]);
+    ["Luôn có mục đích", "Mỗi cuộc gặp phục vụ một mục tiêu công việc"],
+    ["Đa dạng chủ thể", "Mỗi đối tượng một chuẩn mực riêng"],
+    ["Ràng buộc lợi ích – pháp lý", "Lời nói có thể tạo ra nghĩa vụ"],
+    ["Khoa học và nghệ thuật", "Có nguyên tắc, nhưng cần linh hoạt"],
+  ], { y0: 2.0, y1: 6.0 });
 
   s = pptx.addSlide(); D.chrome(s, ++pg, CH);
   D.slideTitle(s, "1.1", "Mô hình quá trình giao tiếp");
   D.flow(s, [
-    { t: "NGƯỜI GỬI", d: "Hình thành ý tưởng, xác định mục đích truyền đạt." },
-    { t: "MÃ HÓA", d: "Chuyển ý tưởng thành lời nói, chữ viết, cử chỉ." },
-    { t: "THÔNG ĐIỆP", d: "Nội dung truyền qua kênh: trực tiếp, điện thoại, email…" },
-    { t: "GIẢI MÃ", d: "Người nhận tiếp nhận và diễn giải thông điệp." },
-    { t: "PHẢN HỒI", d: "Người nhận đáp lại — căn cứ để biết giao tiếp có hiệu quả." },
-  ], { y: 1.75, h: 0.95, dh: 2.2 });
-  s.addShape("roundRect", { x: 0.55, y: 5.35, w: 12.25, h: 1.35, rectRadius: 0.09, fill: { color: D.BLUSH_SOFT }, line: { color: D.BLUSH, width: 1 } });
+    { t: "NGƯỜI GỬI", d: "Có ý tưởng và mục đích" },
+    { t: "MÃ HÓA", d: "Thành lời, chữ, cử chỉ" },
+    { t: "THÔNG ĐIỆP", d: "Đi qua một kênh" },
+    { t: "GIẢI MÃ", d: "Người nhận diễn giải" },
+    { t: "PHẢN HỒI", d: "Đáp lại — thước đo hiệu quả" },
+  ], { y: 2.1, h: 1.1, dh: 1.5 });
+  s.addShape("roundRect", { x: 0.55, y: 5.15, w: 12.25, h: 1.5, rectRadius: 0.09, fill: { color: D.BLUSH_SOFT }, line: { color: D.BLUSH, width: 1 } });
   s.addText([
-    { text: "NHIỄU — kẻ phá hoại thầm lặng:  ", options: { fontFace: D.BODY_FONT, fontSize: 13, bold: true, color: D.RUST } },
-    { text: "tiếng ồn, đường truyền kém, khác biệt ngôn ngữ – văn hóa, định kiến, cảm xúc tiêu cực… có thể xuất hiện ở mọi khâu. Người giao tiếp giỏi là người chủ động giảm nhiễu ở từng bước.", options: { fontFace: D.BODY_FONT, fontSize: 13, color: D.INK } },
-  ], { x: 0.85, y: 5.45, w: 11.7, h: 1.15, margin: 0, valign: "middle" });
+    { text: "NHIỄU  ", options: { fontFace: D.BODY_FONT, fontSize: 20, bold: true, color: D.RUST } },
+    { text: "xen được vào cả năm khâu", options: { fontFace: D.BODY_FONT, fontSize: 17, color: D.INK } },
+  ], { x: 0.85, y: 5.25, w: 11.7, h: 1.3, margin: 0, align: "center", valign: "middle" });
 
   s = pptx.addSlide(); D.chrome(s, ++pg, CH);
   D.slideTitle(s, "1.2", "Phương tiện giao tiếp: ngôn ngữ");
   D.cardsRows(s, [
-    ["Ngôn ngữ nói", "Trực tiếp, nhanh, giàu cảm xúc, phản hồi tức thì — nhưng “lời nói gió bay”, dễ sai sót khi thiếu chuẩn bị. Chú ý: phát âm, tốc độ, âm lượng, ngữ điệu."],
-    ["Ngôn ngữ viết", "Chính xác, có thể cân nhắc kỹ, lưu lại làm bằng chứng — nền tảng của Chương 5 (soạn thảo văn bản). Chú ý: đúng chính tả, đúng thể thức, đúng văn phong."],
-    ["Nguyên tắc dùng từ trong kinh doanh", "Rõ ràng, lịch sự, tích cực; tránh khẩu ngữ, tiếng lóng, từ đa nghĩa; ưu tiên câu chủ động, ngắn gọn."],
-  ]);
+    ["Ngôn ngữ nói", "Nhanh, giàu cảm xúc — nhưng lời nói gió bay"],
+    ["Ngôn ngữ viết", "Chính xác, lưu được — nền tảng của Chương 5"],
+    ["Nguyên tắc dùng từ", "Rõ  •  lịch sự  •  tích cực  •  ngắn gọn"],
+  ], { y0: 2.1, y1: 5.9, headSize: 20, bodySize: 15 });
 
   s = pptx.addSlide(); D.chrome(s, ++pg, CH);
   D.slideTitle(s, "1.2", "Phương tiện giao tiếp: phi ngôn ngữ");
   D.grid2(s, [
-    ["Ánh mắt – nét mặt – nụ cười", "Kênh biểu cảm mạnh nhất; giao tiếp bằng mắt thể hiện tự tin và tôn trọng người đối diện."],
-    ["Cử chỉ – tư thế – dáng đi", "Tư thế thẳng, cởi mở tạo thiện cảm; khoanh tay, nhìn đồng hồ phát tín hiệu khép kín, sốt ruột."],
-    ["Khoảng cách và không gian", "Thân mật (<0,5m) – cá nhân – xã giao (1,2–3,5m) – công cộng; chọn sai khoảng cách gây khó chịu."],
-    ["Trang phục – giọng điệu – thời gian", "Ăn mặc phù hợp bối cảnh; giọng điệu quyết định cách thông điệp được đón nhận; đúng giờ cũng là thông điệp."],
-  ], { y1: 6.15 });
-  s.addText("Nghiên cứu của Mehrabian: với thông điệp cảm xúc, tác động của từ ngữ ~7%, giọng nói ~38%, ngôn ngữ cơ thể ~55% — đừng để cơ thể “nói” ngược với lời.", {
-    x: 0.55, y: 6.3, w: 12.25, h: 0.55, margin: 0, fontFace: D.BODY_FONT, fontSize: 12, italic: true, color: D.GRAY, valign: "middle",
+    ["Ánh mắt – nét mặt", "Kênh biểu cảm mạnh nhất"],
+    ["Cử chỉ – tư thế", "Thẳng và cởi mở tạo thiện cảm"],
+    ["Khoảng cách", "Thân mật · cá nhân · xã giao · công cộng"],
+    ["Trang phục – giọng – giờ giấc", "Đúng giờ cũng là một thông điệp"],
+  ], { y0: 1.75, y1: 4.75, headSize: 17, bodySize: 14 });
+  // Ba con số của Mehrabian là điểm nhấn của slide này — để thành chữ nhỏ ở
+  // chân trang thì không ai nhớ; dựng thành ba khối số lớn cho nhìn là thấy.
+  const meh = [["7%", "TỪ NGỮ"], ["38%", "GIỌNG NÓI"], ["55%", "CƠ THỂ"]];
+  meh.forEach(([so, nhan], i) => {
+    const cw = 3.9, x = 0.85 + i * (cw + 0.45);
+    s.addText(so, { x, y: 5.05, w: cw, h: 0.95, margin: 0, align: "center",
+      fontFace: D.HEAD_FONT, fontSize: 44, bold: true, color: i === 2 ? D.RUST : D.CORAL });
+    s.addText(nhan, { x, y: 6.0, w: cw, h: 0.4, margin: 0, align: "center",
+      fontFace: D.BODY_FONT, fontSize: 13, bold: true, color: D.GRAY, charSpacing: 2 });
   });
+  s.addText("Mehrabian — với thông điệp cảm xúc", {
+    x: 0.55, y: 6.5, w: 12.25, h: 0.4, margin: 0, align: "center",
+    fontFace: D.BODY_FONT, fontSize: 12, italic: true, color: D.GRAY });
 
   s = pptx.addSlide(); D.chrome(s, ++pg, CH);
   D.slideTitle(s, "1.3", "Các hình thức giao tiếp");
   D.grid2(s, [
-    ["Trực tiếp  ↔  Gián tiếp", "Mặt đối mặt: giàu thông tin, phản hồi ngay. Gián tiếp (điện thoại, văn bản, email): vượt khoảng cách, có bằng chứng — nhưng dễ hiểu nhầm."],
-    ["Chính thức  ↔  Không chính thức", "Cuộc họp, văn bản, hội nghị theo quy định; trò chuyện ngoài lề, tin đồn — người quản lý giỏi biết dùng cả hai."],
-    ["Cá nhân  ↔  Nhóm / đám đông", "1-1: sâu, riêng tư. Nhóm: cần điều phối; đám đông: cần kỹ năng thuyết trình (học ở Chương 2)."],
-    ["Truyền thống  ↔  Giao tiếp số", "Email, họp trực tuyến, mạng xã hội, tin nhắn nhóm — chuẩn mực mới: trả lời đúng hạn, đúng kênh, giữ hình ảnh số chuyên nghiệp."],
-  ]);
+    ["Trực tiếp  ↔  Gián tiếp", "Mặt đối mặt  ·  điện thoại, email"],
+    ["Chính thức  ↔  Không chính thức", "Họp, văn bản  ·  trò chuyện ngoài lề"],
+    ["Cá nhân  ↔  Nhóm, đám đông", "1–1 sâu  ·  nhóm cần điều phối"],
+    ["Truyền thống  ↔  Số", "Email, họp trực tuyến, mạng xã hội"],
+  ], { y0: 2.0, y1: 6.0, headSize: 17, bodySize: 14 });
 
   s = pptx.addSlide(); D.chrome(s, ++pg, CH);
   D.slideTitle(s, "1.4", "Yếu tố ảnh hưởng đến quá trình giao tiếp");
   D.numList(s, [
-    ["Yếu tố thuộc chủ thể", "trạng thái tâm lý, cảm xúc, sức khỏe, vốn hiểu biết, kỹ năng và uy tín của người giao tiếp."],
-    ["Thông điệp", "nội dung rõ hay mơ hồ, cấu trúc hợp lý hay lộn xộn, phù hợp người nghe hay không."],
-    ["Kênh và nhiễu", "chọn kênh sai (việc hệ trọng lại nhắn tin), chất lượng đường truyền, môi trường ồn ào."],
-    ["Bối cảnh văn hóa – xã hội", "chuẩn mực, tôn giáo, vùng miền, thứ bậc; điều bình thường nơi này có thể là thất lễ nơi khác."],
-    ["Quan hệ và định kiến sẵn có", "ấn tượng cũ, tin đồn, khoảng cách quyền lực làm méo cách diễn giải thông điệp."],
-  ], { y0: 1.7, y1: 6.85 });
+    ["Chủ thể", "tâm lý, hiểu biết, kỹ năng, uy tín"],
+    ["Thông điệp", "rõ hay mơ hồ, có cấu trúc hay lộn xộn"],
+    ["Kênh và nhiễu", "chọn sai kênh, môi trường ồn ào"],
+    ["Bối cảnh văn hóa", "chuẩn mực, vùng miền, thứ bậc"],
+    ["Quan hệ và định kiến", "ấn tượng cũ làm méo cách hiểu"],
+  ], { y0: 2.0, y1: 6.6, headSize: 18, bodySize: 16 });
 
   s = pptx.addSlide(); D.chrome(s, ++pg, CH);
   D.slideTitle(s, "1.5", "Nguyên tắc giao tiếp trong kinh doanh");
   D.numList(s, [
-    ["Tôn trọng", "tôn trọng nhân cách, thời gian, lợi ích và sự khác biệt của đối tượng giao tiếp."],
-    ["Thiện chí và hợp tác", "hướng tới hai bên cùng có lợi; thắng một cuộc cãi có thể thua một khách hàng."],
-    ["Lắng nghe và thấu hiểu trước", "hiểu đúng nhu cầu đối phương rồi mới trình bày quan điểm của mình."],
-    ["Phù hợp ngữ cảnh", "đúng vai, đúng lúc, đúng nơi, đúng kênh, đúng mức độ trang trọng."],
-    ["Chuẩn mực và giữ chữ tín", "lời nói và văn bản nhất quán; đã hứa là làm — chữ tín là tài sản kinh doanh."],
-  ], { y0: 1.7, y1: 6.85 });
+    ["Tôn trọng", "nhân cách, thời gian, lợi ích, khác biệt"],
+    ["Thiện chí – hợp tác", "thắng một cuộc cãi, thua một khách hàng"],
+    ["Lắng nghe trước", "hiểu đúng rồi mới nói"],
+    ["Phù hợp ngữ cảnh", "đúng vai, đúng lúc, đúng kênh"],
+    ["Giữ chữ tín", "đã hứa là làm"],
+  ], { y0: 2.0, y1: 6.6, headSize: 18, bodySize: 16 });
 
   s = pptx.addSlide(); D.chrome(s, ++pg, CH);
   D.slideTitle(s, "Hoạt động nhóm", "Tình huống: buổi gặp đầu tiên thất bại");
@@ -200,10 +210,10 @@ function buildC1() {
 
   s = pptx.addSlide(); D.chrome(s, ++pg, CH);
   summary(s, [
-    ["Giao tiếp kinh doanh có mục đích và có luật chơi", "Không phải trò chuyện ngẫu nhiên: mỗi tương tác phục vụ mục tiêu, chịu chuẩn mực và ràng buộc lợi ích – pháp lý."],
-    ["Hiệu quả được quyết định ở cả 5 khâu + nhiễu", "Muốn sửa một cuộc giao tiếp thất bại, hãy dò lại từng khâu: ý tưởng – mã hóa – kênh – giải mã – phản hồi."],
-    ["Phi ngôn ngữ mạnh hơn ta nghĩ", "Trang phục, ánh mắt, giọng điệu, đúng giờ… “nói” trước và nói to hơn lời — hãy để chúng nói cùng một điều với bạn."],
-  ]);
+    ["Có mục đích và có luật chơi", "Không phải trò chuyện ngẫu nhiên"],
+    ["Hỏng ở khâu nào, dò lại khâu đó", "Năm khâu, cộng thêm nhiễu"],
+    ["Phi ngôn ngữ mạnh hơn ta nghĩ", "Nó nói trước, và nói to hơn lời"],
+  ], { y0: 2.1, y1: 5.9, headSize: 20, bodySize: 15 });
 
   s = pptx.addSlide(); D.chrome(s, ++pg, CH);
   questionsPrep(s, [

@@ -75,6 +75,92 @@ FIGS["c1-mo-hinh-giao-tiep"] = ("""
 .loop{text-align:center;font-size:13px;color:%(GRAY)s;font-style:italic}
 """ % dict(BLUSH=BLUSH, CORAL=CORAL, RUST=RUST, GRAY=GRAY, GOLD=GOLD), 1320, 560)
 
+# ---------- 1b. Bốn cặp hình thức giao tiếp (Chương 1) ----------
+# Nội dung vốn là bốn cặp đối nhau. Xếp thành bốn hộp chữ thì mắt phải đọc mới
+# thấy quan hệ; vẽ thành bốn trục có hai đầu thì nhìn là thấy ngay.
+FIGS["c1-hinh-thuc-giao-tiep"] = ("""
+<div class="wrap">
+<h1>Các hình thức giao tiếp</h1>
+<div class="sub">Bốn cặp đối nhau — một cuộc giao tiếp luôn nằm đâu đó trên cả bốn trục</div>
+
+<div class="truc">
+  <div class="ben trai"><b>Trực tiếp</b><span>mặt đối mặt, phản hồi ngay</span></div>
+  <div class="thanh"><i></i></div>
+  <div class="ben phai"><b>Gián tiếp</b><span>điện thoại, email, văn bản</span></div>
+</div>
+<div class="truc">
+  <div class="ben trai"><b>Chính thức</b><span>họp, văn bản, hội nghị</span></div>
+  <div class="thanh"><i></i></div>
+  <div class="ben phai"><b>Không chính thức</b><span>trò chuyện ngoài lề</span></div>
+</div>
+<div class="truc">
+  <div class="ben trai"><b>Cá nhân</b><span>1–1, sâu và riêng tư</span></div>
+  <div class="thanh"><i></i></div>
+  <div class="ben phai"><b>Nhóm, đám đông</b><span>cần điều phối, cần thuyết trình</span></div>
+</div>
+<div class="truc">
+  <div class="ben trai"><b>Truyền thống</b><span>gặp mặt, giấy tờ</span></div>
+  <div class="thanh"><i></i></div>
+  <div class="ben phai"><b>Giao tiếp số</b><span>email, họp trực tuyến, mạng xã hội</span></div>
+</div>
+</div>
+""", """
+.truc{display:flex;align-items:center;gap:18px;margin-bottom:26px}
+.ben{flex:1;background:#fff;border:1.5px solid %(BLUSH)s;border-radius:16px;padding:20px 22px;
+  box-shadow:0 2px 10px rgba(172,77,51,.06)}
+.ben.phai{text-align:right}
+.ben b{display:block;font-size:21px;color:%(RUST)s;font-weight:800}
+.ben span{display:block;font-size:15px;color:%(GRAY)s;margin-top:5px}
+.thanh{flex:0 0 190px;position:relative;height:14px}
+.thanh i{position:absolute;left:0;right:0;top:5px;height:4px;border-radius:2px;
+  background:linear-gradient(90deg,%(CORAL)s,%(BLUSH)s,%(CORAL)s)}
+.thanh:before,.thanh:after{content:"";position:absolute;top:0;width:14px;height:14px;border-radius:50%%;
+  background:%(CORAL)s}
+.thanh:before{left:0}
+.thanh:after{right:0}
+""" % dict(BLUSH=BLUSH, CORAL=CORAL, RUST=RUST, GRAY=GRAY), 1320, 617)
+
+# ---------- 1c. Năm yếu tố ảnh hưởng (Chương 1) ----------
+# Năm yếu tố đều tác động vào cùng một thứ; xếp dọc thành danh sách thì không
+# thấy điều đó, nên vây quanh một tâm.
+FIGS["c1-yeu-to-anh-huong"] = ("""
+<div class="wrap">
+<h1>Yếu tố ảnh hưởng đến giao tiếp</h1>
+<div class="sub">Năm yếu tố cùng tác động vào một cuộc giao tiếp</div>
+
+<div class="vong">
+  <div class="cot">
+    <div class="yt"><div class="so">1</div><div><b>Chủ thể</b><span>tâm lý, hiểu biết, kỹ năng, uy tín</span></div></div>
+    <div class="yt"><div class="so">2</div><div><b>Thông điệp</b><span>rõ hay mơ hồ, có cấu trúc hay lộn xộn</span></div></div>
+  </div>
+  <div class="tam">CUỘC<br>GIAO TIẾP</div>
+  <div class="cot">
+    <div class="yt"><div class="so">3</div><div><b>Kênh và nhiễu</b><span>chọn sai kênh, môi trường ồn ào</span></div></div>
+    <div class="yt"><div class="so">4</div><div><b>Bối cảnh văn hóa</b><span>chuẩn mực, vùng miền, thứ bậc</span></div></div>
+  </div>
+</div>
+<div class="duoi">
+  <div class="yt rong"><div class="so">5</div><div><b>Quan hệ và định kiến sẵn có</b><span>ấn tượng cũ, tin đồn, khoảng cách quyền lực làm méo cách diễn giải</span></div></div>
+</div>
+</div>
+""", """
+.vong{display:flex;align-items:center;gap:26px;margin-bottom:22px}
+.cot{flex:1;display:flex;flex-direction:column;gap:22px}
+.tam{flex:0 0 210px;height:210px;border-radius:50%%;background:%(CORAL)s;color:#fff;
+  display:flex;align-items:center;justify-content:center;text-align:center;
+  font-weight:800;font-size:23px;line-height:1.3;letter-spacing:.5px;
+  box-shadow:0 6px 18px rgba(172,77,51,.28)}
+.yt{display:flex;gap:12px;align-items:flex-start;background:#fff;border:1.5px solid %(BLUSH)s;
+  border-radius:16px;padding:18px 20px;box-shadow:0 2px 10px rgba(172,77,51,.06)}
+.yt.rong{max-width:none}
+.so{flex:0 0 36px;height:36px;border-radius:50%%;background:%(CORAL)s;color:#fff;
+  display:flex;align-items:center;justify-content:center;font-weight:800;font-size:17px}
+.yt b{display:block;font-size:20px;color:%(RUST)s}
+.yt span{display:block;font-size:15px;color:%(GRAY)s;margin-top:4px;line-height:1.45}
+.duoi{display:flex}
+.duoi .yt{flex:1}
+""" % dict(BLUSH=BLUSH, CORAL=CORAL, RUST=RUST, GRAY=GRAY), 1320, 477)
+
 # ---------- 2. Quy tắc 4x20 (Chương 2) ----------
 FIGS["c2-quy-tac-4x20"] = ("""
 <div class="wrap">
