@@ -16,7 +16,12 @@ CHUYỂN Ý: "Trước khi luyện kỹ năng, ta phải hiểu đúng bản ch�
 • Nhấn mạnh: lớp này KHÔNG chỉ nghe giảng — mỗi buổi đều có tình huống và thực hành.
 • Nói rõ 3 điều: điểm danh tối thiểu 80%; bài tập nộp đúng hạn; điện thoại để chế độ im lặng.
 • Mời sinh viên nêu kỳ vọng của mình về học phần (2–3 bạn phát biểu).
-CHUYỂN Ý: "Giờ ta bắt đầu từ mục tiêu của chương một."''""",
+CHUYỂN Ý: "Giờ ta bắt đầu từ mục tiêu của chương một."''
+
+NÓI ĐỦ Ý (phần đã rút khỏi slide)
+• Lý thuyết: 10 buổi sáng T7 & CN, 05/12/2026 – 03/01/2027, phòng C0105 — Chương 1 Tổng quan giao tiếp; Chương 2 Kỹ năng chuyên nghiệp; Chương 3 Tình huống đặc thù; Chương 4 Đàm phán; Chương 5 Soạn thảo văn bản.
+• Thực hành: chiều T7/CN, 26/12 – 24/01, phòng A0105 Mô phỏng Kinh tế — Bài 1 Thể thức; Bài 2 Văn bản hành chính; Bài 3 Văn bản thương mại.
+• Đánh giá: chuyên cần (dự lớp ≥ 80%, bài tập đầy đủ); quá trình (trắc nghiệm + tự luận + thực hành); cuối kỳ thi thực hành.""",
  "Sau chương này, sinh viên có thể": """MỤC TIÊU CHƯƠNG (1 phút)
 • Đọc lướt 4 mục tiêu, KHÔNG đọc từng chữ.
 • Nhấn: mục tiêu số 4 (vận dụng nguyên tắc) sẽ được kiểm tra qua tình huống cuối chương.
@@ -28,40 +33,91 @@ CHUYỂN Ý: "Giờ ta bắt đầu từ mục tiêu của chương một."''"""
 • Viết lên bảng 2 từ: THÔNG TIN – MỤC ĐÍCH. Giao tiếp luôn có cả hai.
 • Phân biệt: nói chuyện phiếm ≠ giao tiếp kinh doanh. Giao tiếp KD luôn gắn với MỤC TIÊU CÔNG VIỆC.
 • Ví dụ nhanh: một cuộc gọi hỏi thăm khách hàng cũ — mục đích thật là gì? (giữ quan hệ để bán hàng lần sau).
-HỎI LỚP: "Hôm nay các bạn đã có cuộc giao tiếp kinh doanh nào chưa?" (mua cà phê, hỏi bài giáo vụ...).""",
+HỎI LỚP: "Hôm nay các bạn đã có cuộc giao tiếp kinh doanh nào chưa?" (mua cà phê, hỏi bài giáo vụ...).
+
+NÓI ĐỦ Ý (phần đã rút khỏi slide)
+• Giao tiếp: quá trình trao đổi thông tin, tư tưởng, tình cảm giữa người với người nhằm đạt một mục đích — bằng cả lời nói, chữ viết và hành vi không lời.
+• Giao tiếp kinh doanh: gắn với quá trình kinh doanh — doanh nghiệp với khách hàng, đối tác, cơ quan quản lý, và giữa các thành viên trong tổ chức — hướng tới mục tiêu kinh doanh cụ thể.
+• Vì sao học: khảo sát nhà tuyển dụng nhiều năm liền xếp kỹ năng giao tiếp vào nhóm được yêu cầu cao nhất — bán được ý tưởng trước khi bán được sản phẩm.""",
  "Đặc điểm của giao tiếp": """BỐN ĐẶC ĐIỂM (3 phút)
 • Đặc điểm 3 (RÀNG BUỘC PHÁP LÝ) là quan trọng nhất — nhấn mạnh mạnh.
 • Ví dụ có thật: nhân viên hứa miệng giảm giá 20% với khách → công ty vẫn phải thực hiện vì đó là lời của người đại diện.
 • Nối sang học phần: đó là lý do Chương 5 dạy các bạn VĂN BẢN HÓA mọi thỏa thuận.
-CHUYỂN Ý: "Vậy một cuộc giao tiếp diễn ra qua những khâu nào?"''""",
+CHUYỂN Ý: "Vậy một cuộc giao tiếp diễn ra qua những khâu nào?"''
+
+NÓI ĐỦ Ý (phần đã rút khỏi slide)
+• Có mục đích: mỗi cuộc gặp, cuộc gọi, email đều phục vụ một mục tiêu công việc — bán hàng, hợp tác, giải quyết vấn đề.
+• Đa dạng chủ thể: cùng lúc giao tiếp với khách hàng, cấp trên, đồng nghiệp, cơ quan nhà nước — mỗi đối tượng một chuẩn mực riêng.
+• Ràng buộc: lời nói và văn bản trong kinh doanh có thể tạo ra nghĩa vụ, hợp đồng, trách nhiệm.
+• Khoa học và nghệ thuật: có nguyên tắc, quy trình để học; vận dụng linh hoạt theo con người và hoàn cảnh mới hiệu quả.""",
  "Mô hình quá trình giao tiếp": """SƠ ĐỒ TRUNG TÂM CỦA CHƯƠNG (4 phút)
 • Vẽ lại sơ đồ lên bảng trong lúc giảng — sinh viên nhớ tốt hơn khi thấy nó được vẽ ra.
 • Đi từng khâu: NGƯỜI GỬI → MÃ HÓA → THÔNG ĐIỆP/KÊNH → GIẢI MÃ → PHẢN HỒI.
 • Điểm nhấn: NHIỄU có ở MỌI khâu, không chỉ ở đường truyền.
 • Bài tập miệng: "Sếp gửi email giao việc, nhân viên làm sai. Hỏng ở khâu nào?" — cho lớp đoán, rồi phân tích: có thể mã hóa kém (email mơ hồ), có thể giải mã sai (nhân viên hiểu nhầm), có thể thiếu phản hồi (không hỏi lại).
-• CHỐT: cuộc giao tiếp thất bại thì đừng đổ lỗi, hãy DÒ LẠI TỪNG KHÂU.""",
+• CHỐT: cuộc giao tiếp thất bại thì đừng đổ lỗi, hãy DÒ LẠI TỪNG KHÂU.
+
+NÓI ĐỦ Ý (phần đã rút khỏi slide)
+• Người gửi: hình thành ý tưởng, xác định mục đích truyền đạt.
+• Mã hóa: chuyển ý tưởng thành lời nói, chữ viết, cử chỉ.
+• Thông điệp: nội dung truyền qua kênh — trực tiếp, điện thoại, email…
+• Giải mã: người nhận tiếp nhận và diễn giải.
+• Phản hồi: người nhận đáp lại — căn cứ để biết giao tiếp có hiệu quả.
+• NHIỄU: tiếng ồn, đường truyền kém, khác biệt ngôn ngữ – văn hóa, định kiến, cảm xúc tiêu cực… xuất hiện ở mọi khâu. Người giao tiếp giỏi chủ động giảm nhiễu ở từng bước.""",
  "Phương tiện giao tiếp: ngôn ngữ": """NGÔN NGỮ NÓI VÀ VIẾT (2 phút)
 • So sánh nhanh: nói thì NHANH và giàu cảm xúc nhưng "lời nói gió bay"; viết thì CHẬM hơn nhưng LƯU LẠI LÀM BẰNG CHỨNG.
 • Nguyên tắc thực hành: việc quan trọng — thỏa thuận xong bằng lời phải XÁC NHẬN LẠI BẰNG EMAIL.
-• Liên hệ nghề nghiệp: đây chính là kỹ năng nửa sau học phần.""",
+• Liên hệ nghề nghiệp: đây chính là kỹ năng nửa sau học phần.
+
+NÓI ĐỦ Ý (phần đã rút khỏi slide)
+• Nói: trực tiếp, nhanh, giàu cảm xúc, phản hồi tức thì — nhưng "lời nói gió bay", dễ sai khi thiếu chuẩn bị. Chú ý phát âm, tốc độ, âm lượng, ngữ điệu.
+• Viết: chính xác, cân nhắc được, lưu lại làm bằng chứng — nền tảng của Chương 5. Chú ý chính tả, thể thức, văn phong.
+• Dùng từ: rõ ràng, lịch sự, tích cực; tránh khẩu ngữ, tiếng lóng, từ đa nghĩa; ưu tiên câu chủ động, ngắn gọn.""",
  "phi ngôn ngữ": """PHI NGÔN NGỮ (4 phút) — PHẦN SINH VIÊN THÍCH NHẤT
 • Làm thử ngay tại lớp: nói câu "Rất vui được gặp bạn" hai lần — lần đầu nhìn xuống đất giọng đều, lần sau nhìn mắt và mỉm cười. Hỏi lớp tin lần nào.
 • Giới thiệu con số Mehrabian 7 – 38 – 55%, nhưng NÓI RÕ: chỉ đúng với thông điệp CẢM XÚC, không phải mọi tình huống.
 • Khoảng cách giao tiếp: mời 2 sinh viên lên đứng thử ở 3 khoảng cách khác nhau cho lớp quan sát.
-• CHỐT: đừng để cơ thể nói ngược lại lời của mình.""",
+• CHỐT: đừng để cơ thể nói ngược lại lời của mình.
+
+NÓI ĐỦ Ý (phần đã rút khỏi slide)
+• Ánh mắt – nét mặt – nụ cười: kênh biểu cảm mạnh nhất; nhìn vào mắt thể hiện tự tin và tôn trọng.
+• Cử chỉ – tư thế – dáng đi: thẳng, cởi mở tạo thiện cảm; khoanh tay, nhìn đồng hồ phát tín hiệu khép kín, sốt ruột.
+• Khoảng cách: thân mật (<0,5 m) – cá nhân – xã giao (1,2–3,5 m) – công cộng; chọn sai gây khó chịu.
+• Trang phục – giọng điệu – thời gian: ăn mặc phù hợp bối cảnh; giọng điệu quyết định cách thông điệp được đón nhận; đúng giờ cũng là thông điệp.
+• Ba con số trên slide là của Mehrabian, cho THÔNG ĐIỆP CẢM XÚC — đừng khái quát thành mọi loại giao tiếp. Chốt: đừng để cơ thể "nói" ngược với lời.""",
  "Các hình thức giao tiếp": """HÌNH THỨC GIAO TIẾP (2 phút)
 • 4 cặp phân loại — đi nhanh, đừng sa đà.
 • Nhấn cặp cuối: TRUYỀN THỐNG ↔ GIAO TIẾP SỐ. Hỏi lớp: "Một email công việc gửi lúc 11 giờ đêm nói lên điều gì về người gửi?"
-• Nhắc: giao tiếp số vẫn phải giữ đúng chuẩn mực như gặp mặt.""",
+• Nhắc: giao tiếp số vẫn phải giữ đúng chuẩn mực như gặp mặt.
+
+NÓI ĐỦ Ý (phần đã rút khỏi slide)
+• Trực tiếp: giàu thông tin, phản hồi ngay. Gián tiếp (điện thoại, văn bản, email): vượt khoảng cách, có bằng chứng — nhưng dễ hiểu nhầm.
+• Chính thức: họp, văn bản, hội nghị theo quy định. Không chính thức: trò chuyện ngoài lề, tin đồn — người quản lý giỏi dùng cả hai.
+• Cá nhân 1–1: sâu, riêng tư. Nhóm: cần điều phối. Đám đông: cần kỹ năng thuyết trình, học ở Chương 2.
+• Giao tiếp số: email, họp trực tuyến, mạng xã hội, tin nhắn nhóm — chuẩn mực mới là trả lời đúng hạn, đúng kênh, giữ hình ảnh số chuyên nghiệp.""",
  "Yếu tố ảnh hưởng": """YẾU TỐ ẢNH HƯỞNG (2 phút)
 • Nhấn yếu tố ĐỊNH KIẾN — thứ khó thấy nhất nhưng phá hỏng nhiều cuộc giao tiếp nhất.
 • Ví dụ: nghe giọng vùng miền rồi đánh giá năng lực; thấy người trẻ rồi cho là thiếu kinh nghiệm.
-• Liên hệ Chương 3: phần giao tiếp đa văn hóa sẽ quay lại điểm này.""",
+• Liên hệ Chương 3: phần giao tiếp đa văn hóa sẽ quay lại điểm này.
+
+NÓI ĐỦ Ý (phần đã rút khỏi slide)
+• Chủ thể: trạng thái tâm lý, cảm xúc, sức khỏe, vốn hiểu biết, kỹ năng, uy tín.
+• Thông điệp: rõ hay mơ hồ, cấu trúc hợp lý hay lộn xộn, hợp người nghe hay không.
+• Kênh và nhiễu: chọn kênh sai (việc hệ trọng lại nhắn tin), đường truyền kém, môi trường ồn ào.
+• Bối cảnh văn hóa – xã hội: chuẩn mực, tôn giáo, vùng miền, thứ bậc — bình thường nơi này có thể thất lễ nơi khác.
+• Quan hệ và định kiến: ấn tượng cũ, tin đồn, khoảng cách quyền lực làm méo cách diễn giải.""",
  "Nguyên tắc giao tiếp": """NĂM NGUYÊN TẮC (3 phút)
 • Đây là phần SINH VIÊN PHẢI THUỘC — sẽ dùng lại ở tình huống ngay sau đây.
 • Nguyên tắc TÔN TRỌNG: nói rõ tôn trọng thể hiện qua hành vi cụ thể — đúng giờ, không cắt lời, nhớ tên người đối diện.
 • Nguyên tắc GIỮ CHỮ TÍN: nhấn mạnh "chữ tín là tài sản kinh doanh" — mất khách vì thất hứa một lần.
-CHUYỂN Ý: "Bây giờ ta thử áp dụng cả chương vào một tình huống."''""",
+CHUYỂN Ý: "Bây giờ ta thử áp dụng cả chương vào một tình huống."''
+
+NÓI ĐỦ Ý (phần đã rút khỏi slide)
+• Tôn trọng nhân cách, thời gian, lợi ích và sự khác biệt của đối tượng.
+• Thiện chí và hợp tác: hướng tới hai bên cùng có lợi — thắng một cuộc cãi có thể thua một khách hàng.
+• Lắng nghe và thấu hiểu trước: hiểu đúng nhu cầu đối phương rồi mới trình bày quan điểm mình.
+• Phù hợp ngữ cảnh: đúng vai, đúng lúc, đúng nơi, đúng kênh, đúng mức độ trang trọng.
+• Chuẩn mực và giữ chữ tín: lời nói và văn bản nhất quán; đã hứa là làm — chữ tín là tài sản kinh doanh.""",
  "buổi gặp đầu tiên thất bại": """HOẠT ĐỘNG NHÓM (15 phút)
 • Chia nhóm 4–5 bạn, phát giấy A3 hoặc dùng vở.
 • Bấm giờ 10 phút thảo luận, 5 phút cho 2 nhóm trình bày.
@@ -71,7 +127,12 @@ CHUYỂN Ý: "Bây giờ ta thử áp dụng cả chương vào một tình hu�
  "Ba điều cần nhớ": """TỔNG KẾT (2 phút)
 • Đọc chậm 3 điều, dừng 2 giây sau mỗi điều.
 • Hỏi lớp: "Ai nhắc lại được 5 khâu của mô hình giao tiếp?" — gọi 1 sinh viên.
-• Giao việc: làm 40 câu trắc nghiệm Chương 1 trước buổi sau.""",
+• Giao việc: làm 40 câu trắc nghiệm Chương 1 trước buổi sau.
+
+NÓI ĐỦ Ý (phần đã rút khỏi slide)
+• Giao tiếp kinh doanh không phải trò chuyện ngẫu nhiên: mỗi tương tác phục vụ mục tiêu, chịu chuẩn mực và ràng buộc lợi ích – pháp lý.
+• Muốn sửa một cuộc giao tiếp thất bại, dò lại từng khâu: ý tưởng – mã hóa – kênh – giải mã – phản hồi.
+• Trang phục, ánh mắt, giọng điệu, đúng giờ… "nói" trước và nói to hơn lời — hãy để chúng nói cùng một điều với bạn.""",
  "Câu hỏi ôn tập": """CÂU HỎI ÔN TẬP (1 phút)
 • Không giải trên lớp — để sinh viên tự làm ở nhà.
 • Nói rõ: 4 câu này nằm trong phạm vi kiểm tra giữa kỳ.""",

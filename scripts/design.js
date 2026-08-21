@@ -83,8 +83,8 @@ function grid2(slide, cells, opt = {}) {
       fill: { color: BLUSH_SOFT }, line: { color: BLUSH, width: 1.25 },
     });
     slide.addText([
-      { text: head, options: { fontFace: BODY_FONT, fontSize: 15, bold: true, color: RUST, breakLine: true } },
-      { text: body, options: { fontFace: BODY_FONT, fontSize: 12.5, color: INK } },
+      { text: head, options: { fontFace: BODY_FONT, fontSize: opt.headSize || 15, bold: true, color: RUST, breakLine: true } },
+      { text: body, options: { fontFace: BODY_FONT, fontSize: opt.bodySize || 12.5, color: INK } },
     ], { x: cx + 0.24, y: cy + 0.08, w: cw - 0.48, h: ch - 0.16, margin: 0, valign: "middle" });
   });
 }
@@ -104,9 +104,9 @@ function numList(slide, items, opt = {}) {
       fontFace: BODY_FONT, fontSize: 14, bold: true, color: "FFFFFF",
     });
     const parts = Array.isArray(t) ? [
-      { text: t[0] + "  —  ", options: { fontFace: BODY_FONT, fontSize: 14, bold: true, color: RUST } },
-      { text: t[1], options: { fontFace: BODY_FONT, fontSize: 13.5, color: INK } },
-    ] : [{ text: t, options: { fontFace: BODY_FONT, fontSize: 14, color: INK } }];
+      { text: t[0] + "  —  ", options: { fontFace: BODY_FONT, fontSize: opt.headSize || 14, bold: true, color: RUST } },
+      { text: t[1], options: { fontFace: BODY_FONT, fontSize: opt.bodySize || 13.5, color: INK } },
+    ] : [{ text: t, options: { fontFace: BODY_FONT, fontSize: opt.headSize || 14, color: INK } }];
     slide.addText(parts, { x: x + 0.6, y: y - 0.06, w: w - 0.6, h: step, margin: 0, valign: "top" });
   });
 }

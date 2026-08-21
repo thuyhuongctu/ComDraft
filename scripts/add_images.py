@@ -52,6 +52,11 @@ def add_figure(slide, img, y=1.58, max_h=5.15, max_w=12.3, caption=None):
         if w > max_w:
             w = max_w; h = w / ar
         x = (SW - w) / 2
+    # Hình bẹt hơn khung slide thì co theo bề rộng, cao ra ít hơn chỗ trống —
+    # dán sát mép trên sẽ để hụt một mảng trắng ở đáy. Đặt vào giữa vùng thân
+    # slide cho cân, phần trống chia đều trên dưới.
+    vung = max_h + (0.32 if caption else 0)
+    y = y + max(0.0, (vung - (h + (0.32 if caption else 0))) / 2)
     slide.shapes.add_picture(img, Inches(x), Inches(y), Inches(w), Inches(h))
     if caption:
         tb = slide.shapes.add_textbox(Inches(0.6), Inches(y + h + 0.08), Inches(12.15), Inches(0.34))
@@ -93,6 +98,10 @@ PLAN = {
     "CHUONG 1 - TONG QUAN GIAO TIEP TRONG KINH DOANH.pptx": [
         ("Mô hình quá trình giao tiếp", f"{F}/c1-mo-hinh-giao-tiep-nt.png",
          "Giao tiếp là quá trình hai chiều — muốn sửa một cuộc giao tiếp thất bại, hãy dò lại từng khâu."),
+        ("Các hình thức giao tiếp", f"{F}/c1-hinh-thuc-giao-tiep-nt.png",
+         "Bốn cặp này không loại trừ nhau — một cuộc giao tiếp nằm đâu đó trên cả bốn trục cùng lúc."),
+        ("Yếu tố ảnh hưởng", f"{F}/c1-yeu-to-anh-huong-nt.png",
+         "Hỏng ở yếu tố nào thì sửa đúng yếu tố ấy, đừng đổ hết cho “nói chưa khéo”."),
     ],
     "CHUONG 2 - KY NANG GIAO TIEP CHUYEN NGHIEP.pptx": [
         ("Ấn tượng ban đầu", f"{F}/c2-quy-tac-4x20-nt.png", None),
