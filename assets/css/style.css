@@ -56,6 +56,13 @@
   --nhanh-ra: cubic-bezier(.22, .68, .32, 1);
   --nhanh-vao: cubic-bezier(.55, .06, .68, .19);
   --nhanh-hai: cubic-bezier(.45, .05, .3, 1);
+
+  /* Hai đầu dải màu của khối hero, và màu của màn mờ phủ lên bản đồ.
+     Màn mờ giữ dạng ba số kênh vì phải đổi độ trong ở bốn điểm dừng khác
+     nhau — có token này thì nền tối chỉ thay một dòng. */
+  --hero-dau: #FDEFEA;
+  --hero-cuoi: #F5E1D7;
+  --hero-man-mau: 254, 248, 245;
 }
 
 html[data-theme="dark"] {
@@ -92,9 +99,18 @@ html[data-theme="dark"] {
               inset -3px -3px 8px rgba(0, 0, 0, .38);
   --clay-lom: inset 4px 4px 10px rgba(0, 0, 0, .5),
               inset -3px -3px 8px rgba(255, 255, 255, .045);
+
+  --hero-dau: #342724;
+  --hero-cuoi: #1E1816;
+  --hero-man-mau: 36, 29, 27;
 }
 
 * { margin: 0; padding: 0; box-sizing: border-box; }
+
+/* Cỡ biểu tượng nét ở những nút không có lớp .bt riêng. */
+.sang-toi button svg { width: 17px; height: 17px; }
+.khung-phim .nut-phat svg { width: 26px; height: 26px; }
+.dieu-nhac .phat svg { width: 19px; height: 19px; }
 
 /* Vòng sáng khi đi bằng bàn phím.
    Trước đây cả tệp không có lấy một luật :focus-visible nào, mà gần như mọi
@@ -214,7 +230,7 @@ body {
   background: transparent; color: var(--chu-nhat); cursor: pointer;
   transition: transform .16s var(--nhanh-ra), box-shadow .16s var(--nhanh-ra), color .16s;
 }
-.menu button .bt { font-size: 18px; line-height: 1; }
+.menu button .bt { width: 20px; height: 20px; flex: none; }
 .menu button:hover { color: var(--chinh); }
 .menu button[aria-current="page"] {
   background: var(--mat-2); color: var(--chinh);
@@ -329,8 +345,9 @@ h2.muc {
 .tai-nguyen .bt {
   width: 38px; height: 38px; border-radius: 12px; flex: none;
   background: var(--chinh-nen); color: var(--chinh);
-  display: grid; place-items: center; font-size: 18px;
+  display: grid; place-items: center;
 }
+.tai-nguyen .bt svg, .tai-nguyen svg.bt { width: 19px; height: 19px; }
 .tai-nguyen b { font-size: 14.5px; display: block; }
 .tai-nguyen small { color: var(--chu-mo); font-size: 12px; }
 
@@ -647,7 +664,7 @@ p.rieng { font-size: 12.5px; color: var(--chu-mo); margin-top: 10px; line-height
   position: absolute; right: 16px; bottom: 16px;
   width: 68px; height: 68px; border-radius: 50%;
   background: var(--mat); color: var(--chinh);
-  display: grid; place-items: center; font-size: 25px; padding-left: 5px;
+  display: grid; place-items: center; padding-left: 4px;
   box-shadow: var(--clay);
 }
 /* Chú thích nằm DƯỚI ảnh chứ không đè lên.
@@ -684,7 +701,7 @@ p.rieng { font-size: 12.5px; color: var(--chu-mo); margin-top: 10px; line-height
     font-family: var(--body); font-size: 11px; font-weight: 600;
     color: var(--chu-mo); padding: 7px 2px; border-radius: 15px;
   }
-  .thanh-duoi button .bt { font-size: 19px; line-height: 1; }
+  .thanh-duoi button .bt { width: 21px; height: 21px; }
   .thanh-duoi button[aria-current="page"] {
     color: var(--chinh); background: var(--mat-2); box-shadow: var(--clay-lom);
   }
@@ -721,7 +738,7 @@ p.rieng { font-size: 12.5px; color: var(--chu-mo); margin-top: 10px; line-height
 .dieu-nhac { display: flex; align-items: center; gap: 13px; margin-top: 14px; }
 .dieu-nhac .phat {
   width: 52px; height: 52px; border-radius: 50%; flex: none;
-  padding: 0; font-size: 17px; display: grid; place-items: center;
+  padding: 0; display: grid; place-items: center;
 }
 .dieu-nhac .phat.dang-phat { box-shadow: var(--clay-lom); }
 .chu-nhac { min-width: 0; }
@@ -833,7 +850,12 @@ p.rieng { font-size: 12.5px; color: var(--chu-mo); margin-top: 10px; line-height
     scroll-behavior: auto !important;
   }
   /* Vòng tiêu điểm không bao giờ được chạy hiệu ứng, kể cả ở đây. */
-  :where(a, button, input, select, textarea, summary, [tabindex]):focus-visible {
+  /* Cỡ mặc định của biểu tượng nét. Nút nào cần khác thì tự đè bên dưới. */
+.sang-toi button svg { width: 17px; height: 17px; }
+.khung-phim .nut-phat svg { width: 26px; height: 26px; }
+.dieu-nhac .phat svg { width: 19px; height: 19px; }
+
+:where(a, button, input, select, textarea, summary, [tabindex]):focus-visible {
     transition: none !important;
   }
 }
@@ -854,25 +876,27 @@ p.rieng { font-size: 12.5px; color: var(--chu-mo); margin-top: 10px; line-height
   display: flex; align-items: flex-end; gap: 26px;
   box-shadow: var(--clay);
 }
-/* Dải màu chảy: bốn vệt sáng chồng lên nhau, không dùng ảnh nên đổi màu
-   theo chế độ sáng tối mà không phải làm hai tệp. */
+/* Nền hero.
+   Bản trước xếp BỐN vệt radial-gradient chồng lên nhau. Đó đúng là dấu hiệu
+   Hallmark gọi tên — "aurora blob" — kiểu nền mà mọi trang do máy sinh ra đều
+   có. Màu thì không sai, cả bốn vệt đều nằm trong họ san hô của bộ nhận diện,
+   nhưng CÁCH DỰNG mới là chỗ lộ. Bốn vệt còn buộc phải chép lại năm điểm dừng
+   màu bằng tay ở khối nền tối, nên sửa một màu là phải sửa hai chỗ.
+   Nay còn một dải hai điểm dừng, cộng một lớp nhiễu hạt rất mảnh để mặt phẳng
+   không bị trơ. Hạt vẽ bằng feTurbulence nhúng thẳng, không gọi ra ngoài —
+   repo cấm mọi yêu cầu mạng. Màu lấy qua token, nên nền tối chỉ cần đổi token
+   chứ không phải viết lại cả khối. */
 .hero-nen {
   position: absolute; inset: 0; z-index: -2;
-  background:
-    radial-gradient(118% 92% at 82% 12%, rgba(220, 117, 106, .40) 0%, transparent 58%),
-    radial-gradient(96% 84% at 8% 92%, rgba(226, 168, 96, .30) 0%, transparent 62%),
-    radial-gradient(78% 72% at 46% -6%, rgba(251, 206, 201, .62) 0%, transparent 64%),
-    radial-gradient(60% 60% at 96% 78%, rgba(200, 90, 72, .22) 0%, transparent 60%),
-    linear-gradient(158deg, var(--mat) 0%, var(--nen-sau) 100%);
+  background: linear-gradient(158deg, var(--hero-dau) 0%, var(--hero-cuoi) 100%);
 }
-html[data-theme="dark"] .hero-nen {
-  background:
-    radial-gradient(118% 92% at 82% 12%, rgba(232, 145, 135, .26) 0%, transparent 58%),
-    radial-gradient(96% 84% at 8% 92%, rgba(227, 188, 99, .16) 0%, transparent 62%),
-    radial-gradient(78% 72% at 46% -6%, rgba(120, 62, 54, .48) 0%, transparent 64%),
-    radial-gradient(60% 60% at 96% 78%, rgba(232, 145, 135, .14) 0%, transparent 60%),
-    linear-gradient(158deg, var(--mat) 0%, var(--nen-sau) 100%);
+/* Nhiễu hạt: lớp riêng để chỉnh độ đậm mà không đụng vào dải màu bên dưới. */
+.hero-nen::after {
+  content: ""; position: absolute; inset: 0; pointer-events: none;
+  opacity: .055;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='140' height='140'%3E%3Cfilter id='h'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.82' numOctaves='3'/%3E%3C/filter%3E%3Crect width='140' height='140' filter='url(%23h)'/%3E%3C/svg%3E");
 }
+html[data-theme="dark"] .hero-nen::after { opacity: .09; }
 /* Bản đồ dán thẳng chứ không dùng làm mặt nạ nữa: có sông, tên thành phố,
    lưới kinh vĩ tuyến và hoa gió, nên phải giữ đủ màu của chính nó. Vì thế
    phải có hai tệp, một cho nền sáng một cho nền tối. Bản đồ nằm trọn trong
@@ -891,13 +915,8 @@ html[data-theme="dark"] .hero-ban-do {
 .hero-man {
   position: absolute; inset: 0; z-index: -1; pointer-events: none;
   background: linear-gradient(96deg,
-              rgba(254, 248, 245, .94) 0%, rgba(254, 248, 245, .86) 38%,
-              rgba(254, 248, 245, .30) 68%, rgba(254, 248, 245, 0) 88%);
-}
-html[data-theme="dark"] .hero-man {
-  background: linear-gradient(96deg,
-              rgba(36, 29, 27, .92) 0%, rgba(36, 29, 27, .84) 38%,
-              rgba(36, 29, 27, .28) 68%, rgba(36, 29, 27, 0) 88%);
+              rgba(var(--hero-man-mau), .94) 0%, rgba(var(--hero-man-mau), .86) 38%,
+              rgba(var(--hero-man-mau), .30) 68%, rgba(var(--hero-man-mau), 0) 88%);
 }
 
 .hero-chu { flex: 1 1 auto; min-width: 0; padding-bottom: clamp(30px, 5vw, 62px); }

@@ -71,6 +71,21 @@
     if (chu != null) n.textContent = chu;
     return n;
   }
+  /* Lấy một biểu tượng trong bộ nét chung khai ở đầu index.html.
+     Phải dùng createElementNS: SVG nằm ở không gian tên khác, tạo bằng
+     createElement thì trình duyệt dựng ra thẻ HTML rỗng, không vẽ gì cả. */
+  function bieu_tuong(ma, lop) {
+    var NS = 'http://www.w3.org/2000/svg';
+    var s = document.createElementNS(NS, 'svg');
+    s.setAttribute('viewBox', '0 0 24 24');
+    s.setAttribute('aria-hidden', 'true');
+    s.setAttribute('focusable', 'false');
+    if (lop) s.setAttribute('class', lop);
+    var u = document.createElementNS(NS, 'use');
+    u.setAttribute('href', '#' + ma);
+    s.appendChild(u);
+    return s;
+  }
   function tron_mang(a) {
     var m = a.slice();
     for (var i = m.length - 1; i > 0; i--) {
@@ -246,7 +261,8 @@
     au.loop = true;
     au.src = './assets/audio/mekong-sunfire.mp3';
 
-    var nut_phat = el('button', 'nut chinh phat', '▶'); nut_phat.type = 'button';
+    var nut_phat = el('button', 'nut chinh phat'); nut_phat.type = 'button';
+    nut_phat.appendChild(bieu_tuong('i-phat'));
     nut_phat.setAttribute('aria-label', t('nhac.phat'));
     var ten_bai = el('span', 'ten-bai', 'Mekong Sunfire');
     var gio_bai = el('span', 'gio-bai', '0:00');
@@ -255,7 +271,7 @@
       if (au.paused) au.play().catch(function () {}); else au.pause();
     });
     function dong_bo() {
-      nut_phat.textContent = au.paused ? '▶' : '❚❚';
+      nut_phat.replaceChildren(bieu_tuong(au.paused ? 'i-phat' : 'i-dung'));
       nut_phat.classList.toggle('dang-phat', !au.paused);
       gio_bai.textContent = mmss(Math.floor(au.currentTime || 0));
     }
@@ -376,7 +392,9 @@
     a.src = './assets/slides/' + (b.slide ? b.slide.bo : 'ch1') + '/001.jpg';
     a.alt = ''; a.loading = 'lazy';
     m.appendChild(a);
-    m.appendChild(el('span', 'nut-phat', '▶'));
+    var np = el('span', 'nut-phat');
+    np.appendChild(bieu_tuong('i-phat'));
+    m.appendChild(np);
     o.appendChild(m);
     var c = el('span', 'loi-phim');
     c.appendChild(el('small', null, t('phim.moi')));
@@ -467,7 +485,7 @@
     // đường dẫn tải tệp về máy.
     function muc_tn(bt, ten, phu, mo) {
       var a = el('button'); a.type = 'button';
-      a.appendChild(el('span', 'bt', bt));
+      a.appendChild(bieu_tuong(bt, 'bt'));
       var x = el('span');
       x.appendChild(el('b', null, ten));
       x.appendChild(el('small', null, phu));
@@ -477,11 +495,11 @@
     }
     function muc_slide(ten, s) {
       var n = SO_SLIDE[s.bo] || 0;
-      return muc_tn('📊', ten, t('bai.slide.phu') + (n ? ' · ' + n + ' ' + t('xem.trangs') : ''),
+      return muc_tn('i-slide', ten, t('bai.slide.phu') + (n ? ' · ' + n + ' ' + t('xem.trangs') : ''),
                     function () { xem_slide(ten, s.bo, s.taiVe); });
     }
     function muc_video(ten, v) {
-      return muc_tn('▶', ten, t('bai.video.phu'),
+      return muc_tn('i-phat', ten, t('bai.video.phu'),
                     function () { xem_video(ten, v.tep, v.taiVe); });
     }
 
@@ -1267,7 +1285,7 @@
       var ds = el('div', 'tai-nguyen');
       xong.forEach(function (b) {
         var n = el('button'); n.type = 'button';
-        n.appendChild(el('span', 'bt', '🎓'));
+        n.appendChild(bieu_tuong('i-giay', 'bt'));
         var x = el('span');
         x.appendChild(el('b', null, (ngu() === 'en' ? 'Chapter ' : 'Chương ') + b.so +
                                     ' — ' + (ngu() === 'en' ? b.en : b.vi)));
