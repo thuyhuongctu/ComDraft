@@ -48,6 +48,14 @@
 
   --head: Cambria, "Times New Roman", Georgia, serif;
   --body: Calibri, "Segoe UI", system-ui, -apple-system, sans-serif;
+
+  /* Ba đường cong chuyển động có tên. Trước đây mười bốn khai báo transition
+     đều để trống, tức là dùng `ease` mặc định của trình duyệt — đường cong
+     đối xứng, khởi động chậm, dừng chậm, nên bấm vào thấy ì. Chuyển động
+     giao diện phải bật nhanh rồi hãm dần: đó là `--nhanh-ra`. */
+  --nhanh-ra: cubic-bezier(.22, .68, .32, 1);
+  --nhanh-vao: cubic-bezier(.55, .06, .68, .19);
+  --nhanh-hai: cubic-bezier(.45, .05, .3, 1);
 }
 
 html[data-theme="dark"] {
@@ -88,6 +96,21 @@ html[data-theme="dark"] {
 
 * { margin: 0; padding: 0; box-sizing: border-box; }
 
+/* Vòng sáng khi đi bằng bàn phím.
+   Trước đây cả tệp không có lấy một luật :focus-visible nào, mà gần như mọi
+   thứ bấm được trong ứng dụng đều là <button>: bốn mục cột trái, bốn mục
+   thanh dưới, từng phương án trắc nghiệm, từng thẻ chương, nút phát video.
+   Ai dùng bàn phím — kể cả sinh viên chỉ quen bấm Tab — không thấy mình đang
+   đứng ở đâu. Đây là lỗi dùng được hay không, không phải chuyện đẹp xấu.
+   :focus-visible chứ không phải :focus, để bấm chuột thì không hiện vòng.
+   Không cho vòng chạy hiệu ứng: vòng phải hiện ngay lúc nhận tiêu điểm. */
+:where(a, button, input, select, textarea, summary, [tabindex]):focus-visible {
+  outline: 3px solid var(--chinh);
+  outline-offset: 3px;
+  border-radius: 6px;
+  transition: none;
+}
+
 body {
   font-family: var(--body);
   background: var(--nen);
@@ -111,7 +134,7 @@ body {
 .dau-trang .logo {
   width: 46px; height: 46px; flex: none;
   filter: drop-shadow(4px 6px 12px rgba(172, 77, 51, .22));
-  transition: transform .18s ease;
+  transition: transform .18s var(--nhanh-ra);
 }
 .dau-trang .hieu:hover .logo { transform: translateY(-2px) rotate(-3deg); }
 .dau-trang .chu b {
@@ -142,7 +165,10 @@ body {
   padding: 7px 14px; text-align: center; min-width: 76px;
 }
 .dong-ho span { display: block; font-size: 10.5px; color: var(--chu-mo); letter-spacing: .3px; }
-.dong-ho b { display: block; font-family: var(--head); font-size: 17px; color: var(--chinh); line-height: 1.15; }
+.dong-ho b {
+  display: block; font-family: var(--head); font-size: 17px; color: var(--chinh);
+  line-height: 1.15; font-variant-numeric: tabular-nums;
+}
 @media (max-width: 900px) { .dong-ho { display: none; } }
 .thuong-hieu img {
   width: 42px; height: 42px; border-radius: 50%; flex: none;
@@ -186,7 +212,7 @@ body {
   font-family: var(--body); font-size: 15px; font-weight: 600;
   padding: 11px 14px; border: none; border-radius: var(--bo-nho);
   background: transparent; color: var(--chu-nhat); cursor: pointer;
-  transition: transform .16s ease, box-shadow .16s ease, color .16s;
+  transition: transform .16s var(--nhanh-ra), box-shadow .16s var(--nhanh-ra), color .16s;
 }
 .menu button .bt { font-size: 18px; line-height: 1; }
 .menu button:hover { color: var(--chinh); }
@@ -250,7 +276,7 @@ h2.muc {
   padding: 11px 22px; border: none; border-radius: 999px;
   background: var(--mat); color: var(--chinh); cursor: pointer;
   box-shadow: var(--clay-nho);
-  transition: transform .14s ease, box-shadow .14s ease;
+  transition: transform .14s var(--nhanh-ra), box-shadow .14s var(--nhanh-ra);
 }
 .nut:hover { transform: translateY(-2px); }
 .nut:active { transform: translateY(1px); box-shadow: var(--clay-lom); }
@@ -265,7 +291,7 @@ h2.muc {
   font-family: var(--body); cursor: pointer; border: none;
   background: var(--mat); border-radius: var(--bo);
   box-shadow: var(--clay); padding: 16px 18px; color: var(--chu);
-  transition: transform .18s ease, box-shadow .18s ease;
+  transition: transform .18s var(--nhanh-ra), box-shadow .18s var(--nhanh-ra);
 }
 .chuong:hover { transform: translateY(-3px); }
 .chuong .so {
@@ -286,7 +312,7 @@ h2.muc {
 .thanh i {
   display: block; height: 100%; border-radius: 999px;
   background: linear-gradient(90deg, var(--coral), var(--chinh));
-  transition: width .35s ease;
+  transition: width .35s var(--nhanh-ra);
 }
 
 /* ---------------------------------------------------------------- tài nguyên */
@@ -297,7 +323,7 @@ h2.muc {
   font-family: var(--body); font-size: 15px;
   background: var(--mat-2); border-radius: var(--bo-nho);
   box-shadow: var(--clay-nho); padding: 12px 15px; color: var(--chu);
-  transition: transform .16s ease;
+  transition: transform .16s var(--nhanh-ra);
 }
 .tai-nguyen a:hover, .tai-nguyen button:hover { transform: translateY(-2px); }
 .tai-nguyen .bt {
@@ -327,7 +353,7 @@ h2.muc {
   padding: 14px 16px; border: none; border-radius: var(--bo-nho);
   background: var(--mat); color: var(--chu); cursor: pointer;
   box-shadow: var(--clay-nho);
-  transition: transform .14s ease, box-shadow .14s ease;
+  transition: transform .14s var(--nhanh-ra), box-shadow .14s var(--nhanh-ra);
 }
 .dap-an button:hover:not(:disabled) { transform: translateY(-2px); }
 .dap-an button .ky {
@@ -366,13 +392,17 @@ h2.muc {
 }
 .diem-vong span {
   font-family: var(--head); font-size: 46px; font-weight: 700; color: var(--chinh);
+  font-variant-numeric: tabular-nums;
 }
 .o-so { display: grid; grid-template-columns: repeat(auto-fit, minmax(115px, 1fr)); gap: 12px; margin-top: 18px; }
 .o-so div {
   background: var(--mat-2); border-radius: var(--bo-nho);
   box-shadow: var(--clay-nho); padding: 13px; text-align: center;
 }
-.o-so b { display: block; font-family: var(--head); font-size: 23px; color: var(--chinh); }
+.o-so b {
+  display: block; font-family: var(--head); font-size: 23px; color: var(--chinh);
+  font-variant-numeric: tabular-nums;
+}
 .o-so span { font-size: 12.5px; color: var(--chu-mo); }
 
 .xem-lai details {
@@ -605,7 +635,7 @@ p.rieng { font-size: 12.5px; color: var(--chu-mo); margin-top: 10px; line-height
   position: relative; display: block; width: 100%; border: none; padding: 0;
   border-radius: var(--bo); overflow: hidden; cursor: pointer;
   box-shadow: var(--clay); background: var(--mat);
-  transition: transform .18s ease;
+  transition: transform .18s var(--nhanh-ra);
 }
 .khung-phim .man:hover { transform: translateY(-3px); }
 .khung-phim .anh { position: relative; display: block; }
@@ -737,7 +767,7 @@ p.rieng { font-size: 12.5px; color: var(--chu-mo); margin-top: 10px; line-height
   border: none; cursor: pointer; font-family: var(--body);
   font-size: 13.5px; font-weight: 600; color: var(--chinh);
   background: var(--mat); border-radius: 999px; padding: 8px 16px 8px 8px;
-  box-shadow: var(--clay); transition: transform .16s ease;
+  box-shadow: var(--clay); transition: transform .16s var(--nhanh-ra);
 }
 .tour-goi img { width: 30px; height: 30px; border-radius: 50%; }
 .tour-goi:hover { transform: translateY(-2px); }
@@ -763,7 +793,7 @@ p.rieng { font-size: 12.5px; color: var(--chu-mo); margin-top: 10px; line-height
 /* Nhân vật nép bên phải bảng, chữ chừa lề để không bị đè */
 .tour-bang .nv {
   position: absolute; right: -14px; bottom: 0; height: 162px; width: auto;
-  pointer-events: none; transition: opacity .18s ease;
+  pointer-events: none; transition: opacity .18s var(--nhanh-ra);
 }
 @media (max-width: 480px) { .tour-bang .nv { display: none; } }
 .tour-bang .loi {
@@ -789,7 +819,24 @@ p.rieng { font-size: 12.5px; color: var(--chu-mo); margin-top: 10px; line-height
 @media (prefers-reduced-motion: reduce) { .tour-sang { animation: none; } }
 
 .an { display: none !important; }
-@media (prefers-reduced-motion: reduce) { * { transition: none !important; } }
+/* Người bật "giảm chuyển động" cần bớt chuyển động trong KHÔNG GIAN — thứ gây
+   chóng mặt là vật trượt, nảy, phóng to. Đổi màu và mờ dần thì không.
+   Luật cũ tắt sạch mọi transition, nên bấm một phương án là màu nhảy phắt,
+   không còn dấu hiệu nào cho biết máy đã nhận. Nay chỉ chặn phần dịch chuyển
+   và giữ lại phần đổi màu, rút xuống 120 ms. */
+@media (prefers-reduced-motion: reduce) {
+  * {
+    transition-property: opacity, background-color, color, border-color, box-shadow !important;
+    transition-duration: 120ms !important;
+    animation-duration: 1ms !important;
+    animation-iteration-count: 1 !important;
+    scroll-behavior: auto !important;
+  }
+  /* Vòng tiêu điểm không bao giờ được chạy hiệu ứng, kể cả ở đây. */
+  :where(a, button, input, select, textarea, summary, [tabindex]):focus-visible {
+    transition: none !important;
+  }
+}
 
 /* ---------------------------------------------------------------- hero */
 /* Cách bày của Google DeepMind: một khối lớn gần như không viền, chữ tiêu đề
