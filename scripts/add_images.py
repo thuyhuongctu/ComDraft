@@ -7,7 +7,10 @@ from pptx.dml.color import RGBColor
 from pptx.enum.shapes import MSO_SHAPE
 from pptx.enum.text import PP_ALIGN, MSO_ANCHOR
 
-F = "figs"
+# Trước đây là "figs" — một thư mục không có trong repo, nên mọi lần chèn hình
+# đều lặng lẽ hỏng. Thư mục thật tên là "figures"; neo tuyệt đối theo vị trí
+# tệp này để chạy từ thư mục dựng tạm nào cũng đúng.
+F = os.path.join(os.path.dirname(os.path.abspath(__file__)), "..", "figures")
 CORAL = RGBColor(0xDC, 0x75, 0x6A)
 RUST = RGBColor(0xAC, 0x4D, 0x33)
 BLUSH = RGBColor(0xFB, 0xCE, 0xC9)

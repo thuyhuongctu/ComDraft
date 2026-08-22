@@ -12,8 +12,15 @@ const GOLD = "C9A227";        // điểm nhấn phụ
 const HEAD_FONT = "Cambria";  // serif thanh lịch, hợp chữ ký trong logo
 const BODY_FONT = "Calibri";
 
-const LOGO_ROUND = "assets/logo_tron.png";
-const LOGO_WIDE = "assets/logo_ngang.png";
+// Hai tệp này từng được trỏ tới bằng đường dẫn tương đối "assets/logo_tron.png"
+// và "assets/logo_ngang.png". Cả hai đều không có trong repo, nên build_decks.js
+// chết ngay ở slide đầu — tức là suốt thời gian qua tám bộ slide không dựng lại
+// được, dù CLAUDE.md bảo phải sửa ở trình sinh chứ đừng sửa tay tệp kết quả.
+// Nay trỏ đúng tệp thật, và neo theo __dirname để chạy từ thư mục nào cũng được.
+const path = require("path");
+const GOC = path.join(__dirname, "..");
+const LOGO_ROUND = path.join(GOC, "assets/img/dau-huong.png");
+const LOGO_WIDE = path.join(GOC, "assets/img/lockup-huong.png");
 
 function newDeck(pptx) {
   pptx.layout = "LAYOUT_WIDE"; // 13.33 x 7.5

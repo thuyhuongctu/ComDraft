@@ -48,6 +48,21 @@
 
   --head: Cambria, "Times New Roman", Georgia, serif;
   --body: Calibri, "Segoe UI", system-ui, -apple-system, sans-serif;
+
+  /* Ba đường cong chuyển động có tên. Trước đây mười bốn khai báo transition
+     đều để trống, tức là dùng `ease` mặc định của trình duyệt — đường cong
+     đối xứng, khởi động chậm, dừng chậm, nên bấm vào thấy ì. Chuyển động
+     giao diện phải bật nhanh rồi hãm dần: đó là `--nhanh-ra`. */
+  --nhanh-ra: cubic-bezier(.22, .68, .32, 1);
+  --nhanh-vao: cubic-bezier(.55, .06, .68, .19);
+  --nhanh-hai: cubic-bezier(.45, .05, .3, 1);
+
+  /* Hai đầu dải màu của khối hero, và màu của màn mờ phủ lên bản đồ.
+     Màn mờ giữ dạng ba số kênh vì phải đổi độ trong ở bốn điểm dừng khác
+     nhau — có token này thì nền tối chỉ thay một dòng. */
+  --hero-dau: #FDEFEA;
+  --hero-cuoi: #F5E1D7;
+  --hero-man-mau: 254, 248, 245;
 }
 
 html[data-theme="dark"] {
@@ -84,9 +99,33 @@ html[data-theme="dark"] {
               inset -3px -3px 8px rgba(0, 0, 0, .38);
   --clay-lom: inset 4px 4px 10px rgba(0, 0, 0, .5),
               inset -3px -3px 8px rgba(255, 255, 255, .045);
+
+  --hero-dau: #342724;
+  --hero-cuoi: #1E1816;
+  --hero-man-mau: 36, 29, 27;
 }
 
 * { margin: 0; padding: 0; box-sizing: border-box; }
+
+/* Cỡ biểu tượng nét ở những nút không có lớp .bt riêng. */
+.sang-toi button svg { width: 17px; height: 17px; }
+.khung-phim .nut-phat svg { width: 26px; height: 26px; }
+.dieu-nhac .phat svg { width: 19px; height: 19px; }
+
+/* Vòng sáng khi đi bằng bàn phím.
+   Trước đây cả tệp không có lấy một luật :focus-visible nào, mà gần như mọi
+   thứ bấm được trong ứng dụng đều là <button>: bốn mục cột trái, bốn mục
+   thanh dưới, từng phương án trắc nghiệm, từng thẻ chương, nút phát video.
+   Ai dùng bàn phím — kể cả sinh viên chỉ quen bấm Tab — không thấy mình đang
+   đứng ở đâu. Đây là lỗi dùng được hay không, không phải chuyện đẹp xấu.
+   :focus-visible chứ không phải :focus, để bấm chuột thì không hiện vòng.
+   Không cho vòng chạy hiệu ứng: vòng phải hiện ngay lúc nhận tiêu điểm. */
+:where(a, button, input, select, textarea, summary, [tabindex]):focus-visible {
+  outline: 3px solid var(--chinh);
+  outline-offset: 3px;
+  border-radius: 6px;
+  transition: none;
+}
 
 body {
   font-family: var(--body);
@@ -111,7 +150,7 @@ body {
 .dau-trang .logo {
   width: 46px; height: 46px; flex: none;
   filter: drop-shadow(4px 6px 12px rgba(172, 77, 51, .22));
-  transition: transform .18s ease;
+  transition: transform .18s var(--nhanh-ra);
 }
 .dau-trang .hieu:hover .logo { transform: translateY(-2px) rotate(-3deg); }
 .dau-trang .chu b {
@@ -142,7 +181,10 @@ body {
   padding: 7px 14px; text-align: center; min-width: 76px;
 }
 .dong-ho span { display: block; font-size: 10.5px; color: var(--chu-mo); letter-spacing: .3px; }
-.dong-ho b { display: block; font-family: var(--head); font-size: 17px; color: var(--chinh); line-height: 1.15; }
+.dong-ho b {
+  display: block; font-family: var(--head); font-size: 17px; color: var(--chinh);
+  line-height: 1.15; font-variant-numeric: tabular-nums;
+}
 @media (max-width: 900px) { .dong-ho { display: none; } }
 .thuong-hieu img {
   width: 42px; height: 42px; border-radius: 50%; flex: none;
@@ -186,9 +228,9 @@ body {
   font-family: var(--body); font-size: 15px; font-weight: 600;
   padding: 11px 14px; border: none; border-radius: var(--bo-nho);
   background: transparent; color: var(--chu-nhat); cursor: pointer;
-  transition: transform .16s ease, box-shadow .16s ease, color .16s;
+  transition: transform .16s var(--nhanh-ra), box-shadow .16s var(--nhanh-ra), color .16s;
 }
-.menu button .bt { font-size: 18px; line-height: 1; }
+.menu button .bt { width: 20px; height: 20px; flex: none; }
 .menu button:hover { color: var(--chinh); }
 .menu button[aria-current="page"] {
   background: var(--mat-2); color: var(--chinh);
@@ -250,7 +292,7 @@ h2.muc {
   padding: 11px 22px; border: none; border-radius: 999px;
   background: var(--mat); color: var(--chinh); cursor: pointer;
   box-shadow: var(--clay-nho);
-  transition: transform .14s ease, box-shadow .14s ease;
+  transition: transform .14s var(--nhanh-ra), box-shadow .14s var(--nhanh-ra);
 }
 .nut:hover { transform: translateY(-2px); }
 .nut:active { transform: translateY(1px); box-shadow: var(--clay-lom); }
@@ -265,7 +307,7 @@ h2.muc {
   font-family: var(--body); cursor: pointer; border: none;
   background: var(--mat); border-radius: var(--bo);
   box-shadow: var(--clay); padding: 16px 18px; color: var(--chu);
-  transition: transform .18s ease, box-shadow .18s ease;
+  transition: transform .18s var(--nhanh-ra), box-shadow .18s var(--nhanh-ra);
 }
 .chuong:hover { transform: translateY(-3px); }
 .chuong .so {
@@ -286,7 +328,7 @@ h2.muc {
 .thanh i {
   display: block; height: 100%; border-radius: 999px;
   background: linear-gradient(90deg, var(--coral), var(--chinh));
-  transition: width .35s ease;
+  transition: width .35s var(--nhanh-ra);
 }
 
 /* ---------------------------------------------------------------- tài nguyên */
@@ -297,14 +339,15 @@ h2.muc {
   font-family: var(--body); font-size: 15px;
   background: var(--mat-2); border-radius: var(--bo-nho);
   box-shadow: var(--clay-nho); padding: 12px 15px; color: var(--chu);
-  transition: transform .16s ease;
+  transition: transform .16s var(--nhanh-ra);
 }
 .tai-nguyen a:hover, .tai-nguyen button:hover { transform: translateY(-2px); }
 .tai-nguyen .bt {
   width: 38px; height: 38px; border-radius: 12px; flex: none;
   background: var(--chinh-nen); color: var(--chinh);
-  display: grid; place-items: center; font-size: 18px;
+  display: grid; place-items: center;
 }
+.tai-nguyen .bt svg, .tai-nguyen svg.bt { width: 19px; height: 19px; }
 .tai-nguyen b { font-size: 14.5px; display: block; }
 .tai-nguyen small { color: var(--chu-mo); font-size: 12px; }
 
@@ -327,7 +370,7 @@ h2.muc {
   padding: 14px 16px; border: none; border-radius: var(--bo-nho);
   background: var(--mat); color: var(--chu); cursor: pointer;
   box-shadow: var(--clay-nho);
-  transition: transform .14s ease, box-shadow .14s ease;
+  transition: transform .14s var(--nhanh-ra), box-shadow .14s var(--nhanh-ra);
 }
 .dap-an button:hover:not(:disabled) { transform: translateY(-2px); }
 .dap-an button .ky {
@@ -366,13 +409,17 @@ h2.muc {
 }
 .diem-vong span {
   font-family: var(--head); font-size: 46px; font-weight: 700; color: var(--chinh);
+  font-variant-numeric: tabular-nums;
 }
 .o-so { display: grid; grid-template-columns: repeat(auto-fit, minmax(115px, 1fr)); gap: 12px; margin-top: 18px; }
 .o-so div {
   background: var(--mat-2); border-radius: var(--bo-nho);
   box-shadow: var(--clay-nho); padding: 13px; text-align: center;
 }
-.o-so b { display: block; font-family: var(--head); font-size: 23px; color: var(--chinh); }
+.o-so b {
+  display: block; font-family: var(--head); font-size: 23px; color: var(--chinh);
+  font-variant-numeric: tabular-nums;
+}
 .o-so span { font-size: 12.5px; color: var(--chu-mo); }
 
 .xem-lai details {
@@ -605,26 +652,35 @@ p.rieng { font-size: 12.5px; color: var(--chu-mo); margin-top: 10px; line-height
   position: relative; display: block; width: 100%; border: none; padding: 0;
   border-radius: var(--bo); overflow: hidden; cursor: pointer;
   box-shadow: var(--clay); background: var(--mat);
-  transition: transform .18s ease;
+  transition: transform .18s var(--nhanh-ra);
 }
 .khung-phim .man:hover { transform: translateY(-3px); }
+.khung-phim .anh { position: relative; display: block; }
 .khung-phim img { display: block; width: 100%; height: auto; }
+/* Nút ▶ nằm ở góc dưới phải, không nằm giữa ảnh. Ảnh nền là slide bìa, mà
+   slide bìa nào cũng có tiêu đề lớn đặt giữa khung — để nút ở giữa là che mất
+   chữ. Góc thì slide bìa để trống, nên đặt góc là an toàn cho mọi chương. */
 .khung-phim .nut-phat {
-  position: absolute; left: 50%; top: 50%; transform: translate(-50%, -50%);
+  position: absolute; right: 16px; bottom: 16px;
   width: 68px; height: 68px; border-radius: 50%;
   background: var(--mat); color: var(--chinh);
-  display: grid; place-items: center; font-size: 25px; padding-left: 5px;
+  display: grid; place-items: center; padding-left: 4px;
   box-shadow: var(--clay);
 }
+/* Chú thích nằm DƯỚI ảnh chứ không đè lên.
+   Ảnh nền là slide bìa của chương, mà slide bìa có sẵn dòng bản quyền ở chân.
+   Dải chữ đè lên trước đây rơi đúng vào dòng ấy: hai lớp chữ chồng nhau, đọc
+   không ra chữ nào. Đổ nền đậm hơn cũng không cứu được vì chữ vẫn nằm trên chữ.
+   Bộ kiểm tra không bắt được lỗi này — chỉ nhìn ảnh chụp mới thấy. */
 .khung-phim .loi-phim {
-  position: absolute; left: 0; right: 0; bottom: 0; text-align: left;
-  padding: 26px 20px 14px;
-  background: linear-gradient(to top, rgba(58, 43, 40, .82), rgba(58, 43, 40, 0));
-  color: #fff;
+  display: block; text-align: left;
+  padding: 12px 18px 14px;
+  background: var(--mat); border-top: 1px solid var(--vien);
+  color: var(--chu);
 }
 .khung-phim .loi-phim small {
   display: block; font-size: 11px; letter-spacing: .8px; text-transform: uppercase;
-  opacity: .82;
+  color: var(--chinh);
 }
 .khung-phim .loi-phim b { display: block; font-family: var(--head); font-size: 18px; margin-top: 2px; }
 
@@ -645,7 +701,7 @@ p.rieng { font-size: 12.5px; color: var(--chu-mo); margin-top: 10px; line-height
     font-family: var(--body); font-size: 11px; font-weight: 600;
     color: var(--chu-mo); padding: 7px 2px; border-radius: 15px;
   }
-  .thanh-duoi button .bt { font-size: 19px; line-height: 1; }
+  .thanh-duoi button .bt { width: 21px; height: 21px; }
   .thanh-duoi button[aria-current="page"] {
     color: var(--chinh); background: var(--mat-2); box-shadow: var(--clay-lom);
   }
@@ -682,7 +738,7 @@ p.rieng { font-size: 12.5px; color: var(--chu-mo); margin-top: 10px; line-height
 .dieu-nhac { display: flex; align-items: center; gap: 13px; margin-top: 14px; }
 .dieu-nhac .phat {
   width: 52px; height: 52px; border-radius: 50%; flex: none;
-  padding: 0; font-size: 17px; display: grid; place-items: center;
+  padding: 0; display: grid; place-items: center;
 }
 .dieu-nhac .phat.dang-phat { box-shadow: var(--clay-lom); }
 .chu-nhac { min-width: 0; }
@@ -728,7 +784,7 @@ p.rieng { font-size: 12.5px; color: var(--chu-mo); margin-top: 10px; line-height
   border: none; cursor: pointer; font-family: var(--body);
   font-size: 13.5px; font-weight: 600; color: var(--chinh);
   background: var(--mat); border-radius: 999px; padding: 8px 16px 8px 8px;
-  box-shadow: var(--clay); transition: transform .16s ease;
+  box-shadow: var(--clay); transition: transform .16s var(--nhanh-ra);
 }
 .tour-goi img { width: 30px; height: 30px; border-radius: 50%; }
 .tour-goi:hover { transform: translateY(-2px); }
@@ -754,7 +810,7 @@ p.rieng { font-size: 12.5px; color: var(--chu-mo); margin-top: 10px; line-height
 /* Nhân vật nép bên phải bảng, chữ chừa lề để không bị đè */
 .tour-bang .nv {
   position: absolute; right: -14px; bottom: 0; height: 162px; width: auto;
-  pointer-events: none; transition: opacity .18s ease;
+  pointer-events: none; transition: opacity .18s var(--nhanh-ra);
 }
 @media (max-width: 480px) { .tour-bang .nv { display: none; } }
 .tour-bang .loi {
@@ -780,7 +836,29 @@ p.rieng { font-size: 12.5px; color: var(--chu-mo); margin-top: 10px; line-height
 @media (prefers-reduced-motion: reduce) { .tour-sang { animation: none; } }
 
 .an { display: none !important; }
-@media (prefers-reduced-motion: reduce) { * { transition: none !important; } }
+/* Người bật "giảm chuyển động" cần bớt chuyển động trong KHÔNG GIAN — thứ gây
+   chóng mặt là vật trượt, nảy, phóng to. Đổi màu và mờ dần thì không.
+   Luật cũ tắt sạch mọi transition, nên bấm một phương án là màu nhảy phắt,
+   không còn dấu hiệu nào cho biết máy đã nhận. Nay chỉ chặn phần dịch chuyển
+   và giữ lại phần đổi màu, rút xuống 120 ms. */
+@media (prefers-reduced-motion: reduce) {
+  * {
+    transition-property: opacity, background-color, color, border-color, box-shadow !important;
+    transition-duration: 120ms !important;
+    animation-duration: 1ms !important;
+    animation-iteration-count: 1 !important;
+    scroll-behavior: auto !important;
+  }
+  /* Vòng tiêu điểm không bao giờ được chạy hiệu ứng, kể cả ở đây. */
+  /* Cỡ mặc định của biểu tượng nét. Nút nào cần khác thì tự đè bên dưới. */
+.sang-toi button svg { width: 17px; height: 17px; }
+.khung-phim .nut-phat svg { width: 26px; height: 26px; }
+.dieu-nhac .phat svg { width: 19px; height: 19px; }
+
+:where(a, button, input, select, textarea, summary, [tabindex]):focus-visible {
+    transition: none !important;
+  }
+}
 
 /* ---------------------------------------------------------------- hero */
 /* Cách bày của Google DeepMind: một khối lớn gần như không viền, chữ tiêu đề
@@ -798,25 +876,27 @@ p.rieng { font-size: 12.5px; color: var(--chu-mo); margin-top: 10px; line-height
   display: flex; align-items: flex-end; gap: 26px;
   box-shadow: var(--clay);
 }
-/* Dải màu chảy: bốn vệt sáng chồng lên nhau, không dùng ảnh nên đổi màu
-   theo chế độ sáng tối mà không phải làm hai tệp. */
+/* Nền hero.
+   Bản trước xếp BỐN vệt radial-gradient chồng lên nhau. Đó đúng là dấu hiệu
+   Hallmark gọi tên — "aurora blob" — kiểu nền mà mọi trang do máy sinh ra đều
+   có. Màu thì không sai, cả bốn vệt đều nằm trong họ san hô của bộ nhận diện,
+   nhưng CÁCH DỰNG mới là chỗ lộ. Bốn vệt còn buộc phải chép lại năm điểm dừng
+   màu bằng tay ở khối nền tối, nên sửa một màu là phải sửa hai chỗ.
+   Nay còn một dải hai điểm dừng, cộng một lớp nhiễu hạt rất mảnh để mặt phẳng
+   không bị trơ. Hạt vẽ bằng feTurbulence nhúng thẳng, không gọi ra ngoài —
+   repo cấm mọi yêu cầu mạng. Màu lấy qua token, nên nền tối chỉ cần đổi token
+   chứ không phải viết lại cả khối. */
 .hero-nen {
   position: absolute; inset: 0; z-index: -2;
-  background:
-    radial-gradient(118% 92% at 82% 12%, rgba(220, 117, 106, .40) 0%, transparent 58%),
-    radial-gradient(96% 84% at 8% 92%, rgba(226, 168, 96, .30) 0%, transparent 62%),
-    radial-gradient(78% 72% at 46% -6%, rgba(251, 206, 201, .62) 0%, transparent 64%),
-    radial-gradient(60% 60% at 96% 78%, rgba(200, 90, 72, .22) 0%, transparent 60%),
-    linear-gradient(158deg, var(--mat) 0%, var(--nen-sau) 100%);
+  background: linear-gradient(158deg, var(--hero-dau) 0%, var(--hero-cuoi) 100%);
 }
-html[data-theme="dark"] .hero-nen {
-  background:
-    radial-gradient(118% 92% at 82% 12%, rgba(232, 145, 135, .26) 0%, transparent 58%),
-    radial-gradient(96% 84% at 8% 92%, rgba(227, 188, 99, .16) 0%, transparent 62%),
-    radial-gradient(78% 72% at 46% -6%, rgba(120, 62, 54, .48) 0%, transparent 64%),
-    radial-gradient(60% 60% at 96% 78%, rgba(232, 145, 135, .14) 0%, transparent 60%),
-    linear-gradient(158deg, var(--mat) 0%, var(--nen-sau) 100%);
+/* Nhiễu hạt: lớp riêng để chỉnh độ đậm mà không đụng vào dải màu bên dưới. */
+.hero-nen::after {
+  content: ""; position: absolute; inset: 0; pointer-events: none;
+  opacity: .055;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='140' height='140'%3E%3Cfilter id='h'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.82' numOctaves='3'/%3E%3C/filter%3E%3Crect width='140' height='140' filter='url(%23h)'/%3E%3C/svg%3E");
 }
+html[data-theme="dark"] .hero-nen::after { opacity: .09; }
 /* Bản đồ dán thẳng chứ không dùng làm mặt nạ nữa: có sông, tên thành phố,
    lưới kinh vĩ tuyến và hoa gió, nên phải giữ đủ màu của chính nó. Vì thế
    phải có hai tệp, một cho nền sáng một cho nền tối. Bản đồ nằm trọn trong
@@ -835,13 +915,8 @@ html[data-theme="dark"] .hero-ban-do {
 .hero-man {
   position: absolute; inset: 0; z-index: -1; pointer-events: none;
   background: linear-gradient(96deg,
-              rgba(254, 248, 245, .94) 0%, rgba(254, 248, 245, .86) 38%,
-              rgba(254, 248, 245, .30) 68%, rgba(254, 248, 245, 0) 88%);
-}
-html[data-theme="dark"] .hero-man {
-  background: linear-gradient(96deg,
-              rgba(36, 29, 27, .92) 0%, rgba(36, 29, 27, .84) 38%,
-              rgba(36, 29, 27, .28) 68%, rgba(36, 29, 27, 0) 88%);
+              rgba(var(--hero-man-mau), .94) 0%, rgba(var(--hero-man-mau), .86) 38%,
+              rgba(var(--hero-man-mau), .30) 68%, rgba(var(--hero-man-mau), 0) 88%);
 }
 
 .hero-chu { flex: 1 1 auto; min-width: 0; padding-bottom: clamp(30px, 5vw, 62px); }
