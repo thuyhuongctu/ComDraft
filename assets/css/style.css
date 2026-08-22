@@ -608,23 +608,32 @@ p.rieng { font-size: 12.5px; color: var(--chu-mo); margin-top: 10px; line-height
   transition: transform .18s ease;
 }
 .khung-phim .man:hover { transform: translateY(-3px); }
+.khung-phim .anh { position: relative; display: block; }
 .khung-phim img { display: block; width: 100%; height: auto; }
+/* Nút ▶ nằm ở góc dưới phải, không nằm giữa ảnh. Ảnh nền là slide bìa, mà
+   slide bìa nào cũng có tiêu đề lớn đặt giữa khung — để nút ở giữa là che mất
+   chữ. Góc thì slide bìa để trống, nên đặt góc là an toàn cho mọi chương. */
 .khung-phim .nut-phat {
-  position: absolute; left: 50%; top: 50%; transform: translate(-50%, -50%);
+  position: absolute; right: 16px; bottom: 16px;
   width: 68px; height: 68px; border-radius: 50%;
   background: var(--mat); color: var(--chinh);
   display: grid; place-items: center; font-size: 25px; padding-left: 5px;
   box-shadow: var(--clay);
 }
+/* Chú thích nằm DƯỚI ảnh chứ không đè lên.
+   Ảnh nền là slide bìa của chương, mà slide bìa có sẵn dòng bản quyền ở chân.
+   Dải chữ đè lên trước đây rơi đúng vào dòng ấy: hai lớp chữ chồng nhau, đọc
+   không ra chữ nào. Đổ nền đậm hơn cũng không cứu được vì chữ vẫn nằm trên chữ.
+   Bộ kiểm tra không bắt được lỗi này — chỉ nhìn ảnh chụp mới thấy. */
 .khung-phim .loi-phim {
-  position: absolute; left: 0; right: 0; bottom: 0; text-align: left;
-  padding: 26px 20px 14px;
-  background: linear-gradient(to top, rgba(58, 43, 40, .82), rgba(58, 43, 40, 0));
-  color: #fff;
+  display: block; text-align: left;
+  padding: 12px 18px 14px;
+  background: var(--mat); border-top: 1px solid var(--vien);
+  color: var(--chu);
 }
 .khung-phim .loi-phim small {
   display: block; font-size: 11px; letter-spacing: .8px; text-transform: uppercase;
-  opacity: .82;
+  color: var(--chinh);
 }
 .khung-phim .loi-phim b { display: block; font-family: var(--head); font-size: 18px; margin-top: 2px; }
 

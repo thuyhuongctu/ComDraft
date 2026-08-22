@@ -90,7 +90,24 @@ tay tệp kết quả** — sửa tay thì lần chạy sau đè mất:
 | `lam_phu_de.py` | `videos/*.vi.vtt` |
 | `lam_icon_ung_dung.py` | Bộ icon trong `assets/icons/` |
 | `build_videos.py` | Tám video trong `videos/` |
-| `build_decks.js`, `upgrade_decks.py`, `add_images.py` | Tám bộ slide `.pptx` |
+| `dung_slide.py` | Tám bộ slide `.pptx` — chạy cả ba chặng dưới đây theo đúng thứ tự |
+| `build_decks.js` + `build_ch5_practice.js` | Nội dung gốc của tám deck |
+| `apply_upgrade.py` | Ghi chú giảng bài, slide phân cách, slide số liệu |
+| `add_images.py` | Hình minh họa và ảnh nhân vật |
+
+Dựng lại slide thì gọi một lệnh:
+
+```
+python3 scripts/dung_slide.py         # dựng ra thư mục tạm rồi đối chiếu, không ghi đè
+python3 scripts/dung_slide.py --ghi   # xem đối chiếu ưng rồi mới ghi đè
+```
+
+Luật này từng chỉ nằm trên giấy: `build_decks.js` chết ngay slide đầu vì thiếu
+gói `pptxgenjs` và vì `design.js` trỏ vào `assets/logo_tron.png` không tồn tại,
+`add_images.py` đọc thư mục `figs` trong khi repo tên là `figures`, và không có
+bước nào đưa kết quả về tên trong `slides/` với `practice/`. Suốt thời gian ấy
+tám bộ slide sửa được nhưng không dựng lại được. Đừng để hỏng lại: sửa trình
+sinh xong thì chạy `dung_slide.py` không cờ, phải ra "khớp hoàn toàn".
 
 Một lần đã trả giá cho luật này: `extend_ch4.py` lấy đầu vào chính là tệp nó ghi
 đè, chạy lần thứ hai ra deck 53 slide thay vì 43.

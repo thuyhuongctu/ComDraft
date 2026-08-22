@@ -369,11 +369,15 @@
     var k = el('div', 'khung-phim');
     if (!b || !b.video) return k;
     var o = el('button', 'man'); o.type = 'button';
+    // Nút ▶ phải neo theo riêng khung ảnh. Trước đây nó neo theo cả thẻ, mà
+    // thẻ nay còn có dải chú thích bên dưới, nên nút sẽ tụt xuống mép ảnh.
+    var m = el('span', 'anh');
     var a = el('img');
     a.src = './assets/slides/' + (b.slide ? b.slide.bo : 'ch1') + '/001.jpg';
     a.alt = ''; a.loading = 'lazy';
-    o.appendChild(a);
-    o.appendChild(el('span', 'nut-phat', '▶'));
+    m.appendChild(a);
+    m.appendChild(el('span', 'nut-phat', '▶'));
+    o.appendChild(m);
     var c = el('span', 'loi-phim');
     c.appendChild(el('small', null, t('phim.moi')));
     c.appendChild(el('b', null, (ngu() === 'en' ? 'Chapter 1 — ' : 'Chương 1 — ') +
