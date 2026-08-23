@@ -781,6 +781,80 @@ DAU_VIET = "ăâđêôơưàáảãạằắẳẵặầấẩẫậèéẻẽ�
            "òóỏõọồốổỗộờớởỡợùúủũụừứửữựỳýỷỹỵ"
 
 DICH_HINH = {
+    '“Một khách hàng phàn nàn được xử lý tốt thường trung thành hơn khách hàng chưa từng gặp vấn đề.”':
+        '“A customer whose complaint is handled well is usually more loyal than one who never had a problem.”',
+    'Phương án cụ thể, thời hạn rõ. Vượt thẩm quyền thì chuyển đúng người, không đùn đẩy.':
+        "A specific remedy, a clear deadline. Beyond your authority — pass it to the right person, don't pass the buck.",
+    'Xin lỗi chân thành về trải nghiệm chưa tốt — kể cả khi chưa rõ lỗi thuộc về ai.':
+        'Apologise sincerely for the bad experience — even before you know whose fault it is.',
+    'Không có cực nào đúng hơn cực nào — biết mình đang ở đâu trên trục mới là việc':
+        'Neither pole is more correct — the work is knowing where you stand on the axis',
+    'Cảm ơn khách đã phản hồi và theo dõi đến khi vấn đề được giải quyết xong.':
+        'Thank them for speaking up, and follow it through until it is actually fixed.',
+    'Nghe trọn vẹn, không ngắt lời, không phòng thủ. Ghi nhận đầy đủ sự việc.':
+        'Hear them out. No interrupting, no defending. Take down the whole story.',
+    'Bốn bước biến một khách hàng đang giận thành khách hàng trung thành':
+        'Four steps that turn an angry customer into a loyal one',
+    'khi gặp đối tác nước ngoài, đừng suy từ thói quen của mình':
+        "before meeting a foreign partner; don't reason from your own habits",
+    'Cử chỉ, màu sắc, con số, quà tặng đều có thể nhạy cảm —':
+        'Gestures, colours, numbers and gifts can all be sensitive —',
+    'Quy trình LAST — xử lý phàn nàn của khách hàng':
+        'The LAST procedure — handling a complaint',
+    '“Để chúng tôi xem xét” có thể là lời từ chối':
+        "“We'll look into it” can mean no",
+    'Đúng vai, đúng cấp, quyết định tập thể':
+        'Right role, right level, decided collectively',
+    'Gọi tên, tranh luận thẳng với sếp':
+        'First names, argue openly with the boss',
+    'Quan hệ đi trước, tiến độ đi sau':
+        'Relationship first, schedule second',
+    'Ba trục khác biệt văn hóa':
+        'Three axes of cultural difference',
+    'Trễ 5 phút là thất lễ':
+        'Five minutes late is rude',
+    'Rõ ràng là tôn trọng':
+        'Being clear is being respectful',
+    'Đức · Nhật · Thụy Sĩ':
+        'Germany · Japan · Switzerland',
+    'Thời gian linh hoạt':
+        'Time is elastic',
+    'Nam Âu · Trung Đông':
+        'Southern Europe · Middle East',
+    'Nhật · Hàn · Trung':
+        'Japan · Korea · China',
+    'Đức · Mỹ · Hà Lan':
+        'Germany · USA · Netherlands',
+    'Nhật · Hàn · Việt':
+        'Japan · Korea · Vietnam',
+    'Giờ giấc chặt':
+        'Clock-tight',
+    'tra cứu trước':
+        'look it up first',
+    'Bắc Âu · Úc':
+        'Nordics · Australia',
+    'Giải quyết':
+        'Solve',
+    'Lắng nghe':
+        'Listen',
+    'Nói thẳng':
+        'Direct',
+    'Bình đẳng':
+        'Flat',
+    'Thời gian':
+        'TIME',
+    'Cách nói':
+        'HOW WE SPEAK',
+    'Nói vòng':
+        'Indirect',
+    'Xin lỗi':
+        'Apologise',
+    'Thứ bậc':
+        'HIERARCHY',
+    'Cảm ơn':
+        'Thank',
+    'Tôn ti':
+        'Ranked',
     '>GIÂY<':
         '>SECONDS<',
     '>BƯỚC CHÂN<':
@@ -962,8 +1036,12 @@ def render_en():
         b = pw.chromium.launch(executable_path=CHROME)
         for name, (html, css, w, h) in FIGS.items():
             en = html
-            for vi, e in DICH_HINH.items():
-                en = en.replace(vi, e)
+            # Thay CỤM DÀI TRƯỚC. Nếu để thứ tự khai báo thì một khóa ngắn có
+            # thể ăn vào giữa một khóa dài hơn chứa nó: thêm "Lắng nghe" cho
+            # hình Chương 3 đã lập tức phá vỡ chuỗi "Lắng nghe chủ động: …"
+            # của hình Chương 2, một hình vốn đã dịch xong.
+            for vi in sorted(DICH_HINH, key=len, reverse=True):
+                en = en.replace(vi, DICH_HINH[vi])
             con = _con_tieng_viet(en)
             if con:
                 thieu.append((name, "".join(con)))
