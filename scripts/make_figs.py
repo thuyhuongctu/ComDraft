@@ -769,5 +769,159 @@ def render():
         b.close()
 
 
+# ---------------------------------------------------------------- bản tiếng Anh
+# Mười chín hình đều có chữ tiếng Việt vẽ sẵn bên trong. Chép tay mười chín bản
+# tiếng Anh nghĩa là nuôi hai bộ HTML song song, và chỉ vài lần sửa là hai bộ
+# lệch nhau. Nên bản tiếng Anh dựng RA TỪ bản tiếng Việt bằng phép thay chuỗi.
+#
+# Phép tự soát: sau khi thay, nếu trong HTML còn ký tự có dấu tiếng Việt thì
+# tức là còn chuỗi chưa dịch — báo ra chứ không lặng lẽ xuất một hình nửa Việt
+# nửa Anh, thứ còn tệ hơn hình chưa dịch vì nhìn qua tưởng đã xong.
+DAU_VIET = "ăâđêôơưàáảãạằắẳẵặầấẩẫậèéẻẽẹềếểễệìíỉĩị" \
+           "òóỏõọồốổỗộờớởỡợùúủũụừứửữựỳýỷỹỵ"
+
+DICH_HINH = {
+    'Vòng phản hồi: người nhận trở thành người gửi — giao tiếp là quá trình hai chiều, không phải một chiều':
+        'The feedback loop: the receiver becomes the sender — communication runs both ways, not one',
+    'Bốn cặp đối nhau — một cuộc giao tiếp luôn nằm đâu đó trên cả bốn trục':
+        'Four opposing pairs — any exchange sits somewhere on all four axes',
+    'ấn tượng cũ, tin đồn, khoảng cách quyền lực làm méo cách diễn giải':
+        'an old impression, hearsay, distance of power — all bend the reading',
+    'Thông điệp đi qua năm khâu — nhiễu có thể xen vào bất cứ khâu nào':
+        'A message passes through five stages — noise can enter at any of them',
+    'Năm yếu tố cùng tác động vào một cuộc giao tiếp':
+        'Five factors bearing on the same exchange',
+    'Chuyển ý tưởng thành lời nói, chữ viết, cử chỉ':
+        'Turning the idea into words, writing, gesture',
+    'Truyền qua kênh: gặp mặt, điện thoại, email…':
+        'Carried by a channel: in person, phone, email…',
+    'Đáp lại — căn cứ đo hiệu quả giao tiếp':
+        'The reply — the only measure of whether it worked',
+    'Hình thành ý tưởng, xác định mục đích':
+        'Forms the idea, sets the purpose',
+    'rõ hay mơ hồ, có cấu trúc hay lộn xộn':
+        'clear or vague, structured or scattered',
+    'email, họp trực tuyến, mạng xã hội':
+        'email, online meetings, social media',
+    'tâm lý, hiểu biết, kỹ năng, uy tín':
+        'state of mind, knowledge, skill, standing',
+    'Người nhận tiếp nhận và diễn giải':
+        'The receiver takes it in and interprets it',
+    'cần điều phối, cần thuyết trình':
+        'needs chairing, needs presenting',
+    'chọn sai kênh, môi trường ồn ào':
+        'the wrong channel, a noisy room',
+    'Yếu tố ảnh hưởng đến giao tiếp':
+        'Factors that shape communication',
+    'chuẩn mực, vùng miền, thứ bậc':
+        'norms, region, hierarchy',
+    'NHIỄU — xuất hiện ở mọi khâu':
+        'NOISE — it turns up at every stage',
+    'Khác biệt ngôn ngữ – văn hóa':
+        'Differences of language and culture',
+    'Mô hình quá trình giao tiếp':
+        'The communication process model',
+    'Quan hệ và định kiến sẵn có':
+        'Existing relationship and prejudice',
+    'Tiếng ồn, đường truyền kém':
+        'Background noise, a bad line',
+    'mặt đối mặt, phản hồi ngay':
+        'in person, feedback at once',
+    'điện thoại, email, văn bản':
+        'phone, email, written documents',
+    'Cảm xúc tiêu cực, mệt mỏi':
+        'Bad mood, tiredness',
+    'Các hình thức giao tiếp':
+        'The forms of communication',
+    'Định kiến, ấn tượng cũ':
+        'Prejudice, an old impression',
+    'họp, văn bản, hội nghị':
+        'meetings, documents, conferences',
+    '1–1, sâu và riêng tư':
+        'deep and private',
+    'trò chuyện ngoài lề':
+        'talk on the side',
+    'Không chính thức':
+        'Informal',
+    'gặp mặt, giấy tờ':
+        'meeting in person, paper',
+    'Bối cảnh văn hóa':
+        'Cultural setting',
+    'Nhóm, đám đông':
+        'Group, audience',
+    'Kênh và nhiễu':
+        'Channel and noise',
+    'Truyền thống':
+        'Traditional',
+    'Giao tiếp số':
+        'Digital',
+    'THÔNG ĐIỆP':
+        'MESSAGE',
+    'Chính thức':
+        'Formal',
+    'Thông điệp':
+        'The message',
+    'NGƯỜI GỬI':
+        'SENDER',
+    'Trực tiếp':
+        'Face to face',
+    'Gián tiếp':
+        'At a distance',
+    'GIAO TIẾP':
+        'EXCHANGE',
+    'PHẢN HỒI':
+        'FEEDBACK',
+    'GIẢI MÃ':
+        'DECODING',
+    'Cá nhân':
+        'One to one',
+    'Chủ thể':
+        'The people',
+    'MÃ HÓA':
+        'ENCODING',
+    'KÊNH':
+        'CHANNEL',
+    'CUỘC':
+        'THE',
+}
+
+
+def _con_tieng_viet(t):
+    import re
+    t = re.sub(r"<[^>]+>", " ", t)
+    return sorted({c for c in t.lower() if c in DAU_VIET})
+
+
+def render_en():
+    """Dựng bản tiếng Anh của những hình đã có đủ chuỗi trong DICH_HINH."""
+    xong, thieu = [], []
+    with sync_playwright() as pw:
+        b = pw.chromium.launch(executable_path=CHROME)
+        for name, (html, css, w, h) in FIGS.items():
+            en = html
+            for vi, e in DICH_HINH.items():
+                en = en.replace(vi, e)
+            con = _con_tieng_viet(en)
+            if con:
+                thieu.append((name, "".join(con)))
+                continue
+            for suffix, extra, dh in (("-en", "", 0), ("-en-nt", NO_TITLE_CSS, -92)):
+                page = b.new_page(viewport={"width": w, "height": max(h + dh, 220)},
+                                  device_scale_factor=2)
+                page.set_content(f"<style>{BASE_CSS}{css}{extra}</style>{en}")
+                page.wait_for_timeout(220)
+                page.screenshot(path=os.path.join(OUT, name + suffix + ".png"), full_page=True)
+                page.close()
+            xong.append(name)
+        b.close()
+    print("hình tiếng Anh đã dựng: %d" % len(xong))
+    for n, c in thieu:
+        print("   chưa đủ chuỗi: %-28s còn dấu: %s" % (n, c))
+    return len(thieu)
+
+
 if __name__ == "__main__":
+    import sys
+    if "--en" in sys.argv:
+        raise SystemExit(1 if render_en() else 0)
     render()
