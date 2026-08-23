@@ -445,6 +445,188 @@ C2 = {
         'WORDS',
 }
 
+# ------------------------------------------------------------------ Chương 3
+C3 = {
+    'Tình huống A: Khách hàng đến quầy lớn tiếng vì sản phẩm lỗi lần thứ hai trong tháng, nhiều khách khác đang nhìn. Tình huống B: Công ty tiếp đoàn đối tác Nhật Bản lần đầu — nhóm được giao chuẩn bị kịch bản đón tiếp và một bữa tiệc tối.':
+        'Case A: a customer comes to the counter shouting because the product has failed for the second time this month, with other customers watching. Case B: the company is receiving a Japanese delegation for the first time — your group must prepare the reception plan and a dinner.',
+    'Chương 4 – Đàm phán trong kinh doanh. Mỗi nhóm nghĩ về lần “trả giá” gần nhất của mình (mua xe, thuê trọ…): điều gì khiến bạn thành công hoặc thất bại?':
+        'Chapter 4 – Negotiation in business. Each group recalls its most recent haggle (buying a bike, renting a room…): what made it work, or not?',
+    'Tình huống B: lập danh sách những việc phải làm và những điều tuyệt đối tránh (chào hỏi, danh thiếp, chỗ ngồi, quà tặng, chủ đề trò chuyện).':
+        'Case B: list what must be done and what must never be done (greeting, cards, seating, gifts, topics of conversation).',
+    'Tình huống A: viết kịch bản xử lý theo đúng 4 bước LAST và đóng vai trước lớp (nhân viên – khách hàng – quản lý).':
+        'Case A: write the handling script following the four LAST steps and role-play it (staff – customer – manager).',
+    'Nhận việc – báo cáo – phản hồi với cấp trên; giao việc – khen chê với cấp dưới: đều có chuẩn mực học được.':
+        'Taking work, reporting, responding upwards; delegating, praising and correcting downwards — all of it can be learned.',
+    'LAST: Lắng nghe – Xin lỗi – Giải quyết – Cảm ơn; đừng thắng cuộc cãi để rồi mất khách hàng.':
+        "LAST: Listen – Apologise – Solve – Thank; don't win the argument and lose the customer.",
+    'Tìm hiểu – quan sát – thích ứng; xác nhận thỏa thuận bằng văn bản để vượt rào cản ngôn ngữ.':
+        'Read up – observe – adapt; confirm agreements in writing to get past the language barrier.',
+    'Cùng một kỹ năng, mỗi bối cảnh một luật chơi: nội bộ, khách hàng, bàn tiệc và đa văn hóa.':
+        'One set of skills, four sets of rules: inside the organisation, with customers, at the table, across cultures.',
+    'với khách hàng, đối tác, cơ quan nhà nước và truyền thông; xử lý được phàn nàn của khách.':
+        'with customers, partners, government bodies and the press; and handle a customer complaint.',
+    'Cả lớp nhận xét chéo: điều gì đã đúng chuẩn mực của chương, điều gì cần điều chỉnh?':
+        "The class cross-reviews: what met the chapter's standards, what needs adjusting?",
+    'Không cực nào đúng hơn cực nào — biết mình đang đứng ở đâu trên trục mới là việc.':
+        'Neither pole is more correct — the work is knowing where you stand on the axis.',
+    'Khách hàng, đối tác, cơ quan nhà nước và truyền thông — bốn nhóm, bốn luật chơi.':
+        'Customers, partners, government bodies, the press — four groups, four sets of rules.',
+    'Nêu 5 điều nên làm và 5 điều nên tránh khi dự tiệc cùng đối tác kinh doanh.':
+        'Name five things to do and five to avoid when dining with a business partner.',
+    'Phân tích một khác biệt văn hóa Đông – Tây và cách thích ứng khi làm việc.':
+        'Analyse one East–West cultural difference and how to adapt to it at work.',
+    'Với cấp trên, cấp dưới và đồng nghiệp — mỗi mối quan hệ một cách ứng xử.':
+        'With superiors, subordinates and colleagues — each relationship has its own conduct.',
+    'với cấp trên, cấp dưới và đồng nghiệp trong môi trường nội bộ tổ chức.':
+        'with superiors, subordinates and colleagues inside the organisation.',
+    'Nên: ẩm thực, thể thao, du lịch • Tránh: chính trị, tôn giáo, thu nhập':
+        "Do: food, sport, travel • Don't: politics, religion, income",
+    'Giao tiếp với khách hàng, đối tác, cơ quan nhà nước và truyền thông':
+        'Communication with customers, partners, government bodies and the press',
+    'Khen công khai • phê bình riêng tư, nhắm hành vi không nhắm người':
+        'Praise in public • criticise in private, at the behaviour not the person',
+    'Chỉ người được ủy quyền phát ngôn; khủng hoảng thì phản hồi nhanh':
+        'Only the authorised spokesperson; in a crisis, answer fast',
+    'Trình bày cách báo cáo tin xấu với cấp trên qua một ví dụ cụ thể.':
+        'Explain how to report bad news to a superior, using a concrete example.',
+    'Vận dụng quy trình LAST để xử lý một tình huống phàn nàn tự chọn.':
+        'Apply the LAST procedure to a complaint situation of your choice.',
+    'với khác biệt văn hóa khi làm việc trong môi trường đa văn hóa.':
+        'to cultural difference when working across cultures.',
+    'Đúng lúc, đúng chỗ, dựa trên dữ liệu; tôn trọng quyết định cuối':
+        'Right moment, right place, on the data; respect the final call',
+    'nghi thức giao tiếp trên bàn tiệc trong hoạt động kinh doanh.':
+        'the etiquette of the business table correctly.',
+    'Tranh luận công việc, không công kích cá nhân; tránh bè phái':
+        'Argue about the work, not the person; keep out of factions',
+    'Giữ chữ tín, minh bạch; quan hệ lâu dài hơn lợi thế ngắn hạn':
+        'Keep your word, be transparent; the long relationship beats the short gain',
+    'TÌNH HUỐNG (nhóm 4–5 sinh viên, 20 phút, bốc thăm 1 trong 2)':
+        'THE CASE (groups of 4–5, 20 minutes, draw one of two)',
+    'Kết quả trước, diễn giải sau; tin xấu báo sớm kèm phương án':
+        'Result first, explanation second; bad news early, with a plan',
+    'Nơi công việc vẫn tiếp diễn dù không ai nhắc đến công việc.':
+        'Where business carries on even though nobody mentions business.',
+    'Mỗi điểm tiếp xúc là một khoảnh khắc xây hoặc phá niềm tin':
+        'Every point of contact either builds trust or breaks it',
+    'Nghe nhu cầu trước khi giới thiệu • nói thật • giữ lời hứa':
+        'Hear the need before you pitch • tell the truth • keep your promises',
+    'Rõ mục tiêu – thời hạn – tiêu chuẩn; giao kèm nguồn lực':
+        'Clear goal – deadline – standard; hand over the resources too',
+    'Chủ tiệc bắt đầu trước; dụng cụ dùng từ ngoài vào trong':
+        'The host starts first; work your cutlery from the outside in',
+    'Vị thế thấp nâng ly thấp hơn; không ép người không uống':
+        "The junior holds their glass lower; never press someone who isn't drinking",
+    'Cãi thắng thua • hứa quá khả năng • bỏ mặc sau khi bán':
+        'Argue to win • promise beyond your means • vanish after the sale',
+    'Chương trình gửi trước • kết luận rõ • ai làm việc gì':
+        'Agenda sent ahead • a clear conclusion • who does what',
+    'Đúng thủ tục, đúng thẩm quyền, văn bản chuẩn thể thức':
+        'Right procedure, right authority, documents in correct format',
+    'Nghe – ghi – hỏi lại cho rõ; xác nhận lại bằng email':
+        "Listen – note – ask until it's clear; confirm by email",
+    'Xác nhận đúng hạn • đúng giờ • chờ chủ tiệc xếp chỗ':
+        'RSVP on time • arrive on time • wait for the host to seat you',
+    'nghi thức chào hỏi và điều kiêng kỵ của đối tác':
+        'how they greet, and what they consider taboo',
+    'Xử lý phàn nàn của khách hàng — quy trình LAST':
+        'Handling a customer complaint — the LAST procedure',
+    'cách họ chào, trao danh thiếp, giữ khoảng cách':
+        'how they greet, hand over a card, keep their distance',
+    'tránh tiếng lóng; tóm tắt thỏa thuận qua email':
+        'avoid slang; summarise the agreement by email',
+    'Đa văn hóa: hiểu trước, phán xét không bao giờ':
+        'Across cultures: understand first, judge never',
+    'Với đối tác, cơ quan nhà nước và truyền thông':
+        'With partners, government bodies and the press',
+    'hành vi “kỳ lạ” có thể rất bình thường với họ':
+        'a “strange” behaviour may be perfectly ordinary to them',
+    'Nói chậm, rõ, xác nhận lại bằng văn bản  —':
+        'Speak slowly and clearly, confirm in writing  —',
+    'Giao tiếp trong môi trường nội bộ tổ chức':
+        'Communication inside the organisation',
+    'Giao tiếp đa văn hóa: nhận diện khác biệt':
+        'Communicating across cultures: spotting the differences',
+    'Hai tình huống khó — xử lý ngay tại lớp':
+        'Two hard cases — solved in class',
+    'Giao tiếp trong môi trường đa văn hóa':
+        'Communication across cultures',
+    'Giao tiếp với cấp dưới và đồng nghiệp':
+        'With subordinates and colleagues',
+    'Không suy diễn theo chuẩn của mình  —':
+        "Don't read it by your own norms  —",
+    'Nội bộ vững thì đối ngoại mới mạnh':
+        'Strong outside starts with sound inside',
+    'Bàn tiệc và môi trường đa văn hóa':
+        'The table, and working across cultures',
+    'xin lỗi khi lỡ phạm điều kiêng kỵ':
+        'apologise when you trip over a taboo',
+    'Giao tiếp với bên ngoài tổ chức':
+        'Communication outside the organisation',
+    'Nguyên tắc thích ứng đa văn hóa':
+        'Principles for adapting across cultures',
+    'Giao tiếp trong nội bộ tổ chức':
+        'Communication inside the organisation',
+    'Khách hàng phàn nàn là cơ hội':
+        'A complaint is an opportunity',
+    'Quan sát và điều chỉnh  —':
+        'Watch and adjust  —',
+    'Giao tiếp với khách hàng':
+        'Communicating with customers',
+    'Câu chuyện trên bàn tiệc':
+        'Table talk',
+    'Giao tiếp trên bàn tiệc':
+        'Communication at the table',
+    'Khiêm tốn và cầu thị  —':
+        'Be humble and willing to learn  —',
+    'Giao tiếp với cấp trên':
+        'Communicating with your superior',
+    'Truyền thông – báo chí':
+        'Press and media',
+    'Giao tiếp trong các':
+        'Communication in specific',
+    'Chúc rượu – cụng ly':
+        'Toasts',
+    'tình huống đặc thù':
+        'situations',
+    'Khi có ý kiến khác':
+        'When you disagree',
+    'Đối tác kinh doanh':
+        'Business partners',
+    'Khi nhận nhiệm vụ':
+        'Taking on a task',
+    'Tìm hiểu trước  —':
+        'Read up first  —',
+    'Khen và phê bình':
+        'Praise and criticism',
+    'Cơ quan nhà nước':
+        'Government bodies',
+    'Với đồng nghiệp':
+        'With colleagues',
+    'Tâm thế phục vụ':
+        'A service mindset',
+    'Nguyên tắc vàng':
+        'The golden rules',
+    'Trước bữa tiệc':
+        'Before the meal',
+    'MỤC 3.3 – 3.4':
+        'SECTIONS 3.3 – 3.4',
+    'Họp hiệu quả':
+        'Meetings that work',
+    'Trong bữa ăn':
+        'During the meal',
+    'Khi báo cáo':
+        'Reporting',
+    'Điều tối kỵ':
+        'Never do this',
+    'Giao việc':
+        'Delegating',
+    'MỤC 3.1':
+        'SECTION 3.1',
+    'MỤC 3.2':
+        'SECTION 3.2',
+}
+
 TU_DIEN = {}
-for _b in (CHUNG, C1, C2):
+for _b in (CHUNG, C1, C2, C3):
     TU_DIEN.update(_b)
