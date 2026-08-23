@@ -55,6 +55,22 @@ lỗi trong dự án này chỉ lộ ra khi nhìn: bản đồ tràn khỏi kh�
 bóng thoại đè lên đoạn mô tả, bóng thoại trùm xuống mặt nhân vật. Không lỗi nào
 trong số đó làm chương trình báo sai.
 
+**Sửa bản tiếng Việt thì dựng lại bản tiếng Anh.** Bộ tiếng Anh không phải một
+bản song song mà dựng RA TỪ bộ tiếng Việt qua `scripts/tu_dien_en.py`. Sửa chữ
+trên slide Việt xong thì chạy `python3 scripts/dich_slide_en.py` — nó kể ra
+chuỗi nào chưa có trong từ điển và từ chối ghi đè khi còn thiếu. Sửa chữ trong
+hình thì thêm cặp vào `DICH_HINH` của `make_figs.py` rồi chạy `--en`.
+
+Ghi chú giảng bài nằm ở từ điển riêng, `scripts/tu_dien_ghi_chu_en.py`, và khóa
+là **trọn khối ghi chú của một slide** chứ không phải từng dòng. Sửa một dòng
+ghi chú tiếng Việt là khóa cũ trượt, `dich_slide_en.py` sẽ báo khối ấy chưa
+dịch — lúc đó chép khóa mới THẲNG TỪ tệp `.pptx`, đừng gõ lại: sai một dấu cách
+là trượt khóa mà không ai thấy.
+
+Hai phép soát ấy là lưới, không phải chứng minh. Chúng đã để lọt "CENTIMET"
+(chữ Việt không dấu), và có lần nhánh ghi bỏ qua hẳn việc tráo hình mà vẫn báo
+đủ. **Vẫn phải dựng ra ảnh và nhìn.**
+
 **Đổi tệp trong `assets/` thì nâng `PHIEN_BAN` trong `sw.js`.** Quên là máy sinh
 viên vẫn dùng bản cũ trong bộ nhớ đệm, sửa xong cũng như không.
 
@@ -90,7 +106,26 @@ tay tệp kết quả** — sửa tay thì lần chạy sau đè mất:
 | `lam_phu_de.py` | `videos/*.vi.vtt` |
 | `lam_icon_ung_dung.py` | Bộ icon trong `assets/icons/` |
 | `build_videos.py` | Tám video trong `videos/` |
-| `build_decks.js`, `upgrade_decks.py`, `add_images.py` | Tám bộ slide `.pptx` |
+| `dich_slide_en.py` | Tám bộ slide tiếng Anh trong `slides-en/` và `practice-en/` |
+| `make_figs.py --en` | Bản tiếng Anh của hình minh họa |
+| `dung_slide.py` | Tám bộ slide `.pptx` — chạy cả ba chặng dưới đây theo đúng thứ tự |
+| `build_decks.js` + `build_ch5_practice.js` | Nội dung gốc của tám deck |
+| `apply_upgrade.py` | Ghi chú giảng bài, slide phân cách, slide số liệu |
+| `add_images.py` | Hình minh họa và ảnh nhân vật |
+
+Dựng lại slide thì gọi một lệnh:
+
+```
+python3 scripts/dung_slide.py         # dựng ra thư mục tạm rồi đối chiếu, không ghi đè
+python3 scripts/dung_slide.py --ghi   # xem đối chiếu ưng rồi mới ghi đè
+```
+
+Luật này từng chỉ nằm trên giấy: `build_decks.js` chết ngay slide đầu vì thiếu
+gói `pptxgenjs` và vì `design.js` trỏ vào `assets/logo_tron.png` không tồn tại,
+`add_images.py` đọc thư mục `figs` trong khi repo tên là `figures`, và không có
+bước nào đưa kết quả về tên trong `slides/` với `practice/`. Suốt thời gian ấy
+tám bộ slide sửa được nhưng không dựng lại được. Đừng để hỏng lại: sửa trình
+sinh xong thì chạy `dung_slide.py` không cờ, phải ra "khớp hoàn toàn".
 
 Một lần đã trả giá cho luật này: `extend_ch4.py` lấy đầu vào chính là tệp nó ghi
 đè, chạy lần thứ hai ra deck 53 slide thay vì 43.

@@ -7,7 +7,10 @@ from pptx.dml.color import RGBColor
 from pptx.enum.shapes import MSO_SHAPE
 from pptx.enum.text import PP_ALIGN, MSO_ANCHOR
 
-F = "figs"
+# Trước đây là "figs" — một thư mục không có trong repo, nên mọi lần chèn hình
+# đều lặng lẽ hỏng. Thư mục thật tên là "figures"; neo tuyệt đối theo vị trí
+# tệp này để chạy từ thư mục dựng tạm nào cũng đúng.
+F = os.path.join(os.path.dirname(os.path.abspath(__file__)), "..", "figures")
 CORAL = RGBColor(0xDC, 0x75, 0x6A)
 RUST = RGBColor(0xAC, 0x4D, 0x33)
 BLUSH = RGBColor(0xFB, 0xCE, 0xC9)
@@ -109,26 +112,38 @@ PLAN = {
     ],
     "CHUONG 3 - GIAO TIEP TRONG TINH HUONG DAC THU.pptx": [
         ("quy trình LAST", f"{F}/c3-quy-trinh-last-nt.png", None),
+        ("Giao tiếp đa văn hóa", f"{F}/c3-ba-truc-van-hoa-nt.png",
+         "Không cực nào đúng hơn cực nào — biết mình đang đứng ở đâu trên trục mới là việc."),
     ],
     "CHUONG 4 - DAM PHAN TRONG KINH DOANH.pptx": [
         ("Tiến trình đàm phán", f"{F}/c4-tien-trinh-dam-phan-nt.png", None),
+        ("Các kiểu đàm phán", f"{F}/c4-ba-kieu-dam-phan-nt.png",
+         "Ba kiểu chỉ khác nhau ở bốn điểm — bảng đối chiếu cho thấy cả bốn trong một cái nhìn."),
         ("vũ khí quan trọng nhất", f"{F}/c4-batna-zopa-nt.png",
          "ZOPA hẹp hay rộng phụ thuộc vào giới hạn thật của hai bên — chuẩn bị kỹ để biết mình đang ở đâu trên trục này."),
     ],
     "CHUONG 5 - SOAN THAO VA TRINH BAY VAN BAN.pptx": [
         ("Chín thành phần thể thức", f"{F}/c5-the-thuc-a4-nt.png", None),
+        ("Phân loại văn bản", f"{F}/c5-phan-loai-van-ban-nt.png",
+         "Biết văn bản thuộc nhóm nào thì mới biết soạn theo mẫu nào và ai có thẩm quyền ký."),
         ("Năm văn bản hành chính thông dụng", f"{F}/c5-chuoi-van-ban-nt.png",
          "Chuỗi văn bản của một thương vụ — sinh viên sẽ soạn lại đúng chuỗi này trong phần thực hành."),
     ],
     "THUC HANH BAI 1 - THE THUC VAN BAN.pptx": [
         ("Trình bày các thành phần ở đầu văn bản", f"{F}/c5-the-thuc-a4-nt.png", None),
+        ("Thiết lập trang giấy", f"{F}/th1-kho-giay-le-trang-nt.png",
+         "Bốn con số lề phải đặt đúng bốn phía — lề trái rộng hơn vì còn phải đóng gáy."),
     ],
     "THUC HANH BAI 2 - SOAN THAO VAN BAN HANH CHINH.pptx": [
         ("Soạn thảo Quyết định", f"{F}/c5-chuoi-van-ban-nt.png",
          "Bài nộp số 2 nằm ở các bước 1 – 3 của chuỗi; bước 4 – 7 là nội dung Bài thực hành số 3."),
+        ("Biên bản và Báo cáo", f"{F}/th2-ket-cau-bien-ban-nt.png",
+         "Biên bản ghi tại chỗ và chỉ có giá trị pháp lý khi đủ chữ ký; báo cáo đi theo mạch bốn phần."),
     ],
     "THUC HANH BAI 3 - SOAN THAO VAN BAN THUONG MAI.pptx": [
         ("Hợp đồng — các điều khoản phải có", f"{F}/c5-chuoi-van-ban-nt.png", None),
+        ("Thư tín thương mại", f"{F}/th3-thu-tin-thuong-mai-nt.png",
+         "Đây chính là bố cục sinh viên phải gõ ra Word trong bài nộp số 3."),
     ],
 }
 

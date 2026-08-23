@@ -5,7 +5,10 @@ import os
 from playwright.sync_api import sync_playwright
 
 CHROME = "/opt/pw-browsers/chromium-1194/chrome-linux/chrome"
-OUT = os.path.dirname(os.path.abspath(__file__))
+# Trước đây trỏ vào chính thư mục scripts/, nên chạy lại là hình rơi lung tung
+# cạnh mã nguồn chứ không vào figures/ — và add_images.py thì đọc figures/.
+# Một lỗi nữa cùng loại với bốn chỗ đứt đã sửa ở dây chuyền dựng slide.
+OUT = os.path.join(os.path.dirname(os.path.abspath(__file__)), "..", "figures")
 
 CORAL = "#DC756A"; RUST = "#AC4D33"; BLUSH = "#FBCEC9"
 BLUSH_SOFT = "#FDF1EF"; CREAM = "#FDFBF8"; INK = "#3A2B28"; GRAY = "#8A7A76"
@@ -461,6 +464,293 @@ FIGS["c4-tien-trinh-dam-phan"] = ("""
 """ % dict(BLUSH=BLUSH, BLUSH_SOFT=BLUSH_SOFT, CORAL=CORAL, RUST=RUST, INK=INK), 1240, 545)
 
 
+# ---------- 11. Ba trục khác biệt văn hóa (Chương 3) ----------
+# Slide 3.4 cũ là bốn thẻ chữ, mỗi thẻ một câu 40 chữ. Nội dung vốn là bốn phép
+# ĐỐI CHIẾU hai cực, mà thẻ chữ thì không cho thấy hai cực nằm hai đầu một trục.
+FIGS["c3-ba-truc-van-hoa"] = ("""
+<div class="wrap">
+<h1>Ba trục khác biệt văn hóa</h1>
+<div class="sub">Không có cực nào đúng hơn cực nào — biết mình đang ở đâu trên trục mới là việc</div>
+<div class="truc">
+  <div class="hang">
+    <div class="ten">Cách nói</div>
+    <div class="cuc trai"><b>Nói thẳng</b><i>Đức · Mỹ · Hà Lan</i><span>Rõ ràng là tôn trọng</span></div>
+    <div class="thanh"></div>
+    <div class="cuc phai"><b>Nói vòng</b><i>Nhật · Hàn · Việt</i><span>“Để chúng tôi xem xét” có thể là lời từ chối</span></div>
+  </div>
+  <div class="hang">
+    <div class="ten">Thứ bậc</div>
+    <div class="cuc trai"><b>Bình đẳng</b><i>Bắc Âu · Úc</i><span>Gọi tên, tranh luận thẳng với sếp</span></div>
+    <div class="thanh"></div>
+    <div class="cuc phai"><b>Tôn ti</b><i>Nhật · Hàn · Trung</i><span>Đúng vai, đúng cấp, quyết định tập thể</span></div>
+  </div>
+  <div class="hang">
+    <div class="ten">Thời gian</div>
+    <div class="cuc trai"><b>Giờ giấc chặt</b><i>Đức · Nhật · Thụy Sĩ</i><span>Trễ 5 phút là thất lễ</span></div>
+    <div class="thanh"></div>
+    <div class="cuc phai"><b>Thời gian linh hoạt</b><i>Nam Âu · Trung Đông</i><span>Quan hệ đi trước, tiến độ đi sau</span></div>
+  </div>
+</div>
+<div class="canh-bao">Cử chỉ, màu sắc, con số, quà tặng đều có thể nhạy cảm —
+  <b>tra cứu trước</b> khi gặp đối tác nước ngoài, đừng suy từ thói quen của mình</div>
+</div>
+""", """
+.truc{margin:24px 0 18px;display:flex;flex-direction:column;gap:16px}
+.hang{display:flex;align-items:center;gap:0;position:relative;padding-top:16px}
+.ten{position:absolute;top:-2px;left:50%%;transform:translateX(-50%%);background:%(RUST)s;color:#fff;
+  font-size:12px;font-weight:800;letter-spacing:1.2px;text-transform:uppercase;
+  padding:3px 14px;border-radius:999px;z-index:2}
+.cuc{flex:1;background:#fff;border:1.5px solid %(BLUSH)s;border-radius:14px;padding:14px 16px;
+  box-shadow:0 3px 12px rgba(172,77,51,.06)}
+.cuc.trai{text-align:right}
+.cuc b{display:block;font-size:16px;color:%(RUST)s}
+.cuc i{display:block;font-style:normal;font-size:11.5px;color:%(CORAL)s;letter-spacing:.6px;margin:2px 0 5px}
+.cuc span{display:block;font-size:12.5px;color:%(INK)s;line-height:1.45}
+.thanh{width:74px;height:3px;background:linear-gradient(90deg,%(CORAL)s,%(BLUSH)s,%(CORAL)s);flex:none}
+.canh-bao{background:%(BLUSH_SOFT)s;border:1.5px solid %(BLUSH)s;border-radius:12px;
+  padding:13px 16px;font-size:13px;line-height:1.55}
+""" % dict(RUST=RUST, CORAL=CORAL, BLUSH=BLUSH, BLUSH_SOFT=BLUSH_SOFT, INK=INK), 1220, 600)
+
+# ---------- 12. Ba kiểu đàm phán (Chương 4) ----------
+# Ba kiểu vốn chỉ khác nhau ở bốn điểm. Bảng đối chiếu cho thấy điều đó trong
+# một cái nhìn; ba thẻ chữ rời thì không.
+FIGS["c4-ba-kieu-dam-phan"] = ("""
+<div class="wrap">
+<h1>Ba kiểu đàm phán</h1>
+<div class="sub">Cùng một bàn thương lượng, ba cách ứng xử cho ba kết quả khác hẳn nhau</div>
+<table class="bang">
+  <tr><th></th>
+      <th class="mem">Kiểu MỀM</th><th class="cung">Kiểu CỨNG</th><th class="ng">Kiểu NGUYÊN TẮC</th></tr>
+  <tr><td class="nhan">Coi đối tác là</td>
+      <td>Bạn bè</td><td>Đối thủ</td><td class="dam">Người cùng giải bài toán</td></tr>
+  <tr><td class="nhan">Mục tiêu</td>
+      <td>Giữ quan hệ</td><td>Thắng bằng mọi giá</td><td class="dam">Kết quả hợp lý, quan hệ còn</td></tr>
+  <tr><td class="nhan">Khi bế tắc</td>
+      <td>Nhượng bộ</td><td>Gây sức ép</td><td class="dam">Quay về tiêu chí khách quan</td></tr>
+  <tr><td class="nhan">Rủi ro</td>
+      <td>Thiệt về mình</td><td>Mất đối tác</td><td class="dam">Mất thời gian chuẩn bị</td></tr>
+</table>
+<div class="chot">Kiểu nguyên tắc là kiểu nên theo: <b>tách con người khỏi vấn đề</b> ·
+  bàn <b>lợi ích</b> chứ không bàn <b>lập trường</b> · dựa vào <b>tiêu chí khách quan</b></div>
+</div>
+""", """
+.bang{width:100%%;border-collapse:separate;border-spacing:8px;margin:24px 0 18px}
+.bang th{padding:12px 10px;border-radius:12px;font-size:15px;color:#fff}
+.bang th.mem{background:#C9BDB9}.bang th.cung{background:#D9A79E}.bang th.ng{background:%(RUST)s}
+.bang td{background:#fff;border:1.5px solid %(BLUSH)s;border-radius:12px;padding:12px 14px;
+  font-size:13.5px;text-align:center;line-height:1.4}
+.bang td.nhan{background:%(BLUSH_SOFT)s;border-color:%(BLUSH)s;text-align:left;
+  font-weight:700;color:%(RUST)s;font-size:13px;width:150px}
+.bang td.dam{border-color:%(CORAL)s;border-width:2px;font-weight:700;color:%(RUST)s}
+.chot{background:%(BLUSH_SOFT)s;border:1.5px solid %(BLUSH)s;border-radius:12px;
+  padding:13px 16px;font-size:13px;line-height:1.6}
+""" % dict(RUST=RUST, CORAL=CORAL, BLUSH=BLUSH, BLUSH_SOFT=BLUSH_SOFT), 1200, 560)
+
+# ---------- 13. Phân loại văn bản (Chương 5) ----------
+FIGS["c5-phan-loai-van-ban"] = ("""
+<div class="wrap">
+<h1>Ba nhóm văn bản</h1>
+<div class="sub">Phân biệt được nhóm thì mới biết soạn theo mẫu nào và ai có thẩm quyền ký</div>
+<div class="goc">VĂN BẢN</div>
+<div class="nhanh"></div>
+<div class="ba">
+  <div class="nhom">
+    <div class="dau">QUY PHẠM PHÁP LUẬT</div>
+    <div class="mo">Chứa quy tắc xử sự chung, áp dụng nhiều lần, do cơ quan nhà nước có thẩm quyền ban hành</div>
+    <div class="vd">Luật · Nghị định · Thông tư</div>
+  </div>
+  <div class="nhom noi">
+    <div class="dau">HÀNH CHÍNH</div>
+    <div class="mo">Dùng trong quản lý, điều hành hằng ngày của cơ quan, doanh nghiệp</div>
+    <div class="vd">Quyết định · Công văn · Tờ trình · Biên bản · Báo cáo</div>
+  </div>
+  <div class="nhom">
+    <div class="dau">CHUYÊN NGÀNH</div>
+    <div class="mo">Dùng trong một lĩnh vực nghiệp vụ nhất định, theo mẫu riêng của ngành</div>
+    <div class="vd">Hợp đồng · Hóa đơn · Chứng từ kế toán</div>
+  </div>
+</div>
+<div class="chu">Học phần này tập trung vào nhóm giữa —
+  <b>văn bản hành chính</b> — và nhóm chuyên ngành phần <b>hợp đồng thương mại</b></div>
+</div>
+""", """
+.goc{width:190px;margin:22px auto 0;background:%(RUST)s;color:#fff;text-align:center;
+  padding:11px 0;border-radius:12px;font-weight:800;letter-spacing:2px;font-size:15px}
+.nhanh{width:2px;height:22px;background:%(CORAL)s;margin:0 auto}
+.ba{display:flex;gap:16px;margin:0 0 18px;position:relative;padding-top:14px}
+.ba:before{content:"";position:absolute;top:0;left:16%%;right:16%%;height:2px;background:%(CORAL)s}
+.nhom{flex:1;background:#fff;border:1.5px solid %(BLUSH)s;border-radius:16px;padding:16px 15px;
+  position:relative;box-shadow:0 3px 12px rgba(172,77,51,.06)}
+.nhom:before{content:"";position:absolute;top:-14px;left:50%%;width:2px;height:14px;background:%(CORAL)s}
+.nhom.noi{border-color:%(CORAL)s;border-width:2px;background:%(BLUSH_SOFT)s}
+.dau{font-weight:800;font-size:13px;letter-spacing:1.1px;color:%(RUST)s;margin-bottom:8px}
+.mo{font-size:12.5px;line-height:1.5;color:%(INK)s;min-height:56px}
+.vd{margin-top:10px;padding-top:10px;border-top:1px solid %(BLUSH)s;font-size:12px;color:%(CORAL)s;font-weight:700}
+.chu{background:%(BLUSH_SOFT)s;border:1.5px solid %(BLUSH)s;border-radius:12px;
+  padding:13px 16px;font-size:13px;line-height:1.55}
+""" % dict(RUST=RUST, CORAL=CORAL, BLUSH=BLUSH, BLUSH_SOFT=BLUSH_SOFT, INK=INK), 1180, 560)
+
+# ---------- 14. Cấu trúc thư tín thương mại (Thực hành bài 3) ----------
+# Đây là bài THỰC HÀNH: sinh viên sắp phải gõ đúng bố cục này ra Word. Một tờ
+# giấy mô phỏng dạy nhanh hơn một danh sách gạch đầu dòng về cùng bố cục ấy.
+FIGS["th3-thu-tin-thuong-mai"] = ("""
+<div class="wrap">
+<h1>Bố cục một thư tín thương mại</h1>
+<div class="sub">Sinh viên sẽ gõ đúng bố cục này trong bài nộp số 3</div>
+<div class="canh">
+  <div class="to">
+    <div class="d dau2">TIÊU ĐỀ THƯ — tên, địa chỉ, điện thoại, email doanh nghiệp</div>
+    <div class="d ngay">Số: … / CV-…&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Vĩnh Long, ngày … tháng … năm …</div>
+    <div class="d nhan2">Kính gửi: <span class="mo2">tên và chức danh người nhận</span></div>
+    <div class="d">V/v: <span class="mo2">trích yếu — một dòng, nói đúng việc</span></div>
+    <div class="d than">MỞ ĐẦU — nêu lý do viết thư, dẫn chiếu văn bản/cuộc gặp trước nếu có</div>
+    <div class="d than">NỘI DUNG — mỗi ý một đoạn; số liệu, thời hạn, điều kiện phải cụ thể</div>
+    <div class="d than">KẾT — nêu rõ điều mong muốn và mốc thời gian trả lời</div>
+    <div class="d ky">Trân trọng,<br><b>CHỨC DANH</b><br><i>(ký, đóng dấu)</i><br>Họ và tên</div>
+  </div>
+  <div class="loi">
+    <div class="l"><span>1</span><p>Trích yếu <b>V/v</b> phải nói đúng việc — người nhận đọc dòng này để quyết định có đọc tiếp không</p></div>
+    <div class="l"><span>2</span><p>Mỗi ý <b>một đoạn</b>. Đoạn dài quá năm dòng là dấu hiệu gộp nhiều ý</p></div>
+    <div class="l"><span>3</span><p>Con số, thời hạn, điều kiện phải <b>cụ thể</b> — “sớm nhất có thể” không phải là thời hạn</p></div>
+    <div class="l"><span>4</span><p>Kết thư phải nêu <b>điều mong muốn</b>, đừng để người nhận tự đoán</p></div>
+  </div>
+</div>
+</div>
+""", """
+.canh{display:flex;gap:22px;margin-top:22px;align-items:flex-start}
+.to{flex:0 0 470px;background:#fff;border:1.5px solid %(BLUSH)s;border-radius:6px;padding:22px 24px;
+  box-shadow:0 5px 20px rgba(172,77,51,.10);font-size:11.5px;line-height:1.5}
+.to .d{padding:6px 0;border-bottom:1px dashed %(BLUSH)s}
+.to .dau2{font-weight:800;color:%(RUST)s;text-align:center;font-size:11px;letter-spacing:.6px}
+.to .ngay{color:%(GRAY)s;font-size:10.5px}
+.to .nhan2{font-weight:700}
+.to .mo2{color:%(GRAY)s;font-style:italic;font-weight:400}
+.to .than{background:%(BLUSH_SOFT)s;margin:4px -8px;padding:7px 8px;border-radius:5px;
+  border-bottom:none;color:%(INK)s}
+.to .ky{text-align:right;border-bottom:none;padding-top:14px;line-height:1.6}
+.to .ky i{color:%(GRAY)s;font-size:10.5px}
+.loi{flex:1;display:flex;flex-direction:column;gap:12px;padding-top:4px}
+.l{display:flex;gap:11px;font-size:13px;line-height:1.5;background:#fff;border:1.5px solid %(BLUSH)s;
+  border-radius:12px;padding:12px 14px}
+.l p{flex:1;margin:0}
+.l span{flex:none;width:24px;height:24px;border-radius:50%%;background:%(CORAL)s;color:#fff;
+  display:flex;align-items:center;justify-content:center;font-weight:800;font-size:12px}
+""" % dict(RUST=RUST, CORAL=CORAL, BLUSH=BLUSH, BLUSH_SOFT=BLUSH_SOFT, GRAY=GRAY, INK=INK), 1160, 560)
+
+
+# ---------- 15. Khổ giấy và lề trang (Thực hành bài 1) ----------
+# Bốn con số lề viết thành câu thì sinh viên phải tự dựng hình trong đầu mới
+# biết đặt vào đâu. Vẽ ra tờ A4 với bốn số đặt đúng bốn phía thì khỏi phải
+# dựng. Đây là bài thực hành trên máy, nên vẫn giữ nguyên đường đi trong Word.
+FIGS["th1-kho-giay-le-trang"] = ("""
+<div class="wrap">
+<h1>Khổ giấy và lề trang</h1>
+<div class="sub">Bốn con số phải đặt đúng bốn phía — lề trái rộng hơn vì còn phải đóng gáy</div>
+<div class="canh">
+  <div class="giay">
+    <div class="so tren">20 – 25 mm</div>
+    <div class="so duoi">20 – 25 mm</div>
+    <div class="so trai">30 – 35<br>mm</div>
+    <div class="so phai">15 – 20<br>mm</div>
+    <div class="long">
+      <div class="kho">A4<br><span>210 × 297 mm</span></div>
+      <div class="ghi">vùng gõ nội dung</div>
+    </div>
+    <div class="gay">đóng gáy</div>
+  </div>
+  <div class="duong">
+    <div class="b"><span>Khổ giấy</span>Layout → Size → <b>A4</b><i>Không dùng Letter</i></div>
+    <div class="b"><span>Lề trang</span>Layout → Margins → <b>Custom</b><i>Nhập bốn số theo hình bên</i></div>
+    <div class="b"><span>Phông chữ</span>Times New Roman, cỡ <b>13 – 14</b><i>Màu đen, bộ mã Unicode</i></div>
+    <div class="b"><span>Số trang</span>Insert → Page Number → Top → Center<i>Bật Different First Page để bỏ số ở trang đầu</i></div>
+  </div>
+</div>
+</div>
+""", """
+.canh{display:flex;gap:26px;margin-top:22px;align-items:stretch}
+.giay{flex:0 0 340px;position:relative;background:#fff;border:1.5px solid %(BLUSH)s;border-radius:4px;
+  box-shadow:0 5px 20px rgba(172,77,51,.12);padding:34px 58px 34px 74px}
+.long{border:1.5px dashed %(CORAL)s;border-radius:3px;height:100%%;min-height:250px;
+  display:flex;flex-direction:column;align-items:center;justify-content:center;gap:10px;background:%(BLUSH_SOFT)s}
+.kho{font-family:'Liberation Serif',serif;font-size:30px;font-weight:700;color:%(RUST)s;text-align:center;line-height:1.15}
+.kho span{font-family:'Roboto',sans-serif;font-size:12px;font-weight:400;color:%(GRAY)s}
+.ghi{font-size:11.5px;color:%(GRAY)s;font-style:italic}
+.so{position:absolute;font-size:11.5px;font-weight:700;color:%(CORAL)s;text-align:center}
+.so.tren{top:11px;left:0;right:0}
+.so.duoi{bottom:11px;left:0;right:0}
+.so.trai{left:22px;top:50%%;transform:translateY(-50%%);width:44px}
+.so.phai{right:8px;top:50%%;transform:translateY(-50%%);width:44px}
+.gay{position:absolute;left:-1px;top:0;bottom:0;width:16px;background:repeating-linear-gradient(
+  0deg,%(BLUSH)s 0 5px,transparent 5px 10px);border-radius:4px 0 0 4px;
+  font-size:0}
+.duong{flex:1;display:flex;flex-direction:column;gap:12px;justify-content:center}
+.b{background:#fff;border:1.5px solid %(BLUSH)s;border-radius:12px;padding:12px 15px;font-size:13.5px;line-height:1.45}
+.b span{display:block;font-size:11px;font-weight:800;letter-spacing:1.1px;text-transform:uppercase;
+  color:%(RUST)s;margin-bottom:3px}
+.b b{color:%(CORAL)s}
+.b i{display:block;font-style:normal;font-size:12px;color:%(GRAY)s;margin-top:3px}
+""" % dict(BLUSH=BLUSH, BLUSH_SOFT=BLUSH_SOFT, CORAL=CORAL, RUST=RUST, GRAY=GRAY), 1160, 560)
+
+# ---------- 16. Kết cấu biên bản (Thực hành bài 2) ----------
+FIGS["th2-ket-cau-bien-ban"] = ("""
+<div class="wrap">
+<h1>Biên bản và Báo cáo</h1>
+<div class="sub">Hai loại ghi lại quá khứ — một loại ghi tại chỗ, một loại tổng hợp lại</div>
+<div class="canh">
+  <div class="to">
+    <div class="d tt">BIÊN BẢN<br><span>(cuộc họp / sự việc)</span></div>
+    <div class="d"><b>1 · Thời gian – địa điểm</b>Hôm nay, lúc … giờ … ngày … tại …</div>
+    <div class="d"><b>2 · Thành phần tham dự</b>Chủ trì · thư ký · các thành viên · khách mời (ghi rõ họ tên, chức danh)</div>
+    <div class="d"><b>3 · Nội dung, diễn biến</b>Ghi theo trình tự; ý kiến từng người ghi trung thực, không tóm tắt theo ý mình</div>
+    <div class="d"><b>4 · Kết luận</b>Chốt việc gì, ai làm, hạn nào</div>
+    <div class="d ky2"><b>5 · Chữ ký</b>Thư ký và chủ trì cùng ký; các bên liên quan ký nếu là biên bản làm việc</div>
+  </div>
+  <div class="canh-phai">
+    <div class="canh-bao2"><b>Chữ ký là thứ tạo giá trị pháp lý.</b>
+      Thiếu chữ ký thì biên bản chỉ là một tờ giấy ghi chép, không dùng làm căn cứ được.</div>
+    <div class="bc">
+      <div class="bc-dau">BÁO CÁO — mạch bốn phần</div>
+      <div class="bc-mach">
+        <div class="bc-o"><span>1</span>Đặc điểm tình hình</div>
+        <div class="bc-o"><span>2</span>Kết quả đạt được</div>
+        <div class="bc-o"><span>3</span>Hạn chế và nguyên nhân</div>
+        <div class="bc-o"><span>4</span>Phương hướng, kiến nghị</div>
+      </div>
+      <div class="bc-chan">Bốn dạng: định kỳ · đột xuất · chuyên đề · sơ kết – tổng kết</div>
+    </div>
+    <div class="l2"><span>✓</span><p>Biên bản ghi <b>ngay tại chỗ</b>, đọc lại <b>trước khi bế mạc</b> để mọi người xác nhận</p></div>
+  </div>
+</div>
+</div>
+""", """
+.canh{display:flex;gap:22px;margin-top:22px;align-items:stretch}
+.to{flex:0 0 430px;background:#fff;border:1.5px solid %(BLUSH)s;border-radius:6px;padding:20px 22px;
+  box-shadow:0 5px 20px rgba(172,77,51,.10)}
+.to .d{padding:9px 0;border-bottom:1px dashed %(BLUSH)s;font-size:11.5px;line-height:1.5;color:%(GRAY)s}
+.to .d b{display:block;color:%(RUST)s;font-size:12.5px;margin-bottom:2px}
+.to .tt{text-align:center;font-family:'Liberation Serif',serif;font-size:22px;font-weight:700;
+  color:%(RUST)s;padding-bottom:12px;line-height:1.2}
+.to .tt span{font-family:'Roboto',sans-serif;font-size:11px;font-weight:400;color:%(GRAY)s}
+.to .ky2{border-bottom:none;background:%(BLUSH_SOFT)s;margin:6px -10px -6px;padding:10px;border-radius:6px}
+.canh-phai{flex:1;display:flex;flex-direction:column;gap:14px;justify-content:center}
+.canh-bao2{background:%(CORAL)s;color:#fff;border-radius:14px;padding:15px 18px;font-size:13px;line-height:1.55}
+.canh-bao2 b{display:block;font-size:14.5px;margin-bottom:4px}
+.bc{background:#fff;border:1.5px solid %(BLUSH)s;border-radius:14px;padding:14px 16px}
+.bc-dau{font-weight:800;font-size:12.5px;letter-spacing:1.1px;color:%(RUST)s;margin-bottom:10px}
+.bc-mach{display:flex;flex-direction:column;gap:7px}
+.bc-o{display:flex;align-items:center;gap:10px;font-size:13px;background:%(BLUSH_SOFT)s;
+  border-radius:9px;padding:8px 11px}
+.bc-o span{flex:none;width:20px;height:20px;border-radius:50%%;background:%(CORAL)s;color:#fff;
+  display:flex;align-items:center;justify-content:center;font-weight:800;font-size:11.5px}
+.bc-chan{margin-top:10px;padding-top:9px;border-top:1px solid %(BLUSH)s;font-size:12px;color:%(GRAY)s}
+.l2{display:flex;gap:11px;align-items:flex-start;background:#fff;border:1.5px solid %(BLUSH)s;
+  border-radius:12px;padding:11px 14px;font-size:13px;line-height:1.45}
+.l2 p{flex:1;margin:0}
+.l2 span{flex:none;width:22px;height:22px;border-radius:50%%;background:%(BLUSH_SOFT)s;color:%(RUST)s;
+  display:flex;align-items:center;justify-content:center;font-weight:800;font-size:12px}
+""" % dict(BLUSH=BLUSH, BLUSH_SOFT=BLUSH_SOFT, CORAL=CORAL, RUST=RUST, GRAY=GRAY), 1160, 560)
+
+
 NO_TITLE_CSS = "h1,.sub{display:none!important}.wrap{padding-top:22px;padding-bottom:22px}"
 
 
@@ -479,5 +769,695 @@ def render():
         b.close()
 
 
+# ---------------------------------------------------------------- bản tiếng Anh
+# Mười chín hình đều có chữ tiếng Việt vẽ sẵn bên trong. Chép tay mười chín bản
+# tiếng Anh nghĩa là nuôi hai bộ HTML song song, và chỉ vài lần sửa là hai bộ
+# lệch nhau. Nên bản tiếng Anh dựng RA TỪ bản tiếng Việt bằng phép thay chuỗi.
+#
+# Phép tự soát: sau khi thay, nếu trong HTML còn ký tự có dấu tiếng Việt thì
+# tức là còn chuỗi chưa dịch — báo ra chứ không lặng lẽ xuất một hình nửa Việt
+# nửa Anh, thứ còn tệ hơn hình chưa dịch vì nhìn qua tưởng đã xong.
+DAU_VIET = "ăâđêôơưàáảãạằắẳẵặầấẩẫậèéẻẽẹềếểễệìíỉĩị" \
+           "òóỏõọồốổỗộờớởỡợùúủũụừứửữựỳýỷỹỵ"
+
+DICH_HINH = {
+    'Biên bản và Báo cáo':
+        'Minutes and Report',
+    'Phông chữ':
+        'Typeface',
+    'Số trang':
+        'Page numbers',
+    'Số: … / CV-…&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Vĩnh Long, ngày … tháng … năm …':
+        'No.: … / CV-…&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Vinh Long, … [day] … [month] … [year]',
+    'Thiếu chữ ký thì biên bản chỉ là một tờ giấy ghi chép, không dùng làm căn cứ được.':
+        'Unsigned, minutes are only a sheet of notes and cannot be relied on.',
+    'Ghi theo trình tự; ý kiến từng người ghi trung thực, không tóm tắt theo ý mình':
+        "In order of events; record each person's view faithfully, don't summarise it your own way",
+    'phải nói đúng việc — người nhận đọc dòng này để quyết định có đọc tiếp không':
+        'must say exactly what it is about — the recipient reads this line to decide whether to read on',
+    'Bốn con số phải đặt đúng bốn phía — lề trái rộng hơn vì còn phải đóng gáy':
+        'Four figures, one per side — the left is wider because the file is bound there',
+    'Chủ trì · thư ký · các thành viên · khách mời (ghi rõ họ tên, chức danh)':
+        'Chair · secretary · members · guests (full names and positions)',
+    'Thư ký và chủ trì cùng ký; các bên liên quan ký nếu là biên bản làm việc':
+        'Secretary and chair both sign; the parties sign too if it is a working record',
+    'Hai loại ghi lại quá khứ — một loại ghi tại chỗ, một loại tổng hợp lại':
+        'Two ways of recording what happened — one written on the spot, one compiled after',
+    'MỞ ĐẦU — nêu lý do viết thư, dẫn chiếu văn bản/cuộc gặp trước nếu có':
+        'OPENING — why you are writing; cite any earlier letter or meeting',
+    'NỘI DUNG — mỗi ý một đoạn; số liệu, thời hạn, điều kiện phải cụ thể':
+        'BODY — one point per paragraph; figures, deadlines and terms must be specific',
+    'Bốn dạng: định kỳ · đột xuất · chuyên đề · sơ kết – tổng kết':
+        'Four kinds: periodic · ad hoc · thematic · interim and final',
+    'TIÊU ĐỀ THƯ — tên, địa chỉ, điện thoại, email doanh nghiệp':
+        'LETTERHEAD — company name, address, telephone, email',
+    'KẾT — nêu rõ điều mong muốn và mốc thời gian trả lời':
+        'CLOSE — state what you want and by when you need a reply',
+    'Sinh viên sẽ gõ đúng bố cục này trong bài nộp số 3':
+        'Students type exactly this layout for Submission 3',
+    '. Đoạn dài quá năm dòng là dấu hiệu gộp nhiều ý':
+        '. A paragraph longer than five lines usually means several points were run together',
+    'Bật Different First Page để bỏ số ở trang đầu':
+        'Tick Different First Page to drop the number on page one',
+    '— “sớm nhất có thể” không phải là thời hạn':
+        '— “as soon as possible” is not a deadline',
+    'trích yếu — một dòng, nói đúng việc':
+        'subject line — one line, saying exactly what it is about',
+    'Chữ ký là thứ tạo giá trị pháp lý.':
+        'Signatures are what give it legal force.',
+    'Hôm nay, lúc … giờ … ngày … tại …':
+        "Today, at … o'clock on … at …",
+    'Con số, thời hạn, điều kiện phải':
+        'Figures, deadlines and terms must be',
+    'Chốt việc gì, ai làm, hạn nào':
+        'What was settled, who does it, by when',
+    'Bố cục một thư tín thương mại':
+        'The layout of a commercial letter',
+    ', đừng để người nhận tự đoán':
+        ", don't leave the reader to guess",
+    'tên và chức danh người nhận':
+        'name and position of the recipient',
+    'Nhập bốn số theo hình bên':
+        'Enter the four figures shown opposite',
+    '1 · Thời gian – địa điểm':
+        '1 · Time and place',
+    '3 · Nội dung, diễn biến':
+        '3 · Proceedings',
+    'BÁO CÁO — mạch bốn phần':
+        'REPORT — four parts',
+    'Phương hướng, kiến nghị':
+        'The way forward, recommendations',
+    'Màu đen, bộ mã Unicode':
+        'Black, Unicode',
+    '2 · Thành phần tham dự':
+        '2 · Those present',
+    'Hạn chế và nguyên nhân':
+        'Shortcomings and causes',
+    'để mọi người xác nhận':
+        'so everyone can confirm them',
+    'Khổ giấy và lề trang':
+        'Paper size and margins',
+    '(cuộc họp / sự việc)':
+        '(of a meeting or an incident)',
+    'Times New Roman, cỡ':
+        'Times New Roman, size',
+    'Đặc điểm tình hình':
+        'The situation',
+    'Không dùng Letter':
+        'Never use Letter',
+    'vùng gõ nội dung':
+        'where the text goes',
+    'Kết quả đạt được':
+        'Results achieved',
+    'trước khi bế mạc':
+        'before the meeting closes',
+    'Kết thư phải nêu':
+        'The closing must state',
+    '(ký, đóng dấu)':
+        '(signature and seal)',
+    'điều mong muốn':
+        'what you want',
+    '4 · Kết luận':
+        '4 · Conclusion',
+    'Biên bản ghi':
+        'Minutes are written',
+    'ngay tại chỗ':
+        'on the spot',
+    'Trân trọng,':
+        'Yours faithfully,',
+    '5 · Chữ ký':
+        '5 · Signatures',
+    ', đọc lại':
+        ', and read back',
+    'Kính gửi:':
+        'To:',
+    'CHỨC DANH':
+        'POSITION',
+    'Họ và tên':
+        'Full name',
+    'Trích yếu':
+        'The subject line',
+    'đóng gáy':
+        'binding edge',
+    'Khổ giấy':
+        'Paper size',
+    'Lề trang':
+        'Margins',
+    'BIÊN BẢN':
+        'MINUTES',
+    'một đoạn':
+        'per paragraph',
+    'cụ thể':
+        'specific',
+    'Mỗi ý':
+        'One point',
+    'Công văn':
+        'Official letter (công văn)',
+    'Báo giá':
+        'Quotation (báo giá)',
+    'Khổ A4 (210 × 297 mm) • phông Times New Roman, cỡ 13 – 14, màu đen •\n      số trang đánh từ trang thứ hai, chữ số Ả Rập, canh giữa lề trên':
+        'A4 (210 × 297 mm) • Times New Roman, 13 – 14 pt, black •\n      page numbers from the second page, Arabic numerals, centred on the top margin',
+    'Chứa quy tắc xử sự chung, áp dụng nhiều lần, do cơ quan nhà nước có thẩm quyền ban hành':
+        'Carry general rules of conduct, applied repeatedly, issued by a competent state body',
+    'Theo Nghị định 30/2020/NĐ-CP về công tác văn thư — sơ đồ vị trí từng thành phần':
+        'Under Decree 30/2020/ND-CP on records management — where each component sits',
+    'Phân biệt được nhóm thì mới biết soạn theo mẫu nào và ai có thẩm quyền ký':
+        'Know the group and you know which template to use and who may sign',
+    'Dùng trong một lĩnh vực nghiệp vụ nhất định, theo mẫu riêng của ngành':
+        "Used within one professional field, on that field's own templates",
+    'Từ đề xuất mua sắm đến khi khép hồ sơ — tình huống mua 20 máy tính':
+        'From the purchase request to closing the file — the 20-computer case',
+    'Dùng trong quản lý, điều hành hằng ngày của cơ quan, doanh nghiệp':
+        'Used in the daily management of an agency or a business',
+    'Văn bản hành chính — nội bộ và giao dịch với cơ quan, đối tác':
+        'Administrative documents — internal, and with authorities and partners',
+    'Văn bản thương mại — phục vụ trực tiếp giao dịch mua bán':
+        'Commercial documents — serving the sale itself',
+    'Quyết định · Công văn · Tờ trình · Biên bản · Báo cáo':
+        'Decision · Official letter · Submission · Minutes · Report',
+    'Xác nhận số lượng, chất lượng — căn cứ thanh toán':
+        'Confirms quantity and quality — the basis for payment',
+    'Đối tượng, giá, quyền – nghĩa vụ, phạt vi phạm':
+        'Subject matter, price, rights and obligations, penalties',
+    'Chức vụ, họ tên, chữ ký người có thẩm quyền':
+        'Position, full name and signature of the authorised person',
+    'Giá, điều kiện giao hàng, hiệu lực báo giá':
+        'Price, delivery terms, how long the quotation stands',
+    'Phê duyệt mua sắm, giao đơn vị thực hiện':
+        'Approves the purchase and assigns who carries it out',
+    'Đề xuất chủ trương mua sắm, kèm dự toán':
+        'Proposes the purchase, with a cost estimate',
+    'Chín thành phần thể thức trên trang A4':
+        'The nine formal components on an A4 page',
+    'Quyết toán, chấm dứt hiệu lực hợp đồng':
+        'Final settlement, the contract ends',
+    'Học phần này tập trung vào nhóm giữa —':
+        'This course focuses on the middle group —',
+    'Hợp đồng · Hóa đơn · Chứng từ kế toán':
+        'Contracts · Invoices · Accounting vouchers',
+    'Chuỗi văn bản của một thương vụ':
+        'The chain of documents behind one deal',
+    'Địa danh và thời gian ban hành':
+        'Place and date of issue',
+    'Tên loại và trích yếu nội dung':
+        'Document type and subject line',
+    'Đề nghị báo giá, mời chào hàng':
+        'Requests a quotation, invites an offer',
+    'Tên cơ quan, tổ chức ban hành':
+        'Name of the issuing body',
+    '(công văn không có tên loại)':
+        '(an official letter has no type heading)',
+    'Luật · Nghị định · Thông tư':
+        'Laws · Decrees · Circulars',
+    '— và nhóm chuyên ngành phần':
+        '— and, within the specialised group,',
+    'Dấu, chữ ký số của cơ quan':
+        "The body's seal or digital signature",
+    'Số, ký hiệu của văn bản':
+        'Document number and reference',
+    'Trưởng phòng → Giám đốc':
+        'Head of department → Director',
+    'Công ty → Nhà cung cấp':
+        'Company → Supplier',
+    'Nhà cung cấp → Công ty':
+        'Supplier → Company',
+    'Quốc hiệu và Tiêu ngữ':
+        'National heading and motto',
+    'hợp đồng thương mại':
+        'commercial contracts',
+    'Lề trên 20 – 25 mm':
+        'Top margin 20 – 25 mm',
+    'Kỹ thuật trình bày':
+        'Layout technique',
+    'QUY PHẠM PHÁP LUẬT':
+        'LEGAL NORMATIVE',
+    'văn bản hành chính':
+        'administrative documents',
+    'Nội dung văn bản':
+        'The body of the document',
+    'Ba nhóm văn bản':
+        'Three groups of documents',
+    'Số: 15/QĐ-CTAP':
+        'No.: 15/QĐ-CTAP',
+    'CHUYÊN NGÀNH':
+        'SPECIALISED',
+    'Giám đốc ký':
+        'Signed by the Director',
+    'Quyết định':
+        'Decision (quyết định)',
+    'Hai bên ký':
+        'Signed by both parties',
+    'Nghiệm thu':
+        'Acceptance (nghiệm thu)',
+    'HÀNH CHÍNH':
+        'ADMINISTRATIVE',
+    'Nơi nhận':
+        'Distribution list',
+    'Tờ trình':
+        'Submission (tờ trình)',
+    'Hợp đồng':
+        'Contract (hợp đồng)',
+    'Thanh lý':
+        'Closure (thanh lý)',
+    'Lề trái':
+        'Left margin',
+    'Lề phải':
+        'Right margin',
+    'VĂN BẢN':
+        'DOCUMENTS',
+    'Giới hạn hai bên không chồng lấn → không có thỏa thuận nào khả thi. Khi đó hãy mở rộng chiếc bánh (đổi số lượng, tiến độ, dịch vụ kèm) thay vì ép giá.':
+        'The two limits do not overlap → no deal is possible. Then grow the pie instead (change the quantity, the schedule, the services included) rather than squeezing the price.',
+    '“Nếu anh tăng số lượng lên 500 chiếc, chúng tôi sẽ giảm 3%.”\n  — không bao giờ cho không, và nhượng bộ nhỏ dần để phát tín hiệu đã chạm giới hạn.':
+        '“If you raise the order to 500 units, we will take 3% off.”\n  — never give anything free, and make each concession smaller to signal you are at your limit.',
+    'Lý tưởng (mong muốn nhất) → Kỳ vọng (hợp lý) → Tối thiểu (ranh giới rút lui). Viết ra giấy TRƯỚC khi vào bàn.':
+        'Ideal (what you most want) → Expected (what is reasonable) → Minimum (your walk-away line). Write them down BEFORE you sit.',
+    'Nếu không đạt thỏa thuận, ta làm gì? BATNA càng mạnh, thế đàm phán càng vững — và đừng để lộ khi BATNA yếu.':
+        'If there is no deal, what do you do? The stronger the BATNA the stronger your position — and never show it when it is weak.',
+    'Mục tiêu 3 mức • BATNA • ZOPA • hiểu đối tác và người có thẩm quyền quyết định':
+        'Three target levels • BATNA • ZOPA • know them, and who actually decides',
+    'Bảy mươi phần trăm kết quả được quyết định trước khi hai bên ngồi vào bàn':
+        'Seventy per cent of the result is settled before either side sits down',
+    'Cùng một bàn thương lượng, ba cách ứng xử cho ba kết quả khác hẳn nhau':
+        'One table, three ways of behaving, three very different outcomes',
+    'Nhận tín hiệu chốt, tóm tắt và văn bản hóa thành hợp đồng':
+        'Read the closing signal, summarise, turn it into a contract',
+    'Tạo không khí, thăm dò, thống nhất chương trình làm việc':
+        'Set the tone, probe, agree the agenda',
+    'Đề nghị có căn cứ, nhượng bộ có điều kiện, xử lý bế tắc':
+        'Offers with grounds, concessions with conditions, deadlocks broken',
+    'danh sách điều khoản đã chốt và điều khoản còn treo':
+        'a list of what is settled and what is still open',
+    'Thực hiện cam kết, giữ quan hệ, rút kinh nghiệm':
+        'Honour the commitments, keep the relationship, learn the lessons',
+    'Ví dụ: thương vụ mua 20 máy tính cho văn phòng':
+        'Example: buying 20 computers for an office',
+    'bảng mục tiêu ba mức và BATNA đã viết ra giấy':
+        'your three target levels and your BATNA written down',
+    'hồ sơ theo dõi thực hiện và bài học rút ra':
+        'a file tracking performance, and the lessons written down',
+    'chương trình làm việc hai bên cùng đồng ý':
+        'an agenda both sides have agreed',
+    'biên bản hoặc hợp đồng có chữ ký hai bên':
+        'minutes or a contract signed by both sides',
+    'ZOPA và BATNA — bản đồ của bàn đàm phán':
+        'ZOPA and BATNA — the map of the table',
+    'Tiến trình đàm phán — năm giai đoạn':
+        'The negotiation process — five stages',
+    'BATNA — phương án thay thế tốt nhất':
+        'BATNA — best alternative to a negotiated agreement',
+    'Kiểu nguyên tắc là kiểu nên theo:':
+        'Principled is the one to follow:',
+    'Khoảng hai bên có thể gặp nhau':
+        'Where the two sides can meet',
+    'Vùng bên MUA chấp nhận được':
+        'What the BUYER can accept',
+    'Vùng bên BÁN chấp nhận được':
+        'What the SELLER can accept',
+    'Kết quả hợp lý, quan hệ còn':
+        'A fair result, relationship intact',
+    'Quay về tiêu chí khách quan':
+        'Returns to an objective standard',
+    'tách con người khỏi vấn đề':
+        'separate the people from the problem',
+    'Bên mua: ngân sách tối đa':
+        'Buyer: budget ceiling',
+    'Người cùng giải bài toán':
+        'A partner in solving it',
+    'Nhượng bộ có điều kiện:':
+        'Concede on condition:',
+    'vùng thỏa thuận khả dĩ':
+        'zone of possible agreement',
+    'Bên bán: giá tối thiểu':
+        'Seller: lowest price',
+    'Không có ZOPA thì sao?':
+        'And if there is no ZOPA?',
+    'Mất thời gian chuẩn bị':
+        'It costs preparation time',
+    'Rời giai đoạn này với':
+        'Leave this stage with',
+    'tiêu chí khách quan':
+        'objective standards',
+    'Thắng bằng mọi giá':
+        'Win at any cost',
+    'Ba kiểu đàm phán':
+        'Three styles of negotiation',
+    '3. THƯƠNG LƯỢNG':
+        '3. BARGAIN',
+    '5. SAU ĐÀM PHÁN':
+        '5. AFTERWARDS',
+    'Kiểu NGUYÊN TẮC':
+        'PRINCIPLED',
+    'Mục tiêu 3 mức':
+        'Three target levels',
+    'Coi đối tác là':
+        'Sees the other side as',
+    'Thiệt về mình':
+        'You lose out',
+    'chứ không bàn':
+        'not',
+    '1. CHUẨN BỊ':
+        '1. PREPARE',
+    '4. KẾT THÚC':
+        '4. CLOSE',
+    'Giữ quan hệ':
+        'Keep the relationship',
+    'Mất đối tác':
+        'You lose the partner',
+    'Khi bế tắc':
+        'When stuck',
+    'Gây sức ép':
+        'Applies pressure',
+    'lập trường':
+        'positions',
+    '2. MỞ ĐẦU':
+        '2. OPEN',
+    'Kiểu CỨNG':
+        'HARD',
+    'Nhượng bộ':
+        'Concedes',
+    '· dựa vào':
+        '· rely on',
+    'Kiểu MỀM':
+        'SOFT',
+    'Mục tiêu':
+        'Goal',
+    'Đối thủ':
+        'An opponent',
+    '·\n  bàn':
+        '·\n  discuss',
+    'lợi ích':
+        'interests',
+    'Bạn bè':
+        'A friend',
+    'Rủi ro':
+        'Risk',
+    '“Một khách hàng phàn nàn được xử lý tốt thường trung thành hơn khách hàng chưa từng gặp vấn đề.”':
+        '“A customer whose complaint is handled well is usually more loyal than one who never had a problem.”',
+    'Phương án cụ thể, thời hạn rõ. Vượt thẩm quyền thì chuyển đúng người, không đùn đẩy.':
+        "A specific remedy, a clear deadline. Beyond your authority — pass it to the right person, don't pass the buck.",
+    'Xin lỗi chân thành về trải nghiệm chưa tốt — kể cả khi chưa rõ lỗi thuộc về ai.':
+        'Apologise sincerely for the bad experience — even before you know whose fault it is.',
+    'Không có cực nào đúng hơn cực nào — biết mình đang ở đâu trên trục mới là việc':
+        'Neither pole is more correct — the work is knowing where you stand on the axis',
+    'Cảm ơn khách đã phản hồi và theo dõi đến khi vấn đề được giải quyết xong.':
+        'Thank them for speaking up, and follow it through until it is actually fixed.',
+    'Nghe trọn vẹn, không ngắt lời, không phòng thủ. Ghi nhận đầy đủ sự việc.':
+        'Hear them out. No interrupting, no defending. Take down the whole story.',
+    'Bốn bước biến một khách hàng đang giận thành khách hàng trung thành':
+        'Four steps that turn an angry customer into a loyal one',
+    'khi gặp đối tác nước ngoài, đừng suy từ thói quen của mình':
+        "before meeting a foreign partner; don't reason from your own habits",
+    'Cử chỉ, màu sắc, con số, quà tặng đều có thể nhạy cảm —':
+        'Gestures, colours, numbers and gifts can all be sensitive —',
+    'Quy trình LAST — xử lý phàn nàn của khách hàng':
+        'The LAST procedure — handling a complaint',
+    '“Để chúng tôi xem xét” có thể là lời từ chối':
+        "“We'll look into it” can mean no",
+    'Đúng vai, đúng cấp, quyết định tập thể':
+        'Right role, right level, decided collectively',
+    'Gọi tên, tranh luận thẳng với sếp':
+        'First names, argue openly with the boss',
+    'Quan hệ đi trước, tiến độ đi sau':
+        'Relationship first, schedule second',
+    'Ba trục khác biệt văn hóa':
+        'Three axes of cultural difference',
+    'Trễ 5 phút là thất lễ':
+        'Five minutes late is rude',
+    'Rõ ràng là tôn trọng':
+        'Being clear is being respectful',
+    'Đức · Nhật · Thụy Sĩ':
+        'Germany · Japan · Switzerland',
+    'Thời gian linh hoạt':
+        'Time is elastic',
+    'Nam Âu · Trung Đông':
+        'Southern Europe · Middle East',
+    'Nhật · Hàn · Trung':
+        'Japan · Korea · China',
+    'Đức · Mỹ · Hà Lan':
+        'Germany · USA · Netherlands',
+    'Nhật · Hàn · Việt':
+        'Japan · Korea · Vietnam',
+    'Giờ giấc chặt':
+        'Clock-tight',
+    'tra cứu trước':
+        'look it up first',
+    'Bắc Âu · Úc':
+        'Nordics · Australia',
+    'Giải quyết':
+        'Solve',
+    'Lắng nghe':
+        'Listen',
+    'Nói thẳng':
+        'Direct',
+    'Bình đẳng':
+        'Flat',
+    'Thời gian':
+        'TIME',
+    'Cách nói':
+        'HOW WE SPEAK',
+    'Nói vòng':
+        'Indirect',
+    'Xin lỗi':
+        'Apologise',
+    'Thứ bậc':
+        'HIERARCHY',
+    'Cảm ơn':
+        'Thank',
+    'Tôn ti':
+        'Ranked',
+    '>GIÂY<':
+        '>SECONDS<',
+    '>BƯỚC CHÂN<':
+        '>PACES<',
+    '>CENTIMET<':
+        '>CENTIMETRES<',
+    '>TỪ<':
+        '>WORDS<',
+    'Lắng nghe chủ động: không ngắt lời • ghi chú ý chính • phản hồi bằng ánh mắt, gật đầu •':
+        "Active listening: don't interrupt • note the main points • respond with your eyes and a nod •",
+    'Ấn tượng ban đầu rất khó đảo ngược — hãy chuẩn bị cả bốn, đừng phó mặc cho may mắn':
+        "A first impression is very hard to reverse — prepare all four, don't leave it to luck",
+    'Từ nghe cho có đến nghe thấu cảm — bậc thang của người giao tiếp chuyên nghiệp':
+        "From hearing-for-form's-sake to listening with empathy — the professional's staircase",
+    'Bốn cửa ải quyết định trong những khoảnh khắc đầu tiên của cuộc gặp':
+        'Four gates that decide the opening moments of a meeting',
+    'diễn đạt lại để xác nhận — “Nếu em hiểu đúng thì ý anh/chị là…”':
+        "restate to confirm — “If I've understood you, what you mean is…”",
+    'Đối phương hình thành đánh giá tổng thể gần như tức thì':
+        'The other person forms an overall judgement almost at once',
+    'Ánh mắt và nụ cười — kênh biểu cảm mạnh nhất':
+        'Eyes and smile — the strongest expressive channel',
+    'Lời chào, giới thiệu đúng nghi thức, rõ ràng':
+        'A greeting and an introduction, correct and clear',
+    'Hiểu cả cảm xúc và nhu cầu đằng sau lời nói':
+        'Understanding the feeling and the need behind the words',
+    'Dáng đi, tư thế, sự tự tin được đọc từ xa':
+        'Your walk, your posture, your confidence are read from a distance',
+    'Tập trung vào lời nói, ghi nhận thông tin':
+        'Focused on the words, taking in the facts',
+    'Quy tắc 4 × 20 — ấn tượng ban đầu':
+        'The 4 × 20 rule — first impressions',
+    'Gật gù nhưng tâm trí ở nơi khác':
+        'Nodding along, mind elsewhere',
+    'Chỉ nghe phần mình quan tâm':
+        'Only the part that interests you',
+    'Năm mức độ lắng nghe':
+        'The five levels of listening',
+    'Không nghe gì cả':
+        'Taking in nothing at all',
+    'Nghe chọn lọc':
+        'Selective hearing',
+    'Nghe chăm chú':
+        'Attentive listening',
+    'Nghe thấu cảm':
+        'Empathetic listening',
+    'Giả vờ nghe':
+        'Pretending',
+    'gương mặt':
+        'of face',
+    'đầu tiên':
+        'first',
+    'Phớt lờ':
+        'Ignoring',
+    'Vòng phản hồi: người nhận trở thành người gửi — giao tiếp là quá trình hai chiều, không phải một chiều':
+        'The feedback loop: the receiver becomes the sender — communication runs both ways, not one',
+    'Bốn cặp đối nhau — một cuộc giao tiếp luôn nằm đâu đó trên cả bốn trục':
+        'Four opposing pairs — any exchange sits somewhere on all four axes',
+    'ấn tượng cũ, tin đồn, khoảng cách quyền lực làm méo cách diễn giải':
+        'an old impression, hearsay, distance of power — all bend the reading',
+    'Thông điệp đi qua năm khâu — nhiễu có thể xen vào bất cứ khâu nào':
+        'A message passes through five stages — noise can enter at any of them',
+    'Năm yếu tố cùng tác động vào một cuộc giao tiếp':
+        'Five factors bearing on the same exchange',
+    'Chuyển ý tưởng thành lời nói, chữ viết, cử chỉ':
+        'Turning the idea into words, writing, gesture',
+    'Truyền qua kênh: gặp mặt, điện thoại, email…':
+        'Carried by a channel: in person, phone, email…',
+    'Đáp lại — căn cứ đo hiệu quả giao tiếp':
+        'The reply — the only measure of whether it worked',
+    'Hình thành ý tưởng, xác định mục đích':
+        'Forms the idea, sets the purpose',
+    'rõ hay mơ hồ, có cấu trúc hay lộn xộn':
+        'clear or vague, structured or scattered',
+    'email, họp trực tuyến, mạng xã hội':
+        'email, online meetings, social media',
+    'tâm lý, hiểu biết, kỹ năng, uy tín':
+        'state of mind, knowledge, skill, standing',
+    'Người nhận tiếp nhận và diễn giải':
+        'The receiver takes it in and interprets it',
+    'cần điều phối, cần thuyết trình':
+        'needs chairing, needs presenting',
+    'chọn sai kênh, môi trường ồn ào':
+        'the wrong channel, a noisy room',
+    'Yếu tố ảnh hưởng đến giao tiếp':
+        'Factors that shape communication',
+    'chuẩn mực, vùng miền, thứ bậc':
+        'norms, region, hierarchy',
+    'NHIỄU — xuất hiện ở mọi khâu':
+        'NOISE — it turns up at every stage',
+    'Khác biệt ngôn ngữ – văn hóa':
+        'Differences of language and culture',
+    'Mô hình quá trình giao tiếp':
+        'The communication process model',
+    'Quan hệ và định kiến sẵn có':
+        'Existing relationship and prejudice',
+    'Tiếng ồn, đường truyền kém':
+        'Background noise, a bad line',
+    'mặt đối mặt, phản hồi ngay':
+        'in person, feedback at once',
+    'điện thoại, email, văn bản':
+        'phone, email, written documents',
+    'Cảm xúc tiêu cực, mệt mỏi':
+        'Bad mood, tiredness',
+    'Các hình thức giao tiếp':
+        'The forms of communication',
+    'Định kiến, ấn tượng cũ':
+        'Prejudice, an old impression',
+    'họp, văn bản, hội nghị':
+        'meetings, documents, conferences',
+    '1–1, sâu và riêng tư':
+        'deep and private',
+    'trò chuyện ngoài lề':
+        'talk on the side',
+    'Không chính thức':
+        'Informal',
+    'gặp mặt, giấy tờ':
+        'meeting in person, paper',
+    'Bối cảnh văn hóa':
+        'Cultural setting',
+    'Nhóm, đám đông':
+        'Group, audience',
+    'Kênh và nhiễu':
+        'Channel and noise',
+    'Truyền thống':
+        'Traditional',
+    'Giao tiếp số':
+        'Digital',
+    'THÔNG ĐIỆP':
+        'MESSAGE',
+    'Chính thức':
+        'Formal',
+    'Thông điệp':
+        'The message',
+    'NGƯỜI GỬI':
+        'SENDER',
+    'Trực tiếp':
+        'Face to face',
+    'Gián tiếp':
+        'At a distance',
+    'GIAO TIẾP':
+        'EXCHANGE',
+    'PHẢN HỒI':
+        'FEEDBACK',
+    'GIẢI MÃ':
+        'DECODING',
+    'Cá nhân':
+        'One to one',
+    'Chủ thể':
+        'The people',
+    'MÃ HÓA':
+        'ENCODING',
+    'KÊNH':
+        'CHANNEL',
+    'CUỘC':
+        'THE',
+}
+
+
+HU_TU = ("la", "va", "cua", "cho", "cac", "mot", "khong", "khi", "voi",
+         "thi", "co", "duoc", "nguoi", "nhung", "trong", "den", "tu")
+
+
+# Chữ cố ý GIỮ tiếng Việt trên bản tiếng Anh — mẫu vật, không phải nội dung.
+GIU_TIENG_VIET = (
+    "CỘNG HÒA XÃ HỘI CHỦ NGHĨA VIỆT NAM",
+    "Độc lập – Tự do – Hạnh phúc",
+    "TÊN CƠ QUAN CHỦ QUẢN",
+    "TÊN CƠ QUAN BAN HÀNH",
+    "QUYẾT ĐỊNH",
+    "Về việc mua sắm thiết bị văn phòng",
+    "Vĩnh Long, ngày 05 tháng 12 năm 2026",
+    "Nơi nhận:",
+    "GIÁM ĐỐC",
+    "(chữ ký, dấu)",
+    "Nguyễn Văn A",
+    # Số hiệu văn bản thật: "QĐ" là viết tắt của "quyết định" trên giấy tờ
+    # Việt Nam, dịch ra thì không còn là số hiệu nữa.
+    "QĐ-CTAP",
+    # Tên loại văn bản để trong ngoặc là CỐ Ý: người đọc bản tiếng Anh vẫn
+    # phải làm việc với tờ giấy in đúng chữ tiếng Việt ấy.
+    "(tờ trình)", "(quyết định)", "(công văn)", "(hợp đồng)",
+    "(nghiệm thu)", "(thanh lý)", "(biên bản)", "(báo cáo)", "(báo giá)",
+)
+
+
+def _con_tieng_viet(t):
+    import re
+    t = re.sub(r"<[^>]+>", " ", t)
+    for giu in GIU_TIENG_VIET:
+        t = t.replace(giu, " ")
+    con = sorted({c for c in t.lower() if c in DAU_VIET})
+    if con:
+        return con
+    tach = re.findall(r"[A-Za-z]+", t.lower())
+    lot = sorted({w for w in tach if w in HU_TU})
+    return lot
+
+
+def render_en():
+    """Dựng bản tiếng Anh của những hình đã có đủ chuỗi trong DICH_HINH."""
+    xong, thieu = [], []
+    with sync_playwright() as pw:
+        b = pw.chromium.launch(executable_path=CHROME)
+        for name, (html, css, w, h) in FIGS.items():
+            en = html
+            # Thay CỤM DÀI TRƯỚC. Nếu để thứ tự khai báo thì một khóa ngắn có
+            # thể ăn vào giữa một khóa dài hơn chứa nó: thêm "Lắng nghe" cho
+            # hình Chương 3 đã lập tức phá vỡ chuỗi "Lắng nghe chủ động: …"
+            # của hình Chương 2, một hình vốn đã dịch xong.
+            for vi in sorted(DICH_HINH, key=len, reverse=True):
+                en = en.replace(vi, DICH_HINH[vi])
+            con = _con_tieng_viet(en)
+            if con:
+                thieu.append((name, "".join(con)))
+                continue
+            for suffix, extra, dh in (("-en", "", 0), ("-en-nt", NO_TITLE_CSS, -92)):
+                page = b.new_page(viewport={"width": w, "height": max(h + dh, 220)},
+                                  device_scale_factor=2)
+                page.set_content(f"<style>{BASE_CSS}{css}{extra}</style>{en}")
+                page.wait_for_timeout(220)
+                page.screenshot(path=os.path.join(OUT, name + suffix + ".png"), full_page=True)
+                page.close()
+            xong.append(name)
+        b.close()
+    print("hình tiếng Anh đã dựng: %d" % len(xong))
+    for n, c in thieu:
+        print("   chưa đủ chuỗi: %-28s còn dấu: %s" % (n, c))
+    return len(thieu)
+
+
 if __name__ == "__main__":
+    import sys
+    if "--en" in sys.argv:
+        raise SystemExit(1 if render_en() else 0)
     render()
