@@ -221,6 +221,230 @@ C1 = {
         "Chapter 2 – Professional communication skills. Each group prepares a 3-minute talk on a topic of its choice, to be delivered in class.",
 }
 
+# ------------------------------------------------------------------ Chương 2
+C2 = {
+    'Chương 3 – Giao tiếp trong các tình huống đặc thù. Mỗi nhóm sưu tầm một tình huống giao tiếp khó xử có thật tại nơi làm việc (giữ ẩn danh) để thảo luận.':
+        'Chapter 3 – Communication in specific situations. Each group brings a real awkward workplace situation (kept anonymous) for discussion.',
+    'Kinh nghiệm: 1 phút thuyết trình cần khoảng 1 giờ chuẩn bị nếu chủ đề mới — thời lượng luyện tập là thứ khán giả “nhìn thấy” rõ nhất.':
+        'Rule of thumb: one minute of talk takes about an hour of preparation on a new topic — rehearsal is the thing an audience “sees” most clearly.',
+    'Ấn tượng ban đầu hình thành gần như tức thì và rất khó đảo ngược — nó phải được CHUẨN BỊ, không phó mặc cho may mắn.':
+        'A first impression forms almost instantly and is very hard to reverse — it must be PREPARED, not left to luck.',
+    'Hiểu đúng nhu cầu trước, trình bày sau; điện thoại chuyên nghiệp là bộ mặt âm thanh của doanh nghiệp.':
+        "Understand the need first, present second; the telephone is a company's face in sound.",
+    'Bốn kỹ năng dùng hằng ngày suốt sự nghiệp: gây ấn tượng, thuyết trình, lắng nghe và điện thoại.':
+        'Four skills you will use every working day: making an impression, presenting, listening, and the telephone.',
+    'Phân tích khán giả → mục tiêu → 3 ý chính → luyện tập; nói với người nghe, không nói với slide.':
+        'Audience → objective → three points → rehearsal; talk to the room, not to the slide.',
+    'Xây dựng cấu trúc chi tiết cho bài thuyết trình 5 phút giới thiệu một sản phẩm tự chọn.':
+        'Build a detailed structure for a 5-minute talk introducing a product of your choice.',
+    'Trang phục – thần thái – lời chào – nghi thức xã giao: tất cả đều luyện được trước.':
+        'Dress, bearing, greeting, etiquette — every one of them can be rehearsed.',
+    'Bốc thăm: (a) gọi hẹn gặp khách hàng tiềm năng, hoặc (b) gọi xử lý giao hàng trễ.':
+        'Draw a lot: (a) call to arrange a meeting with a prospect, or (b) call to handle a late delivery.',
+    'ấn tượng ban đầu chuyên nghiệp và thực hiện đúng các nghi thức xã giao công sở.':
+        'a professional first impression, and observe workplace etiquette correctly.',
+    'Phân biệt 5 mức độ lắng nghe; cho ví dụ về lắng nghe thấu cảm trong công việc.':
+        'Distinguish the five levels of listening; give a work example of empathetic listening.',
+    'Người nhỏ chào trước; giới thiệu người ít quan trọng với người quan trọng hơn':
+        'The junior greets first; introduce the less senior to the more senior',
+    'Hai kỹ năng ít được dạy nhất nhưng quyết định nhất trong công việc hằng ngày.':
+        'The two least-taught skills, and the two that decide most of daily work.',
+    'Từ chuẩn bị đến trình bày: làm sao để người nghe nhớ được điều bạn muốn nói.':
+        'From preparation to delivery: how to make the audience remember your point.',
+    'Hai mươi giây đầu tiên quyết định phần lớn cách người khác nhìn nhận bạn.':
+        'The first twenty seconds settle most of how someone will see you.',
+    'Trình bày quy tắc 4×20 và cách vận dụng trong buổi phỏng vấn xin việc.':
+        'Explain the 4×20 rule and how to apply it in a job interview.',
+    'lắng nghe chủ động và đặt câu hỏi hiệu quả trong hội thoại công việc.':
+        'active listening and effective questioning in work conversations.',
+    'Nhóm còn lại thuyết trình 3 phút; lớp nhận xét theo mở – thân – kết.':
+        'The other group gives a 3-minute talk; the class comments on opening – body – close.',
+    'Mỗi ý: luận điểm → dẫn chứng → ví dụ; ý mạnh nhất đặt đầu hoặc cuối':
+        'Each point: claim → evidence → example; put the strongest first or last',
+    'Đứng vững, mở vai, mắt luân phiên khắp phòng; tay minh họa tự nhiên':
+        'Stand firm, shoulders open, eyes moving round the room; hands natural',
+    'đi thẳng vào việc; tóm tắt lại thời gian – địa điểm – việc cần làm':
+        'get to the point; read back the time, the place, the action',
+    'NHIỆM VỤ KÉP (nhóm 4–5 sinh viên, 25 phút chuẩn bị + trình diễn)':
+        'A DOUBLE TASK (groups of 4–5, 25 minutes to prepare and perform)',
+    'Câu hỏi tò mò, con số, câu chuyện ngắn — rồi cho biết lộ trình':
+        'A curious question, a number, a short story — then give them the map',
+    'Có / Không hoặc một dữ kiện — dùng để xác nhận, chốt thông tin':
+        'Yes / No or a single fact — to confirm and to settle',
+    'Nghe hết, cảm ơn, trả lời ngắn; chưa chắc thì hẹn trả lời sau':
+        'Hear it out, thank them, answer briefly; unsure — promise an answer later',
+    'Nhấc trong ~3 hồi chuông; chào và xưng danh; ghi lại lời nhắn':
+        'Pick up within ~3 rings; greet and give your name; write the message down',
+    'Đóng vai cuộc gọi 3 phút; cả lớp chấm theo checklist mục 2.4.':
+        'Role-play a 3-minute call; the class marks it against the checklist in 2.4.',
+    'Mỗi nhóm rút ra 3 điều sẽ làm khác đi nếu được thực hiện lại.':
+        'Each group names three things it would do differently next time.',
+    'Im lặng trong họp; không nghe điện riêng khi đang tiếp khách':
+        'Silent in meetings; no personal calls while with a client',
+    'Soạn kịch bản cuộc gọi hẹn gặp khách hàng theo 4 bước chuẩn.':
+        'Write the script of a call arranging a client meeting, following the four standard steps.',
+    'Ít chữ, nhiều hình; slide hỗ trợ chứ không thay người nói.':
+        "Few words, more pictures; slides support the speaker, they don't replace them.",
+    'Vì sao • Như thế nào • Điều gì — dùng để khám phá nhu cầu':
+        'Why • How • What — to uncover what they need',
+    'một bài thuyết trình có cấu trúc, tự tin trước đám đông.':
+        'a structured talk, and deliver it confidently to an audience.',
+    'Chuẩn bị kỹ • đến sớm • hít thở sâu • nghĩ về thông điệp':
+        'Prepare well • arrive early • breathe deeply • think about the message',
+    'Lắng nghe và đặt câu hỏi là kỹ năng “bán hàng” giỏi nhất':
+        'Listening and questioning are the best “selling” skills there are',
+    'đúng chuẩn mực nghề nghiệp ở cả vai gọi đi và nghe máy.':
+        'to professional standards, both making and answering calls.',
+    'Hai tay, mặt chữ hướng người nhận; đọc qua rồi mới cất':
+        'Both hands, text facing them; read it before putting it away',
+    'Tóm tắt 3 ý, nhấn thông điệp, kêu gọi hành động cụ thể':
+        'Recap the three points, press the message, ask for a specific action',
+    '“Cụ thể là…?” — làm rõ sau một câu trả lời chung chung':
+        '“Specifically…?” — to sharpen a vague answer',
+    'To rõ, đổi tốc độ; dừng 1–2 giây trước ý quan trọng':
+        'Loud and clear, vary the pace; pause 1–2 seconds before a key point',
+    'Lắng nghe, đặt câu hỏi và giao tiếp qua điện thoại':
+        'Listening, questioning, and the telephone',
+    'Ghi: ai gọi – việc gì – số liên lạc – hẹn phản hồi':
+        "Note: who called – about what – contact number – when you'll reply",
+    'Ấn tượng ban đầu được chuẩn bị, không phải may mắn':
+        'A first impression is prepared, not lucky',
+    'Quy tắc 4 × 20 — bốn cửa ải của ấn tượng ban đầu':
+        'The 4 × 20 rule — four gates a first impression passes',
+    'Đứng dậy, nhìn vào mắt, siết vừa phải 2–3 giây':
+        'Stand up, meet the eyes, firm grip for 2–3 seconds',
+    'mục đích, nội dung, giấy bút; chọn giờ phù hợp':
+        'purpose, content, pen and paper; pick a sensible hour',
+    'Giữ trật tự, nhường lối, gõ cửa trước khi vào':
+        'Keep it quiet, give way, knock before entering',
+    'Sau bài nói, người nghe biết / tin / làm gì?':
+        'After the talk, what should they know / believe / do?',
+    'chào, xưng danh và đơn vị, xin phép năm phút':
+        'greet, give your name and organisation, ask for five minutes',
+    'Tập nói to, canh giờ, dự phòng câu hỏi khó.':
+        'Say it out loud, time it, prepare for the hard questions.',
+    'Nghe máy và văn hóa điện thoại nơi làm việc':
+        'Answering calls, and phone manners at work',
+    'Mỗi lần một câu; hỏi xong thì im lặng chờ':
+        'One question at a time; ask, then wait in silence',
+    'Họ là ai, quan tâm gì, mong đợi điều gì?':
+        'Who are they, what do they care about, what do they expect?',
+    'Kỹ năng tạo ấn tượng ban đầu và xã giao':
+        'First impressions and etiquette',
+    'Đối phương hình thành đánh giá tổng thể':
+        'The other person forms an overall judgement',
+    'Thuyết trình hay bắt đầu từ người nghe':
+        'A good talk starts with the audience',
+    'Ấn tượng ban đầu và nghi thức xã giao':
+        'First impressions and etiquette',
+    'Kết luận (10–15%) — đọng lại một điều':
+        'Close (10–15%) — leave them with one thing',
+    'Điện thoại: cuộc gọi đi chuyên nghiệp':
+        'The telephone: making a professional call',
+    'Mở đầu (10–15%) — giành lấy sự chú ý':
+        'Opening (10–15%) — win their attention',
+    'Thân bài (70–80%) — tối đa 3 ý chính':
+        'Body (70–80%) — three main points at most',
+    'cảm ơn, chào; để khách gác máy trước':
+        'thank them, say goodbye; let the client hang up first',
+    'Ấn tượng ban đầu — chỉ có một lần':
+        'A first impression — you only get one',
+    'Ánh mắt và nụ cười trên gương mặt':
+        'The eyes and the smile on your face',
+    'Chọn 3 ý chính, dẫn chứng, ví dụ.':
+        'Pick 3 main points, with evidence and examples.',
+    'Kỹ năng lắng nghe và đặt câu hỏi':
+        'Listening and questioning skills',
+    'Kỹ năng giao tiếp qua điện thoại':
+        'Telephone skills',
+    'Thực hành 2 kỹ năng ngay tại lớp':
+        'Practising two skills in class',
+    'Lời chào và giới thiệu đầu tiên':
+        'Your greeting and first introduction',
+    'Trình bày tự tin trước đám đông':
+        'Delivering with confidence',
+    'Trình bày gọn, kiểm tra hiểu  —':
+        'Be brief, check understanding  —',
+    'Dáng đi, tư thế được đọc từ xa':
+        'Your walk and posture are read from a distance',
+    'Thuyết trình: 5 bước chuẩn bị':
+        'Presenting: five steps of preparation',
+    'Nghe khác lắng nghe: 5 mức độ':
+        'Hearing is not listening: five levels',
+    'Khi người cần gặp vắng mặt':
+        'When the person is away',
+    'Cấu trúc bài thuyết trình':
+        'The structure of a talk',
+    'Câu hỏi thăm dò – đào sâu':
+        'Probing question',
+    'Chuẩn bị trước khi gọi  —':
+        'Before you dial  —',
+    'Nghi thức xã giao cơ bản':
+        'Basic etiquette',
+    'Mở đầu đúng nghi thức  —':
+        'Open correctly  —',
+    'Ứng xử không gian chung':
+        'Shared spaces',
+    'Chào hỏi và giới thiệu':
+        'Greeting and introducing',
+    'Trao – nhận danh thiếp':
+        'Giving and receiving a card',
+    'Các kỹ năng giao tiếp':
+        'Professional communication',
+    'Kỹ năng thuyết trình':
+        'Presentation skills',
+    'PHÂN TÍCH NGƯỜI NGHE':
+        'ANALYSE THE AUDIENCE',
+    'Kỹ năng đặt câu hỏi':
+        'Questioning skills',
+    'Kết thúc lịch sự  —':
+        'Close politely  —',
+    'Di động nơi công sở':
+        'Mobiles at work',
+    'XÁC ĐỊNH MỤC TIÊU':
+        'SET THE OBJECTIVE',
+    'XÂY DỰNG NỘI DUNG':
+        'BUILD THE CONTENT',
+    'Ngôn ngữ cơ thể':
+        'Body language',
+    'Vượt qua run sợ':
+        'Getting past the nerves',
+    'THIẾT KẾ SLIDE':
+        'DESIGN THE SLIDES',
+    'chuyên nghiệp':
+        'skills',
+    'MỤC 2.3 – 2.4':
+        'SECTIONS 2.3 – 2.4',
+    'Xử lý câu hỏi':
+        'Handling questions',
+    'Lưu ý khi hỏi':
+        'When you ask',
+    'Câu hỏi đóng':
+        'Closed question',
+    'Khi nghe máy':
+        'Answering',
+    'Câu hỏi mở':
+        'Open question',
+    'BƯỚC CHÂN':
+        'PACES',
+    'LUYỆN TẬP':
+        'REHEARSE',
+    'Giọng nói':
+        'Voice',
+    'CENTIMET':
+        'CENTIMETRES',
+    'MỤC 2.1':
+        'SECTION 2.1',
+    'MỤC 2.2':
+        'SECTION 2.2',
+    'Bắt tay':
+        'The handshake',
+    'GIÂY':
+        'SECONDS',
+    'TỪ':
+        'WORDS',
+}
+
 TU_DIEN = {}
-for _b in (CHUNG, C1):
+for _b in (CHUNG, C1, C2):
     TU_DIEN.update(_b)
