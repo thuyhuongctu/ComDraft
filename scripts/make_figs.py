@@ -781,6 +781,132 @@ DAU_VIET = "ăâđêôơưàáảãạằắẳẵặầấẩẫậèéẻẽ�
            "òóỏõọồốổỗộờớởỡợùúủũụừứửữựỳýỷỹỵ"
 
 DICH_HINH = {
+    'Giới hạn hai bên không chồng lấn → không có thỏa thuận nào khả thi. Khi đó hãy mở rộng chiếc bánh (đổi số lượng, tiến độ, dịch vụ kèm) thay vì ép giá.':
+        'The two limits do not overlap → no deal is possible. Then grow the pie instead (change the quantity, the schedule, the services included) rather than squeezing the price.',
+    '“Nếu anh tăng số lượng lên 500 chiếc, chúng tôi sẽ giảm 3%.”\n  — không bao giờ cho không, và nhượng bộ nhỏ dần để phát tín hiệu đã chạm giới hạn.':
+        '“If you raise the order to 500 units, we will take 3% off.”\n  — never give anything free, and make each concession smaller to signal you are at your limit.',
+    'Lý tưởng (mong muốn nhất) → Kỳ vọng (hợp lý) → Tối thiểu (ranh giới rút lui). Viết ra giấy TRƯỚC khi vào bàn.':
+        'Ideal (what you most want) → Expected (what is reasonable) → Minimum (your walk-away line). Write them down BEFORE you sit.',
+    'Nếu không đạt thỏa thuận, ta làm gì? BATNA càng mạnh, thế đàm phán càng vững — và đừng để lộ khi BATNA yếu.':
+        'If there is no deal, what do you do? The stronger the BATNA the stronger your position — and never show it when it is weak.',
+    'Mục tiêu 3 mức • BATNA • ZOPA • hiểu đối tác và người có thẩm quyền quyết định':
+        'Three target levels • BATNA • ZOPA • know them, and who actually decides',
+    'Bảy mươi phần trăm kết quả được quyết định trước khi hai bên ngồi vào bàn':
+        'Seventy per cent of the result is settled before either side sits down',
+    'Cùng một bàn thương lượng, ba cách ứng xử cho ba kết quả khác hẳn nhau':
+        'One table, three ways of behaving, three very different outcomes',
+    'Nhận tín hiệu chốt, tóm tắt và văn bản hóa thành hợp đồng':
+        'Read the closing signal, summarise, turn it into a contract',
+    'Tạo không khí, thăm dò, thống nhất chương trình làm việc':
+        'Set the tone, probe, agree the agenda',
+    'Đề nghị có căn cứ, nhượng bộ có điều kiện, xử lý bế tắc':
+        'Offers with grounds, concessions with conditions, deadlocks broken',
+    'danh sách điều khoản đã chốt và điều khoản còn treo':
+        'a list of what is settled and what is still open',
+    'Thực hiện cam kết, giữ quan hệ, rút kinh nghiệm':
+        'Honour the commitments, keep the relationship, learn the lessons',
+    'Ví dụ: thương vụ mua 20 máy tính cho văn phòng':
+        'Example: buying 20 computers for an office',
+    'bảng mục tiêu ba mức và BATNA đã viết ra giấy':
+        'your three target levels and your BATNA written down',
+    'hồ sơ theo dõi thực hiện và bài học rút ra':
+        'a file tracking performance, and the lessons written down',
+    'chương trình làm việc hai bên cùng đồng ý':
+        'an agenda both sides have agreed',
+    'biên bản hoặc hợp đồng có chữ ký hai bên':
+        'minutes or a contract signed by both sides',
+    'ZOPA và BATNA — bản đồ của bàn đàm phán':
+        'ZOPA and BATNA — the map of the table',
+    'Tiến trình đàm phán — năm giai đoạn':
+        'The negotiation process — five stages',
+    'BATNA — phương án thay thế tốt nhất':
+        'BATNA — best alternative to a negotiated agreement',
+    'Kiểu nguyên tắc là kiểu nên theo:':
+        'Principled is the one to follow:',
+    'Khoảng hai bên có thể gặp nhau':
+        'Where the two sides can meet',
+    'Vùng bên MUA chấp nhận được':
+        'What the BUYER can accept',
+    'Vùng bên BÁN chấp nhận được':
+        'What the SELLER can accept',
+    'Kết quả hợp lý, quan hệ còn':
+        'A fair result, relationship intact',
+    'Quay về tiêu chí khách quan':
+        'Returns to an objective standard',
+    'tách con người khỏi vấn đề':
+        'separate the people from the problem',
+    'Bên mua: ngân sách tối đa':
+        'Buyer: budget ceiling',
+    'Người cùng giải bài toán':
+        'A partner in solving it',
+    'Nhượng bộ có điều kiện:':
+        'Concede on condition:',
+    'vùng thỏa thuận khả dĩ':
+        'zone of possible agreement',
+    'Bên bán: giá tối thiểu':
+        'Seller: lowest price',
+    'Không có ZOPA thì sao?':
+        'And if there is no ZOPA?',
+    'Mất thời gian chuẩn bị':
+        'It costs preparation time',
+    'Rời giai đoạn này với':
+        'Leave this stage with',
+    'tiêu chí khách quan':
+        'objective standards',
+    'Thắng bằng mọi giá':
+        'Win at any cost',
+    'Ba kiểu đàm phán':
+        'Three styles of negotiation',
+    '3. THƯƠNG LƯỢNG':
+        '3. BARGAIN',
+    '5. SAU ĐÀM PHÁN':
+        '5. AFTERWARDS',
+    'Kiểu NGUYÊN TẮC':
+        'PRINCIPLED',
+    'Mục tiêu 3 mức':
+        'Three target levels',
+    'Coi đối tác là':
+        'Sees the other side as',
+    'Thiệt về mình':
+        'You lose out',
+    'chứ không bàn':
+        'not',
+    '1. CHUẨN BỊ':
+        '1. PREPARE',
+    '4. KẾT THÚC':
+        '4. CLOSE',
+    'Giữ quan hệ':
+        'Keep the relationship',
+    'Mất đối tác':
+        'You lose the partner',
+    'Khi bế tắc':
+        'When stuck',
+    'Gây sức ép':
+        'Applies pressure',
+    'lập trường':
+        'positions',
+    '2. MỞ ĐẦU':
+        '2. OPEN',
+    'Kiểu CỨNG':
+        'HARD',
+    'Nhượng bộ':
+        'Concedes',
+    '· dựa vào':
+        '· rely on',
+    'Kiểu MỀM':
+        'SOFT',
+    'Mục tiêu':
+        'Goal',
+    'Đối thủ':
+        'An opponent',
+    '·\n  bàn':
+        '·\n  discuss',
+    'lợi ích':
+        'interests',
+    'Bạn bè':
+        'A friend',
+    'Rủi ro':
+        'Risk',
     '“Một khách hàng phàn nàn được xử lý tốt thường trung thành hơn khách hàng chưa từng gặp vấn đề.”':
         '“A customer whose complaint is handled well is usually more loyal than one who never had a problem.”',
     'Phương án cụ thể, thời hạn rõ. Vượt thẩm quyền thì chuyển đúng người, không đùn đẩy.':
