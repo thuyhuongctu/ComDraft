@@ -1,6 +1,8 @@
 # -*- coding: utf-8 -*-
 """Áp dụng nâng cấp vào 8 deck: speaker notes + slide phân cách mục + slide số liệu."""
 import os
+import re
+
 from pptx import Presentation
 from upgrade_decks import add_section_divider, add_stat_slide, move_slide, set_notes
 from notes_data import NOTES
@@ -31,7 +33,7 @@ STATS = [
 • Ý nghĩa thực hành: khi lời nói và cơ thể mâu thuẫn, người nghe TIN CƠ THỂ.
 • Hỏi lớp: "Bạn nhận ra ai đó đang không vui dù họ nói 'em ổn' bằng cách nào?"''"""),
 
-    ("c2", "Ấn tượng ban đầu", "Con số phải nhớ", "Quy tắc 4 × 20 — bốn cửa ải của ấn tượng ban đầu",
+    ("c2", "2.1 Ấn tượng ban đầu — chỉ có một lần", "Con số phải nhớ", "Quy tắc 4 × 20 — bốn cửa ải của ấn tượng ban đầu",
      [("20", "GIÂY", "Đối phương hình thành đánh giá tổng thể"),
       ("20", "BƯỚC CHÂN", "Dáng đi, tư thế được đọc từ xa"),
       ("20", "CENTIMET", "Ánh mắt và nụ cười trên gương mặt"),
@@ -73,7 +75,7 @@ DIVIDERS = [
     ("c1", "Yếu tố ảnh hưởng", "Mục 1.4 – 1.5", "Yếu tố ảnh hưởng và nguyên tắc",
      "Điều gì làm hỏng một cuộc giao tiếp, và năm nguyên tắc giúp ta tránh được điều đó.",
      "CHUYỂN MỤC (30 giây) — nhắc: phần còn lại của chương là phần hay ra thi."),
-    ("c2", "Ấn tượng ban đầu", "Mục 2.1", "Ấn tượng ban đầu và nghi thức xã giao",
+    ("c2", "2.1 Ấn tượng ban đầu — chỉ có một lần", "Mục 2.1", "Ấn tượng ban đầu và nghi thức xã giao",
      "Hai mươi giây đầu tiên quyết định phần lớn cách người khác nhìn nhận bạn.",
      "CHUYỂN MỤC (30 giây)."),
     ("c2", "5 bước chuẩn bị", "Mục 2.2", "Kỹ năng thuyết trình",
@@ -85,16 +87,16 @@ DIVIDERS = [
     ("c3", "Giao tiếp với cấp trên", "Mục 3.1", "Giao tiếp trong nội bộ tổ chức",
      "Với cấp trên, cấp dưới và đồng nghiệp — mỗi mối quan hệ một cách ứng xử.",
      "CHUYỂN MỤC (30 giây)."),
-    ("c3", "Giao tiếp với khách hàng", "Mục 3.2", "Giao tiếp với bên ngoài tổ chức",
+    ("c3", "3.2 Giao tiếp với khách hàng", "Mục 3.2", "Giao tiếp với bên ngoài tổ chức",
      "Khách hàng, đối tác, cơ quan nhà nước và truyền thông — bốn nhóm, bốn luật chơi.",
      "CHUYỂN MỤC (30 giây) — báo trước: phần quan trọng nhất chương nằm ở đây (quy trình LAST)."),
-    ("c3", "Giao tiếp trên bàn tiệc", "Mục 3.3 – 3.4", "Bàn tiệc và môi trường đa văn hóa",
+    ("c3", "3.3 Giao tiếp trên bàn tiệc", "Mục 3.3 – 3.4", "Bàn tiệc và môi trường đa văn hóa",
      "Nơi công việc vẫn tiếp diễn dù không ai nhắc đến công việc.",
      "CHUYỂN MỤC (30 giây) — đây là phần sinh viên hào hứng nhất, giữ nhịp vui nhưng vẫn chuẩn mực."),
     ("c4", "Đàm phán là gì", "Mục 4.1", "Khái niệm và các kiểu đàm phán",
      "Hiểu bản chất kép của đàm phán: vừa hợp tác vừa cạnh tranh.",
      "CHUYỂN MỤC (30 giây)."),
-    ("c4", "Tiến trình đàm phán", "Mục 4.2", "Tiến trình đàm phán năm giai đoạn",
+    ("c4", "4.2 Tiến trình đàm phán: 5 giai đoạn", "Mục 4.2", "Tiến trình đàm phán năm giai đoạn",
      "Bảy mươi phần trăm kết quả được quyết định trước khi hai bên ngồi vào bàn.",
      "CHUYỂN MỤC (30 giây) — nhấn con số 70% ngay tại slide này."),
     ("c4", "Kỹ năng nền tảng", "Mục 4.3", "Kỹ năng và chiêu trò trên bàn đàm phán",
@@ -112,80 +114,114 @@ DIVIDERS = [
 ]
 
 
-# Slide mục lục và slide mục tiêu liệt kê tên mọi mục của chương, nên chúng
-# khớp với hầu hết mọi cụm dùng để định vị. Nếu không loại trừ, slide phân cách
-# sẽ bị chèn ngay trước mục lục thay vì trước mục nội dung tương ứng — lỗi đã
-# xảy ra ở Chương 3 và Chương 4.
-SLIDE_KHUNG = ("Chúng ta sẽ đi qua", "sinh viên có thể")
+def chu_slide(s):
+    """Toàn văn một slide, gộp mọi khoảng trắng về một dấu cách.
+
+    Tiêu đề slide bìa xuống dòng giữa chừng — "Các kỹ năng giao tiếp\\nchuyên
+    nghiệp" — trong khi khóa dò viết liền bằng dấu cách. Bốn ghi chú mở đầu của
+    Chương 2 đến 5 và ba ghi chú "Bài nộp" vì thế không bao giờ khớp slide nào,
+    mà không ai biết: hàm gán cũ chỉ đếm số khóa trượt rồi đi tiếp.
+    """
+    t = " ".join(sh.text_frame.text for sh in s.shapes if sh.has_text_frame)
+    return re.sub(r"\s+", " ", t)
 
 
-def find_idx(prs, needle):
-    for i, s in enumerate(prs.slides):
-        t = " ".join(sh.text_frame.text for sh in s.shapes if sh.has_text_frame)
-        if any(k in t for k in SLIDE_KHUNG):
-            continue
-        if needle in t:
-            return i
-    return None
+def khop(prs, needle):
+    """Kể ra MỌI slide khớp khóa dò, không dừng ở slide đầu tiên.
+
+    "Khớp đầu tiên thì lấy" mới là gốc bệnh: một khóa khớp hai slide là đã hỏng
+    rồi, bất kể cái nào đứng trước. Cách cũ lặng lẽ chọn slide đầu, nên bốn
+    slide phân cách mang ghi chú của slide nội dung ngay sau nó, còn slide nội
+    dung thì không còn ghi chú nào.
+    """
+    kh = re.sub(r"\s+", " ", needle)
+    return [i for i, s in enumerate(prs.slides) if kh in chu_slide(s)]
+
+
+def tim_duy_nhat(prs, needle, o_dau):
+    """Trả về (chỉ số slide, lỗi). Khớp đúng một slide thì mới coi là tìm thấy.
+
+    Bịt cả hai đầu: khóa không tìm thấy slide nào, và khóa tìm thấy quá nhiều.
+    """
+    v = khop(prs, needle)
+    if len(v) == 1:
+        return v[0], None
+    if not v:
+        return None, "%s: khóa %r không khớp slide nào" % (o_dau, needle)
+    return None, "%s: khóa %r khớp %d slide %s" % (o_dau, needle, len(v), [i + 1 for i in v])
 
 
 def apply_notes(prs, key):
-    hit = 0
-    table = NOTES.get(key, {})
-    used = set()
-    for i, s in enumerate(prs.slides):
-        t = " ".join(sh.text_frame.text for sh in s.shapes if sh.has_text_frame)
-        for needle, note in table.items():
-            if needle in used:
-                continue
-            if needle in t:
-                set_notes(s, note)
-                used.add(needle)
-                hit += 1
-                break
-    missing = [n for n in table if n not in used]
-    return hit, missing
+    """Gán ghi chú giảng bài theo khóa dò; mỗi khóa phải khớp đúng một slide.
+
+    Phải chạy TRƯỚC khi chèn slide phân cách và slide số liệu. Chèn trước rồi
+    gán sau thì khóa dò bám vào slide phân cách, vì nó đứng ngay trước slide
+    nội dung và tiêu đề của nó lặp lại đúng những chữ dùng làm khóa.
+    """
+    hit, loi = 0, []
+    ds = list(prs.slides)
+    for needle, note in NOTES.get(key, {}).items():
+        i, l = tim_duy_nhat(prs, needle, key)
+        if l:
+            loi.append(l)
+            continue
+        set_notes(ds[i], note)
+        hit += 1
+    return hit, loi
 
 
 def main():
+    hong = 0
     for key, fn in DECKS.items():
         if not os.path.exists(fn):
             print("thiếu:", fn); continue
         prs = Presentation(fn)
         label = LABEL[key]
 
-        # 1) chèn slide số liệu (chèn SAU slide đích)
+        # 1) ghi chú giảng bài — PHẢI trước hai bước chèn. Bản cũ chèn trước
+        # rồi gán sau, nên khóa dò bám vào slide phân cách vừa chèn thay vì
+        # slide nội dung mà nó dẫn vào.
+        n_note, loi = apply_notes(prs, key)
+
+        # 2) chèn slide số liệu (chèn SAU slide đích)
         n_stat = 0
         for d, after, kicker, title, stats, footer, note in STATS:
             if d != key:
                 continue
-            idx = find_idx(prs, after)
-            if idx is None:
-                print(f"  ! {key}: không thấy slide '{after}' để chèn số liệu"); continue
+            idx, l = tim_duy_nhat(prs, after, key + "/STATS")
+            if l:
+                loi.append(l); continue
             add_stat_slide(prs, kicker, title, stats, footer, label, note)
             move_slide(prs, len(prs.slides._sldIdLst) - 1, idx + 1)
             n_stat += 1
 
-        # 2) chèn slide phân cách (chèn TRƯỚC slide đích)
+        # 3) chèn slide phân cách (chèn TRƯỚC slide đích)
         n_div = 0
         for d, before, num, title, sub, note in DIVIDERS:
             if d != key:
                 continue
-            idx = find_idx(prs, before)
-            if idx is None:
-                print(f"  ! {key}: không thấy slide '{before}' để chèn phân cách"); continue
+            idx, l = tim_duy_nhat(prs, before, key + "/DIVIDERS")
+            if l:
+                loi.append(l); continue
             add_section_divider(prs, num, title, sub, label, note)
             move_slide(prs, len(prs.slides._sldIdLst) - 1, idx)
             n_div += 1
 
-        # 3) speaker notes
-        n_note, missing = apply_notes(prs, key)
         prs.save(fn)
-        msg = f"{key}: +{n_div} slide phân cách, +{n_stat} slide số liệu, {n_note} slide có ghi chú giảng bài"
-        if missing:
-            msg += f"  (chưa khớp: {len(missing)})"
-        print(msg)
+        print(f"{key}: +{n_div} slide phân cách, +{n_stat} slide số liệu,"
+              f" {n_note} slide có ghi chú giảng bài")
+        for l in loi:
+            print("  ! " + l)
+        hong += len(loi)
+
+    if hong:
+        # Báo đỏ thật, không chỉ in ra rồi đi tiếp. Khóa hỏng nghĩa là có ghi
+        # chú rơi nhầm slide hoặc không rơi đâu cả — cả hai đều lặng lẽ, và
+        # phép đối chiếu theo SỐ LƯỢNG ghi chú thì mù hoàn toàn với chúng.
+        print(f"\n{hong} khóa dò hỏng. Sửa khóa trong notes_data.py / STATS /"
+              " DIVIDERS cho mỗi khóa khớp đúng một slide.")
+    return 1 if hong else 0
 
 
 if __name__ == "__main__":
-    main()
+    raise SystemExit(main())

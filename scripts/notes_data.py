@@ -85,7 +85,7 @@ NÓI ĐỦ Ý (phần đã rút khỏi slide)
 • Khoảng cách: thân mật (<0,5 m) – cá nhân – xã giao (1,2–3,5 m) – công cộng; chọn sai gây khó chịu.
 • Trang phục – giọng điệu – thời gian: ăn mặc phù hợp bối cảnh; giọng điệu quyết định cách thông điệp được đón nhận; đúng giờ cũng là thông điệp.
 • Ba con số trên slide là của Mehrabian, cho THÔNG ĐIỆP CẢM XÚC — đừng khái quát thành mọi loại giao tiếp. Chốt: đừng để cơ thể "nói" ngược với lời.""",
- "Các hình thức giao tiếp": """HÌNH THỨC GIAO TIẾP (2 phút)
+ "1.3 Các hình thức giao tiếp": """HÌNH THỨC GIAO TIẾP (2 phút)
 • 4 cặp phân loại — đi nhanh, đừng sa đà.
 • Nhấn cặp cuối: TRUYỀN THỐNG ↔ GIAO TIẾP SỐ. Hỏi lớp: "Một email công việc gửi lúc 11 giờ đêm nói lên điều gì về người gửi?"
 • Nhắc: giao tiếp số vẫn phải giữ đúng chuẩn mực như gặp mặt.
@@ -152,7 +152,7 @@ NÓI ĐỦ Ý (phần đã rút khỏi slide)
 • Đọc lướt. Nhấn: chương này THỰC HÀNH nhiều hơn lý thuyết.""",
  "Chúng ta sẽ đi qua": """LỘ TRÌNH (1 phút)
 • 4 kỹ năng, mỗi kỹ năng khoảng 15 phút gồm cả thực hành.""",
- "Ấn tượng ban đầu": """QUY TẮC 4×20 (4 phút)
+ "2.1 Ấn tượng ban đầu — chỉ có một lần": """QUY TẮC 4×20 (4 phút)
 • Hỏi trước khi giảng: "Theo bạn, người ta mất bao lâu để hình thành ấn tượng về mình?"
 • Đi qua 4 con số 20, mỗi con số cho một ví dụ ngắn.
 • DIỄN THỬ: cô bước vào lớp hai lần — lần cúi mặt bước nhanh, lần ngẩng cao vai mở mỉm cười. Hỏi lớp thấy khác gì.
@@ -283,7 +283,7 @@ NÓI ĐỦ Ý (phần đã rút khỏi slide)
 • Khen thì công khai, kịp thời, cụ thể. Phê bình thì riêng tư, kèm hướng khắc phục.
 • Đồng nghiệp: tránh bè phái, tránh tán chuyện sau lưng.
 • Họp: có chương trình gửi trước, phát biểu ngắn gọn, kết thúc phải có biên bản và người chịu trách nhiệm từng việc.""",
- "Giao tiếp với khách hàng": """VỚI KHÁCH HÀNG (3 phút)
+ "3.2 Giao tiếp với khách hàng": """VỚI KHÁCH HÀNG (3 phút)
 • Tâm thế PHỤC VỤ, không phải xin xỏ cũng không phải ban ơn.
 • Mỗi điểm tiếp xúc XÂY hoặc PHÁ niềm tin.
 • Bốn điều tối kỵ — nhấn điều đầu: TRANH CÃI THẮNG THUA với khách. Thắng lý mà mất khách là thua.
@@ -293,7 +293,7 @@ NÓI ĐỦ Ý (phần đã rút khỏi slide)
 • Mỗi điểm tiếp xúc — chào đón, tư vấn, giao hàng, hậu mãi — đều xây hoặc phá niềm tin.
 • Nguyên tắc vàng: chào niềm nở, gọi TÊN khách khi có thể; nói sự thật về sản phẩm; giữ lời hứa về thời hạn.
 • Tối kỵ: hứa quá khả năng; đổ lỗi cho đồng nghiệp hoặc cho quy trình; bỏ mặc khách sau khi bán xong.""",
- "quy trình LAST": """QUY TRÌNH LAST (5 phút) — NỘI DUNG QUAN TRỌNG NHẤT CHƯƠNG
+ "3.2 Xử lý phàn nàn của khách hàng — quy trình LAST": """QUY TRÌNH LAST (5 phút) — NỘI DUNG QUAN TRỌNG NHẤT CHƯƠNG
 • Viết 4 chữ L-A-S-T lên bảng.
 • L: nghe TRỌN VẸN, không ngắt lời, không phòng thủ. Nhấn: đừng vội giải thích khi khách đang giận.
 • A: xin lỗi về TRẢI NGHIỆM chưa tốt — kể cả khi chưa rõ lỗi thuộc về ai. Đây là điểm sinh viên hay tranh luận, hãy giải thích kỹ: xin lỗi ≠ nhận lỗi.
@@ -301,7 +301,7 @@ NÓI ĐỦ Ý (phần đã rút khỏi slide)
 • T: cảm ơn và THEO DÕI ĐẾN KHI XONG.
 • Số liệu chốt: khách phàn nàn được xử lý tốt thường TRUNG THÀNH HƠN khách chưa từng gặp vấn đề.
 • Cho lớp thực hành ngay 1 tình huống ngắn: khách nhận hàng trễ 3 ngày.""",
- "đối tác, cơ quan nhà nước": """ĐỐI TÁC – CƠ QUAN – TRUYỀN THÔNG (3 phút)
+ "3.2 Với đối tác, cơ quan nhà nước và truyền thông": """ĐỐI TÁC – CƠ QUAN – TRUYỀN THÔNG (3 phút)
 • Đối tác: quan hệ LÂU DÀI quan trọng hơn lợi thế ngắn hạn.
 • Cơ quan nhà nước: đúng thủ tục, đúng thẩm quyền, HỒ SƠ CHUẨN THỂ THỨC — nối sang Chương 5.
 • Truyền thông: CHỈ NGƯỜI ĐƯỢC ỦY QUYỀN phát ngôn. Nhân viên tuyệt đối không tự trả lời báo chí.
@@ -311,7 +311,7 @@ NÓI ĐỦ Ý (phần đã rút khỏi slide)
 • Đối tác: quan hệ lâu dài quan trọng hơn lợi thế ngắn hạn — đây là nền cho Chương 4.
 • Cơ quan nhà nước: hồ sơ, văn bản phải chuẩn thể thức (Chương 5); tác phong nghiêm túc, đúng hẹn; tuyệt đối không “đi tắt” trái quy định.
 • Truyền thông: thông tin nhất quán, trung thực; khủng hoảng thì nhận trách nhiệm đúng phần của mình, không né tránh.""",
- "Giao tiếp trên bàn tiệc": """BÀN TIỆC (4 phút) — SINH VIÊN RẤT THÍCH PHẦN NÀY
+ "3.3 Giao tiếp trên bàn tiệc": """BÀN TIỆC (4 phút) — SINH VIÊN RẤT THÍCH PHẦN NÀY
 • Trước tiệc: xác nhận đúng hạn, đến đúng giờ, trang phục theo tính chất, CHỜ CHỦ TIỆC XẾP CHỖ.
 • Trong bữa: chủ tiệc bắt đầu trước; dụng cụ dùng TỪ NGOÀI VÀO TRONG; không nói khi đang nhai.
 • Chúc rượu: người vị thế thấp hơn NÂNG LY THẤP HƠN khi cụng. Làm mẫu ngay bằng ly nước.
@@ -379,7 +379,7 @@ NÓI ĐỦ Ý (phần đã rút khỏi slide)
 • Nhấn kiểu NGUYÊN TẮC (Harvard): TÁCH CON NGƯỜI KHỎI VẤN ĐỀ; tập trung LỢI ÍCH chứ không cố thủ LẬP TRƯỜNG.
 • Ví dụ kinh điển: hai chị em tranh quả cam — một người cần vỏ làm bánh, một người cần ruột vắt nước. Cắt đôi là giải pháp tồi. Hỏi lợi ích mới ra giải pháp tốt.
 • Phân bổ ↔ tích hợp: làm chiếc bánh LỚN HƠN nhờ khác biệt về ưu tiên.""",
- "Tiến trình đàm phán": """TIẾN TRÌNH 5 GIAI ĐOẠN (2 phút)
+ "4.2 Tiến trình đàm phán: 5 giai đoạn": """TIẾN TRÌNH 5 GIAI ĐOẠN (2 phút)
 • Đi lướt 5 giai đoạn, dừng lại ở giai đoạn 1.
 • Nói con số: CHUẨN BỊ QUYẾT ĐỊNH 70% KẾT QUẢ.
 • Câu chốt: "Không chuẩn bị chính là chuẩn bị để nhượng bộ."''""",
@@ -586,7 +586,7 @@ NÓI ĐỦ Ý (phần đã rút khỏi slide)
 • Cho sinh viên tự soát bài mình theo 8 điểm, tích vào vở.
 • Sau đó ĐỔI BÀI với bạn bên cạnh, soát cho nhau, ghi ra 2 lỗi tìm được.
 • Nói rõ: cô chấm theo đúng 8 điểm này.""",
- "Bài nộp số 1": """LÀM BÀI (20 phút)
+ "BÀI NỘP SỐ 1": """LÀM BÀI (20 phút)
 • Phát tình huống, nhắc: phần thân chỉ 3–5 dòng.
 • Cô đi từng bàn hỗ trợ, ghi lại lỗi phổ biến.
 • Còn 5 phút: nhắc cả lớp lưu file đúng tên "HoTen_Lop_Bai1.docx" rồi nộp.
@@ -603,12 +603,12 @@ NÓI ĐỦ Ý (phần đã rút khỏi slide)
  "Bài 2 —": """MỤC TIÊU (2 phút) — 4 mục tiêu; nhấn: mỗi bạn sẽ soạn 2 văn bản bốc thăm.""",
  "Chúng ta sẽ thực hành": """NỘI DUNG (1 phút) — 5 loại văn bản.""",
  "Cách làm việc trong buổi": """QUY TRÌNH (2 phút) — nhấn bước phân tích văn bản mẫu trước khi soạn.""",
- "Soạn thảo Quyết định": """QUYẾT ĐỊNH (10 phút)
+ "2.1 Soạn thảo Quyết định": """QUYẾT ĐỊNH (10 phút)
 • Chiếu văn bản mẫu, cho lớp CHỈ RA phần căn cứ và phần các Điều.
 • Cô gõ mẫu phần căn cứ trên máy chiếu, nói to từng dòng.
 • Nhấn dấu câu: căn cứ kết thúc bằng DẤU CHẤM PHẨY, dòng cuối DẤU CHẤM.
 • Đọc to danh sách lỗi thường gặp cuối slide — bảo sinh viên đánh dấu vào vở.""",
- "Soạn thảo Tờ trình": """TỜ TRÌNH (8 phút)
+ "2.2 Soạn thảo Tờ trình": """TỜ TRÌNH (8 phút)
 • Phân tích mẫu theo 3 phần.
 • Cho lớp thử viết 2 câu mở đầu tờ trình cho tình huống mua máy tính, gọi 2 bạn đọc lên.
 • Nhấn: phải có số liệu và dự toán kèm theo.""",
@@ -620,7 +620,7 @@ NÓI ĐỦ Ý (phần đã rút khỏi slide)
 • Biên bản: nhấn LẬP TẠI CHỖ và CHỮ KÝ hai bên.
 • Cho lớp thử: cô đọc một đoạn hội thoại họp ngắn, sinh viên ghi biên bản trong 3 phút, rồi so sánh vài bài.
 • Báo cáo: nhấn phải nêu cả hạn chế; số liệu phải nhất quán giữa các phần.""",
- "Bài nộp số 2": """LÀM BÀI (30 phút)
+ "BÀI NỘP SỐ 2": """LÀM BÀI (30 phút)
 • Bốc thăm: chuẩn bị sẵn phiếu, mỗi phiếu ghi 2 loại văn bản.
 • Nhắc dùng lại bảng kiểm 8 điểm của Bài 1.
 • Cô đi từng bàn; ưu tiên hỗ trợ bạn bốc trúng quyết định và biên bản (khó nhất).
@@ -641,7 +641,7 @@ NÓI ĐỦ Ý (phần đã rút khỏi slide)
 • Chiếu 1 thư viết kém và 1 thư viết tốt, cho lớp so sánh theo 5C.
 • Nhấn lỗi email của sinh viên: tiêu đề "Thư ngỏ", viết hoa cả câu, dùng emoji, quên đính kèm.
 • Cho mỗi cặp viết TIÊU ĐỀ và 2 câu mở đầu thư chào hàng, đọc vài bài.""",
- "báo giá": """BÁO GIÁ (10 phút)
+ "3.2 Báo giá — bảng nội dung bắt buộc": """BÁO GIÁ (10 phút)
 • Mở file Excel/Word mẫu, chỉ từng cột của bảng hàng hóa.
 • Nhấn: tổng tiền ghi CẢ BẰNG SỐ VÀ BẰNG CHỮ, hai giá trị phải khớp.
 • Nhấn mạnh THỜI HẠN HIỆU LỰC — hỏi lớp hậu quả nếu quên.""",
@@ -653,7 +653,7 @@ NÓI ĐỦ Ý (phần đã rút khỏi slide)
 • Nhấn: biên bản nghiệm thu phải GHI RÕ SỐ HỢP ĐỒNG.
 • Thanh lý chỉ ký sau khi ĐỐI CHIẾU CÔNG NỢ xong.
 • Hỏi lớp: nếu hàng thiếu 2 chiếc thì ghi gì vào biên bản nghiệm thu?""",
- "Bài nộp số 3": """LÀM BÀI (30 phút)
+ "BÀI NỘP SỐ 3": """LÀM BÀI (30 phút)
 • Mỗi cặp làm bộ hồ sơ; nhắc dùng lại tình huống của chính nhóm mình từ Chương 4.
 • 20 phút soạn, 10 phút đổi hồ sơ với cặp khác và tìm lỗi.
 • Yêu cầu mỗi cặp ghi ra 3 điểm bất lợi phát hiện được — đây là phần cô đánh giá tư duy.
