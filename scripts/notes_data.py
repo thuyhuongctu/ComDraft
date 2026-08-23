@@ -156,12 +156,23 @@ NÓI ĐỦ Ý (phần đã rút khỏi slide)
 • Hỏi trước khi giảng: "Theo bạn, người ta mất bao lâu để hình thành ấn tượng về mình?"
 • Đi qua 4 con số 20, mỗi con số cho một ví dụ ngắn.
 • DIỄN THỬ: cô bước vào lớp hai lần — lần cúi mặt bước nhanh, lần ngẩng cao vai mở mỉm cười. Hỏi lớp thấy khác gì.
-• CHỐT: ấn tượng ban đầu ĐƯỢC CHUẨN BỊ, không phải may mắn.""",
+• CHỐT: ấn tượng ban đầu ĐƯỢC CHUẨN BỊ, không phải may mắn.
+
+NÓI ĐỦ Ý (phần đã rút khỏi slide)
+• Vài giây đầu: não bộ hình thành đánh giá gần như tức thì từ ngoại hình, thần thái, cách chào — và ấn tượng đầu rất khó đảo ngược về sau.
+• Quy tắc 4×20 đầy đủ: 20 giây đầu tiên • 20 bước chân đầu tiên • 20 cm gương mặt (ánh mắt, nụ cười) • 20 từ đầu tiên — chuẩn bị kỹ cả bốn.
+• Ba trụ cột: trang phục phù hợp bối cảnh VÀ vị trí; thần thái tự tin, thân thiện; lời chào – giới thiệu rõ ràng, đúng nghi thức.""",
  "Nghi thức xã giao": """NGHI THỨC (4 phút) — THỰC HÀNH NGAY
 • Cho cả lớp đứng dậy, quay sang bạn bên cạnh THỰC HÀNH BẮT TAY: đứng dậy, nhìn mắt, siết vừa, 2–3 giây.
 • Sửa lỗi tại chỗ: bắt tay hờ, bắt tay quá chặt, nhìn chỗ khác.
 • Danh thiếp: làm mẫu trao và nhận bằng hai tay, ĐỌC QUA rồi mới cất — nhấn: cất ngay là bất lịch sự.
-• Mẹo nhớ thứ tự giới thiệu: giới thiệu người ÍT quan trọng VỚI người quan trọng hơn.""",
+• Mẹo nhớ thứ tự giới thiệu: giới thiệu người ÍT quan trọng VỚI người quan trọng hơn.
+
+NÓI ĐỦ Ý (phần đã rút khỏi slide)
+• Chào hỏi: người nhỏ chào người lớn, nhân viên chào cấp trên trước; nói rõ tên – chức danh – đơn vị.
+• Bắt tay: người có vị thế cao hơn hoặc phụ nữ chủ động đưa tay trước; không bắt quá lỏng, quá chặt, quá lâu.
+• Danh thiếp: đừng nhét ngay vào túi quần — đó là chỗ sinh viên hay mắc nhất.
+• Không gian chung: thang máy, phòng họp, bàn làm việc mở — không nói to chuyện riêng.""",
  "5 bước chuẩn bị": """CHUẨN BỊ THUYẾT TRÌNH (3 phút)
 • Nhấn bước 1: PHÂN TÍCH NGƯỜI NGHE — đa số sinh viên bỏ qua bước này.
 • Quy tắc slide: ÍT CHỮ NHIỀU HÌNH. Chỉ vào chính slide đang chiếu làm ví dụ.
@@ -169,36 +180,73 @@ NÓI ĐỦ Ý (phần đã rút khỏi slide)
  "Cấu trúc bài thuyết trình": """CẤU TRÚC (3 phút)
 • Tỷ lệ 10–15 / 70–80 / 10–15%.
 • Nhấn: TỐI ĐA 3 Ý CHÍNH. Nhiều hơn thì người nghe không nhớ nổi.
-• Mở đầu bằng câu hỏi / con số / câu chuyện — cho lớp thử nghĩ 1 câu mở đầu cho đề tài tự chọn.""",
+• Mở đầu bằng câu hỏi / con số / câu chuyện — cho lớp thử nghĩ 1 câu mở đầu cho đề tài tự chọn.
+
+NÓI ĐỦ Ý (phần đã rút khỏi slide)
+• Mở đầu 10–15%: câu hỏi gây tò mò, con số ấn tượng, hoặc câu chuyện ngắn; giới thiệu bản thân rồi cho người nghe biết lộ trình bài nói.
+• Thân bài 70–80%: tối đa BA ý chính; mỗi ý có câu chuyển ý rõ ràng.
+• Kết luận 10–15%: đọng lại MỘT điều; chuẩn bị sẵn phần hỏi – đáp.""",
  "Trình bày tự tin": """TRÌNH BÀY (3 phút)
 • Ba việc cụ thể: đứng vững hai chân, mở vai, giao tiếp mắt luân phiên khắp phòng.
 • Kỹ thuật dừng: DỪNG 1–2 GIÂY trước ý quan trọng — làm mẫu ngay tại chỗ cho lớp cảm nhận.
 • Run sợ: nói thật rằng ai cũng run; cách xử lý là chuẩn bị kỹ, đến sớm, hít thở sâu, và tập trung vào THÔNG ĐIỆP chứ không vào bản thân.
-• Câu hỏi khó: nghe hết → cảm ơn → trả lời ngắn; chưa chắc thì HẸN TRẢ LỜI SAU, không bịa.""",
+• Câu hỏi khó: nghe hết → cảm ơn → trả lời ngắn; chưa chắc thì HẸN TRẢ LỜI SAU, không bịa.
+
+NÓI ĐỦ Ý (phần đã rút khỏi slide)
+• Ngôn ngữ cơ thể: di chuyển có chủ đích; không đút túi, không vặn bút.
+• Giọng nói: thay đổi cả tốc độ lẫn ngữ điệu — khoảng lặng là gia vị của bài nói.
+• Run sợ: run là BÌNH THƯỜNG; đến sớm làm quen không gian; tập trung vào thông điệp thay vì vào bản thân.
+• Câu hỏi: chưa chắc thì hẹn trả lời sau — trung thực hơn là đoán bừa.""",
  "Nghe khác lắng nghe": """5 MỨC ĐỘ NGHE (3 phút)
 • Đi từ thấp lên cao trên bậc thang.
 • HỎI THẲNG LỚP: "Trong 30 phút vừa rồi, các bạn đang ở mức mấy?" — cả lớp thường cười, tạo không khí.
 • Nhấn mức 5 NGHE THẤU CẢM: nghe được cả cảm xúc và nhu cầu đằng sau lời nói.
-• Kỹ thuật diễn đạt lại: "Nếu em hiểu đúng thì ý anh/chị là…" — cho lớp tập nói câu này.""",
+• Kỹ thuật diễn đạt lại: "Nếu em hiểu đúng thì ý anh/chị là…" — cho lớp tập nói câu này.
+
+NÓI ĐỦ Ý (phần đã rút khỏi slide)
+• Lắng nghe chủ động đủ ý: tập trung toàn bộ vào người nói • không ngắt lời, không vội phán xét • ghi chú ý chính • phản hồi bằng ánh mắt, gật đầu • diễn đạt lại để xác nhận: “Nếu em hiểu đúng thì ý anh/chị là…”.""",
  "Kỹ năng đặt câu hỏi": """ĐẶT CÂU HỎI (3 phút)
 • Phân biệt câu hỏi ĐÓNG (chốt thông tin) và MỞ (khám phá nhu cầu).
 • Nhấn: bán hàng giỏi là HỎI giỏi, không phải NÓI giỏi.
 • Lỗi phải tránh: hỏi dồn nhiều câu một lúc; hỏi mớm cung; hỏi xong không chờ mà nói tiếp.
-• LUẬT VÀNG: hỏi xong thì IM LẶNG chờ câu trả lời.""",
+• LUẬT VÀNG: hỏi xong thì IM LẶNG chờ câu trả lời.
+
+NÓI ĐỦ Ý (phần đã rút khỏi slide)
+• Câu hỏi đóng, ví dụ: “Anh đã nhận được báo giá chưa?”
+• Câu hỏi mở khơi người đối diện chia sẻ.
+• Thăm dò – đào sâu: “Cụ thể là…?”, “Anh có thể cho ví dụ?”
+• Lưu ý: tránh câu hỏi dồn ép, mớm cung; hỏi xong đừng tự trả lời thay.""",
  "cuộc gọi đi chuyên nghiệp": """ĐIỆN THOẠI — GỌI ĐI (3 phút)
 • 4 bước, nhấn bước 1 CHUẨN BỊ TRƯỚC: mục đích, nội dung, giấy bút, chọn thời điểm.
 • Làm mẫu câu mở đầu chuẩn: "Dạ em chào anh, em là… gọi từ công ty… Không biết bây giờ anh có tiện nghe máy khoảng 5 phút không ạ?"
-• Kết thúc: TÓM TẮT LẠI thời gian, địa điểm, việc cần làm trước khi cúp máy.""",
+• Kết thúc: TÓM TẮT LẠI thời gian, địa điểm, việc cần làm trước khi cúp máy.
+
+NÓI ĐỦ Ý (phần đã rút khỏi slide)
+• Chuẩn bị: tránh gọi sớm quá, muộn quá, hoặc giờ nghỉ trưa.
+• Mở đầu mẫu: “Em chào anh, em là… từ công ty… Anh có tiện nghe máy 5 phút không ạ?”
+• Trình bày: nói rõ ràng; tóm tắt lại thỏa thuận gồm thời gian, địa điểm, việc cần làm.
+• Kết thúc: để người có vị thế cao hơn hoặc khách hàng gác máy trước.""",
  "Nghe máy và văn hóa điện thoại": """ĐIỆN THOẠI — NGHE MÁY (3 phút)
 • Nhấc trong 3 hồi chuông; chào và XƯNG DANH ĐƠN VỊ.
 • Mẹo: MỈM CƯỜI khi nói — người nghe cảm nhận được qua giọng.
 • Ghi lời nhắn đủ 4 thông tin: ai gọi – việc gì – số liên lạc – hẹn phản hồi khi nào.
-• Văn hóa công sở: không nghe điện riêng khi đang tiếp khách hoặc đang họp.""",
+• Văn hóa công sở: không nghe điện riêng khi đang tiếp khách hoặc đang họp.
+
+NÓI ĐỦ Ý (phần đã rút khỏi slide)
+• Giọng tươi — người gọi “nghe thấy” nụ cười của bạn; ghi chú và NHẮC LẠI lời nhắn.
+• Lời nhắn phải chuyển đầy đủ và đúng hạn.
+• Nhắn tin / Zalo công việc cũng cần đúng chuẩn mực như email.""",
  "Thực hành 2 kỹ năng ngay tại lớp": """HOẠT ĐỘNG THỰC HÀNH (15 phút)
 • Chia cặp, mỗi cặp bốc một tình huống.
 • 5 phút chuẩn bị, mỗi cặp diễn 2 phút trước lớp, cả lớp nhận xét theo tiêu chí đã học.
 • Cô quan sát và ghi lại 2–3 lỗi phổ biến để chốt cuối buổi.
-• Khen công khai bạn làm tốt; góp ý chung cho cả lớp, không nêu tên bạn làm chưa tốt.""",
+• Khen công khai bạn làm tốt; góp ý chung cho cả lớp, không nêu tên bạn làm chưa tốt.
+
+NÓI ĐỦ Ý (phần đã rút khỏi slide)
+• Tình huống (a): gọi điện lần đầu cho khách hàng tiềm năng để hẹn gặp giới thiệu sản phẩm.
+• Tình huống (b): gọi điện xử lý việc giao hàng trễ cho khách đang khó chịu.
+• Đóng vai: một bạn vai nhân viên, một bạn vai khách hàng.
+• Thuyết trình: chủ đề đã chuẩn bị ở nhà; lớp nhận xét cả ngôn ngữ cơ thể.""",
  "Ba điều cần nhớ": """TỔNG KẾT (2 phút)
 • Nhắc lại quy tắc 4×20 và 5 mức lắng nghe — gọi sinh viên nhắc.
 • Giao việc: 40 câu trắc nghiệm Chương 2; chuẩn bị đề tài thuyết trình nhóm.""",

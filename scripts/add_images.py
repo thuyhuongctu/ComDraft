@@ -112,14 +112,20 @@ PLAN = {
     ],
     "CHUONG 3 - GIAO TIEP TRONG TINH HUONG DAC THU.pptx": [
         ("quy trình LAST", f"{F}/c3-quy-trinh-last-nt.png", None),
+        ("Giao tiếp đa văn hóa", f"{F}/c3-ba-truc-van-hoa-nt.png",
+         "Không cực nào đúng hơn cực nào — biết mình đang đứng ở đâu trên trục mới là việc."),
     ],
     "CHUONG 4 - DAM PHAN TRONG KINH DOANH.pptx": [
         ("Tiến trình đàm phán", f"{F}/c4-tien-trinh-dam-phan-nt.png", None),
+        ("Các kiểu đàm phán", f"{F}/c4-ba-kieu-dam-phan-nt.png",
+         "Ba kiểu chỉ khác nhau ở bốn điểm — bảng đối chiếu cho thấy cả bốn trong một cái nhìn."),
         ("vũ khí quan trọng nhất", f"{F}/c4-batna-zopa-nt.png",
          "ZOPA hẹp hay rộng phụ thuộc vào giới hạn thật của hai bên — chuẩn bị kỹ để biết mình đang ở đâu trên trục này."),
     ],
     "CHUONG 5 - SOAN THAO VA TRINH BAY VAN BAN.pptx": [
         ("Chín thành phần thể thức", f"{F}/c5-the-thuc-a4-nt.png", None),
+        ("Phân loại văn bản", f"{F}/c5-phan-loai-van-ban-nt.png",
+         "Biết văn bản thuộc nhóm nào thì mới biết soạn theo mẫu nào và ai có thẩm quyền ký."),
         ("Năm văn bản hành chính thông dụng", f"{F}/c5-chuoi-van-ban-nt.png",
          "Chuỗi văn bản của một thương vụ — sinh viên sẽ soạn lại đúng chuỗi này trong phần thực hành."),
     ],
@@ -132,6 +138,8 @@ PLAN = {
     ],
     "THUC HANH BAI 3 - SOAN THAO VAN BAN THUONG MAI.pptx": [
         ("Hợp đồng — các điều khoản phải có", f"{F}/c5-chuoi-van-ban-nt.png", None),
+        ("Thư tín thương mại", f"{F}/th3-thu-tin-thuong-mai-nt.png",
+         "Đây chính là bố cục sinh viên phải gõ ra Word trong bài nộp số 3."),
     ],
 }
 
