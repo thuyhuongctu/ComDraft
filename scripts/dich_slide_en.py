@@ -128,9 +128,9 @@ def hinh_thieu_ban_en():
 def main():
     ghi = "--ghi" in sys.argv
     du = "--du" in sys.argv
-    thieu = {}
+    thieu, sot = {}, set()
     for nguon, dich in CAP:
-        dich_deck(os.path.join(GOC, nguon), None, thieu)
+        dich_deck(os.path.join(GOC, nguon), None, thieu, sot)
 
     hinh = hinh_thieu_ban_en()
     print("Chuỗi chưa có trong từ điển: %d" % len(thieu))
@@ -149,9 +149,13 @@ def main():
               " hoặc thêm --du để dựng bản dở xem thử.")
         return 1
 
+    sot = set()
     for nguon, dich in CAP:
-        dich_deck(os.path.join(GOC, nguon), os.path.join(GOC, dich), {})
+        dich_deck(os.path.join(GOC, nguon), os.path.join(GOC, dich), {}, sot)
         print("  →", dich)
+    if sot:
+        print("\nHình chưa tráo được sang bản tiếng Anh:", sorted(sot))
+        return 1
     return 0
 
 

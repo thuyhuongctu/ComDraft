@@ -79,6 +79,7 @@ CHUNG = {
     "Slide, biểu mẫu văn bản, tình huống và bài tập do GV. Đỗ Thùy Hương biên soạn; cung cấp sau mỗi buổi học.":
         "Slides, document templates, cases and exercises written by Do Thuy Huong; provided after each session.",
     "Văn bản pháp lý bắt buộc": "Required legal text",
+    "Nơi nhận": "Distribution list",
 }
 
 for _i in range(1, 6):
@@ -1051,6 +1052,304 @@ C5 = {
         'POINT SIZE',
 }
 
+# ------------------------------------------------------- Ba bài thực hành
+TH = {
+    'Phòng Kế toán Công ty TNHH An Phát cần trang bị thêm 10 máy tính. Từ tình huống này, mỗi sinh viên bốc thăm và soạn 2 trong 5 văn bản: Tờ trình đề xuất mua sắm • Quyết định phê duyệt mua sắm • Công văn gửi nhà cung cấp đề nghị báo giá • Biên bản họp xét chọn nhà cung cấp • Báo cáo kết quả trang bị thiết bị.':
+        'The Accounting Department of An Phat Co., Ltd needs ten more computers. From this case each student draws and drafts two of five documents: a submission proposing the purchase • a decision approving it • an official letter asking suppliers to quote • minutes of the supplier-selection meeting • a report on the equipment delivered.',
+    'Trình bày hoàn chỉnh phần thể thức của một Thông báo do Công ty TNHH An Phát ban hành, thông báo lịch nghỉ Tết Nguyên đán cho toàn thể nhân viên (nội dung phần thân chỉ cần 3 – 5 dòng, trọng tâm chấm là thể thức).':
+        'Lay out the complete formal part of a Notice issued by An Phat Co., Ltd announcing the Lunar New Year holiday schedule to all staff (the body needs only 3 – 5 lines; the marking is on the format).',
+    'Căn cứ hợp đồng số… ; thành phần hai bên; nội dung nghiệm thu (chủng loại, số lượng, chất lượng thực nhận so với hợp đồng); kết luận đạt/không đạt; chữ ký hai bên.':
+        'Pursuant to contract No.…; who attends from each side; what is being accepted (type, quantity, quality actually received against the contract); the pass/fail conclusion; both signatures.',
+    'Mở: nêu căn cứ, lý do → Thân: nội dung đề nghị cụ thể, thời hạn mong muốn → Kết: “Rất mong nhận được sự quan tâm, phối hợp của Quý cơ quan. Trân trọng./.”':
+        'Open: the grounds and the reason → Body: exactly what is requested and by when → Close: “We look forward to your kind attention and cooperation. Yours faithfully./.”',
+    'Xác nhận hai bên đã hoàn thành nghĩa vụ; đối chiếu giá trị đã thanh toán và còn lại; xác nhận chấm dứt hiệu lực hợp đồng; cam kết không khiếu nại về sau.':
+        'Confirms both sides have discharged their obligations; reconciles what has been paid and what remains; confirms the contract has ended; both undertake to raise no later claim.',
+    'Nghiệm thu không ghi rõ số hợp đồng • thiếu điều khoản phạt vi phạm • giá trị bằng số và bằng chữ không khớp • thanh lý khi chưa đối chiếu công nợ.':
+        'An acceptance record without the contract number • no penalty clause • figures and words not matching • closing before the accounts are reconciled.',
+    'Ghi thêm tên loại “CÔNG VĂN” ở giữa (sai) • trích yếu không bắt đầu bằng “V/v” • gộp nhiều chủ đề trong một công văn • thiếu dấu “./.” kết thúc.':
+        'Adding a centred type heading “CÔNG VĂN” (wrong) • a subject line not starting with “V/v” • several subjects in one letter • the closing “./.” left off.',
+    'Trình bày phương án cụ thể: nội dung đề xuất, số lượng, kinh phí dự kiến, thời gian thực hiện, phân tích lợi ích và tính khả thi.':
+        'Set out the plan: what is proposed, quantities, estimated cost, timing, and an analysis of benefit and feasibility.',
+    'Mở: “Phúc đáp Công văn số… ngày… của… về việc…” → Thân: trả lời từng nội dung được hỏi → Kết: lịch sự, mở khả năng trao đổi thêm.':
+        'Open: “In reply to Official Letter No.… dated… from… regarding…” → Body: answer each point raised → Close: courteous, leaving the door open.',
+    'STT • tên hàng, quy cách/model • đơn vị tính • số lượng • đơn giá • thành tiền • thuế GTGT • tổng cộng (ghi bằng số và bằng chữ).':
+        'No. • item and model • unit • quantity • unit price • amount • VAT • total (in figures and in words).',
+    'Từ chính thương vụ mua 20 máy tính đã đàm phán ở Chương 4, mỗi cặp hoàn thiện bộ hồ sơ thương mại đầy đủ cho thương vụ của mình.':
+        'From the very purchase of 20 computers negotiated in Chapter 4, each pair completes the full commercial file for their own deal.',
+    'Nội dung phù hợp tình huống được giao; bố cục đúng đặc trưng của loại văn bản; văn phong hành chính, không lỗi chính tả.':
+        'Content fits the case; layout matches the type; administrative register, no spelling errors.',
+    'Đổi hồ sơ với cặp khác, chỉ ra ít nhất 3 điểm bất lợi hoặc thiếu sót; chỉnh sửa và nộp bộ hồ sơ hoàn chỉnh trong 1 tuần.':
+        'Swap files with another pair and name at least three disadvantages or gaps; revise and submit the complete file within a week.',
+    'Nhắc lại yêu cầu đã ban hành, nêu tình hình thực hiện, ấn định thời hạn mới; giọng văn nghiêm túc nhưng không xúc phạm.':
+        'Restate the requirement already issued, report on progress, set a new deadline; firm in tone but never insulting.',
+    'Đề xuất chung chung không có số liệu • thiếu phân tích lợi ích • trình sai cấp có thẩm quyền • quên đính kèm dự toán.':
+        'A vague proposal with no figures • no benefit analysis • submitted to the wrong level • the cost estimate forgotten.',
+    'Canh giữa, viết hoa, in đậm. Riêng công văn: không có tên loại, trích yếu đặt dưới số ký hiệu, bắt đầu bằng “V/v…”.':
+        'Centred, capitals, bold. An official letter is the exception: no type heading; the subject line sits under the reference and begins “V/v…”.',
+    'Góc dưới bên phải; quyền hạn (TM., KT., TL.) viết hoa; chừa 3 – 4 dòng trống cho chữ ký; họ tên đầy đủ, in đậm.':
+        'Bottom right; the authority prefix (TM., KT., TL.) in capitals; leave 3 – 4 blank lines for the signature; full name in bold.',
+    'Hai bên cùng dự thảo hợp đồng mua bán đủ các điều khoản cơ bản, kèm biên bản nghiệm thu và biên bản thanh lý.':
+        'Both draft the sales contract with all its basic clauses, plus the acceptance record and the closure record.',
+    'Đủ 9 thành phần theo NĐ 30/2020; khổ A4, lề đúng quy định, Times New Roman cỡ 13 – 14, số trang đúng vị trí.':
+        'All nine components per Decree 30/2020; A4, correct margins, Times New Roman 13 – 14 pt, page numbers in the right place.',
+    'Thời gian giao hàng • địa điểm giao • phương thức và tiến độ thanh toán • bảo hành • chiết khấu (nếu có).':
+        'Delivery time • place of delivery • method and schedule of payment • warranty • discount if any.',
+    'Thời hạn hiệu lực báo giá (ví dụ 15 ngày kể từ ngày lập); người lập và người có thẩm quyền ký, đóng dấu.':
+        'How long the quotation stands (say 15 days from issue); the preparer and the authorised signatory, with the seal.',
+    'Nộp file Word cuối buổi; chỉnh sửa theo phản hồi của giảng viên và nộp lại bản hoàn thiện trong 1 tuần.':
+        "Submit the Word file at the end of the session; revise on the lecturer's feedback and resubmit within a week.",
+    'Tự soát bằng bảng kiểm 8 điểm, sau đó đổi bài chấm chéo với bạn cùng bàn rồi nộp file Word cuối buổi.':
+        'Self-check against the eight-point list, swap with your neighbour for peer marking, then submit the Word file at the end of the session.',
+    'Nêu căn cứ pháp lý và thực trạng dẫn đến đề xuất: “Căn cứ… Thực hiện… Hiện nay, [đơn vị] đang gặp…”':
+        'State the legal grounds and the situation behind the proposal: “Pursuant to… In implementation of… At present, [the unit] faces…”',
+    'Góc dưới bên trái; dòng “Nơi nhận:” in đậm nghiêng; liệt kê từng nơi, dòng cuối là “- Lưu: VT, …”.':
+        'Bottom left; the line “Nơi nhận:” in bold italic; list each recipient, the last line being “- Lưu: VT, …”.',
+    'Soạn đủ 2 văn bản được bốc thăm, đúng thể thức NĐ 30/2020 và đúng bố cục đặc trưng của từng loại.':
+        'Draft both documents drawn, in correct Decree 30/2020 format and in the layout proper to each type.',
+    'Thông tin doanh nghiệp (tên, địa chỉ, MST, liên hệ); kính gửi khách hàng; số báo giá và ngày lập.':
+        'Company details (name, address, tax code, contact); addressed to the customer; quotation number and date.',
+    'Biên bản ghi tại chỗ và chỉ có giá trị pháp lý khi đủ chữ ký; báo cáo đi theo mạch bốn phần.':
+        'Minutes are written on the spot and carry legal weight only when fully signed; a report follows four parts.',
+    'Bên bán soạn: thư chào hàng + bản báo giá đầy đủ điều kiện thương mại và thời hạn hiệu lực.':
+        'The seller drafts: an offer letter and a quotation with full trading terms and a validity period.',
+    '“Kính trình [cấp có thẩm quyền] xem xét, phê duyệt.” Kèm danh mục hồ sơ, dự toán đính kèm.':
+        '“Respectfully submitted to [the competent level] for consideration and approval.” Attach the file list and the cost estimate.',
+    'Trình bày đủ 9 thành phần thể thức, đúng vị trí và cách viết hoa theo NĐ 30/2020/NĐ-CP.':
+        'Include all nine formal components, correctly placed and capitalised per Decree 30/2020/ND-CP.',
+    'Bài nộp số 2 nằm ở các bước 1 – 3 của chuỗi; bước 4 – 7 là nội dung Bài thực hành số 3.':
+        'Submission 2 covers steps 1 – 3 of the chain; steps 4 – 7 are the content of Lab 3.',
+    'Thư tín, báo giá và hợp đồng — bộ hồ sơ đưa một thương vụ đi từ chào hàng đến thanh lý.':
+        'Letters, quotations and contracts — the file that carries a deal from offer to closure.',
+    'đầy đủ 9 thành phần thể thức bắt buộc và các thành phần bổ sung trên một văn bản mẫu.':
+        'all nine required formal components, and the optional ones, on a specimen document.',
+    'Nộp đúng thời hạn quy định; tiếp thu góp ý của giảng viên và nộp lại bản hoàn thiện.':
+        "Submitted by the deadline; the lecturer's comments taken up and a final version resubmitted.",
+    'được thư tín thương mại đạt nguyên tắc 5C cho các tình huống giao dịch phổ biến.':
+        'commercial letters meeting the 5C rule for the common trading situations.',
+    'Phần thực hành  •  Phòng A0105 – Mô phỏng Kinh tế  •  Lớp 261b, HK1 2026 – 2027':
+        'Lab  •  Room A0105 – Economics Simulation  •  Class 261b, Semester 1, 2026 – 2027',
+    'hoàn chỉnh phần thể thức của một văn bản hành chính theo tình huống được giao.':
+        'the complete formal part of an administrative document for the case you are given.',
+    'Năm loại văn bản dùng hằng ngày trong mọi tổ chức — soạn đúng ngay từ lần đầu.':
+        'Five documents used daily in every organisation — get them right first time.',
+    'Bốn con số lề phải đặt đúng bốn phía — lề trái rộng hơn vì còn phải đóng gáy.':
+        'Four margin figures, one for each side — the left is wider because the file is bound there.',
+    'Tự soát theo bảng kiểm Bài 1 và bảng lỗi thường gặp của từng loại văn bản.':
+        'Self-check against the Session 1 list and the common-mistakes table for each type.',
+    'Nhận diện và trình bày đúng từng thành phần thể thức trên trang giấy A4.':
+        'Recognise and lay out each formal component correctly on an A4 page.',
+    'khổ giấy, lề trang, phông chữ, cỡ chữ đúng quy định trên Microsoft Word.':
+        'paper size, margins, typeface and point size correctly in Microsoft Word.',
+    'và chỉnh sửa văn bản của mình theo bảng kiểm thể thức đã học ở Bài 1.':
+        'and revise your own document against the format checklist from Session 1.',
+    'Giảng viên trình bày mẫu trên máy chiếu, phân tích từng thành phần.':
+        'The lecturer works through a specimen on the projector, component by component.',
+    'được hợp đồng mua bán kèm biên bản nghiệm thu và thanh lý hợp đồng.':
+        'a sales contract with its acceptance record and closure record.',
+    'được quyết định và tờ trình đúng bố cục, đúng thẩm quyền ban hành.':
+        'a decision and a submission in correct layout, issued by the right authority.',
+    'được bản báo giá đầy đủ điều kiện thương mại và thời hạn hiệu lực.':
+        'a quotation carrying full trading terms and a validity period.',
+    'Quốc hiệu – Tiêu ngữ đúng vị trí, đúng cách viết hoa và gạch nối?':
+        'National heading and motto in the right place, correctly capitalised and hyphenated?',
+    'Thiết lập đúng khổ giấy, lề trang, phông chữ, cỡ chữ và số trang.':
+        'Set the paper size, margins, typeface, point size and page numbers correctly.',
+    'Đây chính là bố cục sinh viên phải gõ ra Word trong bài nộp số 3.':
+        'This is exactly the layout students must type into Word for Submission 3.',
+    'Canh đều hai bên, giãn dòng 1,0 – 1,5; lùi đầu dòng 1 – 1,27 cm.':
+        'Justified, line spacing 1.0 – 1.5; first-line indent 1 – 1.27 cm.',
+    'được biên bản cuộc họp và báo cáo công việc theo đúng kết cấu.':
+        'meeting minutes and a work report in the correct structure.',
+    'Ngày tháng có thêm số 0 khi cần; địa danh đúng nơi ban hành?':
+        'Leading zero on the date where needed; the place matching where it was issued?',
+    'Soạn thảo hợp đồng, biên bản nghiệm thu và thanh lý hợp đồng':
+        'Drafting the contract, the acceptance record and the closure record',
+    'Sinh viên thao tác trên máy, giảng viên đi từng bàn hỗ trợ.':
+        'Students work at their machines; the lecturer goes desk to desk.',
+    'Phông Times New Roman, cỡ 13 – 14, toàn văn bản đồng nhất?':
+        'Times New Roman, 13 – 14 pt, consistent throughout?',
+    'được các loại công văn giao dịch phổ biến trong tổ chức.':
+        'the common kinds of official letter used in an organisation.',
+    'Chừa đủ chỗ ký; ghi đúng quyền hạn và chức vụ người ký?':
+        "Enough space to sign; the signer's authority and position correct?",
+    'Đọc văn bản mẫu, chỉ ra bố cục đặc trưng của từng loại.':
+        'Read the specimen and name the layout that marks out each type.',
+    'Hai bạn đóng vai bên mua – bên bán, soạn hồ sơ đối ứng.':
+        'The two of you play buyer and seller and draft matching documents.',
+    'Đổi bài theo cặp, dùng bảng kiểm để soát lỗi cho nhau.':
+        'Swap in pairs and check each other against the checklist.',
+    'Khổ giấy A4, lề trái đủ rộng để đóng gáy (30 – 35 mm)?':
+        'A4 paper, left margin wide enough for binding (30 – 35 mm)?',
+    'Thực hành trình bày các yếu tố thể thức trên máy tính':
+        'Laying those elements out on the computer',
+    'Sinh viên tự trình bày văn bản theo tình huống riêng.':
+        'Each student lays out a document for their own case.',
+    'Số, ký hiệu đúng cấu trúc cho loại văn bản đang soạn?':
+        'Number and reference in the right structure for this document type?',
+    'Giảng viên soạn mẫu một đoạn, lưu ý lỗi thường gặp.':
+        'The lecturer drafts a passage, flagging the usual mistakes.',
+    'Trích yếu ngắn gọn, phản ánh đúng nội dung chính?':
+        'Subject line short, and true to the main content?',
+    'BÀI NỘP SỐ 3 (làm theo cặp — bên mua và bên bán)':
+        'SUBMISSION 3 (in pairs — buyer and seller)',
+    'BÀI NỘP SỐ 2 (làm cá nhân, bốc thăm tình huống)':
+        'SUBMISSION 2 (individual, case drawn by lot)',
+    'Thư tín thương mại — viết sao cho đúng và khéo':
+        'Commercial letters — correct, and well judged',
+    'Nộp đúng hạn và chỉnh sửa theo phản hồi (20%)':
+        'On time, and revised on feedback (20%)',
+    'Mỗi sinh viên soạn theo tình huống được giao.':
+        'Each student drafts for the case they are given.',
+    'Phân tích điều khoản rủi ro và cách diễn đạt.':
+        'Analyse the risky clauses and how they are worded.',
+    'Tự soát lỗi trước khi nộp — 8 điểm phải kiểm':
+        'Check your own work before submitting — eight points',
+    'Đọc và nhận xét thư, báo giá, hợp đồng mẫu.':
+        'Read and comment on specimen letters, quotations and contracts.',
+    'Nơi nhận đầy đủ và luôn có dòng “Lưu: VT”?':
+        'Distribution list complete, and always carrying the “Lưu: VT” line?',
+    'Đúng nội dung và bố cục loại văn bản (40%)':
+        'Correct content and layout for the type (40%)',
+    'Đổi hồ sơ, tìm điểm bất lợi cho phía mình.':
+        'Swap files and find what works against your own side.',
+    'Các yếu tố thể thức cần có trong văn bản':
+        'The formal elements a document must carry',
+    'Nộp bài, nhận phản hồi và chỉnh sửa lại.':
+        'Submit, take the feedback, revise.',
+    'Đổi bài theo nhóm, góp ý theo bảng kiểm.':
+        'Swap within the group and comment against the checklist.',
+    'Trình bày các thành phần ở đầu văn bản':
+        'Laying out the head of the document',
+    'Chỉnh sửa và nộp bộ hồ sơ hoàn chỉnh.':
+        'Revise and submit the complete file.',
+    'Sửa theo góp ý và nộp bài cuối buổi.':
+        'Revise on the comments and submit at the end of the session.',
+    'Trình bày phần giữa và cuối văn bản':
+        'Laying out the middle and the foot',
+    'Cách làm việc trong buổi thực hành':
+        'How we will work this session',
+    'BÀI NỘP SỐ 1 (làm cá nhân tại lớp)':
+        'SUBMISSION 1 (individual, in class)',
+    'Bài của các bạn được chấm thế nào?':
+        'How your work is marked',
+    'Hợp đồng — các điều khoản phải có':
+        'Contract — the clauses it must have',
+    'Báo giá — bảng nội dung bắt buộc':
+        'Quotation — what it must contain',
+    'Nghiệm thu và thanh lý hợp đồng':
+        'Acceptance and closure of the contract',
+    'Thiết lập trang giấy trên Word':
+        'Setting up the page in Word',
+    'Soạn thảo thư tín thương mại':
+        'Drafting commercial letters',
+    'Soạn thảo các loại công văn':
+        'Drafting the kinds of official letter',
+    'Bài nộp của buổi thực hành':
+        'What you submit from this lab',
+    'MỤC TIÊU BUỔI THỰC HÀNH':
+        'OBJECTIVES OF THIS LAB',
+    'Chức vụ, họ tên, chữ ký':
+        'Position, name, signature',
+    'Chúng ta sẽ thực hành':
+        'What we will practise',
+    'Tên loại và trích yếu':
+        'Type heading and subject line',
+    'Soạn thảo Quyết định':
+        'Drafting a Decision',
+    'Điều kiện thương mại':
+        'Trading terms',
+    'Đúng thể thức (40%)':
+        'Correct format (40%)',
+    'Biên bản và Báo cáo':
+        'Minutes and Report',
+    'Soạn thảo Tờ trình':
+        'Drafting a Submission',
+    'Soạn thảo Biên bản':
+        'Drafting Minutes',
+    'Soạn thảo Công văn':
+        'Drafting an official letter',
+    'THỰC HÀNH • BÀI 1':
+        'LAB • SESSION 1',
+    'THỰC HÀNH • BÀI 2':
+        'LAB • SESSION 2',
+    'THỰC HÀNH • BÀI 3':
+        'LAB • SESSION 3',
+    'Soạn thảo văn bản':
+        'Drafting administrative',
+    'Soạn thảo Báo cáo':
+        'Drafting a Report',
+    'Công văn phúc đáp':
+        'Letter of reply',
+    'Soạn thảo báo giá':
+        'Drafting a quotation',
+    'Biên bản thanh lý':
+        'Closure record',
+    'Thể thức văn bản':
+        'Document format',
+    'Công văn đề nghị':
+        'Letter of request',
+    'Công văn đôn đốc':
+        'Letter of reminder',
+    'Bài 2 — 0/15/30':
+        'Session 2 — 0/15/30',
+    'Bài 1 — 0/6/12':
+        'Session 1 — 0/6/12',
+    'Bài 3 — 0/9/18':
+        'Session 3 — 0/9/18',
+    'Lỗi thường gặp':
+        'Common mistakes',
+    'Hiệu lực và ký':
+        'Validity and signature',
+    'TIÊU CHÍ CHẤM':
+        'MARKING CRITERIA',
+    'PHÂN TÍCH MẪU':
+        'ANALYSE A SPECIMEN',
+    'TRAO ĐỔI CHÉO':
+        'SWAP AND REVIEW',
+    'Bảng hàng hóa':
+        'The goods table',
+    'LÀM BÀI GIAO':
+        'WORK ON YOUR OWN CASE',
+    'GV HƯỚNG DẪN':
+        'LECTURER GUIDES',
+    'SV THỰC HÀNH':
+        'STUDENTS PRACTISE',
+    'LÀM THEO CẶP':
+        'WORK IN PAIRS',
+    'SV LÀM THEO':
+        'STUDENTS FOLLOW',
+    'GV LÀM MẪU':
+        'LECTURER DEMONSTRATES',
+    'hành chính':
+        'documents',
+    'HOÀN THIỆN':
+        'FINALISE',
+    'thương mại':
+        'commercial documents',
+    'Dự thảo  —':
+        'Draft  —',
+    'QUY TRÌNH':
+        'HOW THE LAB RUNS',
+    'CHẤM CHÉO':
+        'PEER MARKING',
+    'NỘP & SỬA':
+        'SUBMIT & REVISE',
+    'Nội dung':
+        'Body text',
+    'Kết thúc':
+        'Closing',
+    'Phần đầu':
+        'The head',
+    'BƯỚC 1':
+        'STEP 1',
+    'BƯỚC 2':
+        'STEP 2',
+    'BƯỚC 3':
+        'STEP 3',
+    'Mở đầu':
+        'Opening',
+}
+
 TU_DIEN = {}
-for _b in (CHUNG, C1, C2, C3, C4, C5):
+for _b in (CHUNG, C1, C2, C3, C4, C5, TH):
     TU_DIEN.update(_b)
