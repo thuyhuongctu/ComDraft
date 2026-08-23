@@ -627,6 +627,212 @@ C3 = {
         'SECTION 3.2',
 }
 
+# ------------------------------------------------------------------ Chương 4
+C4 = {
+    'Công ty X cần mua 20 máy tính cho phòng làm việc mới, ngân sách tối đa 240 triệu, cần giao trong 3 tuần. Nhà cung cấp Y muốn bán giá tốt nhưng đang tồn kho model cũ và muốn ký hợp đồng bảo trì dài hạn. Hai bên chưa biết giới hạn của nhau.':
+        "Company X needs 20 computers for a new office, a budget of at most 240 million dong, delivery within 3 weeks. Supplier Y wants a good price but is holding stock of an older model and wants a long maintenance contract. Neither side knows the other's limits.",
+    'Chương 5 – Soạn thảo và trình bày văn bản: đọc trước Nghị định 30/2020/NĐ-CP (phần thể thức văn bản); phần thực hành sẽ soạn hợp đồng cho chính thương vụ vừa đàm phán hôm nay.':
+        'Chapter 5 – Drafting and laying out documents: read Decree 30/2020/ND-CP beforehand (the section on document format); in the lab you will draft the contract for the very deal you negotiated today.',
+    'Chốt xong phải văn bản hóa thành hợp đồng đúng thể thức — đó là nội dung Chương 5: Soạn thảo và trình bày văn bản.':
+        'Once closed, it must become a contract in correct form — that is Chapter 5: Drafting and laying out documents.',
+    'ZOPA hẹp hay rộng phụ thuộc vào giới hạn thật của hai bên — chuẩn bị kỹ để biết mình đang ở đâu trên trục này.':
+        "Whether the ZOPA is narrow or wide depends on both sides' real limits — prepare well enough to know where you stand on it.",
+    'Nghệ thuật đạt thỏa thuận mà không đánh mất quan hệ — kỹ năng sinh lời trực tiếp nhất của người làm kinh tế.':
+        'The art of reaching agreement without losing the relationship — the most directly profitable skill in business.',
+    'Hỏi “vì sao” để tìm lợi ích thật; nhượng bộ luôn kèm điều kiện; hướng tới thỏa thuận hai bên thực hiện được.':
+        'Ask “why” to find the real interest; every concession carries a condition; aim at a deal both sides can actually perform.',
+    'Mỗi bên 10 phút chuẩn bị: xác định mục tiêu 3 mức, BATNA và chiến lược nhượng bộ theo hồ sơ được phát.':
+        'Ten minutes to prepare: set the three target levels, the BATNA and a concession strategy from your brief.',
+    'Đàm phán 10 phút trước lớp; các nhóm quan sát ghi lại: đề nghị neo, các nhượng bộ, chiêu trò (nếu có).':
+        'Negotiate for ten minutes in front of the class; observers note the anchor, the concessions, and any tactics used.',
+    'Cả lớp phân tích: thỏa thuận đạt được nằm ở đâu trong ZOPA? Bên nào chuẩn bị tốt hơn và vì sao?':
+        'The class analyses: where in the ZOPA did the deal land? Which side prepared better, and why?',
+    'Mục tiêu 3 mức + BATNA + hiểu đối tác = 70% kết quả; không chuẩn bị là chuẩn bị để nhượng bộ.':
+        'Three target levels + BATNA + knowing them = 70% of the result; failing to prepare is preparing to concede.',
+    'Ba kiểu chỉ khác nhau ở bốn điểm — bảng đối chiếu cho thấy cả bốn trong một cái nhìn.':
+        'The three styles differ on just four points — the table shows all four at a glance.',
+    'Phân biệt đàm phán kiểu mềm, kiểu cứng và kiểu nguyên tắc; khi nào nên dùng kiểu nào?':
+        'Distinguish soft, hard and principled negotiation; when should each be used?',
+    'BATNA và ZOPA là gì? Xây dựng BATNA cho một tình huống thuê nhà trọ của sinh viên.':
+        'What are BATNA and ZOPA? Build a BATNA for a student renting a room.',
+    'Trình bày 5 giai đoạn của tiến trình đàm phán và nhiệm vụ chính của mỗi giai đoạn.':
+        'Set out the five stages of a negotiation and the main task of each.',
+    'các kỹ năng đàm phán cơ bản: chuẩn bị BATNA, đặt câu hỏi, nhượng bộ có điều kiện.':
+        'the core skills: preparing a BATNA, questioning, conceding on condition.',
+    'TÌNH HUỐNG (2 nhóm/cặp, 25 phút; mỗi bên nhận “hồ sơ mật” riêng của giảng viên)':
+        'THE CASE (two groups per pair, 25 minutes; each side gets its own “confidential brief” from the lecturer)',
+    'Bảy mươi phần trăm kết quả được quyết định trước khi hai bên ngồi vào bàn.':
+        'Seventy per cent of the result is settled before either side sits down.',
+    'được quyết định ngay từ giai đoạn chuẩn bị, trước khi hai bên ngồi vào bàn':
+        'is settled during preparation, before either side sits down',
+    'tiến trình đàm phán 5 giai đoạn và nhiệm vụ then chốt của từng giai đoạn.':
+        'the five stages of a negotiation and the key task of each.',
+    'các chiêu trò thường gặp trên bàn đàm phán và cách ứng phó chuyên nghiệp.':
+        'the common tactics used at the table, and how to answer them professionally.',
+    'Tạm nghỉ • đổi người, đổi vấn đề • lấy tiêu chí khách quan làm trọng tài':
+        'Take a break • change the person or the topic • let an objective standard arbitrate',
+    'Câu để đời của chương: “Không chuẩn bị chính là chuẩn bị để nhượng bộ.”':
+        'The line to remember: “Failing to prepare is preparing to concede.”',
+    'Phương án thay thế tốt nhất — nguồn sức mạnh thật sự trên bàn đàm phán':
+        'Best Alternative To a Negotiated Agreement — the real source of power at the table',
+    'Lý tưởng – Kỳ vọng – Tối thiểu: phải viết ra giấy trước khi đàm phán':
+        'Ideal – Expected – Minimum: write them down before you negotiate',
+    'Tiến trình đàm phán qua năm giai đoạn, từ chuẩn bị đến sau đàm phán':
+        'The five stages, from preparation to what follows the deal',
+    'Họ hỏi chi tiết triển khai, thanh toán, giao hàng — đó là tín hiệu':
+        'They ask about rollout, payment, delivery — that is the signal',
+    'Các bên vừa có lợi ích chung vừa xung đột, cùng đi đến thỏa thuận':
+        'Parties with both shared and conflicting interests working towards an agreement',
+    'Những gì cần rèn, và những gì cần nhận diện để không bị dẫn dắt.':
+        'What to train, and what to recognise so you are not led.',
+    'Phân vai rõ; không bao giờ mâu thuẫn nội bộ trước mặt đối tác':
+        'Clear roles; never disagree with each other in front of the other side',
+    'Các kỹ năng đàm phán và cách nhận diện chiêu trò thường gặp':
+        'Negotiation skills, and how to spot the common tactics',
+    'Hiểu bản chất kép của đàm phán: vừa hợp tác vừa cạnh tranh.':
+        'Understand its double nature: cooperative and competitive at once.',
+    'đề nghị bất thường để kéo kỳ vọng → bám tiêu chí khách quan':
+        'an outlandish offer to drag your expectations → hold to objective standards',
+    'khái niệm, đặc điểm và các kiểu đàm phán trong kinh doanh.':
+        'what negotiation is, what marks it out, and the three styles of it.',
+    'Nêu 3 chiêu trò thường gặp trong đàm phán và cách ứng phó.':
+        'Name three common negotiating tactics and how to answer them.',
+    'Khái niệm, đặc điểm và các kiểu đàm phán trong kinh doanh':
+        'What negotiation is, what marks it out, and its three styles',
+    'Đề nghị đầu phải có căn cứ; hỏi lại “dựa trên cơ sở nào?”':
+        'The first offer needs grounds; answer theirs with “on what basis?”',
+    'một người gay gắt, một người dễ thương → chỉ bàn nội dung':
+        'one hard, one friendly → discuss the substance only',
+    'Hợp tác để chiếc bánh lớn lên • cạnh tranh khi chia bánh':
+        'Cooperate to grow the pie • compete when dividing it',
+    'Thỏa thuận miệng chưa phải kết thúc — phải thành văn bản':
+        'A verbal agreement is not the end — it must become a document',
+    'Nghe nhiều hơn nói; im lặng đúng lúc cũng là một nước đi':
+        'Listen more than you speak; a well-placed silence is itself a move',
+    'Nói bằng ngôn ngữ lợi ích của họ, kèm số liệu và tiền lệ':
+        'Speak in the language of their interest, with figures and precedent',
+    'Làm đúng cam kết • giữ liên lạc • họp rút kinh nghiệm':
+        'Honour the commitments • keep in touch • hold a lessons-learned meeting',
+    'mọi điều khoản đều quy về giá trị, chi phí, rủi ro':
+        'every clause comes back to value, cost and risk',
+    'thêm yêu cầu trước khi ký → đòi đối ứng tương xứng':
+        'a new request just before signing → ask for something equal in return',
+    'thời gian, thẩm quyền, ngân sách — của cả hai bên':
+        'time, authority and budget — on both sides',
+    'Hỏi mở để họ bộc lộ nhu cầu trước khi mình ra giá':
+        'Open questions, so they show their need before you name a price',
+    'Tức giận là nhượng quyền kiểm soát cho đối phương':
+        'Losing your temper hands them the controls',
+    '“chỉ còn hôm nay” → kiểm chứng, sẵn sàng rời bàn':
+        '“today only” → check it, be ready to walk',
+    'cần nhau, nhưng bên nào cũng có phương án riêng':
+        'they need each other, yet each has an alternative',
+    'chỉ an toàn khi thành hợp đồng đúng thể thức':
+        'it is safe only as a contract in correct form',
+    'Giai đoạn chuẩn bị — vũ khí quan trọng nhất':
+        'Preparation — the strongest weapon you have',
+    'thương vụ một lần khác hẳn quan hệ lâu dài':
+        'a one-off deal is nothing like a long partnership',
+    'Không cho không bao giờ; nhượng bộ nhỏ dần':
+        'Never give anything free; make each concession smaller',
+    'đòi thêm từng chút → gói cả điều khoản lại':
+        'asking for a little more each time → bundle the clauses together',
+    'Đàm phán thắng từ trước khi ngồi vào bàn':
+        'A negotiation is won before you sit down',
+    'Đàm phán lợi ích, đừng cố thủ lập trường':
+        "Negotiate interests, don't dig into positions",
+    'Thỏa thuận chỉ an toàn khi thành văn bản':
+        'A deal is safe only in writing',
+    'Vì sao chuẩn bị lại quan trọng đến thế?':
+        'Why does preparation matter so much?',
+    'Đặc điểm của đàm phán trong kinh doanh':
+        'What marks out business negotiation',
+    'Kỹ năng và chiêu trò trên bàn đàm phán':
+        'Skills, and tactics, at the table',
+    'Thuyết phục bằng lợi ích và bằng chứng':
+        'Persuade with interest and evidence',
+    'Lấy lợi ích kinh tế làm trung tâm  —':
+        'Economic interest at the centre  —',
+    'Các bên vừa phụ thuộc vừa độc lập  —':
+        'Parties both dependent and independent  —',
+    'Chịu ảnh hưởng văn hóa và quan hệ  —':
+        'Shaped by culture and relationship  —',
+    'Ba nguồn sức mạnh trên bàn đàm phán':
+        'Three sources of power at the table',
+    'Thỏa thuận phải được văn bản hóa  —':
+        'The agreement must be put in writing  —',
+    'Bản chất kép: hợp tác + cạnh tranh':
+        'A double nature: cooperation + competition',
+    'Kỹ năng nền tảng trên bàn đàm phán':
+        'The core skills at the table',
+    'Tiến trình đàm phán năm giai đoạn':
+        'The five stages of a negotiation',
+    'Tiến trình đàm phán: 5 giai đoạn':
+        'The negotiation process: five stages',
+    'Role-play: đàm phán mua thiết bị':
+        'Role-play: negotiating an equipment purchase',
+    'Thông tin • Thời gian • Thế lực':
+        'Information • Time • Leverage',
+    'Khái niệm và các kiểu đàm phán':
+        'What negotiation is, and its styles',
+    'Nhận diện chiêu trò thường gặp':
+        'Spotting the common tactics',
+    'Diễn ra trong giới hạn  —':
+        'It runs inside limits  —',
+    'Tạo không khí và thăm dò':
+        'Set the tone, and probe',
+    'Kết thúc và sau đàm phán':
+        'Closing, and afterwards',
+    'Nhận biết thời điểm chốt':
+        'Knowing when to close',
+    'Lắng nghe và đặt câu hỏi':
+        'Listening and questioning',
+    'Mở đầu và thương lượng':
+        'Opening and bargaining',
+    'Nhượng bộ có điều kiện':
+        'Concede on condition',
+    'Đưa đề nghị và mặc cả':
+        'Offer and haggle',
+    'Người tốt – kẻ xấu  —':
+        'Good cop, bad cop  —',
+    'Thời hạn chót giả  —':
+        'The fake deadline  —',
+    'Đòi hỏi phút chót  —':
+        'The last-minute demand  —',
+    'Làm việc theo êkíp':
+        'Working as a team',
+    'Các kiểu đàm phán':
+        'Styles of negotiation',
+    'Kiểm soát cảm xúc':
+        'Keeping your temper',
+    'Cắt lát salami  —':
+        'Salami slicing  —',
+    'Văn bản hóa ngay':
+        'Put it in writing at once',
+    'Đàm phán là gì?':
+        'What is negotiation?',
+    'Neo giá sốc  —':
+        'The shock anchor  —',
+    'MỨC MỤC TIÊU':
+        'TARGET LEVELS',
+    'Xử lý bế tắc':
+        'Breaking a deadlock',
+    'Sau đàm phán':
+        'After the deal',
+    'Khái niệm':
+        'The idea',
+    'Đàm phán':
+        'Negotiation',
+    'MỤC 4.1':
+        'SECTION 4.1',
+    'MỤC 4.2':
+        'SECTION 4.2',
+    'MỤC 4.3':
+        'SECTION 4.3',
+    'KẾT QUẢ':
+        'OF THE RESULT',
+}
+
 TU_DIEN = {}
-for _b in (CHUNG, C1, C2, C3):
+for _b in (CHUNG, C1, C2, C3, C4):
     TU_DIEN.update(_b)

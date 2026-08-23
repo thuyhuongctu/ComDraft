@@ -41,6 +41,12 @@ CAP = [
 # Chữ số, ký hiệu mục và mã văn bản không cần dịch — bỏ qua khi kiểm chuỗi
 # thiếu, nếu không danh sách thiếu sẽ ngập những thứ vốn giữ nguyên.
 SO_MUC = re.compile(r"^\d+(\.\d+)?\s*(—|–|-)?$")
+PHAN_TRAM = re.compile(r"^\d+(\.\d+)?\s*%$")
+# Thuật ngữ và ký hiệu giữ nguyên ở cả hai bản: viết tắt quốc tế, khổ giấy,
+# dấu phân cách. Liệt kê ra để chúng không nằm trong danh sách "chưa dịch" —
+# nếu không thì mỗi lượt kiểm lại phải mắt thường lọc qua chúng.
+GIU_NGUYEN = {"•", "—", "✓", "A4", "BATNA", "ZOPA", "LAST", "5C",
+              "EC1103", "SEO", "PDF", "Word", "Excel", "Zalo", "Email"}
 
 
 def bo_qua(t):
@@ -48,7 +54,9 @@ def bo_qua(t):
         return True
     if t.replace(".", "").replace("–", "").replace(" ", "").isdigit():
         return True
-    return t in ("7%", "38%", "55%", "•", "—", "✓", "A4")
+    if PHAN_TRAM.match(t):
+        return True
+    return t in GIU_NGUYEN
 
 
 def doi_hinh(prs, thieu_hinh):
