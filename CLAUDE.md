@@ -61,6 +61,12 @@ trên slide Việt xong thì chạy `python3 scripts/dich_slide_en.py` — nó k
 chuỗi nào chưa có trong từ điển và từ chối ghi đè khi còn thiếu. Sửa chữ trong
 hình thì thêm cặp vào `DICH_HINH` của `make_figs.py` rồi chạy `--en`.
 
+Ghi chú giảng bài nằm ở từ điển riêng, `scripts/tu_dien_ghi_chu_en.py`, và khóa
+là **trọn khối ghi chú của một slide** chứ không phải từng dòng. Sửa một dòng
+ghi chú tiếng Việt là khóa cũ trượt, `dich_slide_en.py` sẽ báo khối ấy chưa
+dịch — lúc đó chép khóa mới THẲNG TỪ tệp `.pptx`, đừng gõ lại: sai một dấu cách
+là trượt khóa mà không ai thấy.
+
 Hai phép soát ấy là lưới, không phải chứng minh. Chúng đã để lọt "CENTIMET"
 (chữ Việt không dấu), và có lần nhánh ghi bỏ qua hẳn việc tráo hình mà vẫn báo
 đủ. **Vẫn phải dựng ra ảnh và nhìn.**

@@ -23,6 +23,7 @@ from pptx import Presentation
 from pptx.util import Emu
 
 from tu_dien_en import TU_DIEN
+from tu_dien_ghi_chu_en import GHI_CHU
 
 GOC = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 HINH = os.path.join(GOC, "figures")
@@ -89,11 +90,31 @@ def doi_hinh(prs, thieu_hinh):
             break
 
 
-def dich_deck(nguon, dich, thieu, thieu_hinh=None):
+def dich_ghi_chu(s, thieu_ghi):
+    """Thay trọn khối ghi chú giảng bài của một slide.
+
+    Đặt lại bằng text_frame.text nên mọi định dạng riêng trong khối bị bỏ; ghi
+    chú vốn là chữ thuần, xuống dòng bằng \n, nên không mất gì.
+    """
+    if not s.has_notes_slide:
+        return
+    tf = s.notes_slide.notes_text_frame
+    t = tf.text.strip()
+    if not t:
+        return
+    if t in GHI_CHU:
+        tf.text = GHI_CHU[t]
+    else:
+        thieu_ghi.append(t)
+
+
+def dich_deck(nguon, dich, thieu, thieu_hinh=None, thieu_ghi=None):
     prs = Presentation(nguon)
     if thieu_hinh is not None:
         doi_hinh(prs, thieu_hinh)
     for s in prs.slides:
+        if thieu_ghi is not None:
+            dich_ghi_chu(s, thieu_ghi)
         for sh in s.shapes:
             if not sh.has_text_frame:
                 continue
@@ -128,13 +149,14 @@ def hinh_thieu_ban_en():
 def main():
     ghi = "--ghi" in sys.argv
     du = "--du" in sys.argv
-    thieu, sot = {}, set()
+    thieu, sot, ghi_thieu = {}, set(), []
     for nguon, dich in CAP:
-        dich_deck(os.path.join(GOC, nguon), None, thieu, sot)
+        dich_deck(os.path.join(GOC, nguon), None, thieu, sot, ghi_thieu)
 
     hinh = hinh_thieu_ban_en()
     print("Chuỗi chưa có trong từ điển: %d" % len(thieu))
     print("Hình chưa có bản tiếng Anh: %d" % len(hinh))
+    print("Khối ghi chú giảng bài chưa dịch: %d" % len(ghi_thieu))
 
     if thieu and not (ghi and du):
         for t in sorted(thieu)[:40]:
@@ -143,15 +165,15 @@ def main():
             print("   … còn %d chuỗi nữa" % (len(thieu) - 40))
 
     if not ghi:
-        return 1 if thieu else 0
-    if thieu and not du:
+        return 1 if (thieu or ghi_thieu) else 0
+    if (thieu or ghi_thieu) and not du:
         print("\nCòn chuỗi chưa dịch — thêm vào tu_dien_en.py rồi chạy lại,"
               " hoặc thêm --du để dựng bản dở xem thử.")
         return 1
 
-    sot = set()
+    sot, bo = set(), []
     for nguon, dich in CAP:
-        dich_deck(os.path.join(GOC, nguon), os.path.join(GOC, dich), {}, sot)
+        dich_deck(os.path.join(GOC, nguon), os.path.join(GOC, dich), {}, sot, bo)
         print("  →", dich)
     if sot:
         print("\nHình chưa tráo được sang bản tiếng Anh:", sorted(sot))
