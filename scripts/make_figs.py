@@ -781,6 +781,136 @@ DAU_VIET = "ăâđêôơưàáảãạằắẳẵặầấẩẫậèéẻẽ�
            "òóỏõọồốổỗộờớởỡợùúủũụừứửữựỳýỷỹỵ"
 
 DICH_HINH = {
+    'Biên bản và Báo cáo':
+        'Minutes and Report',
+    'Phông chữ':
+        'Typeface',
+    'Số trang':
+        'Page numbers',
+    'Số: … / CV-…&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Vĩnh Long, ngày … tháng … năm …':
+        'No.: … / CV-…&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Vinh Long, … [day] … [month] … [year]',
+    'Thiếu chữ ký thì biên bản chỉ là một tờ giấy ghi chép, không dùng làm căn cứ được.':
+        'Unsigned, minutes are only a sheet of notes and cannot be relied on.',
+    'Ghi theo trình tự; ý kiến từng người ghi trung thực, không tóm tắt theo ý mình':
+        "In order of events; record each person's view faithfully, don't summarise it your own way",
+    'phải nói đúng việc — người nhận đọc dòng này để quyết định có đọc tiếp không':
+        'must say exactly what it is about — the recipient reads this line to decide whether to read on',
+    'Bốn con số phải đặt đúng bốn phía — lề trái rộng hơn vì còn phải đóng gáy':
+        'Four figures, one per side — the left is wider because the file is bound there',
+    'Chủ trì · thư ký · các thành viên · khách mời (ghi rõ họ tên, chức danh)':
+        'Chair · secretary · members · guests (full names and positions)',
+    'Thư ký và chủ trì cùng ký; các bên liên quan ký nếu là biên bản làm việc':
+        'Secretary and chair both sign; the parties sign too if it is a working record',
+    'Hai loại ghi lại quá khứ — một loại ghi tại chỗ, một loại tổng hợp lại':
+        'Two ways of recording what happened — one written on the spot, one compiled after',
+    'MỞ ĐẦU — nêu lý do viết thư, dẫn chiếu văn bản/cuộc gặp trước nếu có':
+        'OPENING — why you are writing; cite any earlier letter or meeting',
+    'NỘI DUNG — mỗi ý một đoạn; số liệu, thời hạn, điều kiện phải cụ thể':
+        'BODY — one point per paragraph; figures, deadlines and terms must be specific',
+    'Bốn dạng: định kỳ · đột xuất · chuyên đề · sơ kết – tổng kết':
+        'Four kinds: periodic · ad hoc · thematic · interim and final',
+    'TIÊU ĐỀ THƯ — tên, địa chỉ, điện thoại, email doanh nghiệp':
+        'LETTERHEAD — company name, address, telephone, email',
+    'KẾT — nêu rõ điều mong muốn và mốc thời gian trả lời':
+        'CLOSE — state what you want and by when you need a reply',
+    'Sinh viên sẽ gõ đúng bố cục này trong bài nộp số 3':
+        'Students type exactly this layout for Submission 3',
+    '. Đoạn dài quá năm dòng là dấu hiệu gộp nhiều ý':
+        '. A paragraph longer than five lines usually means several points were run together',
+    'Bật Different First Page để bỏ số ở trang đầu':
+        'Tick Different First Page to drop the number on page one',
+    '— “sớm nhất có thể” không phải là thời hạn':
+        '— “as soon as possible” is not a deadline',
+    'trích yếu — một dòng, nói đúng việc':
+        'subject line — one line, saying exactly what it is about',
+    'Chữ ký là thứ tạo giá trị pháp lý.':
+        'Signatures are what give it legal force.',
+    'Hôm nay, lúc … giờ … ngày … tại …':
+        "Today, at … o'clock on … at …",
+    'Con số, thời hạn, điều kiện phải':
+        'Figures, deadlines and terms must be',
+    'Chốt việc gì, ai làm, hạn nào':
+        'What was settled, who does it, by when',
+    'Bố cục một thư tín thương mại':
+        'The layout of a commercial letter',
+    ', đừng để người nhận tự đoán':
+        ", don't leave the reader to guess",
+    'tên và chức danh người nhận':
+        'name and position of the recipient',
+    'Nhập bốn số theo hình bên':
+        'Enter the four figures shown opposite',
+    '1 · Thời gian – địa điểm':
+        '1 · Time and place',
+    '3 · Nội dung, diễn biến':
+        '3 · Proceedings',
+    'BÁO CÁO — mạch bốn phần':
+        'REPORT — four parts',
+    'Phương hướng, kiến nghị':
+        'The way forward, recommendations',
+    'Màu đen, bộ mã Unicode':
+        'Black, Unicode',
+    '2 · Thành phần tham dự':
+        '2 · Those present',
+    'Hạn chế và nguyên nhân':
+        'Shortcomings and causes',
+    'để mọi người xác nhận':
+        'so everyone can confirm them',
+    'Khổ giấy và lề trang':
+        'Paper size and margins',
+    '(cuộc họp / sự việc)':
+        '(of a meeting or an incident)',
+    'Times New Roman, cỡ':
+        'Times New Roman, size',
+    'Đặc điểm tình hình':
+        'The situation',
+    'Không dùng Letter':
+        'Never use Letter',
+    'vùng gõ nội dung':
+        'where the text goes',
+    'Kết quả đạt được':
+        'Results achieved',
+    'trước khi bế mạc':
+        'before the meeting closes',
+    'Kết thư phải nêu':
+        'The closing must state',
+    '(ký, đóng dấu)':
+        '(signature and seal)',
+    'điều mong muốn':
+        'what you want',
+    '4 · Kết luận':
+        '4 · Conclusion',
+    'Biên bản ghi':
+        'Minutes are written',
+    'ngay tại chỗ':
+        'on the spot',
+    'Trân trọng,':
+        'Yours faithfully,',
+    '5 · Chữ ký':
+        '5 · Signatures',
+    ', đọc lại':
+        ', and read back',
+    'Kính gửi:':
+        'To:',
+    'CHỨC DANH':
+        'POSITION',
+    'Họ và tên':
+        'Full name',
+    'Trích yếu':
+        'The subject line',
+    'đóng gáy':
+        'binding edge',
+    'Khổ giấy':
+        'Paper size',
+    'Lề trang':
+        'Margins',
+    'BIÊN BẢN':
+        'MINUTES',
+    'một đoạn':
+        'per paragraph',
+    'cụ thể':
+        'specific',
+    'Mỗi ý':
+        'One point',
     'Công văn':
         'Official letter (công văn)',
     'Báo giá':

@@ -55,6 +55,16 @@ lỗi trong dự án này chỉ lộ ra khi nhìn: bản đồ tràn khỏi kh�
 bóng thoại đè lên đoạn mô tả, bóng thoại trùm xuống mặt nhân vật. Không lỗi nào
 trong số đó làm chương trình báo sai.
 
+**Sửa bản tiếng Việt thì dựng lại bản tiếng Anh.** Bộ tiếng Anh không phải một
+bản song song mà dựng RA TỪ bộ tiếng Việt qua `scripts/tu_dien_en.py`. Sửa chữ
+trên slide Việt xong thì chạy `python3 scripts/dich_slide_en.py` — nó kể ra
+chuỗi nào chưa có trong từ điển và từ chối ghi đè khi còn thiếu. Sửa chữ trong
+hình thì thêm cặp vào `DICH_HINH` của `make_figs.py` rồi chạy `--en`.
+
+Hai phép soát ấy là lưới, không phải chứng minh. Chúng đã để lọt "CENTIMET"
+(chữ Việt không dấu), và có lần nhánh ghi bỏ qua hẳn việc tráo hình mà vẫn báo
+đủ. **Vẫn phải dựng ra ảnh và nhìn.**
+
 **Đổi tệp trong `assets/` thì nâng `PHIEN_BAN` trong `sw.js`.** Quên là máy sinh
 viên vẫn dùng bản cũ trong bộ nhớ đệm, sửa xong cũng như không.
 
@@ -90,6 +100,8 @@ tay tệp kết quả** — sửa tay thì lần chạy sau đè mất:
 | `lam_phu_de.py` | `videos/*.vi.vtt` |
 | `lam_icon_ung_dung.py` | Bộ icon trong `assets/icons/` |
 | `build_videos.py` | Tám video trong `videos/` |
+| `dich_slide_en.py` | Tám bộ slide tiếng Anh trong `slides-en/` và `practice-en/` |
+| `make_figs.py --en` | Bản tiếng Anh của hình minh họa |
 | `dung_slide.py` | Tám bộ slide `.pptx` — chạy cả ba chặng dưới đây theo đúng thứ tự |
 | `build_decks.js` + `build_ch5_practice.js` | Nội dung gốc của tám deck |
 | `apply_upgrade.py` | Ghi chú giảng bài, slide phân cách, slide số liệu |
