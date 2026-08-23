@@ -89,9 +89,9 @@ function buildC5() {
   s = pptx.addSlide(); D.chrome(s, ++pg, CH);
   D.slideTitle(s, "5.1", "Văn bản là gì?");
   D.cardsRows(s, [
-    ["Cách hiểu chung", "Văn bản là phương tiện ghi lại và truyền đạt thông tin bằng ngôn ngữ hay ký hiệu nhất định, hình thành trong hoạt động của cơ quan, tổ chức, doanh nghiệp."],
-    ["Định nghĩa pháp lý — Nghị định 30/2020/NĐ-CP", "“Văn bản là thông tin thành văn được truyền đạt bằng ngôn ngữ hoặc ký hiệu, hình thành trong hoạt động của các cơ quan, tổ chức và được trình bày đúng thể thức, kỹ thuật theo quy định.”"],
-    ["Vai trò", "Phương tiện quản lý – điều hành • căn cứ pháp lý cho hoạt động • lưu trữ thông tin • thể hiện hình ảnh chuyên nghiệp của tổ chức."],
+    ["Cách hiểu chung", "Phương tiện ghi lại và truyền đạt thông tin bằng ngôn ngữ hoặc ký hiệu"],
+    ["Định nghĩa pháp lý — Nghị định 30/2020/NĐ-CP", "“Thông tin thành văn… được trình bày đúng thể thức, kỹ thuật theo quy định.”"],
+    ["Vai trò", "Quản lý – điều hành • căn cứ pháp lý • lưu trữ • hình ảnh tổ chức"],
   ]);
 
   s = pptx.addSlide(); D.chrome(s, ++pg, CH);
@@ -106,10 +106,10 @@ function buildC5() {
   s = pptx.addSlide(); D.chrome(s, ++pg, CH);
   D.slideTitle(s, "5.2", "Bốn yêu cầu về nội dung");
   D.cardsRows(s, [
-    ["Đúng mục đích, đúng thẩm quyền", "Mỗi văn bản tập trung một chủ đề; ban hành đúng chức năng, nhiệm vụ của cơ quan, tổ chức."],
-    ["Chính xác — khách quan", "Thông tin, số liệu trung thực, có căn cứ, được kiểm chứng. Một con số sai có thể tạo hậu quả pháp lý lớn."],
-    ["Rõ ràng — ngắn gọn — dễ hiểu", "Câu văn mạch lạc, không đa nghĩa; người nhận đọc một lần là hiểu đúng ý người soạn."],
-    ["Đúng pháp luật, đúng ngôn ngữ hành chính", "Phù hợp quy định hiện hành; văn phong nghiêm túc, lịch sự, không dùng khẩu ngữ."],
+    ["Đúng mục đích, đúng thẩm quyền", "Mỗi văn bản một chủ đề, ban hành đúng chức năng"],
+    ["Chính xác — khách quan", "Số liệu có căn cứ, kiểm chứng được — sai một con số là hậu quả pháp lý"],
+    ["Rõ ràng — ngắn gọn — dễ hiểu", "Đọc một lần là hiểu đúng ý người soạn"],
+    ["Đúng pháp luật, đúng ngôn ngữ hành chính", "Đúng quy định hiện hành; văn phong nghiêm túc, không khẩu ngữ"],
   ], { bodySize: 12.5, headSize: 14.5 });
 
   s = pptx.addSlide(); D.chrome(s, ++pg, CH);
@@ -137,10 +137,10 @@ function buildC5() {
   s = pptx.addSlide(); D.chrome(s, ++pg, CH);
   D.slideTitle(s, "5.2", "Kỹ thuật trình bày — những con số phải thuộc");
   D.grid2(s, [
-    ["Khổ giấy và lề trang", "Khổ A4 (210 × 297 mm). Lề trên, dưới: 20 – 25 mm • lề trái: 30 – 35 mm (để đóng gáy) • lề phải: 15 – 20 mm."],
+    ["Khổ giấy và lề trang", "A4 • trên–dưới 20–25 mm • trái 30–35 mm • phải 15–20 mm"],
     ["Phông chữ", "Times New Roman, bộ mã Unicode, cỡ 13 – 14, màu đen."],
     ["Số trang", "Đánh từ trang thứ hai, bằng chữ số Ả Rập, canh giữa theo lề trên."],
-    ["Ngôn ngữ", "Tiếng Việt chuẩn mực; viết hoa, viết tắt đúng quy định; số liệu dùng chữ số Ả Rập."],
+    ["Ngôn ngữ", "Tiếng Việt chuẩn mực; viết hoa, viết tắt đúng quy định"],
   ]);
 
   s = pptx.addSlide(); D.chrome(s, ++pg, CH);
@@ -157,34 +157,34 @@ function buildC5() {
   D.slideTitle(s, "5.3", "Quyết định và Tờ trình");
   D.grid2(s, [
     ["Quyết định — khái niệm", "Văn bản do người có thẩm quyền ban hành để giải quyết một công việc cụ thể."],
-    ["Quyết định — bố cục", "Phần căn cứ (pháp lý + thực tiễn, kết thúc bằng dấu chấm) → phần nội dung theo các Điều. Điều cuối ghi hiệu lực và đối tượng thi hành."],
-    ["Tờ trình — khái niệm", "Văn bản đề xuất cấp có thẩm quyền phê duyệt chủ trương, phương án, đề án hoặc giải quyết công việc."],
-    ["Tờ trình — bố cục 3 phần", "Mở đầu: lý do, sự cần thiết → Nội dung: phương án, lợi ích, tính khả thi → Kết thúc: kiến nghị phê duyệt. Đính kèm hồ sơ, dự toán."],
+    ["Quyết định — bố cục", "Phần căn cứ → nội dung theo các Điều → Điều cuối ghi hiệu lực"],
+    ["Tờ trình — khái niệm", "Đề xuất cấp có thẩm quyền phê duyệt một chủ trương hay phương án"],
+    ["Tờ trình — bố cục 3 phần", "Lý do → phương án, lợi ích → kiến nghị phê duyệt"],
   ]);
 
   s = pptx.addSlide(); D.chrome(s, ++pg, CH);
   D.slideTitle(s, "5.3", "Công văn, Biên bản và Báo cáo");
   D.cardsRows(s, [
-    ["Công văn", "Không có tên loại — chỉ có số, ký hiệu và trích yếu. Các loại: đề nghị, phúc đáp, đôn đốc, hướng dẫn, giải thích, mời họp. Mỗi công văn một chủ đề; kết thúc “Trân trọng./.”"],
-    ["Biên bản", "Ghi tại chỗ, trung thực, khách quan. Kết cấu: thời gian – địa điểm → thành phần tham dự → diễn biến, ý kiến → kết luận → chữ ký các bên (yếu tố tạo giá trị pháp lý)."],
-    ["Báo cáo", "Định kỳ • đột xuất • chuyên đề • sơ kết, tổng kết. Mạch 4 phần: đặc điểm tình hình → kết quả đạt được → hạn chế và nguyên nhân → phương hướng, kiến nghị."],
+    ["Công văn", "Không có tên loại — chỉ số, ký hiệu, trích yếu. Mỗi công văn một chủ đề"],
+    ["Biên bản", "Ghi tại chỗ. Thời gian – thành phần – diễn biến – kết luận – chữ ký"],
+    ["Báo cáo", "Tình hình → kết quả → hạn chế và nguyên nhân → phương hướng"],
   ]);
 
   s = pptx.addSlide(); D.chrome(s, ++pg, CH);
   D.slideTitle(s, "5.4", "Thư tín thương mại và báo giá");
   D.grid2(s, [
-    ["Thư tín thương mại", "Thư hỏi hàng, chào hàng, đặt hàng, xác nhận, khiếu nại, cảm ơn. Kết cấu: mở đầu – nội dung – kết thúc."],
+    ["Thư tín thương mại", "Hỏi hàng • chào hàng • đặt hàng • xác nhận • khiếu nại • cảm ơn"],
     ["Nguyên tắc 5C", "Clear (rõ) • Concise (gọn) • Correct (đúng) • Complete (đủ) • Courteous (lịch sự)."],
-    ["Email thương mại", "Tiêu đề ngắn đúng nội dung; xưng hô phù hợp; chữ ký đầy đủ thông tin; phản hồi trong 24 giờ."],
-    ["Báo giá", "Thông tin doanh nghiệp • mô tả hàng hóa • số lượng, đơn giá, thuế • điều kiện giao hàng, thanh toán • thời hạn hiệu lực (tránh tranh chấp khi giá thị trường biến động)."],
+    ["Email thương mại", "Tiêu đề đúng nội dung • chữ ký đầy đủ • phản hồi trong 24 giờ"],
+    ["Báo giá", "Hàng hóa • số lượng, đơn giá, thuế • giao hàng, thanh toán • thời hạn hiệu lực"],
   ]);
 
   s = pptx.addSlide(); D.chrome(s, ++pg, CH);
   D.slideTitle(s, "5.4", "Hợp đồng — nghiệm thu — thanh lý");
   D.cardsRows(s, [
-    ["Hợp đồng thương mại", "Căn cứ Bộ luật Dân sự 2015 và Luật Thương mại 2005. Điều khoản chính: đối tượng; giá và phương thức thanh toán; quyền – nghĩa vụ các bên; phạt vi phạm; giải quyết tranh chấp."],
-    ["Biên bản nghiệm thu", "Xác nhận khối lượng, chất lượng hàng hóa, dịch vụ đã thực hiện — căn cứ để thanh toán."],
-    ["Biên bản thanh lý hợp đồng", "Xác nhận hoàn thành nghĩa vụ, chấm dứt hiệu lực hợp đồng, quyết toán các quyền và nghĩa vụ còn lại."],
+    ["Hợp đồng thương mại", "Đối tượng • giá và thanh toán • quyền – nghĩa vụ • phạt • tranh chấp"],
+    ["Biên bản nghiệm thu", "Xác nhận khối lượng và chất lượng — căn cứ để thanh toán"],
+    ["Biên bản thanh lý hợp đồng", "Hoàn thành nghĩa vụ, chấm dứt hiệu lực, quyết toán phần còn lại"],
   ]);
 
   s = pptx.addSlide(); D.chrome(s, ++pg, CH);
