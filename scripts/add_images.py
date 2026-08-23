@@ -131,10 +131,14 @@ PLAN = {
     ],
     "THUC HANH BAI 1 - THE THUC VAN BAN.pptx": [
         ("Trình bày các thành phần ở đầu văn bản", f"{F}/c5-the-thuc-a4-nt.png", None),
+        ("Thiết lập trang giấy", f"{F}/th1-kho-giay-le-trang-nt.png",
+         "Bốn con số lề phải đặt đúng bốn phía — lề trái rộng hơn vì còn phải đóng gáy."),
     ],
     "THUC HANH BAI 2 - SOAN THAO VAN BAN HANH CHINH.pptx": [
         ("Soạn thảo Quyết định", f"{F}/c5-chuoi-van-ban-nt.png",
          "Bài nộp số 2 nằm ở các bước 1 – 3 của chuỗi; bước 4 – 7 là nội dung Bài thực hành số 3."),
+        ("Biên bản và Báo cáo", f"{F}/th2-ket-cau-bien-ban-nt.png",
+         "Biên bản ghi tại chỗ và chỉ có giá trị pháp lý khi đủ chữ ký; báo cáo đi theo mạch bốn phần."),
     ],
     "THUC HANH BAI 3 - SOAN THAO VAN BAN THUONG MAI.pptx": [
         ("Hợp đồng — các điều khoản phải có", f"{F}/c5-chuoi-van-ban-nt.png", None),

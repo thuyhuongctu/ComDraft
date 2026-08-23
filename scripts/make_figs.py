@@ -638,6 +638,119 @@ FIGS["th3-thu-tin-thuong-mai"] = ("""
 """ % dict(RUST=RUST, CORAL=CORAL, BLUSH=BLUSH, BLUSH_SOFT=BLUSH_SOFT, GRAY=GRAY, INK=INK), 1160, 560)
 
 
+# ---------- 15. Khổ giấy và lề trang (Thực hành bài 1) ----------
+# Bốn con số lề viết thành câu thì sinh viên phải tự dựng hình trong đầu mới
+# biết đặt vào đâu. Vẽ ra tờ A4 với bốn số đặt đúng bốn phía thì khỏi phải
+# dựng. Đây là bài thực hành trên máy, nên vẫn giữ nguyên đường đi trong Word.
+FIGS["th1-kho-giay-le-trang"] = ("""
+<div class="wrap">
+<h1>Khổ giấy và lề trang</h1>
+<div class="sub">Bốn con số phải đặt đúng bốn phía — lề trái rộng hơn vì còn phải đóng gáy</div>
+<div class="canh">
+  <div class="giay">
+    <div class="so tren">20 – 25 mm</div>
+    <div class="so duoi">20 – 25 mm</div>
+    <div class="so trai">30 – 35<br>mm</div>
+    <div class="so phai">15 – 20<br>mm</div>
+    <div class="long">
+      <div class="kho">A4<br><span>210 × 297 mm</span></div>
+      <div class="ghi">vùng gõ nội dung</div>
+    </div>
+    <div class="gay">đóng gáy</div>
+  </div>
+  <div class="duong">
+    <div class="b"><span>Khổ giấy</span>Layout → Size → <b>A4</b><i>Không dùng Letter</i></div>
+    <div class="b"><span>Lề trang</span>Layout → Margins → <b>Custom</b><i>Nhập bốn số theo hình bên</i></div>
+    <div class="b"><span>Phông chữ</span>Times New Roman, cỡ <b>13 – 14</b><i>Màu đen, bộ mã Unicode</i></div>
+    <div class="b"><span>Số trang</span>Insert → Page Number → Top → Center<i>Bật Different First Page để bỏ số ở trang đầu</i></div>
+  </div>
+</div>
+</div>
+""", """
+.canh{display:flex;gap:26px;margin-top:22px;align-items:stretch}
+.giay{flex:0 0 340px;position:relative;background:#fff;border:1.5px solid %(BLUSH)s;border-radius:4px;
+  box-shadow:0 5px 20px rgba(172,77,51,.12);padding:34px 58px 34px 74px}
+.long{border:1.5px dashed %(CORAL)s;border-radius:3px;height:100%%;min-height:250px;
+  display:flex;flex-direction:column;align-items:center;justify-content:center;gap:10px;background:%(BLUSH_SOFT)s}
+.kho{font-family:'Liberation Serif',serif;font-size:30px;font-weight:700;color:%(RUST)s;text-align:center;line-height:1.15}
+.kho span{font-family:'Roboto',sans-serif;font-size:12px;font-weight:400;color:%(GRAY)s}
+.ghi{font-size:11.5px;color:%(GRAY)s;font-style:italic}
+.so{position:absolute;font-size:11.5px;font-weight:700;color:%(CORAL)s;text-align:center}
+.so.tren{top:11px;left:0;right:0}
+.so.duoi{bottom:11px;left:0;right:0}
+.so.trai{left:22px;top:50%%;transform:translateY(-50%%);width:44px}
+.so.phai{right:8px;top:50%%;transform:translateY(-50%%);width:44px}
+.gay{position:absolute;left:-1px;top:0;bottom:0;width:16px;background:repeating-linear-gradient(
+  0deg,%(BLUSH)s 0 5px,transparent 5px 10px);border-radius:4px 0 0 4px;
+  font-size:0}
+.duong{flex:1;display:flex;flex-direction:column;gap:12px;justify-content:center}
+.b{background:#fff;border:1.5px solid %(BLUSH)s;border-radius:12px;padding:12px 15px;font-size:13.5px;line-height:1.45}
+.b span{display:block;font-size:11px;font-weight:800;letter-spacing:1.1px;text-transform:uppercase;
+  color:%(RUST)s;margin-bottom:3px}
+.b b{color:%(CORAL)s}
+.b i{display:block;font-style:normal;font-size:12px;color:%(GRAY)s;margin-top:3px}
+""" % dict(BLUSH=BLUSH, BLUSH_SOFT=BLUSH_SOFT, CORAL=CORAL, RUST=RUST, GRAY=GRAY), 1160, 560)
+
+# ---------- 16. Kết cấu biên bản (Thực hành bài 2) ----------
+FIGS["th2-ket-cau-bien-ban"] = ("""
+<div class="wrap">
+<h1>Biên bản và Báo cáo</h1>
+<div class="sub">Hai loại ghi lại quá khứ — một loại ghi tại chỗ, một loại tổng hợp lại</div>
+<div class="canh">
+  <div class="to">
+    <div class="d tt">BIÊN BẢN<br><span>(cuộc họp / sự việc)</span></div>
+    <div class="d"><b>1 · Thời gian – địa điểm</b>Hôm nay, lúc … giờ … ngày … tại …</div>
+    <div class="d"><b>2 · Thành phần tham dự</b>Chủ trì · thư ký · các thành viên · khách mời (ghi rõ họ tên, chức danh)</div>
+    <div class="d"><b>3 · Nội dung, diễn biến</b>Ghi theo trình tự; ý kiến từng người ghi trung thực, không tóm tắt theo ý mình</div>
+    <div class="d"><b>4 · Kết luận</b>Chốt việc gì, ai làm, hạn nào</div>
+    <div class="d ky2"><b>5 · Chữ ký</b>Thư ký và chủ trì cùng ký; các bên liên quan ký nếu là biên bản làm việc</div>
+  </div>
+  <div class="canh-phai">
+    <div class="canh-bao2"><b>Chữ ký là thứ tạo giá trị pháp lý.</b>
+      Thiếu chữ ký thì biên bản chỉ là một tờ giấy ghi chép, không dùng làm căn cứ được.</div>
+    <div class="bc">
+      <div class="bc-dau">BÁO CÁO — mạch bốn phần</div>
+      <div class="bc-mach">
+        <div class="bc-o"><span>1</span>Đặc điểm tình hình</div>
+        <div class="bc-o"><span>2</span>Kết quả đạt được</div>
+        <div class="bc-o"><span>3</span>Hạn chế và nguyên nhân</div>
+        <div class="bc-o"><span>4</span>Phương hướng, kiến nghị</div>
+      </div>
+      <div class="bc-chan">Bốn dạng: định kỳ · đột xuất · chuyên đề · sơ kết – tổng kết</div>
+    </div>
+    <div class="l2"><span>✓</span><p>Biên bản ghi <b>ngay tại chỗ</b>, đọc lại <b>trước khi bế mạc</b> để mọi người xác nhận</p></div>
+  </div>
+</div>
+</div>
+""", """
+.canh{display:flex;gap:22px;margin-top:22px;align-items:stretch}
+.to{flex:0 0 430px;background:#fff;border:1.5px solid %(BLUSH)s;border-radius:6px;padding:20px 22px;
+  box-shadow:0 5px 20px rgba(172,77,51,.10)}
+.to .d{padding:9px 0;border-bottom:1px dashed %(BLUSH)s;font-size:11.5px;line-height:1.5;color:%(GRAY)s}
+.to .d b{display:block;color:%(RUST)s;font-size:12.5px;margin-bottom:2px}
+.to .tt{text-align:center;font-family:'Liberation Serif',serif;font-size:22px;font-weight:700;
+  color:%(RUST)s;padding-bottom:12px;line-height:1.2}
+.to .tt span{font-family:'Roboto',sans-serif;font-size:11px;font-weight:400;color:%(GRAY)s}
+.to .ky2{border-bottom:none;background:%(BLUSH_SOFT)s;margin:6px -10px -6px;padding:10px;border-radius:6px}
+.canh-phai{flex:1;display:flex;flex-direction:column;gap:14px;justify-content:center}
+.canh-bao2{background:%(CORAL)s;color:#fff;border-radius:14px;padding:15px 18px;font-size:13px;line-height:1.55}
+.canh-bao2 b{display:block;font-size:14.5px;margin-bottom:4px}
+.bc{background:#fff;border:1.5px solid %(BLUSH)s;border-radius:14px;padding:14px 16px}
+.bc-dau{font-weight:800;font-size:12.5px;letter-spacing:1.1px;color:%(RUST)s;margin-bottom:10px}
+.bc-mach{display:flex;flex-direction:column;gap:7px}
+.bc-o{display:flex;align-items:center;gap:10px;font-size:13px;background:%(BLUSH_SOFT)s;
+  border-radius:9px;padding:8px 11px}
+.bc-o span{flex:none;width:20px;height:20px;border-radius:50%%;background:%(CORAL)s;color:#fff;
+  display:flex;align-items:center;justify-content:center;font-weight:800;font-size:11.5px}
+.bc-chan{margin-top:10px;padding-top:9px;border-top:1px solid %(BLUSH)s;font-size:12px;color:%(GRAY)s}
+.l2{display:flex;gap:11px;align-items:flex-start;background:#fff;border:1.5px solid %(BLUSH)s;
+  border-radius:12px;padding:11px 14px;font-size:13px;line-height:1.45}
+.l2 p{flex:1;margin:0}
+.l2 span{flex:none;width:22px;height:22px;border-radius:50%%;background:%(BLUSH_SOFT)s;color:%(RUST)s;
+  display:flex;align-items:center;justify-content:center;font-weight:800;font-size:12px}
+""" % dict(BLUSH=BLUSH, BLUSH_SOFT=BLUSH_SOFT, CORAL=CORAL, RUST=RUST, GRAY=GRAY), 1160, 560)
+
+
 NO_TITLE_CSS = "h1,.sub{display:none!important}.wrap{padding-top:22px;padding-bottom:22px}"
 
 
