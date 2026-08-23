@@ -266,17 +266,33 @@ NÓI ĐỦ Ý (phần đã rút khỏi slide)
 • Nhấn kỹ thuật XÁC NHẬN LẠI BẰNG VĂN BẢN sau khi nhận việc — tránh "sếp bảo thế này, em hiểu thế kia".
 • Nguyên tắc vàng khi báo cáo: KẾT QUẢ TRƯỚC, diễn giải sau. Sếp bận, đừng kể lể quá trình.
 • BÁO TIN XẤU SỚM kèm phương án — nhấn mạnh: giấu tin xấu là lỗi nặng nhất.
-• Có ý kiến khác: chọn lúc riêng tư, dựa trên DỮ LIỆU và LỢI ÍCH CHUNG, và tôn trọng quyết định cuối.""",
+• Có ý kiến khác: chọn lúc riêng tư, dựa trên DỮ LIỆU và LỢI ÍCH CHUNG, và tôn trọng quyết định cuối.
+
+NÓI ĐỦ Ý (phần đã rút khỏi slide)
+• Nhận nhiệm vụ: hỏi lại cho rõ YÊU CẦU, THỜI HẠN, NGUỒN LỰC — ba thứ này thiếu một là làm sai.
+• Báo cáo: kết quả trước, diễn giải sau. Tin xấu báo SỚM và kèm phương án, đừng che giấu.
+• Ý kiến khác: chọn lúc riêng tư; nói trên cơ sở dữ liệu và lợi ích chung; nói xong thì tôn trọng quyết định cuối cùng.""",
  "Giao tiếp với cấp dưới": """VỚI CẤP DƯỚI VÀ ĐỒNG NGHIỆP (3 phút)
 • Giao việc rõ 3 thứ: MỤC TIÊU – THỜI HẠN – TIÊU CHUẨN.
 • Quy tắc: KHEN CÔNG KHAI, PHÊ BÌNH RIÊNG TƯ. Viết to lên bảng.
 • Phê bình nhắm vào HÀNH VI, không nhắm vào CON NGƯỜI: "Báo cáo này nộp trễ 2 ngày" chứ không phải "Em vô trách nhiệm".
-• Với đồng nghiệp: tranh luận về công việc, không công kích cá nhân; tránh bè phái.""",
+• Với đồng nghiệp: tranh luận về công việc, không công kích cá nhân; tránh bè phái.
+
+NÓI ĐỦ Ý (phần đã rút khỏi slide)
+• Giao việc kèm NIỀM TIN và NGUỒN LỰC; kiểm tra tiến độ đúng mức, đừng quản lý vụn vặt.
+• Khen thì công khai, kịp thời, cụ thể. Phê bình thì riêng tư, kèm hướng khắc phục.
+• Đồng nghiệp: tránh bè phái, tránh tán chuyện sau lưng.
+• Họp: có chương trình gửi trước, phát biểu ngắn gọn, kết thúc phải có biên bản và người chịu trách nhiệm từng việc.""",
  "Giao tiếp với khách hàng": """VỚI KHÁCH HÀNG (3 phút)
 • Tâm thế PHỤC VỤ, không phải xin xỏ cũng không phải ban ơn.
 • Mỗi điểm tiếp xúc XÂY hoặc PHÁ niềm tin.
 • Bốn điều tối kỵ — nhấn điều đầu: TRANH CÃI THẮNG THUA với khách. Thắng lý mà mất khách là thua.
-CHUYỂN Ý: "Vậy khi khách nổi giận thì làm sao?"''""",
+CHUYỂN Ý: "Vậy khi khách nổi giận thì làm sao?"''
+
+NÓI ĐỦ Ý (phần đã rút khỏi slide)
+• Mỗi điểm tiếp xúc — chào đón, tư vấn, giao hàng, hậu mãi — đều xây hoặc phá niềm tin.
+• Nguyên tắc vàng: chào niềm nở, gọi TÊN khách khi có thể; nói sự thật về sản phẩm; giữ lời hứa về thời hạn.
+• Tối kỵ: hứa quá khả năng; đổ lỗi cho đồng nghiệp hoặc cho quy trình; bỏ mặc khách sau khi bán xong.""",
  "quy trình LAST": """QUY TRÌNH LAST (5 phút) — NỘI DUNG QUAN TRỌNG NHẤT CHƯƠNG
 • Viết 4 chữ L-A-S-T lên bảng.
 • L: nghe TRỌN VẸN, không ngắt lời, không phòng thủ. Nhấn: đừng vội giải thích khi khách đang giận.
@@ -289,20 +305,38 @@ CHUYỂN Ý: "Vậy khi khách nổi giận thì làm sao?"''""",
 • Đối tác: quan hệ LÂU DÀI quan trọng hơn lợi thế ngắn hạn.
 • Cơ quan nhà nước: đúng thủ tục, đúng thẩm quyền, HỒ SƠ CHUẨN THỂ THỨC — nối sang Chương 5.
 • Truyền thông: CHỈ NGƯỜI ĐƯỢC ỦY QUYỀN phát ngôn. Nhân viên tuyệt đối không tự trả lời báo chí.
-• Khủng hoảng: phản hồi NHANH, nhận trách nhiệm đúng phần của mình.""",
+• Khủng hoảng: phản hồi NHANH, nhận trách nhiệm đúng phần của mình.
+
+NÓI ĐỦ Ý (phần đã rút khỏi slide)
+• Đối tác: quan hệ lâu dài quan trọng hơn lợi thế ngắn hạn — đây là nền cho Chương 4.
+• Cơ quan nhà nước: hồ sơ, văn bản phải chuẩn thể thức (Chương 5); tác phong nghiêm túc, đúng hẹn; tuyệt đối không “đi tắt” trái quy định.
+• Truyền thông: thông tin nhất quán, trung thực; khủng hoảng thì nhận trách nhiệm đúng phần của mình, không né tránh.""",
  "Giao tiếp trên bàn tiệc": """BÀN TIỆC (4 phút) — SINH VIÊN RẤT THÍCH PHẦN NÀY
 • Trước tiệc: xác nhận đúng hạn, đến đúng giờ, trang phục theo tính chất, CHỜ CHỦ TIỆC XẾP CHỖ.
 • Trong bữa: chủ tiệc bắt đầu trước; dụng cụ dùng TỪ NGOÀI VÀO TRONG; không nói khi đang nhai.
 • Chúc rượu: người vị thế thấp hơn NÂNG LY THẤP HƠN khi cụng. Làm mẫu ngay bằng ly nước.
 • NHẤN MẠNH: tôn trọng người không dùng rượu bia, TUYỆT ĐỐI KHÔNG ÉP. Dạy sinh viên cách từ chối lịch sự: "Dạ em lái xe, cho em xin ly nước thay ạ."
-• Chủ đề nên và không nên nói — nhấn: tránh chính trị, tôn giáo, thu nhập, đời tư.""",
+• Chủ đề nên và không nên nói — nhấn: tránh chính trị, tôn giáo, thu nhập, đời tư.
+
+NÓI ĐỦ Ý (phần đã rút khỏi slide)
+• Trước tiệc: trang phục theo tính chất tiệc; vị trí ngồi thể hiện thứ bậc nên phải chờ chủ tiệc xếp chỗ.
+• Trong bữa: không nói khi đang nhai, không gõ đũa, không xoay đĩa thức ăn về phía mình liên tục.
+• Chúc rượu: chúc ngắn gọn, đúng đối tượng; tôn trọng người không dùng rượu bia.
+• Chuyện trò: công việc chỉ bàn khi chủ tiệc gợi mở.""",
  "nhận diện khác biệt": """ĐA VĂN HÓA (3 phút)
 • Bốn khác biệt: cách nói, thứ bậc, thời gian, cử chỉ – kiêng kỵ.
 • Ví dụ hay nhất: "Để chúng tôi xem xét" trong văn hóa Nhật thường LÀ LỜI TỪ CHỐI lịch sự.
 • Hỏi lớp: bạn nào từng làm việc/thực tập với người nước ngoài, kể một khác biệt đã gặp.""",
  "Nguyên tắc thích ứng": """THÍCH ỨNG (2 phút)
 • 5 nguyên tắc — nhấn nguyên tắc "KHÔNG SUY DIỄN THEO CHUẨN CỦA MÌNH".
-• Mẹo thực dụng: nói chậm, rõ, và XÁC NHẬN LẠI BẰNG VĂN BẢN sau cuộc họp đa quốc gia.""",
+• Mẹo thực dụng: nói chậm, rõ, và XÁC NHẬN LẠI BẰNG VĂN BẢN sau cuộc họp đa quốc gia.
+
+NÓI ĐỦ Ý (phần đã rút khỏi slide)
+• Tìm hiểu trước mỗi cuộc gặp quan trọng, đừng đợi đến lúc ngồi vào bàn.
+• Quan sát rồi ứng xử tương thích — bắt chước là cách học nhanh nhất.
+• Hỏi lịch sự thay vì phán xét.
+• Khác ngôn ngữ: nói chậm, rõ, tránh thành ngữ; tóm tắt thỏa thuận qua email sau họp.
+• Thiện chí học hỏi luôn được ghi nhận ở mọi nền văn hóa.""",
  "Hai tình huống khó": """HOẠT ĐỘNG NHÓM (15 phút)
 • Hai tình huống, chia lớp làm hai nửa, mỗi nửa xử lý một tình huống rồi trình bày.
 • Tình huống khách hàng: yêu cầu áp dụng đủ 4 bước LAST, nói thành lời thoại cụ thể.
@@ -325,10 +359,20 @@ CHUYỂN Ý: "Vậy khi khách nổi giận thì làm sao?"''""",
  "Đàm phán là gì": """KHÁI NIỆM (3 phút)
 • Nhấn BẢN CHẤT KÉP: vừa hợp tác (để chiếc bánh tồn tại) vừa cạnh tranh (khi chia bánh).
 • Ba nguồn sức mạnh: THÔNG TIN – THỜI GIAN – THẾ LỰC (số lựa chọn thay thế).
-• Ví dụ: người đang cần bán gấp luôn ở thế yếu — vì sao? (sức mạnh thời gian).""",
+• Ví dụ: người đang cần bán gấp luôn ở thế yếu — vì sao? (sức mạnh thời gian).
+
+NÓI ĐỦ Ý (phần đã rút khỏi slide)
+• Định nghĩa đủ: đàm phán là quá trình các bên vừa có lợi ích chung, vừa có lợi ích xung đột, cùng trao đổi và thuyết phục để đi đến một thỏa thuận mà các bên chấp nhận được.
+• Bản chất kép: quên vế hợp tác thì mất đối tác, quên vế cạnh tranh thì chịu thiệt.
+• Ba nguồn sức mạnh: THÔNG TIN — ai hiểu đối phương hơn; THỜI GIAN — ai ít bị ép tiến độ hơn; THẾ LỰC — ai có nhiều lựa chọn thay thế hơn.""",
  "Đặc điểm của đàm phán": """ĐẶC ĐIỂM (2 phút)
 • 5 đặc điểm, đi nhanh.
-• Nhấn đặc điểm THỎA THUẬN PHẢI ĐƯỢC VĂN BẢN HÓA — nối thẳng sang Chương 5.""",
+• Nhấn đặc điểm THỎA THUẬN PHẢI ĐƯỢC VĂN BẢN HÓA — nối thẳng sang Chương 5.
+
+NÓI ĐỦ Ý (phần đã rút khỏi slide)
+• Nhà đàm phán giỏi biết rõ giới hạn của MÌNH và ước lượng được giới hạn của ĐỐI PHƯƠNG.
+• Phong cách đàm phán Á – Âu khác nhau; thương vụ một lần khác hẳn quan hệ hợp tác lâu dài.
+• Kết quả chỉ an toàn khi thành hợp đồng đúng thể thức — cầu nối sang Chương 5.""",
  "Các kiểu đàm phán": """CÁC KIỂU ĐÀM PHÁN (4 phút)
 • Kiểu MỀM – CỨNG – NGUYÊN TẮC. Vẽ bảng so sánh 3 cột lên bảng.
 • Hỏi lớp: "Người Việt mình hay đàm phán theo kiểu nào?" (thường là mềm — ngại mất lòng).
@@ -344,28 +388,58 @@ CHUYỂN Ý: "Vậy khi khách nổi giận thì làm sao?"''""",
 • BATNA: giải thích chậm bằng ví dụ xin việc — bạn có sẵn một lời mời khác thì bạn tự tin hơn hẳn.
 • Nhấn: BATNA MẠNH thì thế đàm phán vững; BATNA YẾU thì ĐỪNG ĐỂ LỘ.
 • ZOPA: chỉ vào sơ đồ trên slide, đi theo trục tiền từ trái sang phải.
-• Câu hỏi cho lớp: "Nếu không có ZOPA thì làm gì?" — đáp: mở rộng chiếc bánh (đổi số lượng, tiến độ, dịch vụ kèm), đừng ép giá.""",
+• Câu hỏi cho lớp: "Nếu không có ZOPA thì làm gì?" — đáp: mở rộng chiếc bánh (đổi số lượng, tiến độ, dịch vụ kèm), đừng ép giá.
+
+NÓI ĐỦ Ý (phần đã rút khỏi slide)
+• Ba mức mục tiêu: lý tưởng (mong muốn nhất) – kỳ vọng (hợp lý) – tối thiểu (ranh giới rút lui).
+• BATNA = Best Alternative To a Negotiated Agreement. BATNA càng mạnh thế càng vững — và ĐỪNG ĐỂ LỘ khi BATNA yếu.
+• ZOPA: ước lượng để biết đề nghị nào khả thi, đề nghị nào làm vỡ bàn đàm phán.
+• Hiểu đối tác: nhu cầu thật đằng sau yêu cầu; ai là người có thẩm quyền quyết định.""",
  "Mở đầu và thương lượng": """THƯƠNG LƯỢNG (4 phút)
 • Neo tâm lý: đề nghị đầu tiên CÓ CĂN CỨ sẽ định hình cả cuộc đàm phán.
 • Khi bị neo: phản hồi bằng câu hỏi "Dựa trên cơ sở nào ạ?" — cho lớp tập nói câu này.
 • NHƯỢNG BỘ CÓ ĐIỀU KIỆN: "Nếu anh tăng số lượng lên 500, chúng tôi giảm 3%." Không bao giờ cho không.
 • Nhượng bộ NHỎ DẦN để phát tín hiệu đã chạm giới hạn.
-• Bế tắc: tạm nghỉ – đổi người/vấn đề/cách tiếp cận – quay về lợi ích gốc – đưa tiêu chí khách quan.""",
+• Bế tắc: tạm nghỉ – đổi người/vấn đề/cách tiếp cận – quay về lợi ích gốc – đưa tiêu chí khách quan.
+
+NÓI ĐỦ Ý (phần đã rút khỏi slide)
+• Vài phút xã giao đúng mực, vừa tạo không khí vừa quan sát thái độ.
+• Đề nghị đầu tiên là cái neo tâm lý — nên phải có căn cứ.
+• Nhượng bộ có điều kiện, ví dụ: “Nếu anh tăng số lượng lên 500, chúng tôi sẽ giảm 3%.” Nhượng bộ nhỏ dần để phát tín hiệu đã chạm giới hạn.
+• Bế tắc: tạm nghỉ; đổi người, đổi vấn đề, đổi cách tiếp cận; quay về lợi ích gốc.""",
  "Kết thúc và sau đàm phán": """KẾT THÚC (3 phút)
 • Tín hiệu chốt: đối phương hỏi chi tiết TRIỂN KHAI, thanh toán, thời gian giao hàng.
 • Nhấn: TÓM TẮT VÀ VĂN BẢN HÓA NGAY — biên bản ghi nhớ hoặc hợp đồng.
 • Sau đàm phán: thực hiện đúng cam kết, giữ quan hệ, rút kinh nghiệm.
-• Câu chốt: "Đàm phán xong mà không có giấy tờ thì coi như chưa xong."''""",
+• Câu chốt: "Đàm phán xong mà không có giấy tờ thì coi như chưa xong."''
+
+NÓI ĐỦ Ý (phần đã rút khỏi slide)
+• Tín hiệu sẵn sàng chốt: đối phương hỏi chi tiết triển khai, điều khoản thanh toán, thời gian giao hàng.
+• Văn bản hóa ngay: biên bản ghi nhớ, rồi hợp đồng đủ điều khoản cơ bản — kỹ thuật soạn thảo học ở Chương 5.
+• Sau đàm phán: thực hiện đúng cam kết chính là vốn cho lần đàm phán sau.""",
  "Kỹ năng nền tảng": """KỸ NĂNG (3 phút)
 • Nghe nhiều hơn nói; IM LẶNG ĐÚNG LÚC là vũ khí.
 • Thuyết phục bằng NGÔN NGỮ LỢI ÍCH CỦA ĐỐI PHƯƠNG, kèm số liệu và tiền lệ.
 • Kiểm soát cảm xúc: "tức giận là nhượng quyền kiểm soát cho đối phương".
-• Êkíp: phân vai trưởng đoàn – chuyên môn – ghi chép; TUYỆT ĐỐI không mâu thuẫn nội bộ trước mặt đối tác.""",
+• Êkíp: phân vai trưởng đoàn – chuyên môn – ghi chép; TUYỆT ĐỐI không mâu thuẫn nội bộ trước mặt đối tác.
+
+NÓI ĐỦ Ý (phần đã rút khỏi slide)
+• Im lặng đúng lúc: nhiều nhượng bộ xuất hiện chỉ vì đối phương không chịu được khoảng lặng.
+• Thuyết phục bằng số liệu, tiền lệ, quy định khách quan — không tranh cãi cảm tính.
+• Tách con người khỏi vấn đề; giữ bình tĩnh trước khiêu khích.
+• Êkíp: phân vai trưởng đoàn – chuyên môn – ghi chép; thống nhất tín hiệu nội bộ trước.""",
  "Nhận diện chiêu trò": """CHIÊU TRÒ (4 phút) — SINH VIÊN RẤT HỨNG THÚ
 • Điểm qua 5 chiêu: neo giá sốc, người tốt – kẻ xấu, thời hạn chót giả, CẮT LÁT SALAMI, đòi hỏi phút chót.
 • Salami: giải thích kỹ vì hay gặp nhất — đòi thêm từng chút sau khi đã thỏa thuận. Ứng phó: GÓI TOÀN BỘ điều khoản lại.
 • Đòi hỏi phút chót: ĐỊNH GIÁ yêu cầu đó và đòi đối ứng tương xứng, đừng chiều để cho xong.
-• Hỏi lớp: ai từng bị "chốt gấp trong hôm nay" khi mua hàng online?""",
+• Hỏi lớp: ai từng bị "chốt gấp trong hôm nay" khi mua hàng online?
+
+NÓI ĐỦ Ý (phần đã rút khỏi slide)
+• Neo giá sốc: bám vào tiêu chí khách quan, đừng vội điều chỉnh mục tiêu của mình.
+• Người tốt – kẻ xấu: nhận diện rồi chỉ đàm phán trên nội dung.
+• Thời hạn chót giả: kiểm chứng thực hư; có BATNA thì sẵn sàng rời bàn.
+• Cắt lát salami: gói toàn bộ điều khoản lại — “điểm này mở thì cả gói mở”.
+• Đòi hỏi phút chót: bình tĩnh định giá yêu cầu đó và đòi đối ứng tương xứng.""",
  "Role-play": """ROLE-PLAY (20 phút) — HOẠT ĐỘNG CHÍNH CỦA BUỔI
 • Chia cặp mua – bán, phát phiếu thông tin riêng cho mỗi bên (có ngân sách và giá sàn khác nhau).
 • 5 phút chuẩn bị: bắt buộc viết ra mục tiêu 3 mức và BATNA.
@@ -389,7 +463,12 @@ CHUYỂN Ý: "Vậy khi khách nổi giận thì làm sao?"''""",
  "Văn bản là gì": """KHÁI NIỆM (3 phút)
 • Đọc chậm định nghĩa của NĐ 30/2020 — đây là câu SẼ RA THI.
 • Nhấn cụm "TRÌNH BÀY ĐÚNG THỂ THỨC, KỸ THUẬT THEO QUY ĐỊNH": nội dung hay mà sai thể thức thì vẫn bị trả lại.
-• Vai trò: nhấn "căn cứ pháp lý" — cho ví dụ tranh chấp hợp đồng ra tòa, cái tòa xem là VĂN BẢN.""",
+• Vai trò: nhấn "căn cứ pháp lý" — cho ví dụ tranh chấp hợp đồng ra tòa, cái tòa xem là VĂN BẢN.
+
+NÓI ĐỦ Ý (phần đã rút khỏi slide)
+• Định nghĩa pháp lý đầy đủ, Nghị định 30/2020/NĐ-CP: “Văn bản là thông tin thành văn được truyền đạt bằng ngôn ngữ hoặc ký hiệu, hình thành trong hoạt động của các cơ quan, tổ chức và được trình bày đúng thể thức, kỹ thuật theo quy định.”
+• Cách hiểu chung: hình thành trong hoạt động của cơ quan, tổ chức, DOANH NGHIỆP — không chỉ cơ quan nhà nước.
+• Bốn vai trò: phương tiện quản lý – điều hành; căn cứ pháp lý; lưu trữ thông tin; thể hiện hình ảnh chuyên nghiệp của tổ chức.""",
  "Phân loại văn bản": """PHÂN LOẠI (3 phút)
 • 4 nhóm — vẽ sơ đồ cây lên bảng.
 • Nhấn: doanh nghiệp KHÔNG ban hành văn bản quy phạm pháp luật, nhưng phải tuân thủ.
@@ -397,7 +476,13 @@ CHUYỂN Ý: "Vậy khi khách nổi giận thì làm sao?"''""",
  "Bốn yêu cầu về nội dung": """YÊU CẦU NỘI DUNG (3 phút)
 • Đi 4 yêu cầu, mỗi yêu cầu một ví dụ lỗi thực tế.
 • Nhấn yêu cầu 2: "Một con số sai trong văn bản có thể tạo hậu quả pháp lý rất lớn" — ví dụ ghi nhầm đơn giá trong hợp đồng.
-• Yêu cầu 4: đọc vài câu KHẨU NGỮ sai chuẩn cho lớp nhận diện ("mong anh chị thông cảm giúp em nha").""",
+• Yêu cầu 4: đọc vài câu KHẨU NGỮ sai chuẩn cho lớp nhận diện ("mong anh chị thông cảm giúp em nha").
+
+NÓI ĐỦ Ý (phần đã rút khỏi slide)
+• Đúng mục đích: mỗi văn bản tập trung MỘT chủ đề; ban hành đúng chức năng, nhiệm vụ.
+• Chính xác: một con số sai có thể tạo hậu quả pháp lý lớn — nhấn mạnh chỗ này cho sinh viên.
+• Rõ ràng: người nhận đọc MỘT LẦN là hiểu đúng ý người soạn.
+• Ngôn ngữ hành chính: nghiêm túc, lịch sự, không khẩu ngữ.""",
  "Chín thành phần thể thức": """SƠ ĐỒ THỂ THỨC (5 phút) — SLIDE QUAN TRỌNG NHẤT HỌC PHẦN
 • Yêu cầu cả lớp CHỤP LẠI SLIDE NÀY.
 • Chỉ từng số trên sơ đồ theo thứ tự 1 → 9, mỗi thành phần nói vị trí + một lưu ý.
@@ -408,7 +493,13 @@ CHUYỂN Ý: "Vậy khi khách nổi giận thì làm sao?"''""",
 • Đọc chậm từng con số, cho sinh viên ghi vào vở.
 • Mẹo nhớ LỀ TRÁI 30–35mm: rộng nhất vì để ĐÓNG GÁY LƯU TRỮ.
 • Nhấn: Times New Roman, Unicode, cỡ 13–14. Không dùng Arial, không dùng TCVN3.
-• Số trang: TỪ TRANG THỨ HAI, canh giữa LỀ TRÊN (nhiều bạn hay đặt ở dưới — sai).""",
+• Số trang: TỪ TRANG THỨ HAI, canh giữa LỀ TRÊN (nhiều bạn hay đặt ở dưới — sai).
+
+NÓI ĐỦ Ý (phần đã rút khỏi slide)
+• Lề trái 30–35 mm rộng hơn vì phải chừa chỗ ĐÓNG GÁY.
+• Phông Times New Roman, bộ mã Unicode, cỡ 13–14, màu đen.
+• Số trang: đánh từ trang THỨ HAI, chữ số Ả Rập, canh giữa theo lề trên.
+• Ngôn ngữ: viết hoa và viết tắt phải đúng quy định; số liệu dùng chữ số Ả Rập.""",
  "Năm văn bản hành chính": """CHUỖI VĂN BẢN (3 phút)
 • Chỉ vào sơ đồ chuỗi: từ tờ trình → quyết định → công văn → hợp đồng → nghiệm thu → thanh lý.
 • Nói rõ: bài thực hành số 2 làm phần đầu chuỗi, bài số 3 làm phần sau.
@@ -417,20 +508,41 @@ CHUYỂN Ý: "Vậy khi khách nổi giận thì làm sao?"''""",
 • Quyết định: phần CĂN CỨ + phần các ĐIỀU. Điều cuối GHI HIỆU LỰC.
 • Lỗi hay gặp: dùng từ "đề nghị" trong quyết định — sai, phải dùng NGÔN NGỮ MỆNH LỆNH.
 • Tờ trình 3 phần: lý do → phương án → kiến nghị.
-• Nhấn: tờ trình phải có SỐ LIỆU và DỰ TOÁN, nếu không cấp trên không có cơ sở duyệt.""",
+• Nhấn: tờ trình phải có SỐ LIỆU và DỰ TOÁN, nếu không cấp trên không có cơ sở duyệt.
+
+NÓI ĐỦ Ý (phần đã rút khỏi slide)
+• Quyết định: phần căn cứ gồm căn cứ PHÁP LÝ và căn cứ THỰC TIỄN, mỗi căn cứ kết thúc bằng dấu chấm phẩy, căn cứ cuối kết thúc bằng dấu chấm. Điều cuối ghi hiệu lực và đối tượng thi hành.
+• Tờ trình: mở đầu nêu lý do và sự cần thiết; nội dung trình bày phương án, lợi ích, tính khả thi; kết thúc kiến nghị phê duyệt. Nhớ đính kèm hồ sơ, dự toán.""",
  "Công văn, Biên bản và Báo cáo": """CÔNG VĂN – BIÊN BẢN – BÁO CÁO (4 phút)
 • Công văn: nhắc lại KHÔNG CÓ TÊN LOẠI; mỗi công văn MỘT CHỦ ĐỀ; kết thúc "Trân trọng./."
 • Biên bản: LẬP NGAY TẠI CHỖ; chữ ký các bên tạo GIÁ TRỊ PHÁP LÝ; người ghi KHÔNG thêm nhận xét chủ quan.
-• Báo cáo: mạch 4 phần. Nhấn: phải nêu cả HẠN CHẾ, đừng chỉ kể thành tích.""",
+• Báo cáo: mạch 4 phần. Nhấn: phải nêu cả HẠN CHẾ, đừng chỉ kể thành tích.
+
+NÓI ĐỦ Ý (phần đã rút khỏi slide)
+• Công văn các loại: đề nghị, phúc đáp, đôn đốc, hướng dẫn, giải thích, mời họp. Kết thúc bằng “Trân trọng./.”
+• Biên bản: chữ ký các bên là yếu tố TẠO GIÁ TRỊ PHÁP LÝ — thiếu chữ ký thì biên bản chỉ là tờ giấy ghi chép.
+• Báo cáo có bốn dạng: định kỳ, đột xuất, chuyên đề, sơ kết – tổng kết.""",
  "Thư tín thương mại và báo giá": """THƯ TÍN – BÁO GIÁ (4 phút)
 • Nguyên tắc 5C: viết 5 chữ C lên bảng, giải nghĩa từng chữ bằng tiếng Việt.
 • Email: tiêu đề rõ, chữ ký đầy đủ, PHẢN HỒI TRONG 24 GIỜ.
-• Báo giá: nhấn mạnh THỜI HẠN HIỆU LỰC. Hỏi lớp vì sao cần — vì giá thị trường biến động, tránh bị ràng buộc giá cũ.""",
+• Báo giá: nhấn mạnh THỜI HẠN HIỆU LỰC. Hỏi lớp vì sao cần — vì giá thị trường biến động, tránh bị ràng buộc giá cũ.
+
+NÓI ĐỦ Ý (phần đã rút khỏi slide)
+• Nguyên tắc 5C: Clear (rõ) • Concise (gọn) • Correct (đúng) • Complete (đủ) • Courteous (lịch sự).
+• Kết cấu thư: mở đầu – nội dung – kết thúc.
+• Báo giá phải có THỜI HẠN HIỆU LỰC — thiếu là tranh chấp khi giá thị trường biến động.
+• Email: phản hồi trong 24 giờ, kể cả khi chỉ để báo “đã nhận, đang xử lý”.""",
  "Hợp đồng — nghiệm thu — thanh lý": """BỘ BA VĂN BẢN (4 phút)
 • Căn cứ pháp lý: Bộ luật Dân sự 2015 và Luật Thương mại 2005.
 • Điểm qua 5 điều khoản chính, nhấn PHẠT VI PHẠM và GIẢI QUYẾT TRANH CHẤP — hai điều sinh viên hay quên.
 • Nghiệm thu = căn cứ THANH TOÁN. Thanh lý = CHẤM DỨT hiệu lực và quyết toán.
-• Câu chốt: "Đủ bộ ba này thì hồ sơ thương vụ mới trọn vẹn về pháp lý."''""",
+• Câu chốt: "Đủ bộ ba này thì hồ sơ thương vụ mới trọn vẹn về pháp lý."''
+
+NÓI ĐỦ Ý (phần đã rút khỏi slide)
+• Hợp đồng thương mại căn cứ Bộ luật Dân sự 2015 và Luật Thương mại 2005.
+• Bộ ba khép kín một thương vụ: hợp đồng → biên bản nghiệm thu → biên bản thanh lý.
+• Nghiệm thu xác nhận khối lượng và chất lượng, là căn cứ để thanh toán.
+• Thanh lý xác nhận hoàn thành nghĩa vụ và quyết toán phần còn lại.""",
  "Từ đàm phán đến hợp đồng": """HOẠT ĐỘNG NHÓM (20 phút)
 • Nối tiếp thương vụ đã đàm phán ở Chương 4 — nhắc lại tình huống 1 câu.
 • Nhóm 4–5 bạn, 15 phút làm, 5 phút trình bày.
