@@ -291,3 +291,27 @@ GHI_CHU.update({
     'KẾT THÚC HỌC PHẦN (2 phút)\n• Cảm ơn lớp, nhắc lịch thi và cấu trúc đề.\n• Nhắc: 200 câu trắc nghiệm và 8 video ôn tập đã có trên nhóm lớp.':
         'END OF THE COURSE (2 minutes)\n• Thank the class; remind them of the examination date and the structure of the paper.\n• Remind them: the 200 multiple-choice questions and the 8 revision videos are already on the class group.',
 })
+
+# ------------------------------ Khối lộ ra sau khi sửa lỗi rơi nhầm slide
+GHI_CHU.update({
+    'CHUYỂN MỤC (30 giây) — nhắc: phần còn lại của chương là phần hay ra thi.':
+        'SECTION CHANGE (30 seconds) — remind them the rest of the chapter is the part that comes up in the exam.',
+    'MỞ ĐẦU (2 phút)\n• Nhắc lại 1 câu về chương trước: mô hình 5 khâu + 5 nguyên tắc.\n• Vào đề bằng câu hỏi: "Bạn có bao giờ đánh giá một người chỉ sau 10 giây gặp mặt chưa?"\n• Chốt: chương này là 4 kỹ năng dùng hằng ngày suốt đời đi làm.':
+        'OPENING (2 minutes)\n• One sentence back to the previous chapter: the five-stage model and the five principles.\n• Go in with a question: "Have you ever judged someone within ten seconds of meeting them?"\n• Land it: this chapter is four skills you will use every working day of your life.',
+    'MỞ ĐẦU (2 phút)\n• Câu dẫn: "Cùng một kỹ năng, nhưng mỗi bối cảnh có một luật chơi riêng."\n• Hỏi lớp: "Nói chuyện với sếp và nói chuyện với bạn thân khác nhau chỗ nào?"\'\'':
+        'OPENING (2 minutes)\n• The way in: "The same skill, but every setting has its own rules of play."\n• Ask the class: "What is different about talking to your boss and talking to a close friend?"\'\'',
+    'CHUYỂN MỤC (30 giây) — báo trước: phần quan trọng nhất chương nằm ở đây (quy trình LAST).':
+        'SECTION CHANGE (30 seconds) — flag it in advance: the most important thing in the chapter is in here (the LAST procedure).',
+    'MỞ ĐẦU (2 phút)\n• Câu dẫn mạnh: "Trong kinh doanh, bạn không nhận được cái bạn xứng đáng — bạn nhận được cái bạn ĐÀM PHÁN ĐƯỢC."\n• Hỏi lớp: "Ai từng mặc cả khi mua hàng? Đó đã là đàm phán rồi."\'\'':
+        'OPENING (2 minutes)\n• A strong way in: "In business you don\'t get what you deserve — you get what you NEGOTIATE."\n• Ask the class: "Who has haggled over a price? That was already a negotiation."\'\'',
+    'CHUYỂN MỤC (30 giây) — nhấn con số 70% ngay tại slide này.':
+        'SECTION CHANGE (30 seconds) — press the 70% figure right here on this slide.',
+    'MỞ ĐẦU (2 phút)\n• Câu dẫn: "Chương 4 dạy các bạn đạt thỏa thuận bằng lời. Chương 5 dạy cách biến lời nói thành văn bản có giá trị pháp lý."\n• Hỏi lớp: "Ai đã từng viết đơn xin nghỉ học? Có đúng thể thức không?"\'\'':
+        'OPENING (2 minutes)\n• The way in: "Chapter 4 taught you to reach an agreement in speech. Chapter 5 teaches you to turn speech into a document with legal force."\n• Ask the class: "Who has written a letter asking for leave from class? Was it in the correct format?"\'\'',
+    'LÀM BÀI (20 phút)\n• Phát tình huống, nhắc: phần thân chỉ 3–5 dòng.\n• Cô đi từng bàn hỗ trợ, ghi lại lỗi phổ biến.\n• Còn 5 phút: nhắc cả lớp lưu file đúng tên "HoTen_Lop_Bai1.docx" rồi nộp.\n• Chốt buổi: nêu 3 lỗi phổ biến nhất vừa quan sát được.':
+        'THE EXERCISE (20 minutes)\n• Hand out the situations; remind them the body is only 3–5 lines.\n• Walk the room helping, and note the common mistakes.\n• Five minutes left: remind the class to save the file as "FullName_Class_Lab1.docx" and submit.\n• Close the session: name the three most common mistakes you just watched them make.',
+    'LÀM BÀI (30 phút)\n• Bốc thăm: chuẩn bị sẵn phiếu, mỗi phiếu ghi 2 loại văn bản.\n• Nhắc dùng lại bảng kiểm 8 điểm của Bài 1.\n• Cô đi từng bàn; ưu tiên hỗ trợ bạn bốc trúng quyết định và biên bản (khó nhất).\n• Cuối buổi: thu bài, nhắc hạn nộp bản chỉnh sửa sau 1 tuần.':
+        'THE EXERCISE (30 minutes)\n• The draw: have the slips ready, two document types on each.\n• Remind them to reuse the eight-point checklist from Lab 1.\n• Walk the room; help first whoever drew the decision and the minutes (the hardest two).\n• End of session: collect the work, remind them the revised version is due in a week.',
+    'LÀM BÀI (30 phút)\n• Mỗi cặp làm bộ hồ sơ; nhắc dùng lại tình huống của chính nhóm mình từ Chương 4.\n• 20 phút soạn, 10 phút đổi hồ sơ với cặp khác và tìm lỗi.\n• Yêu cầu mỗi cặp ghi ra 3 điểm bất lợi phát hiện được — đây là phần cô đánh giá tư duy.\n• Chốt học phần: nhắc sinh viên lịch thi và phạm vi ôn tập.':
+        "THE EXERCISE (30 minutes)\n• Each pair produces the full file; remind them to reuse their own group's case from Chapter 4.\n• 20 minutes drafting, 10 minutes swapping files with another pair to hunt for faults.\n• Require each pair to write down three disadvantageous terms they found — this is where you are marking their thinking.\n• Close the course: remind students of the examination date and what it covers.",
+})

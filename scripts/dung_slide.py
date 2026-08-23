@@ -47,13 +47,31 @@ DAT_TEN = [
 
 
 def dac_diem(duong):
-    """Ba con số đủ để biết hai bộ slide có cùng nội dung hay không."""
+    """Ba con số để in ra cho dễ đọc — KHÔNG dùng làm căn cứ đối chiếu.
+
+    Ba con số này từng là toàn bộ phép đối chiếu, và chúng đã để lọt một lỗi
+    nặng: ghi chú giảng bài rơi nhầm slide. Bốn slide phân cách mang ghi chú
+    của slide nội dung ngay sau nó, bốn slide nội dung thì trống — mà số slide,
+    số chữ và SỐ LƯỢNG khối ghi chú không đổi một đơn vị nào. Đếm thì mù với
+    hoán vị. Căn cứ đối chiếu bây giờ là cap_ghi_chu().
+    """
     p = Presentation(duong)
     chu = sum(len(sh.text_frame.text.split())
               for s in p.slides for sh in s.shapes if sh.has_text_frame)
     ghi = sum(1 for s in p.slides
               if s.has_notes_slide and s.notes_slide.notes_text_frame.text.strip())
     return len(p.slides), chu, ghi
+
+
+def cap_ghi_chu(duong):
+    """Ghi chú của TỪNG slide theo đúng thứ tự — ghi chú nào ngồi ở slide nào.
+
+    Trả về danh sách song song với slide, nên hoán vị hai khối ghi chú là thấy
+    ngay, còn đếm thì không.
+    """
+    p = Presentation(duong)
+    return [s.notes_slide.notes_text_frame.text.strip() if s.has_notes_slide else ""
+            for s in p.slides]
 
 
 def chay(lenh, tai):
@@ -84,12 +102,25 @@ def main():
             cu = os.path.join(GOC, dich)
             a = dac_diem(moi)
             b = dac_diem(cu) if os.path.exists(cu) else None
-            hop = a == b
+            # Đối chiếu THẬT nằm ở đây: từng cặp (slide, ghi chú).
+            ga = cap_ghi_chu(moi)
+            gb = cap_ghi_chu(cu) if os.path.exists(cu) else None
+            khac = [i for i in range(max(len(ga), len(gb or [])))
+                    if (ga[i] if i < len(ga) else None)
+                    != (gb[i] if gb and i < len(gb) else None)] if gb is not None else None
+            hop = a == b and not khac
             lech += not hop
             print("%-32s %2d sl %4d chữ %2d ghi | %s  %s" % (
                 os.path.basename(dich), a[0], a[1], a[2],
                 ("%2d sl %4d chữ %2d ghi" % b) if b else "     (chưa có)      ",
                 "khớp" if hop else "LỆCH"))
+            for i in (khac or [])[:6]:
+                cu_gc = (gb[i] if i < len(gb) else "") or "(trống)"
+                moi_gc = (ga[i] if i < len(ga) else "") or "(trống)"
+                print("      sl%-3d ghi chú cũ: %s" % (i + 1, cu_gc.split("\n")[0][:52]))
+                print("            ghi chú mới: %s" % moi_gc.split("\n")[0][:52])
+            if khac and len(khac) > 6:
+                print("      … còn %d slide nữa lệch ghi chú" % (len(khac) - 6))
             if ghi_de:
                 shutil.copyfile(moi, cu)
 
