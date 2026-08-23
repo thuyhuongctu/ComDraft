@@ -833,6 +833,224 @@ C4 = {
         'OF THE RESULT',
 }
 
+# ------------------------------------------------------------------ Chương 5
+C5 = {
+    'Tiếp nối thương vụ mua 20 máy tính đã đàm phán ở Chương 4: Phòng Hành chính Công ty X phải hoàn tất toàn bộ hồ sơ giấy tờ cho thương vụ, từ lúc đề xuất mua đến khi thanh toán xong.':
+        'Continuing the purchase of 20 computers negotiated in Chapter 4: the Administration Office of Company X must complete the whole paper trail, from the purchase request to final payment.',
+    'Phần thực hành tại phòng A0105 — Bài 1: Thể thức văn bản. Mang theo laptop, cài sẵn Microsoft Word và tải Nghị định 30/2020/NĐ-CP.':
+        'Lab in room A0105 — Session 1: document format. Bring a laptop with Microsoft Word installed and Decree 30/2020/ND-CP downloaded.',
+    'Thư tín đạt 5C, báo giá có hiệu lực rõ, hợp đồng đủ điều khoản — bộ ba hợp đồng, nghiệm thu, thanh lý khép kín thương vụ.':
+        'Letters that meet the 5C, a quotation with a clear validity, a contract with all its clauses — contract, acceptance and closure together seal the deal.',
+    'Quyết định theo Điều; tờ trình 3 phần; công văn không tên loại; biên bản lập tại chỗ; báo cáo theo mạch 4 phần.':
+        'A decision runs in Articles; a submission has three parts; an official letter has no type heading; minutes are written on the spot; a report follows four parts.',
+    'Nội dung hay đến đâu mà sai thể thức thì văn bản vẫn bị trả lại — thuộc 9 thành phần và các con số trình bày.':
+        'However good the content, wrong form gets it sent back — learn the nine components and the layout numbers.',
+    'Lề trên và dưới 20 – 25 mm • lề phải 15 – 20 mm • số trang đánh từ trang thứ hai, canh giữa theo lề trên.':
+        'Top and bottom margins 20 – 25 mm • right margin 15 – 20 mm • page numbers from the second page, centred on the top margin.',
+    'Liệt kê đầy đủ chuỗi văn bản cần soạn theo đúng trình tự thời gian và cho biết ai ký từng văn bản.':
+        'List the full chain of documents in chronological order and say who signs each one.',
+    'Chỉ ra 3 lỗi thể thức thường gặp nhất mà nhóm dự đoán sinh viên hay mắc phải khi soạn văn bản này.':
+        'Name the three formatting mistakes your group expects students to make most often on it.',
+    'Chuỗi văn bản của một thương vụ — sinh viên sẽ soạn lại đúng chuỗi này trong phần thực hành.':
+        'The chain of documents behind one deal — students will draft this same chain in the lab.',
+    'Từ lời nói sang chữ viết: biến mọi thỏa thuận thành văn bản đúng chuẩn, có giá trị pháp lý.':
+        'From speech to writing: turning every agreement into a properly formed document with legal force.',
+    'Nền tảng pháp lý và kỹ thuật: văn bản là gì và một trang văn bản đúng chuẩn trông thế nào.':
+        'The legal and technical ground: what a document is, and what a correct page looks like.',
+    'Chọn một văn bản trong chuỗi, phác thảo bố cục đầy đủ 9 thành phần thể thức lên giấy A4.':
+        'Pick one document from the chain and sketch its full nine-component layout on A4.',
+    'Nêu 9 thành phần thể thức văn bản hành chính và các quy định về lề trang, phông chữ.':
+        'State the nine formal components of an administrative document and the rules on margins and typeface.',
+    'Biết văn bản thuộc nhóm nào thì mới biết soạn theo mẫu nào và ai có thẩm quyền ký.':
+        'Only once you know the group do you know which template to use and who may sign.',
+    'Clear (rõ) • Concise (gọn) • Correct (đúng) • Complete (đủ) • Courteous (lịch sự).':
+        'Clear • Concise • Correct • Complete • Courteous.',
+    'Hàng hóa • số lượng, đơn giá, thuế • giao hàng, thanh toán • thời hạn hiệu lực':
+        'The goods • quantity, unit price, tax • delivery, payment • validity period',
+    '“Thông tin thành văn… được trình bày đúng thể thức, kỹ thuật theo quy định.”':
+        '“Information put into writing… laid out in the prescribed form and technique.”',
+    'Văn bản do người có thẩm quyền ban hành để giải quyết một công việc cụ thể.':
+        'A document issued by an authorised person to settle one specific matter.',
+    'yêu cầu về nội dung và 9 thành phần thể thức theo Nghị định 30/2020/NĐ-CP.':
+        'the content requirements and the nine formal components under Decree 30/2020/ND-CP.',
+    'được thư tín thương mại, báo giá và hợp đồng phục vụ giao dịch kinh doanh.':
+        'commercial letters, quotations and contracts for business dealings.',
+    'Không có tên loại — chỉ số, ký hiệu, trích yếu. Mỗi công văn một chủ đề':
+        'No document-type heading — only number, reference and subject line. One subject each',
+    'Phương tiện ghi lại và truyền đạt thông tin bằng ngôn ngữ hoặc ký hiệu':
+        'A means of recording and conveying information in language or signs',
+    'Số liệu có căn cứ, kiểm chứng được — sai một con số là hậu quả pháp lý':
+        'Figures with grounds, verifiable — one wrong number carries legal consequences',
+    'Thư tín, báo giá và hợp đồng — bộ hồ sơ đưa một thương vụ đi đến đích.':
+        'Letters, quotations and contracts — the paperwork that carries a deal to the finish.',
+    'Đối tượng • giá và thanh toán • quyền – nghĩa vụ • phạt • tranh chấp':
+        'Subject matter • price and payment • rights and obligations • penalties • disputes',
+    'khái niệm văn bản và phân biệt được các nhóm văn bản trong tổ chức.':
+        'what a document is, and tell apart the groups of documents an organisation uses.',
+    'được quyết định, tờ trình, công văn, biên bản, báo cáo đúng bố cục.':
+        'a decision, a submission, an official letter, minutes and a report in correct layout.',
+    'Ghi tại chỗ. Thời gian – thành phần – diễn biến – kết luận – chữ ký':
+        'Written on the spot. Time – those present – proceedings – conclusion – signatures',
+    'Nêu nguyên tắc 5C và các điều khoản cơ bản của hợp đồng thương mại.':
+        'State the 5C rule and the basic clauses of a commercial contract.',
+    'Quản lý – điều hành • căn cứ pháp lý • lưu trữ • hình ảnh tổ chức':
+        "Management • legal basis • record-keeping • the organisation's image",
+    'Đánh từ trang thứ hai, bằng chữ số Ả Rập, canh giữa theo lề trên.':
+        'From the second page, Arabic numerals, centred on the top margin.',
+    'Đề xuất cấp có thẩm quyền phê duyệt một chủ trương hay phương án':
+        'Asking the competent level to approve a policy or a plan',
+    'Hỏi hàng • chào hàng • đặt hàng • xác nhận • khiếu nại • cảm ơn':
+        'Enquiry • offer • order • confirmation • complaint • thanks',
+    'Hoàn thành nghĩa vụ, chấm dứt hiệu lực, quyết toán phần còn lại':
+        'Obligations discharged, the contract ended, the remainder settled',
+    'Trình bày khái niệm văn bản và các nhóm văn bản trong tổ chức.':
+        'Explain what a document is and the groups of documents an organisation uses.',
+    'Đúng quy định hiện hành; văn phong nghiêm túc, không khẩu ngữ':
+        'In line with current rules; formal register, no colloquialisms',
+    'Phần căn cứ → nội dung theo các Điều → Điều cuối ghi hiệu lực':
+        'The grounds → the substance in Articles → the last Article states when it takes effect',
+    'Tiêu đề đúng nội dung • chữ ký đầy đủ • phản hồi trong 24 giờ':
+        'A subject line that matches • a full signature block • reply within 24 hours',
+    'Năm loại văn bản dùng hằng ngày trong mọi cơ quan, tổ chức.':
+        'Five documents used every day in every organisation.',
+    'Tình hình → kết quả → hạn chế và nguyên nhân → phương hướng':
+        'The situation → results → shortcomings and causes → the way forward',
+    'Xác nhận khối lượng và chất lượng — căn cứ để thanh toán':
+        'Confirms quantity and quality — the basis for payment',
+    'A4 • trên–dưới 20–25 mm • trái 30–35 mm • phải 15–20 mm':
+        'A4 • top and bottom 20–25 mm • left 30–35 mm • right 15–20 mm',
+    'Tiếng Việt chuẩn mực; viết hoa, viết tắt đúng quy định':
+        'Standard Vietnamese; capitals and abbreviations per the rules',
+    'Times New Roman, bộ mã Unicode, cỡ 13 – 14, màu đen.':
+        'Times New Roman, Unicode, 13 – 14 pt, black.',
+    'So sánh bố cục của quyết định, tờ trình và công văn.':
+        'Compare the layouts of a decision, a submission and an official letter.',
+    'Lý do → phương án, lợi ích → kiến nghị phê duyệt':
+        'The reason → the plan and its benefits → the request for approval',
+    'Mỗi văn bản một chủ đề, ban hành đúng chức năng':
+        'One subject per document, issued within your function',
+    'Số thành phần thể thức bắt buộc theo NĐ 30/2020':
+        'The formal components required by Decree 30/2020',
+    'Định nghĩa pháp lý — Nghị định 30/2020/NĐ-CP':
+        'The legal definition — Decree 30/2020/ND-CP',
+    'Kỹ thuật trình bày — những con số phải thuộc':
+        'Layout technique — the numbers you must know by heart',
+    'Các yêu cầu về nội dung và thể thức văn bản':
+        'Requirements of content and of formal layout',
+    'Chín thành phần thể thức — NĐ 30/2020/NĐ-CP':
+        'The nine formal components — Decree 30/2020/ND-CP',
+    'Bốn con số của một trang văn bản đúng chuẩn':
+        'Four numbers that make a page correct',
+    'Văn bản thương mại giữ uy tín doanh nghiệp':
+        "Commercial documents carry the firm's standing",
+    'Thể thức là “giấy thông hành” của văn bản':
+        "Correct form is a document's passport",
+    'Khái niệm, phân loại và thể thức văn bản':
+        'Definition, groups and formal layout',
+    'Đúng pháp luật, đúng ngôn ngữ hành chính':
+        'Lawful, in administrative register',
+    'TÌNH HUỐNG (nhóm 4–5 sinh viên, 20 phút)':
+        'THE CASE (groups of 4–5, 20 minutes)',
+    'Soạn thảo văn bản hành chính thông dụng':
+        'Drafting the common administrative documents',
+    'Times New Roman, bộ mã Unicode, màu đen':
+        'Times New Roman, Unicode, black',
+    'Lề trái, rộng nhất để đóng gáy lưu trữ':
+        'The left margin, widest because the file is bound there',
+    'Đọc một lần là hiểu đúng ý người soạn':
+        "One reading is enough to get the drafter's meaning",
+    '210 × 297 mm — không dùng khổ Letter':
+        '210 × 297 mm — never Letter',
+    'Mỗi loại văn bản có một bố cục riêng':
+        'Each type has its own layout',
+    'Năm văn bản hành chính thông dụng':
+        'Five common administrative documents',
+    'Hợp đồng — nghiệm thu — thanh lý':
+        'Contract — acceptance — closure',
+    'Khái niệm và phân loại văn bản':
+        'What a document is, and its groups',
+    'Đúng mục đích, đúng thẩm quyền':
+        'Right purpose, right authority',
+    'Công văn, Biên bản và Báo cáo':
+        'Official letter, Minutes and Report',
+    'Thư tín thương mại và báo giá':
+        'Commercial letters and quotations',
+    'Soạn thảo văn bản thương mại':
+        'Drafting commercial documents',
+    'Rõ ràng — ngắn gọn — dễ hiểu':
+        'Clear, brief, easy to follow',
+    'Biên bản thanh lý hợp đồng':
+        'Contract closure record',
+    'Tờ trình — bố cục 3 phần':
+        'Submission — three parts',
+    'Từ đàm phán đến hợp đồng':
+        'From negotiation to contract',
+    'Bốn yêu cầu về nội dung':
+        'Four requirements of content',
+    'Chính xác — khách quan':
+        'Accurate and objective',
+    'Quyết định và Tờ trình':
+        'Decision and Submission',
+    'Quyết định — khái niệm':
+        'Decision — what it is',
+    'Khổ giấy và lề trang':
+        'Paper size and margins',
+    'Tờ trình — khái niệm':
+        'Submission — what it is',
+    'Quyết định — bố cục':
+        'Decision — layout',
+    'Hợp đồng thương mại':
+        'Commercial contract',
+    'Biên bản nghiệm thu':
+        'Acceptance record',
+    'Thư tín thương mại':
+        'Commercial letters',
+    'trình bày văn bản':
+        'documents',
+    'Phân loại văn bản':
+        'Groups of documents',
+    'Email thương mại':
+        'Business email',
+    'Cách hiểu chung':
+        'The general sense',
+    'Văn bản là gì?':
+        'What is a document?',
+    'MỤC 5.1 – 5.2':
+        'SECTIONS 5.1 – 5.2',
+    'Nguyên tắc 5C':
+        'The 5C rule',
+    'Soạn thảo và':
+        'Drafting and laying out',
+    'THÀNH PHẦN':
+        'COMPONENTS',
+    'Phông chữ':
+        'Typeface',
+    'Số trang':
+        'Page numbers',
+    'Ngôn ngữ':
+        'Language',
+    'KHỔ GIẤY':
+        'PAPER',
+    'Công văn':
+        'Official letter (công văn)',
+    'Biên bản':
+        'Minutes (biên bản)',
+    'MỤC 5.3':
+        'SECTION 5.3',
+    'MỤC 5.4':
+        'SECTION 5.4',
+    'Vai trò':
+        'What it does',
+    'MILIMET':
+        'MILLIMETRES',
+    'Báo cáo':
+        'Report (báo cáo)',
+    'Báo giá':
+        'Quotation',
+    'CỠ CHỮ':
+        'POINT SIZE',
+}
+
 TU_DIEN = {}
-for _b in (CHUNG, C1, C2, C3, C4):
+for _b in (CHUNG, C1, C2, C3, C4, C5):
     TU_DIEN.update(_b)
