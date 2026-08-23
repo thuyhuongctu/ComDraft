@@ -781,6 +781,60 @@ DAU_VIET = "ăâđêôơưàáảãạằắẳẵặầấẩẫậèéẻẽ�
            "òóỏõọồốổỗộờớởỡợùúủũụừứửữựỳýỷỹỵ"
 
 DICH_HINH = {
+    '>GIÂY<':
+        '>SECONDS<',
+    '>BƯỚC CHÂN<':
+        '>PACES<',
+    '>CENTIMET<':
+        '>CENTIMETRES<',
+    '>TỪ<':
+        '>WORDS<',
+    'Lắng nghe chủ động: không ngắt lời • ghi chú ý chính • phản hồi bằng ánh mắt, gật đầu •':
+        "Active listening: don't interrupt • note the main points • respond with your eyes and a nod •",
+    'Ấn tượng ban đầu rất khó đảo ngược — hãy chuẩn bị cả bốn, đừng phó mặc cho may mắn':
+        "A first impression is very hard to reverse — prepare all four, don't leave it to luck",
+    'Từ nghe cho có đến nghe thấu cảm — bậc thang của người giao tiếp chuyên nghiệp':
+        "From hearing-for-form's-sake to listening with empathy — the professional's staircase",
+    'Bốn cửa ải quyết định trong những khoảnh khắc đầu tiên của cuộc gặp':
+        'Four gates that decide the opening moments of a meeting',
+    'diễn đạt lại để xác nhận — “Nếu em hiểu đúng thì ý anh/chị là…”':
+        "restate to confirm — “If I've understood you, what you mean is…”",
+    'Đối phương hình thành đánh giá tổng thể gần như tức thì':
+        'The other person forms an overall judgement almost at once',
+    'Ánh mắt và nụ cười — kênh biểu cảm mạnh nhất':
+        'Eyes and smile — the strongest expressive channel',
+    'Lời chào, giới thiệu đúng nghi thức, rõ ràng':
+        'A greeting and an introduction, correct and clear',
+    'Hiểu cả cảm xúc và nhu cầu đằng sau lời nói':
+        'Understanding the feeling and the need behind the words',
+    'Dáng đi, tư thế, sự tự tin được đọc từ xa':
+        'Your walk, your posture, your confidence are read from a distance',
+    'Tập trung vào lời nói, ghi nhận thông tin':
+        'Focused on the words, taking in the facts',
+    'Quy tắc 4 × 20 — ấn tượng ban đầu':
+        'The 4 × 20 rule — first impressions',
+    'Gật gù nhưng tâm trí ở nơi khác':
+        'Nodding along, mind elsewhere',
+    'Chỉ nghe phần mình quan tâm':
+        'Only the part that interests you',
+    'Năm mức độ lắng nghe':
+        'The five levels of listening',
+    'Không nghe gì cả':
+        'Taking in nothing at all',
+    'Nghe chọn lọc':
+        'Selective hearing',
+    'Nghe chăm chú':
+        'Attentive listening',
+    'Nghe thấu cảm':
+        'Empathetic listening',
+    'Giả vờ nghe':
+        'Pretending',
+    'gương mặt':
+        'of face',
+    'đầu tiên':
+        'first',
+    'Phớt lờ':
+        'Ignoring',
     'Vòng phản hồi: người nhận trở thành người gửi — giao tiếp là quá trình hai chiều, không phải một chiều':
         'The feedback loop: the receiver becomes the sender — communication runs both ways, not one',
     'Bốn cặp đối nhau — một cuộc giao tiếp luôn nằm đâu đó trên cả bốn trục':
@@ -886,10 +940,19 @@ DICH_HINH = {
 }
 
 
+HU_TU = ("la", "va", "cua", "cho", "cac", "mot", "khong", "khi", "voi",
+         "thi", "co", "duoc", "nguoi", "nhung", "trong", "den", "tu")
+
+
 def _con_tieng_viet(t):
     import re
     t = re.sub(r"<[^>]+>", " ", t)
-    return sorted({c for c in t.lower() if c in DAU_VIET})
+    con = sorted({c for c in t.lower() if c in DAU_VIET})
+    if con:
+        return con
+    tach = re.findall(r"[A-Za-z]+", t.lower())
+    lot = sorted({w for w in tach if w in HU_TU})
+    return lot
 
 
 def render_en():
