@@ -11,8 +11,12 @@ import shutil
 import subprocess
 import sys
 
-REPO = "/workspace/comdraft"
-TAM = "/tmp/claude-0/-home-user/d1dedf4c-393d-52ad-bd77-635eef9219c6/scratchpad/pdf"
+# REPO từng ghi cứng "/workspace/comdraft" và TAM ghi cứng một thư mục nháp của
+# một phiên làm việc cũ. Cả hai đều không còn tồn tại, nên tệp này không chạy
+# được — cùng một loại lỗi với năm chỗ đứt khác trong dây chuyền dựng.
+import tempfile
+REPO = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+TAM = tempfile.mkdtemp(prefix="comdraft-anh-slide-")
 DICH = os.path.join(REPO, "assets", "slides")
 RONG, CAO = 1280, 720
 

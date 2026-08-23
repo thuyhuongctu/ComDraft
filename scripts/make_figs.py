@@ -5,7 +5,10 @@ import os
 from playwright.sync_api import sync_playwright
 
 CHROME = "/opt/pw-browsers/chromium-1194/chrome-linux/chrome"
-OUT = os.path.dirname(os.path.abspath(__file__))
+# Trước đây trỏ vào chính thư mục scripts/, nên chạy lại là hình rơi lung tung
+# cạnh mã nguồn chứ không vào figures/ — và add_images.py thì đọc figures/.
+# Một lỗi nữa cùng loại với bốn chỗ đứt đã sửa ở dây chuyền dựng slide.
+OUT = os.path.join(os.path.dirname(os.path.abspath(__file__)), "..", "figures")
 
 CORAL = "#DC756A"; RUST = "#AC4D33"; BLUSH = "#FBCEC9"
 BLUSH_SOFT = "#FDF1EF"; CREAM = "#FDFBF8"; INK = "#3A2B28"; GRAY = "#8A7A76"
@@ -459,6 +462,180 @@ FIGS["c4-tien-trinh-dam-phan"] = ("""
 .tip{background:%(BLUSH_SOFT)s;border:1.5px solid %(BLUSH)s;border-radius:12px;padding:14px 16px;font-size:13px;line-height:1.55}
 .tip b{color:%(RUST)s}
 """ % dict(BLUSH=BLUSH, BLUSH_SOFT=BLUSH_SOFT, CORAL=CORAL, RUST=RUST, INK=INK), 1240, 545)
+
+
+# ---------- 11. Ba trục khác biệt văn hóa (Chương 3) ----------
+# Slide 3.4 cũ là bốn thẻ chữ, mỗi thẻ một câu 40 chữ. Nội dung vốn là bốn phép
+# ĐỐI CHIẾU hai cực, mà thẻ chữ thì không cho thấy hai cực nằm hai đầu một trục.
+FIGS["c3-ba-truc-van-hoa"] = ("""
+<div class="wrap">
+<h1>Ba trục khác biệt văn hóa</h1>
+<div class="sub">Không có cực nào đúng hơn cực nào — biết mình đang ở đâu trên trục mới là việc</div>
+<div class="truc">
+  <div class="hang">
+    <div class="ten">Cách nói</div>
+    <div class="cuc trai"><b>Nói thẳng</b><i>Đức · Mỹ · Hà Lan</i><span>Rõ ràng là tôn trọng</span></div>
+    <div class="thanh"></div>
+    <div class="cuc phai"><b>Nói vòng</b><i>Nhật · Hàn · Việt</i><span>“Để chúng tôi xem xét” có thể là lời từ chối</span></div>
+  </div>
+  <div class="hang">
+    <div class="ten">Thứ bậc</div>
+    <div class="cuc trai"><b>Bình đẳng</b><i>Bắc Âu · Úc</i><span>Gọi tên, tranh luận thẳng với sếp</span></div>
+    <div class="thanh"></div>
+    <div class="cuc phai"><b>Tôn ti</b><i>Nhật · Hàn · Trung</i><span>Đúng vai, đúng cấp, quyết định tập thể</span></div>
+  </div>
+  <div class="hang">
+    <div class="ten">Thời gian</div>
+    <div class="cuc trai"><b>Giờ giấc chặt</b><i>Đức · Nhật · Thụy Sĩ</i><span>Trễ 5 phút là thất lễ</span></div>
+    <div class="thanh"></div>
+    <div class="cuc phai"><b>Thời gian linh hoạt</b><i>Nam Âu · Trung Đông</i><span>Quan hệ đi trước, tiến độ đi sau</span></div>
+  </div>
+</div>
+<div class="canh-bao">Cử chỉ, màu sắc, con số, quà tặng đều có thể nhạy cảm —
+  <b>tra cứu trước</b> khi gặp đối tác nước ngoài, đừng suy từ thói quen của mình</div>
+</div>
+""", """
+.truc{margin:24px 0 18px;display:flex;flex-direction:column;gap:16px}
+.hang{display:flex;align-items:center;gap:0;position:relative;padding-top:16px}
+.ten{position:absolute;top:-2px;left:50%%;transform:translateX(-50%%);background:%(RUST)s;color:#fff;
+  font-size:12px;font-weight:800;letter-spacing:1.2px;text-transform:uppercase;
+  padding:3px 14px;border-radius:999px;z-index:2}
+.cuc{flex:1;background:#fff;border:1.5px solid %(BLUSH)s;border-radius:14px;padding:14px 16px;
+  box-shadow:0 3px 12px rgba(172,77,51,.06)}
+.cuc.trai{text-align:right}
+.cuc b{display:block;font-size:16px;color:%(RUST)s}
+.cuc i{display:block;font-style:normal;font-size:11.5px;color:%(CORAL)s;letter-spacing:.6px;margin:2px 0 5px}
+.cuc span{display:block;font-size:12.5px;color:%(INK)s;line-height:1.45}
+.thanh{width:74px;height:3px;background:linear-gradient(90deg,%(CORAL)s,%(BLUSH)s,%(CORAL)s);flex:none}
+.canh-bao{background:%(BLUSH_SOFT)s;border:1.5px solid %(BLUSH)s;border-radius:12px;
+  padding:13px 16px;font-size:13px;line-height:1.55}
+""" % dict(RUST=RUST, CORAL=CORAL, BLUSH=BLUSH, BLUSH_SOFT=BLUSH_SOFT, INK=INK), 1220, 600)
+
+# ---------- 12. Ba kiểu đàm phán (Chương 4) ----------
+# Ba kiểu vốn chỉ khác nhau ở bốn điểm. Bảng đối chiếu cho thấy điều đó trong
+# một cái nhìn; ba thẻ chữ rời thì không.
+FIGS["c4-ba-kieu-dam-phan"] = ("""
+<div class="wrap">
+<h1>Ba kiểu đàm phán</h1>
+<div class="sub">Cùng một bàn thương lượng, ba cách ứng xử cho ba kết quả khác hẳn nhau</div>
+<table class="bang">
+  <tr><th></th>
+      <th class="mem">Kiểu MỀM</th><th class="cung">Kiểu CỨNG</th><th class="ng">Kiểu NGUYÊN TẮC</th></tr>
+  <tr><td class="nhan">Coi đối tác là</td>
+      <td>Bạn bè</td><td>Đối thủ</td><td class="dam">Người cùng giải bài toán</td></tr>
+  <tr><td class="nhan">Mục tiêu</td>
+      <td>Giữ quan hệ</td><td>Thắng bằng mọi giá</td><td class="dam">Kết quả hợp lý, quan hệ còn</td></tr>
+  <tr><td class="nhan">Khi bế tắc</td>
+      <td>Nhượng bộ</td><td>Gây sức ép</td><td class="dam">Quay về tiêu chí khách quan</td></tr>
+  <tr><td class="nhan">Rủi ro</td>
+      <td>Thiệt về mình</td><td>Mất đối tác</td><td class="dam">Mất thời gian chuẩn bị</td></tr>
+</table>
+<div class="chot">Kiểu nguyên tắc là kiểu nên theo: <b>tách con người khỏi vấn đề</b> ·
+  bàn <b>lợi ích</b> chứ không bàn <b>lập trường</b> · dựa vào <b>tiêu chí khách quan</b></div>
+</div>
+""", """
+.bang{width:100%%;border-collapse:separate;border-spacing:8px;margin:24px 0 18px}
+.bang th{padding:12px 10px;border-radius:12px;font-size:15px;color:#fff}
+.bang th.mem{background:#C9BDB9}.bang th.cung{background:#D9A79E}.bang th.ng{background:%(RUST)s}
+.bang td{background:#fff;border:1.5px solid %(BLUSH)s;border-radius:12px;padding:12px 14px;
+  font-size:13.5px;text-align:center;line-height:1.4}
+.bang td.nhan{background:%(BLUSH_SOFT)s;border-color:%(BLUSH)s;text-align:left;
+  font-weight:700;color:%(RUST)s;font-size:13px;width:150px}
+.bang td.dam{border-color:%(CORAL)s;border-width:2px;font-weight:700;color:%(RUST)s}
+.chot{background:%(BLUSH_SOFT)s;border:1.5px solid %(BLUSH)s;border-radius:12px;
+  padding:13px 16px;font-size:13px;line-height:1.6}
+""" % dict(RUST=RUST, CORAL=CORAL, BLUSH=BLUSH, BLUSH_SOFT=BLUSH_SOFT), 1200, 560)
+
+# ---------- 13. Phân loại văn bản (Chương 5) ----------
+FIGS["c5-phan-loai-van-ban"] = ("""
+<div class="wrap">
+<h1>Ba nhóm văn bản</h1>
+<div class="sub">Phân biệt được nhóm thì mới biết soạn theo mẫu nào và ai có thẩm quyền ký</div>
+<div class="goc">VĂN BẢN</div>
+<div class="nhanh"></div>
+<div class="ba">
+  <div class="nhom">
+    <div class="dau">QUY PHẠM PHÁP LUẬT</div>
+    <div class="mo">Chứa quy tắc xử sự chung, áp dụng nhiều lần, do cơ quan nhà nước có thẩm quyền ban hành</div>
+    <div class="vd">Luật · Nghị định · Thông tư</div>
+  </div>
+  <div class="nhom noi">
+    <div class="dau">HÀNH CHÍNH</div>
+    <div class="mo">Dùng trong quản lý, điều hành hằng ngày của cơ quan, doanh nghiệp</div>
+    <div class="vd">Quyết định · Công văn · Tờ trình · Biên bản · Báo cáo</div>
+  </div>
+  <div class="nhom">
+    <div class="dau">CHUYÊN NGÀNH</div>
+    <div class="mo">Dùng trong một lĩnh vực nghiệp vụ nhất định, theo mẫu riêng của ngành</div>
+    <div class="vd">Hợp đồng · Hóa đơn · Chứng từ kế toán</div>
+  </div>
+</div>
+<div class="chu">Học phần này tập trung vào nhóm giữa —
+  <b>văn bản hành chính</b> — và nhóm chuyên ngành phần <b>hợp đồng thương mại</b></div>
+</div>
+""", """
+.goc{width:190px;margin:22px auto 0;background:%(RUST)s;color:#fff;text-align:center;
+  padding:11px 0;border-radius:12px;font-weight:800;letter-spacing:2px;font-size:15px}
+.nhanh{width:2px;height:22px;background:%(CORAL)s;margin:0 auto}
+.ba{display:flex;gap:16px;margin:0 0 18px;position:relative;padding-top:14px}
+.ba:before{content:"";position:absolute;top:0;left:16%%;right:16%%;height:2px;background:%(CORAL)s}
+.nhom{flex:1;background:#fff;border:1.5px solid %(BLUSH)s;border-radius:16px;padding:16px 15px;
+  position:relative;box-shadow:0 3px 12px rgba(172,77,51,.06)}
+.nhom:before{content:"";position:absolute;top:-14px;left:50%%;width:2px;height:14px;background:%(CORAL)s}
+.nhom.noi{border-color:%(CORAL)s;border-width:2px;background:%(BLUSH_SOFT)s}
+.dau{font-weight:800;font-size:13px;letter-spacing:1.1px;color:%(RUST)s;margin-bottom:8px}
+.mo{font-size:12.5px;line-height:1.5;color:%(INK)s;min-height:56px}
+.vd{margin-top:10px;padding-top:10px;border-top:1px solid %(BLUSH)s;font-size:12px;color:%(CORAL)s;font-weight:700}
+.chu{background:%(BLUSH_SOFT)s;border:1.5px solid %(BLUSH)s;border-radius:12px;
+  padding:13px 16px;font-size:13px;line-height:1.55}
+""" % dict(RUST=RUST, CORAL=CORAL, BLUSH=BLUSH, BLUSH_SOFT=BLUSH_SOFT, INK=INK), 1180, 560)
+
+# ---------- 14. Cấu trúc thư tín thương mại (Thực hành bài 3) ----------
+# Đây là bài THỰC HÀNH: sinh viên sắp phải gõ đúng bố cục này ra Word. Một tờ
+# giấy mô phỏng dạy nhanh hơn một danh sách gạch đầu dòng về cùng bố cục ấy.
+FIGS["th3-thu-tin-thuong-mai"] = ("""
+<div class="wrap">
+<h1>Bố cục một thư tín thương mại</h1>
+<div class="sub">Sinh viên sẽ gõ đúng bố cục này trong bài nộp số 3</div>
+<div class="canh">
+  <div class="to">
+    <div class="d dau2">TIÊU ĐỀ THƯ — tên, địa chỉ, điện thoại, email doanh nghiệp</div>
+    <div class="d ngay">Số: … / CV-…&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Vĩnh Long, ngày … tháng … năm …</div>
+    <div class="d nhan2">Kính gửi: <span class="mo2">tên và chức danh người nhận</span></div>
+    <div class="d">V/v: <span class="mo2">trích yếu — một dòng, nói đúng việc</span></div>
+    <div class="d than">MỞ ĐẦU — nêu lý do viết thư, dẫn chiếu văn bản/cuộc gặp trước nếu có</div>
+    <div class="d than">NỘI DUNG — mỗi ý một đoạn; số liệu, thời hạn, điều kiện phải cụ thể</div>
+    <div class="d than">KẾT — nêu rõ điều mong muốn và mốc thời gian trả lời</div>
+    <div class="d ky">Trân trọng,<br><b>CHỨC DANH</b><br><i>(ký, đóng dấu)</i><br>Họ và tên</div>
+  </div>
+  <div class="loi">
+    <div class="l"><span>1</span><p>Trích yếu <b>V/v</b> phải nói đúng việc — người nhận đọc dòng này để quyết định có đọc tiếp không</p></div>
+    <div class="l"><span>2</span><p>Mỗi ý <b>một đoạn</b>. Đoạn dài quá năm dòng là dấu hiệu gộp nhiều ý</p></div>
+    <div class="l"><span>3</span><p>Con số, thời hạn, điều kiện phải <b>cụ thể</b> — “sớm nhất có thể” không phải là thời hạn</p></div>
+    <div class="l"><span>4</span><p>Kết thư phải nêu <b>điều mong muốn</b>, đừng để người nhận tự đoán</p></div>
+  </div>
+</div>
+</div>
+""", """
+.canh{display:flex;gap:22px;margin-top:22px;align-items:flex-start}
+.to{flex:0 0 470px;background:#fff;border:1.5px solid %(BLUSH)s;border-radius:6px;padding:22px 24px;
+  box-shadow:0 5px 20px rgba(172,77,51,.10);font-size:11.5px;line-height:1.5}
+.to .d{padding:6px 0;border-bottom:1px dashed %(BLUSH)s}
+.to .dau2{font-weight:800;color:%(RUST)s;text-align:center;font-size:11px;letter-spacing:.6px}
+.to .ngay{color:%(GRAY)s;font-size:10.5px}
+.to .nhan2{font-weight:700}
+.to .mo2{color:%(GRAY)s;font-style:italic;font-weight:400}
+.to .than{background:%(BLUSH_SOFT)s;margin:4px -8px;padding:7px 8px;border-radius:5px;
+  border-bottom:none;color:%(INK)s}
+.to .ky{text-align:right;border-bottom:none;padding-top:14px;line-height:1.6}
+.to .ky i{color:%(GRAY)s;font-size:10.5px}
+.loi{flex:1;display:flex;flex-direction:column;gap:12px;padding-top:4px}
+.l{display:flex;gap:11px;font-size:13px;line-height:1.5;background:#fff;border:1.5px solid %(BLUSH)s;
+  border-radius:12px;padding:12px 14px}
+.l p{flex:1;margin:0}
+.l span{flex:none;width:24px;height:24px;border-radius:50%%;background:%(CORAL)s;color:#fff;
+  display:flex;align-items:center;justify-content:center;font-weight:800;font-size:12px}
+""" % dict(RUST=RUST, CORAL=CORAL, BLUSH=BLUSH, BLUSH_SOFT=BLUSH_SOFT, GRAY=GRAY, INK=INK), 1160, 560)
 
 
 NO_TITLE_CSS = "h1,.sub{display:none!important}.wrap{padding-top:22px;padding-bottom:22px}"

@@ -257,18 +257,18 @@ function buildC2() {
   s = pptx.addSlide(); D.chrome(s, ++pg, CH);
   D.slideTitle(s, "2.1", "Ấn tượng ban đầu — chỉ có một lần");
   D.cardsRows(s, [
-    ["Vài giây đầu tiên quyết định rất nhiều", "Não bộ hình thành đánh giá gần như tức thì từ ngoại hình, thần thái, cách chào — và ấn tượng đầu rất khó đảo ngược về sau."],
-    ["Quy tắc 4 × 20", "20 giây đầu tiên • 20 bước chân đầu tiên • 20 cm gương mặt (ánh mắt, nụ cười) • 20 từ đầu tiên — hãy chuẩn bị kỹ cả bốn."],
-    ["Ba trụ cột của ấn tượng chuyên nghiệp", "Trang phục phù hợp bối cảnh và vị trí • thần thái tự tin, thân thiện • lời chào – giới thiệu rõ ràng, đúng nghi thức."],
+    ["Vài giây đầu tiên quyết định rất nhiều", "Hình thành gần như tức thì — và rất khó đảo ngược về sau."],
+    ["Quy tắc 4 × 20", "20 giây • 20 bước chân • 20 cm gương mặt • 20 từ"],
+    ["Ba trụ cột của ấn tượng chuyên nghiệp", "Trang phục hợp bối cảnh • thần thái tự tin • lời chào đúng nghi thức"],
   ]);
 
   s = pptx.addSlide(); D.chrome(s, ++pg, CH);
   D.slideTitle(s, "2.1", "Nghi thức xã giao cơ bản");
   D.grid2(s, [
-    ["Chào hỏi và giới thiệu", "Người nhỏ chào người lớn, nhân viên chào cấp trên trước; giới thiệu người ít quan trọng với người quan trọng hơn; nói rõ tên – chức danh – đơn vị."],
-    ["Bắt tay", "Đứng dậy, nhìn vào mắt, siết vừa phải 2–3 giây; người có vị thế cao hơn hoặc phụ nữ chủ động đưa tay trước; không bắt quá lỏng, quá chặt, quá lâu."],
-    ["Trao – nhận danh thiếp", "Trao bằng hai tay, mặt chữ hướng về người nhận; nhận bằng hai tay, đọc qua rồi mới cất — đừng nhét ngay vào túi quần."],
-    ["Ứng xử không gian chung", "Thang máy, phòng họp, bàn làm việc mở: giữ trật tự, nhường lối, gõ cửa trước khi vào, không nói to chuyện riêng."],
+    ["Chào hỏi và giới thiệu", "Người nhỏ chào trước; giới thiệu người ít quan trọng với người quan trọng hơn"],
+    ["Bắt tay", "Đứng dậy, nhìn vào mắt, siết vừa phải 2–3 giây"],
+    ["Trao – nhận danh thiếp", "Hai tay, mặt chữ hướng người nhận; đọc qua rồi mới cất"],
+    ["Ứng xử không gian chung", "Giữ trật tự, nhường lối, gõ cửa trước khi vào"],
   ]);
 
   s = pptx.addSlide(); D.chrome(s, ++pg, CH);
@@ -287,18 +287,18 @@ function buildC2() {
   s = pptx.addSlide(); D.chrome(s, ++pg, CH);
   D.slideTitle(s, "2.2", "Cấu trúc bài thuyết trình");
   D.cardsRows(s, [
-    ["Mở đầu (10–15%) — giành lấy sự chú ý", "Câu hỏi gây tò mò, con số ấn tượng, câu chuyện ngắn; giới thiệu bản thân và cho người nghe biết lộ trình bài nói."],
-    ["Thân bài (70–80%) — tối đa 3 ý chính", "Mỗi ý: luận điểm → dẫn chứng → ví dụ; có câu chuyển ý rõ ràng; đặt ý mạnh nhất ở đầu hoặc cuối."],
-    ["Kết luận (10–15%) — đọng lại một điều", "Tóm tắt 3 ý, nhấn thông điệp cốt lõi, kêu gọi hành động cụ thể; chuẩn bị sẵn phần hỏi – đáp."],
+    ["Mở đầu (10–15%) — giành lấy sự chú ý", "Câu hỏi tò mò, con số, câu chuyện ngắn — rồi cho biết lộ trình"],
+    ["Thân bài (70–80%) — tối đa 3 ý chính", "Mỗi ý: luận điểm → dẫn chứng → ví dụ; ý mạnh nhất đặt đầu hoặc cuối"],
+    ["Kết luận (10–15%) — đọng lại một điều", "Tóm tắt 3 ý, nhấn thông điệp, kêu gọi hành động cụ thể"],
   ]);
 
   s = pptx.addSlide(); D.chrome(s, ++pg, CH);
   D.slideTitle(s, "2.2", "Trình bày tự tin trước đám đông");
   D.grid2(s, [
-    ["Ngôn ngữ cơ thể", "Đứng vững, mở vai, di chuyển có chủ đích; giao tiếp mắt luân phiên khắp phòng; tay minh họa tự nhiên, không đút túi hay vặn bút."],
-    ["Giọng nói", "Nói to rõ, thay đổi tốc độ và ngữ điệu; dừng 1–2 giây trước ý quan trọng — khoảng lặng là gia vị của bài nói."],
-    ["Vượt qua run sợ", "Run là bình thường; chuẩn bị kỹ + đến sớm làm quen không gian + hít thở sâu + tập trung vào thông điệp thay vì bản thân."],
-    ["Xử lý câu hỏi", "Lắng nghe hết câu hỏi, cảm ơn, trả lời ngắn gọn; chưa chắc thì hẹn trả lời sau — trung thực hơn là đoán bừa."],
+    ["Ngôn ngữ cơ thể", "Đứng vững, mở vai, mắt luân phiên khắp phòng; tay minh họa tự nhiên"],
+    ["Giọng nói", "To rõ, đổi tốc độ; dừng 1–2 giây trước ý quan trọng"],
+    ["Vượt qua run sợ", "Chuẩn bị kỹ • đến sớm • hít thở sâu • nghĩ về thông điệp"],
+    ["Xử lý câu hỏi", "Nghe hết, cảm ơn, trả lời ngắn; chưa chắc thì hẹn trả lời sau"],
   ]);
 
   s = pptx.addSlide(); D.chrome(s, ++pg, CH);
@@ -313,43 +313,43 @@ function buildC2() {
   s.addShape("roundRect", { x: 0.55, y: 5.15, w: 12.25, h: 1.55, rectRadius: 0.09, fill: { color: D.BLUSH_SOFT }, line: { color: D.BLUSH, width: 1 } });
   s.addText([
     { text: "Lắng nghe chủ động = ", options: { fontFace: D.BODY_FONT, fontSize: 13.5, bold: true, color: D.RUST } },
-    { text: "tập trung toàn bộ vào người nói • không ngắt lời, không vội phán xét • ghi chú ý chính • phản hồi bằng ánh mắt, gật đầu • diễn đạt lại để xác nhận: “Nếu em hiểu đúng thì ý anh/chị là…”.", options: { fontFace: D.BODY_FONT, fontSize: 13, color: D.INK } },
+    { text: "tập trung vào người nói • không ngắt lời • ghi ý chính • diễn đạt lại để xác nhận.", options: { fontFace: D.BODY_FONT, fontSize: 13, color: D.INK } },
   ], { x: 0.85, y: 5.25, w: 11.7, h: 1.35, margin: 0, valign: "middle" });
 
   s = pptx.addSlide(); D.chrome(s, ++pg, CH);
   D.slideTitle(s, "2.3", "Kỹ năng đặt câu hỏi");
   D.grid2(s, [
-    ["Câu hỏi đóng", "Trả lời Có/Không hoặc một dữ kiện: “Anh đã nhận được báo giá chưa?” — dùng để xác nhận, chốt thông tin."],
-    ["Câu hỏi mở", "Bắt đầu bằng Vì sao / Như thế nào / Điều gì: khơi người đối diện chia sẻ — dùng để khám phá nhu cầu."],
-    ["Câu hỏi thăm dò – đào sâu", "“Cụ thể là…?”, “Anh có thể cho ví dụ?” — làm rõ chi tiết sau câu trả lời chung chung."],
-    ["Lưu ý khi hỏi", "Mỗi lần một câu; tránh câu hỏi dồn ép, mớm cung; hỏi xong thì im lặng chờ — đừng tự trả lời thay."],
+    ["Câu hỏi đóng", "Có / Không hoặc một dữ kiện — dùng để xác nhận, chốt thông tin"],
+    ["Câu hỏi mở", "Vì sao • Như thế nào • Điều gì — dùng để khám phá nhu cầu"],
+    ["Câu hỏi thăm dò – đào sâu", "“Cụ thể là…?” — làm rõ sau một câu trả lời chung chung"],
+    ["Lưu ý khi hỏi", "Mỗi lần một câu; hỏi xong thì im lặng chờ"],
   ]);
 
   s = pptx.addSlide(); D.chrome(s, ++pg, CH);
   D.slideTitle(s, "2.4", "Điện thoại: cuộc gọi đi chuyên nghiệp");
   D.numList(s, [
-    ["Chuẩn bị trước khi gọi", "mục đích, nội dung chính, giấy bút ghi chú; chọn thời điểm phù hợp (tránh sớm quá, muộn quá, giờ nghỉ trưa)."],
-    ["Mở đầu đúng nghi thức", "chào, xưng danh và đơn vị, xin phép: “Em chào anh, em là… từ công ty… Anh có tiện nghe máy 5 phút không ạ?”"],
-    ["Trình bày gọn, kiểm tra hiểu", "đi thẳng vào việc, nói rõ ràng; tóm tắt lại thỏa thuận: thời gian, địa điểm, việc cần làm."],
-    ["Kết thúc lịch sự", "cảm ơn, chào; để người có vị thế cao hơn / khách hàng gác máy trước."],
+    ["Chuẩn bị trước khi gọi", "mục đích, nội dung, giấy bút; chọn giờ phù hợp"],
+    ["Mở đầu đúng nghi thức", "chào, xưng danh và đơn vị, xin phép năm phút"],
+    ["Trình bày gọn, kiểm tra hiểu", "đi thẳng vào việc; tóm tắt lại thời gian – địa điểm – việc cần làm"],
+    ["Kết thúc lịch sự", "cảm ơn, chào; để khách gác máy trước"],
   ], { y0: 1.7, y1: 6.85 });
 
   s = pptx.addSlide(); D.chrome(s, ++pg, CH);
   D.slideTitle(s, "2.4", "Nghe máy và văn hóa điện thoại nơi làm việc");
   D.cardsRows(s, [
-    ["Khi nghe máy", "Nhấc máy trong ~3 hồi chuông; chào và xưng danh đơn vị; giọng tươi — người gọi “nghe thấy” nụ cười của bạn; ghi chú và nhắc lại lời nhắn."],
-    ["Khi người cần gặp vắng mặt", "Đề nghị để lại lời nhắn: ai gọi – việc gì – số liên lạc – hẹn phản hồi; chuyển lời nhắn đầy đủ, đúng hạn."],
-    ["Di động nơi công sở", "Chế độ im lặng trong cuộc họp; không nghe điện riêng khi đang tiếp khách; nhắn tin/Zalo công việc cũng cần đúng chuẩn mực như email."],
+    ["Khi nghe máy", "Nhấc trong ~3 hồi chuông; chào và xưng danh; ghi lại lời nhắn"],
+    ["Khi người cần gặp vắng mặt", "Ghi: ai gọi – việc gì – số liên lạc – hẹn phản hồi"],
+    ["Di động nơi công sở", "Im lặng trong họp; không nghe điện riêng khi đang tiếp khách"],
   ]);
 
   s = pptx.addSlide(); D.chrome(s, ++pg, CH);
   D.slideTitle(s, "Hoạt động nhóm", "Thực hành 2 kỹ năng ngay tại lớp");
   D.activity(s,
     "NHIỆM VỤ KÉP (nhóm 4–5 sinh viên, 25 phút chuẩn bị + trình diễn)",
-    "Nhóm bốc thăm một tình huống: (a) gọi điện lần đầu cho khách hàng tiềm năng để hẹn gặp giới thiệu sản phẩm; hoặc (b) gọi điện xử lý việc giao hàng trễ cho khách đang khó chịu.",
+    "Bốc thăm: (a) gọi hẹn gặp khách hàng tiềm năng, hoặc (b) gọi xử lý giao hàng trễ.",
     [
-      "Đóng vai cuộc gọi 3 phút trước lớp: một bạn vai nhân viên, một bạn vai khách hàng; cả lớp chấm theo checklist mục 2.4.",
-      "Nhóm còn lại thuyết trình 3 phút chủ đề đã chuẩn bị ở nhà; cả lớp nhận xét theo cấu trúc mở – thân – kết và ngôn ngữ cơ thể.",
+      "Đóng vai cuộc gọi 3 phút; cả lớp chấm theo checklist mục 2.4.",
+      "Nhóm còn lại thuyết trình 3 phút; lớp nhận xét theo mở – thân – kết.",
       "Mỗi nhóm rút ra 3 điều sẽ làm khác đi nếu được thực hiện lại.",
     ]);
 
