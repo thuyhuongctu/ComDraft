@@ -781,6 +781,120 @@ DAU_VIET = "ăâđêôơưàáảãạằắẳẵặầấẩẫậèéẻẽ�
            "òóỏõọồốổỗộờớởỡợùúủũụừứửữựỳýỷỹỵ"
 
 DICH_HINH = {
+    'Công văn':
+        'Official letter (công văn)',
+    'Báo giá':
+        'Quotation (báo giá)',
+    'Khổ A4 (210 × 297 mm) • phông Times New Roman, cỡ 13 – 14, màu đen •\n      số trang đánh từ trang thứ hai, chữ số Ả Rập, canh giữa lề trên':
+        'A4 (210 × 297 mm) • Times New Roman, 13 – 14 pt, black •\n      page numbers from the second page, Arabic numerals, centred on the top margin',
+    'Chứa quy tắc xử sự chung, áp dụng nhiều lần, do cơ quan nhà nước có thẩm quyền ban hành':
+        'Carry general rules of conduct, applied repeatedly, issued by a competent state body',
+    'Theo Nghị định 30/2020/NĐ-CP về công tác văn thư — sơ đồ vị trí từng thành phần':
+        'Under Decree 30/2020/ND-CP on records management — where each component sits',
+    'Phân biệt được nhóm thì mới biết soạn theo mẫu nào và ai có thẩm quyền ký':
+        'Know the group and you know which template to use and who may sign',
+    'Dùng trong một lĩnh vực nghiệp vụ nhất định, theo mẫu riêng của ngành':
+        "Used within one professional field, on that field's own templates",
+    'Từ đề xuất mua sắm đến khi khép hồ sơ — tình huống mua 20 máy tính':
+        'From the purchase request to closing the file — the 20-computer case',
+    'Dùng trong quản lý, điều hành hằng ngày của cơ quan, doanh nghiệp':
+        'Used in the daily management of an agency or a business',
+    'Văn bản hành chính — nội bộ và giao dịch với cơ quan, đối tác':
+        'Administrative documents — internal, and with authorities and partners',
+    'Văn bản thương mại — phục vụ trực tiếp giao dịch mua bán':
+        'Commercial documents — serving the sale itself',
+    'Quyết định · Công văn · Tờ trình · Biên bản · Báo cáo':
+        'Decision · Official letter · Submission · Minutes · Report',
+    'Xác nhận số lượng, chất lượng — căn cứ thanh toán':
+        'Confirms quantity and quality — the basis for payment',
+    'Đối tượng, giá, quyền – nghĩa vụ, phạt vi phạm':
+        'Subject matter, price, rights and obligations, penalties',
+    'Chức vụ, họ tên, chữ ký người có thẩm quyền':
+        'Position, full name and signature of the authorised person',
+    'Giá, điều kiện giao hàng, hiệu lực báo giá':
+        'Price, delivery terms, how long the quotation stands',
+    'Phê duyệt mua sắm, giao đơn vị thực hiện':
+        'Approves the purchase and assigns who carries it out',
+    'Đề xuất chủ trương mua sắm, kèm dự toán':
+        'Proposes the purchase, with a cost estimate',
+    'Chín thành phần thể thức trên trang A4':
+        'The nine formal components on an A4 page',
+    'Quyết toán, chấm dứt hiệu lực hợp đồng':
+        'Final settlement, the contract ends',
+    'Học phần này tập trung vào nhóm giữa —':
+        'This course focuses on the middle group —',
+    'Hợp đồng · Hóa đơn · Chứng từ kế toán':
+        'Contracts · Invoices · Accounting vouchers',
+    'Chuỗi văn bản của một thương vụ':
+        'The chain of documents behind one deal',
+    'Địa danh và thời gian ban hành':
+        'Place and date of issue',
+    'Tên loại và trích yếu nội dung':
+        'Document type and subject line',
+    'Đề nghị báo giá, mời chào hàng':
+        'Requests a quotation, invites an offer',
+    'Tên cơ quan, tổ chức ban hành':
+        'Name of the issuing body',
+    '(công văn không có tên loại)':
+        '(an official letter has no type heading)',
+    'Luật · Nghị định · Thông tư':
+        'Laws · Decrees · Circulars',
+    '— và nhóm chuyên ngành phần':
+        '— and, within the specialised group,',
+    'Dấu, chữ ký số của cơ quan':
+        "The body's seal or digital signature",
+    'Số, ký hiệu của văn bản':
+        'Document number and reference',
+    'Trưởng phòng → Giám đốc':
+        'Head of department → Director',
+    'Công ty → Nhà cung cấp':
+        'Company → Supplier',
+    'Nhà cung cấp → Công ty':
+        'Supplier → Company',
+    'Quốc hiệu và Tiêu ngữ':
+        'National heading and motto',
+    'hợp đồng thương mại':
+        'commercial contracts',
+    'Lề trên 20 – 25 mm':
+        'Top margin 20 – 25 mm',
+    'Kỹ thuật trình bày':
+        'Layout technique',
+    'QUY PHẠM PHÁP LUẬT':
+        'LEGAL NORMATIVE',
+    'văn bản hành chính':
+        'administrative documents',
+    'Nội dung văn bản':
+        'The body of the document',
+    'Ba nhóm văn bản':
+        'Three groups of documents',
+    'Số: 15/QĐ-CTAP':
+        'No.: 15/QĐ-CTAP',
+    'CHUYÊN NGÀNH':
+        'SPECIALISED',
+    'Giám đốc ký':
+        'Signed by the Director',
+    'Quyết định':
+        'Decision (quyết định)',
+    'Hai bên ký':
+        'Signed by both parties',
+    'Nghiệm thu':
+        'Acceptance (nghiệm thu)',
+    'HÀNH CHÍNH':
+        'ADMINISTRATIVE',
+    'Nơi nhận':
+        'Distribution list',
+    'Tờ trình':
+        'Submission (tờ trình)',
+    'Hợp đồng':
+        'Contract (hợp đồng)',
+    'Thanh lý':
+        'Closure (thanh lý)',
+    'Lề trái':
+        'Left margin',
+    'Lề phải':
+        'Right margin',
+    'VĂN BẢN':
+        'DOCUMENTS',
     'Giới hạn hai bên không chồng lấn → không có thỏa thuận nào khả thi. Khi đó hãy mở rộng chiếc bánh (đổi số lượng, tiến độ, dịch vụ kèm) thay vì ép giá.':
         'The two limits do not overlap → no deal is possible. Then grow the pie instead (change the quantity, the schedule, the services included) rather than squeezing the price.',
     '“Nếu anh tăng số lượng lên 500 chiếc, chúng tôi sẽ giảm 3%.”\n  — không bao giờ cho không, và nhượng bộ nhỏ dần để phát tín hiệu đã chạm giới hạn.':
@@ -1144,9 +1258,34 @@ HU_TU = ("la", "va", "cua", "cho", "cac", "mot", "khong", "khi", "voi",
          "thi", "co", "duoc", "nguoi", "nhung", "trong", "den", "tu")
 
 
+# Chữ cố ý GIỮ tiếng Việt trên bản tiếng Anh — mẫu vật, không phải nội dung.
+GIU_TIENG_VIET = (
+    "CỘNG HÒA XÃ HỘI CHỦ NGHĨA VIỆT NAM",
+    "Độc lập – Tự do – Hạnh phúc",
+    "TÊN CƠ QUAN CHỦ QUẢN",
+    "TÊN CƠ QUAN BAN HÀNH",
+    "QUYẾT ĐỊNH",
+    "Về việc mua sắm thiết bị văn phòng",
+    "Vĩnh Long, ngày 05 tháng 12 năm 2026",
+    "Nơi nhận:",
+    "GIÁM ĐỐC",
+    "(chữ ký, dấu)",
+    "Nguyễn Văn A",
+    # Số hiệu văn bản thật: "QĐ" là viết tắt của "quyết định" trên giấy tờ
+    # Việt Nam, dịch ra thì không còn là số hiệu nữa.
+    "QĐ-CTAP",
+    # Tên loại văn bản để trong ngoặc là CỐ Ý: người đọc bản tiếng Anh vẫn
+    # phải làm việc với tờ giấy in đúng chữ tiếng Việt ấy.
+    "(tờ trình)", "(quyết định)", "(công văn)", "(hợp đồng)",
+    "(nghiệm thu)", "(thanh lý)", "(biên bản)", "(báo cáo)", "(báo giá)",
+)
+
+
 def _con_tieng_viet(t):
     import re
     t = re.sub(r"<[^>]+>", " ", t)
+    for giu in GIU_TIENG_VIET:
+        t = t.replace(giu, " ")
     con = sorted({c for c in t.lower() if c in DAU_VIET})
     if con:
         return con
