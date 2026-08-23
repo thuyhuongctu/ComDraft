@@ -130,6 +130,19 @@ sinh xong thì chạy `dung_slide.py` không cờ, phải ra "khớp hoàn toàn
 Một lần đã trả giá cho luật này: `extend_ch4.py` lấy đầu vào chính là tệp nó ghi
 đè, chạy lần thứ hai ra deck 53 slide thay vì 43.
 
+**Đối chiếu bằng số đếm thì mù với hoán vị.** `dung_slide.py` từng chỉ so ba con
+số — số slide, số chữ, số khối ghi chú — và để lọt một lỗi nặng: bốn slide phân
+cách mang ghi chú của slide nội dung ngay sau nó, bốn slide nội dung thì trống.
+Cả ba con số không đổi một đơn vị nào. Nay nó so thêm **từng cặp (slide, ghi
+chú)**. Thêm phép đối chiếu nào cũng vậy: phải thấy nó BÁO HỎNG một lần trên
+một trường hợp cố ý làm sai, rồi mới tin nó khi nó báo xanh.
+
+**Khóa dò phải khớp đúng một slide.** `apply_upgrade.py` gán ghi chú theo cụm
+chữ có trong slide. Bản cũ lấy slide đầu tiên khớp — mà slide mục lục liệt kê
+tên mọi mục nên khớp gần hết. Nay khóa nào khớp khác một slide thì dựng lại báo
+đỏ. Quy ước đặt khóa: **số hiệu mục + tiêu đề** (`"3.2 Giao tiếp với khách
+hàng"`), vì slide mục lục viết `3.2 — tiêu đề` có gạch ngang xen giữa.
+
 ---
 
 ## 4. Cách viết mã trong dự án này
