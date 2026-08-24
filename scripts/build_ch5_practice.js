@@ -2,7 +2,7 @@
 const pptxgen = require("pptxgenjs");
 const D = require("./design.js");
 
-function cover(slide, kicker, chTitle, sub, meta) {
+function cover(slide, kicker, chTitle, sub, meta, mode = "trực tiếp") {
   slide.background = { color: D.CREAM };
   slide.addShape("rect", { x: 0, y: 0, w: 0.35, h: 7.5, fill: { color: D.CORAL } });
   slide.addImage({ path: D.LOGO_ROUND, x: 9.35, y: 1.55, w: 3.5, h: 3.5, transparency: 82 });
@@ -24,7 +24,7 @@ function cover(slide, kicker, chTitle, sub, meta) {
     { text: "GV. Đỗ Thùy Hương", options: { fontFace: D.BODY_FONT, fontSize: 15, bold: true, color: D.INK, breakLine: true } },
     { text: meta, options: { fontFace: D.BODY_FONT, fontSize: 12, color: D.GRAY } },
   ], { x: 0.9, y: 5.85, w: 8.6, h: 0.95, margin: 0 });
-  slide.addText("© Đỗ Thùy Hương, 2026 — Bài giảng biên soạn cho lớp giảng dạy trực tiếp. Vui lòng ghi nguồn khi sử dụng.", {
+  slide.addText(`© Đỗ Thùy Hương, 2026 — Bài giảng biên soạn cho lớp giảng dạy ${mode}. Vui lòng ghi nguồn khi sử dụng.`, {
     x: 0.9, y: 6.95, w: 11.5, h: 0.35, margin: 0,
     fontFace: D.BODY_FONT, fontSize: 9, color: D.GRAY,
   });
@@ -67,10 +67,11 @@ function refs(slide) {
 function buildC5() {
   const pptx = new pptxgen(); D.newDeck(pptx);
   const CH = "Chương 5"; let pg = 1;
+  const MA_HP = "EC6000TX"; // hệ từ xa — riêng Chương 5, khác EC1103 mặc định của các chương khác
   let s = pptx.addSlide();
-  cover(s, "CHƯƠNG 5", "Soạn thảo và\ntrình bày văn bản", "Từ lời nói sang chữ viết: biến mọi thỏa thuận thành văn bản đúng chuẩn, có giá trị pháp lý.", META_LT);
+  cover(s, "CHƯƠNG 5", "Soạn thảo và\ntrình bày văn bản", "Từ lời nói sang chữ viết: biến mọi thỏa thuận thành văn bản đúng chuẩn, có giá trị pháp lý.", META_LT, "từ xa");
 
-  s = pptx.addSlide(); D.chrome(s, ++pg, CH);
+  s = pptx.addSlide(); D.chrome(s, ++pg, CH, MA_HP);
   objectives(s, [
     ["Trình bày", "khái niệm văn bản và phân biệt được các nhóm văn bản trong tổ chức."],
     ["Áp dụng", "yêu cầu về nội dung và 9 thành phần thể thức theo Nghị định 30/2020/NĐ-CP."],
@@ -78,7 +79,7 @@ function buildC5() {
     ["Soạn thảo", "được thư tín thương mại, báo giá và hợp đồng phục vụ giao dịch kinh doanh."],
   ]);
 
-  s = pptx.addSlide(); D.chrome(s, ++pg, CH);
+  s = pptx.addSlide(); D.chrome(s, ++pg, CH, MA_HP);
   agenda(s, [
     ["5.1", "Khái niệm và phân loại văn bản"],
     ["5.2", "Các yêu cầu về nội dung và thể thức văn bản"],
@@ -86,7 +87,7 @@ function buildC5() {
     ["5.4", "Soạn thảo văn bản thương mại"],
   ]);
 
-  s = pptx.addSlide(); D.chrome(s, ++pg, CH);
+  s = pptx.addSlide(); D.chrome(s, ++pg, CH, MA_HP);
   D.slideTitle(s, "5.1", "Văn bản là gì?");
   D.cardsRows(s, [
     ["Cách hiểu chung", "Văn bản là phương tiện ghi lại và truyền đạt thông tin bằng ngôn ngữ hay ký hiệu nhất định, hình thành trong hoạt động của cơ quan, tổ chức, doanh nghiệp."],
@@ -94,7 +95,7 @@ function buildC5() {
     ["Vai trò", "Phương tiện quản lý – điều hành • căn cứ pháp lý cho hoạt động • lưu trữ thông tin • thể hiện hình ảnh chuyên nghiệp của tổ chức."],
   ]);
 
-  s = pptx.addSlide(); D.chrome(s, ++pg, CH);
+  s = pptx.addSlide(); D.chrome(s, ++pg, CH, MA_HP);
   D.slideTitle(s, "5.1", "Phân loại văn bản");
   D.grid2(s, [
     ["Văn bản quy phạm pháp luật", "Chứa quy tắc xử sự chung, do cơ quan nhà nước có thẩm quyền ban hành: Luật, Nghị định, Thông tư. Doanh nghiệp không ban hành nhưng phải tuân thủ."],
@@ -103,7 +104,7 @@ function buildC5() {
     ["Văn bản thương mại", "Phục vụ giao dịch kinh doanh: thư tín thương mại, báo giá, đơn đặt hàng, hợp đồng — học kỹ ở mục 5.4."],
   ]);
 
-  s = pptx.addSlide(); D.chrome(s, ++pg, CH);
+  s = pptx.addSlide(); D.chrome(s, ++pg, CH, MA_HP);
   D.slideTitle(s, "5.2", "Bốn yêu cầu về nội dung");
   D.cardsRows(s, [
     ["Đúng mục đích, đúng thẩm quyền", "Mỗi văn bản tập trung một chủ đề; ban hành đúng chức năng, nhiệm vụ của cơ quan, tổ chức."],
@@ -112,7 +113,7 @@ function buildC5() {
     ["Đúng pháp luật, đúng ngôn ngữ hành chính", "Phù hợp quy định hiện hành; văn phong nghiêm túc, lịch sự, không dùng khẩu ngữ."],
   ], { bodySize: 12.5, headSize: 14.5 });
 
-  s = pptx.addSlide(); D.chrome(s, ++pg, CH);
+  s = pptx.addSlide(); D.chrome(s, ++pg, CH, MA_HP);
   D.slideTitle(s, "5.2", "Chín thành phần thể thức — NĐ 30/2020/NĐ-CP");
   D.numList(s, [
     "Quốc hiệu và Tiêu ngữ", "Tên cơ quan, tổ chức ban hành văn bản",
@@ -134,7 +135,7 @@ function buildC5() {
     x: 0.8, y: 6.2, w: 11.7, h: 0.55, margin: 0, valign: "middle", fontFace: D.BODY_FONT, fontSize: 12.5, color: D.INK,
   });
 
-  s = pptx.addSlide(); D.chrome(s, ++pg, CH);
+  s = pptx.addSlide(); D.chrome(s, ++pg, CH, MA_HP);
   D.slideTitle(s, "5.2", "Kỹ thuật trình bày — những con số phải thuộc");
   D.grid2(s, [
     ["Khổ giấy và lề trang", "Khổ A4 (210 × 297 mm). Lề trên, dưới: 20 – 25 mm • lề trái: 30 – 35 mm (để đóng gáy) • lề phải: 15 – 20 mm."],
@@ -143,7 +144,7 @@ function buildC5() {
     ["Ngôn ngữ", "Tiếng Việt chuẩn mực; viết hoa, viết tắt đúng quy định; số liệu dùng chữ số Ả Rập."],
   ]);
 
-  s = pptx.addSlide(); D.chrome(s, ++pg, CH);
+  s = pptx.addSlide(); D.chrome(s, ++pg, CH, MA_HP);
   D.slideTitle(s, "5.3", "Năm văn bản hành chính thông dụng");
   D.numList(s, [
     ["Quyết định", "giải quyết công việc cụ thể thuộc thẩm quyền: bổ nhiệm, khen thưởng, kỷ luật, mua sắm."],
@@ -153,7 +154,7 @@ function buildC5() {
     ["Báo cáo", "phản ánh tình hình, kết quả thực hiện công việc trong một thời gian."],
   ], { y0: 1.7, y1: 6.8 });
 
-  s = pptx.addSlide(); D.chrome(s, ++pg, CH);
+  s = pptx.addSlide(); D.chrome(s, ++pg, CH, MA_HP);
   D.slideTitle(s, "5.3", "Quyết định và Tờ trình");
   D.grid2(s, [
     ["Quyết định — khái niệm", "Văn bản do người có thẩm quyền ban hành để giải quyết một công việc cụ thể."],
@@ -162,7 +163,7 @@ function buildC5() {
     ["Tờ trình — bố cục 3 phần", "Mở đầu: lý do, sự cần thiết → Nội dung: phương án, lợi ích, tính khả thi → Kết thúc: kiến nghị phê duyệt. Đính kèm hồ sơ, dự toán."],
   ]);
 
-  s = pptx.addSlide(); D.chrome(s, ++pg, CH);
+  s = pptx.addSlide(); D.chrome(s, ++pg, CH, MA_HP);
   D.slideTitle(s, "5.3", "Công văn, Biên bản và Báo cáo");
   D.cardsRows(s, [
     ["Công văn", "Không có tên loại — chỉ có số, ký hiệu và trích yếu. Các loại: đề nghị, phúc đáp, đôn đốc, hướng dẫn, giải thích, mời họp. Mỗi công văn một chủ đề; kết thúc “Trân trọng./.”"],
@@ -170,7 +171,7 @@ function buildC5() {
     ["Báo cáo", "Định kỳ • đột xuất • chuyên đề • sơ kết, tổng kết. Mạch 4 phần: đặc điểm tình hình → kết quả đạt được → hạn chế và nguyên nhân → phương hướng, kiến nghị."],
   ]);
 
-  s = pptx.addSlide(); D.chrome(s, ++pg, CH);
+  s = pptx.addSlide(); D.chrome(s, ++pg, CH, MA_HP);
   D.slideTitle(s, "5.4", "Thư tín thương mại và báo giá");
   D.grid2(s, [
     ["Thư tín thương mại", "Thư hỏi hàng, chào hàng, đặt hàng, xác nhận, khiếu nại, cảm ơn. Kết cấu: mở đầu – nội dung – kết thúc."],
@@ -179,7 +180,7 @@ function buildC5() {
     ["Báo giá", "Thông tin doanh nghiệp • mô tả hàng hóa • số lượng, đơn giá, thuế • điều kiện giao hàng, thanh toán • thời hạn hiệu lực (tránh tranh chấp khi giá thị trường biến động)."],
   ]);
 
-  s = pptx.addSlide(); D.chrome(s, ++pg, CH);
+  s = pptx.addSlide(); D.chrome(s, ++pg, CH, MA_HP);
   D.slideTitle(s, "5.4", "Hợp đồng — nghiệm thu — thanh lý");
   D.cardsRows(s, [
     ["Hợp đồng thương mại", "Căn cứ Bộ luật Dân sự 2015 và Luật Thương mại 2005. Điều khoản chính: đối tượng; giá và phương thức thanh toán; quyền – nghĩa vụ các bên; phạt vi phạm; giải quyết tranh chấp."],
@@ -187,7 +188,7 @@ function buildC5() {
     ["Biên bản thanh lý hợp đồng", "Xác nhận hoàn thành nghĩa vụ, chấm dứt hiệu lực hợp đồng, quyết toán các quyền và nghĩa vụ còn lại."],
   ]);
 
-  s = pptx.addSlide(); D.chrome(s, ++pg, CH);
+  s = pptx.addSlide(); D.chrome(s, ++pg, CH, MA_HP);
   D.slideTitle(s, "Hoạt động nhóm", "Từ đàm phán đến hợp đồng");
   D.activity(s,
     "TÌNH HUỐNG (nhóm 4–5 sinh viên, 20 phút)",
@@ -198,14 +199,14 @@ function buildC5() {
       "Chỉ ra 3 lỗi thể thức thường gặp nhất mà nhóm dự đoán sinh viên hay mắc phải khi soạn văn bản này.",
     ]);
 
-  s = pptx.addSlide(); D.chrome(s, ++pg, CH);
+  s = pptx.addSlide(); D.chrome(s, ++pg, CH, MA_HP);
   summary(s, [
     ["Thể thức là “giấy thông hành” của văn bản", "Nội dung hay đến đâu mà sai thể thức thì văn bản vẫn bị trả lại — thuộc 9 thành phần và các con số trình bày."],
     ["Mỗi loại văn bản có một bố cục riêng", "Quyết định theo Điều; tờ trình 3 phần; công văn không tên loại; biên bản lập tại chỗ; báo cáo theo mạch 4 phần."],
     ["Văn bản thương mại giữ uy tín doanh nghiệp", "Thư tín đạt 5C, báo giá có hiệu lực rõ, hợp đồng đủ điều khoản — bộ ba hợp đồng, nghiệm thu, thanh lý khép kín thương vụ."],
   ]);
 
-  s = pptx.addSlide(); D.chrome(s, ++pg, CH);
+  s = pptx.addSlide(); D.chrome(s, ++pg, CH, MA_HP);
   questionsPrep(s, [
     "Trình bày khái niệm văn bản và các nhóm văn bản trong tổ chức.",
     "Nêu 9 thành phần thể thức văn bản hành chính và các quy định về lề trang, phông chữ.",
@@ -213,7 +214,7 @@ function buildC5() {
     "Nêu nguyên tắc 5C và các điều khoản cơ bản của hợp đồng thương mại.",
   ], "Phần thực hành tại phòng A0105 — Bài 1: Thể thức văn bản. Mang theo laptop, cài sẵn Microsoft Word và tải Nghị định 30/2020/NĐ-CP.");
 
-  s = pptx.addSlide(); D.chrome(s, ++pg, CH);
+  s = pptx.addSlide(); D.chrome(s, ++pg, CH, MA_HP);
   refs(s);
 
   return pptx.writeFile({ fileName: "CHUONG 5 - SOAN THAO VA TRINH BAY VAN BAN.pptx" });
