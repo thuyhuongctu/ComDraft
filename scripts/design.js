@@ -22,10 +22,10 @@ function newDeck(pptx) {
 }
 
 // footer + logo tròn nhỏ + số trang
-function chrome(slide, pageNum, chapterLabel) {
+function chrome(slide, pageNum, chapterLabel, courseCode = "EC1103") {
   slide.background = { color: CREAM };
   slide.addImage({ path: LOGO_ROUND, x: 0.45, y: 6.92, w: 0.42, h: 0.42 });
-  slide.addText("Je m'appelle Huong  •  GV. Đỗ Thùy Hương  •  EC1103", {
+  slide.addText(`Je m'appelle Huong  •  GV. Đỗ Thùy Hương  •  ${courseCode}`, {
     x: 0.95, y: 6.95, w: 8.2, h: 0.34, margin: 0, valign: "middle",
     fontFace: BODY_FONT, fontSize: 9, color: GRAY,
   });
