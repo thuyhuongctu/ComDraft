@@ -30,7 +30,7 @@ function cover(slide, kicker, chTitle, sub, meta) {
   });
 }
 
-const META_LT = "EC1103 – Kỹ năng giao tiếp và soạn thảo văn bản (2:1)  •  Lớp 261b, HK1 năm học 2026 – 2027";
+const META_LT = "EC6000TX – Kỹ năng giao tiếp và đàm phán trong kinh doanh (Hệ từ xa)";
 const META_TH = "Phần thực hành  •  Phòng A0105 – Mô phỏng Kinh tế  •  Lớp 261b, HK1 2026 – 2027";
 
 function objectives(slide, goals) {
