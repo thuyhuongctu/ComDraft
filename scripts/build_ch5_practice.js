@@ -221,38 +221,38 @@ function buildC5() {
 }
 
 // ============ BÀI THỰC HÀNH ============
-function practiceDeck(num, title, sub, hours, objs, contents, steps, checklist, assignment, fileName) {
+function practiceDeck(num, title, sub, hours, objs, contents, steps, checklist, assignment, fileName, courseCode = "EC1103") {
   const pptx = new pptxgen(); D.newDeck(pptx);
   const CH = `Thực hành – Bài ${num}`; let pg = 1;
   let s = pptx.addSlide();
   cover(s, `THỰC HÀNH • BÀI ${num}`, title, sub, META_TH);
 
-  s = pptx.addSlide(); D.chrome(s, ++pg, CH);
+  s = pptx.addSlide(); D.chrome(s, ++pg, CH, courseCode);
   D.slideTitle(s, "Mục tiêu buổi thực hành", `Bài ${num} — ${hours}`);
   D.numList(s, objs, { y0: 1.75, y1: 6.7 });
 
-  s = pptx.addSlide(); D.chrome(s, ++pg, CH);
+  s = pptx.addSlide(); D.chrome(s, ++pg, CH, courseCode);
   D.slideTitle(s, "Nội dung", "Chúng ta sẽ thực hành");
   D.numList(s, contents, { y0: 1.75, y1: 6.7 });
 
-  s = pptx.addSlide(); D.chrome(s, ++pg, CH);
+  s = pptx.addSlide(); D.chrome(s, ++pg, CH, courseCode);
   D.slideTitle(s, "Quy trình", "Cách làm việc trong buổi thực hành");
   D.flow(s, steps, { y: 1.8, h: 0.95, dh: 3.4 });
 
   // các slide hướng dẫn chi tiết
   checklist.forEach(([kicker, t, rows, kind]) => {
-    s = pptx.addSlide(); D.chrome(s, ++pg, CH);
+    s = pptx.addSlide(); D.chrome(s, ++pg, CH, courseCode);
     D.slideTitle(s, kicker, t);
     if (kind === "grid") D.grid2(s, rows);
     else if (kind === "num") D.numList(s, rows, { y0: 1.7, y1: 6.8 });
     else D.cardsRows(s, rows);
   });
 
-  s = pptx.addSlide(); D.chrome(s, ++pg, CH);
+  s = pptx.addSlide(); D.chrome(s, ++pg, CH, courseCode);
   D.slideTitle(s, "Bài tập", "Bài nộp của buổi thực hành");
   D.activity(s, assignment.label, assignment.desc, assignment.tasks);
 
-  s = pptx.addSlide(); D.chrome(s, ++pg, CH);
+  s = pptx.addSlide(); D.chrome(s, ++pg, CH, courseCode);
   D.slideTitle(s, "Tiêu chí chấm", "Bài của các bạn được chấm thế nào?");
   D.cardsRows(s, [
     ["Đúng thể thức (40%)", "Đủ 9 thành phần theo NĐ 30/2020; khổ A4, lề đúng quy định, Times New Roman cỡ 13 – 14, số trang đúng vị trí."],
@@ -260,7 +260,7 @@ function practiceDeck(num, title, sub, hours, objs, contents, steps, checklist, 
     ["Nộp đúng hạn và chỉnh sửa theo phản hồi (20%)", "Nộp đúng thời hạn quy định; tiếp thu góp ý của giảng viên và nộp lại bản hoàn thiện."],
   ], { y0: 1.6, y1: 6.8 });
 
-  s = pptx.addSlide(); D.chrome(s, ++pg, CH);
+  s = pptx.addSlide(); D.chrome(s, ++pg, CH, courseCode);
   refs(s);
   return pptx.writeFile({ fileName });
 }
@@ -322,7 +322,7 @@ function buildTH1() {
         "Tự soát bằng bảng kiểm 8 điểm, sau đó đổi bài chấm chéo với bạn cùng bàn rồi nộp file Word cuối buổi.",
       ],
     },
-    "THUC HANH BAI 1 - THE THUC VAN BAN.pptx");
+    "THUC HANH BAI 1 - THE THUC VAN BAN.pptx", "EC6000TX");
 }
 
 function buildTH2() {
@@ -381,7 +381,7 @@ function buildTH2() {
         "Nộp file Word cuối buổi; chỉnh sửa theo phản hồi của giảng viên và nộp lại bản hoàn thiện trong 1 tuần.",
       ],
     },
-    "THUC HANH BAI 2 - SOAN THAO VAN BAN HANH CHINH.pptx");
+    "THUC HANH BAI 2 - SOAN THAO VAN BAN HANH CHINH.pptx", "EC6000TX");
 }
 
 function buildTH3() {
@@ -439,7 +439,7 @@ function buildTH3() {
         "Đổi hồ sơ với cặp khác, chỉ ra ít nhất 3 điểm bất lợi hoặc thiếu sót; chỉnh sửa và nộp bộ hồ sơ hoàn chỉnh trong 1 tuần.",
       ],
     },
-    "THUC HANH BAI 3 - SOAN THAO VAN BAN THUONG MAI.pptx");
+    "THUC HANH BAI 3 - SOAN THAO VAN BAN THUONG MAI.pptx", "EC6000TX");
 }
 
 (async () => {
