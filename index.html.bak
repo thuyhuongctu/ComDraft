@@ -1,0 +1,133 @@
+<!doctype html>
+<html lang="vi">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>ComDraft — Communication and Document Drafting Skills</title>
+<meta name="description" content="Bài giảng và 200 câu trắc nghiệm học phần Kỹ năng giao tiếp và soạn thảo văn bản, do GV. Đỗ Thùy Hương biên soạn.">
+<meta name="author" content="Đỗ Thùy Hương">
+<meta name="theme-color" content="#DC756A">
+<link rel="manifest" href="./manifest.webmanifest">
+<link rel="icon" href="./assets/icons/logo.svg" type="image/svg+xml">
+<link rel="alternate icon" href="./assets/icons/favicon-32.png" sizes="32x32">
+<link rel="apple-touch-icon" href="./assets/icons/apple-touch-icon.png">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-title" content="ComDraft">
+<link rel="stylesheet" href="./assets/css/style.css">
+</head>
+<body>
+
+<header class="dau-trang">
+  <a class="hieu" href="./" aria-label="ComDraft">
+    <img class="logo" src="./assets/icons/logo.svg" alt="" width="46" height="46">
+    <span class="chu">
+      <b data-i18n="app.ten">ComDraft</b>
+      <span data-i18n="app.phu">Kỹ năng giao tiếp và soạn thảo văn bản</span>
+    </span>
+  </a>
+
+  <!-- Ba con số theo dõi thường xuyên, luôn thấy dù đang ở trang nào.
+       Màn hẹp thì giấu đi vì thanh trên đã chật. -->
+  <div class="dong-ho" id="dong-ho">
+    <div><span data-i18n="hud.luot">lượt luyện</span><b id="hud-luot">0</b></div>
+    <div><span data-i18n="hud.chuong">chương</span><b id="hud-chuong">0/5</b></div>
+    <div><span data-i18n="hud.diem">điểm TB</span><b id="hud-diem">—</b></div>
+  </div>
+
+  <!-- Thương hiệu cá nhân của giảng viên, đứng cạnh logo học liệu -->
+  <span class="thuong-hieu">
+    <span class="ten"><i>je m’appelle</i> <b>hương</b></span>
+    <img src="./assets/icons/persona.png" alt="Đỗ Thùy Hương" width="42" height="42">
+  </span>
+</header>
+
+<div class="khung">
+
+  <aside class="canh">
+    <nav class="menu">
+      <button type="button" data-trang="nha"><span class="bt">🏠</span><span data-i18n="nav.nha">Trang chủ</span></button>
+      <button type="button" data-trang="bai"><span class="bt">📖</span><span data-i18n="nav.bai">Bài giảng</span></button>
+      <button type="button" data-trang="on"><span class="bt">📝</span><span data-i18n="nav.on">Ôn tập</span></button>
+      <button type="button" data-trang="hs"><span class="bt">🏅</span><span data-i18n="nav.hs">Hồ sơ</span></button>
+    </nav>
+
+    <div class="cong-cu">
+      <span class="ngu" role="group" aria-label="Ngôn ngữ / Language">
+        <button type="button" data-lang="vi">VI</button><button type="button" data-lang="en">EN</button>
+      </span>
+      <span class="sang-toi" role="group" aria-label="Sáng / tối">
+        <button type="button" data-theme-btn="light" title="Sáng">☀</button><button type="button" data-theme-btn="dark" title="Tối">☾</button>
+      </span>
+    </div>
+  </aside>
+
+  <main id="khung">
+    <noscript>
+      <div class="the">
+        <b>Cần bật JavaScript — JavaScript required</b>
+        <p style="color:var(--chu-mo);margin-top:6px">Ứng dụng chạy hoàn toàn trong trình duyệt nên cần JavaScript.</p>
+      </div>
+    </noscript>
+  </main>
+
+</div>
+
+<!-- Thanh dưới cho điện thoại: cột trái bị đẩy xuống dưới nội dung trên màn
+     hẹp nên phải có chỗ chuyển trang luôn trong tầm ngón tay cái. -->
+<nav class="thanh-duoi" aria-label="Điều hướng">
+  <button type="button" data-trang="nha"><span class="bt">🏠</span><span data-i18n="nav.nha">Trang chủ</span></button>
+  <button type="button" data-trang="bai"><span class="bt">📖</span><span data-i18n="nav.bai">Bài giảng</span></button>
+  <button type="button" data-trang="on"><span class="bt">📝</span><span data-i18n="nav.on">Ôn tập</span></button>
+  <button type="button" data-trang="hs"><span class="bt">🏅</span><span data-i18n="nav.hs">Hồ sơ</span></button>
+</nav>
+
+<!-- Hương AI: nút gọi và bảng thuyết minh của tour hướng dẫn -->
+<button class="tour-goi" id="tour-goi" type="button">
+  <img src="./assets/icons/persona.png" alt="" width="30" height="30">
+  <span id="tour-nhan">Hương AI hướng dẫn</span>
+</button>
+
+<div class="tour-bang an" id="tour-bang" role="dialog" aria-live="polite">
+  <div class="dinh">
+    <img src="./assets/icons/persona.png" alt="" width="34" height="34">
+    <span>
+      <b id="tour-ai">Hương AI</b><br>
+      <small id="tour-buoc"></small>
+    </span>
+    <button class="dong" id="tour-dong" type="button" aria-label="Đóng">✕</button>
+  </div>
+  <img class="nv" id="tour-nv" src="./assets/icons/co-huong-dung.png" alt="" aria-hidden="true">
+
+  <div class="an" id="tour-xong">
+    <p class="loi" data-i18n="tour.xong.loi"></p>
+    <div class="nut-hang">
+      <button class="nut chinh" id="tour-lam" type="button" data-i18n="tour.xong.lam"></button>
+      <button class="nut" id="tour-lai" type="button" data-i18n="tour.xong.lai"></button>
+    </div>
+  </div>
+
+  <div id="tour-cac-buoc">
+    <p class="loi" id="tour-chu"></p>
+    <div class="nut-hang">
+      <button class="nut nho" id="tour-truoc" type="button"></button>
+      <button class="nut chinh nho" id="tour-sau" type="button"></button>
+      <button class="nut nho" id="tour-phat" type="button"></button>
+    </div>
+    <p class="nhac an" id="tour-nhac"></p>
+  </div>
+</div>
+
+<!-- i18n và app phải nạp trước: chúng định nghĩa registerBank và registerLectures
+     mà các tệp dữ liệu bên dưới gọi tới -->
+<script src="./assets/js/i18n.js"></script>
+<script src="./assets/js/tour.js"></script>
+<script src="./assets/js/app.js"></script>
+<script src="./data/lectures.js"></script>
+<script src="./data/slides.js"></script>
+<script src="./data/ch1.js"></script>
+<script src="./data/ch2.js"></script>
+<script src="./data/ch3.js"></script>
+<script src="./data/ch4.js"></script>
+<script src="./data/ch5.js"></script>
+</body>
+</html>
