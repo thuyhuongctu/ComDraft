@@ -153,8 +153,8 @@ def main():
             print("thiếu:", fn); continue
         prs = Presentation(fn)
         label = LABEL[key]
-        # Chương 5 dán mã học phần hệ từ xa; các deck khác vẫn EC1103 (hệ trực tiếp).
-        course_code = "EC6000TX" if key == "c5" else "EC1103"
+        # Chương 5 và 3 bài thực hành dán mã học phần hệ từ xa; c1-c4 vẫn EC1103 (hệ trực tiếp).
+        course_code = "EC6000TX" if key in ("c5", "th1", "th2", "th3") else "EC1103"
 
         # 1) chèn slide số liệu (chèn SAU slide đích)
         n_stat = 0
