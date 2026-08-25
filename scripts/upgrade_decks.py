@@ -48,12 +48,12 @@ def move_slide(prs, from_idx, to_idx):
     xml_slides.insert(to_idx, slides[from_idx])
 
 
-def chrome(slide, page_label, chapter_label):
+def chrome(slide, page_label, chapter_label, course_code="EC1103"):
     slide.shapes.add_picture("figs/logo-mark.png", Inches(0.55), Inches(7.0), Inches(0.34), Inches(0.34)) \
         if os.path.exists("figs/logo-mark.png") else None
     tb = slide.shapes.add_textbox(Inches(0.55), Inches(7.02), Inches(8.5), Inches(0.32))
     p = tb.text_frame.paragraphs[0]
-    r = p.add_run(); r.text = "Je m'appelle Huong  •  GV. Đỗ Thùy Hương  •  EC1103"
+    r = p.add_run(); r.text = f"Je m'appelle Huong  •  GV. Đỗ Thùy Hương  •  {course_code}"
     r.font.size = Pt(9); r.font.name = BODY; r.font.color.rgb = GRAY
     tb2 = slide.shapes.add_textbox(Inches(10.2), Inches(7.02), Inches(2.1), Inches(0.32))
     p2 = tb2.text_frame.paragraphs[0]; p2.alignment = PP_ALIGN.RIGHT
@@ -61,7 +61,7 @@ def chrome(slide, page_label, chapter_label):
     r2.font.size = Pt(9); r2.font.name = BODY; r2.font.color.rgb = GRAY
 
 
-def add_section_divider(prs, number, title, subtitle, chapter_label, notes=""):
+def add_section_divider(prs, number, title, subtitle, chapter_label, notes="", course_code="EC1103"):
     s = prs.slides.add_slide(blank_layout(prs))
     bg = s.shapes.add_shape(MSO_SHAPE.RECTANGLE, 0, 0, Inches(SW), Inches(SH))
     bg.fill.solid(); bg.fill.fore_color.rgb = CREAM
@@ -92,13 +92,13 @@ def add_section_divider(prs, number, title, subtitle, chapter_label, notes=""):
     r = p.add_run(); r.text = subtitle
     r.font.size = Pt(14.5); r.font.italic = True; r.font.name = BODY; r.font.color.rgb = GRAY
 
-    chrome(s, "", chapter_label)
+    chrome(s, "", chapter_label, course_code)
     if notes:
         set_notes(s, notes)
     return s
 
 
-def add_stat_slide(prs, kicker, title, stats, footer, chapter_label, notes=""):
+def add_stat_slide(prs, kicker, title, stats, footer, chapter_label, notes="", course_code="EC1103"):
     """stats: list of (số lớn, đơn vị/nhãn, mô tả ngắn)"""
     s = prs.slides.add_slide(blank_layout(prs))
     bg = s.shapes.add_shape(MSO_SHAPE.RECTANGLE, 0, 0, Inches(SW), Inches(SH))
@@ -153,7 +153,7 @@ def add_stat_slide(prs, kicker, title, stats, footer, chapter_label, notes=""):
     r = p.add_run(); r.text = footer
     r.font.size = Pt(13); r.font.name = BODY; r.font.color.rgb = INK
 
-    chrome(s, "", chapter_label)
+    chrome(s, "", chapter_label, course_code)
     if notes:
         set_notes(s, notes)
     return s
