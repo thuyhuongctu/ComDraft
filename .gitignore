@@ -1,6 +1,7 @@
 node_modules/
 _tmp/
 .DS_Store
+*.bak
 
 # PDF thường là tệp tạm sinh ra khi dựng, không cần theo dõi…
 *.pdf
