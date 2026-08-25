@@ -6,6 +6,9 @@ _tmp/
 *.pdf
 # …trừ ngân hàng câu hỏi: bản PDF là sản phẩm phát cho sinh viên và giảng viên.
 !quiz/*.pdf
+# …và gói tư liệu Chương 5 EC6000TX: PDF ở đây là bản gốc lưu trữ cho DOI,
+# không phải tệp tạm sinh ra khi dựng.
+!ec6000tx-chuong-5/**/*.pdf
 
 # thư mục biên dịch tạm của Python
 __pycache__/
