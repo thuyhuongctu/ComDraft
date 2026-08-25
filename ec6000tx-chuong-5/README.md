@@ -19,9 +19,9 @@ chứng tác quyền khi nộp cho Khoa.
 
 ## Tình trạng Video 1
 
-Video 1 (`videos/CHUONG_5__VIDEO_1.mp4`) mới thay âm thanh cho các trang 2–9;
-các trang 1 và 10–13 vẫn dùng thuyết minh cũ vì chưa có bản thu mới. Bản DOI
-sau sẽ cập nhật khi có đủ bản thu.
+Video 1 (`videos/CHUONG_5__VIDEO_1.mp4`) đã thay âm thanh cho các trang 2–13;
+riêng trang 1 (trang bìa) vẫn dùng thuyết minh cũ vì chưa có bản thu mới. Bản
+DOI sau sẽ cập nhật khi có bản thu cho trang này.
 
 ## Tác quyền
 
