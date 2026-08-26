@@ -626,15 +626,24 @@
     v.preload = 'metadata';
     v.setAttribute('playsinline', '');
     v.src = tep;
-    // Phụ đề tiếng Việt đặt cạnh video, cùng tên, đuôi .vi.vtt. Bật sẵn để ai
-    // xem ở chỗ đông người hoặc nghe không rõ vẫn theo được bài.
-    var pd = document.createElement('track');
-    pd.kind = 'subtitles';
-    pd.srclang = 'vi';
-    pd.label = 'Tiếng Việt';
-    pd.default = true;
-    pd.src = tep.replace(/\.mp4$/, '.vi.vtt');
-    v.appendChild(pd);
+    // Phụ đề đặt cạnh video, cùng tên, đuôi .vi.vtt / .en.vtt. Bật sẵn để ai
+    // xem ở chỗ đông người hoặc nghe không rõ vẫn theo được bài. Giọng đọc
+    // trong video luôn là tiếng Việt; bản .en.vtt chỉ là phụ đề dịch, không
+    // phải phụ đề bám sát tiếng nói như bản tiếng Việt.
+    var pd_vi = document.createElement('track');
+    pd_vi.kind = 'subtitles'; pd_vi.srclang = 'vi'; pd_vi.label = 'Tiếng Việt';
+    pd_vi.src = tep.replace(/\.mp4$/, '.vi.vtt');
+    var pd_en = document.createElement('track');
+    pd_en.kind = 'subtitles'; pd_en.srclang = 'en'; pd_en.label = 'English';
+    pd_en.src = tep.replace(/\.mp4$/, '.en.vtt');
+    v.appendChild(pd_vi);
+    v.appendChild(pd_en);
+    // Bật đúng phụ đề theo ngôn ngữ giao diện đang chọn lúc mở video. Nút
+    // VI/EN nằm ở cột trái, bị khung xem (z-index 40, phủ kín màn hình) che
+    // mất nên không đổi được trong lúc đang xem — không cần nghe sự kiện
+    // đổi ngôn ngữ ở đây.
+    (ngu() === 'en' ? pd_en : pd_vi).track.mode = 'showing';
+    (ngu() === 'en' ? pd_vi : pd_en).track.mode = 'hidden';
     // Máy nào không phát được (thiếu bộ giải mã, mạng đứt) thì nói rõ và
     // đưa đường dẫn tải về, chứ không để khung đen im lặng.
     v.addEventListener('error', function () {
