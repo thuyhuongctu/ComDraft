@@ -1344,12 +1344,12 @@
     var co_ky = Math.round(32 * k);
     var f1 = 'italic ' + co_ky + 'px Cambria, "Times New Roman", Georgia, serif';
     var f2 = 'bold ' + co_ky + 'px Cambria, "Times New Roman", Georgia, serif';
-    g.font = f1; var w1 = g.measureText('je m’appelle ').width;
-    g.font = f2; var w2 = g.measureText('hương').width;
+    g.font = f1; var w1 = g.measureText('Je m’appelle ').width;
+    g.font = f2; var w2 = g.measureText('Hương').width;
     var x0 = rong / 2 - (w1 + w2) / 2;
     g.textAlign = 'left';
-    g.font = f1; g.fillStyle = '#9A8580'; g.fillText('je m’appelle ', x0, 820 * k);
-    g.font = f2; g.fillStyle = '#AC4D33'; g.fillText('hương', x0 + w1, 820 * k);
+    g.font = f1; g.fillStyle = '#9A8580'; g.fillText('Je m’appelle ', x0, 820 * k);
+    g.font = f2; g.fillStyle = '#AC4D33'; g.fillText('Hương', x0 + w1, 820 * k);
     g.textAlign = 'center';
     chu(t('giay.gv'), 862, 20, '#9A8580', false, 'Calibri, "Segoe UI", sans-serif');
 
@@ -1402,9 +1402,9 @@
     d.appendChild(g);
 
     var k = el('div', 'ky');
-    k.appendChild(el('i', null, 'je m’appelle'));
+    k.appendChild(el('i', null, 'Je m’appelle'));
     k.appendChild(document.createTextNode(' '));
-    k.appendChild(el('b', null, 'hương'));
+    k.appendChild(el('b', null, 'Hương'));
     d.appendChild(k);
 
     // con dấu thương hiệu của giảng viên, đọc rõ trên cả nền sáng lẫn nền tối

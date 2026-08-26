@@ -1,29 +1,32 @@
-# Chương 5 — EC6000TX (Hệ từ xa)
+# Chapter 5 — EC6000TX (Distance Learning)
 
-Học phần *Kỹ năng giao tiếp và đàm phán trong kinh doanh* (mã **EC6000TX**, hệ
-từ xa), Khoa Kinh tế – Luật, Trường Đại học Sư phạm Kỹ thuật Vĩnh Long. Chương
-5: *Kỹ thuật soạn thảo và trình bày văn bản*. Biên soạn: GV. Đỗ Thùy Hương.
+*Communication and Negotiation Skills in Business* (course code **EC6000TX**,
+distance-learning track), Faculty of Economics and Law, Vinh Long University
+of Technology Education. Chapter 5: *Drafting and Presenting Business
+Documents*. Author: Lecturer Do Thuy Huong.
 
-Thư mục này **khác với ứng dụng ComDraft** ở phần gốc repo (học phần EC1103,
-dạy trực tiếp) — đây là một gói tư liệu độc lập, đặt trong cùng repo chỉ để
-dùng chung cơ chế Zenodo–GitHub đã có sẵn, mint DOI riêng cho gói này làm bằng
-chứng tác quyền khi nộp cho Khoa.
+This folder is **separate from the ComDraft app** at the repository root
+(course EC1103, taught in person) — it is a standalone material package,
+placed in the same repository only to reuse the existing Zenodo–GitHub
+integration and mint its own DOI as proof of authorship for submission to the
+Faculty.
 
-## Nội dung
+## Contents
 
-| Chỗ | Nội dung |
+| Folder | Contents |
 |---|---|
-| `slides/` | Bộ slide (`.pptx` và bản in `.pdf`), 50 trang |
-| `videos/` | Ba video bài giảng, âm thanh là giọng thật của GV. Đỗ Thùy Hương |
-| `kich-ban/` | Kịch bản thuyết minh (kèm thời lượng ước tính từng trang) và văn bản gốc dùng để thu âm |
+| `slides/` | Slide deck (`.pptx` and printable `.pdf`), 50 slides |
+| `videos/` | Three lecture videos, narrated in the lecturer's own voice |
+| `kich-ban/` | Narration script (with an estimated duration per slide) and the source text used for recording |
 
-## Tình trạng Video 1
+## Video 1 status
 
-Video 1 (`videos/CHUONG_5__VIDEO_1.mp4`) đã thay âm thanh cho các trang 2–13;
-riêng trang 1 (trang bìa) vẫn dùng thuyết minh cũ vì chưa có bản thu mới. Bản
-DOI sau sẽ cập nhật khi có bản thu cho trang này.
+Video 1 (`videos/CHUONG_5__VIDEO_1.mp4`) has the new narration for slides
+2–13; only slide 1 (the cover slide) still uses the old narration, as no new
+recording exists for it yet. A future DOI version will update once a
+recording for that slide is available.
 
-## Tác quyền
+## Authorship
 
-© Đỗ Thùy Hương, 2026. Giữ nguyên tên tác giả khi trích dẫn hay sử dụng lại;
-xem `LICENSE` ở gốc repo.
+© Do Thuy Huong, 2026. Keep the author's name when citing or reusing this
+material; see `LICENSE` at the repository root.
