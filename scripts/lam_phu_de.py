@@ -1,16 +1,21 @@
 # -*- coding: utf-8 -*-
-"""Sinh phụ đề WebVTT cho 8 video học liệu.
+"""Sinh phụ đề WebVTT (.vi.vtt và .en.vtt) cho 8 video học liệu.
 
 Không dùng nhận dạng giọng nói. Mỗi video được dựng bằng cách ghép từng đoạn
 một slide — một đoạn lời đọc (scripts/build_videos.py), nên:
 
   • mốc đổi slide trong video = mốc bắt đầu mỗi đoạn lời đọc,
     dò bằng bộ lọc phát hiện đổi cảnh của FFmpeg;
-  • lời đọc của từng đoạn đã có sẵn, nguyên văn, trong videos/kich_ban_video.json;
+  • lời đọc của từng đoạn đã có sẵn, nguyên văn, trong videos/kich_ban_video.json
+    (khoá "loi_doc" tiếng Việt, "loi_doc_en" bản dịch tiếng Anh);
   • khoảng lặng giữa các câu (Piper đặt 0,95 giây) dò bằng silencedetect.
 
-Ghép ba thứ đó lại thì được phụ đề đúng từng chữ và bám sát tiếng nói, tốt hơn
-hẳn cách cho máy nghe rồi đoán lại lời.
+Ghép ba thứ đó lại thì được phụ đề tiếng Việt đúng từng chữ và bám sát tiếng
+nói, tốt hơn hẳn cách cho máy nghe rồi đoán lại lời. Giọng đọc trong video vẫn
+là tiếng Việt (không thu bản tiếng Anh), nên phụ đề .en.vtt chỉ là bản dịch —
+không có khoảng lặng tiếng Anh nào để bám theo, nên khung thời gian được chia
+đều theo tỉ lệ ký tự trong từng đoạn slide, không đúng từng nhịp nói như bản
+tiếng Việt.
 
 © Đỗ Thùy Hương, 2026.
 """
@@ -169,17 +174,8 @@ def gio(t):
     return "%02d:%02d:%06.3f" % (g, p, giay)
 
 
-def lam_mot(ten, muc):
-    tep = os.path.join(VIDEO, ten + ".mp4")
-    dai = do_dai(tep)
-    moc = moc_doi_slide(tep)
-    lang = khoang_lang(tep)
-
-    bien = [0.0] + moc + [dai]
-    if len(bien) - 1 != len(muc):
-        raise SystemExit("%s: dò được %d đoạn nhưng kịch bản có %d mục"
-                         % (ten, len(bien) - 1, len(muc)))
-
+def khung_vi(muc, bien, lang):
+    """Chia khung theo tiếng nói thật: bám khoảng lặng của bản ghi âm."""
     khung = []
     for i, m in enumerate(muc):
         d_dau = bien[i] + TRE_TIENG
@@ -189,8 +185,26 @@ def lam_mot(ten, muc):
             phan = tach_khung(noi)
             for (k_dau, k_cuoi), chu in zip(chia_theo_chu(phan, c_dau, c_cuoi), phan):
                 khung.append([k_dau, k_cuoi, chu])
+    return khung
 
-    # bảo đảm không chồng lấn và không có khung quá ngắn
+
+def khung_en(muc, bien):
+    """Chia khung cho phụ đề dịch: không có tiếng nói tiếng Anh để bám theo,
+    nên chia đều thời lượng mỗi đoạn theo số ký tự của câu và của khung."""
+    khung = []
+    for i, m in enumerate(muc):
+        d_dau = bien[i] + TRE_TIENG
+        d_cuoi = max(d_dau + 1.0, bien[i + 1] - DEM_CUOI)
+        cau = tach_cau(m["loi_doc_en"])
+        for (c_dau, c_cuoi), noi in zip(chia_theo_chu(cau, d_dau, d_cuoi), cau):
+            phan = tach_khung(noi)
+            for (k_dau, k_cuoi), chu in zip(chia_theo_chu(phan, c_dau, c_cuoi), phan):
+                khung.append([k_dau, k_cuoi, chu])
+    return khung
+
+
+def khoa_chong_lan(khung, dai):
+    """Bảo đảm không chồng lấn và không có khung quá ngắn."""
     for j in range(len(khung)):
         if j and khung[j][0] < khung[j - 1][1]:
             khung[j][0] = khung[j - 1][1]
@@ -201,23 +215,55 @@ def lam_mot(ten, muc):
     if khung and khung[-1][1] > dai:
         khung[-1][1] = dai
 
-    ra = ["WEBVTT", "",
-          "NOTE Phụ đề sinh từ kịch bản thuyết minh của GV. Đỗ Thùy Hương.", ""]
+
+def ghi_vtt(duong, khung, ghi_chu):
+    ra = ["WEBVTT", "", "NOTE " + ghi_chu, ""]
     for j, (a, b, chu) in enumerate(khung, 1):
         ra.append(str(j))
         ra.append("%s --> %s" % (gio(a), gio(b)))
         ra.append(chu)
         ra.append("")
-    duong = os.path.join(VIDEO, ten + ".vi.vtt")
     open(duong, "w", encoding="utf-8").write("\n".join(ra))
+
+
+def lam_mot(ten, muc):
+    tep = os.path.join(VIDEO, ten + ".mp4")
+    dai = do_dai(tep)
+    moc = moc_doi_slide(tep)
+    lang_lang = khoang_lang(tep)
+
+    bien = [0.0] + moc + [dai]
+    if len(bien) - 1 != len(muc):
+        raise SystemExit("%s: dò được %d đoạn nhưng kịch bản có %d mục"
+                         % (ten, len(bien) - 1, len(muc)))
+
+    # --- tiếng Việt: bám đúng khoảng lặng trong giọng đọc thật
+    khung = khung_vi(muc, bien, lang_lang)
+    khoa_chong_lan(khung, dai)
+    ghi_vtt(os.path.join(VIDEO, ten + ".vi.vtt"), khung,
+            "Phụ đề sinh từ kịch bản thuyết minh của GV. Đỗ Thùy Hương.")
 
     # đối chiếu: chữ trong phụ đề phải đúng bằng chữ trong kịch bản
     goc = " ".join(" ".join(m["loi_doc"].split()) for m in muc)
     lam = " ".join(k[2] for k in khung)
-    print("%-46s %2d đoạn · %3d khung · %5.1f phút · khớp chữ: %s"
-          % (ten[:46], len(muc), len(khung), dai / 60,
-             "đúng" if goc == lam else "LỆCH"))
-    return goc == lam
+    khop_vi = goc == lam
+
+    # --- tiếng Anh: bản dịch, chia đều theo tỉ lệ ký tự vì giọng đọc vẫn là
+    # tiếng Việt, không có khoảng lặng tiếng Anh nào để bám theo
+    khung_e = khung_en(muc, bien)
+    khoa_chong_lan(khung_e, dai)
+    ghi_vtt(os.path.join(VIDEO, ten + ".en.vtt"), khung_e,
+            "English translation of the Vietnamese narration script. Timing is "
+            "distributed proportionally within each slide segment, since the "
+            "narration itself is in Vietnamese.")
+    goc_e = " ".join(" ".join(m["loi_doc_en"].split()) for m in muc)
+    lam_e = " ".join(k[2] for k in khung_e)
+    khop_en = goc_e == lam_e
+
+    print("%-46s %2d đoạn · %3d/%3d khung · %5.1f phút · khớp chữ vi/en: %s/%s"
+          % (ten[:46], len(muc), len(khung), len(khung_e), dai / 60,
+             "đúng" if khop_vi else "LỆCH", "đúng" if khop_en else "LỆCH"))
+    return khop_vi and khop_en
 
 
 if __name__ == "__main__":

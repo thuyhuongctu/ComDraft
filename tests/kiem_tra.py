@@ -44,21 +44,23 @@ def kiem_song_ngu():
 
 
 def kiem_phu_de():
-    """Chữ trong phụ đề phải đúng nguyên văn kịch bản thuyết minh."""
+    """Chữ trong phụ đề (cả tiếng Việt và bản dịch tiếng Anh) phải đúng nguyên
+    văn kịch bản thuyết minh."""
     kb = json.load(open(os.path.join(GOC_REPO, "videos/kich_ban_video.json"), encoding="utf-8"))
     lech = []
     for ten, muc in kb.items():
-        p = os.path.join(GOC_REPO, "videos", ten + ".vi.vtt")
-        if not os.path.exists(p):
-            lech.append(ten + " (thiếu tệp)")
-            continue
-        khung = re.findall(r"\n\d{2}:\d{2}:[\d.]+ --> \d{2}:\d{2}:[\d.]+\n(.+)",
-                           open(p, encoding="utf-8").read())
-        goc = " ".join(" ".join(m["loi_doc"].split()) for m in muc)
-        if goc != " ".join(khung):
-            lech.append(ten)
+        for duoi, khoa in ((".vi.vtt", "loi_doc"), (".en.vtt", "loi_doc_en")):
+            p = os.path.join(GOC_REPO, "videos", ten + duoi)
+            if not os.path.exists(p):
+                lech.append(ten + duoi + " (thiếu tệp)")
+                continue
+            khung = re.findall(r"\n\d{2}:\d{2}:[\d.]+ --> \d{2}:\d{2}:[\d.]+\n(.+)",
+                               open(p, encoding="utf-8").read())
+            goc = " ".join(" ".join(m[khoa].split()) for m in muc)
+            if goc != " ".join(khung):
+                lech.append(ten + duoi)
     ghi("Phụ đề khớp nguyên văn kịch bản", not lech,
-        "%d video" % len(kb) if not lech else "lệch: %s" % lech)
+        "%d video × 2 ngôn ngữ" % len(kb) if not lech else "lệch: %s" % lech)
 
 
 def kiem_so_slide():

@@ -35,8 +35,10 @@ rất dễ bị hiểu là giấy của nhà trường.
 **Nói đúng ứng dụng làm được gì.** Hai chỗ đã từng viết quá lên, đừng viết lại:
 
 - Giọng trong tám video là giọng máy (Piper, xem `scripts/build_videos.py`),
-  không phải giọng cô. Chỉ được nói "có phụ đề tiếng Việt", không được nói
-  "giọng đọc của giảng viên" cho tới khi cô thu lại thật.
+  không phải giọng cô. Chỉ được nói "có phụ đề tiếng Việt và tiếng Anh"
+  (bản tiếng Anh là bản dịch, sinh bởi `scripts/lam_phu_de.py`, khung thời
+  gian chia đều theo tỉ lệ ký tự chứ không bám giọng đọc như bản tiếng Việt),
+  không được nói "giọng đọc của giảng viên" cho tới khi cô thu lại thật.
 - Cổng ghi danh chỉ khoá cái nút tải. Repo đang công khai nên tệp trong
   `assets/slides/` và `videos/` ai biết đường dẫn vẫn lấy được. Đây là phép
   lịch sự, không phải hàng rào. Muốn khoá thật thì phải để repo riêng tư hoặc
@@ -87,7 +89,7 @@ tay tệp kết quả** — sửa tay thì lần chạy sau đè mất:
 |---|---|
 | `ve_ban_do.py` | `assets/img/viet-nam.svg` và bản nền tối |
 | `xuat_slide.py` | `assets/slides/**` và `data/slides.js` |
-| `lam_phu_de.py` | `videos/*.vi.vtt` |
+| `lam_phu_de.py` | `videos/*.vi.vtt` và `videos/*.en.vtt` |
 | `lam_icon_ung_dung.py` | Bộ icon trong `assets/icons/` |
 | `build_videos.py` | Tám video trong `videos/` |
 | `build_decks.js`, `upgrade_decks.py`, `add_images.py` | Tám bộ slide `.pptx` |
