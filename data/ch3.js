@@ -16,7 +16,15 @@ registerBank({
       ],
       "correct": 2,
       "level": "nhan_biet",
-      "explain": "Mục 3.1 – giao tiếp với cấp trên khi nhận nhiệm vụ: lắng nghe, ghi chú, hỏi lại cho rõ yêu cầu – thời hạn – nguồn lực và xác nhận lại bằng văn bản."
+      "explain": "Mục 3.1 – giao tiếp với cấp trên khi nhận nhiệm vụ: lắng nghe, ghi chú, hỏi lại cho rõ yêu cầu – thời hạn – nguồn lực và xác nhận lại bằng văn bản.",
+      "qEn": "When assigned a task by a superior, which of the following is the most appropriate action?",
+      "aEn": [
+        "Accept the task right away and silently guess at any unclear requirements, to appear proactive",
+        "Just memorise it, since asking too many follow-up questions will make the superior see you as less capable",
+        "Listen, take notes, and ask questions to clarify the requirements, deadline and resources, then confirm back by message or email",
+        "Wait until you run into trouble while doing the work before going back to ask the superior about each detail"
+      ],
+      "explainEn": "Section 3.1 — communicating with a superior when receiving a task: listen, take notes, ask questions to clarify the requirements, deadline and resources, and confirm back in writing."
     },
     {
       "q": "Theo nguyên tắc báo cáo công việc với cấp trên, trình tự trình bày hợp lý là:",
@@ -28,7 +36,15 @@ registerBank({
       ],
       "correct": 0,
       "level": "nhan_biet",
-      "explain": "Mục 3.1 – khi báo cáo: chủ động, đúng hạn, kết quả trước, diễn giải sau."
+      "explain": "Mục 3.1 – khi báo cáo: chủ động, đúng hạn, kết quả trước, diễn giải sau.",
+      "qEn": "According to the principle for reporting work to a superior, the sensible order of presentation is to:",
+      "aEn": [
+        "State the result first, then explain the process and the causes",
+        "Describe the process in detail first, saving the result for last to build suspense",
+        "State the difficulties and objective reasons first, so the superior is sympathetic",
+        "Present a proposal for more resources first, mentioning the result later if time allows"
+      ],
+      "explainEn": "Section 3.1 — when reporting: be proactive and on time, state the result first and explain afterwards."
     },
     {
       "q": "Khi công việc phát sinh sự cố xấu, cách xử lý đúng với cấp trên là:",
@@ -40,7 +56,15 @@ registerBank({
       ],
       "correct": 3,
       "level": "nhan_biet",
-      "explain": "Mục 3.1 – nguyên tắc báo cáo: báo tin xấu sớm kèm phương án xử lý."
+      "explain": "Mục 3.1 – nguyên tắc báo cáo: báo tin xấu sớm kèm phương án xử lý.",
+      "qEn": "When work runs into a serious problem, the correct way to handle it with a superior is to:",
+      "aEn": [
+        "Keep it hidden and fix it yourself, only reporting once everything is completely resolved",
+        "Wait until the next regular reporting cycle to mention it under risks",
+        "Tell colleagues in the department first, to find someone to share the blame",
+        "Report the bad news as early as possible, together with a proposed plan to address it"
+      ],
+      "explainEn": "Section 3.1 — the reporting principle: report bad news early, together with a plan to address it."
     },
     {
       "q": "Khi có ý kiến khác với quyết định của cấp trên, cách ứng xử phù hợp là:",
@@ -52,7 +76,15 @@ registerBank({
       ],
       "correct": 1,
       "level": "nhan_biet",
-      "explain": "Mục 3.1 – khi có ý kiến khác: chọn đúng lúc đúng chỗ, thường là riêng tư, dựa trên dữ liệu và lợi ích chung, tôn trọng quyết định cuối cùng."
+      "explain": "Mục 3.1 – khi có ý kiến khác: chọn đúng lúc đúng chỗ, thường là riêng tư, dựa trên dữ liệu và lợi ích chung, tôn trọng quyết định cuối cùng.",
+      "qEn": "When you disagree with a superior's decision, the appropriate response is to:",
+      "aEn": [
+        "Argue back right there in a crowded meeting so everyone knows your view",
+        "Choose the right time and place, usually a private conversation, based on data and the shared interest",
+        "Stay completely silent and comply, then complain to colleagues to feel better",
+        "Send a company-wide email to create public pressure to force a change of decision"
+      ],
+      "explainEn": "Section 3.1 — when you disagree: choose the right time and place, usually privately, based on data and the shared interest, and respect the final decision."
     },
     {
       "q": "Khi giao việc cho cấp dưới, nhà quản lý cần làm rõ trước hết những yếu tố nào?",
@@ -64,7 +96,15 @@ registerBank({
       ],
       "correct": 0,
       "level": "nhan_biet",
-      "explain": "Mục 3.1 – giao việc: rõ mục tiêu – thời hạn – tiêu chuẩn, kèm niềm tin và nguồn lực, không quản lý vụn vặt."
+      "explain": "Mục 3.1 – giao việc: rõ mục tiêu – thời hạn – tiêu chuẩn, kèm niềm tin và nguồn lực, không quản lý vụn vặt.",
+      "qEn": "When assigning work to a subordinate, what should a manager clarify first?",
+      "aEn": [
+        "The goal, the deadline and the standard for the result, along with the resources needed",
+        "Each individual's bonus, penalty and competitive ranking within the team",
+        "A list of people who previously botched similar work, as a lesson",
+        "An hour-by-hour progress-check schedule to make sure staff don't slack off"
+      ],
+      "explainEn": "Section 3.1 — assigning work: be clear on the goal, deadline and standard, paired with trust and resources, without micromanaging."
     },
     {
       "q": "Nguyên tắc khen và phê bình nhân viên được nêu trong chương là:",
@@ -76,7 +116,15 @@ registerBank({
       ],
       "correct": 2,
       "level": "nhan_biet",
-      "explain": "Mục 3.1 – giao tiếp với cấp dưới: khen công khai kịp thời cụ thể, phê bình riêng tư nhắm vào hành vi kèm hướng khắc phục."
+      "explain": "Mục 3.1 – giao tiếp với cấp dưới: khen công khai kịp thời cụ thể, phê bình riêng tư nhắm vào hành vi kèm hướng khắc phục.",
+      "qEn": "The chapter's principle for praising and criticising staff is:",
+      "aEn": [
+        "Praise privately to be discreet, criticise publicly to deter others",
+        "Both praise and criticism should be done publicly to ensure fairness",
+        "Praise publicly, promptly and specifically; criticise privately, aimed at the behaviour",
+        "Both praise and criticism should be saved for the year-end review, for convenience"
+      ],
+      "explainEn": "Section 3.1 — communicating with subordinates: praise publicly, promptly and specifically; criticise privately, aimed at the behaviour, together with a way to improve."
     },
     {
       "q": "Yếu tố nào sau đây là dấu hiệu của một cuộc họp hiệu quả?",
@@ -88,7 +136,15 @@ registerBank({
       ],
       "correct": 3,
       "level": "nhan_biet",
-      "explain": "Mục 3.1 – họp hiệu quả: chương trình gửi trước, đúng giờ, phát biểu ngắn gọn, có kết luận – biên bản – người chịu trách nhiệm."
+      "explain": "Mục 3.1 – họp hiệu quả: chương trình gửi trước, đúng giờ, phát biểu ngắn gọn, có kết luận – biên bản – người chịu trách nhiệm.",
+      "qEn": "Which of the following is a sign of an effective meeting?",
+      "aEn": [
+        "It runs until everyone has voiced every personal feeling",
+        "No agenda is needed, so the meeting stays natural and open",
+        "The chair just needs to remember the content; minutes aren't really necessary",
+        "An agenda sent in advance, starting on time, concise remarks, and ending with a conclusion, minutes, and a named person responsible"
+      ],
+      "explainEn": "Section 3.1 — an effective meeting: an agenda sent in advance, on time, concise remarks, and a conclusion, minutes and a named person responsible."
     },
     {
       "q": "Quy trình LAST trong xử lý phàn nàn của khách hàng gồm các bước theo thứ tự:",
@@ -100,7 +156,15 @@ registerBank({
       ],
       "correct": 1,
       "level": "nhan_biet",
-      "explain": "Mục 3.2 – quy trình LAST: Listen – Apologize – Solve – Thank."
+      "explain": "Mục 3.2 – quy trình LAST: Listen – Apologize – Solve – Thank.",
+      "qEn": "The LAST process for handling customer complaints consists of the steps, in order:",
+      "aEn": [
+        "Look – Ask – Speak – Try",
+        "Listen – Apologize – Solve – Thank",
+        "Learn – Analyze – Support – Track",
+        "Listen – Argue – Sell – Thank"
+      ],
+      "explainEn": "Section 3.2 — the LAST process: Listen – Apologize – Solve – Thank."
     },
     {
       "q": "Trong quy trình LAST, bước \"A – Apologize\" được hiểu là:",
@@ -112,7 +176,15 @@ registerBank({
       ],
       "correct": 0,
       "level": "nhan_biet",
-      "explain": "Mục 3.2 – bước A: xin lỗi chân thành về trải nghiệm chưa tốt, kể cả khi lỗi chưa rõ thuộc về ai."
+      "explain": "Mục 3.2 – bước A: xin lỗi chân thành về trải nghiệm chưa tốt, kể cả khi lỗi chưa rõ thuộc về ai.",
+      "qEn": "In the LAST process, the \"A – Apologize\" step means:",
+      "aEn": [
+        "A sincere apology for the customer's poor experience, even before it's clear whose fault it is",
+        "Only apologising after investigating and confirming the fault lies with the company",
+        "Apologising along with a long explanation of policy, so the customer understands the company isn't at fault",
+        "Accepting full legal liability and immediately committing to compensate the customer"
+      ],
+      "explainEn": "Section 3.2 — step A: a sincere apology for the poor experience, even before it's clear whose fault it is."
     },
     {
       "q": "Đâu là một trong những \"nguyên tắc vàng\" khi giao tiếp với khách hàng?",
@@ -124,7 +196,15 @@ registerBank({
       ],
       "correct": 2,
       "level": "nhan_biet",
-      "explain": "Mục 3.2 – nguyên tắc vàng: chào đón niềm nở, gọi tên khách, lắng nghe nhu cầu trước khi giới thiệu, nói sự thật, giữ lời hứa."
+      "explain": "Mục 3.2 – nguyên tắc vàng: chào đón niềm nở, gọi tên khách, lắng nghe nhu cầu trước khi giới thiệu, nói sự thật, giữ lời hứa.",
+      "qEn": "Which is one of the \"golden rules\" for communicating with customers?",
+      "aEn": [
+        "Quickly introduce every single product the moment the customer walks in",
+        "Over-promise to keep the customer around, and worry about the rest later",
+        "Listen to the customer's needs before introducing products or services",
+        "Avoid using the customer's name to maintain a professional, polite distance"
+      ],
+      "explainEn": "Section 3.2 — golden rules: greet warmly, use the customer's name, listen to their needs before introducing anything, tell the truth, and keep your word."
     },
     {
       "q": "Điều nào sau đây thuộc nhóm \"tối kỵ\" trong giao tiếp với khách hàng?",
@@ -136,7 +216,15 @@ registerBank({
       ],
       "correct": 3,
       "level": "nhan_biet",
-      "explain": "Mục 3.2 – tối kỵ: tranh cãi thắng – thua, hứa quá khả năng, đổ lỗi, bỏ mặc khách sau bán hàng."
+      "explain": "Mục 3.2 – tối kỵ: tranh cãi thắng – thua, hứa quá khả năng, đổ lỗi, bỏ mặc khách sau bán hàng.",
+      "qEn": "Which of the following belongs to the \"never do this\" group when communicating with customers?",
+      "aEn": [
+        "Greeting warmly and using the customer's correct name while talking",
+        "Telling the truth about what the product or service can actually deliver",
+        "Proactively following up with the customer after the sale",
+        "Arguing to win against the customer, over-promising, and blaming the customer"
+      ],
+      "explainEn": "Section 3.2 — never do: argue to win, over-promise, place blame, or abandon the customer after the sale."
     },
     {
       "q": "Khi giao tiếp, làm việc với cơ quan nhà nước, yêu cầu cơ bản là:",
@@ -148,7 +236,15 @@ registerBank({
       ],
       "correct": 1,
       "level": "nhan_biet",
-      "explain": "Mục 3.2 – với cơ quan nhà nước: đúng thủ tục, đúng thẩm quyền, hồ sơ chuẩn thể thức, nghiêm túc đúng hẹn, không \"đi tắt\" trái quy định."
+      "explain": "Mục 3.2 – với cơ quan nhà nước: đúng thủ tục, đúng thẩm quyền, hồ sơ chuẩn thể thức, nghiêm túc đúng hẹn, không \"đi tắt\" trái quy định.",
+      "qEn": "When communicating and dealing with a state agency, the basic requirement is to:",
+      "aEn": [
+        "Find a personal connection to speed up the procedure",
+        "Follow the correct procedure and authority, submit properly-formatted paperwork, and be professional and punctual",
+        "Submit a preliminary file first and fill in whatever's missing gradually as it's processed",
+        "Have a third party handle everything, to avoid direct contact"
+      ],
+      "explainEn": "Section 3.2 — with state agencies: follow the correct procedure and authority, keep paperwork properly formatted, be professional and punctual, and never take improper shortcuts."
     },
     {
       "q": "Nguyên tắc quan trọng nhất khi tổ chức giao tiếp với báo chí, truyền thông là:",
@@ -160,7 +256,15 @@ registerBank({
       ],
       "correct": 0,
       "level": "nhan_biet",
-      "explain": "Mục 3.2 – truyền thông: chỉ người được ủy quyền phát ngôn, thông tin nhất quán và trung thực."
+      "explain": "Mục 3.2 – truyền thông: chỉ người được ủy quyền phát ngôn, thông tin nhất quán và trung thực.",
+      "qEn": "The most important principle when an organisation communicates with the press and media is:",
+      "aEn": [
+        "Only the authorised spokesperson provides information, ensuring it stays consistent and truthful",
+        "Any employee can answer, so information reaches the public as fast as possible",
+        "Refuse all contact with the press until the matter has fully died down",
+        "Provide favourable information and delay the unfavourable parts until they're discovered"
+      ],
+      "explainEn": "Section 3.2 — media: only the authorised spokesperson speaks, and information stays consistent and truthful."
     },
     {
       "q": "Trên bàn tiệc, vị trí ngồi của khách thường mang ý nghĩa gì?",
@@ -172,7 +276,15 @@ registerBank({
       ],
       "correct": 2,
       "level": "nhan_biet",
-      "explain": "Mục 3.3 – trước bữa tiệc: chờ chủ tiệc mời và xếp chỗ, vị trí ngồi thể hiện thứ bậc."
+      "explain": "Mục 3.3 – trước bữa tiệc: chờ chủ tiệc mời và xếp chỗ, vị trí ngồi thể hiện thứ bậc.",
+      "qEn": "At a banquet table, what does a guest's seating position usually signify?",
+      "aEn": [
+        "It's only meant to spread people evenly around the table for visual balance",
+        "Guests choose it themselves by preference, with no social meaning at all",
+        "It reflects hierarchy and esteem, so guests should wait for the host to invite them and assign seats",
+        "It's determined by the order in which each guest arrives"
+      ],
+      "explainEn": "Section 3.3 — before the meal: wait for the host to invite you and assign seats; seating reflects hierarchy."
     },
     {
       "q": "Trong bữa tiệc theo nghi thức phương Tây, thứ tự sử dụng dao – dĩa – thìa là:",
@@ -184,7 +296,15 @@ registerBank({
       ],
       "correct": 3,
       "level": "nhan_biet",
-      "explain": "Mục 3.3 – trong bữa ăn: chủ tiệc bắt đầu trước, dùng dụng cụ từ ngoài vào trong."
+      "explain": "Mục 3.3 – trong bữa ăn: chủ tiệc bắt đầu trước, dùng dụng cụ từ ngoài vào trong.",
+      "qEn": "In Western dining etiquette, the order for using knives, forks and spoons is:",
+      "aEn": [
+        "From the inside out, starting with the set closest to the plate",
+        "Whatever order you like, as long as it's tidy and quiet",
+        "Whatever set the person sitting opposite you is currently holding",
+        "From the outside in, matching the order the courses are served"
+      ],
+      "explainEn": "Section 3.3 — during the meal: the host starts first, and utensils are used from the outside in."
     },
     {
       "q": "Nhóm quốc gia nào sau đây thường được xếp vào văn hóa giao tiếp \"nói thẳng\"?",
@@ -196,7 +316,15 @@ registerBank({
       ],
       "correct": 1,
       "level": "nhan_biet",
-      "explain": "Mục 3.4 – cách nói: văn hóa nói thẳng (Đức, Mỹ, Hà Lan) đối lập với văn hóa nói vòng (Nhật, Hàn, Việt)."
+      "explain": "Mục 3.4 – cách nói: văn hóa nói thẳng (Đức, Mỹ, Hà Lan) đối lập với văn hóa nói vòng (Nhật, Hàn, Việt).",
+      "qEn": "Which group of countries is usually classed as having a \"direct-speech\" communication culture?",
+      "aEn": [
+        "Japan, South Korea, Vietnam",
+        "Germany, the United States, the Netherlands",
+        "China, Thailand, Indonesia",
+        "India, the Philippines, Malaysia"
+      ],
+      "explainEn": "Section 3.4 — style of speech: direct-speech cultures (Germany, the US, the Netherlands) contrast with indirect-speech cultures (Japan, Korea, Vietnam)."
     },
     {
       "q": "Vì sao sau khi nhận nhiệm vụ nên xác nhận lại với cấp trên bằng tin nhắn hoặc email?",
@@ -208,7 +336,15 @@ registerBank({
       ],
       "correct": 0,
       "level": "thong_hieu",
-      "explain": "Mục 3.1 – xác nhận lại bằng văn bản giúp thống nhất cách hiểu về yêu cầu – thời hạn – nguồn lực, tránh sai lệch."
+      "explain": "Mục 3.1 – xác nhận lại bằng văn bản giúp thống nhất cách hiểu về yêu cầu – thời hạn – nguồn lực, tránh sai lệch.",
+      "qEn": "Why should you confirm back with your superior by message or email after receiving a task?",
+      "aEn": [
+        "Because it creates a shared record both sides can refer back to, limiting misunderstandings about requirements and deadlines",
+        "Because it's a mandatory administrative procedure in every organisation, and skipping it leads to discipline",
+        "Because it gives the employee evidence to blame the superior if the work fails",
+        "Because email is more formal, so it shows deference to the manager"
+      ],
+      "explainEn": "Section 3.1 — confirming in writing helps align understanding of the requirements, deadline and resources, avoiding discrepancies."
     },
     {
       "q": "Nguyên tắc \"kết quả trước, diễn giải sau\" khi báo cáo mang lại lợi ích chủ yếu nào?",
@@ -220,7 +356,15 @@ registerBank({
       ],
       "correct": 1,
       "level": "thong_hieu",
-      "explain": "Mục 3.1 – báo cáo đưa kết quả lên trước giúp cấp trên nắm trọng tâm và ra quyết định nhanh."
+      "explain": "Mục 3.1 – báo cáo đưa kết quả lên trước giúp cấp trên nắm trọng tâm và ra quyết định nhanh.",
+      "qEn": "What is the main benefit of the \"result first, explanation after\" principle when reporting?",
+      "aEn": [
+        "It helps the reporter hide parts of the work that aren't finished",
+        "It lets the superior grasp the situation immediately to make a decision, saving time",
+        "It makes the report longer and shows off the volume of work done",
+        "It helps avoid having to answer probing questions from meeting attendees"
+      ],
+      "explainEn": "Section 3.1 — putting the result first in a report helps the superior grasp the key point and decide quickly."
     },
     {
       "q": "\"Không quản lý vụn vặt\" khi giao việc cho cấp dưới được hiểu là:",
@@ -232,7 +376,15 @@ registerBank({
       ],
       "correct": 2,
       "level": "thong_hieu",
-      "explain": "Mục 3.1 – giao việc kèm niềm tin và nguồn lực, kiểm soát theo mục tiêu chứ không soi từng thao tác."
+      "explain": "Mục 3.1 – giao việc kèm niềm tin và nguồn lực, kiểm soát theo mục tiêu chứ không soi từng thao tác.",
+      "qEn": "\"Not micromanaging\" when assigning work to a subordinate means:",
+      "aEn": [
+        "Handing off the work completely, with no follow-up or support needed",
+        "Only assigning small, simple tasks so staff can't make big mistakes",
+        "Delegating authority and trust within the agreed goal and standard, without interfering in every single action",
+        "Letting the employee set their own goal, deadline and standard for the work"
+      ],
+      "explainEn": "Section 3.1 — assign work along with trust and resources, managing by the goal rather than scrutinising every action."
     },
     {
       "q": "Phê bình \"nhắm vào hành vi, không nhắm vào con người\" nghĩa là:",
@@ -244,7 +396,15 @@ registerBank({
       ],
       "correct": 3,
       "level": "thong_hieu",
-      "explain": "Mục 3.1 – phê bình riêng tư, nhắm vào hành vi kèm hướng khắc phục, không công kích con người."
+      "explain": "Mục 3.1 – phê bình riêng tư, nhắm vào hành vi kèm hướng khắc phục, không công kích con người.",
+      "qEn": "Criticising by \"targeting the behaviour, not the person\" means:",
+      "aEn": [
+        "Just giving a vague reminder in front of the group and letting the person work it out",
+        "Bringing up all the employee's past mistakes to prove the problem is systemic",
+        "Judging the employee's character so they recognise the root of the problem",
+        "Clearly stating the specific wrong behaviour and its consequences, together with a way to improve, without labelling the person's character"
+      ],
+      "explainEn": "Section 3.1 — criticise privately, aimed at the behaviour together with a way to improve, never attacking the person."
     },
     {
       "q": "Trong quan hệ với đồng nghiệp, cách tranh luận đúng đắn về công việc là:",
@@ -256,7 +416,15 @@ registerBank({
       ],
       "correct": 0,
       "level": "thong_hieu",
-      "explain": "Mục 3.1 – với đồng nghiệp: hợp tác, chia sẻ thông tin, tranh luận về công việc chứ không công kích cá nhân, tránh bè phái."
+      "explain": "Mục 3.1 – với đồng nghiệp: hợp tác, chia sẻ thông tin, tranh luận về công việc chứ không công kích cá nhân, tránh bè phái.",
+      "qEn": "In relations with colleagues, the correct way to debate work matters is to:",
+      "aEn": [
+        "Focus on the content, the data and the solution, without personally attacking others",
+        "Hold your position to the end and rally more supporters to gain a numbers advantage",
+        "Avoid all debate to keep the peace, agreeing with whatever anyone says",
+        "Escalate the matter to a superior right from the start, to avoid any friction"
+      ],
+      "explainEn": "Section 3.1 — with colleagues: cooperate, share information, debate the work rather than attack the person, and avoid factions."
     },
     {
       "q": "Vì sao biên bản họp cần ghi rõ người chịu trách nhiệm cho từng đầu việc?",
@@ -268,7 +436,15 @@ registerBank({
       ],
       "correct": 1,
       "level": "thong_hieu",
-      "explain": "Mục 3.1 – họp hiệu quả phải kết thúc bằng kết luận, biên bản và người chịu trách nhiệm rõ ràng."
+      "explain": "Mục 3.1 – họp hiệu quả phải kết thúc bằng kết luận, biên bản và người chịu trách nhiệm rõ ràng.",
+      "qEn": "Why should meeting minutes clearly state who is responsible for each task?",
+      "aEn": [
+        "To have a file ready in case of an inspection from above",
+        "So the meeting's conclusions turn into concrete action, with someone tracking it and a basis for assessing progress",
+        "To spread the workload evenly among everyone who attended the meeting",
+        "So that anyone absent from the meeting doesn't have to take on any tasks"
+      ],
+      "explainEn": "Section 3.1 — an effective meeting must end with a conclusion, minutes, and a clearly named person responsible."
     },
     {
       "q": "Vì sao ở bước Apologize nhân viên nên xin lỗi ngay cả khi chưa xác định được lỗi thuộc về ai?",
@@ -280,7 +456,15 @@ registerBank({
       ],
       "correct": 2,
       "level": "thong_hieu",
-      "explain": "Mục 3.2 – bước A của LAST: xin lỗi về trải nghiệm chưa tốt, không đồng nghĩa với nhận lỗi về trách nhiệm."
+      "explain": "Mục 3.2 – bước A của LAST: xin lỗi về trải nghiệm chưa tốt, không đồng nghĩa với nhận lỗi về trách nhiệm.",
+      "qEn": "Why should staff apologise at the Apologize step even before it's clear whose fault it is?",
+      "aEn": [
+        "Because apologising first reduces the compensation the business has to pay",
+        "Because the law requires the seller to apologise whenever a customer complains",
+        "Because the apology is aimed at the customer's poor experience, helping to cool emotions so both sides can find a solution",
+        "Because the customer is always right, so every complaint must be accepted unconditionally"
+      ],
+      "explainEn": "Section 3.2 — the A step of LAST: apologising for the poor experience is not the same as admitting fault."
     },
     {
       "q": "Vì sao khách hàng từng phàn nàn và được xử lý tốt thường trung thành hơn khách chưa từng gặp vấn đề?",
@@ -292,7 +476,15 @@ registerBank({
       ],
       "correct": 3,
       "level": "thong_hieu",
-      "explain": "Mục 3.2 – mỗi điểm tiếp xúc xây hoặc phá niềm tin; xử lý phàn nàn tốt biến sự cố thành cơ hội củng cố niềm tin."
+      "explain": "Mục 3.2 – mỗi điểm tiếp xúc xây hoặc phá niềm tin; xử lý phàn nàn tốt biến sự cố thành cơ hội củng cố niềm tin.",
+      "qEn": "Why is a customer whose complaint was handled well often more loyal than one who never had a problem?",
+      "aEn": [
+        "Because they usually get a steep discount, so they stay for the material benefit",
+        "Because they're reluctant to switch providers after already going to the trouble of complaining",
+        "Because their expectations are now lower, so they accept service quality more easily than before",
+        "Because they've directly witnessed the business keeping its word and taking responsibility, which reinforces their trust"
+      ],
+      "explainEn": "Section 3.2 — every touchpoint either builds or breaks trust; handling a complaint well turns an incident into a chance to strengthen trust."
     },
     {
       "q": "Vì sao \"hứa quá khả năng\" bị xem là điều tối kỵ trong giao tiếp với khách hàng?",
@@ -304,7 +496,15 @@ registerBank({
       ],
       "correct": 0,
       "level": "thong_hieu",
-      "explain": "Mục 3.2 – nói sự thật và giữ lời hứa là nguyên tắc vàng; hứa quá khả năng thuộc nhóm tối kỵ vì phá niềm tin."
+      "explain": "Mục 3.2 – nói sự thật và giữ lời hứa là nguyên tắc vàng; hứa quá khả năng thuộc nhóm tối kỵ vì phá niềm tin.",
+      "qEn": "Why is \"over-promising\" considered a cardinal sin in communicating with customers?",
+      "aEn": [
+        "Because a broken promise destroys trust, and the damage far outweighs any short-term gain",
+        "Because a verbal promise to a customer is always as legally binding as a contract",
+        "Because the employee's pay will be docked and the customer compensated under general policy",
+        "Because customers usually don't remember what was promised, so promising has no effect anyway"
+      ],
+      "explainEn": "Section 3.2 — telling the truth and keeping your word is a golden rule; over-promising is a cardinal sin because it destroys trust."
     },
     {
       "q": "Quan điểm \"quan hệ lâu dài quan trọng hơn lợi thế ngắn hạn\" với đối tác thể hiện ở hành vi nào?",
@@ -316,7 +516,15 @@ registerBank({
       ],
       "correct": 1,
       "level": "thong_hieu",
-      "explain": "Mục 3.2 – với đối tác: bình đẳng, giữ chữ tín, minh bạch, đặt quan hệ lâu dài trên lợi thế ngắn hạn."
+      "explain": "Mục 3.2 – với đối tác: bình đẳng, giữ chữ tín, minh bạch, đặt quan hệ lâu dài trên lợi thế ngắn hạn.",
+      "qEn": "The view that \"a long-term relationship matters more than a short-term advantage\" with a partner is shown in which behaviour?",
+      "aEn": [
+        "Using your negotiating strength to force the partner into the worst possible terms",
+        "Being transparent, honouring commitments, and accepting reasonable concessions to sustain the partnership",
+        "Concealing all unfavourable information about yourself until the contract is signed",
+        "Only cooperating deal by deal, cutting contact once it's done to avoid being tied down"
+      ],
+      "explainEn": "Section 3.2 — with partners: be equal, keep your word, stay transparent, and put the long-term relationship above short-term advantage."
     },
     {
       "q": "Trong xử lý khủng hoảng truyền thông, \"thông tin nhất quán\" được hiểu là:",
@@ -328,7 +536,15 @@ registerBank({
       ],
       "correct": 2,
       "level": "thong_hieu",
-      "explain": "Mục 3.2 – truyền thông: thông tin nhất quán, trung thực; khủng hoảng thì phản hồi nhanh và nhận trách nhiệm đúng phần của mình."
+      "explain": "Mục 3.2 – truyền thông: thông tin nhất quán, trung thực; khủng hoảng thì phản hồi nhanh và nhận trách nhiệm đúng phần của mình.",
+      "qEn": "In handling a media crisis, \"consistent information\" means:",
+      "aEn": [
+        "Only putting out favourable information and repeating it across every channel",
+        "Each department speaking out in its own understanding, to be timely",
+        "Every channel and every statement conveying the same verified content, with nothing contradicting",
+        "Sticking to the first press release without updating it, even with new data"
+      ],
+      "explainEn": "Section 3.2 — media: keep information consistent and truthful; in a crisis, respond quickly and own your fair share of responsibility."
     },
     {
       "q": "Vì sao khách mời nên chờ chủ tiệc mời và xếp chỗ thay vì tự chọn chỗ ngồi?",
@@ -340,7 +556,15 @@ registerBank({
       ],
       "correct": 3,
       "level": "thong_hieu",
-      "explain": "Mục 3.3 – trước bữa tiệc: chờ chủ tiệc mời và xếp chỗ vì vị trí ngồi thể hiện thứ bậc."
+      "explain": "Mục 3.3 – trước bữa tiệc: chờ chủ tiệc mời và xếp chỗ vì vị trí ngồi thể hiện thứ bậc.",
+      "qEn": "Why should guests wait for the host to invite them and assign seats, rather than choosing their own?",
+      "aEn": [
+        "Because the host needs an exact headcount to arrange the right number of meals",
+        "Because latecomers would have no seats left if early guests picked freely",
+        "Because it's a mandatory rule at every restaurant that serves banquets",
+        "Because the seating plan is arranged by rank and the host's intent, and sitting wherever you like could cause a faux pas"
+      ],
+      "explainEn": "Section 3.3 — before the meal: wait for the host to invite you and assign seats, since seating reflects hierarchy."
     },
     {
       "q": "Vì sao trên bàn tiệc nên tránh các chủ đề chính trị, tôn giáo, thu nhập, đời tư?",
@@ -352,7 +576,15 @@ registerBank({
       ],
       "correct": 0,
       "level": "thong_hieu",
-      "explain": "Mục 3.3 – câu chuyện trên bàn tiệc nên nhẹ nhàng (ẩm thực, thể thao, du lịch, quê quán), tránh chủ đề dễ gây bất đồng hoặc riêng tư."
+      "explain": "Mục 3.3 – câu chuyện trên bàn tiệc nên nhẹ nhàng (ẩm thực, thể thao, du lịch, quê quán), tránh chủ đề dễ gây bất đồng hoặc riêng tư.",
+      "qEn": "Why should politics, religion, income and personal matters be avoided at the dinner table?",
+      "aEn": [
+        "Because these topics easily cause disagreement, touch on privacy, and spoil the relaxed shared atmosphere",
+        "Because these topics require deep expertise that few people can keep up with",
+        "Because the law bans discussing these topics in public places like restaurants",
+        "Because these topics tend to make the meal run longer than planned"
+      ],
+      "explainEn": "Section 3.3 — dinner-table conversation should stay light (food, sport, travel, hometowns), avoiding topics that easily cause disagreement or are too personal."
     },
     {
       "q": "Trong văn hóa nói vòng, câu \"Để chúng tôi xem xét thêm\" thường hàm ý điều gì?",
@@ -364,7 +596,15 @@ registerBank({
       ],
       "correct": 1,
       "level": "thong_hieu",
-      "explain": "Mục 3.4 – trong văn hóa nói vòng (Nhật, Hàn, Việt), \"để chúng tôi xem xét\" có thể là lời từ chối."
+      "explain": "Mục 3.4 – trong văn hóa nói vòng (Nhật, Hàn, Việt), \"để chúng tôi xem xét\" có thể là lời từ chối.",
+      "qEn": "In an indirect-speech culture, what does the phrase \"We'll consider it further\" usually imply?",
+      "aEn": [
+        "The partner will definitely agree, and just needs to finish internal procedures",
+        "It may be a polite way of saying no, to preserve both sides' dignity",
+        "The partner is asking for a discount and hoping the other side proposes a new price",
+        "The partner hasn't understood the proposal and wants it presented again from scratch"
+      ],
+      "explainEn": "Section 3.4 — in indirect-speech cultures (Japan, Korea, Vietnam), \"we'll consider it\" can be a way of saying no."
     },
     {
       "q": "Đặc điểm \"ra quyết định tập thể\" ở một số nước như Nhật, Hàn, Trung Quốc dẫn tới hệ quả nào trong đàm phán?",
@@ -376,7 +616,15 @@ registerBank({
       ],
       "correct": 2,
       "level": "thong_hieu",
-      "explain": "Mục 3.4 – thứ bậc và ra quyết định: các nền văn hóa coi trọng tôn ti thường quyết định tập thể, cần thời gian tạo đồng thuận."
+      "explain": "Mục 3.4 – thứ bậc và ra quyết định: các nền văn hóa coi trọng tôn ti thường quyết định tập thể, cần thời gian tạo đồng thuận.",
+      "qEn": "The trait of \"collective decision-making\" in countries like Japan, Korea and China leads to what consequence in negotiation?",
+      "aEn": [
+        "The most senior person in the meeting always finalises the deal on the spot",
+        "Every member has an equal veto, so negotiations usually stall",
+        "The decision process usually takes longer, since internal consultation and consensus are needed before an official answer",
+        "The negotiation outcome needs no written record, since the group has already agreed verbally"
+      ],
+      "explainEn": "Section 3.4 — hierarchy and decision-making: cultures that value rank tend to decide collectively, which takes time to build consensus."
     },
     {
       "q": "Nguyên tắc \"không suy diễn theo chuẩn của mình\" trong giao tiếp đa văn hóa nghĩa là:",
@@ -388,7 +636,15 @@ registerBank({
       ],
       "correct": 3,
       "level": "thong_hieu",
-      "explain": "Mục 3.4 – nguyên tắc thích ứng: tìm hiểu trước, quan sát và điều chỉnh, không suy diễn theo chuẩn của mình."
+      "explain": "Mục 3.4 – nguyên tắc thích ứng: tìm hiểu trước, quan sát và điều chỉnh, không suy diễn theo chuẩn của mình.",
+      "qEn": "The principle of \"not interpreting by your own standards\" in cross-cultural communication means:",
+      "aEn": [
+        "Rejecting every different custom and stubbornly keeping your own style",
+        "Forcing the partner to explain every unfamiliar behaviour before work can continue",
+        "Applying the standards of whichever culture is more dominant, so both sides share one benchmark",
+        "Not assuming another person's behaviour means what it would in your own culture, but learning and observing to understand it correctly"
+      ],
+      "explainEn": "Section 3.4 — the adaptation principle: learn beforehand, observe and adjust, and don't interpret by your own standards."
     },
     {
       "q": "Trưởng phòng giao bạn hoàn thành báo cáo trong 2 ngày, nhưng khối lượng thực tế cần ít nhất 5 ngày. Cách xử lý phù hợp nhất là:",
@@ -400,7 +656,15 @@ registerBank({
       ],
       "correct": 0,
       "level": "van_dung",
-      "explain": "Mục 3.1 – nêu ý kiến khác nên chọn riêng tư, dựa trên dữ liệu và lợi ích chung; đồng thời khi nhận nhiệm vụ phải làm rõ thời hạn – nguồn lực."
+      "explain": "Mục 3.1 – nêu ý kiến khác nên chọn riêng tư, dựa trên dữ liệu và lợi ích chung; đồng thời khi nhận nhiệm vụ phải làm rõ thời hạn – nguồn lực.",
+      "qEn": "Your department head gives you 2 days to finish a report, but the actual workload needs at least 5 days. The most appropriate response is to:",
+      "aEn": [
+        "Meet the department head privately, present the workload with concrete figures, and propose options: extend the deadline, narrow the scope, or add manpower",
+        "Agree right away to look positive, and explain later if it's not done in time",
+        "Announce right in the department-wide meeting that the deadline is impossible",
+        "Quietly rush through it to meet the deadline, accepting whatever quality results"
+      ],
+      "explainEn": "Section 3.1 — voice a differing view privately, based on data and the shared interest; and when accepting a task, the deadline and resources must be clarified."
     },
     {
       "q": "Một nhân viên trong nhóm bạn phụ trách đi làm muộn ba lần trong tuần. Cách xử lý phù hợp nhất là:",
@@ -412,7 +676,15 @@ registerBank({
       ],
       "correct": 1,
       "level": "van_dung",
-      "explain": "Mục 3.1 – phê bình riêng tư, nhắm vào hành vi cụ thể và kèm hướng khắc phục."
+      "explain": "Mục 3.1 – phê bình riêng tư, nhắm vào hành vi cụ thể và kèm hướng khắc phục.",
+      "qEn": "An employee on the team you manage has been late three times this week. The most appropriate response is to:",
+      "aEn": [
+        "Post a general reminder in the group chat that \"someone keeps being late\" and let them figure it out",
+        "Meet the employee privately, name the three specific instances and their impact on the work, and agree together on a fix",
+        "Name the employee in the briefing meeting to make an example for the team",
+        "Let it go since it's a personal matter, and only act once work results decline"
+      ],
+      "explainEn": "Section 3.1 — criticise privately, aimed at the specific behaviour, together with a way to fix it."
     },
     {
       "q": "Một khách hàng đến quầy, lớn tiếng phàn nàn về sản phẩm lỗi trước nhiều người. Việc đầu tiên bạn nên làm là:",
@@ -424,7 +696,15 @@ registerBank({
       ],
       "correct": 2,
       "level": "van_dung",
-      "explain": "Mục 3.2 – bước L (Listen) của LAST: lắng nghe trọn vẹn, không ngắt lời, không phòng thủ."
+      "explain": "Mục 3.2 – bước L (Listen) của LAST: lắng nghe trọn vẹn, không ngắt lời, không phòng thủ.",
+      "qEn": "A customer comes to the counter and loudly complains about a defective product in front of many people. The first thing you should do is:",
+      "aEn": [
+        "Immediately explain the warranty policy so the customer understands the company followed procedure",
+        "Ask the customer to lower their voice, since it's affecting other customers",
+        "Hear them out fully, without interrupting or getting defensive, letting the customer state the whole problem",
+        "Immediately call the manager to take over and leave your post"
+      ],
+      "explainEn": "Section 3.2 — the L (Listen) step of LAST: hear them out fully, without interrupting or getting defensive."
     },
     {
       "q": "Khách yêu cầu hoàn tiền toàn bộ nhưng mức này vượt thẩm quyền của bạn. Cách xử lý đúng theo bước Solve là:",
@@ -436,7 +716,15 @@ registerBank({
       ],
       "correct": 3,
       "level": "van_dung",
-      "explain": "Mục 3.2 – bước S (Solve): đưa phương án cụ thể, thời hạn rõ; vượt thẩm quyền thì chuyển đúng người."
+      "explain": "Mục 3.2 – bước S (Solve): đưa phương án cụ thể, thời hạn rõ; vượt thẩm quyền thì chuyển đúng người.",
+      "qEn": "A customer demands a full refund, but that exceeds your authority. The correct way to handle it under the Solve step is to:",
+      "aEn": [
+        "Flatly refuse, since you have no authority to decide on that refund",
+        "Promise the refund to send the customer away reassured, then sort it out internally afterwards",
+        "Ask the customer to call the hotline themselves and explain the whole case again",
+        "State the limits of your authority clearly, escalate the case to the right person, and set a specific time to respond"
+      ],
+      "explainEn": "Section 3.2 — the S (Solve) step: offer a concrete plan with a clear deadline; if it exceeds your authority, escalate to the right person."
     },
     {
       "q": "Bạn là nhân viên kỹ thuật, một phóng viên gọi điện hỏi về sự cố mất dữ liệu của công ty. Bạn nên:",
@@ -448,7 +736,15 @@ registerBank({
       ],
       "correct": 0,
       "level": "van_dung",
-      "explain": "Mục 3.2 – truyền thông: chỉ người được ủy quyền phát ngôn; nhân viên khác chuyển đúng đầu mối để bảo đảm thông tin nhất quán."
+      "explain": "Mục 3.2 – truyền thông: chỉ người được ủy quyền phát ngôn; nhân viên khác chuyển đúng đầu mối để bảo đảm thông tin nhất quán.",
+      "qEn": "You're a technical staff member, and a reporter calls asking about the company's data-loss incident. You should:",
+      "aEn": [
+        "Politely decline to answer, direct the reporter to the authorised spokesperson, and report it internally",
+        "Answer based on your own technical knowledge, so the public gets information quickly and accurately",
+        "Say the company had no incident at all, to reassure the public",
+        "Hang up immediately and tell no one at the company, to avoid getting involved"
+      ],
+      "explainEn": "Section 3.2 — media: only the authorised spokesperson speaks; other staff redirect to the right contact to keep information consistent."
     },
     {
       "q": "Trong bữa tiệc, một vị khách liên tục ép bạn uống rượu trong khi bạn phải lái xe. Cách ứng xử phù hợp nhất là:",
@@ -460,7 +756,15 @@ registerBank({
       ],
       "correct": 1,
       "level": "van_dung",
-      "explain": "Mục 3.3 – chúc rượu: tôn trọng người không dùng rượu bia, không ép; ứng xử vẫn cần lịch thiệp, giữ không khí chung."
+      "explain": "Mục 3.3 – chúc rượu: tôn trọng người không dùng rượu bia, không ép; ứng xử vẫn cần lịch thiệp, giữ không khí chung.",
+      "qEn": "At a banquet, a guest keeps pressuring you to drink alcohol, but you have to drive. The most appropriate response is to:",
+      "aEn": [
+        "Drink the whole glass to keep the peace, then drive home very carefully afterwards",
+        "Thank them for the goodwill, briefly explain the reason, and offer a sincere toast with water instead",
+        "Silently push the glass away and turn to talk to the person next to you",
+        "Criticise them right at the table for pressuring people to drink being poor manners"
+      ],
+      "explainEn": "Section 3.3 — toasting: respect anyone who doesn't drink and never pressure them; the response should still be courteous and keep the shared mood pleasant."
     },
     {
       "q": "Bạn là nhân viên mới, được mời cụng ly với giám đốc trong tiệc tất niên. Cách làm đúng nghi thức là:",
@@ -472,7 +776,15 @@ registerBank({
       ],
       "correct": 2,
       "level": "van_dung",
-      "explain": "Mục 3.3 – chúc rượu: người ở vị thế thấp hơn nâng ly thấp hơn khi cụng, lời chúc ngắn gọn."
+      "explain": "Mục 3.3 – chúc rượu: người ở vị thế thấp hơn nâng ly thấp hơn khi cụng, lời chúc ngắn gọn.",
+      "qEn": "You're a new employee invited to clink glasses with the director at the year-end party. The correct etiquette is to:",
+      "aEn": [
+        "Raise your glass higher than the director's to show enthusiasm",
+        "Give a long toast recounting the department's achievements all year to make an impression",
+        "Hold your glass lower than the director's when clinking, and give a brief, respectful toast",
+        "Wait until the director has finished drinking before raising your own glass, to avoid being impolite"
+      ],
+      "explainEn": "Section 3.3 — toasting: the person of lower status holds their glass lower when clinking, with a brief toast."
     },
     {
       "q": "Sau buổi làm việc, đối tác Nhật Bản nói: \"Đề xuất rất thú vị, chúng tôi sẽ xem xét thêm.\" Bạn nên:",
@@ -484,7 +796,15 @@ registerBank({
       ],
       "correct": 3,
       "level": "van_dung",
-      "explain": "Mục 3.4 – trong văn hóa nói vòng, câu này có thể là từ chối; nguyên tắc thích ứng là không suy diễn và xác nhận lại bằng văn bản."
+      "explain": "Mục 3.4 – trong văn hóa nói vòng, câu này có thể là từ chối; nguyên tắc thích ứng là không suy diễn và xác nhận lại bằng văn bản.",
+      "qEn": "After a meeting, a Japanese partner says: \"That's a very interesting proposal, we'll consider it further.\" You should:",
+      "aEn": [
+        "Treat it as a done deal and start preparing resources to execute the contract",
+        "Press the partner for a definite answer that same day, to keep the project on schedule",
+        "Conclude the partner has refused and move on to look for another provider",
+        "Not interpret it by your own assumptions; send a summary email and clearly ask about the next steps and a timeline for a response"
+      ],
+      "explainEn": "Section 3.4 — in an indirect-speech culture, this phrase can be a refusal; the adaptation principle is not to assume, and to confirm in writing."
     }
   ]
 });
