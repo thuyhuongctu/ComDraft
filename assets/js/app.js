@@ -92,6 +92,11 @@
     return k ? k.title.replace(/^Chương \d+\s*[–-]\s*/, '') : id;
   }
   function bank(id) { return KHO.filter(function (x) { return x.id === id; })[0]; }
+  // Câu hỏi nào chưa có bản dịch (qEn/aEn/explainEn) thì vẫn hiện tiếng Việt —
+  // dịch dần từng chương, không phải xong hết một lúc mới dùng được.
+  function cau_q(q) { return (ngu() === 'en' && q.qEn) ? q.qEn : q.q; }
+  function cau_a(q, i) { return (ngu() === 'en' && q.aEn) ? q.aEn[i] : q.a[i]; }
+  function cau_explain(q) { return (ngu() === 'en' && q.explainEn) ? q.explainEn : q.explain; }
   function tong_cau() { return KHO.reduce(function (s, b) { return s + b.questions.length; }, 0); }
   function dem_sao() { return Object.keys(luu.danh_dau || {}).length; }
 
@@ -1003,7 +1008,7 @@
       c.style.cssText += ';margin-left:7px;background:var(--mat-2)';
       trai.appendChild(c);
     }
-    trai.appendChild(el('div', 'cau', q.q));
+    trai.appendChild(el('div', 'cau', cau_q(q)));
     hang.appendChild(trai);
 
     var khoa = m.goc.chuong + ':' + m.goc.chi_so;
@@ -1024,7 +1029,7 @@
     m.thu_tu.forEach(function (goc_i, hien_i) {
       var b = el('button'); b.type = 'button';
       b.appendChild(el('span', 'ky', KY[hien_i]));
-      b.appendChild(el('span', null, q.a[goc_i]));
+      b.appendChild(el('span', null, cau_a(q, goc_i)));
       if (m.chon !== null) {
         b.disabled = true;
         if (cai.che_do === 'on_tap') {
@@ -1040,10 +1045,10 @@
     });
     the.appendChild(day);
 
-    if (m.chon !== null && cai.che_do === 'on_tap' && q.explain) {
+    if (m.chon !== null && cai.che_do === 'on_tap' && cau_explain(q)) {
       var g = el('div', 'giai-thich');
       var dung = m.thu_tu[m.chon] === q.correct;
-      g.innerHTML = '<b>' + thoat(t(dung ? 'lb.chinhxac' : 'lb.chuadung')) + '</b>' + thoat(q.explain);
+      g.innerHTML = '<b>' + thoat(t(dung ? 'lb.chinhxac' : 'lb.chuadung')) + '</b>' + thoat(cau_explain(q));
       the.appendChild(g);
     }
 
@@ -1123,19 +1128,19 @@
       var ds = el('div', 'xem-lai');
       sai.forEach(function (m) {
         var q = m.goc.q, d = el('details');
-        d.appendChild(el('summary', null, q.q));
+        d.appendChild(el('summary', null, cau_q(q)));
         var g = el('div', 'ghi');
         if (m.chon !== null) {
           var p1 = el('p');
-          p1.innerHTML = thoat(t('kq.banchon')) + ': <span class="s">' + thoat(q.a[m.thu_tu[m.chon]]) + '</span>';
+          p1.innerHTML = thoat(t('kq.banchon')) + ': <span class="s">' + thoat(cau_a(q, m.thu_tu[m.chon])) + '</span>';
           g.appendChild(p1);
         } else g.appendChild(el('p', null, t('kq.chuatraloi')));
         var p2 = el('p');
-        p2.innerHTML = thoat(t('kq.dapandung')) + ': <span class="d">' + thoat(q.a[q.correct]) + '</span>';
+        p2.innerHTML = thoat(t('kq.dapandung')) + ': <span class="d">' + thoat(cau_a(q, q.correct)) + '</span>';
         g.appendChild(p2);
-        if (q.explain) {
+        if (cau_explain(q)) {
           var p3 = el('p');
-          p3.innerHTML = '<b style="color:var(--chinh)">' + thoat(t('kq.visao')) + '</b>' + thoat(q.explain);
+          p3.innerHTML = '<b style="color:var(--chinh)">' + thoat(t('kq.visao')) + '</b>' + thoat(cau_explain(q));
           g.appendChild(p3);
         }
         d.appendChild(g); ds.appendChild(d);
