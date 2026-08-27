@@ -238,11 +238,13 @@ def kiem_tren_trinh_duyet(pw):
         sk.value.suggested_filename.endswith(".png"), sk.value.suggested_filename)
     p.keyboard.press("Escape")
 
-    # tour
+    # tour — không dò chữ "1/" vì bản tiếng Anh viết "Step 1 of n", không có
+    # dấu gạch chéo; kiểm tra có số 1 và vùng sáng là đủ, không phụ thuộc
+    # ngôn ngữ đang hiện.
     p.locator('.menu button[data-trang="nha"]').click(); p.wait_for_timeout(400)
     p.locator("#tour-goi").click(); p.wait_for_timeout(800)
     ghi("Tour Hương AI chạy và làm sáng đúng vùng",
-        p.locator(".tour-sang").count() == 1 and "1/" in p.locator("#tour-buoc").inner_text(),
+        p.locator(".tour-sang").count() == 1 and "1" in p.locator("#tour-buoc").inner_text(),
         p.locator("#tour-buoc").inner_text())
     p.keyboard.press("Escape"); p.wait_for_timeout(250)
 
