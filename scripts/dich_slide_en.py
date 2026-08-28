@@ -624,11 +624,192 @@ CH4 = {
         "PREPARE FOR NEXT SESSION:  Chapter 5 – Drafting and presenting documents: read Decree 30/2020/ND-CP in advance (the section on document formality); the practice session will draft a contract for the very deal negotiated today.",
 }
 
+CH5 = {
+    "Je m'appelle Huong  •  GV. Đỗ Thùy Hương  •  EC6000TX":
+        "Je m'appelle Huong  •  Instructor Đỗ Thùy Hương  •  EC6000TX",
+    "EC6000TX – Kỹ năng giao tiếp và đàm phán trong kinh doanh (Hệ từ xa)":
+        "EC6000TX – Business Communication and Negotiation Skills (Distance Learning)",
+    "© Đỗ Thùy Hương, 2026 — Bài giảng biên soạn cho lớp giảng dạy từ xa. Vui lòng ghi nguồn khi sử dụng.":
+        "© Đỗ Thùy Hương, 2026 — Lecture prepared for the distance-learning class. Please credit the source when reused.",
+    "Soạn thảo và": "Drafting and",
+    "trình bày văn bản": "presenting documents",
+    "Từ lời nói sang chữ viết: biến mọi thỏa thuận thành văn bản đúng chuẩn, có giá trị pháp lý.":
+        "From words to writing: turning every agreement into a properly formatted document with legal standing.",
+    "Sau bài học này, sinh viên có thể": "After this lesson, students will be able to",
+    "Trình bày  —  khái niệm văn bản và phân biệt được các nhóm văn bản trong tổ chức.":
+        "Explain  —  the concept of a document and distinguish the groups of documents within an organisation.",
+    "Áp dụng  —  yêu cầu về nội dung và 9 thành phần thể thức theo Nghị định 30/2020/NĐ-CP.":
+        "Apply  —  the content requirements and the 9 formality components under Decree 30/2020/ND-CP.",
+    "Soạn thảo  —  được quyết định, tờ trình, công văn, biên bản, báo cáo đúng bố cục.":
+        "Draft  —  decisions, proposals, official letters, minutes and reports with the correct structure.",
+    "Soạn thảo  —  được thư tín thương mại, báo giá và hợp đồng phục vụ giao dịch kinh doanh.":
+        "Draft  —  commercial correspondence, quotations and contracts for business transactions.",
+    "5.1  —  Khái niệm và phân loại văn bản": "5.1  —  The concept and classification of documents",
+    "5.2  —  Các yêu cầu về nội dung và thể thức văn bản": "5.2  —  Content and formality requirements",
+    "5.3  —  Soạn thảo văn bản hành chính thông dụng": "5.3  —  Drafting common administrative documents",
+    "5.4  —  Soạn thảo văn bản thương mại": "5.4  —  Drafting commercial documents",
+    "MỤC 5.1 – 5.2": "SECTIONS 5.1 – 5.2",
+    "Khái niệm, phân loại và thể thức văn bản": "The concept, classification and formality of documents",
+    "Nền tảng pháp lý và kỹ thuật: văn bản là gì và một trang văn bản đúng chuẩn trông thế nào.":
+        "The legal and technical foundation: what a document is, and what a correctly formatted page looks like.",
+    "Văn bản là gì?": "What is a document?",
+    "Cách hiểu chung": "General understanding",
+    "Văn bản là phương tiện ghi lại và truyền đạt thông tin bằng ngôn ngữ hay ký hiệu nhất định, hình thành trong hoạt động của cơ quan, tổ chức, doanh nghiệp.":
+        "A document is a means of recording and conveying information through language or symbols, formed in the activities of agencies, organisations and businesses.",
+    "Định nghĩa pháp lý — Nghị định 30/2020/NĐ-CP": "Legal definition — Decree 30/2020/ND-CP",
+    "“Văn bản là thông tin thành văn được truyền đạt bằng ngôn ngữ hoặc ký hiệu, hình thành trong hoạt động của các cơ quan, tổ chức và được trình bày đúng thể thức, kỹ thuật theo quy định.”":
+        "\"A document is written information conveyed in language or symbols, formed in the activities of agencies and organisations, and presented in the format and technique prescribed.\"",
+    "Vai trò": "Role",
+    "Phương tiện quản lý – điều hành • căn cứ pháp lý cho hoạt động • lưu trữ thông tin • thể hiện hình ảnh chuyên nghiệp của tổ chức.":
+        "A tool for management and administration • a legal basis for activities • a record of information • a reflection of the organisation's professional image.",
+    "Phân loại văn bản": "Classifying documents",
+    "Văn bản quy phạm pháp luật": "Legal normative documents",
+    "Chứa quy tắc xử sự chung, do cơ quan nhà nước có thẩm quyền ban hành: Luật, Nghị định, Thông tư. Doanh nghiệp không ban hành nhưng phải tuân thủ.":
+        "Contain general rules of conduct, issued by a competent state agency: laws, decrees, circulars. Businesses don't issue these but must comply with them.",
+    "Văn bản hành chính": "Administrative documents",
+    "Loại gặp nhiều nhất — 29 loại theo NĐ 30/2020: quyết định cá biệt, công văn, thông báo, báo cáo, tờ trình, biên bản…":
+        "The most common type — 29 types under Decree 30/2020: individual decisions, official letters, notices, reports, proposals, minutes…",
+    "Văn bản chuyên ngành": "Specialised documents",
+    "Hình thành trong nghiệp vụ chuyên môn: chứng từ kế toán, hồ sơ kỹ thuật, hồ sơ mời thầu.":
+        "Formed within specific professional practice: accounting vouchers, technical dossiers, bidding dossiers.",
+    "Văn bản thương mại": "Commercial documents",
+    "Phục vụ giao dịch kinh doanh: thư tín thương mại, báo giá, đơn đặt hàng, hợp đồng — học kỹ ở mục 5.4.":
+        "Serving business transactions: commercial correspondence, quotations, purchase orders, contracts — covered in detail in section 5.4.",
+    "Bốn yêu cầu về nội dung": "Four content requirements",
+    "Đúng mục đích, đúng thẩm quyền": "Correct purpose and authority",
+    "Mỗi văn bản tập trung một chủ đề; ban hành đúng chức năng, nhiệm vụ của cơ quan, tổ chức.":
+        "Each document focuses on one topic; it is issued within the agency's or organisation's proper function and mandate.",
+    "Chính xác — khách quan": "Accurate and objective",
+    "Thông tin, số liệu trung thực, có căn cứ, được kiểm chứng. Một con số sai có thể tạo hậu quả pháp lý lớn.":
+        "Information and figures must be truthful, evidence-based and verified. A single wrong figure can create serious legal consequences.",
+    "Rõ ràng — ngắn gọn — dễ hiểu": "Clear, concise and easy to understand",
+    "Câu văn mạch lạc, không đa nghĩa; người nhận đọc một lần là hiểu đúng ý người soạn.":
+        "Sentences should be coherent and unambiguous; the reader should understand the drafter's intent on a single read.",
+    "Đúng pháp luật, đúng ngôn ngữ hành chính": "Legally correct and in proper administrative language",
+    "Phù hợp quy định hiện hành; văn phong nghiêm túc, lịch sự, không dùng khẩu ngữ.":
+        "Compliant with current regulations; a formal, polite style with no colloquial language.",
+    "Chín thành phần thể thức — NĐ 30/2020/NĐ-CP": "The nine formality components — Decree 30/2020/ND-CP",
+    "Kỹ thuật trình bày — những con số phải thuộc": "Presentation technique — the figures you must know by heart",
+    "Khổ giấy và lề trang": "Paper size and margins",
+    "Khổ A4 (210 × 297 mm). Lề trên, dưới: 20 – 25 mm • lề trái: 30 – 35 mm (để đóng gáy) • lề phải: 15 – 20 mm.":
+        "A4 size (210 × 297 mm). Top and bottom margins: 20 – 25 mm • left margin: 30 – 35 mm (for binding) • right margin: 15 – 20 mm.",
+    "Phông chữ": "Font",
+    "Times New Roman, bộ mã Unicode, cỡ 13 – 14, màu đen.": "Times New Roman, Unicode encoding, size 13 – 14, black.",
+    "Số trang": "Page numbers",
+    "Đánh từ trang thứ hai, bằng chữ số Ả Rập, canh giữa theo lề trên.":
+        "Numbered from page two, in Arabic numerals, centred within the top margin.",
+    "Ngôn ngữ": "Language",
+    "Tiếng Việt chuẩn mực; viết hoa, viết tắt đúng quy định; số liệu dùng chữ số Ả Rập.":
+        "Standard Vietnamese; correct capitalisation and abbreviations; figures use Arabic numerals.",
+    "CON SỐ PHẢI NHỚ": "THE NUMBERS TO REMEMBER",
+    "Bốn con số của một trang văn bản đúng chuẩn": "Four numbers of a correctly formatted document page",
+    "A4": "A4",
+    "KHỔ GIẤY": "PAPER SIZE",
+    "210 × 297 mm — không dùng khổ Letter": "210 × 297 mm — never use Letter size",
+    "MILIMET": "MILLIMETRES",
+    "Lề trái, rộng nhất để đóng gáy lưu trữ": "The left margin, the widest one, for binding and filing",
+    "CỠ CHỮ": "FONT SIZE",
+    "Times New Roman, bộ mã Unicode, màu đen": "Times New Roman, Unicode encoding, black",
+    "THÀNH PHẦN": "COMPONENTS",
+    "Số thành phần thể thức bắt buộc theo NĐ 30/2020": "The number of mandatory formality components under Decree 30/2020",
+    "Lề trên và dưới 20 – 25 mm • lề phải 15 – 20 mm • số trang đánh từ trang thứ hai, canh giữa theo lề trên.":
+        "Top and bottom margins 20 – 25 mm • right margin 15 – 20 mm • page numbers from page two, centred within the top margin.",
+    "MỤC 5.3": "SECTION 5.3",
+    "Soạn thảo văn bản hành chính thông dụng": "Drafting common administrative documents",
+    "Năm loại văn bản dùng hằng ngày trong mọi cơ quan, tổ chức.": "Five document types used every day in every agency and organisation.",
+    "Năm văn bản hành chính thông dụng": "Five common administrative documents",
+    "Chuỗi văn bản của một thương vụ — sinh viên sẽ soạn lại đúng chuỗi này trong phần thực hành.":
+        "The document chain for a business deal — students will draft this very chain in the practice sessions.",
+    "Quyết định và Tờ trình": "Decisions and proposals",
+    "Quyết định — khái niệm": "Decision — concept",
+    "Văn bản do người có thẩm quyền ban hành để giải quyết một công việc cụ thể.":
+        "A document issued by a competent person to resolve a specific matter.",
+    "Quyết định — bố cục": "Decision — structure",
+    "Phần căn cứ (pháp lý + thực tiễn, kết thúc bằng dấu chấm) → phần nội dung theo các Điều. Điều cuối ghi hiệu lực và đối tượng thi hành.":
+        "The grounds section (legal + practical, ending with a full stop) → the content, organised into Articles. The final Article states the effective date and who must comply.",
+    "Tờ trình — khái niệm": "Proposal — concept",
+    "Văn bản đề xuất cấp có thẩm quyền phê duyệt chủ trương, phương án, đề án hoặc giải quyết công việc.":
+        "A document proposing that a competent authority approve a policy, plan, project or course of action.",
+    "Tờ trình — bố cục 3 phần": "Proposal — 3-part structure",
+    "Mở đầu: lý do, sự cần thiết → Nội dung: phương án, lợi ích, tính khả thi → Kết thúc: kiến nghị phê duyệt. Đính kèm hồ sơ, dự toán.":
+        "Opening: reason and necessity → Content: the plan, its benefits and feasibility → Closing: a request for approval. Dossiers and cost estimates are attached.",
+    "Công văn, Biên bản và Báo cáo": "Official letters, minutes and reports",
+    "Công văn": "Official letters",
+    "Không có tên loại — chỉ có số, ký hiệu và trích yếu. Các loại: đề nghị, phúc đáp, đôn đốc, hướng dẫn, giải thích, mời họp. Mỗi công văn một chủ đề; kết thúc “Trân trọng./.”":
+        "Has no type name — only a number, symbol and summary. Types include: request, response, follow-up, guidance, explanation, meeting invitation. Each letter covers one topic; it closes with \"Respectfully./.\"",
+    "Biên bản": "Minutes",
+    "Ghi tại chỗ, trung thực, khách quan. Kết cấu: thời gian – địa điểm → thành phần tham dự → diễn biến, ý kiến → kết luận → chữ ký các bên (yếu tố tạo giá trị pháp lý).":
+        "Recorded on the spot, truthfully and objectively. Structure: time and place → attendees → proceedings and views → conclusion → the parties' signatures (what gives it legal validity).",
+    "Báo cáo": "Reports",
+    "Định kỳ • đột xuất • chuyên đề • sơ kết, tổng kết. Mạch 4 phần: đặc điểm tình hình → kết quả đạt được → hạn chế và nguyên nhân → phương hướng, kiến nghị.":
+        "Periodic • ad-hoc • thematic • review/summary. A 4-part flow: the situation → results achieved → limitations and causes → direction and recommendations.",
+    "MỤC 5.4": "SECTION 5.4",
+    "Soạn thảo văn bản thương mại": "Drafting commercial documents",
+    "Thư tín, báo giá và hợp đồng — bộ hồ sơ đưa một thương vụ đi đến đích.":
+        "Correspondence, quotations and contracts — the set of documents that carries a deal to completion.",
+    "Thư tín thương mại và báo giá": "Commercial correspondence and quotations",
+    "Thư tín thương mại": "Commercial correspondence",
+    "Thư hỏi hàng, chào hàng, đặt hàng, xác nhận, khiếu nại, cảm ơn. Kết cấu: mở đầu – nội dung – kết thúc.":
+        "Inquiry, sales, order, confirmation, complaint and thank-you letters. Structure: opening – body – closing.",
+    "Nguyên tắc 5C": "The 5C principle",
+    "Clear (rõ) • Concise (gọn) • Correct (đúng) • Complete (đủ) • Courteous (lịch sự).":
+        "Clear • Concise • Correct • Complete • Courteous.",
+    "Email thương mại": "Commercial email",
+    "Tiêu đề ngắn đúng nội dung; xưng hô phù hợp; chữ ký đầy đủ thông tin; phản hồi trong 24 giờ.":
+        "A short subject line matching the content; an appropriate salutation; a signature with full details; reply within 24 hours.",
+    "Báo giá": "Quotations",
+    "Thông tin doanh nghiệp • mô tả hàng hóa • số lượng, đơn giá, thuế • điều kiện giao hàng, thanh toán • thời hạn hiệu lực (tránh tranh chấp khi giá thị trường biến động).":
+        "Business details • description of goods • quantity, unit price, tax • delivery and payment terms • a validity period (to avoid disputes when market prices move).",
+    "Hợp đồng — nghiệm thu — thanh lý": "Contract, acceptance and liquidation",
+    "Hợp đồng thương mại": "Commercial contracts",
+    "Căn cứ Bộ luật Dân sự 2015 và Luật Thương mại 2005. Điều khoản chính: đối tượng; giá và phương thức thanh toán; quyền – nghĩa vụ các bên; phạt vi phạm; giải quyết tranh chấp.":
+        "Based on the 2015 Civil Code and the 2005 Commercial Law. Main clauses: subject matter; price and payment method; parties' rights and obligations; penalties; dispute resolution.",
+    "Biên bản nghiệm thu": "Acceptance record",
+    "Xác nhận khối lượng, chất lượng hàng hóa, dịch vụ đã thực hiện — căn cứ để thanh toán.":
+        "Confirms the volume and quality of goods or services delivered — the basis for payment.",
+    "Biên bản thanh lý hợp đồng": "Contract liquidation record",
+    "Xác nhận hoàn thành nghĩa vụ, chấm dứt hiệu lực hợp đồng, quyết toán các quyền và nghĩa vụ còn lại.":
+        "Confirms obligations are fulfilled, terminates the contract, and settles the remaining rights and obligations.",
+    "Từ đàm phán đến hợp đồng": "From negotiation to contract",
+    "TÌNH HUỐNG (nhóm 4–5 sinh viên, 20 phút)": "SCENARIO (groups of 4–5 students, 20 minutes)",
+    "Tiếp nối thương vụ mua 20 máy tính đã đàm phán ở Chương 4: Phòng Hành chính Công ty X phải hoàn tất toàn bộ hồ sơ giấy tờ cho thương vụ, từ lúc đề xuất mua đến khi thanh toán xong.":
+        "Continuing the 20-computer purchase negotiated in Chapter 4: Company X's Admin Office must complete the entire paper trail for the deal, from the initial purchase proposal through to final payment.",
+    "Liệt kê đầy đủ chuỗi văn bản cần soạn theo đúng trình tự thời gian và cho biết ai ký từng văn bản.":
+        "List the full chain of documents to draft, in chronological order, and state who signs each one.",
+    "Chọn một văn bản trong chuỗi, phác thảo bố cục đầy đủ 9 thành phần thể thức lên giấy A4.":
+        "Pick one document from the chain and sketch its full layout with all 9 formality components on A4 paper.",
+    "Chỉ ra 3 lỗi thể thức thường gặp nhất mà nhóm dự đoán sinh viên hay mắc phải khi soạn văn bản này.":
+        "Identify the 3 most common formatting mistakes your group expects students to make when drafting this document.",
+    "Những điều cần nhớ": "Things to remember",
+    "Thể thức là “giấy thông hành” của văn bản": "Formality is a document's \"passport\"",
+    "Nội dung hay đến đâu mà sai thể thức thì văn bản vẫn bị trả lại — thuộc 9 thành phần và các con số trình bày.":
+        "However good the content, a document with the wrong format still gets sent back — know the 9 components and the presentation figures.",
+    "Mỗi loại văn bản có một bố cục riêng": "Each document type has its own structure",
+    "Quyết định theo Điều; tờ trình 3 phần; công văn không tên loại; biên bản lập tại chỗ; báo cáo theo mạch 4 phần.":
+        "Decisions follow Articles; proposals have 3 parts; official letters have no type name; minutes are recorded on the spot; reports follow a 4-part flow.",
+    "Văn bản thương mại giữ uy tín doanh nghiệp": "Commercial documents protect a business's reputation",
+    "Thư tín đạt 5C, báo giá có hiệu lực rõ, hợp đồng đủ điều khoản — bộ ba hợp đồng, nghiệm thu, thanh lý khép kín thương vụ.":
+        "Correspondence following the 5Cs, a quotation with a clear validity period, a contract with full clauses — the contract/acceptance/liquidation trio closes out the deal.",
+    "Trình bày khái niệm văn bản và các nhóm văn bản trong tổ chức.": "Explain the concept of a document and the groups of documents within an organisation.",
+    "Nêu 9 thành phần thể thức văn bản hành chính và các quy định về lề trang, phông chữ.":
+        "State the 9 formality components of an administrative document and the rules on margins and fonts.",
+    "So sánh bố cục của quyết định, tờ trình và công văn.": "Compare the structure of a decision, a proposal and an official letter.",
+    "Nêu nguyên tắc 5C và các điều khoản cơ bản của hợp đồng thương mại.": "State the 5C principle and the basic clauses of a commercial contract.",
+    "CHUẨN BỊ CHO BUỔI SAU:  Phần thực hành tại phòng A0105 — Bài 1: Thể thức văn bản. Mang theo laptop, cài sẵn Microsoft Word và tải Nghị định 30/2020/NĐ-CP.":
+        "PREPARE FOR NEXT SESSION:  Practice session in room A0105 — Lab 1: Document formality. Bring a laptop with Microsoft Word installed, and download Decree 30/2020/ND-CP in advance.",
+    "Văn bản pháp lý bắt buộc": "Required legal document",
+    "Nghị định 30/2020/NĐ-CP ngày 05/3/2020 của Chính phủ về công tác văn thư — hướng dẫn thể thức và kỹ thuật trình bày văn bản hành chính.":
+        "Government Decree 30/2020/ND-CP dated 5 March 2020 on records and archival work — guiding the format and presentation technique for administrative documents.",
+    "Slide, biểu mẫu văn bản, tình huống và bài tập do GV. Đỗ Thùy Hương biên soạn; cung cấp sau mỗi buổi học.":
+        "Slides, document templates, case scenarios and exercises prepared by Instructor Đỗ Thùy Hương; shared after each session.",
+}
+
 DECKS = [
     ("slides/01-tong-quan-giao-tiep.pptx", CH1),
     ("slides/02-ky-nang-chuyen-nghiep.pptx", CH2),
     ("slides/03-tinh-huong-dac-thu.pptx", CH3),
     ("slides/04-dam-phan.pptx", CH4),
+    ("slides/05-soan-thao-van-ban.pptx", CH5),
 ]
 
 
