@@ -470,10 +470,165 @@ CH3 = {
         "PREPARE FOR NEXT SESSION:  Chapter 4 – Business negotiation. Each group should think of their most recent \"haggling\" experience (buying a vehicle, renting a room…): what made you succeed or fail?",
 }
 
+CH4 = {
+    "Đàm phán": "Negotiation",
+    "trong kinh doanh": "in business",
+    "Nghệ thuật đạt thỏa thuận mà không đánh mất quan hệ — kỹ năng sinh lời trực tiếp nhất của người làm kinh tế.":
+        "The art of reaching a deal without losing the relationship — the most directly profitable skill for anyone in business.",
+    "Trình bày  —  khái niệm, đặc điểm và các kiểu đàm phán trong kinh doanh.":
+        "Explain  —  the concept, features and styles of business negotiation.",
+    "Mô tả  —  tiến trình đàm phán 5 giai đoạn và nhiệm vụ then chốt của từng giai đoạn.":
+        "Describe  —  the 5-stage negotiation process and the key task of each stage.",
+    "Vận dụng  —  các kỹ năng đàm phán cơ bản: chuẩn bị BATNA, đặt câu hỏi, nhượng bộ có điều kiện.":
+        "Apply  —  basic negotiation skills: preparing a BATNA, questioning, and conditional concessions.",
+    "Nhận diện  —  các chiêu trò thường gặp trên bàn đàm phán và cách ứng phó chuyên nghiệp.":
+        "Recognise  —  common negotiation tactics and how to respond professionally.",
+    "4.1  —  Khái niệm, đặc điểm và các kiểu đàm phán trong kinh doanh":
+        "4.1  —  Concept, features and styles of business negotiation",
+    "4.2  —  Tiến trình đàm phán qua năm giai đoạn, từ chuẩn bị đến sau đàm phán":
+        "4.2  —  The five-stage negotiation process, from preparation to follow-up",
+    "4.3  —  Các kỹ năng đàm phán và cách nhận diện chiêu trò thường gặp":
+        "4.3  —  Negotiation skills and recognising common tactics",
+    "MỤC 4.1": "SECTION 4.1",
+    "Khái niệm và các kiểu đàm phán": "The concept and styles of negotiation",
+    "Hiểu bản chất kép của đàm phán: vừa hợp tác vừa cạnh tranh.": "Understand negotiation's dual nature: both cooperative and competitive.",
+    "Đàm phán là gì?": "What is negotiation?",
+    "Khái niệm": "Concept",
+    "Đàm phán là quá trình các bên vừa có lợi ích chung, vừa có lợi ích xung đột, cùng trao đổi – thuyết phục để đi đến một thỏa thuận mà các bên chấp nhận được.":
+        "Negotiation is a process where parties with both shared and conflicting interests exchange and persuade to reach an agreement acceptable to all.",
+    "Bản chất kép: hợp tác + cạnh tranh": "Dual nature: cooperation + competition",
+    "Hợp tác để “chiếc bánh” tồn tại và lớn lên; cạnh tranh khi phân chia chiếc bánh — quên vế nào cũng thất bại.":
+        "Cooperate so the \"pie\" exists and grows; compete when dividing it up — forgetting either half means failure.",
+    "Ba nguồn sức mạnh trên bàn đàm phán": "Three sources of power at the table",
+    "Thông tin (ai hiểu đối phương hơn) • Thời gian (ai ít bị ép tiến độ hơn) • Thế lực (ai có nhiều lựa chọn thay thế hơn).":
+        "Information (who understands the other side better) • Time (who is under less pressure to finish) • Leverage (who has more alternatives).",
+    "Đặc điểm của đàm phán trong kinh doanh": "Features of business negotiation",
+    "Lấy lợi ích kinh tế làm trung tâm  —  mọi điều khoản cuối cùng đều quy về giá trị, chi phí, rủi ro của mỗi bên.":
+        "Centred on economic interest  —  every final term boils down to each side's value, cost and risk.",
+    "Các bên vừa phụ thuộc vừa độc lập  —  cần nhau để có thỏa thuận, nhưng mỗi bên luôn có phương án riêng của mình.":
+        "Parties are both dependent and independent  —  they need each other to reach a deal, yet each always has its own alternative.",
+    "Thỏa thuận phải được văn bản hóa  —  kết quả đàm phán chỉ an toàn khi thành hợp đồng đúng thể thức — cầu nối sang Chương 5.":
+        "Agreements must be documented  —  a negotiated outcome is only safe once it becomes a properly formatted contract — the bridge to Chapter 5.",
+    "Diễn ra trong giới hạn  —  thời gian, thẩm quyền, ngân sách; nhà đàm phán giỏi biết rõ giới hạn của mình và ước lượng giới hạn đối phương.":
+        "Bounded by limits  —  time, authority, budget; a good negotiator knows their own limits and estimates the other side's.",
+    "Chịu ảnh hưởng văn hóa và quan hệ  —  phong cách đàm phán Á – Âu khác nhau; thương vụ một lần khác quan hệ hợp tác lâu dài.":
+        "Shaped by culture and relationships  —  negotiating styles differ between Asia and the West; a one-off deal differs from a long-term partnership.",
+    "Các kiểu đàm phán": "Negotiation styles",
+    "Đàm phán kiểu mềm": "Soft negotiation",
+    "Coi đối tác như bạn, dễ nhượng bộ để giữ quan hệ — nhanh đạt thỏa thuận nhưng dễ chịu thiệt khi gặp đối thủ cứng.":
+        "Treats the other side as a friend, concedes easily to preserve the relationship — reaches agreement fast but loses out against a hard negotiator.",
+    "Đàm phán kiểu cứng": "Hard negotiation",
+    "Coi đối tác như đối thủ, ép buộc, giữ lập trường đến cùng — có thể thắng một lần nhưng phá vỡ quan hệ, dễ bế tắc.":
+        "Treats the other side as an adversary, pressures them, holds its position to the end — may win once but wrecks the relationship and often deadlocks.",
+    "Đàm phán kiểu nguyên tắc (Harvard)": "Principled negotiation (Harvard)",
+    "Tách con người khỏi vấn đề; tập trung vào lợi ích, không cố thủ lập trường; sáng tạo phương án cùng có lợi; dựa trên tiêu chí khách quan.":
+        "Separate the people from the problem; focus on interests, not positions; invent options for mutual gain; insist on objective criteria.",
+    "Phân bổ  ↔  Tích hợp": "Distributive  ↔  Integrative",
+    "Phân bổ: chia chiếc bánh cố định (được – mất). Tích hợp: làm chiếc bánh lớn hơn bằng cách khai thác khác biệt về ưu tiên — hướng đến win-win.":
+        "Distributive: dividing a fixed pie (win – lose). Integrative: growing the pie by exploiting differing priorities — aiming for a win-win.",
+    "MỤC 4.2": "SECTION 4.2",
+    "Tiến trình đàm phán năm giai đoạn": "The five-stage negotiation process",
+    "Bảy mươi phần trăm kết quả được quyết định trước khi hai bên ngồi vào bàn.": "Seventy percent of the outcome is decided before both sides sit down at the table.",
+    "Tiến trình đàm phán: 5 giai đoạn": "The negotiation process: 5 stages",
+    "Giai đoạn chuẩn bị — vũ khí quan trọng nhất": "The preparation stage — your most important weapon",
+    "ZOPA hẹp hay rộng phụ thuộc vào giới hạn thật của hai bên — chuẩn bị kỹ để biết mình đang ở đâu trên trục này.":
+        "Whether the ZOPA is narrow or wide depends on both sides' real limits — prepare well to know where you stand on that range.",
+    "CON SỐ PHẢI NHỚ": "THE NUMBER TO REMEMBER",
+    "Vì sao chuẩn bị lại quan trọng đến thế?": "Why does preparation matter so much?",
+    "KẾT QUẢ": "OF THE OUTCOME",
+    "được quyết định ngay từ giai đoạn chuẩn bị, trước khi hai bên ngồi vào bàn": "is decided during preparation, before both sides even sit down",
+    "MỨC MỤC TIÊU": "TARGET LEVELS",
+    "Lý tưởng – Kỳ vọng – Tối thiểu: phải viết ra giấy trước khi đàm phán": "Ideal – Expected – Minimum: must be written down before negotiating",
+    "BATNA": "BATNA",
+    "Phương án thay thế tốt nhất — nguồn sức mạnh thật sự trên bàn đàm phán": "Best alternative to a negotiated agreement — the real source of power at the table",
+    "Câu để đời của chương: “Không chuẩn bị chính là chuẩn bị để nhượng bộ.”":
+        "The chapter's defining line: \"Failing to prepare is preparing to concede.\"",
+    "Mở đầu và thương lượng": "Opening and bargaining",
+    "Tạo không khí và thăm dò": "Setting the mood and probing",
+    "Vài phút xã giao đúng mực; quan sát thái độ; đặt câu hỏi mở để đối phương bộc lộ nhu cầu và giới hạn trước khi mình ra giá.":
+        "A few minutes of proper small talk; observe their attitude; ask open questions so the other side reveals their needs and limits before you name a price.",
+    "Đưa đề nghị và mặc cả": "Making offers and bargaining",
+    "Đề nghị đầu tiên có căn cứ (neo tâm lý); phản hồi đề nghị của đối phương bằng câu hỏi “dựa trên cơ sở nào?” thay vì đồng ý hay bác bỏ ngay.":
+        "Make a well-grounded first offer (a psychological anchor); respond to their offer with \"on what basis?\" instead of accepting or rejecting immediately.",
+    "Nhượng bộ có điều kiện": "Conditional concessions",
+    "Không cho không bao giờ: “Nếu anh tăng số lượng lên 500, chúng tôi sẽ giảm 3%.” Nhượng bộ nhỏ dần để phát tín hiệu chạm giới hạn.":
+        "Never give anything for free: \"If you raise the quantity to 500, we'll cut 3%.\" Make concessions progressively smaller to signal you're nearing your limit.",
+    "Xử lý bế tắc": "Handling deadlock",
+    "Tạm nghỉ; đổi người – đổi vấn đề – đổi cách tiếp cận; quay về lợi ích gốc; đưa tiêu chí khách quan (giá thị trường, quy định) làm trọng tài.":
+        "Take a break; change the person, the issue, or the approach; return to the underlying interests; bring in objective criteria (market price, regulations) as an arbiter.",
+    "Kết thúc và sau đàm phán": "Closing and after the negotiation",
+    "Nhận biết thời điểm chốt": "Recognising when to close",
+    "Đối phương hỏi chi tiết triển khai, điều khoản thanh toán, thời gian giao hàng — tín hiệu sẵn sàng; tóm tắt thỏa thuận và đề nghị xác nhận.":
+        "The other side asks about implementation details, payment terms, delivery time — a readiness signal; summarise the deal and ask them to confirm.",
+    "Văn bản hóa ngay": "Document it immediately",
+    "Thỏa thuận miệng chưa phải kết thúc: lập biên bản ghi nhớ, soạn hợp đồng đủ điều khoản cơ bản — kỹ thuật soạn thảo học ở Chương 5 và phần thực hành.":
+        "A verbal agreement isn't the end: draw up a memorandum, draft a contract with all the basic terms — the drafting technique covered in Chapter 5 and the practice sessions.",
+    "Sau đàm phán": "After the negotiation",
+    "Thực hiện đúng cam kết — uy tín cho lần đàm phán sau; giữ liên lạc với đối tác; họp nhóm rút kinh nghiệm: điều gì hiệu quả, điều gì cần làm khác.":
+        "Deliver on commitments — it builds credibility for next time; stay in touch with the partner; hold a team debrief: what worked, what to do differently.",
+    "MỤC 4.3": "SECTION 4.3",
+    "Kỹ năng và chiêu trò trên bàn đàm phán": "Skills and tactics at the negotiating table",
+    "Những gì cần rèn, và những gì cần nhận diện để không bị dẫn dắt.": "What to train, and what to recognise so you don't get played.",
+    "Kỹ năng nền tảng trên bàn đàm phán": "Foundational negotiation skills",
+    "Lắng nghe và đặt câu hỏi": "Listening and questioning",
+    "Nghe nhiều hơn nói; hỏi mở để tìm lợi ích thật; im lặng đúng lúc — nhiều nhượng bộ xuất hiện chỉ vì đối phương không chịu được khoảng lặng.":
+        "Listen more than you talk; ask open questions to find real interests; use silence at the right moment — many concessions happen simply because the other side can't bear the silence.",
+    "Thuyết phục bằng lợi ích và bằng chứng": "Persuading with interests and evidence",
+    "Nói bằng ngôn ngữ lợi ích của đối phương; kèm số liệu, tiền lệ, quy định khách quan thay vì tranh cãi cảm tính.":
+        "Speak in terms of the other side's interests; back it up with data, precedent and objective rules instead of emotional arguing.",
+    "Kiểm soát cảm xúc": "Controlling emotions",
+    "Giữ bình tĩnh trước khiêu khích; tách con người khỏi vấn đề; tức giận là nhượng quyền kiểm soát cho đối phương.":
+        "Stay calm under provocation; separate the person from the problem; getting angry hands control over to the other side.",
+    "Làm việc theo êkíp": "Working as a team",
+    "Phân vai trưởng đoàn – chuyên môn – ghi chép; thống nhất tín hiệu nội bộ; không bao giờ mâu thuẫn nội bộ trước mặt đối tác.":
+        "Assign roles — lead, expert, note-taker; agree on internal signals; never disagree with each other in front of the other side.",
+    "Nhận diện chiêu trò thường gặp": "Recognising common tactics",
+    "Neo giá sốc  —  mở màn bằng đề nghị cao/thấp bất thường để kéo kỳ vọng của ta — ứng phó: bám vào tiêu chí khách quan, đừng vội điều chỉnh mục tiêu.":
+        "Extreme anchoring  —  opening with an unusually high/low offer to shift our expectations — counter: stick to objective criteria, don't rush to adjust your target.",
+    "Người tốt – kẻ xấu  —  một người gay gắt, một người “dễ thương” ra tay cứu vãn — nhận diện và chỉ đàm phán trên nội dung.":
+        "Good cop, bad cop  —  one person is harsh, another \"nice\" one steps in to save the day — recognise it and negotiate on substance only.",
+    "Thời hạn chót giả  —  “chỉ còn hôm nay” để ép quyết định vội — kiểm chứng thực hư, sẵn sàng rời bàn nếu có BATNA.":
+        "Fake deadline  —  \"only today\" to force a hasty decision — verify if it's real, and be ready to walk away if you have a BATNA.",
+    "Cắt lát salami  —  đòi thêm từng chút nhỏ sau khi đã thỏa thuận — gói toàn bộ điều khoản lại: “điểm này mở thì cả gói mở”.":
+        "Salami slicing  —  asking for small extras one at a time after the deal is set — bundle every term back together: \"reopen this and the whole package reopens\".",
+    "Đòi hỏi phút chót  —  thêm yêu cầu ngay trước khi ký — bình tĩnh định giá yêu cầu đó và đòi đối ứng tương xứng.":
+        "Last-minute demand  —  adding a request right before signing — calmly price that request and demand something equivalent in return.",
+    "Role-play: đàm phán mua thiết bị": "Role-play: negotiating an equipment purchase",
+    "TÌNH HUỐNG (2 nhóm/cặp, 25 phút; mỗi bên nhận “hồ sơ mật” riêng của giảng viên)":
+        "SCENARIO (2 groups/pairs, 25 minutes; each side gets its own \"confidential brief\" from the instructor)",
+    "Công ty X cần mua 20 máy tính cho phòng làm việc mới, ngân sách tối đa 240 triệu, cần giao trong 3 tuần. Nhà cung cấp Y muốn bán giá tốt nhưng đang tồn kho model cũ và muốn ký hợp đồng bảo trì dài hạn. Hai bên chưa biết giới hạn của nhau.":
+        "Company X needs to buy 20 computers for a new office, with a maximum budget of 240 million VND and a 3-week deadline. Supplier Y wants a good price but is holding old-model stock and wants a long-term maintenance contract. Neither side knows the other's limits yet.",
+    "Mỗi bên 10 phút chuẩn bị: xác định mục tiêu 3 mức, BATNA và chiến lược nhượng bộ theo hồ sơ được phát.":
+        "Each side gets 10 minutes to prepare: set 3-level targets, a BATNA and a concession strategy based on the brief provided.",
+    "Đàm phán 10 phút trước lớp; các nhóm quan sát ghi lại: đề nghị neo, các nhượng bộ, chiêu trò (nếu có).":
+        "Negotiate for 10 minutes in front of the class; observing groups note down: the anchor offer, the concessions, any tactics used.",
+    "Cả lớp phân tích: thỏa thuận đạt được nằm ở đâu trong ZOPA? Bên nào chuẩn bị tốt hơn và vì sao?":
+        "The class analyses: where does the deal fall within the ZOPA? Which side prepared better, and why?",
+    "Đàm phán thắng từ trước khi ngồi vào bàn": "Negotiations are won before you sit down",
+    "Mục tiêu 3 mức + BATNA + hiểu đối tác = 70% kết quả; không chuẩn bị là chuẩn bị để nhượng bộ.":
+        "3-level targets + a BATNA + understanding the other side = 70% of the outcome; failing to prepare is preparing to concede.",
+    "Đàm phán lợi ích, đừng cố thủ lập trường": "Negotiate interests, don't dig in on positions",
+    "Hỏi “vì sao” để tìm lợi ích thật; nhượng bộ luôn kèm điều kiện; hướng tới thỏa thuận hai bên thực hiện được.":
+        "Ask \"why\" to find the real interest; every concession comes with a condition; aim for a deal both sides can actually deliver.",
+    "Thỏa thuận chỉ an toàn khi thành văn bản": "An agreement is only safe once it's in writing",
+    "Chốt xong phải văn bản hóa thành hợp đồng đúng thể thức — đó là nội dung Chương 5: Soạn thảo và trình bày văn bản.":
+        "Once closed, it must be documented as a properly formatted contract — that's the subject of Chapter 5: Drafting and presenting documents.",
+    "Phân biệt đàm phán kiểu mềm, kiểu cứng và kiểu nguyên tắc; khi nào nên dùng kiểu nào?":
+        "Distinguish soft, hard and principled negotiation; when should each be used?",
+    "BATNA và ZOPA là gì? Xây dựng BATNA cho một tình huống thuê nhà trọ của sinh viên.":
+        "What are BATNA and ZOPA? Build a BATNA for a student's room-rental scenario.",
+    "Trình bày 5 giai đoạn của tiến trình đàm phán và nhiệm vụ chính của mỗi giai đoạn.":
+        "Explain the 5 stages of the negotiation process and the main task of each stage.",
+    "Nêu 3 chiêu trò thường gặp trong đàm phán và cách ứng phó.": "State 3 common negotiation tactics and how to counter them.",
+    "CHUẨN BỊ CHO BUỔI SAU:  Chương 5 – Soạn thảo và trình bày văn bản: đọc trước Nghị định 30/2020/NĐ-CP (phần thể thức văn bản); phần thực hành sẽ soạn hợp đồng cho chính thương vụ vừa đàm phán hôm nay.":
+        "PREPARE FOR NEXT SESSION:  Chapter 5 – Drafting and presenting documents: read Decree 30/2020/ND-CP in advance (the section on document formality); the practice session will draft a contract for the very deal negotiated today.",
+}
+
 DECKS = [
     ("slides/01-tong-quan-giao-tiep.pptx", CH1),
     ("slides/02-ky-nang-chuyen-nghiep.pptx", CH2),
     ("slides/03-tinh-huong-dac-thu.pptx", CH3),
+    ("slides/04-dam-phan.pptx", CH4),
 ]
 
 
