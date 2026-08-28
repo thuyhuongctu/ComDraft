@@ -64,17 +64,28 @@ def kiem_phu_de():
 
 
 def kiem_so_slide():
-    """Số ảnh slide thật phải đúng bằng con số ghi trong data/slides.js."""
+    """Số ảnh slide thật phải đúng bằng con số ghi trong data/slides.js
+    (cả bản tiếng Việt registerSlides và bản tiếng Anh registerSlidesEn)."""
     s = open(os.path.join(GOC_REPO, "data/slides.js"), encoding="utf-8").read()
     khai = json.loads(re.search(r"registerSlides\((\{.*?\})\)", s, re.S).group(1))
+    m_en = re.search(r"registerSlidesEn\((\{.*?\})\)", s, re.S)
+    khai_en = json.loads(m_en.group(1)) if m_en else {}
     lech = []
+    tong = 0
     for bo, n in khai.items():
         tm = os.path.join(GOC_REPO, "assets/slides", bo)
         that = len([f for f in os.listdir(tm) if f.endswith(".jpg")]) if os.path.isdir(tm) else 0
         if that != n:
             lech.append("%s khai %d có %d" % (bo, n, that))
+        tong += n
+    for bo, n in khai_en.items():
+        tm = os.path.join(GOC_REPO, "assets/slides", bo + "-en")
+        that = len([f for f in os.listdir(tm) if f.endswith(".jpg")]) if os.path.isdir(tm) else 0
+        if that != n:
+            lech.append("%s-en khai %d có %d" % (bo, n, that))
+        tong += n
     ghi("Số ảnh slide đúng như khai báo", not lech,
-        "%d trang" % sum(khai.values()) if not lech else str(lech))
+        "%d trang" % tong if not lech else str(lech))
 
 
 # ------------------------------------------------------- kiểm tra trên trình duyệt
