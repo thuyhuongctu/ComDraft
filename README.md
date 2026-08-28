@@ -1,7 +1,7 @@
 # ComDraft
 
 **Teaching materials for *Communication and Document Drafting Skills* (EC1103)**
-Bộ học liệu giảng dạy trực tiếp — Học phần Kỹ năng giao tiếp và soạn thảo văn bản
+Bộ học liệu giảng dạy trực tiếp - Học phần Kỹ năng giao tiếp và soạn thảo văn bản
 
 [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.22003676.svg)](https://doi.org/10.5281/zenodo.22003676)
 [![app](https://img.shields.io/badge/app-thuyhuongctu.github.io%2FComDraft-DC756A?style=flat-square)](https://thuyhuongctu.github.io/ComDraft/)
@@ -9,7 +9,7 @@ Bộ học liệu giảng dạy trực tiếp — Học phần Kỹ năng giao t
 ![credits](https://img.shields.io/badge/credits-3%20(2%3A1)-DC756A?style=flat-square)
 ![license](https://img.shields.io/badge/license-All%20rights%20reserved-red?style=flat-square)
 
-**Author** — Do Thuy Huong (Đỗ Thùy Hương), [ORCID 0000-0002-7711-2487](https://orcid.org/0000-0002-7711-2487)
+**Author** - Do Thuy Huong (Đỗ Thùy Hương), [ORCID 0000-0002-7711-2487](https://orcid.org/0000-0002-7711-2487)
 PhD Candidate, School of Economics, Can Tho University.
 
 Every slide, figure, question, script and video in this repository was authored by the
