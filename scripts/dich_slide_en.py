@@ -331,9 +331,149 @@ CH2 = {
         "PREPARE FOR NEXT SESSION:  Chapter 3 – Communication in specific settings. Each group collects one real, anonymised workplace communication dilemma to discuss.",
 }
 
+CH3 = {
+    "Giao tiếp trong các": "Communication in",
+    "tình huống đặc thù": "specific settings",
+    "Cùng một kỹ năng, mỗi bối cảnh một luật chơi: nội bộ, khách hàng, bàn tiệc và đa văn hóa.":
+        "The same skill, different rules for each setting: internal, customers, banquets and cross-cultural work.",
+    "Ứng xử phù hợp  —  với cấp trên, cấp dưới và đồng nghiệp trong môi trường nội bộ tổ chức.":
+        "Behave appropriately  —  with superiors, subordinates and colleagues within the organisation.",
+    "Giao tiếp chuyên nghiệp  —  với khách hàng, đối tác, cơ quan nhà nước và truyền thông; xử lý được phàn nàn của khách.":
+        "Communicate professionally  —  with customers, partners, state agencies and the press; handle customer complaints.",
+    "Thực hiện đúng  —  nghi thức giao tiếp trên bàn tiệc trong hoạt động kinh doanh.":
+        "Follow correctly  —  banquet etiquette in business activities.",
+    "Thích ứng  —  với khác biệt văn hóa khi làm việc trong môi trường đa văn hóa.":
+        "Adapt  —  to cultural differences when working in a cross-cultural environment.",
+    "3.1  —  Giao tiếp trong môi trường nội bộ tổ chức": "3.1  —  Communication within the organisation",
+    "3.2  —  Giao tiếp với khách hàng, đối tác, cơ quan nhà nước và truyền thông":
+        "3.2  —  Communication with customers, partners, state agencies and the press",
+    "3.3  —  Giao tiếp trên bàn tiệc": "3.3  —  Banquet communication",
+    "3.4  —  Giao tiếp trong môi trường đa văn hóa": "3.4  —  Cross-cultural communication",
+    "MỤC 3.1": "SECTION 3.1",
+    "Giao tiếp trong nội bộ tổ chức": "Communication within the organisation",
+    "Với cấp trên, cấp dưới và đồng nghiệp — mỗi mối quan hệ một cách ứng xử.":
+        "With superiors, subordinates and colleagues — each relationship has its own approach.",
+    "Giao tiếp với cấp trên": "Communicating with superiors",
+    "Khi nhận nhiệm vụ": "When receiving a task",
+    "Lắng nghe – ghi chú – hỏi lại cho rõ yêu cầu, thời hạn, nguồn lực; xác nhận lại bằng tin nhắn/email để hai bên cùng hiểu một cách.":
+        "Listen – take notes – ask for clarity on requirements, deadlines and resources; confirm by message/email so both sides share the same understanding.",
+    "Khi báo cáo": "When reporting",
+    "Chủ động, đúng hạn, kết quả trước – diễn giải sau; báo tin xấu sớm kèm phương án xử lý, không che giấu.":
+        "Be proactive and on time, results first, explanation after; report bad news early with a proposed fix, never hide it.",
+    "Khi có ý kiến khác": "When you disagree",
+    "Chọn đúng lúc, đúng chỗ (thường là riêng tư); trình bày trên cơ sở dữ liệu và lợi ích chung; tôn trọng quyết định cuối cùng.":
+        "Choose the right time and place (usually private); argue from data and shared interests; respect the final decision.",
+    "Giao tiếp với cấp dưới và đồng nghiệp": "Communicating with subordinates and colleagues",
+    "Giao việc": "Assigning work",
+    "Rõ mục tiêu – thời hạn – tiêu chuẩn; giao việc kèm niềm tin và nguồn lực; kiểm tra tiến độ đúng mức, không quản lý vụn vặt.":
+        "Be clear on the goal, deadline and standard; delegate with trust and resources; check progress at a sensible cadence, don't micromanage.",
+    "Khen và phê bình": "Praise and criticism",
+    "Khen công khai, kịp thời, cụ thể; phê bình riêng tư, nhắm vào hành vi chứ không nhắm vào con người, kèm hướng khắc phục.":
+        "Praise publicly, promptly and specifically; criticise privately, target the behaviour not the person, and offer a way to fix it.",
+    "Với đồng nghiệp": "With colleagues",
+    "Tôn trọng, hợp tác, chia sẻ thông tin; tranh luận về công việc chứ không công kích cá nhân; tránh bè phái, tán chuyện sau lưng.":
+        "Be respectful, cooperative, share information; debate the work, not the person; avoid cliques and gossiping behind people's backs.",
+    "Họp hiệu quả": "Effective meetings",
+    "Có chương trình gửi trước; đến đúng giờ; phát biểu ngắn gọn vào trọng tâm; có kết luận, biên bản và người chịu trách nhiệm từng việc.":
+        "Send the agenda in advance; arrive on time; keep remarks brief and on point; end with conclusions, minutes and an owner for each action.",
+    "MỤC 3.2": "SECTION 3.2",
+    "Giao tiếp với bên ngoài tổ chức": "Communicating outside the organisation",
+    "Khách hàng, đối tác, cơ quan nhà nước và truyền thông — bốn nhóm, bốn luật chơi.":
+        "Customers, partners, state agencies and the press — four groups, four sets of rules.",
+    "Giao tiếp với khách hàng": "Communicating with customers",
+    "Tâm thế phục vụ": "A service mindset",
+    "Khách hàng nuôi sống doanh nghiệp; mỗi điểm tiếp xúc (chào đón, tư vấn, giao hàng, hậu mãi) đều là khoảnh khắc xây hoặc phá niềm tin.":
+        "Customers sustain the business; every touchpoint (welcome, advice, delivery, after-sales) either builds or breaks trust.",
+    "Nguyên tắc vàng": "Golden rules",
+    "Chào đón niềm nở – gọi tên khách khi có thể; lắng nghe nhu cầu trước khi giới thiệu; nói sự thật về sản phẩm; giữ lời hứa về thời hạn.":
+        "Greet warmly – use the customer's name when possible; listen to their needs before pitching; tell the truth about the product; keep promised deadlines.",
+    "Điều tối kỵ": "Absolute no-nos",
+    "Tranh cãi thắng – thua với khách; hứa quá khả năng; đổ lỗi cho đồng nghiệp, cho quy trình; bỏ mặc khách sau khi bán xong.":
+        "Arguing to \"win\" against a customer; over-promising; blaming colleagues or processes; abandoning the customer once the sale is made.",
+    "Xử lý phàn nàn của khách hàng — quy trình LAST": "Handling customer complaints — the LAST process",
+    "Với đối tác, cơ quan nhà nước và truyền thông": "With partners, state agencies and the press",
+    "Đối tác kinh doanh": "Business partners",
+    "Bình đẳng, giữ chữ tín, minh bạch thông tin; quan hệ lâu dài quan trọng hơn lợi thế ngắn hạn — nền tảng cho đàm phán ở Chương 4.":
+        "Be equal, keep your word, be transparent; a long-term relationship matters more than a short-term edge — the foundation for negotiation in Chapter 4.",
+    "Cơ quan nhà nước": "State agencies",
+    "Đúng thủ tục, đúng thẩm quyền, hồ sơ – văn bản chuẩn thể thức (Chương 5); tác phong nghiêm túc, đúng hẹn; tuyệt đối không “đi tắt” trái quy định.":
+        "Follow proper procedure and authority, correctly formatted dossiers and documents (Chapter 5); be serious and punctual; never cut corners against regulations.",
+    "Truyền thông – báo chí": "Media and the press",
+    "Chỉ người được ủy quyền phát ngôn; thông tin nhất quán, trung thực; khi có khủng hoảng: phản hồi nhanh, nhận trách nhiệm đúng phần của mình, không né tránh.":
+        "Only an authorised spokesperson speaks; keep information consistent and truthful; in a crisis: respond quickly, own your share of responsibility, don't dodge.",
+    "MỤC 3.3 – 3.4": "SECTIONS 3.3 – 3.4",
+    "Bàn tiệc và môi trường đa văn hóa": "Banquets and cross-cultural settings",
+    "Nơi công việc vẫn tiếp diễn dù không ai nhắc đến công việc.": "Where work carries on even though nobody mentions work.",
+    "Giao tiếp trên bàn tiệc": "Banquet communication",
+    "Trước bữa tiệc": "Before the meal",
+    "Xác nhận tham dự đúng hạn; đến đúng giờ; trang phục theo tính chất tiệc; chờ chủ tiệc mời và xếp chỗ — vị trí ngồi thể hiện thứ bậc.":
+        "RSVP on time; arrive punctually; dress to match the occasion; wait for the host to invite you in and seat you — seating reflects hierarchy.",
+    "Trong bữa ăn": "During the meal",
+    "Chủ tiệc bắt đầu trước; dùng dụng cụ từ ngoài vào trong; không nói khi đang nhai, không gõ đũa, không xoay đĩa thức ăn về phía mình liên tục.":
+        "The host starts first; use cutlery from the outside in; don't talk with your mouth full, don't tap chopsticks, don't keep spinning the lazy Susan toward yourself.",
+    "Chúc rượu – cụng ly": "Toasting and clinking glasses",
+    "Người vị thế thấp nâng ly thấp hơn khi cụng; chúc ngắn gọn, đúng đối tượng; tôn trọng người không dùng rượu bia — không ép.":
+        "The more junior person clinks with their glass held lower; keep toasts short and address the right person; respect those who don't drink alcohol — never pressure them.",
+    "Câu chuyện trên bàn tiệc": "Table conversation",
+    "Chủ đề nhẹ nhàng: ẩm thực, thể thao, du lịch, quê quán; tránh chính trị, tôn giáo, thu nhập, đời tư; công việc chỉ bàn khi chủ tiệc gợi mở.":
+        "Keep it light: food, sport, travel, hometowns; avoid politics, religion, income, private life; only discuss work if the host brings it up.",
+    "Giao tiếp đa văn hóa: nhận diện khác biệt": "Cross-cultural communication: spotting the differences",
+    "Cách nói": "Speaking style",
+    "Văn hóa “nói thẳng” (Đức, Mỹ, Hà Lan) đánh giá cao sự rõ ràng; văn hóa “nói vòng” (Nhật, Hàn, Việt) ưu tiên giữ thể diện — “để chúng tôi xem xét” có thể là lời từ chối.":
+        "\"Direct\" cultures (Germany, the US, the Netherlands) value clarity; \"indirect\" cultures (Japan, Korea, Vietnam) prioritise saving face — \"we'll consider it\" can mean no.",
+    "Thứ bậc và ra quyết định": "Hierarchy and decision-making",
+    "Nơi coi trọng tôn ti (Nhật, Hàn, Trung): đúng vai, đúng cấp, quyết định tập thể chậm mà chắc; nơi bình đẳng (Bắc Âu, Úc): gọi tên, tranh luận thẳng với sếp là bình thường.":
+        "Where hierarchy matters (Japan, Korea, China): stay in your role and rank, group decisions are slow but solid; where it's egalitarian (Nordics, Australia): first names and openly debating the boss are normal.",
+    "Thời gian và cam kết": "Time and commitments",
+    "Văn hóa giờ giấc chặt (Đức, Nhật, Thụy Sĩ): trễ 5 phút là thất lễ; văn hóa thời gian linh hoạt: quan hệ đi trước, tiến độ đi sau — cần chốt mốc bằng văn bản.":
+        "Strict-time cultures (Germany, Japan, Switzerland): 5 minutes late is disrespectful; flexible-time cultures: relationships come before schedules — pin down milestones in writing.",
+    "Cử chỉ và kiêng kỵ": "Gestures and taboos",
+    "Cùng một cử chỉ mang nghĩa khác nhau giữa các nước; màu sắc, con số, quà tặng đều có thể nhạy cảm — tra cứu trước khi gặp đối tác nước ngoài.":
+        "The same gesture can mean different things in different countries; colours, numbers and gifts can all be sensitive — look them up before meeting a foreign partner.",
+    "Nguyên tắc thích ứng đa văn hóa": "Principles for cross-cultural adaptation",
+    "Tìm hiểu trước  —  văn hóa giao tiếp, nghi thức chào hỏi, kiêng kỵ của đối tác trước mỗi cuộc gặp quan trọng.":
+        "Research beforehand  —  your partner's communication style, greeting customs and taboos before any important meeting.",
+    "Quan sát và điều chỉnh  —  để ý cách đối tác chào, trao danh thiếp, giữ khoảng cách… và ứng xử tương thích.":
+        "Observe and adjust  —  notice how they greet, exchange cards, keep distance… and match your behaviour accordingly.",
+    "Không suy diễn theo chuẩn của mình  —  một hành vi “kỳ lạ” có thể hoàn toàn bình thường trong văn hóa của họ — hỏi lịch sự thay vì phán xét.":
+        "Don't judge by your own standards  —  a \"strange\" behaviour may be perfectly normal in their culture — ask politely instead of judging.",
+    "Nói chậm, rõ, xác nhận lại bằng văn bản  —  khi khác ngôn ngữ: tránh tiếng lóng, thành ngữ; tóm tắt thỏa thuận qua email sau cuộc họp.":
+        "Speak slowly and clearly, confirm in writing  —  across languages: avoid slang and idioms; summarise the agreement by email after the meeting.",
+    "Khiêm tốn và cầu thị  —  sẵn sàng xin lỗi khi lỡ phạm điều kiêng kỵ; thiện chí học hỏi luôn được ghi nhận ở mọi nền văn hóa.":
+        "Stay humble and eager to learn  —  be ready to apologise if you break a taboo; a genuine willingness to learn is valued in every culture.",
+    "Hai tình huống khó — xử lý ngay tại lớp": "Two tough situations — handled right in class",
+    "TÌNH HUỐNG (nhóm 4–5 sinh viên, 20 phút, bốc thăm 1 trong 2)": "SCENARIO (groups of 4–5 students, 20 minutes, draw one of two)",
+    "Tình huống A: Khách hàng đến quầy lớn tiếng vì sản phẩm lỗi lần thứ hai trong tháng, nhiều khách khác đang nhìn. Tình huống B: Công ty tiếp đoàn đối tác Nhật Bản lần đầu — nhóm được giao chuẩn bị kịch bản đón tiếp và một bữa tiệc tối.":
+        "Scenario A: A customer comes to the counter shouting about a faulty product for the second time this month, with other customers watching. Scenario B: The company is hosting a Japanese partner delegation for the first time — the group must prepare the welcome plan and a dinner banquet.",
+    "Tình huống A: viết kịch bản xử lý theo đúng 4 bước LAST và đóng vai trước lớp (nhân viên – khách hàng – quản lý).":
+        "Scenario A: write a response script following the 4 LAST steps and role-play it in front of the class (employee – customer – manager).",
+    "Tình huống B: lập danh sách những việc phải làm và những điều tuyệt đối tránh (chào hỏi, danh thiếp, chỗ ngồi, quà tặng, chủ đề trò chuyện).":
+        "Scenario B: list the things to do and the things to absolutely avoid (greetings, business cards, seating, gifts, conversation topics).",
+    "Cả lớp nhận xét chéo: điều gì đã đúng chuẩn mực của chương, điều gì cần điều chỉnh?":
+        "The class cross-reviews: what matched the chapter's standards, and what needs adjusting?",
+    "Nội bộ vững thì đối ngoại mới mạnh": "A strong inside makes for a strong outside",
+    "Nhận việc – báo cáo – phản hồi với cấp trên; giao việc – khen chê với cấp dưới: đều có chuẩn mực học được.":
+        "Receiving tasks, reporting and giving feedback to superiors; delegating and praising/criticising subordinates — all follow learnable standards.",
+    "Khách hàng phàn nàn là cơ hội": "A customer complaint is an opportunity",
+    "LAST: Lắng nghe – Xin lỗi – Giải quyết – Cảm ơn; đừng thắng cuộc cãi để rồi mất khách hàng.":
+        "LAST: Listen – Apologise – Solve – Thank; don't win the argument and lose the customer.",
+    "Đa văn hóa: hiểu trước, phán xét không bao giờ": "Cross-cultural: understand first, never judge",
+    "Tìm hiểu – quan sát – thích ứng; xác nhận thỏa thuận bằng văn bản để vượt rào cản ngôn ngữ.":
+        "Research – observe – adapt; confirm agreements in writing to get past the language barrier.",
+    "Trình bày cách báo cáo tin xấu với cấp trên qua một ví dụ cụ thể.": "Explain how to report bad news to a superior, using a concrete example.",
+    "Vận dụng quy trình LAST để xử lý một tình huống phàn nàn tự chọn.": "Apply the LAST process to handle a complaint scenario of your choice.",
+    "Nêu 5 điều nên làm và 5 điều nên tránh khi dự tiệc cùng đối tác kinh doanh.":
+        "State 5 things to do and 5 things to avoid at a banquet with a business partner.",
+    "Phân tích một khác biệt văn hóa Đông – Tây và cách thích ứng khi làm việc.":
+        "Analyse one East–West cultural difference and how to adapt to it at work.",
+    "CHUẨN BỊ CHO BUỔI SAU:  Chương 4 – Đàm phán trong kinh doanh. Mỗi nhóm nghĩ về lần “trả giá” gần nhất của mình (mua xe, thuê trọ…): điều gì khiến bạn thành công hoặc thất bại?":
+        "PREPARE FOR NEXT SESSION:  Chapter 4 – Business negotiation. Each group should think of their most recent \"haggling\" experience (buying a vehicle, renting a room…): what made you succeed or fail?",
+}
+
 DECKS = [
     ("slides/01-tong-quan-giao-tiep.pptx", CH1),
     ("slides/02-ky-nang-chuyen-nghiep.pptx", CH2),
+    ("slides/03-tinh-huong-dac-thu.pptx", CH3),
 ]
 
 

@@ -5,4 +5,4 @@
    Sinh bởi scripts/xuat_slide.py — đừng sửa tay.
    © Đỗ Thùy Hương, 2026. */
 registerSlides({"ch1": 19, "ch2": 20, "ch3": 18, "ch4": 20, "ch5": 21, "th1": 11, "th2": 11, "th3": 11});
-registerSlidesEn({"ch1": 19, "ch2": 20});
+registerSlidesEn({"ch1": 19, "ch2": 20, "ch3": 18});
