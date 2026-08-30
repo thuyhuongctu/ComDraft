@@ -51,21 +51,18 @@
      ngữ>/ — bước nào chưa có thì bỏ khỏi bảng để tep_thu() trả về null và
      rơi thẳng về giọng máy, không gọi tới tệp chưa tồn tại (gọi tệp 404 thì
      trình duyệt tự in lỗi ra bảng điều khiển, dù đã bắt onerror trong JS).
-     Hai bên đang thiếu khác bước nhau — thu xong thì thêm dòng tương ứng:
-       vi còn thiếu: tour.s5 (Các chương), tour.s6 (Ba con số),
-         tour.navm (Điều hướng — bản trên điện thoại).
-       en còn thiếu: tour.s3 (Clock & music), tour.navm (Navigation — phone). */
+     Cả hai bên nay đã có đủ bản thu cho mọi bước. */
   var THU = {
     vi: {
       'tour.s0': 's0.mp3', 'tour.s1': 's1.mp3', 'tour.s2': 's2.mp3',
-      'tour.s3': 's3.mp3', 'tour.s4': 's4.mp3',
-      'tour.nav': 'nav.mp3',
+      'tour.s3': 's3.mp3', 'tour.s4': 's4.mp3', 'tour.s5': 's5.mp3',
+      'tour.nav': 'nav.mp3', 'tour.navm': 'navm.mp3', 'tour.s6': 's6.mp3',
       'tour.s7': 's7.mp3', 'tour.s8': 's8.mp3', 'tour.xong': 'xong.mp3'
     },
     en: {
       'tour.s0': 's0.mp3', 'tour.s1': 's1.mp3', 'tour.s2': 's2.mp3',
-      'tour.s4': 's4.mp3', 'tour.s5': 's5.mp3',
-      'tour.nav': 'nav.mp3', 'tour.s6': 's6.mp3',
+      'tour.s3': 's3.mp3', 'tour.s4': 's4.mp3', 'tour.s5': 's5.mp3',
+      'tour.nav': 'nav.mp3', 'tour.navm': 'navm.mp3', 'tour.s6': 's6.mp3',
       'tour.s7': 's7.mp3', 'tour.s8': 's8.mp3', 'tour.xong': 'xong.mp3'
     }
   };
