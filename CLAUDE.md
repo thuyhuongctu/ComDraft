@@ -93,9 +93,20 @@ tay tệp kết quả** — sửa tay thì lần chạy sau đè mất:
 | `lam_icon_ung_dung.py` | Bộ icon trong `assets/icons/` |
 | `build_videos.py` | Tám video trong `videos/` |
 | `build_decks.js`, `upgrade_decks.py`, `add_images.py` | Tám bộ slide `.pptx` |
+| `remotion/src/scenes.ts` | Sơ đồ hoạt hình — mỗi video đúng một cảnh, do `build_videos.py` gọi |
 
 Một lần đã trả giá cho luật này: `extend_ch4.py` lấy đầu vào chính là tệp nó ghi
 đè, chạy lần thứ hai ra deck 53 slide thay vì 43.
+
+**Dựng lại 8 video có kèm sơ đồ hoạt hình:** chạy `cd remotion && npm install`
+một lần (cài `remotion`/`@remotion/cli` — cần mạng, hoặc chép `node_modules` từ
+máy đã cài); rồi `python3 scripts/build_videos.py` như cũ. `build_videos.py` cần
+tệp giọng Piper ở `../video1/vi_VN-vais1000-medium.onnx` (ngoài repo, không kèm
+theo) và tự gọi `npx remotion render` cho từng cảnh. Máy không có mạng ra ngoài
+để Remotion tự tải trình duyệt riêng thì đặt biến môi trường
+`REMOTION_BROWSER_EXECUTABLE` trỏ tới một bản Chromium/Chrome sẵn có. Đổi sơ đồ
+thì sửa `remotion/src/scenes.ts` (dữ liệu) hoặc `remotion/src/Scene.tsx` (cách
+vẽ) rồi chạy lại `build_videos.py` — đừng sửa tay video kết quả.
 
 ---
 
