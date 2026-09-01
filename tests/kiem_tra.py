@@ -187,15 +187,12 @@ def kiem_tren_trinh_duyet(pw):
     p.keyboard.press("Escape"); p.wait_for_timeout(250)
 
     # bài tập thể thức: chấm đúng
-    p.get_by_role("button", name=re.compile("thành phần thể thức")).click(); p.wait_for_timeout(400)
-    dung = {"o1": "Quốc hiệu và Tiêu ngữ", "o2": "Tên cơ quan, tổ chức ban hành",
-            "o3": "Số, ký hiệu của văn bản", "o4": "Địa danh và thời gian ban hành",
-            "o5": "Tên loại và trích yếu nội dung", "o6": "Nội dung văn bản",
-            "o7": "Chức vụ, họ tên, chữ ký người có thẩm quyền",
-            "o8": "Dấu, chữ ký số của cơ quan", "o9": "Nơi nhận"}
-    for o, ten in dung.items():
-        p.locator(".day-khoi .khoi", has_text=ten).first.click()
-        p.locator('.to-a4 .o[data-o="%s"]' % o).click()
+    p.get_by_role("button", name=re.compile("thành phần thể thức|formality components")).click(); p.wait_for_timeout(400)
+    # Chọn khối theo data-ma (không dò chữ hiển thị): khối và ô đều không phụ
+    # thuộc tiếng Việt hay tiếng Anh đang bật.
+    for ma in range(1, 10):
+        p.locator('.day-khoi .khoi[data-ma="%d"]' % ma).click()
+        p.locator('.to-a4 .o[data-o="o%d"]' % ma).click()
         p.wait_for_timeout(50)
     p.locator(".the-thuc .nut.chinh").click(); p.wait_for_timeout(350)
     ghi("Bài tập thể thức chấm đúng 9/9",
@@ -233,7 +230,7 @@ def kiem_tren_trinh_duyet(pw):
     p.locator(".tai-nguyen button").first.click(); p.wait_for_timeout(500)
     kiem_giay(p)
     with p.expect_download() as sk:
-        p.get_by_role("button", name=re.compile("Tải ảnh")).click()
+        p.get_by_role("button", name=re.compile("Tải ảnh|Download as image")).click()
     ghi("Giấy ghi nhận tải về được ảnh PNG",
         sk.value.suggested_filename.endswith(".png"), sk.value.suggested_filename)
     p.keyboard.press("Escape")
