@@ -740,6 +740,7 @@
     var khoi_dom = {};
     THE_THUC.forEach(function (x) {
       var n = el('button', 'khoi'); n.type = 'button';
+      n.setAttribute('data-ma', x.ma); // để bộ kiểm tra chọn đúng khối bất kể đang hiện tiếng Việt hay tiếng Anh
       n.appendChild(el('b', null, ngu() === 'en' ? x.en : x.vi));
       n.appendChild(el('small', null, x.mau));
       n.addEventListener('click', function () { bam_khoi(x.ma); });
