@@ -417,11 +417,33 @@
     v.appendChild(dong_ho_nhac());
     v.appendChild(khung_phim());
     v.appendChild(el('h2', 'muc', t('bai.tieude')));
-    var luoi = el('div', 'luoi');
+    var luoi = el('div', 'luoi cuon');
     BAI.forEach(function (b) { luoi.appendChild(the_chuong(b, function () { ve_chi_tiet(b); })); });
     v.appendChild(luoi);
+    var cham = el('div', 'cham');
+    BAI.forEach(function () { cham.appendChild(el('i')); });
+    v.appendChild(cham);
+    lam_tieu_diem_khi_cuon(luoi, cham);
 
     them_chan(v);
+  }
+
+  // Thẻ chương nào cuộn vào giữa khung thì phóng to làm tiêu điểm, chấm bên
+  // dưới sáng theo — dùng IntersectionObserver vì nó tự chạy lại mỗi lần
+  // cuộn, không cần tự tính toán vị trí bằng tay.
+  function lam_tieu_diem_khi_cuon(luoi, cham) {
+    var the = luoi.querySelectorAll('.chuong');
+    var dau = cham.children;
+    if (!the.length) return;
+    if (!('IntersectionObserver' in window)) { the[0].classList.add('tam'); return; }
+    var qs = new IntersectionObserver(function (ds) {
+      ds.forEach(function (d) {
+        var i = Array.prototype.indexOf.call(the, d.target);
+        d.target.classList.toggle('tam', d.isIntersecting);
+        if (dau[i]) dau[i].classList.toggle('tam', d.isIntersecting);
+      });
+    }, { root: luoi, threshold: 0.6 });
+    for (var i = 0; i < the.length; i++) qs.observe(the[i]);
   }
 
   function the_chuong(b, khi_bam) {

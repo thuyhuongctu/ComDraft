@@ -239,6 +239,32 @@ main { min-width: 0; }
 .luoi { display: grid; gap: 14px; }
 @media (min-width: 700px) { .luoi.hai { grid-template-columns: 1fr 1fr; } }
 
+/* Danh sách chương ở trang chủ: cuộn ngang có snap, thẻ đang ở giữa được
+   phóng lên làm tiêu điểm — thẻ hai bên thu nhỏ, mờ đi để gợi ý còn thẻ
+   khác ngoài màn hình. */
+.luoi.cuon {
+  display: flex; overflow-x: auto; scroll-snap-type: x mandatory;
+  -webkit-overflow-scrolling: touch; scrollbar-width: none;
+  padding: 6px 6px 4px; margin: -6px -6px 0;
+}
+.luoi.cuon::-webkit-scrollbar { display: none; }
+.luoi.cuon .chuong {
+  scroll-snap-align: center; flex: 0 0 82%; max-width: 360px;
+  transform: scale(.92); opacity: .55;
+  transition: transform .25s ease, opacity .25s ease, box-shadow .18s ease;
+}
+.luoi.cuon .chuong.tam { transform: scale(1); opacity: 1; }
+.luoi.cuon .chuong:hover { transform: scale(1); }
+@media (min-width: 600px) { .luoi.cuon .chuong { flex-basis: 46%; } }
+@media (min-width: 900px) { .luoi.cuon .chuong { flex-basis: 31%; } }
+
+.cham { display: flex; justify-content: center; gap: 7px; margin-top: 12px; }
+.cham i {
+  width: 7px; height: 7px; border-radius: 50%; background: var(--mat-2);
+  box-shadow: var(--clay-lom); transition: background .2s ease, transform .2s ease;
+}
+.cham i.tam { background: var(--chinh); transform: scale(1.35); }
+
 h2.muc {
   font-family: var(--head); font-size: 19px; color: var(--coral-dam);
   margin: 22px 0 12px; padding-left: 4px;
