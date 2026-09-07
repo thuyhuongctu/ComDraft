@@ -19,6 +19,16 @@ Faculty.
 | `videos/` | Three lecture videos, narrated in the lecturer's own voice |
 | `kich-ban/` | Narration script (with an estimated duration per slide) and the source text used for recording |
 
+## Đổi mã học phần
+
+Mã học phần đổi từ **EC6000TX** sang **EC6035TX** (Chương trình đào tạo điều
+chỉnh, thông báo của Xuân Lê trong nhóm HLS ngày 01/09/2026). Đã sửa mã trên
+trang bìa của `slides/*.pptx`/`.pdf` và trên khung hình mở đầu của
+`videos/CHUONG_5__VIDEO_1.mp4` (chỉ đổi hình, không đụng tới lời thu âm — mã
+học phần không được đọc thành tiếng ở đoạn này). Tên tệp và tên thư mục vẫn
+giữ "EC6000TX" để khỏi phải sửa lại mọi đường dẫn tham chiếu; chỉ nội dung
+hiển thị được cập nhật.
+
 ## Video 1 status
 
 Video 1 (`videos/CHUONG_5__VIDEO_1.mp4`) has the new narration for slides
