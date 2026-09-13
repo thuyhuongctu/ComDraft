@@ -16,6 +16,10 @@ Every slide, figure, question, script and video in this repository was authored 
 lecturer named above for the classes she teaches in person. Nothing here is derived from
 a colleague's material.
 
+[![Watch the 10-second introduction to ComDraft](assets/img/video-gioi-thieu.jpg)](assets/video/gioi-thieu.mp4)
+<br>▶ Click the frame above to play the 10-second introduction video (same file the
+home screen plays, ~1.4 MB).
+
 ---
 
 ## The revision app
@@ -27,6 +31,9 @@ The repository root is also a small offline-first web app for students —
 200-question bank with the explanation for every question, and needs no account, no
 server and no network once it has been opened for the first time.
 
+- A 10-second introduction video on the home screen, behind a cover image and a play
+  button — not downloaded until a visitor presses play, so opening the app costs no
+  extra data unless they choose to watch it.
 - **Practice mode** marks each answer immediately and shows why it is right or wrong;
   **test mode** withholds the marking until the end.
 - Pick a single chapter or mix all five, choose 10 / 20 / 40 / all questions, and
