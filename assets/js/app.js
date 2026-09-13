@@ -391,9 +391,60 @@
     return k;
   }
 
+  // ------------------------------------------------- video giới thiệu ứng dụng
+  // Cùng cách EnQuiz làm với video giới thiệu của ứng dụng đó: ảnh bìa và chữ
+  // nằm đè lên khung 16:9, video không gắn địa chỉ tệp cho tới khi bấm nút
+  // phát, nên mở trang chủ không tải video này. Khác khung_phim() ở chỗ phát
+  // ngay tại khung thay vì mở khung xem toàn màn hình — video này ngắn, không
+  // cần phụ đề hay điều khiển trang/tua như video bài giảng.
+  function khoi_video_gioi_thieu() {
+    var s = el('section', 'video-gt');
+    var khung = el('div', 'video-gt-khung');
+
+    var anh = el('img', 'video-gt-anh');
+    anh.src = './assets/img/video-gioi-thieu.jpg';
+    anh.alt = ''; anh.loading = 'lazy';
+    khung.appendChild(anh);
+
+    var v = document.createElement('video');
+    v.className = 'video-gt-video';
+    v.preload = 'none';
+    v.setAttribute('playsinline', '');
+    khung.appendChild(v);
+
+    var man = el('div', 'video-gt-man');
+    var nut = el('button', 'video-gt-phat'); nut.type = 'button';
+    nut.setAttribute('aria-label', t('videogt.phat'));
+    nut.innerHTML = '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5.4v13.2L19 12z"/></svg>';
+    man.appendChild(nut);
+    var chu = el('div', 'video-gt-chu');
+    chu.appendChild(el('p', 'video-gt-nho', t('videogt.xem')));
+    chu.appendChild(el('h2', 'video-gt-de', t('videogt.tieude')));
+    man.appendChild(chu);
+    khung.appendChild(man);
+    s.appendChild(khung);
+    s.appendChild(el('small', 'video-gt-ghi', t('videogt.ghichu')));
+
+    var da_nap = false;
+    nut.addEventListener('click', function () {
+      if (!da_nap) {
+        da_nap = true;
+        v.src = './assets/video/gioi-thieu.mp4';
+        v.controls = true;
+        v.load();
+      }
+      khung.classList.add('dang-phat');
+      v.play().catch(function () {});
+    });
+    v.addEventListener('ended', function () { khung.classList.remove('dang-phat'); });
+
+    return s;
+  }
+
   function ve_nha() {
     var v = $('#khung'); v.innerHTML = '';
     v.appendChild(khoi_chao());
+    v.appendChild(khoi_video_gioi_thieu());
 
     var da = KHO.filter(function (b) { return (luu[b.id] || {}).ty != null; });
     var tb = da.length
