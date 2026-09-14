@@ -626,38 +626,10 @@ p.rieng { font-size: 12.5px; color: var(--chu-mo); margin-top: 10px; line-height
   border-radius: 10px; box-shadow: var(--clay-nho); background: #FAF0EA;
 }
 
-.khung-phim { margin-top: 16px; }
-.khung-phim .man {
-  position: relative; display: block; width: 100%; border: none; padding: 0;
-  border-radius: var(--bo); overflow: hidden; cursor: pointer;
-  box-shadow: var(--clay); background: var(--mat);
-  transition: transform .18s ease;
-}
-.khung-phim .man:hover { transform: translateY(-3px); }
-.khung-phim img { display: block; width: 100%; height: auto; }
-.khung-phim .nut-phat {
-  position: absolute; left: 50%; top: 50%; transform: translate(-50%, -50%);
-  width: 68px; height: 68px; border-radius: 50%;
-  background: var(--mat); color: var(--chinh);
-  display: grid; place-items: center; font-size: 25px; padding-left: 5px;
-  box-shadow: var(--clay);
-}
-.khung-phim .loi-phim {
-  position: absolute; left: 0; right: 0; bottom: 0; text-align: left;
-  padding: 26px 20px 14px;
-  background: linear-gradient(to top, rgba(58, 43, 40, .82), rgba(58, 43, 40, 0));
-  color: #fff;
-}
-.khung-phim .loi-phim small {
-  display: block; font-size: 11px; letter-spacing: .8px; text-transform: uppercase;
-  opacity: .82;
-}
-.khung-phim .loi-phim b { display: block; font-family: var(--head); font-size: 18px; margin-top: 2px; }
-
 /* ---------------------------------------------------- video giới thiệu ứng dụng
-   Giống khung-phim ở trên nhưng phát ngay tại khung thay vì mở khung xem toàn
-   màn hình: khung 16:9 khoá sẵn nên trang không nhảy lúc video nạp xong, ảnh
-   bìa và lớp chữ lui hết khi đã bấm phát. */
+   Đứng ở chỗ trước đây là khung phim giới thiệu Chương 1. Khung 16:9 khoá
+   sẵn nên trang không nhảy lúc video nạp xong, ảnh bìa và lớp chữ lui hết
+   khi đã bấm phát. */
 .video-gt { margin-top: 16px; }
 .video-gt-khung {
   position: relative; aspect-ratio: 16 / 9; border-radius: var(--bo);
