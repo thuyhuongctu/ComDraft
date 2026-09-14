@@ -367,36 +367,17 @@
     o_ten.focus();
   }
 
-  // Khung phim ở trang chủ: một video ôn tập mở sẵn để người mới vào có thứ
-  // xem ngay, không phải lần mò qua ba lớp menu.
-  function khung_phim() {
-    var b = BAI[0];
-    var k = el('div', 'khung-phim');
-    if (!b || !b.video) return k;
-    var o = el('button', 'man'); o.type = 'button';
-    var a = el('img');
-    a.src = './assets/slides/' + (b.slide ? b.slide.bo : 'ch1') + '/001.jpg';
-    a.alt = ''; a.loading = 'lazy';
-    o.appendChild(a);
-    o.appendChild(el('span', 'nut-phat', '▶'));
-    var c = el('span', 'loi-phim');
-    c.appendChild(el('small', null, t('phim.moi')));
-    c.appendChild(el('b', null, (ngu() === 'en' ? 'Chapter 1 — ' : 'Chương 1 — ') +
-                                (ngu() === 'en' ? b.en : b.vi)));
-    o.appendChild(c);
-    o.addEventListener('click', function () {
-      xem_video(t('bai.video') + ' — ' + (ngu() === 'en' ? b.en : b.vi), b.video.tep, b.video.taiVe);
-    });
-    k.appendChild(o);
-    return k;
-  }
-
   // ------------------------------------------------- video giới thiệu ứng dụng
-  // Cùng cách EnQuiz làm với video giới thiệu của ứng dụng đó: ảnh bìa và chữ
-  // nằm đè lên khung 16:9, video không gắn địa chỉ tệp cho tới khi bấm nút
-  // phát, nên mở trang chủ không tải video này. Khác khung_phim() ở chỗ phát
-  // ngay tại khung thay vì mở khung xem toàn màn hình — video này ngắn, không
-  // cần phụ đề hay điều khiển trang/tua như video bài giảng.
+  // Đứng ở chỗ trước đây là khung phim giới thiệu Chương 1: video này giới
+  // thiệu cả ứng dụng nên hợp vai trò "thứ xem ngay khi mới vào" hơn. Cùng
+  // cách EnQuiz làm với video giới thiệu của ứng dụng đó — ảnh bìa và chữ nằm
+  // đè lên khung 16:9, video không gắn địa chỉ tệp cho tới khi bấm nút phát,
+  // nên mở trang chủ không tải video này — nhưng phát ngay tại khung thay vì
+  // mở khung xem toàn màn hình, vì video ngắn, không cần phụ đề hay điều
+  // khiển trang/tua như video bài giảng.
+  // Video còn chưa có bài âm thanh chính thức (đang chờ thay bằng bản thu
+  // của giảng viên), nên tắt tiếng sẵn — ai muốn nghe thử bản tạm vẫn bật
+  // được bằng nút loa trên thanh điều khiển.
   function khoi_video_gioi_thieu() {
     var s = el('section', 'video-gt');
     var khung = el('div', 'video-gt-khung');
@@ -409,6 +390,9 @@
     var v = document.createElement('video');
     v.className = 'video-gt-video';
     v.preload = 'none';
+    v.muted = true;
+    v.defaultMuted = true;
+    v.setAttribute('muted', '');
     v.setAttribute('playsinline', '');
     khung.appendChild(v);
 
@@ -444,7 +428,6 @@
   function ve_nha() {
     var v = $('#khung'); v.innerHTML = '';
     v.appendChild(khoi_chao());
-    v.appendChild(khoi_video_gioi_thieu());
 
     var da = KHO.filter(function (b) { return (luu[b.id] || {}).ty != null; });
     var tb = da.length
@@ -466,7 +449,7 @@
     v.appendChild(the);
 
     v.appendChild(dong_ho_nhac());
-    v.appendChild(khung_phim());
+    v.appendChild(khoi_video_gioi_thieu());
     v.appendChild(el('h2', 'muc', t('bai.tieude')));
     var luoi = el('div', 'luoi cuon');
     BAI.forEach(function (b) { luoi.appendChild(the_chuong(b, function () { ve_chi_tiet(b); })); });
