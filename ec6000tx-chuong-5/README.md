@@ -26,18 +26,24 @@ Law) to "Khoa Kinh doanh và Luật" (Faculty of Business and Law), and the
 university's Vietnamese name from "Trường Đại học Sư phạm Kỹ thuật Vĩnh Long"
 to "Trường Đại học Công nghệ Kỹ thuật Vĩnh Long" (acronym VLUTE unchanged).
 Updated on every slide of `slides/CHUONG_5__KY_THUAT_SOAN_THAO_VA_TRINH_BAY_VAN_BAN_EC6000TX.pptx`
-and its exported `.pdf`. Two things this update does **not** cover, both
-flagged for the author to decide on:
+and its exported `.pdf`, including the university seal image in the corner of
+every slide (updated from the author's new seal artwork — the old one baked
+"ĐH SP KT VL" into the picture as pixels, not text, so it needed a new image,
+not a text edit).
 
-- The small round university seal in the corner of every slide is a picture,
-  not text — it still shows the old "ĐH SP KT VL" initials baked into the
-  image. Replacing it needs an updated seal image from the university, not a
-  text edit.
-- The three lecture videos in `videos/` are recordings of this same deck, so
-  the old faculty/university name is very likely still visible on-screen
-  throughout — not just on the cover. Fixing that would need either the
-  original per-slide source images (not kept in this repository) or
-  re-recording, both a substantially bigger job than the slide/PDF fix here.
+The three lecture videos in `videos/` are recordings of this same deck, so the
+old name and seal were visible on-screen throughout, not just on the cover —
+fixed there too, without re-recording. The narration audio in each video is
+untouched (same file duration, to the millisecond); only the fixed-position
+areas where the name, faculty and seal sit — the banner repeated on every
+slide, plus the extra mentions in the cover slide's info block and the
+closing slide's sign-off — were replaced with freshly rendered artwork from
+the corrected deck, composited frame-accurately over each slide's exact
+on-screen time. Checked by extracting frames across all three videos (start,
+several points mid-video, and the cover/closing slides specifically) and
+confirming the new name, faculty and seal render cleanly with no seam and no
+audio drift; a full watch-through in an ordinary video player hasn't been
+done, so it's worth a spot check.
 
 ## Video 1 status
 
