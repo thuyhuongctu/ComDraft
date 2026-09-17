@@ -65,12 +65,17 @@ isn't mistaken for done: that PDF's own text still reads "EC6000TX".
 
 ## Essay-style review questions
 
-`on-tap/CAU_HOI_ON_TAP_TU_LUAN__CHUONG_5_EC6035TX.docx` (and its exported
-`.pdf`) is a nine-question self-study review — two open-ended essay
-questions for each of 5.1–5.4, plus one closing question tying the chapter
-to AI-assisted drafting tools. Each question carries a short "self-check"
-list of the points an answer should cover, not a model answer to copy. This
-is for self-study, not a graded assignment.
+A nine-question self-study review — two open-ended essay questions for each
+of 5.1–5.4, plus one closing question tying the chapter to AI-assisted
+drafting tools — in two editions, the same split as `quiz/` at the
+repository root:
+
+- `on-tap/... - BAN DE (SV).docx/.pdf` — for students: each question carries
+  a short "self-check" list of the points an answer should cover, not a
+  model answer to copy. For self-study, not a graded assignment.
+- `on-tap/... - BAN CO DAP AN (GV).docx/.pdf` — for the lecturer only: the
+  same questions and self-check lists, plus a full suggested answer per
+  question, to compare against when grading or discussing in class.
 
 ## Video 1 status
 
