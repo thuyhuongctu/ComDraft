@@ -18,6 +18,7 @@ Faculty.
 | `slides/` | Slide deck (`.pptx` and printable `.pdf`), 50 slides |
 | `videos/` | Three lecture videos, narrated in the lecturer's own voice |
 | `kich-ban/` | Narration script (with an estimated duration per slide) and the source text used for recording |
+| `on-tap/` | Essay-style self-study review questions covering all four sections of the chapter |
 
 ## Faculty and university name change
 
@@ -61,6 +62,20 @@ once in its header line — updated, and its PDF export regenerated to match.
 twice but has no source `.docx` in this repository, so the text inside that
 PDF could not be edited — only its filename was updated. Flagging this so it
 isn't mistaken for done: that PDF's own text still reads "EC6000TX".
+
+## Essay-style review questions
+
+A nine-question self-study review — two open-ended essay questions for each
+of 5.1–5.4, plus one closing question tying the chapter to AI-assisted
+drafting tools — in two editions, the same split as `quiz/` at the
+repository root:
+
+- `on-tap/... - BAN DE (SV).docx/.pdf` — for students: each question carries
+  a short "self-check" list of the points an answer should cover, not a
+  model answer to copy. For self-study, not a graded assignment.
+- `on-tap/... - BAN CO DAP AN (GV).docx/.pdf` — for the lecturer only: the
+  same questions and self-check lists, plus a full suggested answer per
+  question, to compare against when grading or discussing in class.
 
 ## Video 1 status
 
