@@ -18,6 +18,7 @@ Faculty.
 | `slides/` | Slide deck (`.pptx` and printable `.pdf`), 50 slides |
 | `videos/` | Three lecture videos, narrated in the lecturer's own voice |
 | `kich-ban/` | Narration script (with an estimated duration per slide) and the source text used for recording |
+| `on-tap/` | Essay-style self-study review questions covering all four sections of the chapter |
 
 ## Faculty and university name change
 
@@ -61,6 +62,15 @@ once in its header line — updated, and its PDF export regenerated to match.
 twice but has no source `.docx` in this repository, so the text inside that
 PDF could not be edited — only its filename was updated. Flagging this so it
 isn't mistaken for done: that PDF's own text still reads "EC6000TX".
+
+## Essay-style review questions
+
+`on-tap/CAU_HOI_ON_TAP_TU_LUAN__CHUONG_5_EC6035TX.docx` (and its exported
+`.pdf`) is a nine-question self-study review — two open-ended essay
+questions for each of 5.1–5.4, plus one closing question tying the chapter
+to AI-assisted drafting tools. Each question carries a short "self-check"
+list of the points an answer should cover, not a model answer to copy. This
+is for self-study, not a graded assignment.
 
 ## Video 1 status
 
