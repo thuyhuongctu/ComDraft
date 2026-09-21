@@ -1,11 +1,31 @@
 # -*- coding: utf-8 -*-
 """Dựng 8 video: 5 video ôn tập chương + 3 video hướng dẫn thực hành (EC1103 hệ trực tiếp).
-Slide PNG + giọng đọc tiếng Việt (Piper) + FFmpeg. Xuất kèm kịch bản để GV thu lại giọng thật."""
+Slide PNG + giọng đọc tiếng Việt (Piper) + FFmpeg. Xuất kèm kịch bản để GV thu lại giọng thật.
+
+Mỗi video có đúng một slide được thay bằng sơ đồ hoạt hình (xem SCENE bên dưới và
+remotion/src/scenes.ts) thay vì ảnh tĩnh, cho sơ đồ mà lời đọc gọi là "quan trọng
+nhất" hoặc "cần thuộc". Trước khi chạy tệp này lần đầu: `cd remotion && npm install`.
+Máy không có mạng ra ngoài (Remotion cần tải trình duyệt riêng để dựng hình) thì đặt
+biến môi trường REMOTION_BROWSER_EXECUTABLE trỏ tới một bản Chromium/Chrome sẵn có."""
 import os, subprocess, json
 
 BASE = os.path.dirname(os.path.abspath(__file__))
 SLIDES = os.path.join(BASE, "..", "slides")
 VOICE = os.path.join(BASE, "..", "..", "video1", "vi_VN-vais1000-medium.onnx")
+REMOTION = os.path.join(BASE, "..", "remotion")
+TRINH_DUYET = os.environ.get("REMOTION_BROWSER_EXECUTABLE")
+
+# (số slide, sceneId trong remotion/src/scenes.ts) — mỗi video đúng một sơ đồ hoạt hình.
+SCENE = {
+    "ON TAP CHUONG 1 - TONG QUAN GIAO TIEP": (7, "c1"),
+    "ON TAP CHUONG 2 - KY NANG GIAO TIEP CHUYEN NGHIEP": (9, "c2"),
+    "ON TAP CHUONG 3 - TINH HUONG DAC THU": (7, "c3"),
+    "ON TAP CHUONG 4 - DAM PHAN TRONG KINH DOANH": (8, "c4"),
+    "ON TAP CHUONG 5 - SOAN THAO VA TRINH BAY VAN BAN": (7, "c5"),
+    "HUONG DAN THUC HANH BAI 1 - THE THUC VAN BAN": (8, "th1"),
+    "HUONG DAN THUC HANH BAI 2 - VAN BAN HANH CHINH": (8, "th2"),
+    "HUONG DAN THUC HANH BAI 3 - VAN BAN THUONG MAI": (9, "th3"),
+}
 
 # mỗi mục: (mã deck, số slide trong file PNG, lời đọc)
 VIDEOS = {}
@@ -99,9 +119,31 @@ def run(cmd, **kw):
     return r
 
 
+def thoi_luong(duong_dan):
+    return float(run(["ffprobe", "-v", "error", "-show_entries", "format=duration",
+                       "-of", "csv=p=0", duong_dan]).stdout.strip())
+
+
+# Cùng độ trễ/đệm với âm thanh trong filter_complex bên dưới, cộng thêm 1 giây dự
+# phòng: -shortest sẽ cắt bớt nếu cảnh render dài hơn âm thanh một chút, nhưng
+# ngắn hơn thì video sẽ bị dừng hình giữa chừng khi lời đọc chưa xong.
+DO_TRE_AM = 0.9
+DO_DEM_AM = 1.5
+
+
+def dung_canh_hoat_hinh(scene_id, giay, out_path):
+    props = json.dumps({"sceneId": scene_id, "seconds": giay})
+    cmd = [os.path.join(REMOTION, "node_modules", ".bin", "remotion"), "render",
+           "src/index.ts", "Canh", out_path, f"--props={props}"]
+    if TRINH_DUYET:
+        cmd.append(f"--browser-executable={TRINH_DUYET}")
+    run(cmd, cwd=REMOTION, timeout=600)
+
+
 def build(title, deck, items):
     work = os.path.join(BASE, "_tmp")
     os.makedirs(work, exist_ok=True)
+    canh_slide, canh_id = SCENE.get(title, (None, None))
     segs = []
     for i, (slide_no, text) in enumerate(items):
         tpath = os.path.join(work, f"t{i}.txt")
@@ -109,13 +151,22 @@ def build(title, deck, items):
         open(tpath, "w", encoding="utf-8").write(text.strip())
         run(["bash", "-c",
              f'piper -m "{VOICE}" --sentence-silence 0.95 --length-scale 1.36 -f "{apath}" < "{tpath}"'])
-        img = os.path.join(SLIDES, f"{deck}-{slide_no:02d}.png")
-        if not os.path.exists(img):
-            img = os.path.join(SLIDES, f"{deck}-{slide_no}.png")
         seg = os.path.join(work, f"s{i}.mp4")
-        run(["ffmpeg", "-y", "-loop", "1", "-framerate", "25", "-i", img, "-i", apath,
-             "-filter_complex", "[1:a]adelay=900,apad=pad_dur=1.5,aresample=44100[a]",
-             "-map", "0:v", "-map", "[a]", "-c:v", "libx264", "-tune", "stillimage",
+        if slide_no == canh_slide:
+            giay = DO_TRE_AM + thoi_luong(apath) + DO_DEM_AM + 1.0
+            vpath = os.path.join(work, f"v{i}.mp4")
+            dung_canh_hoat_hinh(canh_id, giay, vpath)
+            nguon_hinh = ["-i", vpath]
+            co_tune = []
+        else:
+            img = os.path.join(SLIDES, f"{deck}-{slide_no:02d}.png")
+            if not os.path.exists(img):
+                img = os.path.join(SLIDES, f"{deck}-{slide_no}.png")
+            nguon_hinh = ["-loop", "1", "-framerate", "25", "-i", img]
+            co_tune = ["-tune", "stillimage"]
+        run(["ffmpeg", "-y", *nguon_hinh, "-i", apath,
+             "-filter_complex", f"[1:a]adelay={int(DO_TRE_AM*1000)},apad=pad_dur={DO_DEM_AM},aresample=44100[a]",
+             "-map", "0:v", "-map", "[a]", "-c:v", "libx264", *co_tune,
              "-preset", "faster", "-crf", "22", "-pix_fmt", "yuv420p",
              "-ac", "2", "-c:a", "aac", "-b:a", "128k", "-shortest", seg])
         segs.append(seg)
