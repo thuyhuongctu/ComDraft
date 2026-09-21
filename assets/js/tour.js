@@ -25,7 +25,7 @@
     { ma: 'tour.s1', vung: '.hero-chu h1', dang: 'dung' },
     { ma: 'tour.s2', vung: '.hero-nut', dang: 'chi' },
     { ma: 'tour.s3', vung: '.gio-nhac', dang: 'ipad' },
-    { ma: 'tour.s4', vung: '.khung-phim', dang: 'chi' },
+    { ma: 'tour.s4', vung: '.video-gt', dang: 'chi' },
     { ma: 'tour.s5', vung: '.luoi .chuong', dang: 'chi' },
     /* Chỉ một trong hai bước sau hiện ra: cột trái có ở màn rộng, thanh dưới
        có ở màn hẹp. */
@@ -45,13 +45,26 @@
   /* Bật lên sau khi đã bỏ tệp thu âm vào assets/audio/<ngôn ngữ>/.
      Để false thì tour dùng thẳng giọng đọc của trình duyệt; nếu cứ gọi tệp
      chưa có thì trình duyệt ghi một loạt lỗi 404 vào bảng điều khiển. */
-  var CO_THU_AM = { vi: false, en: false };
+  var CO_THU_AM = { vi: true, en: true };
 
+  /* Mỗi ngôn ngữ chỉ liệt kê bước đã có tệp thật trong assets/audio/<ngôn
+     ngữ>/ — bước nào chưa có thì bỏ khỏi bảng để tep_thu() trả về null và
+     rơi thẳng về giọng máy, không gọi tới tệp chưa tồn tại (gọi tệp 404 thì
+     trình duyệt tự in lỗi ra bảng điều khiển, dù đã bắt onerror trong JS).
+     Cả hai bên nay đã có đủ bản thu cho mọi bước. */
   var THU = {
-    'tour.s0': 's0.mp3', 'tour.s1': 's1.mp3', 'tour.s2': 's2.mp3',
-    'tour.s3': 's3.mp3', 'tour.s4': 's4.mp3', 'tour.s5': 's5.mp3',
-    'tour.nav': 'nav.mp3', 'tour.navm': 'navm.mp3', 'tour.s6': 's6.mp3',
-    'tour.s7': 's7.mp3', 'tour.s8': 's8.mp3', 'tour.xong': 'xong.mp3'
+    vi: {
+      'tour.s0': 's0.mp3', 'tour.s1': 's1.mp3', 'tour.s2': 's2.mp3',
+      'tour.s3': 's3.mp3', 'tour.s4': 's4.mp3', 'tour.s5': 's5.mp3',
+      'tour.nav': 'nav.mp3', 'tour.navm': 'navm.mp3', 'tour.s6': 's6.mp3',
+      'tour.s7': 's7.mp3', 'tour.s8': 's8.mp3', 'tour.xong': 'xong.mp3'
+    },
+    en: {
+      'tour.s0': 's0.mp3', 'tour.s1': 's1.mp3', 'tour.s2': 's2.mp3',
+      'tour.s3': 's3.mp3', 'tour.s4': 's4.mp3', 'tour.s5': 's5.mp3',
+      'tour.nav': 'nav.mp3', 'tour.navm': 'navm.mp3', 'tour.s6': 's6.mp3',
+      'tour.s7': 's7.mp3', 'tour.s8': 's8.mp3', 'tour.xong': 'xong.mp3'
+    }
   };
 
   var tieng = null;                 // thẻ Audio dùng cho bản thu
@@ -70,8 +83,9 @@
   /* ---------------- lời đọc ---------------- */
   function tep_thu(ma) {
     var ng = global.I18n.lang;
-    if (!CO_THU_AM[ng] || !THU[ma]) return null;
-    return './assets/audio/' + ng + '/' + THU[ma];
+    var ten = CO_THU_AM[ng] && THU[ng] && THU[ng][ma];
+    if (!ten) return null;
+    return './assets/audio/' + ng + '/' + ten;
   }
   function ngung_thu(ve_dau) {
     if (!tieng) return;

@@ -153,6 +153,8 @@ def main():
             print("thiếu:", fn); continue
         prs = Presentation(fn)
         label = LABEL[key]
+        # Chương 5 và 3 bài thực hành dán mã học phần hệ từ xa; c1-c4 vẫn EC1103 (hệ trực tiếp).
+        course_code = "EC6000TX" if key in ("c5", "th1", "th2", "th3") else "EC1103"
 
         # 1) chèn slide số liệu (chèn SAU slide đích)
         n_stat = 0
@@ -162,7 +164,7 @@ def main():
             idx = find_idx(prs, after)
             if idx is None:
                 print(f"  ! {key}: không thấy slide '{after}' để chèn số liệu"); continue
-            add_stat_slide(prs, kicker, title, stats, footer, label, note)
+            add_stat_slide(prs, kicker, title, stats, footer, label, note, course_code=course_code)
             move_slide(prs, len(prs.slides._sldIdLst) - 1, idx + 1)
             n_stat += 1
 
@@ -174,7 +176,7 @@ def main():
             idx = find_idx(prs, before)
             if idx is None:
                 print(f"  ! {key}: không thấy slide '{before}' để chèn phân cách"); continue
-            add_section_divider(prs, num, title, sub, label, note)
+            add_section_divider(prs, num, title, sub, label, note, course_code=course_code)
             move_slide(prs, len(prs.slides._sldIdLst) - 1, idx)
             n_div += 1
 
