@@ -1,7 +1,7 @@
 /* ComDraft — service worker cho phép ôn tập khi không có mạng.
    Đổi PHIEN_BAN mỗi lần phát hành để trình duyệt tải lại tài nguyên mới.
    © Đỗ Thùy Hương, 2026. */
-const PHIEN_BAN = 'comdraft-v32';
+const PHIEN_BAN = 'comdraft-v33';
 
 const VO = [
   './',
@@ -15,6 +15,7 @@ const VO = [
   './assets/img/viet-nam.svg',
   './assets/img/viet-nam-toi.svg',
   './assets/img/dau-huong.png',
+  './assets/img/video-gioi-thieu.jpg',
   './assets/img/lockup-huong.png',
   './assets/icons/persona.png',
   './assets/icons/co-huong-dung.png',
@@ -63,7 +64,8 @@ self.addEventListener('fetch', (e) => {
   // Video để trình duyệt tự lo: nó tải theo từng đoạn (Range) mà bộ nhớ đệm
   // chỉ giữ được nguyên tệp, trả nguyên tệp cho một yêu cầu Range sẽ làm hỏng
   // thanh tua. Ảnh slide thì vẫn lưu để xem lại được khi mất mạng.
-  if (u.pathname.indexOf('/videos/') >= 0 || e.request.headers.has('range')) return;
+  if (u.pathname.indexOf('/videos/') >= 0 || u.pathname.indexOf('/assets/video/') >= 0 ||
+      e.request.headers.has('range')) return;
   e.respondWith(
     caches.match(e.request).then((san) => san || fetch(e.request).then((res) => {
       if (res && res.ok) {

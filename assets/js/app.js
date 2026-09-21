@@ -376,28 +376,62 @@
     o_ten.focus();
   }
 
-  // Khung phim ở trang chủ: một video ôn tập mở sẵn để người mới vào có thứ
-  // xem ngay, không phải lần mò qua ba lớp menu.
-  function khung_phim() {
-    var b = BAI[0];
-    var k = el('div', 'khung-phim');
-    if (!b || !b.video) return k;
-    var o = el('button', 'man'); o.type = 'button';
-    var a = el('img');
-    a.src = './assets/slides/' + slide_bo_dung(b.slide ? b.slide.bo : 'ch1').bo + '/001.jpg';
-    a.alt = ''; a.loading = 'lazy';
-    o.appendChild(a);
-    o.appendChild(el('span', 'nut-phat', '▶'));
-    var c = el('span', 'loi-phim');
-    c.appendChild(el('small', null, t('phim.moi')));
-    c.appendChild(el('b', null, (ngu() === 'en' ? 'Chapter 1 — ' : 'Chương 1 — ') +
-                                (ngu() === 'en' ? b.en : b.vi)));
-    o.appendChild(c);
-    o.addEventListener('click', function () {
-      xem_video(t('bai.video') + ' — ' + (ngu() === 'en' ? b.en : b.vi), b.video.tep, b.video.taiVe);
+  // ------------------------------------------------- video giới thiệu ứng dụng
+  // Đứng ở chỗ trước đây là khung phim giới thiệu Chương 1: video này giới
+  // thiệu cả ứng dụng nên hợp vai trò "thứ xem ngay khi mới vào" hơn. Cùng
+  // cách EnQuiz làm với video giới thiệu của ứng dụng đó — ảnh bìa và chữ nằm
+  // đè lên khung 16:9, video không gắn địa chỉ tệp cho tới khi bấm nút phát,
+  // nên mở trang chủ không tải video này — nhưng phát ngay tại khung thay vì
+  // mở khung xem toàn màn hình, vì video ngắn, không cần phụ đề hay điều
+  // khiển trang/tua như video bài giảng.
+  // Video còn chưa có bài âm thanh chính thức (đang chờ thay bằng bản thu
+  // của giảng viên), nên tắt tiếng sẵn — ai muốn nghe thử bản tạm vẫn bật
+  // được bằng nút loa trên thanh điều khiển.
+  function khoi_video_gioi_thieu() {
+    var s = el('section', 'video-gt');
+    var khung = el('div', 'video-gt-khung');
+
+    var anh = el('img', 'video-gt-anh');
+    anh.src = './assets/img/video-gioi-thieu.jpg';
+    anh.alt = ''; anh.loading = 'lazy';
+    khung.appendChild(anh);
+
+    var v = document.createElement('video');
+    v.className = 'video-gt-video';
+    v.preload = 'none';
+    v.muted = true;
+    v.defaultMuted = true;
+    v.setAttribute('muted', '');
+    v.setAttribute('playsinline', '');
+    khung.appendChild(v);
+
+    var man = el('div', 'video-gt-man');
+    var nut = el('button', 'video-gt-phat'); nut.type = 'button';
+    nut.setAttribute('aria-label', t('videogt.phat'));
+    nut.innerHTML = '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5.4v13.2L19 12z"/></svg>';
+    man.appendChild(nut);
+    var chu = el('div', 'video-gt-chu');
+    chu.appendChild(el('p', 'video-gt-nho', t('videogt.xem')));
+    chu.appendChild(el('h2', 'video-gt-de', t('videogt.tieude')));
+    man.appendChild(chu);
+    khung.appendChild(man);
+    s.appendChild(khung);
+    s.appendChild(el('small', 'video-gt-ghi', t('videogt.ghichu')));
+
+    var da_nap = false;
+    nut.addEventListener('click', function () {
+      if (!da_nap) {
+        da_nap = true;
+        v.src = './assets/video/gioi-thieu.mp4';
+        v.controls = true;
+        v.load();
+      }
+      khung.classList.add('dang-phat');
+      v.play().catch(function () {});
     });
-    k.appendChild(o);
-    return k;
+    v.addEventListener('ended', function () { khung.classList.remove('dang-phat'); });
+
+    return s;
   }
 
   function ve_nha() {
@@ -424,13 +458,35 @@
     v.appendChild(the);
 
     v.appendChild(dong_ho_nhac());
-    v.appendChild(khung_phim());
+    v.appendChild(khoi_video_gioi_thieu());
     v.appendChild(el('h2', 'muc', t('bai.tieude')));
-    var luoi = el('div', 'luoi');
+    var luoi = el('div', 'luoi cuon');
     BAI.forEach(function (b) { luoi.appendChild(the_chuong(b, function () { ve_chi_tiet(b); })); });
     v.appendChild(luoi);
+    var cham = el('div', 'cham');
+    BAI.forEach(function () { cham.appendChild(el('i')); });
+    v.appendChild(cham);
+    lam_tieu_diem_khi_cuon(luoi, cham);
 
     them_chan(v);
+  }
+
+  // Thẻ chương nào cuộn vào giữa khung thì phóng to làm tiêu điểm, chấm bên
+  // dưới sáng theo — dùng IntersectionObserver vì nó tự chạy lại mỗi lần
+  // cuộn, không cần tự tính toán vị trí bằng tay.
+  function lam_tieu_diem_khi_cuon(luoi, cham) {
+    var the = luoi.querySelectorAll('.chuong');
+    var dau = cham.children;
+    if (!the.length) return;
+    if (!('IntersectionObserver' in window)) { the[0].classList.add('tam'); return; }
+    var qs = new IntersectionObserver(function (ds) {
+      ds.forEach(function (d) {
+        var i = Array.prototype.indexOf.call(the, d.target);
+        d.target.classList.toggle('tam', d.isIntersecting);
+        if (dau[i]) dau[i].classList.toggle('tam', d.isIntersecting);
+      });
+    }, { root: luoi, threshold: 0.6 });
+    for (var i = 0; i < the.length; i++) qs.observe(the[i]);
   }
 
   function the_chuong(b, khi_bam) {
@@ -751,6 +807,7 @@
     var khoi_dom = {};
     THE_THUC.forEach(function (x) {
       var n = el('button', 'khoi'); n.type = 'button';
+      n.setAttribute('data-ma', x.ma); // để bộ kiểm tra chọn đúng khối bất kể đang hiện tiếng Việt hay tiếng Anh
       n.appendChild(el('b', null, ngu() === 'en' ? x.en : x.vi));
       n.appendChild(el('small', null, x.mau));
       n.addEventListener('click', function () { bam_khoi(x.ma); });

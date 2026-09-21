@@ -239,6 +239,32 @@ main { min-width: 0; }
 .luoi { display: grid; gap: 14px; }
 @media (min-width: 700px) { .luoi.hai { grid-template-columns: 1fr 1fr; } }
 
+/* Danh sách chương ở trang chủ: cuộn ngang có snap, thẻ đang ở giữa được
+   phóng lên làm tiêu điểm — thẻ hai bên thu nhỏ, mờ đi để gợi ý còn thẻ
+   khác ngoài màn hình. */
+.luoi.cuon {
+  display: flex; overflow-x: auto; scroll-snap-type: x mandatory;
+  -webkit-overflow-scrolling: touch; scrollbar-width: none;
+  padding: 6px 6px 4px; margin: -6px -6px 0;
+}
+.luoi.cuon::-webkit-scrollbar { display: none; }
+.luoi.cuon .chuong {
+  scroll-snap-align: center; flex: 0 0 82%; max-width: 360px;
+  transform: scale(.92); opacity: .55;
+  transition: transform .25s ease, opacity .25s ease, box-shadow .18s ease;
+}
+.luoi.cuon .chuong.tam { transform: scale(1); opacity: 1; }
+.luoi.cuon .chuong:hover { transform: scale(1); }
+@media (min-width: 600px) { .luoi.cuon .chuong { flex-basis: 46%; } }
+@media (min-width: 900px) { .luoi.cuon .chuong { flex-basis: 31%; } }
+
+.cham { display: flex; justify-content: center; gap: 7px; margin-top: 12px; }
+.cham i {
+  width: 7px; height: 7px; border-radius: 50%; background: var(--mat-2);
+  box-shadow: var(--clay-lom); transition: background .2s ease, transform .2s ease;
+}
+.cham i.tam { background: var(--chinh); transform: scale(1.35); }
+
 h2.muc {
   font-family: var(--head); font-size: 19px; color: var(--coral-dam);
   margin: 22px 0 12px; padding-left: 4px;
@@ -600,33 +626,52 @@ p.rieng { font-size: 12.5px; color: var(--chu-mo); margin-top: 10px; line-height
   border-radius: 10px; box-shadow: var(--clay-nho); background: #FAF0EA;
 }
 
-.khung-phim { margin-top: 16px; }
-.khung-phim .man {
-  position: relative; display: block; width: 100%; border: none; padding: 0;
-  border-radius: var(--bo); overflow: hidden; cursor: pointer;
-  box-shadow: var(--clay); background: var(--mat);
-  transition: transform .18s ease;
+/* ---------------------------------------------------- video giới thiệu ứng dụng
+   Đứng ở chỗ trước đây là khung phim giới thiệu Chương 1. Khung 16:9 khoá
+   sẵn nên trang không nhảy lúc video nạp xong, ảnh bìa và lớp chữ lui hết
+   khi đã bấm phát. */
+.video-gt { margin-top: 16px; }
+.video-gt-khung {
+  position: relative; aspect-ratio: 16 / 9; border-radius: var(--bo);
+  overflow: hidden; background: #000; box-shadow: var(--clay);
 }
-.khung-phim .man:hover { transform: translateY(-3px); }
-.khung-phim img { display: block; width: 100%; height: auto; }
-.khung-phim .nut-phat {
-  position: absolute; left: 50%; top: 50%; transform: translate(-50%, -50%);
-  width: 68px; height: 68px; border-radius: 50%;
-  background: var(--mat); color: var(--chinh);
-  display: grid; place-items: center; font-size: 25px; padding-left: 5px;
-  box-shadow: var(--clay);
+.video-gt-anh, .video-gt-video {
+  position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; display: block;
 }
-.khung-phim .loi-phim {
-  position: absolute; left: 0; right: 0; bottom: 0; text-align: left;
-  padding: 26px 20px 14px;
-  background: linear-gradient(to top, rgba(58, 43, 40, .82), rgba(58, 43, 40, 0));
-  color: #fff;
+.video-gt-video { opacity: 0; pointer-events: none; }
+.video-gt-khung.dang-phat .video-gt-video { opacity: 1; pointer-events: auto; object-fit: contain; }
+.video-gt-khung.dang-phat .video-gt-anh,
+.video-gt-khung.dang-phat .video-gt-man { opacity: 0; pointer-events: none; }
+.video-gt-man {
+  position: absolute; inset: 0; display: grid; place-items: center;
+  transition: opacity .3s ease;
+  /* Tối dần từ giữa xuống đáy để chữ trắng nào cũng đọc được, không phụ thuộc
+     ảnh bìa sáng hay tối. */
+  background: linear-gradient(180deg, rgba(0, 0, 0, .28) 0%, rgba(0, 0, 0, .16) 38%, rgba(0, 0, 0, .8) 100%);
 }
-.khung-phim .loi-phim small {
-  display: block; font-size: 11px; letter-spacing: .8px; text-transform: uppercase;
-  opacity: .82;
+.video-gt-phat {
+  width: 68px; height: 68px; border-radius: 50%; border: none; cursor: pointer;
+  background: var(--mat); color: var(--chinh); display: grid; place-items: center;
+  padding-left: 4px; box-shadow: var(--clay); transition: transform .18s ease;
 }
-.khung-phim .loi-phim b { display: block; font-family: var(--head); font-size: 18px; margin-top: 2px; }
+.video-gt-phat svg { width: 26px; height: 26px; fill: currentColor; }
+.video-gt-phat:hover { transform: scale(1.06); }
+.video-gt-phat:active { transform: scale(.96); }
+.video-gt-chu {
+  position: absolute; left: 20px; right: 20px; bottom: 16px; color: #fff;
+  text-shadow: 0 1px 8px rgba(0, 0, 0, .5);
+}
+.video-gt-nho {
+  margin: 0 0 2px; font-size: 11px; font-weight: 700; letter-spacing: .8px;
+  text-transform: uppercase; color: var(--coral-nhat);
+}
+.video-gt-de { margin: 0; font-family: var(--head); font-size: 18px; }
+.video-gt-ghi { display: block; margin-top: 8px; font-size: 12px; color: var(--chu-mo); }
+@media (max-width: 480px) {
+  .video-gt-phat { width: 54px; height: 54px; }
+  .video-gt-phat svg { width: 20px; height: 20px; }
+  .video-gt-de { font-size: 15px; }
+}
 
 /* ---------------------------------------------------- thanh dưới điện thoại */
 .thanh-duoi { display: none; }
