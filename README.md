@@ -1,7 +1,7 @@
 # ComDraft
 
 **Teaching materials for *Communication and Document Drafting Skills* (EC1103)**
-Bộ học liệu giảng dạy trực tiếp — Học phần Kỹ năng giao tiếp và soạn thảo văn bản
+Bộ học liệu giảng dạy trực tiếp - Học phần Kỹ năng giao tiếp và soạn thảo văn bản
 
 [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.22003676.svg)](https://doi.org/10.5281/zenodo.22003676)
 [![app](https://img.shields.io/badge/app-thuyhuongctu.github.io%2FComDraft-DC756A?style=flat-square)](https://thuyhuongctu.github.io/ComDraft/)
@@ -9,12 +9,16 @@ Bộ học liệu giảng dạy trực tiếp — Học phần Kỹ năng giao t
 ![credits](https://img.shields.io/badge/credits-3%20(2%3A1)-DC756A?style=flat-square)
 ![license](https://img.shields.io/badge/license-All%20rights%20reserved-red?style=flat-square)
 
-**Author** — Do Thuy Huong (Đỗ Thùy Hương), [ORCID 0000-0002-7711-2487](https://orcid.org/0000-0002-7711-2487)
+**Author** - Do Thuy Huong (Đỗ Thùy Hương), [ORCID 0000-0002-7711-2487](https://orcid.org/0000-0002-7711-2487)
 PhD Candidate, School of Economics, Can Tho University.
 
 Every slide, figure, question, script and video in this repository was authored by the
 lecturer named above for the classes she teaches in person. Nothing here is derived from
 a colleague's material.
+
+[![Watch the 10-second introduction to ComDraft](assets/img/video-gioi-thieu.jpg)](assets/video/gioi-thieu.mp4)
+<br>▶ Click the frame above to play the 10-second introduction video (same file the
+home screen plays, ~1.4 MB).
 
 ---
 
@@ -27,6 +31,9 @@ The repository root is also a small offline-first web app for students —
 200-question bank with the explanation for every question, and needs no account, no
 server and no network once it has been opened for the first time.
 
+- A 10-second introduction video on the home screen, behind a cover image and a play
+  button — not downloaded until a visitor presses play, so opening the app costs no
+  extra data unless they choose to watch it.
 - **Practice mode** marks each answer immediately and shows why it is right or wrong;
   **test mode** withholds the marking until the end.
 - Pick a single chapter or mix all five, choose 10 / 20 / 40 / all questions, and
@@ -60,11 +67,11 @@ the 2026–2027 academic year.
 
 ### The five chapters
 
-1. **Tổng quan về giao tiếp trong kinh doanh** — nature of communication, the five-stage model and noise, verbal and non-verbal channels, forms, influencing factors, five principles
-2. **Các kỹ năng giao tiếp chuyên nghiệp** — first impressions and the 4×20 rule, business etiquette, presenting, listening and questioning, telephone skills
-3. **Giao tiếp trong các tình huống đặc thù** — internal communication, customers and the LAST complaint procedure, partners, state agencies and press, banquet etiquette, cross-cultural work
-4. **Đàm phán trong kinh doanh** — nature and styles of negotiation, the five-stage process, BATNA and ZOPA, negotiation skills, recognising common tactics
-5. **Soạn thảo và trình bày văn bản** — document types, the nine formality components of Decree 30/2020/NĐ-CP, five administrative documents, commercial documents
+1. **An overview of business communication** — nature of communication, the five-stage model and noise, verbal and non-verbal channels, forms, influencing factors, five principles
+2. **Professional communication skills** — first impressions and the 4×20 rule, business etiquette, presenting, listening and questioning, telephone skills
+3. **Communication in specific settings** — internal communication, customers and the LAST complaint procedure, partners, state agencies and press, banquet etiquette, cross-cultural work
+4. **Business negotiation** — nature and styles of negotiation, the five-stage process, BATNA and ZOPA, negotiation skills, recognising common tactics
+5. **Drafting and formatting documents** — document types, the nine formality components of Decree 30/2020/NĐ-CP, five administrative documents, commercial documents
 
 ### The three lab sessions
 
@@ -126,31 +133,33 @@ this exact release instead, use [10.5281/zenodo.22003677](https://doi.org/10.528
   revision app for an Entrepreneurship course
   ([10.5281/zenodo.21850735](https://doi.org/10.5281/zenodo.21850735))
 
-## Luật của dự án
+## Project rules
 
-Những ràng buộc phải giữ khi sửa repo này — không thu thập dữ liệu sinh viên,
-chỉ đưa lên học liệu do tác giả biên soạn, giữ dấu tác giả, và những việc phải
-làm trước khi báo là xong — được ghi trong [`CLAUDE.md`](CLAUDE.md). Ai sửa gì
-ở đây, người hay trợ lý, đọc trang đó trước.
+The constraints that must hold whenever this repository is edited — no student
+data collection, only material authored by the lecturer herself, keep the
+author's mark, and what must be checked before calling a change done — are
+written down in [`CLAUDE.md`](CLAUDE.md) (in Vietnamese, the language of the
+course). Anyone editing here, human or assistant, should read that page first.
 
-## Kiểm tra tự động
+## Automated tests
 
-Repo có sẵn một bộ kiểm tra chạy thật trên trình duyệt:
+The repository ships a test suite that runs against a real browser:
 
 ```bash
 pip install playwright && python -m playwright install chromium
 python3 tests/kiem_tra.py
 ```
 
-Hai mươi bốn phép, gồm: khoá từ vựng Việt–Anh khớp nhau, phụ đề khớp
-nguyên văn kịch bản thuyết minh, số ảnh slide đúng như khai báo, trình xem
-slide và video, cổng ghi danh, bài tập thể thức, huy hiệu và giấy ghi nhận,
-tour Hương AI, bố cục trên màn điện thoại, và bốn điều kiện ràng buộc của
-dự án: **không gửi yêu cầu nào ra ngoài trang**, **không lỗi JavaScript**,
-**chân trang còn tên tác giả và DOI**, và **giấy ghi nhận không tự nhận là
-chứng chỉ**.
+Twenty-four checks, covering: the Vietnamese–English vocabulary keys match,
+subtitles match the narration script verbatim, the slide image counts match
+what's declared, the slide and video viewers, the enrolment gate, the
+formality practice exercise, badges and the completion certificate, the
+Huong AI tour, layout on a phone-width screen, and four project-wide
+constraints: **no request ever leaves the page**, **no JavaScript errors**,
+**the footer keeps the author's name and DOI**, and **the certificate never
+claims to be an official credential**.
 
-Bộ này cũng chạy tự động trên GitHub mỗi lần đẩy mã
+The same suite also runs automatically on GitHub on every push
 (`.github/workflows/kiem-tra.yml`).
 
 ---

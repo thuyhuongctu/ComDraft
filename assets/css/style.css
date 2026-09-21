@@ -281,6 +281,32 @@ main { min-width: 0; }
 .luoi { display: grid; gap: 14px; }
 @media (min-width: 700px) { .luoi.hai { grid-template-columns: 1fr 1fr; } }
 
+/* Danh sách chương ở trang chủ: cuộn ngang có snap, thẻ đang ở giữa được
+   phóng lên làm tiêu điểm — thẻ hai bên thu nhỏ, mờ đi để gợi ý còn thẻ
+   khác ngoài màn hình. */
+.luoi.cuon {
+  display: flex; overflow-x: auto; scroll-snap-type: x mandatory;
+  -webkit-overflow-scrolling: touch; scrollbar-width: none;
+  padding: 6px 6px 4px; margin: -6px -6px 0;
+}
+.luoi.cuon::-webkit-scrollbar { display: none; }
+.luoi.cuon .chuong {
+  scroll-snap-align: center; flex: 0 0 82%; max-width: 360px;
+  transform: scale(.92); opacity: .55;
+  transition: transform .25s ease, opacity .25s ease, box-shadow .18s ease;
+}
+.luoi.cuon .chuong.tam { transform: scale(1); opacity: 1; }
+.luoi.cuon .chuong:hover { transform: scale(1); }
+@media (min-width: 600px) { .luoi.cuon .chuong { flex-basis: 46%; } }
+@media (min-width: 900px) { .luoi.cuon .chuong { flex-basis: 31%; } }
+
+.cham { display: flex; justify-content: center; gap: 7px; margin-top: 12px; }
+.cham i {
+  width: 7px; height: 7px; border-radius: 50%; background: var(--mat-2);
+  box-shadow: var(--clay-lom); transition: background .2s ease, transform .2s ease;
+}
+.cham i.tam { background: var(--chinh); transform: scale(1.35); }
+
 h2.muc {
   font-family: var(--head); font-size: 19px; color: var(--coral-dam);
   margin: 22px 0 12px; padding-left: 4px;
@@ -509,6 +535,9 @@ html[data-theme="dark"] .xem { background: rgba(0, 0, 0, .72); }
 .xem .than img.trang {
   max-width: 100%; max-height: 100%; width: auto; height: auto;
   border-radius: 12px; box-shadow: var(--clay-nho); cursor: pointer;
+  /* Chỉ cản trở nhẹ việc kéo/lưu ảnh trong khung xem — không ngăn được
+     chụp màn hình thật, xem ghi chú ở .xem .baove. */
+  -webkit-user-drag: none; user-select: none; -webkit-touch-callout: none;
 }
 .xem .than video {
   max-width: 100%; max-height: 100%; width: 100%;
@@ -518,6 +547,11 @@ html[data-theme="dark"] .xem { background: rgba(0, 0, 0, .72); }
 .xem .loi-xem { text-align: center; padding: 30px 22px; max-width: 460px; }
 .xem .loi-xem b { display: block; font-family: var(--head); font-size: 18px; color: var(--coral-dam); }
 .xem .loi-xem p { margin: 8px 0 16px; font-size: 14px; color: var(--chu-nhat); }
+
+.xem .baove {
+  display: block; padding: 0 18px 12px; font-size: 11px; line-height: 1.4;
+  color: var(--chu-mo); text-align: center;
+}
 
 .xem .day {
   display: flex; align-items: center; gap: 14px; flex-wrap: wrap;
@@ -535,6 +569,7 @@ html[data-theme="dark"] .xem { background: rgba(0, 0, 0, .72); }
   .xem .day { padding: 10px 12px 12px; gap: 10px; }
   .xem .dieu-khien { min-width: 0; }
   .xem .dem { min-width: 76px; font-size: 12px; }
+  .xem .baove { padding: 0 12px 10px; }
 }
 
 /* ------------------------------------------------- bài tập thể thức văn bản */
@@ -647,42 +682,52 @@ p.rieng { font-size: 12.5px; color: var(--chu-mo); margin-top: 10px; line-height
   border-radius: 10px; box-shadow: var(--clay-nho); background: #FAF0EA;
 }
 
-.khung-phim { margin-top: 16px; }
-.khung-phim .man {
-  position: relative; display: block; width: 100%; border: none; padding: 0;
-  border-radius: var(--bo); overflow: hidden; cursor: pointer;
-  box-shadow: var(--clay); background: var(--mat);
-  transition: transform .18s var(--nhanh-ra);
+/* ---------------------------------------------------- video giới thiệu ứng dụng
+   Đứng ở chỗ trước đây là khung phim giới thiệu Chương 1. Khung 16:9 khoá
+   sẵn nên trang không nhảy lúc video nạp xong, ảnh bìa và lớp chữ lui hết
+   khi đã bấm phát. */
+.video-gt { margin-top: 16px; }
+.video-gt-khung {
+  position: relative; aspect-ratio: 16 / 9; border-radius: var(--bo);
+  overflow: hidden; background: #000; box-shadow: var(--clay);
 }
-.khung-phim .man:hover { transform: translateY(-3px); }
-.khung-phim .anh { position: relative; display: block; }
-.khung-phim img { display: block; width: 100%; height: auto; }
-/* Nút ▶ nằm ở góc dưới phải, không nằm giữa ảnh. Ảnh nền là slide bìa, mà
-   slide bìa nào cũng có tiêu đề lớn đặt giữa khung — để nút ở giữa là che mất
-   chữ. Góc thì slide bìa để trống, nên đặt góc là an toàn cho mọi chương. */
-.khung-phim .nut-phat {
-  position: absolute; right: 16px; bottom: 16px;
-  width: 68px; height: 68px; border-radius: 50%;
-  background: var(--mat); color: var(--chinh);
-  display: grid; place-items: center; padding-left: 4px;
-  box-shadow: var(--clay);
+.video-gt-anh, .video-gt-video {
+  position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; display: block;
 }
-/* Chú thích nằm DƯỚI ảnh chứ không đè lên.
-   Ảnh nền là slide bìa của chương, mà slide bìa có sẵn dòng bản quyền ở chân.
-   Dải chữ đè lên trước đây rơi đúng vào dòng ấy: hai lớp chữ chồng nhau, đọc
-   không ra chữ nào. Đổ nền đậm hơn cũng không cứu được vì chữ vẫn nằm trên chữ.
-   Bộ kiểm tra không bắt được lỗi này — chỉ nhìn ảnh chụp mới thấy. */
-.khung-phim .loi-phim {
-  display: block; text-align: left;
-  padding: 12px 18px 14px;
-  background: var(--mat); border-top: 1px solid var(--vien);
-  color: var(--chu);
+.video-gt-video { opacity: 0; pointer-events: none; }
+.video-gt-khung.dang-phat .video-gt-video { opacity: 1; pointer-events: auto; object-fit: contain; }
+.video-gt-khung.dang-phat .video-gt-anh,
+.video-gt-khung.dang-phat .video-gt-man { opacity: 0; pointer-events: none; }
+.video-gt-man {
+  position: absolute; inset: 0; display: grid; place-items: center;
+  transition: opacity .3s ease;
+  /* Tối dần từ giữa xuống đáy để chữ trắng nào cũng đọc được, không phụ thuộc
+     ảnh bìa sáng hay tối. */
+  background: linear-gradient(180deg, rgba(0, 0, 0, .28) 0%, rgba(0, 0, 0, .16) 38%, rgba(0, 0, 0, .8) 100%);
 }
-.khung-phim .loi-phim small {
-  display: block; font-size: 11px; letter-spacing: .8px; text-transform: uppercase;
-  color: var(--chinh);
+.video-gt-phat {
+  width: 68px; height: 68px; border-radius: 50%; border: none; cursor: pointer;
+  background: var(--mat); color: var(--chinh); display: grid; place-items: center;
+  padding-left: 4px; box-shadow: var(--clay); transition: transform .18s ease;
 }
-.khung-phim .loi-phim b { display: block; font-family: var(--head); font-size: 18px; margin-top: 2px; }
+.video-gt-phat svg { width: 26px; height: 26px; fill: currentColor; }
+.video-gt-phat:hover { transform: scale(1.06); }
+.video-gt-phat:active { transform: scale(.96); }
+.video-gt-chu {
+  position: absolute; left: 20px; right: 20px; bottom: 16px; color: #fff;
+  text-shadow: 0 1px 8px rgba(0, 0, 0, .5);
+}
+.video-gt-nho {
+  margin: 0 0 2px; font-size: 11px; font-weight: 700; letter-spacing: .8px;
+  text-transform: uppercase; color: var(--coral-nhat);
+}
+.video-gt-de { margin: 0; font-family: var(--head); font-size: 18px; }
+.video-gt-ghi { display: block; margin-top: 8px; font-size: 12px; color: var(--chu-mo); }
+@media (max-width: 480px) {
+  .video-gt-phat { width: 54px; height: 54px; }
+  .video-gt-phat svg { width: 20px; height: 20px; }
+  .video-gt-de { font-size: 15px; }
+}
 
 /* ---------------------------------------------------- thanh dưới điện thoại */
 .thanh-duoi { display: none; }
