@@ -66,6 +66,32 @@ lỗi trong dự án này chỉ lộ ra khi nhìn: bản đồ tràn khỏi kh�
 bóng thoại đè lên đoạn mô tả, bóng thoại trùm xuống mặt nhân vật. Không lỗi nào
 trong số đó làm chương trình báo sai.
 
+**Sửa bản tiếng Việt thì dựng lại bản tiếng Anh — có HAI bản tiếng Anh khác
+nhau, đừng lẫn:**
+
+- `scripts/dich_slide_en.py` dịch ngay trên `slides/0N-*.pptx` (Chương 1–5),
+  ra `.en.pptx` cạnh tệp gốc; `xuat_slide.py` xuất tiếp thành ảnh ở
+  `assets/slides/ch*-en/` cho trình xem trong ứng dụng dùng trực tiếp
+  (`slide_bo_dung()` trong `app.js` tự chọn thư mục theo ngôn ngữ đang bật).
+  Từ điển nằm ngay trong tệp (`CHUNG`), ghi chú giảng bài không dịch.
+- `scripts/dich_deck_en.py` dịch trọn tám bộ (Chương 1–5 và ba bài thực hành)
+  ra hẳn một bộ deck tiếng Anh riêng ở `slides-en/` và `practice-en/`, để phát
+  hoặc mở bằng PowerPoint — không phải cho trình xem trong ứng dụng. Từ điển
+  để riêng ở `scripts/tu_dien_en.py`; sửa chữ trên slide Việt xong thì chạy
+  `python3 scripts/dich_deck_en.py` — nó kể ra chuỗi nào chưa có trong từ điển
+  và từ chối ghi đè khi còn thiếu. Sửa chữ trong hình thì thêm cặp vào
+  `DICH_HINH` của `make_figs.py` rồi chạy `--en`.
+
+  Ghi chú giảng bài của bản này nằm ở từ điển riêng,
+  `scripts/tu_dien_ghi_chu_en.py`, khóa là **trọn khối ghi chú của một slide**
+  chứ không phải từng dòng. Sửa một dòng ghi chú tiếng Việt là khóa cũ trượt,
+  `dich_deck_en.py` sẽ báo khối ấy chưa dịch — lúc đó chép khóa mới THẲNG TỪ
+  tệp `.pptx`, đừng gõ lại: sai một dấu cách là trượt khóa mà không ai thấy.
+
+Hai phép soát ấy là lưới, không phải chứng minh. Chúng đã để lọt "CENTIMET"
+(chữ Việt không dấu), và có lần nhánh ghi bỏ qua hẳn việc tráo hình mà vẫn báo
+đủ. **Vẫn phải dựng ra ảnh và nhìn.**
+
 **Đổi tệp trong `assets/` thì nâng `PHIEN_BAN` trong `sw.js`.** Quên là máy sinh
 viên vẫn dùng bản cũ trong bộ nhớ đệm, sửa xong cũng như không.
 
@@ -101,8 +127,28 @@ tay tệp kết quả** — sửa tay thì lần chạy sau đè mất:
 | `lam_phu_de.py` | `videos/*.vi.vtt` và `videos/*.en.vtt` |
 | `lam_icon_ung_dung.py` | Bộ icon trong `assets/icons/` |
 | `build_videos.py` | Tám video trong `videos/` |
-| `build_decks.js`, `upgrade_decks.py`, `add_images.py` | Tám bộ slide `.pptx` |
 | `remotion/src/scenes.ts` | Sơ đồ hoạt hình — mỗi video đúng một cảnh, do `build_videos.py` gọi |
+| `dich_slide_en.py` | `.en.pptx` cạnh `slides/0N-*.pptx`, để `xuat_slide.py` xuất ra `assets/slides/ch*-en/` cho trình xem trong ứng dụng |
+| `dich_deck_en.py` | Tám bộ slide tiếng Anh trọn vẹn trong `slides-en/` và `practice-en/`, để phát/mở bằng PowerPoint |
+| `make_figs.py --en` | Bản tiếng Anh của hình minh họa |
+| `build_decks.js` + `build_ch5_practice.js` | Nội dung gốc của tám deck |
+| `apply_upgrade.py` (dùng `upgrade_decks.py`, `notes_data.py`) | Ghi chú giảng bài, slide phân cách, slide số liệu |
+| `add_images.py` | Hình minh họa và ảnh nhân vật |
+| `dung_slide.py` | Tám bộ slide `.pptx` — chạy cả `build_decks.js`/`build_ch5_practice.js`, `apply_upgrade.py` rồi `add_images.py` theo đúng thứ tự |
+
+Dựng lại slide thì gọi một lệnh:
+
+```
+python3 scripts/dung_slide.py         # dựng ra thư mục tạm rồi đối chiếu, không ghi đè
+python3 scripts/dung_slide.py --ghi   # xem đối chiếu ưng rồi mới ghi đè
+```
+
+Luật này từng chỉ nằm trên giấy: `build_decks.js` chết ngay slide đầu vì thiếu
+gói `pptxgenjs` và vì `design.js` trỏ vào `assets/logo_tron.png` không tồn tại,
+`add_images.py` đọc thư mục `figs` trong khi repo tên là `figures`, và không có
+bước nào đưa kết quả về tên trong `slides/` với `practice/`. Suốt thời gian ấy
+tám bộ slide sửa được nhưng không dựng lại được. Đừng để hỏng lại: sửa trình
+sinh xong thì chạy `dung_slide.py` không cờ, phải ra "khớp hoàn toàn".
 
 Một lần đã trả giá cho luật này: `extend_ch4.py` lấy đầu vào chính là tệp nó ghi
 đè, chạy lần thứ hai ra deck 53 slide thay vì 43.

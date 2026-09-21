@@ -17,6 +17,64 @@
 </head>
 <body>
 
+<!-- Bộ biểu tượng dùng chung.
+     Trước đây các mục điều hướng dùng emoji 🏠 📖 📝 🏅. Emoji do hệ điều hành
+     vẽ chứ không phải trang vẽ, nên máy Windows của sinh viên và máy Mac của
+     giảng viên hiện ra hai bộ hình khác nhau, và nét của chúng không ăn nhập
+     với nét nào trong trang. Nay dùng một bộ nét vẽ tay: khung 24, nét 1.7,
+     đầu nét bo tròn, màu lấy theo currentColor nên tự đổi theo nền sáng tối.
+     Bảy huy hiệu ở trang Hồ sơ vẫn để emoji — đó là dấu thưởng, cỡ 34px, đổi
+     sang nét mảnh thì mất hẳn vẻ vui. -->
+<svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false">
+  <defs>
+    <g id="i-nha" fill="none" stroke="currentColor" stroke-width="1.7"
+       stroke-linecap="round" stroke-linejoin="round">
+      <path d="M3.4 10.2 12 3.6l8.6 6.6"/><path d="M5.4 11.8V20h13.2v-8.2"/>
+      <path d="M9.7 20v-5.1h4.6V20"/>
+    </g>
+    <g id="i-bai" fill="none" stroke="currentColor" stroke-width="1.7"
+       stroke-linecap="round" stroke-linejoin="round">
+      <path d="M12 6.6C10.3 5.2 8 4.6 4.2 4.6v13c3.8 0 6.1.6 7.8 2 1.7-1.4 4-2 7.8-2v-13c-3.8 0-6.1.6-7.8 2Z"/>
+      <path d="M12 6.6v12"/>
+    </g>
+    <g id="i-on" fill="none" stroke="currentColor" stroke-width="1.7"
+       stroke-linecap="round" stroke-linejoin="round">
+      <path d="M14.6 4.4H6.2A1.6 1.6 0 0 0 4.6 6v12a1.6 1.6 0 0 0 1.6 1.6h9.4a1.6 1.6 0 0 0 1.6-1.6v-4"/>
+      <path d="m14.2 12.9 5.6-5.6a1.7 1.7 0 0 0-2.4-2.4l-5.6 5.6-.6 2.9 3-.5Z"/>
+      <path d="M7.8 15.6h4"/>
+    </g>
+    <g id="i-hs" fill="none" stroke="currentColor" stroke-width="1.7"
+       stroke-linecap="round" stroke-linejoin="round">
+      <circle cx="12" cy="9" r="5.1"/><path d="m8.6 13.6-1.4 6 4.8-2.4 4.8 2.4-1.4-6"/>
+    </g>
+    <g id="i-sang" fill="none" stroke="currentColor" stroke-width="1.7"
+       stroke-linecap="round" stroke-linejoin="round">
+      <circle cx="12" cy="12" r="3.9"/>
+      <path d="M12 3.2v1.9M12 18.9v1.9M4.6 4.6l1.4 1.4M18 18l1.4 1.4M3.2 12h1.9M18.9 12h1.9M4.6 19.4 6 18M18 6l1.4-1.4"/>
+    </g>
+    <g id="i-toi" fill="none" stroke="currentColor" stroke-width="1.7"
+       stroke-linecap="round" stroke-linejoin="round">
+      <path d="M20 14.3A8.4 8.4 0 0 1 9.7 4a8.4 8.4 0 1 0 10.3 10.3Z"/>
+    </g>
+    <g id="i-phat"><path d="M8.4 5.6 19 12 8.4 18.4Z" fill="currentColor"/></g>
+    <g id="i-dung" fill="currentColor">
+      <rect x="8" y="5.4" width="2.8" height="13.2" rx="1"/>
+      <rect x="13.2" y="5.4" width="2.8" height="13.2" rx="1"/>
+    </g>
+    <g id="i-slide" fill="none" stroke="currentColor" stroke-width="1.7"
+       stroke-linecap="round" stroke-linejoin="round">
+      <rect x="3.6" y="4.6" width="16.8" height="12" rx="1.8"/>
+      <path d="M12 16.6v2.8M8.6 19.4h6.8M7.6 13.2v-3M12 13.2V8.4M16.4 13.2v-1.9"/>
+    </g>
+    <g id="i-giay" fill="none" stroke="currentColor" stroke-width="1.7"
+       stroke-linecap="round" stroke-linejoin="round">
+      <path d="M18.6 11.4V5.2a1.6 1.6 0 0 0-1.6-1.6H7a1.6 1.6 0 0 0-1.6 1.6v13.6a1.6 1.6 0 0 0 1.6 1.6h4"/>
+      <path d="M8.8 7.8h6.4M8.8 11h4.4"/><circle cx="16.4" cy="15.8" r="3.1"/>
+      <path d="m14.5 18.3-.5 2.9 2.4-1.2 2.4 1.2-.5-2.9"/>
+    </g>
+  </defs>
+</svg>
+
 <header class="dau-trang">
   <a class="hieu" href="./" aria-label="ComDraft">
     <img class="logo" src="./assets/icons/logo.svg" alt="" width="46" height="46">
@@ -45,10 +103,10 @@
 
   <aside class="canh">
     <nav class="menu">
-      <button type="button" data-trang="nha"><span class="bt">🏠</span><span data-i18n="nav.nha">Trang chủ</span></button>
-      <button type="button" data-trang="bai"><span class="bt">📖</span><span data-i18n="nav.bai">Bài giảng</span></button>
-      <button type="button" data-trang="on"><span class="bt">📝</span><span data-i18n="nav.on">Ôn tập</span></button>
-      <button type="button" data-trang="hs"><span class="bt">🏅</span><span data-i18n="nav.hs">Hồ sơ</span></button>
+      <button type="button" data-trang="nha"><svg class="bt" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><use href="#i-nha"/></svg><span data-i18n="nav.nha">Trang chủ</span></button>
+      <button type="button" data-trang="bai"><svg class="bt" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><use href="#i-bai"/></svg><span data-i18n="nav.bai">Bài giảng</span></button>
+      <button type="button" data-trang="on"><svg class="bt" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><use href="#i-on"/></svg><span data-i18n="nav.on">Ôn tập</span></button>
+      <button type="button" data-trang="hs"><svg class="bt" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><use href="#i-hs"/></svg><span data-i18n="nav.hs">Hồ sơ</span></button>
     </nav>
 
     <div class="cong-cu">
@@ -56,7 +114,7 @@
         <button type="button" data-lang="vi">VI</button><button type="button" data-lang="en">EN</button>
       </span>
       <span class="sang-toi" role="group" aria-label="Sáng / tối">
-        <button type="button" data-theme-btn="light" title="Sáng">☀</button><button type="button" data-theme-btn="dark" title="Tối">☾</button>
+        <button type="button" data-theme-btn="light" title="Sáng"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><use href="#i-sang"/></svg></button><button type="button" data-theme-btn="dark" title="Tối"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><use href="#i-toi"/></svg></button>
       </span>
     </div>
   </aside>
@@ -75,10 +133,10 @@
 <!-- Thanh dưới cho điện thoại: cột trái bị đẩy xuống dưới nội dung trên màn
      hẹp nên phải có chỗ chuyển trang luôn trong tầm ngón tay cái. -->
 <nav class="thanh-duoi" aria-label="Điều hướng">
-  <button type="button" data-trang="nha"><span class="bt">🏠</span><span data-i18n="nav.nha">Trang chủ</span></button>
-  <button type="button" data-trang="bai"><span class="bt">📖</span><span data-i18n="nav.bai">Bài giảng</span></button>
-  <button type="button" data-trang="on"><span class="bt">📝</span><span data-i18n="nav.on">Ôn tập</span></button>
-  <button type="button" data-trang="hs"><span class="bt">🏅</span><span data-i18n="nav.hs">Hồ sơ</span></button>
+  <button type="button" data-trang="nha"><svg class="bt" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><use href="#i-nha"/></svg><span data-i18n="nav.nha">Trang chủ</span></button>
+  <button type="button" data-trang="bai"><svg class="bt" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><use href="#i-bai"/></svg><span data-i18n="nav.bai">Bài giảng</span></button>
+  <button type="button" data-trang="on"><svg class="bt" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><use href="#i-on"/></svg><span data-i18n="nav.on">Ôn tập</span></button>
+  <button type="button" data-trang="hs"><svg class="bt" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><use href="#i-hs"/></svg><span data-i18n="nav.hs">Hồ sơ</span></button>
 </nav>
 
 <!-- Hương AI: nút gọi và bảng thuyết minh của tour hướng dẫn -->
