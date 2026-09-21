@@ -25,7 +25,7 @@
     { ma: 'tour.s1', vung: '.hero-chu h1', dang: 'dung' },
     { ma: 'tour.s2', vung: '.hero-nut', dang: 'chi' },
     { ma: 'tour.s3', vung: '.gio-nhac', dang: 'ipad' },
-    { ma: 'tour.s4', vung: '.khung-phim', dang: 'chi' },
+    { ma: 'tour.s4', vung: '.video-gt', dang: 'chi' },
     { ma: 'tour.s5', vung: '.luoi .chuong', dang: 'chi' },
     /* Chỉ một trong hai bước sau hiện ra: cột trái có ở màn rộng, thanh dưới
        có ở màn hẹp. */

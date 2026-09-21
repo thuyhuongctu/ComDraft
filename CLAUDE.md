@@ -39,10 +39,19 @@ rất dễ bị hiểu là giấy của nhà trường.
   (bản tiếng Anh là bản dịch, sinh bởi `scripts/lam_phu_de.py`, khung thời
   gian chia đều theo tỉ lệ ký tự chứ không bám giọng đọc như bản tiếng Việt),
   không được nói "giọng đọc của giảng viên" cho tới khi cô thu lại thật.
-- Cổng ghi danh chỉ khoá cái nút tải. Repo đang công khai nên tệp trong
-  `assets/slides/` và `videos/` ai biết đường dẫn vẫn lấy được. Đây là phép
-  lịch sự, không phải hàng rào. Muốn khoá thật thì phải để repo riêng tư hoặc
-  đưa tệp sang chỗ có xác thực — nói rõ điều đó, đừng để cô yên tâm nhầm.
+- Cổng ghi danh chỉ khoá cái nút tải, và từ khi thêm điều kiện email đuôi
+  `.edu`/`.ac` (`email_hop_le` trong `assets/js/app.js`) cũng chỉ xét ĐÚNG
+  DẠNG chữ, không xác minh ai đó có thật là sinh viên hay không — ai gõ một
+  địa chỉ `...@gì-đó.edu.vn` giả vẫn qua được. Repo đang công khai nên tệp
+  trong `assets/slides/` và `videos/` ai biết đường dẫn vẫn lấy được. Đây là
+  phép lịch sự, không phải hàng rào. Muốn khoá thật thì phải để repo riêng tư
+  hoặc đưa tệp sang chỗ có xác thực — nói rõ điều đó, đừng để cô yên tâm nhầm.
+- Nhắc/cản trở việc chụp màn hình (chặn chuột phải, ẩn nút tải trong thanh
+  điều khiển video, khoá kéo-thả ảnh — xem `khung_xem()` trong `app.js` và
+  khoá `xem.baove` trong `i18n.js`) không phải là chặn chụp màn hình thật.
+  Trình duyệt không có API nào ngăn được Print Screen hay chụp bằng máy khác.
+  Đừng bao giờ gọi đây là "khoá" hay "chặn" trong nội dung hiển thị — chỉ
+  được gọi là "hạn chế"/"nhắc nhở".
 
 ---
 

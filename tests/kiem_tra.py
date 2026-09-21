@@ -64,17 +64,28 @@ def kiem_phu_de():
 
 
 def kiem_so_slide():
-    """Số ảnh slide thật phải đúng bằng con số ghi trong data/slides.js."""
+    """Số ảnh slide thật phải đúng bằng con số ghi trong data/slides.js
+    (cả bản tiếng Việt registerSlides và bản tiếng Anh registerSlidesEn)."""
     s = open(os.path.join(GOC_REPO, "data/slides.js"), encoding="utf-8").read()
     khai = json.loads(re.search(r"registerSlides\((\{.*?\})\)", s, re.S).group(1))
+    m_en = re.search(r"registerSlidesEn\((\{.*?\})\)", s, re.S)
+    khai_en = json.loads(m_en.group(1)) if m_en else {}
     lech = []
+    tong = 0
     for bo, n in khai.items():
         tm = os.path.join(GOC_REPO, "assets/slides", bo)
         that = len([f for f in os.listdir(tm) if f.endswith(".jpg")]) if os.path.isdir(tm) else 0
         if that != n:
             lech.append("%s khai %d có %d" % (bo, n, that))
+        tong += n
+    for bo, n in khai_en.items():
+        tm = os.path.join(GOC_REPO, "assets/slides", bo + "-en")
+        that = len([f for f in os.listdir(tm) if f.endswith(".jpg")]) if os.path.isdir(tm) else 0
+        if that != n:
+            lech.append("%s-en khai %d có %d" % (bo, n, that))
+        tong += n
     ghi("Số ảnh slide đúng như khai báo", not lech,
-        "%d trang" % sum(khai.values()) if not lech else str(lech))
+        "%d trang" % tong if not lech else str(lech))
 
 
 # ------------------------------------------------------- kiểm tra trên trình duyệt
@@ -184,6 +195,22 @@ def kiem_tren_trinh_duyet(pw):
         p.locator(".xem .tai.khoa").count() == 1 and p.locator(".xem a.tai").count() == 0)
     p.keyboard.press("ArrowRight"); p.wait_for_timeout(400)
     ghi("Lật trang bằng phím mũi tên", "2/21" in p.locator(".xem .dem").inner_text())
+    p.keyboard.press("Escape"); p.wait_for_timeout(250)
+
+    # cổng ghi danh: chỉ nhận đúng DẠNG email trường (đuôi .edu/.ac), vẫn
+    # không xác minh thật — chỉ là cổng lịch sự chặt hơn email bất kỳ.
+    p.locator(".tai-nguyen button").first.click(); p.wait_for_timeout(500)
+    p.locator(".xem .tai.khoa").click(); p.wait_for_timeout(300)
+    p.locator(".lop-ghi-danh input[type='text']").fill("Sinh Viên Test")
+    p.locator(".lop-ghi-danh input[type='email']").fill("test@gmail.com")
+    p.locator(".lop-ghi-danh .dong-y input").check()
+    p.locator(".lop-ghi-danh button[type='submit']").click(); p.wait_for_timeout(200)
+    ghi("Ghi danh từ chối email không phải email trường",
+        p.locator(".lop-ghi-danh").count() == 1 and p.locator(".xem a.tai").count() == 0)
+    p.locator(".lop-ghi-danh input[type='email']").fill("test@truong.edu.vn")
+    p.locator(".lop-ghi-danh button[type='submit']").click(); p.wait_for_timeout(300)
+    ghi("Ghi danh bằng email trường thì mở khoá nút tải",
+        p.locator(".lop-ghi-danh").count() == 0 and p.locator(".xem a.tai").count() == 1)
     p.keyboard.press("Escape"); p.wait_for_timeout(250)
 
     # bài tập thể thức: chấm đúng
