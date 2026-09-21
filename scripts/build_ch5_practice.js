@@ -30,7 +30,7 @@ function cover(slide, kicker, chTitle, sub, meta, mode = "trực tiếp") {
   });
 }
 
-const META_LT = "EC6000TX – Kỹ năng giao tiếp và đàm phán trong kinh doanh (Hệ từ xa)";
+const META_LT = "EC1103 – Kỹ năng giao tiếp và soạn thảo văn bản (2:1)  •  Lớp 261b, HK1 năm học 2026 – 2027";
 const META_TH = "Phần thực hành  •  Phòng A0105 – Mô phỏng Kinh tế  •  Lớp 261b, HK1 2026 – 2027";
 
 function objectives(slide, goals) {
@@ -67,9 +67,9 @@ function refs(slide) {
 function buildC5() {
   const pptx = new pptxgen(); D.newDeck(pptx);
   const CH = "Chương 5"; let pg = 1;
-  const MA_HP = "EC6000TX"; // hệ từ xa — riêng Chương 5, khác EC1103 mặc định của các chương khác
+  const MA_HP = "EC1103";
   let s = pptx.addSlide();
-  cover(s, "CHƯƠNG 5", "Soạn thảo và\ntrình bày văn bản", "Từ lời nói sang chữ viết: biến mọi thỏa thuận thành văn bản đúng chuẩn, có giá trị pháp lý.", META_LT, "từ xa");
+  cover(s, "CHƯƠNG 5", "Soạn thảo và\ntrình bày văn bản", "Từ lời nói sang chữ viết: biến mọi thỏa thuận thành văn bản đúng chuẩn, có giá trị pháp lý.", META_LT);
 
   s = pptx.addSlide(); D.chrome(s, ++pg, CH, MA_HP);
   objectives(s, [
@@ -322,7 +322,7 @@ function buildTH1() {
         "Tự soát bằng bảng kiểm 8 điểm, sau đó đổi bài chấm chéo với bạn cùng bàn rồi nộp file Word cuối buổi.",
       ],
     },
-    "THUC HANH BAI 1 - THE THUC VAN BAN.pptx", "EC6000TX");
+    "THUC HANH BAI 1 - THE THUC VAN BAN.pptx");
 }
 
 function buildTH2() {
@@ -381,7 +381,7 @@ function buildTH2() {
         "Nộp file Word cuối buổi; chỉnh sửa theo phản hồi của giảng viên và nộp lại bản hoàn thiện trong 1 tuần.",
       ],
     },
-    "THUC HANH BAI 2 - SOAN THAO VAN BAN HANH CHINH.pptx", "EC6000TX");
+    "THUC HANH BAI 2 - SOAN THAO VAN BAN HANH CHINH.pptx");
 }
 
 function buildTH3() {
@@ -439,7 +439,7 @@ function buildTH3() {
         "Đổi hồ sơ với cặp khác, chỉ ra ít nhất 3 điểm bất lợi hoặc thiếu sót; chỉnh sửa và nộp bộ hồ sơ hoàn chỉnh trong 1 tuần.",
       ],
     },
-    "THUC HANH BAI 3 - SOAN THAO VAN BAN THUONG MAI.pptx", "EC6000TX");
+    "THUC HANH BAI 3 - SOAN THAO VAN BAN THUONG MAI.pptx");
 }
 
 (async () => {

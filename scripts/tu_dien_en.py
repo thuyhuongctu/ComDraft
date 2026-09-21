@@ -6,7 +6,7 @@ trình sinh tiếng Việt đã mang sẵn bố cục, vị trí hình, ghi chú
 toàn bộ phần khung trang. Viết lại một bản tiếng Anh song song nghĩa là nuôi
 hai bản cùng lúc, và chỉ vài lần sửa là hai bản lệch nhau. Ở đây bản tiếng
 Anh dựng RA TỪ bản tiếng Việt: sửa bản Việt thì bản Anh tự theo, chỗ nào chưa
-có trong từ điển thì dich_slide_en.py báo ra chứ không lặng lẽ để nguyên.
+có trong từ điển thì dich_deck_en.py báo ra chứ không lặng lẽ để nguyên.
 
 Nguyên tắc dịch:
 - Giữ đúng giọng của cô: câu ngắn, nói thẳng, không lên gân.
