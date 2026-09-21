@@ -257,18 +257,18 @@ function buildC2() {
   s = pptx.addSlide(); D.chrome(s, ++pg, CH);
   D.slideTitle(s, "2.1", "Ấn tượng ban đầu — chỉ có một lần");
   D.cardsRows(s, [
-    ["Vài giây đầu tiên quyết định rất nhiều", "Não bộ hình thành đánh giá gần như tức thì từ ngoại hình, thần thái, cách chào — và ấn tượng đầu rất khó đảo ngược về sau."],
-    ["Quy tắc 4 × 20", "20 giây đầu tiên • 20 bước chân đầu tiên • 20 cm gương mặt (ánh mắt, nụ cười) • 20 từ đầu tiên — hãy chuẩn bị kỹ cả bốn."],
-    ["Ba trụ cột của ấn tượng chuyên nghiệp", "Trang phục phù hợp bối cảnh và vị trí • thần thái tự tin, thân thiện • lời chào – giới thiệu rõ ràng, đúng nghi thức."],
+    ["Vài giây đầu tiên quyết định rất nhiều", "Hình thành gần như tức thì — và rất khó đảo ngược về sau."],
+    ["Quy tắc 4 × 20", "20 giây • 20 bước chân • 20 cm gương mặt • 20 từ"],
+    ["Ba trụ cột của ấn tượng chuyên nghiệp", "Trang phục hợp bối cảnh • thần thái tự tin • lời chào đúng nghi thức"],
   ]);
 
   s = pptx.addSlide(); D.chrome(s, ++pg, CH);
   D.slideTitle(s, "2.1", "Nghi thức xã giao cơ bản");
   D.grid2(s, [
-    ["Chào hỏi và giới thiệu", "Người nhỏ chào người lớn, nhân viên chào cấp trên trước; giới thiệu người ít quan trọng với người quan trọng hơn; nói rõ tên – chức danh – đơn vị."],
-    ["Bắt tay", "Đứng dậy, nhìn vào mắt, siết vừa phải 2–3 giây; người có vị thế cao hơn hoặc phụ nữ chủ động đưa tay trước; không bắt quá lỏng, quá chặt, quá lâu."],
-    ["Trao – nhận danh thiếp", "Trao bằng hai tay, mặt chữ hướng về người nhận; nhận bằng hai tay, đọc qua rồi mới cất — đừng nhét ngay vào túi quần."],
-    ["Ứng xử không gian chung", "Thang máy, phòng họp, bàn làm việc mở: giữ trật tự, nhường lối, gõ cửa trước khi vào, không nói to chuyện riêng."],
+    ["Chào hỏi và giới thiệu", "Người nhỏ chào trước; giới thiệu người ít quan trọng với người quan trọng hơn"],
+    ["Bắt tay", "Đứng dậy, nhìn vào mắt, siết vừa phải 2–3 giây"],
+    ["Trao – nhận danh thiếp", "Hai tay, mặt chữ hướng người nhận; đọc qua rồi mới cất"],
+    ["Ứng xử không gian chung", "Giữ trật tự, nhường lối, gõ cửa trước khi vào"],
   ]);
 
   s = pptx.addSlide(); D.chrome(s, ++pg, CH);
@@ -287,18 +287,18 @@ function buildC2() {
   s = pptx.addSlide(); D.chrome(s, ++pg, CH);
   D.slideTitle(s, "2.2", "Cấu trúc bài thuyết trình");
   D.cardsRows(s, [
-    ["Mở đầu (10–15%) — giành lấy sự chú ý", "Câu hỏi gây tò mò, con số ấn tượng, câu chuyện ngắn; giới thiệu bản thân và cho người nghe biết lộ trình bài nói."],
-    ["Thân bài (70–80%) — tối đa 3 ý chính", "Mỗi ý: luận điểm → dẫn chứng → ví dụ; có câu chuyển ý rõ ràng; đặt ý mạnh nhất ở đầu hoặc cuối."],
-    ["Kết luận (10–15%) — đọng lại một điều", "Tóm tắt 3 ý, nhấn thông điệp cốt lõi, kêu gọi hành động cụ thể; chuẩn bị sẵn phần hỏi – đáp."],
+    ["Mở đầu (10–15%) — giành lấy sự chú ý", "Câu hỏi tò mò, con số, câu chuyện ngắn — rồi cho biết lộ trình"],
+    ["Thân bài (70–80%) — tối đa 3 ý chính", "Mỗi ý: luận điểm → dẫn chứng → ví dụ; ý mạnh nhất đặt đầu hoặc cuối"],
+    ["Kết luận (10–15%) — đọng lại một điều", "Tóm tắt 3 ý, nhấn thông điệp, kêu gọi hành động cụ thể"],
   ]);
 
   s = pptx.addSlide(); D.chrome(s, ++pg, CH);
   D.slideTitle(s, "2.2", "Trình bày tự tin trước đám đông");
   D.grid2(s, [
-    ["Ngôn ngữ cơ thể", "Đứng vững, mở vai, di chuyển có chủ đích; giao tiếp mắt luân phiên khắp phòng; tay minh họa tự nhiên, không đút túi hay vặn bút."],
-    ["Giọng nói", "Nói to rõ, thay đổi tốc độ và ngữ điệu; dừng 1–2 giây trước ý quan trọng — khoảng lặng là gia vị của bài nói."],
-    ["Vượt qua run sợ", "Run là bình thường; chuẩn bị kỹ + đến sớm làm quen không gian + hít thở sâu + tập trung vào thông điệp thay vì bản thân."],
-    ["Xử lý câu hỏi", "Lắng nghe hết câu hỏi, cảm ơn, trả lời ngắn gọn; chưa chắc thì hẹn trả lời sau — trung thực hơn là đoán bừa."],
+    ["Ngôn ngữ cơ thể", "Đứng vững, mở vai, mắt luân phiên khắp phòng; tay minh họa tự nhiên"],
+    ["Giọng nói", "To rõ, đổi tốc độ; dừng 1–2 giây trước ý quan trọng"],
+    ["Vượt qua run sợ", "Chuẩn bị kỹ • đến sớm • hít thở sâu • nghĩ về thông điệp"],
+    ["Xử lý câu hỏi", "Nghe hết, cảm ơn, trả lời ngắn; chưa chắc thì hẹn trả lời sau"],
   ]);
 
   s = pptx.addSlide(); D.chrome(s, ++pg, CH);
@@ -313,43 +313,43 @@ function buildC2() {
   s.addShape("roundRect", { x: 0.55, y: 5.15, w: 12.25, h: 1.55, rectRadius: 0.09, fill: { color: D.BLUSH_SOFT }, line: { color: D.BLUSH, width: 1 } });
   s.addText([
     { text: "Lắng nghe chủ động = ", options: { fontFace: D.BODY_FONT, fontSize: 13.5, bold: true, color: D.RUST } },
-    { text: "tập trung toàn bộ vào người nói • không ngắt lời, không vội phán xét • ghi chú ý chính • phản hồi bằng ánh mắt, gật đầu • diễn đạt lại để xác nhận: “Nếu em hiểu đúng thì ý anh/chị là…”.", options: { fontFace: D.BODY_FONT, fontSize: 13, color: D.INK } },
+    { text: "tập trung vào người nói • không ngắt lời • ghi ý chính • diễn đạt lại để xác nhận.", options: { fontFace: D.BODY_FONT, fontSize: 13, color: D.INK } },
   ], { x: 0.85, y: 5.25, w: 11.7, h: 1.35, margin: 0, valign: "middle" });
 
   s = pptx.addSlide(); D.chrome(s, ++pg, CH);
   D.slideTitle(s, "2.3", "Kỹ năng đặt câu hỏi");
   D.grid2(s, [
-    ["Câu hỏi đóng", "Trả lời Có/Không hoặc một dữ kiện: “Anh đã nhận được báo giá chưa?” — dùng để xác nhận, chốt thông tin."],
-    ["Câu hỏi mở", "Bắt đầu bằng Vì sao / Như thế nào / Điều gì: khơi người đối diện chia sẻ — dùng để khám phá nhu cầu."],
-    ["Câu hỏi thăm dò – đào sâu", "“Cụ thể là…?”, “Anh có thể cho ví dụ?” — làm rõ chi tiết sau câu trả lời chung chung."],
-    ["Lưu ý khi hỏi", "Mỗi lần một câu; tránh câu hỏi dồn ép, mớm cung; hỏi xong thì im lặng chờ — đừng tự trả lời thay."],
+    ["Câu hỏi đóng", "Có / Không hoặc một dữ kiện — dùng để xác nhận, chốt thông tin"],
+    ["Câu hỏi mở", "Vì sao • Như thế nào • Điều gì — dùng để khám phá nhu cầu"],
+    ["Câu hỏi thăm dò – đào sâu", "“Cụ thể là…?” — làm rõ sau một câu trả lời chung chung"],
+    ["Lưu ý khi hỏi", "Mỗi lần một câu; hỏi xong thì im lặng chờ"],
   ]);
 
   s = pptx.addSlide(); D.chrome(s, ++pg, CH);
   D.slideTitle(s, "2.4", "Điện thoại: cuộc gọi đi chuyên nghiệp");
   D.numList(s, [
-    ["Chuẩn bị trước khi gọi", "mục đích, nội dung chính, giấy bút ghi chú; chọn thời điểm phù hợp (tránh sớm quá, muộn quá, giờ nghỉ trưa)."],
-    ["Mở đầu đúng nghi thức", "chào, xưng danh và đơn vị, xin phép: “Em chào anh, em là… từ công ty… Anh có tiện nghe máy 5 phút không ạ?”"],
-    ["Trình bày gọn, kiểm tra hiểu", "đi thẳng vào việc, nói rõ ràng; tóm tắt lại thỏa thuận: thời gian, địa điểm, việc cần làm."],
-    ["Kết thúc lịch sự", "cảm ơn, chào; để người có vị thế cao hơn / khách hàng gác máy trước."],
+    ["Chuẩn bị trước khi gọi", "mục đích, nội dung, giấy bút; chọn giờ phù hợp"],
+    ["Mở đầu đúng nghi thức", "chào, xưng danh và đơn vị, xin phép năm phút"],
+    ["Trình bày gọn, kiểm tra hiểu", "đi thẳng vào việc; tóm tắt lại thời gian – địa điểm – việc cần làm"],
+    ["Kết thúc lịch sự", "cảm ơn, chào; để khách gác máy trước"],
   ], { y0: 1.7, y1: 6.85 });
 
   s = pptx.addSlide(); D.chrome(s, ++pg, CH);
   D.slideTitle(s, "2.4", "Nghe máy và văn hóa điện thoại nơi làm việc");
   D.cardsRows(s, [
-    ["Khi nghe máy", "Nhấc máy trong ~3 hồi chuông; chào và xưng danh đơn vị; giọng tươi — người gọi “nghe thấy” nụ cười của bạn; ghi chú và nhắc lại lời nhắn."],
-    ["Khi người cần gặp vắng mặt", "Đề nghị để lại lời nhắn: ai gọi – việc gì – số liên lạc – hẹn phản hồi; chuyển lời nhắn đầy đủ, đúng hạn."],
-    ["Di động nơi công sở", "Chế độ im lặng trong cuộc họp; không nghe điện riêng khi đang tiếp khách; nhắn tin/Zalo công việc cũng cần đúng chuẩn mực như email."],
+    ["Khi nghe máy", "Nhấc trong ~3 hồi chuông; chào và xưng danh; ghi lại lời nhắn"],
+    ["Khi người cần gặp vắng mặt", "Ghi: ai gọi – việc gì – số liên lạc – hẹn phản hồi"],
+    ["Di động nơi công sở", "Im lặng trong họp; không nghe điện riêng khi đang tiếp khách"],
   ]);
 
   s = pptx.addSlide(); D.chrome(s, ++pg, CH);
   D.slideTitle(s, "Hoạt động nhóm", "Thực hành 2 kỹ năng ngay tại lớp");
   D.activity(s,
     "NHIỆM VỤ KÉP (nhóm 4–5 sinh viên, 25 phút chuẩn bị + trình diễn)",
-    "Nhóm bốc thăm một tình huống: (a) gọi điện lần đầu cho khách hàng tiềm năng để hẹn gặp giới thiệu sản phẩm; hoặc (b) gọi điện xử lý việc giao hàng trễ cho khách đang khó chịu.",
+    "Bốc thăm: (a) gọi hẹn gặp khách hàng tiềm năng, hoặc (b) gọi xử lý giao hàng trễ.",
     [
-      "Đóng vai cuộc gọi 3 phút trước lớp: một bạn vai nhân viên, một bạn vai khách hàng; cả lớp chấm theo checklist mục 2.4.",
-      "Nhóm còn lại thuyết trình 3 phút chủ đề đã chuẩn bị ở nhà; cả lớp nhận xét theo cấu trúc mở – thân – kết và ngôn ngữ cơ thể.",
+      "Đóng vai cuộc gọi 3 phút; cả lớp chấm theo checklist mục 2.4.",
+      "Nhóm còn lại thuyết trình 3 phút; lớp nhận xét theo mở – thân – kết.",
       "Mỗi nhóm rút ra 3 điều sẽ làm khác đi nếu được thực hiện lại.",
     ]);
 
@@ -402,26 +402,26 @@ function buildC3() {
   s = pptx.addSlide(); D.chrome(s, ++pg, CH);
   D.slideTitle(s, "3.1", "Giao tiếp với cấp trên");
   D.cardsRows(s, [
-    ["Khi nhận nhiệm vụ", "Lắng nghe – ghi chú – hỏi lại cho rõ yêu cầu, thời hạn, nguồn lực; xác nhận lại bằng tin nhắn/email để hai bên cùng hiểu một cách."],
-    ["Khi báo cáo", "Chủ động, đúng hạn, kết quả trước – diễn giải sau; báo tin xấu sớm kèm phương án xử lý, không che giấu."],
-    ["Khi có ý kiến khác", "Chọn đúng lúc, đúng chỗ (thường là riêng tư); trình bày trên cơ sở dữ liệu và lợi ích chung; tôn trọng quyết định cuối cùng."],
+    ["Khi nhận nhiệm vụ", "Nghe – ghi – hỏi lại cho rõ; xác nhận lại bằng email"],
+    ["Khi báo cáo", "Kết quả trước, diễn giải sau; tin xấu báo sớm kèm phương án"],
+    ["Khi có ý kiến khác", "Đúng lúc, đúng chỗ, dựa trên dữ liệu; tôn trọng quyết định cuối"],
   ]);
 
   s = pptx.addSlide(); D.chrome(s, ++pg, CH);
   D.slideTitle(s, "3.1", "Giao tiếp với cấp dưới và đồng nghiệp");
   D.grid2(s, [
-    ["Giao việc", "Rõ mục tiêu – thời hạn – tiêu chuẩn; giao việc kèm niềm tin và nguồn lực; kiểm tra tiến độ đúng mức, không quản lý vụn vặt."],
-    ["Khen và phê bình", "Khen công khai, kịp thời, cụ thể; phê bình riêng tư, nhắm vào hành vi chứ không nhắm vào con người, kèm hướng khắc phục."],
-    ["Với đồng nghiệp", "Tôn trọng, hợp tác, chia sẻ thông tin; tranh luận về công việc chứ không công kích cá nhân; tránh bè phái, tán chuyện sau lưng."],
-    ["Họp hiệu quả", "Có chương trình gửi trước; đến đúng giờ; phát biểu ngắn gọn vào trọng tâm; có kết luận, biên bản và người chịu trách nhiệm từng việc."],
+    ["Giao việc", "Rõ mục tiêu – thời hạn – tiêu chuẩn; giao kèm nguồn lực"],
+    ["Khen và phê bình", "Khen công khai • phê bình riêng tư, nhắm hành vi không nhắm người"],
+    ["Với đồng nghiệp", "Tranh luận công việc, không công kích cá nhân; tránh bè phái"],
+    ["Họp hiệu quả", "Chương trình gửi trước • kết luận rõ • ai làm việc gì"],
   ]);
 
   s = pptx.addSlide(); D.chrome(s, ++pg, CH);
   D.slideTitle(s, "3.2", "Giao tiếp với khách hàng");
   D.cardsRows(s, [
-    ["Tâm thế phục vụ", "Khách hàng nuôi sống doanh nghiệp; mỗi điểm tiếp xúc (chào đón, tư vấn, giao hàng, hậu mãi) đều là khoảnh khắc xây hoặc phá niềm tin."],
-    ["Nguyên tắc vàng", "Chào đón niềm nở – gọi tên khách khi có thể; lắng nghe nhu cầu trước khi giới thiệu; nói sự thật về sản phẩm; giữ lời hứa về thời hạn."],
-    ["Điều tối kỵ", "Tranh cãi thắng – thua với khách; hứa quá khả năng; đổ lỗi cho đồng nghiệp, cho quy trình; bỏ mặc khách sau khi bán xong."],
+    ["Tâm thế phục vụ", "Mỗi điểm tiếp xúc là một khoảnh khắc xây hoặc phá niềm tin"],
+    ["Nguyên tắc vàng", "Nghe nhu cầu trước khi giới thiệu • nói thật • giữ lời hứa"],
+    ["Điều tối kỵ", "Cãi thắng thua • hứa quá khả năng • bỏ mặc sau khi bán"],
   ]);
 
   s = pptx.addSlide(); D.chrome(s, ++pg, CH);
@@ -439,18 +439,18 @@ function buildC3() {
   s = pptx.addSlide(); D.chrome(s, ++pg, CH);
   D.slideTitle(s, "3.2", "Với đối tác, cơ quan nhà nước và truyền thông");
   D.cardsRows(s, [
-    ["Đối tác kinh doanh", "Bình đẳng, giữ chữ tín, minh bạch thông tin; quan hệ lâu dài quan trọng hơn lợi thế ngắn hạn — nền tảng cho đàm phán ở Chương 4."],
-    ["Cơ quan nhà nước", "Đúng thủ tục, đúng thẩm quyền, hồ sơ – văn bản chuẩn thể thức (Chương 5); tác phong nghiêm túc, đúng hẹn; tuyệt đối không “đi tắt” trái quy định."],
-    ["Truyền thông – báo chí", "Chỉ người được ủy quyền phát ngôn; thông tin nhất quán, trung thực; khi có khủng hoảng: phản hồi nhanh, nhận trách nhiệm đúng phần của mình, không né tránh."],
+    ["Đối tác kinh doanh", "Giữ chữ tín, minh bạch; quan hệ lâu dài hơn lợi thế ngắn hạn"],
+    ["Cơ quan nhà nước", "Đúng thủ tục, đúng thẩm quyền, văn bản chuẩn thể thức"],
+    ["Truyền thông – báo chí", "Chỉ người được ủy quyền phát ngôn; khủng hoảng thì phản hồi nhanh"],
   ]);
 
   s = pptx.addSlide(); D.chrome(s, ++pg, CH);
   D.slideTitle(s, "3.3", "Giao tiếp trên bàn tiệc");
   D.grid2(s, [
-    ["Trước bữa tiệc", "Xác nhận tham dự đúng hạn; đến đúng giờ; trang phục theo tính chất tiệc; chờ chủ tiệc mời và xếp chỗ — vị trí ngồi thể hiện thứ bậc."],
-    ["Trong bữa ăn", "Chủ tiệc bắt đầu trước; dùng dụng cụ từ ngoài vào trong; không nói khi đang nhai, không gõ đũa, không xoay đĩa thức ăn về phía mình liên tục."],
-    ["Chúc rượu – cụng ly", "Người vị thế thấp nâng ly thấp hơn khi cụng; chúc ngắn gọn, đúng đối tượng; tôn trọng người không dùng rượu bia — không ép."],
-    ["Câu chuyện trên bàn tiệc", "Chủ đề nhẹ nhàng: ẩm thực, thể thao, du lịch, quê quán; tránh chính trị, tôn giáo, thu nhập, đời tư; công việc chỉ bàn khi chủ tiệc gợi mở."],
+    ["Trước bữa tiệc", "Xác nhận đúng hạn • đúng giờ • chờ chủ tiệc xếp chỗ"],
+    ["Trong bữa ăn", "Chủ tiệc bắt đầu trước; dụng cụ dùng từ ngoài vào trong"],
+    ["Chúc rượu – cụng ly", "Vị thế thấp nâng ly thấp hơn; không ép người không uống"],
+    ["Câu chuyện trên bàn tiệc", "Nên: ẩm thực, thể thao, du lịch • Tránh: chính trị, tôn giáo, thu nhập"],
   ]);
 
   s = pptx.addSlide(); D.chrome(s, ++pg, CH);
@@ -465,11 +465,11 @@ function buildC3() {
   s = pptx.addSlide(); D.chrome(s, ++pg, CH);
   D.slideTitle(s, "3.4", "Nguyên tắc thích ứng đa văn hóa");
   D.numList(s, [
-    ["Tìm hiểu trước", "văn hóa giao tiếp, nghi thức chào hỏi, kiêng kỵ của đối tác trước mỗi cuộc gặp quan trọng."],
-    ["Quan sát và điều chỉnh", "để ý cách đối tác chào, trao danh thiếp, giữ khoảng cách… và ứng xử tương thích."],
-    ["Không suy diễn theo chuẩn của mình", "một hành vi “kỳ lạ” có thể hoàn toàn bình thường trong văn hóa của họ — hỏi lịch sự thay vì phán xét."],
-    ["Nói chậm, rõ, xác nhận lại bằng văn bản", "khi khác ngôn ngữ: tránh tiếng lóng, thành ngữ; tóm tắt thỏa thuận qua email sau cuộc họp."],
-    ["Khiêm tốn và cầu thị", "sẵn sàng xin lỗi khi lỡ phạm điều kiêng kỵ; thiện chí học hỏi luôn được ghi nhận ở mọi nền văn hóa."],
+    ["Tìm hiểu trước", "nghi thức chào hỏi và điều kiêng kỵ của đối tác"],
+    ["Quan sát và điều chỉnh", "cách họ chào, trao danh thiếp, giữ khoảng cách"],
+    ["Không suy diễn theo chuẩn của mình", "hành vi “kỳ lạ” có thể rất bình thường với họ"],
+    ["Nói chậm, rõ, xác nhận lại bằng văn bản", "tránh tiếng lóng; tóm tắt thỏa thuận qua email"],
+    ["Khiêm tốn và cầu thị", "xin lỗi khi lỡ phạm điều kiêng kỵ"],
   ], { y0: 1.7, y1: 6.85 });
 
   s = pptx.addSlide(); D.chrome(s, ++pg, CH);
@@ -531,19 +531,19 @@ function buildC4() {
   s = pptx.addSlide(); D.chrome(s, ++pg, CH);
   D.slideTitle(s, "4.1", "Đàm phán là gì?");
   D.cardsRows(s, [
-    ["Khái niệm", "Đàm phán là quá trình các bên vừa có lợi ích chung, vừa có lợi ích xung đột, cùng trao đổi – thuyết phục để đi đến một thỏa thuận mà các bên chấp nhận được."],
-    ["Bản chất kép: hợp tác + cạnh tranh", "Hợp tác để “chiếc bánh” tồn tại và lớn lên; cạnh tranh khi phân chia chiếc bánh — quên vế nào cũng thất bại."],
-    ["Ba nguồn sức mạnh trên bàn đàm phán", "Thông tin (ai hiểu đối phương hơn) • Thời gian (ai ít bị ép tiến độ hơn) • Thế lực (ai có nhiều lựa chọn thay thế hơn)."],
+    ["Khái niệm", "Các bên vừa có lợi ích chung vừa xung đột, cùng đi đến thỏa thuận"],
+    ["Bản chất kép: hợp tác + cạnh tranh", "Hợp tác để chiếc bánh lớn lên • cạnh tranh khi chia bánh"],
+    ["Ba nguồn sức mạnh trên bàn đàm phán", "Thông tin • Thời gian • Thế lực"],
   ]);
 
   s = pptx.addSlide(); D.chrome(s, ++pg, CH);
   D.slideTitle(s, "4.1", "Đặc điểm của đàm phán trong kinh doanh");
   D.numList(s, [
-    ["Lấy lợi ích kinh tế làm trung tâm", "mọi điều khoản cuối cùng đều quy về giá trị, chi phí, rủi ro của mỗi bên."],
-    ["Các bên vừa phụ thuộc vừa độc lập", "cần nhau để có thỏa thuận, nhưng mỗi bên luôn có phương án riêng của mình."],
-    ["Thỏa thuận phải được văn bản hóa", "kết quả đàm phán chỉ an toàn khi thành hợp đồng đúng thể thức — cầu nối sang Chương 5."],
-    ["Diễn ra trong giới hạn", "thời gian, thẩm quyền, ngân sách; nhà đàm phán giỏi biết rõ giới hạn của mình và ước lượng giới hạn đối phương."],
-    ["Chịu ảnh hưởng văn hóa và quan hệ", "phong cách đàm phán Á – Âu khác nhau; thương vụ một lần khác quan hệ hợp tác lâu dài."],
+    ["Lấy lợi ích kinh tế làm trung tâm", "mọi điều khoản đều quy về giá trị, chi phí, rủi ro"],
+    ["Các bên vừa phụ thuộc vừa độc lập", "cần nhau, nhưng bên nào cũng có phương án riêng"],
+    ["Thỏa thuận phải được văn bản hóa", "chỉ an toàn khi thành hợp đồng đúng thể thức"],
+    ["Diễn ra trong giới hạn", "thời gian, thẩm quyền, ngân sách — của cả hai bên"],
+    ["Chịu ảnh hưởng văn hóa và quan hệ", "thương vụ một lần khác hẳn quan hệ lâu dài"],
   ], { y0: 1.7, y1: 6.85 });
 
   s = pptx.addSlide(); D.chrome(s, ++pg, CH);
@@ -568,46 +568,46 @@ function buildC4() {
   s = pptx.addSlide(); D.chrome(s, ++pg, CH);
   D.slideTitle(s, "4.2", "Giai đoạn chuẩn bị — vũ khí quan trọng nhất");
   D.grid2(s, [
-    ["Xác định mục tiêu 3 mức", "Mức lý tưởng (mong muốn nhất) – mức kỳ vọng (hợp lý) – mức tối thiểu (ranh giới rút lui); viết ra giấy trước khi vào bàn."],
-    ["BATNA — phương án thay thế tốt nhất", "Best Alternative To a Negotiated Agreement: nếu không đạt thỏa thuận, ta làm gì? BATNA càng mạnh, thế đàm phán càng vững — và đừng để lộ khi BATNA yếu."],
-    ["ZOPA — vùng thỏa thuận khả dĩ", "Khoảng chồng lấn giữa giới hạn hai bên; ước lượng ZOPA để biết đề nghị nào là khả thi, đề nghị nào làm vỡ bàn đàm phán."],
-    ["Hiểu đối tác", "Nhu cầu thật sự đằng sau yêu cầu; người có thẩm quyền quyết định; văn hóa, lịch sử giao dịch, sức ép thời gian của họ."],
+    ["Xác định mục tiêu 3 mức", "Lý tưởng – kỳ vọng – tối thiểu; viết ra giấy trước khi vào bàn"],
+    ["BATNA — phương án thay thế tốt nhất", "Không đạt thỏa thuận thì ta làm gì? BATNA mạnh, thế mới vững"],
+    ["ZOPA — vùng thỏa thuận khả dĩ", "Khoảng chồng lấn giữa giới hạn hai bên"],
+    ["Hiểu đối tác", "Nhu cầu thật sau yêu cầu • ai có quyền quyết • họ bị ép gì"],
   ]);
 
   s = pptx.addSlide(); D.chrome(s, ++pg, CH);
   D.slideTitle(s, "4.2", "Mở đầu và thương lượng");
   D.cardsRows(s, [
-    ["Tạo không khí và thăm dò", "Vài phút xã giao đúng mực; quan sát thái độ; đặt câu hỏi mở để đối phương bộc lộ nhu cầu và giới hạn trước khi mình ra giá."],
-    ["Đưa đề nghị và mặc cả", "Đề nghị đầu tiên có căn cứ (neo tâm lý); phản hồi đề nghị của đối phương bằng câu hỏi “dựa trên cơ sở nào?” thay vì đồng ý hay bác bỏ ngay."],
-    ["Nhượng bộ có điều kiện", "Không cho không bao giờ: “Nếu anh tăng số lượng lên 500, chúng tôi sẽ giảm 3%.” Nhượng bộ nhỏ dần để phát tín hiệu chạm giới hạn."],
-    ["Xử lý bế tắc", "Tạm nghỉ; đổi người – đổi vấn đề – đổi cách tiếp cận; quay về lợi ích gốc; đưa tiêu chí khách quan (giá thị trường, quy định) làm trọng tài."],
+    ["Tạo không khí và thăm dò", "Hỏi mở để họ bộc lộ nhu cầu trước khi mình ra giá"],
+    ["Đưa đề nghị và mặc cả", "Đề nghị đầu phải có căn cứ; hỏi lại “dựa trên cơ sở nào?”"],
+    ["Nhượng bộ có điều kiện", "Không cho không bao giờ; nhượng bộ nhỏ dần"],
+    ["Xử lý bế tắc", "Tạm nghỉ • đổi người, đổi vấn đề • lấy tiêu chí khách quan làm trọng tài"],
   ], { bodySize: 12.5 });
 
   s = pptx.addSlide(); D.chrome(s, ++pg, CH);
   D.slideTitle(s, "4.2", "Kết thúc và sau đàm phán");
   D.cardsRows(s, [
-    ["Nhận biết thời điểm chốt", "Đối phương hỏi chi tiết triển khai, điều khoản thanh toán, thời gian giao hàng — tín hiệu sẵn sàng; tóm tắt thỏa thuận và đề nghị xác nhận."],
-    ["Văn bản hóa ngay", "Thỏa thuận miệng chưa phải kết thúc: lập biên bản ghi nhớ, soạn hợp đồng đủ điều khoản cơ bản — kỹ thuật soạn thảo học ở Chương 5 và phần thực hành."],
-    ["Sau đàm phán", "Thực hiện đúng cam kết — uy tín cho lần đàm phán sau; giữ liên lạc với đối tác; họp nhóm rút kinh nghiệm: điều gì hiệu quả, điều gì cần làm khác."],
+    ["Nhận biết thời điểm chốt", "Họ hỏi chi tiết triển khai, thanh toán, giao hàng — đó là tín hiệu"],
+    ["Văn bản hóa ngay", "Thỏa thuận miệng chưa phải kết thúc — phải thành văn bản"],
+    ["Sau đàm phán", "Làm đúng cam kết • giữ liên lạc • họp rút kinh nghiệm"],
   ]);
 
   s = pptx.addSlide(); D.chrome(s, ++pg, CH);
   D.slideTitle(s, "4.3", "Kỹ năng nền tảng trên bàn đàm phán");
   D.grid2(s, [
-    ["Lắng nghe và đặt câu hỏi", "Nghe nhiều hơn nói; hỏi mở để tìm lợi ích thật; im lặng đúng lúc — nhiều nhượng bộ xuất hiện chỉ vì đối phương không chịu được khoảng lặng."],
-    ["Thuyết phục bằng lợi ích và bằng chứng", "Nói bằng ngôn ngữ lợi ích của đối phương; kèm số liệu, tiền lệ, quy định khách quan thay vì tranh cãi cảm tính."],
-    ["Kiểm soát cảm xúc", "Giữ bình tĩnh trước khiêu khích; tách con người khỏi vấn đề; tức giận là nhượng quyền kiểm soát cho đối phương."],
-    ["Làm việc theo êkíp", "Phân vai trưởng đoàn – chuyên môn – ghi chép; thống nhất tín hiệu nội bộ; không bao giờ mâu thuẫn nội bộ trước mặt đối tác."],
+    ["Lắng nghe và đặt câu hỏi", "Nghe nhiều hơn nói; im lặng đúng lúc cũng là một nước đi"],
+    ["Thuyết phục bằng lợi ích và bằng chứng", "Nói bằng ngôn ngữ lợi ích của họ, kèm số liệu và tiền lệ"],
+    ["Kiểm soát cảm xúc", "Tức giận là nhượng quyền kiểm soát cho đối phương"],
+    ["Làm việc theo êkíp", "Phân vai rõ; không bao giờ mâu thuẫn nội bộ trước mặt đối tác"],
   ]);
 
   s = pptx.addSlide(); D.chrome(s, ++pg, CH);
   D.slideTitle(s, "4.3", "Nhận diện chiêu trò thường gặp");
   D.numList(s, [
-    ["Neo giá sốc", "mở màn bằng đề nghị cao/thấp bất thường để kéo kỳ vọng của ta — ứng phó: bám vào tiêu chí khách quan, đừng vội điều chỉnh mục tiêu."],
-    ["Người tốt – kẻ xấu", "một người gay gắt, một người “dễ thương” ra tay cứu vãn — nhận diện và chỉ đàm phán trên nội dung."],
-    ["Thời hạn chót giả", "“chỉ còn hôm nay” để ép quyết định vội — kiểm chứng thực hư, sẵn sàng rời bàn nếu có BATNA."],
-    ["Cắt lát salami", "đòi thêm từng chút nhỏ sau khi đã thỏa thuận — gói toàn bộ điều khoản lại: “điểm này mở thì cả gói mở”."],
-    ["Đòi hỏi phút chót", "thêm yêu cầu ngay trước khi ký — bình tĩnh định giá yêu cầu đó và đòi đối ứng tương xứng."],
+    ["Neo giá sốc", "đề nghị bất thường để kéo kỳ vọng → bám tiêu chí khách quan"],
+    ["Người tốt – kẻ xấu", "một người gay gắt, một người dễ thương → chỉ bàn nội dung"],
+    ["Thời hạn chót giả", "“chỉ còn hôm nay” → kiểm chứng, sẵn sàng rời bàn"],
+    ["Cắt lát salami", "đòi thêm từng chút → gói cả điều khoản lại"],
+    ["Đòi hỏi phút chót", "thêm yêu cầu trước khi ký → đòi đối ứng tương xứng"],
   ], { y0: 1.7, y1: 6.85 });
 
   s = pptx.addSlide(); D.chrome(s, ++pg, CH);

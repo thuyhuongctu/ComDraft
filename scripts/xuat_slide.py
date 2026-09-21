@@ -12,8 +12,12 @@ import subprocess
 import sys
 import tempfile
 
+# REPO từng ghi cứng "/workspace/comdraft" và TAM ghi cứng một thư mục nháp của
+# một phiên làm việc cũ. Cả hai đều không còn tồn tại, nên tệp này không chạy
+# được — cùng một loại lỗi với năm chỗ đứt khác trong dây chuyền dựng. Dùng
+# mkdtemp thay vì một đường dẫn cố định để hai lượt chạy không giẫm lên nhau.
 REPO = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-TAM = os.path.join(tempfile.gettempdir(), "comdraft_xuat_slide_pdf")
+TAM = tempfile.mkdtemp(prefix="comdraft-anh-slide-")
 DICH = os.path.join(REPO, "assets", "slides")
 RONG, CAO = 1280, 720
 
