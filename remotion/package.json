@@ -1,0 +1,18 @@
+{
+  "name": "comdraft-hoat-hinh",
+  "private": true,
+  "description": "Sinh video hoạt hình cho các sơ đồ chính trong 8 video bài giảng. Sinh bởi lệnh `npx remotion render`, đọc bởi scripts/build_videos.py — đừng sửa tay tệp .mp4 kết quả.",
+  "scripts": {
+    "studio": "remotion studio src/index.ts"
+  },
+  "dependencies": {
+    "react": "19.2.3",
+    "react-dom": "19.2.3",
+    "remotion": "4.0.518",
+    "@remotion/cli": "4.0.518",
+    "@remotion/renderer": "4.0.518"
+  },
+  "devDependencies": {
+    "typescript": "5.9.3"
+  }
+}
