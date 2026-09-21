@@ -8,9 +8,18 @@
   var KHO = [];        // ngân hàng câu hỏi theo chương
   var BAI = [];        // danh mục bài giảng
   var SO_SLIDE = {};   // số trang của mỗi bộ slide đã xuất thành ảnh
+  var SO_SLIDE_EN = {}; // bộ nào đã có bản tiếng Anh (xem scripts/dich_slide_en.py)
   window.registerBank = function (b) { KHO.push(b); };
   window.registerLectures = function (ds) { BAI = ds; };
   window.registerSlides = function (d) { SO_SLIDE = d; };
+  window.registerSlidesEn = function (d) { SO_SLIDE_EN = d; };
+
+  // Bộ nào chưa dịch (đa số th1-th3 và các chương còn lại) thì rơi về bản
+  // tiếng Việt, giống cơ chế cau_q/cau_a cho ngân hàng câu hỏi.
+  function slide_bo_dung(bo) {
+    var dung_en = ngu() === 'en' && SO_SLIDE_EN[bo];
+    return { bo: dung_en ? bo + '-en' : bo, so: dung_en ? SO_SLIDE_EN[bo] : (SO_SLIDE[bo] || 0) };
+  }
 
   var MUC = { nhan_biet: 'muc.nhanbiet', thong_hieu: 'muc.thonghieu', van_dung: 'muc.vandung' };
   var KY = ['A', 'B', 'C', 'D'];
@@ -533,7 +542,7 @@
       return a;
     }
     function muc_slide(ten, s) {
-      var n = SO_SLIDE[s.bo] || 0;
+      var n = slide_bo_dung(s.bo).so;
       return muc_tn('📊', ten, t('bai.slide.phu') + (n ? ' · ' + n + ' ' + t('xem.trangs') : ''),
                     function () { xem_slide(ten, s.bo, s.taiVe); });
     }
@@ -638,7 +647,9 @@
   }
 
   function xem_slide(ten, bo, tai_ve) {
-    var so = SO_SLIDE[bo] || 0;
+    var dung = slide_bo_dung(bo);
+    bo = dung.bo;
+    var so = dung.so;
     if (!so) { window.open(tai_ve, '_blank', 'noopener'); return; }
     var k = khung_xem(ten, tai_ve);
     var i = 1;
