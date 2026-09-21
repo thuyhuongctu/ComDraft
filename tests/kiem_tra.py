@@ -44,35 +44,48 @@ def kiem_song_ngu():
 
 
 def kiem_phu_de():
-    """Chữ trong phụ đề phải đúng nguyên văn kịch bản thuyết minh."""
+    """Chữ trong phụ đề (cả tiếng Việt và bản dịch tiếng Anh) phải đúng nguyên
+    văn kịch bản thuyết minh."""
     kb = json.load(open(os.path.join(GOC_REPO, "videos/kich_ban_video.json"), encoding="utf-8"))
     lech = []
     for ten, muc in kb.items():
-        p = os.path.join(GOC_REPO, "videos", ten + ".vi.vtt")
-        if not os.path.exists(p):
-            lech.append(ten + " (thiếu tệp)")
-            continue
-        khung = re.findall(r"\n\d{2}:\d{2}:[\d.]+ --> \d{2}:\d{2}:[\d.]+\n(.+)",
-                           open(p, encoding="utf-8").read())
-        goc = " ".join(" ".join(m["loi_doc"].split()) for m in muc)
-        if goc != " ".join(khung):
-            lech.append(ten)
+        for duoi, khoa in ((".vi.vtt", "loi_doc"), (".en.vtt", "loi_doc_en")):
+            p = os.path.join(GOC_REPO, "videos", ten + duoi)
+            if not os.path.exists(p):
+                lech.append(ten + duoi + " (thiếu tệp)")
+                continue
+            khung = re.findall(r"\n\d{2}:\d{2}:[\d.]+ --> \d{2}:\d{2}:[\d.]+\n(.+)",
+                               open(p, encoding="utf-8").read())
+            goc = " ".join(" ".join(m[khoa].split()) for m in muc)
+            if goc != " ".join(khung):
+                lech.append(ten + duoi)
     ghi("Phụ đề khớp nguyên văn kịch bản", not lech,
-        "%d video" % len(kb) if not lech else "lệch: %s" % lech)
+        "%d video × 2 ngôn ngữ" % len(kb) if not lech else "lệch: %s" % lech)
 
 
 def kiem_so_slide():
-    """Số ảnh slide thật phải đúng bằng con số ghi trong data/slides.js."""
+    """Số ảnh slide thật phải đúng bằng con số ghi trong data/slides.js
+    (cả bản tiếng Việt registerSlides và bản tiếng Anh registerSlidesEn)."""
     s = open(os.path.join(GOC_REPO, "data/slides.js"), encoding="utf-8").read()
     khai = json.loads(re.search(r"registerSlides\((\{.*?\})\)", s, re.S).group(1))
+    m_en = re.search(r"registerSlidesEn\((\{.*?\})\)", s, re.S)
+    khai_en = json.loads(m_en.group(1)) if m_en else {}
     lech = []
+    tong = 0
     for bo, n in khai.items():
         tm = os.path.join(GOC_REPO, "assets/slides", bo)
         that = len([f for f in os.listdir(tm) if f.endswith(".jpg")]) if os.path.isdir(tm) else 0
         if that != n:
             lech.append("%s khai %d có %d" % (bo, n, that))
+        tong += n
+    for bo, n in khai_en.items():
+        tm = os.path.join(GOC_REPO, "assets/slides", bo + "-en")
+        that = len([f for f in os.listdir(tm) if f.endswith(".jpg")]) if os.path.isdir(tm) else 0
+        if that != n:
+            lech.append("%s-en khai %d có %d" % (bo, n, that))
+        tong += n
     ghi("Số ảnh slide đúng như khai báo", not lech,
-        "%d trang" % sum(khai.values()) if not lech else str(lech))
+        "%d trang" % tong if not lech else str(lech))
 
 
 # ------------------------------------------------------- kiểm tra trên trình duyệt
@@ -184,16 +197,29 @@ def kiem_tren_trinh_duyet(pw):
     ghi("Lật trang bằng phím mũi tên", "2/21" in p.locator(".xem .dem").inner_text())
     p.keyboard.press("Escape"); p.wait_for_timeout(250)
 
+    # cổng ghi danh: chỉ nhận đúng DẠNG email trường (đuôi .edu/.ac), vẫn
+    # không xác minh thật — chỉ là cổng lịch sự chặt hơn email bất kỳ.
+    p.locator(".tai-nguyen button").first.click(); p.wait_for_timeout(500)
+    p.locator(".xem .tai.khoa").click(); p.wait_for_timeout(300)
+    p.locator(".lop-ghi-danh input[type='text']").fill("Sinh Viên Test")
+    p.locator(".lop-ghi-danh input[type='email']").fill("test@gmail.com")
+    p.locator(".lop-ghi-danh .dong-y input").check()
+    p.locator(".lop-ghi-danh button[type='submit']").click(); p.wait_for_timeout(200)
+    ghi("Ghi danh từ chối email không phải email trường",
+        p.locator(".lop-ghi-danh").count() == 1 and p.locator(".xem a.tai").count() == 0)
+    p.locator(".lop-ghi-danh input[type='email']").fill("test@truong.edu.vn")
+    p.locator(".lop-ghi-danh button[type='submit']").click(); p.wait_for_timeout(300)
+    ghi("Ghi danh bằng email trường thì mở khoá nút tải",
+        p.locator(".lop-ghi-danh").count() == 0 and p.locator(".xem a.tai").count() == 1)
+    p.keyboard.press("Escape"); p.wait_for_timeout(250)
+
     # bài tập thể thức: chấm đúng
-    p.get_by_role("button", name=re.compile("thành phần thể thức")).click(); p.wait_for_timeout(400)
-    dung = {"o1": "Quốc hiệu và Tiêu ngữ", "o2": "Tên cơ quan, tổ chức ban hành",
-            "o3": "Số, ký hiệu của văn bản", "o4": "Địa danh và thời gian ban hành",
-            "o5": "Tên loại và trích yếu nội dung", "o6": "Nội dung văn bản",
-            "o7": "Chức vụ, họ tên, chữ ký người có thẩm quyền",
-            "o8": "Dấu, chữ ký số của cơ quan", "o9": "Nơi nhận"}
-    for o, ten in dung.items():
-        p.locator(".day-khoi .khoi", has_text=ten).first.click()
-        p.locator('.to-a4 .o[data-o="%s"]' % o).click()
+    p.get_by_role("button", name=re.compile("thành phần thể thức|formality components")).click(); p.wait_for_timeout(400)
+    # Chọn khối theo data-ma (không dò chữ hiển thị): khối và ô đều không phụ
+    # thuộc tiếng Việt hay tiếng Anh đang bật.
+    for ma in range(1, 10):
+        p.locator('.day-khoi .khoi[data-ma="%d"]' % ma).click()
+        p.locator('.to-a4 .o[data-o="o%d"]' % ma).click()
         p.wait_for_timeout(50)
     p.locator(".the-thuc .nut.chinh").click(); p.wait_for_timeout(350)
     ghi("Bài tập thể thức chấm đúng 9/9",
@@ -231,16 +257,18 @@ def kiem_tren_trinh_duyet(pw):
     p.locator(".tai-nguyen button").first.click(); p.wait_for_timeout(500)
     kiem_giay(p)
     with p.expect_download() as sk:
-        p.get_by_role("button", name=re.compile("Tải ảnh")).click()
+        p.get_by_role("button", name=re.compile("Tải ảnh|Download as image")).click()
     ghi("Giấy ghi nhận tải về được ảnh PNG",
         sk.value.suggested_filename.endswith(".png"), sk.value.suggested_filename)
     p.keyboard.press("Escape")
 
-    # tour
+    # tour — không dò chữ "1/" vì bản tiếng Anh viết "Step 1 of n", không có
+    # dấu gạch chéo; kiểm tra có số 1 và vùng sáng là đủ, không phụ thuộc
+    # ngôn ngữ đang hiện.
     p.locator('.menu button[data-trang="nha"]').click(); p.wait_for_timeout(400)
     p.locator("#tour-goi").click(); p.wait_for_timeout(800)
     ghi("Tour Hương AI chạy và làm sáng đúng vùng",
-        p.locator(".tour-sang").count() == 1 and "1/" in p.locator("#tour-buoc").inner_text(),
+        p.locator(".tour-sang").count() == 1 and "1" in p.locator("#tour-buoc").inner_text(),
         p.locator("#tour-buoc").inner_text())
     p.keyboard.press("Escape"); p.wait_for_timeout(250)
 
