@@ -488,6 +488,9 @@ html[data-theme="dark"] .xem { background: rgba(0, 0, 0, .72); }
 .xem .than img.trang {
   max-width: 100%; max-height: 100%; width: auto; height: auto;
   border-radius: 12px; box-shadow: var(--clay-nho); cursor: pointer;
+  /* Chỉ cản trở nhẹ việc kéo/lưu ảnh trong khung xem — không ngăn được
+     chụp màn hình thật, xem ghi chú ở .xem .baove. */
+  -webkit-user-drag: none; user-select: none; -webkit-touch-callout: none;
 }
 .xem .than video {
   max-width: 100%; max-height: 100%; width: 100%;
@@ -497,6 +500,11 @@ html[data-theme="dark"] .xem { background: rgba(0, 0, 0, .72); }
 .xem .loi-xem { text-align: center; padding: 30px 22px; max-width: 460px; }
 .xem .loi-xem b { display: block; font-family: var(--head); font-size: 18px; color: var(--coral-dam); }
 .xem .loi-xem p { margin: 8px 0 16px; font-size: 14px; color: var(--chu-nhat); }
+
+.xem .baove {
+  display: block; padding: 0 18px 12px; font-size: 11px; line-height: 1.4;
+  color: var(--chu-mo); text-align: center;
+}
 
 .xem .day {
   display: flex; align-items: center; gap: 14px; flex-wrap: wrap;
@@ -514,6 +522,7 @@ html[data-theme="dark"] .xem { background: rgba(0, 0, 0, .72); }
   .xem .day { padding: 10px 12px 12px; gap: 10px; }
   .xem .dieu-khien { min-width: 0; }
   .xem .dem { min-width: 76px; font-size: 12px; }
+  .xem .baove { padding: 0 12px 10px; }
 }
 
 /* ------------------------------------------------- bài tập thể thức văn bản */
