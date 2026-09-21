@@ -197,6 +197,22 @@ def kiem_tren_trinh_duyet(pw):
     ghi("Lật trang bằng phím mũi tên", "2/21" in p.locator(".xem .dem").inner_text())
     p.keyboard.press("Escape"); p.wait_for_timeout(250)
 
+    # cổng ghi danh: chỉ nhận đúng DẠNG email trường (đuôi .edu/.ac), vẫn
+    # không xác minh thật — chỉ là cổng lịch sự chặt hơn email bất kỳ.
+    p.locator(".tai-nguyen button").first.click(); p.wait_for_timeout(500)
+    p.locator(".xem .tai.khoa").click(); p.wait_for_timeout(300)
+    p.locator(".lop-ghi-danh input[type='text']").fill("Sinh Viên Test")
+    p.locator(".lop-ghi-danh input[type='email']").fill("test@gmail.com")
+    p.locator(".lop-ghi-danh .dong-y input").check()
+    p.locator(".lop-ghi-danh button[type='submit']").click(); p.wait_for_timeout(200)
+    ghi("Ghi danh từ chối email không phải email trường",
+        p.locator(".lop-ghi-danh").count() == 1 and p.locator(".xem a.tai").count() == 0)
+    p.locator(".lop-ghi-danh input[type='email']").fill("test@truong.edu.vn")
+    p.locator(".lop-ghi-danh button[type='submit']").click(); p.wait_for_timeout(300)
+    ghi("Ghi danh bằng email trường thì mở khoá nút tải",
+        p.locator(".lop-ghi-danh").count() == 0 and p.locator(".xem a.tai").count() == 1)
+    p.keyboard.press("Escape"); p.wait_for_timeout(250)
+
     # bài tập thể thức: chấm đúng
     p.get_by_role("button", name=re.compile("thành phần thể thức|formality components")).click(); p.wait_for_timeout(400)
     # Chọn khối theo data-ma (không dò chữ hiển thị): khối và ô đều không phụ
