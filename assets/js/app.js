@@ -8,9 +8,18 @@
   var KHO = [];        // ngân hàng câu hỏi theo chương
   var BAI = [];        // danh mục bài giảng
   var SO_SLIDE = {};   // số trang của mỗi bộ slide đã xuất thành ảnh
+  var SO_SLIDE_EN = {}; // bộ nào đã có bản tiếng Anh (xem scripts/dich_slide_en.py)
   window.registerBank = function (b) { KHO.push(b); };
   window.registerLectures = function (ds) { BAI = ds; };
   window.registerSlides = function (d) { SO_SLIDE = d; };
+  window.registerSlidesEn = function (d) { SO_SLIDE_EN = d; };
+
+  // Bộ nào chưa dịch (đa số th1-th3 và các chương còn lại) thì rơi về bản
+  // tiếng Việt, giống cơ chế cau_q/cau_a cho ngân hàng câu hỏi.
+  function slide_bo_dung(bo) {
+    var dung_en = ngu() === 'en' && SO_SLIDE_EN[bo];
+    return { bo: dung_en ? bo + '-en' : bo, so: dung_en ? SO_SLIDE_EN[bo] : (SO_SLIDE[bo] || 0) };
+  }
 
   var MUC = { nhan_biet: 'muc.nhanbiet', thong_hieu: 'muc.thonghieu', van_dung: 'muc.vandung' };
   var KY = ['A', 'B', 'C', 'D'];
@@ -289,8 +298,28 @@
   function da_ghi_danh() {
     return !!(luu.ghi_danh && luu.ghi_danh.email);
   }
+  // Chỉ xét ĐÚNG DẠNG email trường (đuôi .edu hoặc .ac, có thể kèm mã quốc
+  // gia như .edu.vn) — không hardcode một trường cụ thể để dùng chung được
+  // cho mọi nơi dạy học phần này. Đây vẫn là cổng lịch sự: ai cố tình gõ một
+  // địa chỉ có đuôi .edu giả vẫn qua được, không có cách nào xác minh thật.
   function email_hop_le(e) {
-    return /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(e);
+    var m = /^[^\s@]+@([^\s@]+\.[^\s@]{2,})$/.exec(e);
+    return !!m && /\.(edu|ac)(\.[a-z]{2,3})?$/i.test(m[1]);
+  }
+  // Nút tải dùng chung: khoá cho tới khi ghi danh xong thì tự thay bằng
+  // liên kết tải thật — dùng lại ở khung xem, lúc video lỗi không phát được
+  // và ở học liệu không có trình xem theo trang.
+  function nut_tai(tai_ve) {
+    if (da_ghi_danh()) {
+      var a = el('a', 'tai', t('xem.tai'));
+      a.href = tai_ve; a.rel = 'noopener';
+      return a;
+    }
+    var kh = el('button', 'tai khoa', t('xem.tai.khoa')); kh.type = 'button';
+    kh.addEventListener('click', function () {
+      mo_ghi_danh(function () { kh.replaceWith(nut_tai(tai_ve)); });
+    });
+    return kh;
   }
 
   function mo_ghi_danh(xong) {
@@ -367,28 +396,62 @@
     o_ten.focus();
   }
 
-  // Khung phim ở trang chủ: một video ôn tập mở sẵn để người mới vào có thứ
-  // xem ngay, không phải lần mò qua ba lớp menu.
-  function khung_phim() {
-    var b = BAI[0];
-    var k = el('div', 'khung-phim');
-    if (!b || !b.video) return k;
-    var o = el('button', 'man'); o.type = 'button';
-    var a = el('img');
-    a.src = './assets/slides/' + (b.slide ? b.slide.bo : 'ch1') + '/001.jpg';
-    a.alt = ''; a.loading = 'lazy';
-    o.appendChild(a);
-    o.appendChild(el('span', 'nut-phat', '▶'));
-    var c = el('span', 'loi-phim');
-    c.appendChild(el('small', null, t('phim.moi')));
-    c.appendChild(el('b', null, (ngu() === 'en' ? 'Chapter 1 — ' : 'Chương 1 — ') +
-                                (ngu() === 'en' ? b.en : b.vi)));
-    o.appendChild(c);
-    o.addEventListener('click', function () {
-      xem_video(t('bai.video') + ' — ' + (ngu() === 'en' ? b.en : b.vi), b.video.tep, b.video.taiVe);
+  // ------------------------------------------------- video giới thiệu ứng dụng
+  // Đứng ở chỗ trước đây là khung phim giới thiệu Chương 1: video này giới
+  // thiệu cả ứng dụng nên hợp vai trò "thứ xem ngay khi mới vào" hơn. Cùng
+  // cách EnQuiz làm với video giới thiệu của ứng dụng đó — ảnh bìa và chữ nằm
+  // đè lên khung 16:9, video không gắn địa chỉ tệp cho tới khi bấm nút phát,
+  // nên mở trang chủ không tải video này — nhưng phát ngay tại khung thay vì
+  // mở khung xem toàn màn hình, vì video ngắn, không cần phụ đề hay điều
+  // khiển trang/tua như video bài giảng.
+  // Video còn chưa có bài âm thanh chính thức (đang chờ thay bằng bản thu
+  // của giảng viên), nên tắt tiếng sẵn — ai muốn nghe thử bản tạm vẫn bật
+  // được bằng nút loa trên thanh điều khiển.
+  function khoi_video_gioi_thieu() {
+    var s = el('section', 'video-gt');
+    var khung = el('div', 'video-gt-khung');
+
+    var anh = el('img', 'video-gt-anh');
+    anh.src = './assets/img/video-gioi-thieu.jpg';
+    anh.alt = ''; anh.loading = 'lazy';
+    khung.appendChild(anh);
+
+    var v = document.createElement('video');
+    v.className = 'video-gt-video';
+    v.preload = 'none';
+    v.muted = true;
+    v.defaultMuted = true;
+    v.setAttribute('muted', '');
+    v.setAttribute('playsinline', '');
+    khung.appendChild(v);
+
+    var man = el('div', 'video-gt-man');
+    var nut = el('button', 'video-gt-phat'); nut.type = 'button';
+    nut.setAttribute('aria-label', t('videogt.phat'));
+    nut.innerHTML = '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5.4v13.2L19 12z"/></svg>';
+    man.appendChild(nut);
+    var chu = el('div', 'video-gt-chu');
+    chu.appendChild(el('p', 'video-gt-nho', t('videogt.xem')));
+    chu.appendChild(el('h2', 'video-gt-de', t('videogt.tieude')));
+    man.appendChild(chu);
+    khung.appendChild(man);
+    s.appendChild(khung);
+    s.appendChild(el('small', 'video-gt-ghi', t('videogt.ghichu')));
+
+    var da_nap = false;
+    nut.addEventListener('click', function () {
+      if (!da_nap) {
+        da_nap = true;
+        v.src = './assets/video/gioi-thieu.mp4';
+        v.controls = true;
+        v.load();
+      }
+      khung.classList.add('dang-phat');
+      v.play().catch(function () {});
     });
-    k.appendChild(o);
-    return k;
+    v.addEventListener('ended', function () { khung.classList.remove('dang-phat'); });
+
+    return s;
   }
 
   function ve_nha() {
@@ -415,13 +478,35 @@
     v.appendChild(the);
 
     v.appendChild(dong_ho_nhac());
-    v.appendChild(khung_phim());
+    v.appendChild(khoi_video_gioi_thieu());
     v.appendChild(el('h2', 'muc', t('bai.tieude')));
-    var luoi = el('div', 'luoi');
+    var luoi = el('div', 'luoi cuon');
     BAI.forEach(function (b) { luoi.appendChild(the_chuong(b, function () { ve_chi_tiet(b); })); });
     v.appendChild(luoi);
+    var cham = el('div', 'cham');
+    BAI.forEach(function () { cham.appendChild(el('i')); });
+    v.appendChild(cham);
+    lam_tieu_diem_khi_cuon(luoi, cham);
 
     them_chan(v);
+  }
+
+  // Thẻ chương nào cuộn vào giữa khung thì phóng to làm tiêu điểm, chấm bên
+  // dưới sáng theo — dùng IntersectionObserver vì nó tự chạy lại mỗi lần
+  // cuộn, không cần tự tính toán vị trí bằng tay.
+  function lam_tieu_diem_khi_cuon(luoi, cham) {
+    var the = luoi.querySelectorAll('.chuong');
+    var dau = cham.children;
+    if (!the.length) return;
+    if (!('IntersectionObserver' in window)) { the[0].classList.add('tam'); return; }
+    var qs = new IntersectionObserver(function (ds) {
+      ds.forEach(function (d) {
+        var i = Array.prototype.indexOf.call(the, d.target);
+        d.target.classList.toggle('tam', d.isIntersecting);
+        if (dau[i]) dau[i].classList.toggle('tam', d.isIntersecting);
+      });
+    }, { root: luoi, threshold: 0.6 });
+    for (var i = 0; i < the.length; i++) qs.observe(the[i]);
   }
 
   function the_chuong(b, khi_bam) {
@@ -477,7 +562,7 @@
       return a;
     }
     function muc_slide(ten, s) {
-      var n = SO_SLIDE[s.bo] || 0;
+      var n = slide_bo_dung(s.bo).so;
       return muc_tn('📊', ten, t('bai.slide.phu') + (n ? ' · ' + n + ' ' + t('xem.trangs') : ''),
                     function () { xem_slide(ten, s.bo, s.taiVe); });
     }
@@ -545,6 +630,11 @@
     hop.appendChild(dinh);
 
     var than = el('div', 'than');
+    // Không chặn được chụp màn hình thật (trình duyệt không có cách nào làm
+    // vậy) — chỉ chặn menu chuột phải để đỡ tiện tay "Lưu ảnh/video" ngay
+    // trong khung xem. Nói rõ điều này ở dòng .baove bên dưới, đừng để tưởng
+    // đây là khoá thật.
+    than.addEventListener('contextmenu', function (e) { e.preventDefault(); });
     hop.appendChild(than);
 
     var day = el('div', 'day');
@@ -552,25 +642,9 @@
 
     // Tệp gốc chỉ dành cho người đã ghi danh; khách ghé ngang vẫn xem được
     // trọn vẹn ngay trong ứng dụng.
-    if (tai_ve) {
-      if (da_ghi_danh()) {
-        var a = el('a', 'tai', t('xem.tai'));
-        a.href = tai_ve; a.rel = 'noopener';
-        day.appendChild(a);
-      } else {
-        var kh = el('button', 'tai khoa', t('xem.tai.khoa')); kh.type = 'button';
-        kh.addEventListener('click', function () {
-          mo_ghi_danh(function () {
-            kh.replaceWith((function () {
-              var b = el('a', 'tai', t('xem.tai'));
-              b.href = tai_ve; b.rel = 'noopener';
-              return b;
-            })());
-          });
-        });
-        day.appendChild(kh);
-      }
-    }
+    if (tai_ve) day.appendChild(nut_tai(tai_ve));
+
+    hop.appendChild(el('small', 'baove', t('xem.baove')));
 
     n.appendChild(hop);
     n.addEventListener('click', function (e) { if (e.target === n) dong_xem(); });
@@ -582,13 +656,21 @@
   }
 
   function xem_slide(ten, bo, tai_ve) {
-    var so = SO_SLIDE[bo] || 0;
-    if (!so) { window.open(tai_ve, '_blank', 'noopener'); return; }
+    var dung = slide_bo_dung(bo);
+    bo = dung.bo;
+    var so = dung.so;
+    if (!so) {
+      // Không có ảnh từng trang để mở khung xem — mở thẳng tệp gốc, nhưng
+      // vẫn qua đúng cổng ghi danh như khi tải trong khung xem, không lách.
+      if (da_ghi_danh()) window.open(tai_ve, '_blank', 'noopener');
+      else mo_ghi_danh(function () { window.open(tai_ve, '_blank', 'noopener'); });
+      return;
+    }
     var k = khung_xem(ten, tai_ve);
     var i = 1;
 
     var anh = el('img', 'trang');
-    anh.alt = '';
+    anh.alt = ''; anh.draggable = false;
     k.than.appendChild(anh);
 
     var dk = el('div', 'dieu-khien');
@@ -630,6 +712,10 @@
     v.controls = true;
     v.preload = 'metadata';
     v.setAttribute('playsinline', '');
+    // Bớt đường tải tắt qua chính thanh điều khiển của video — không chặn
+    // được ai cố tình chụp màn hình hay quay lại bằng máy khác.
+    v.setAttribute('controlsList', 'nodownload noremoteplayback');
+    v.disablePictureInPicture = true;
     v.src = tep;
     // Phụ đề đặt cạnh video, cùng tên, đuôi .vi.vtt / .en.vtt. Bật sẵn để ai
     // xem ở chỗ đông người hoặc nghe không rõ vẫn theo được bài. Giọng đọc
@@ -655,9 +741,11 @@
       var b = el('div', 'loi-xem');
       b.appendChild(el('b', null, t('xem.loi')));
       b.appendChild(el('p', null, t('xem.loi.phu')));
-      var a = el('a', 'nut', t('xem.tai'));
-      a.href = tai_ve || tep; a.rel = 'noopener';
-      b.appendChild(a);
+      // Vẫn qua đúng cổng ghi danh như nút tải bình thường, không lách qua
+      // đường lỗi phát để có sẵn liên kết tải thẳng.
+      var nut = nut_tai(tai_ve || tep);
+      nut.classList.add('nut');
+      b.appendChild(nut);
       k.than.innerHTML = '';
       k.than.appendChild(b);
     });
