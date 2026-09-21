@@ -18,6 +18,8 @@ Thiếu bản dịch cho câu nào thì báo lỗi và dừng — không đượ
 import os
 import re
 import sys
+
+from tu_dien_en import TU_DIEN as TU_DIEN_DECK_EN
 from pptx import Presentation
 
 GIU_NGUYEN = re.compile(r"^[\d\.\-–%\s]+$")
@@ -831,7 +833,11 @@ def dich_doan(p, dich):
 
 
 def dich_deck(duong_dan, bang_rieng):
-    bang = {**CHUNG, **bang_rieng}
+    # Mượn thêm từ điển của dich_deck_en.py (đã soát kỹ, 700+ khoá) làm lớp dự
+    # phòng: hai trình dịch nhắm hai đích khác nhau nhưng khoá đều là nguyên
+    # văn một đoạn tiếng Việt, nên dùng chung được — đỡ phải dịch lại từ đầu
+    # mỗi khi nội dung slide đổi (ví dụ Chương 5 được viết lại nhiều hơn).
+    bang = {**TU_DIEN_DECK_EN, **CHUNG, **bang_rieng}
     prs = Presentation(duong_dan)
     thieu = []
     for s in prs.slides:
