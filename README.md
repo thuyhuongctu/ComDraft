@@ -58,7 +58,7 @@ the 2026–2027 academic year.
 
 | Folder | Contents |
 |---|---|
-| `slides/` | Five lecture decks, one per chapter — 16 to 20 slides each, every slide carrying a speaker-note script for PowerPoint Presenter View |
+| `slides/` | Five lecture decks, one per chapter — 18 to 21 slides each, every slide carrying a speaker-note script for PowerPoint Presenter View. `slides-en/` and `practice-en/` hold English translations of all eight decks, generated from these Vietnamese originals |
 | `practice/` | Three computer-lab workbooks: document formality, administrative documents, commercial documents |
 | `quiz/` | A 200-question bank (40 per chapter) in two Word editions — with answers for the lecturer, question-only for students — plus the same bank as JavaScript data ready for a quiz app |
 | `videos/` | Eight Full-HD videos: five chapter revision videos and three lab walkthroughs, with the narration script in JSON |
@@ -150,14 +150,15 @@ pip install playwright && python -m playwright install chromium
 python3 tests/kiem_tra.py
 ```
 
-Twenty-four checks, covering: the Vietnamese–English vocabulary keys match,
+Twenty-six checks, covering: the Vietnamese–English vocabulary keys match,
 subtitles match the narration script verbatim, the slide image counts match
-what's declared, the slide and video viewers, the enrolment gate, the
-formality practice exercise, badges and the completion certificate, the
-Huong AI tour, layout on a phone-width screen, and four project-wide
-constraints: **no request ever leaves the page**, **no JavaScript errors**,
-**the footer keeps the author's name and DOI**, and **the certificate never
-claims to be an official credential**.
+what's declared, the slide and video viewers, the enrolment gate (including
+that it only accepts a school-looking email and closes the two paths that
+used to bypass it), the formality practice exercise, badges and the
+completion certificate, the Huong AI tour, layout on a phone-width screen,
+and four project-wide constraints: **no request ever leaves the page**,
+**no JavaScript errors**, **the footer keeps the author's name and DOI**,
+and **the certificate never claims to be an official credential**.
 
 The same suite also runs automatically on GitHub on every push
 (`.github/workflows/kiem-tra.yml`).
