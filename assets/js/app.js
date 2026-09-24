@@ -1546,9 +1546,7 @@
     ct.appendChild(p2);
     var p3 = el('p');
     p3.innerHTML = thoat(t('ct.trichdan')) +
-      ': <a href="https://doi.org/10.5281/zenodo.22003676" rel="noopener">10.5281/zenodo.22003676</a> · ' +
-      thoat(t('ct.manguon')) +
-      ': <a href="https://github.com/thuyhuongctu/ComDraft" rel="noopener">github.com/thuyhuongctu/ComDraft</a>';
+      ': <a href="https://doi.org/10.5281/zenodo.22003676" rel="noopener">10.5281/zenodo.22003676</a>';
     ct.appendChild(p3);
     ct.appendChild(el('p', null, t('ct.banquyen')));
     v.appendChild(f);
