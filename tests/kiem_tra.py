@@ -65,11 +65,16 @@ def kiem_phu_de():
 
 def kiem_so_slide():
     """Số ảnh slide thật phải đúng bằng con số ghi trong data/slides.js
-    (cả bản tiếng Việt registerSlides và bản tiếng Anh registerSlidesEn)."""
-    s = open(os.path.join(GOC_REPO, "data/slides.js"), encoding="utf-8").read()
-    khai = json.loads(re.search(r"registerSlides\((\{.*?\})\)", s, re.S).group(1))
-    m_en = re.search(r"registerSlidesEn\((\{.*?\})\)", s, re.S)
-    khai_en = json.loads(m_en.group(1)) if m_en else {}
+    (cả bản tiếng Việt registerSlides và bản tiếng Anh registerSlidesEn) và
+    trong data/slides-gt.js — bộ "Giới thiệu chung học phần" ghi tay, không
+    qua xuat_slide.py, nhưng vẫn phải khớp ảnh thật như tám bộ kia."""
+    khai, khai_en = {}, {}
+    for tep in ("data/slides.js", "data/slides-gt.js"):
+        s = open(os.path.join(GOC_REPO, tep), encoding="utf-8").read()
+        khai.update(json.loads(re.search(r"registerSlides\((\{.*?\})\)", s, re.S).group(1)))
+        m_en = re.search(r"registerSlidesEn\((\{.*?\})\)", s, re.S)
+        if m_en:
+            khai_en.update(json.loads(m_en.group(1)))
     lech = []
     tong = 0
     for bo, n in khai.items():

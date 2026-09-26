@@ -278,6 +278,7 @@ main { min-width: 0; }
   background: var(--mat); border-radius: var(--bo);
   box-shadow: var(--clay); padding: 18px 20px;
 }
+.the.gt-hp { margin-bottom: 14px; }
 .luoi { display: grid; gap: 14px; }
 @media (min-width: 700px) { .luoi.hai { grid-template-columns: 1fr 1fr; } }
 

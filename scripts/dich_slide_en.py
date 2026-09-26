@@ -627,12 +627,6 @@ CH4 = {
 }
 
 CH5 = {
-    "Je m'appelle Huong  •  GV. Đỗ Thùy Hương  •  EC6000TX":
-        "Je m'appelle Huong  •  Instructor Đỗ Thùy Hương  •  EC6000TX",
-    "EC6000TX – Kỹ năng giao tiếp và đàm phán trong kinh doanh (Hệ từ xa)":
-        "EC6000TX – Business Communication and Negotiation Skills (Distance Learning)",
-    "© Đỗ Thùy Hương, 2026 — Bài giảng biên soạn cho lớp giảng dạy từ xa. Vui lòng ghi nguồn khi sử dụng.":
-        "© Đỗ Thùy Hương, 2026 — Lecture prepared for the distance-learning class. Please credit the source when reused.",
     "Soạn thảo và": "Drafting and",
     "trình bày văn bản": "presenting documents",
     "Từ lời nói sang chữ viết: biến mọi thỏa thuận thành văn bản đúng chuẩn, có giá trị pháp lý.":
