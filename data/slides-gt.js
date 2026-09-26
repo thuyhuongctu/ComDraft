@@ -5,5 +5,5 @@
    (SO_SLIDE_EN) chứ không ghi đè, nên nạp trước hay sau data/slides.js đều
    được — xem assets/js/app.js.
    © Đỗ Thùy Hương, 2026. */
-registerSlides({ "gt": 13 });
+registerSlides({ "gt": 15 });
 registerSlidesEn({ "gt": 15 });
