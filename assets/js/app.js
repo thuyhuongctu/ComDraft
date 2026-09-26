@@ -583,9 +583,21 @@
                          ch4: './assets/icons/bia-ch4-en.jpg',
                          ch5: './assets/icons/bia-ch5-en.jpg' };
 
+  // Ảnh bìa tiếng Việt: tấm áp phích tóm tắt cả chương do cô Hương chọn,
+  // dùng cho cả năm chương — khác BIA_CHUONG_EN (chỉ ba chương, ảnh minh
+  // hoạ rời, không có chữ) vì chữ trên áp phích này là tiếng Việt, đưa sang
+  // giao diện tiếng Anh sẽ lẫn ngôn ngữ nên không dùng chung.
+  var BIA_CHUONG_VI = { ch1: './assets/icons/bia-ch1.jpg',
+                         ch2: './assets/icons/bia-ch2.jpg',
+                         ch3: './assets/icons/bia-ch3.jpg',
+                         ch4: './assets/icons/bia-ch4.jpg',
+                         ch5: './assets/icons/bia-ch5.jpg' };
+
   function ve_chi_tiet(b) {
     var v = $('#khung'); v.innerHTML = '';
-    var bia = (ngu() === 'en' && BIA_CHUONG_EN[b.id]) || './assets/icons/co-huong-chi.jpg';
+    var bia = (ngu() === 'en' && BIA_CHUONG_EN[b.id]) ||
+              (ngu() === 'vi' && BIA_CHUONG_VI[b.id]) ||
+              './assets/icons/co-huong-chi.jpg';
     v.appendChild(mu((ngu() === 'en' ? 'Chapter ' : 'Chương ') + b.so + ' — ' + (ngu() === 'en' ? b.en : b.vi),
                      ngu() === 'en' ? b.tomTatEn : b.tomTatVi,
                      { khung: bia }));
