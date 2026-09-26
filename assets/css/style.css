@@ -254,6 +254,24 @@ body {
   background: var(--mat); color: var(--chinh); box-shadow: var(--clay-nho);
 }
 
+/* Nút làm mới: xoá bộ nhớ đệm và service worker rồi tải lại — cho sinh
+   viên một cách chủ động lấy đúng bản mới nhất, không phải đợi cache cũ
+   tự hết hạn (xem PHIEN_BAN trong sw.js). Đặt flex cố định, không giãn
+   theo .cong-cu > * như hai cụm nút kia vì đây chỉ một nút tròn. */
+.cong-cu > .lam-moi { flex: 0 0 auto; }
+.lam-moi {
+  display: flex; align-items: center; justify-content: center;
+  width: 34px; height: 34px; border: none; border-radius: 999px;
+  background: var(--mat-2); box-shadow: var(--clay-lom); color: var(--chu-mo);
+  cursor: pointer; transition: color .16s, transform .16s var(--nhanh-ra);
+}
+.lam-moi:hover { color: var(--chinh); }
+.lam-moi svg { width: 17px; height: 17px; }
+.lam-moi:disabled { cursor: wait; opacity: .7; }
+.lam-moi.dang-quay svg { animation: lam-moi-quay .8s linear infinite; }
+@keyframes lam-moi-quay { to { transform: rotate(360deg); } }
+@media (prefers-reduced-motion: reduce) { .lam-moi.dang-quay svg { animation: none; } }
+
 /* ---------------------------------------------------------------- nội dung */
 main { min-width: 0; }
 

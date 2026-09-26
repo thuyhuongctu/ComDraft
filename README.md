@@ -47,6 +47,9 @@ server and no network once it has been opened for the first time.
 - Progress and best scores live in the browser's own storage — nothing leaves the
   device, so no student data is collected.
 - Installable to a phone's home screen, and works fully offline.
+- A refresh button in the toolbar clears the offline cache and reloads, so a
+  student stuck on a stale cached version can pull the newest one on demand
+  instead of waiting for the browser to notice an update on its own.
 
 Built as plain HTML, CSS and JavaScript with no framework and no build step: the
 question data is the same `registerBank(...)` format used by the author's earlier
