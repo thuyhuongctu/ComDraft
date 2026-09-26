@@ -66,7 +66,7 @@ the 2026–2027 academic year.
 | `slides/` | Five lecture decks, one per chapter — 18 to 21 slides each, every slide carrying a speaker-note script for PowerPoint Presenter View. `slides-en/` and `practice-en/` hold English translations of all eight decks, generated from these Vietnamese originals. **Note:** the revision app's own chapter viewer (below) no longer shows these five decks — it shows separate, shorter material the lecturer chose to display there instead; these `.pptx` files remain the source for anyone who wants the full speaker-noted decks |
 | `practice/` | Three computer-lab workbooks: document formality, administrative documents, commercial documents |
 | `quiz/` | A 200-question bank (40 per chapter) in two Word editions — with answers for the lecturer, question-only for students — plus the same bank as JavaScript data ready for a quiz app |
-| `videos/` | Eight Full-HD videos: five chapter revision videos and three lab walkthroughs, with the narration script in JSON |
+| `videos/` | Eight Full-HD videos: five chapter revision videos and three lab walkthroughs, with the narration script in JSON. **Note:** the five chapter revision videos were made for the old chapter decks (see the `slides/` note above) and are temporarily hidden from the app's chapter pages until they're rebuilt to match the new content; the three lab walkthroughs are unaffected and still shown |
 | `figures/` | Eight author-drawn diagrams rendered from code, plus the course persona artwork |
 | `scripts/` | The generators that produce everything above — decks, figures, question bank, videos |
 
