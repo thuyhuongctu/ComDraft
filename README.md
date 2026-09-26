@@ -16,10 +16,11 @@ Every slide, figure, question, script and video in this repository was authored 
 lecturer named above for the classes she teaches in person. Nothing here is derived from
 a colleague's material.
 
-[![Watch the course introduction: the 7-38-55 communication rule](assets/img/video-gioi-thieu-en.jpg)](assets/video/gioi-thieu-en.mp4)
-<br>▶ Click the frame above to play the course introduction video (~70 seconds, ~2.5 MB;
-the home screen plays this same file, or its Vietnamese counterpart
-`assets/video/gioi-thieu.mp4` when the app language is set to Vietnamese).
+[![Watch the course introduction: the communication model](assets/img/video-gioi-thieu-en.jpg)](assets/video/gioi-thieu-en.mp4)
+<br>▶ Click the frame above to play the course introduction video (~72 seconds, ~5.6 MB;
+the home screen plays this same file). Its Vietnamese counterpart,
+`assets/video/gioi-thieu.mp4`, played when the app language is set to Vietnamese, covers
+a different topic — the 55-38-7 communication rule.
 
 ---
 
