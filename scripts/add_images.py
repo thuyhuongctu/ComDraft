@@ -169,18 +169,32 @@ def la_slide_khung(s):
     return any(k in t for k in SLIDE_KHUNG)
 
 
+
+# Ba bộ thực hành không còn dùng ảnh nhân vật (áo dài) ở bìa hay ở slide
+# "Hoạt động nhóm" nữa — cô yêu cầu bỏ, vì đây là ảnh AI dựng người, không
+# phải ảnh thật của cô, dễ gây hiểu lầm. Năm bộ Chương 1-5 không đụng tới.
+KHONG_ANH_NHAN_VAT = {
+    "THUC HANH BAI 1 - THE THUC VAN BAN.pptx",
+    "THUC HANH BAI 2 - SOAN THAO VAN BAN HANH CHINH.pptx",
+    "THUC HANH BAI 3 - SOAN THAO VAN BAN THUONG MAI.pptx",
+}
+
+
 def process(fn, items):
     prs = Presentation(fn)
     n_fig = 0
+    dung_anh_nhan_vat = fn not in KHONG_ANH_NHAN_VAT
     # 1) ảnh nhân vật trên slide bìa
-    cover = prs.slides[0]
-    add_persona_cover(cover)
+    if dung_anh_nhan_vat:
+        cover = prs.slides[0]
+        add_persona_cover(cover)
     # 2) ảnh chân dung nhỏ ở slide "Hoạt động nhóm" / "Bài tập"
-    for s in prs.slides:
-        t = " ".join(sh.text_frame.text for sh in s.shapes if sh.has_text_frame)
-        if "NHIỆM VỤ CỦA NHÓM" in t:
-            add_persona_round(s, x=11.35, y=0.42, d=1.05)
-            break
+    if dung_anh_nhan_vat:
+        for s in prs.slides:
+            t = " ".join(sh.text_frame.text for sh in s.shapes if sh.has_text_frame)
+            if "NHIỆM VỤ CỦA NHÓM" in t:
+                add_persona_round(s, x=11.35, y=0.42, d=1.05)
+                break
     # 3) chèn hình minh họa: thay nội dung slide đích bằng hình
     for needle, img, cap in items:
         idx, s = None, None
