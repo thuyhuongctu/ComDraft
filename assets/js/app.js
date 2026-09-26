@@ -414,30 +414,28 @@
 
   // ------------------------------------------------- video giới thiệu ứng dụng
   // Đứng ở chỗ trước đây là khung phim giới thiệu Chương 1: video này giới
-  // thiệu cả ứng dụng nên hợp vai trò "thứ xem ngay khi mới vào" hơn. Cùng
+  // thiệu cả học phần nên hợp vai trò "thứ xem ngay khi mới vào" hơn. Cùng
   // cách EnQuiz làm với video giới thiệu của ứng dụng đó — ảnh bìa và chữ nằm
-  // đè lên khung 16:9, video không gắn địa chỉ tệp cho tới khi bấm nút phát,
-  // nên mở trang chủ không tải video này — nhưng phát ngay tại khung thay vì
-  // mở khung xem toàn màn hình, vì video ngắn, không cần phụ đề hay điều
-  // khiển trang/tua như video bài giảng.
-  // Video còn chưa có bài âm thanh chính thức (đang chờ thay bằng bản thu
-  // của giảng viên), nên tắt tiếng sẵn — ai muốn nghe thử bản tạm vẫn bật
-  // được bằng nút loa trên thanh điều khiển.
+  // đè lên khung, video không gắn địa chỉ tệp cho tới khi bấm nút phát, nên
+  // mở trang chủ không tải video này — nhưng phát ngay tại khung thay vì mở
+  // khung xem toàn màn hình, vì video ngắn, không cần phụ đề hay điều khiển
+  // trang/tua như video bài giảng.
+  // Có hai bản dựng sẵn — quay dọc 9:16, khác khổ 16:9 của video bài giảng —
+  // chọn theo ngôn ngữ đang bật giống slide_bo_dung(); video có lời thuyết
+  // minh nên phát có tiếng ngay khi bấm, không tắt tiếng như trước.
   function khoi_video_gioi_thieu() {
     var s = el('section', 'video-gt');
     var khung = el('div', 'video-gt-khung');
+    var tep = ngu() === 'en' ? 'gioi-thieu-en' : 'gioi-thieu';
 
     var anh = el('img', 'video-gt-anh');
-    anh.src = './assets/img/video-gioi-thieu.jpg';
+    anh.src = './assets/img/video-' + tep + '.jpg';
     anh.alt = ''; anh.loading = 'lazy';
     khung.appendChild(anh);
 
     var v = document.createElement('video');
     v.className = 'video-gt-video';
     v.preload = 'none';
-    v.muted = true;
-    v.defaultMuted = true;
-    v.setAttribute('muted', '');
     v.setAttribute('playsinline', '');
     khung.appendChild(v);
 
@@ -458,7 +456,7 @@
     nut.addEventListener('click', function () {
       if (!da_nap) {
         da_nap = true;
-        v.src = './assets/video/gioi-thieu.mp4';
+        v.src = './assets/video/' + tep + '.mp4';
         v.controls = true;
         v.load();
       }
@@ -1546,9 +1544,7 @@
     ct.appendChild(p2);
     var p3 = el('p');
     p3.innerHTML = thoat(t('ct.trichdan')) +
-      ': <a href="https://doi.org/10.5281/zenodo.22003676" rel="noopener">10.5281/zenodo.22003676</a> · ' +
-      thoat(t('ct.manguon')) +
-      ': <a href="https://github.com/thuyhuongctu/ComDraft" rel="noopener">github.com/thuyhuongctu/ComDraft</a>';
+      ': <a href="https://doi.org/10.5281/zenodo.22003676" rel="noopener">10.5281/zenodo.22003676</a>';
     ct.appendChild(p3);
     ct.appendChild(el('p', null, t('ct.banquyen')));
     v.appendChild(f);
