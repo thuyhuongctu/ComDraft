@@ -1,6 +1,7 @@
 # -*- coding: utf-8 -*-
-"""Xuất 8 bộ slide thành ảnh để sinh viên xem ngay trong ứng dụng,
-không phải tải tệp PowerPoint về máy.
+"""Xuất 3 bộ slide thực hành thành ảnh để sinh viên xem ngay trong ứng dụng,
+không phải tải tệp PowerPoint về máy. Năm bộ slide chương 1-5 KHÔNG còn nằm
+trong tệp này — xem data/slides-ch.js và CLAUDE.md.
 
 PPTX -> PDF (LibreOffice) -> PNG (pdftoppm) -> JPEG 1280x720.
 Kèm theo một tệp data/slides.js ghi số slide của từng bộ.
@@ -21,12 +22,12 @@ TAM = tempfile.mkdtemp(prefix="comdraft-anh-slide-")
 DICH = os.path.join(REPO, "assets", "slides")
 RONG, CAO = 1280, 720
 
+# ch1..ch5 đã rút khỏi danh sách này: từ khi trình xem trong ứng dụng đổi
+# sang dùng ảnh dựng tay từ tài liệu ngoài (xem data/slides-ch.js), năm bộ
+# .pptx dưới slides/0N-*.pptx không còn là nguồn cho assets/slides/ch1..ch5
+# nữa. Chạy lại tệp này vẫn còn tác dụng cho ba bài thực hành, nhưng KHÔNG
+# được thêm ch1..ch5 trở lại — làm vậy sẽ âm thầm đè mất ảnh đang dùng.
 BO = [
-    ("ch1", "slides/01-tong-quan-giao-tiep.pptx"),
-    ("ch2", "slides/02-ky-nang-chuyen-nghiep.pptx"),
-    ("ch3", "slides/03-tinh-huong-dac-thu.pptx"),
-    ("ch4", "slides/04-dam-phan.pptx"),
-    ("ch5", "slides/05-soan-thao-van-ban.pptx"),
     ("th1", "practice/bai-1-the-thuc.pptx"),
     ("th2", "practice/bai-2-hanh-chinh.pptx"),
     ("th3", "practice/bai-3-thuong-mai.pptx"),
