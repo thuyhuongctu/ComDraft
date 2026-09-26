@@ -276,12 +276,12 @@
     var au = document.createElement('audio');
     au.preload = 'none';
     au.loop = true;
-    au.src = './assets/audio/mekong-sunfire.mp3';
+    au.src = './assets/audio/le-ciel-que-tu-nas-jamais.mp3';
 
     var nut_phat = el('button', 'nut chinh phat'); nut_phat.type = 'button';
     nut_phat.appendChild(bieu_tuong('i-phat'));
     nut_phat.setAttribute('aria-label', t('nhac.phat'));
-    var ten_bai = el('span', 'ten-bai', 'Mekong Sunfire');
+    var ten_bai = el('span', 'ten-bai', "Le ciel que tu n'as jamais");
     var gio_bai = el('span', 'gio-bai', '0:00');
 
     nut_phat.addEventListener('click', function () {
