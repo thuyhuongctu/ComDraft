@@ -683,13 +683,15 @@ p.rieng { font-size: 12.5px; color: var(--chu-mo); margin-top: 10px; line-height
 }
 
 /* ---------------------------------------------------- video giới thiệu ứng dụng
-   Đứng ở chỗ trước đây là khung phim giới thiệu Chương 1. Khung 16:9 khoá
-   sẵn nên trang không nhảy lúc video nạp xong, ảnh bìa và lớp chữ lui hết
-   khi đã bấm phát. */
+   Đứng ở chỗ trước đây là khung phim giới thiệu Chương 1. Video quay dọc
+   9:16 (khác khổ 16:9 của video bài giảng) nên khung khoá theo đúng tỉ lệ đó
+   để không có viền đen — khoá sẵn để trang không nhảy lúc video nạp xong.
+   Chặn bề ngang tối đa để màn rộng không kéo khung cao vống lên; ảnh bìa và
+   lớp chữ lui hết khi đã bấm phát. */
 .video-gt { margin-top: 16px; }
 .video-gt-khung {
-  position: relative; aspect-ratio: 16 / 9; border-radius: var(--bo);
-  overflow: hidden; background: #000; box-shadow: var(--clay);
+  position: relative; aspect-ratio: 9 / 16; max-width: 360px; margin: 0 auto;
+  border-radius: var(--bo); overflow: hidden; background: #000; box-shadow: var(--clay);
 }
 .video-gt-anh, .video-gt-video {
   position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; display: block;
