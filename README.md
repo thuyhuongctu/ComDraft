@@ -60,7 +60,7 @@ the 2026–2027 academic year.
 
 | Folder | Contents |
 |---|---|
-| `slides/` | Five lecture decks, one per chapter — 18 to 21 slides each, every slide carrying a speaker-note script for PowerPoint Presenter View. `slides-en/` and `practice-en/` hold English translations of all eight decks, generated from these Vietnamese originals |
+| `slides/` | Five lecture decks, one per chapter — 18 to 21 slides each, every slide carrying a speaker-note script for PowerPoint Presenter View. `slides-en/` and `practice-en/` hold English translations of all eight decks, generated from these Vietnamese originals. **Note:** the revision app's own chapter viewer (below) no longer shows these five decks — it shows separate, shorter material the lecturer chose to display there instead; these `.pptx` files remain the source for anyone who wants the full speaker-noted decks |
 | `practice/` | Three computer-lab workbooks: document formality, administrative documents, commercial documents |
 | `quiz/` | A 200-question bank (40 per chapter) in two Word editions — with answers for the lecturer, question-only for students — plus the same bank as JavaScript data ready for a quiz app |
 | `videos/` | Eight Full-HD videos: five chapter revision videos and three lab walkthroughs, with the narration script in JSON |
@@ -69,7 +69,7 @@ the 2026–2027 academic year.
 
 ### The five chapters
 
-1. **An overview of business communication** — nature of communication, the five-stage model and noise, verbal and non-verbal channels, forms, influencing factors, five principles
+1. **An overview of business communication** — the four pillars of business communication, the five-step model and noise, verbal and non-verbal channels (the 7-38-55 rule), forms of communication, diagnosing noise through a real scenario
 2. **Professional communication skills** — first impressions and the 4×20 rule, business etiquette, presenting, listening and questioning, telephone skills
 3. **Communication in specific settings** — internal communication, customers and the LAST complaint procedure, partners, state agencies and press, banquet etiquette, cross-cultural work
 4. **Business negotiation** — nature and styles of negotiation, the five-stage process, BATNA and ZOPA, negotiation skills, recognising common tactics
