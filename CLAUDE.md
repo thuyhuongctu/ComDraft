@@ -74,15 +74,22 @@ nhau, đừng lẫn:**
   `assets/slides/ch*-en/` cho trình xem trong ứng dụng dùng trực tiếp
   (`slide_bo_dung()` trong `app.js` tự chọn thư mục theo ngôn ngữ đang bật).
   Từ điển nằm ngay trong tệp (`CHUNG`), ghi chú giảng bài không dịch.
-  **Đường này đã ngừng dùng cho trình xem trong ứng dụng**: từ khi năm bộ
-  slide Chương 1-5 hiển thị trong ứng dụng đổi sang ảnh dựng tay từ tài liệu
-  ngoài (xem `data/slides-ch.js` bên dưới), bản tiếng Anh cho năm chương này
-  đã tắt hẳn — không còn `ch*-en` nào trong `assets/slides/`, và
-  `registerSlidesEn` không còn khai `ch1`..`ch5`, nên giao diện tiếng Anh tự
-  rơi về hiện đúng ảnh tiếng Việt. `dich_slide_en.py` vẫn chạy được (dịch
-  đúng nội dung `slides/0N-*.pptx`) nhưng kết quả của nó không còn nơi nào
-  dùng tới nữa; đừng chạy lại `xuat_slide.py` với `ch1`..`ch5` để "khôi
+  **Đường này đã ngừng dùng cho trình xem trong ứng dụng**: từ khi slide
+  Chương 1-5 hiển thị trong ứng dụng đổi sang ảnh dựng tay từ tài liệu ngoài
+  (xem `data/slides-ch.js` bên dưới), `slides/0N-*.pptx` không còn là nguồn
+  cho `assets/slides/ch*` hay `ch*-en` nữa. `dich_slide_en.py` vẫn chạy được
+  (dịch đúng nội dung `slides/0N-*.pptx`) nhưng kết quả của nó không còn nơi
+  nào dùng tới; đừng chạy lại `xuat_slide.py` với `ch1`..`ch5` để "khôi
   phục" bản tiếng Anh — xem cảnh báo ngay trong tệp đó.
+
+  **Bản tiếng Anh của Chương 1-3 đã có lại, nhưng KHÔNG phải bản dịch của
+  slide tiếng Việt** — `assets/slides/ch1-en`..`ch3-en` dựng từ ba tài liệu
+  tiếng Anh riêng (chủ đề trùng nhưng nội dung/cấu trúc khác), khai ở
+  `registerSlidesEn` trong `data/slides-ch.js`. Sửa slide tiếng Việt Chương
+  1-3 KHÔNG tự động cập nhật bản tiếng Anh và ngược lại — hai bộ ảnh độc
+  lập hoàn toàn, phải sửa tay từng bên nếu cần khớp lại. Chương 4-5 vẫn
+  chưa có bản tiếng Anh; `slide_bo_dung()` tự rơi về ảnh tiếng Việt cho hai
+  chương này khi giao diện đang ở tiếng Anh.
 - `scripts/dich_deck_en.py` dịch trọn tám bộ (Chương 1–5 và ba bài thực hành)
   ra hẳn một bộ deck tiếng Anh riêng ở `slides-en/` và `practice-en/`, để phát
   hoặc mở bằng PowerPoint — không phải cho trình xem trong ứng dụng. Từ điển
@@ -125,7 +132,7 @@ thử được ở máy có trình duyệt thường. Báo "đã chạy thử" c
 | `data/ch1..5.js` | Ngân hàng 200 câu trắc nghiệm |
 | `data/slides.js` | Số trang mỗi bộ slide — **do máy sinh**, chỉ ba bài thực hành (`th1`-`th3`) |
 | `data/slides-gt.js` | Số trang bộ slide "Giới thiệu chung học phần" — **tự tay ghi**, không qua `xuat_slide.py` vì không có nguồn `.pptx` (dựng từ ảnh PDF ngoài); gọi `registerSlides`/`registerSlidesEn` gộp thêm vào, không phải bộ nào trong ba bài trên |
-| `data/slides-ch.js` | Số trang năm bộ slide Chương 1-5 (`ch1`-`ch5`) — **tự tay ghi**, cùng lý do như `slides-gt.js`: ảnh dựng từ tài liệu ngoài do cô Hương chọn, không phải từ `slides/0N-*.pptx` nữa; không gọi `registerSlidesEn` vì bản tiếng Anh của năm chương này đã tắt |
+| `data/slides-ch.js` | Số trang năm bộ slide Chương 1-5 (`ch1`-`ch5`), cả bản tiếng Anh của Chương 1-3 (`registerSlidesEn`) — **tự tay ghi**, cùng lý do như `slides-gt.js`: ảnh dựng từ tài liệu ngoài do cô Hương chọn, không phải từ `slides/0N-*.pptx` nữa. Bản tiếng Anh Chương 1-3 dựng từ tài liệu tiếng Anh riêng, không phải bản dịch — xem mục "Sửa bản tiếng Việt thì dựng lại bản tiếng Anh" |
 | `tests/kiem_tra.py` | Bộ kiểm tra |
 
 **Trong `scripts/` là các trình sinh. Sửa ở trình sinh rồi chạy lại, đừng sửa
@@ -139,7 +146,7 @@ tay tệp kết quả** — sửa tay thì lần chạy sau đè mất:
 | `lam_icon_ung_dung.py` | Bộ icon trong `assets/icons/` |
 | `build_videos.py` | Tám video trong `videos/` |
 | `remotion/src/scenes.ts` | Sơ đồ hoạt hình — mỗi video đúng một cảnh, do `build_videos.py` gọi |
-| `dich_slide_en.py` | `.en.pptx` cạnh `slides/0N-*.pptx` — **không còn nơi nào dùng kết quả này**: trình xem trong ứng dụng đã đổi sang `data/slides-ch.js` (xem trên) và tắt bản tiếng Anh cho Chương 1-5 |
+| `dich_slide_en.py` | `.en.pptx` cạnh `slides/0N-*.pptx` — **không còn nơi nào dùng kết quả này**: trình xem trong ứng dụng đã đổi sang `data/slides-ch.js` (xem trên); bản tiếng Anh Chương 1-3 giờ dựng tay từ tài liệu tiếng Anh riêng, không qua tệp này nữa |
 | `dich_deck_en.py` | Tám bộ slide tiếng Anh trọn vẹn trong `slides-en/` và `practice-en/`, để phát/mở bằng PowerPoint |
 | `make_figs.py --en` | Bản tiếng Anh của hình minh họa |
 | `build_decks.js` + `build_ch5_practice.js` | Nội dung gốc của tám deck |
