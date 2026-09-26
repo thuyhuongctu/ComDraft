@@ -198,14 +198,18 @@ def kiem_tren_trinh_duyet(pw):
     # liệu ngoài, không có .pptx gốc để tải (xem data/slides-ch.js). Phép thử
     # cổng tải/ghi danh dùng slide Bài 1 (mục #1 — video Chương 5 đang ẩn tạm
     # nên không còn chiếm mục #1 như trước) vì đó vẫn còn taiVe thật.
+    # Giao diện mặc định tiếng Anh (I18n.lang), và Bài 1 giờ có bản tiếng Anh
+    # riêng (th1-en, 5 trang — xem data/slides-ch.js) nên trình xem mở ra
+    # đúng bản đó, không còn rơi về 11 trang tiếng Việt như trước khi có
+    # bản tiếng Anh.
     p.locator(".tai-nguyen button").nth(1).click(); p.wait_for_timeout(600)
     ghi("Trình xem slide mở và đếm đúng trang",
-        p.locator(".xem .dem").inner_text().endswith("/11"),
+        p.locator(".xem .dem").inner_text().endswith("/5"),
         p.locator(".xem .dem").inner_text())
     ghi("Khách chưa ghi danh thì khoá nút tải",
         p.locator(".xem .tai.khoa").count() == 1 and p.locator(".xem a.tai").count() == 0)
     p.keyboard.press("ArrowRight"); p.wait_for_timeout(400)
-    ghi("Lật trang bằng phím mũi tên", "2/11" in p.locator(".xem .dem").inner_text())
+    ghi("Lật trang bằng phím mũi tên", "2/5" in p.locator(".xem .dem").inner_text())
     p.keyboard.press("Escape"); p.wait_for_timeout(250)
 
     # cổng ghi danh: chỉ nhận đúng DẠNG email trường (đuôi .edu/.ac), vẫn
