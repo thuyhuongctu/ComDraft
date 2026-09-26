@@ -82,14 +82,37 @@ nhau, đừng lẫn:**
   nào dùng tới; đừng chạy lại `xuat_slide.py` với `ch1`..`ch5` để "khôi
   phục" bản tiếng Anh — xem cảnh báo ngay trong tệp đó.
 
-  **Bản tiếng Anh của Chương 1-3 đã có lại, nhưng KHÔNG phải bản dịch của
-  slide tiếng Việt** — `assets/slides/ch1-en`..`ch3-en` dựng từ ba tài liệu
-  tiếng Anh riêng (chủ đề trùng nhưng nội dung/cấu trúc khác), khai ở
-  `registerSlidesEn` trong `data/slides-ch.js`. Sửa slide tiếng Việt Chương
-  1-3 KHÔNG tự động cập nhật bản tiếng Anh và ngược lại — hai bộ ảnh độc
-  lập hoàn toàn, phải sửa tay từng bên nếu cần khớp lại. Chương 4-5 vẫn
-  chưa có bản tiếng Anh; `slide_bo_dung()` tự rơi về ảnh tiếng Việt cho hai
-  chương này khi giao diện đang ở tiếng Anh.
+  **Bản tiếng Anh của Chương 1-3 và Chương 5 đã có lại, nhưng KHÔNG phải bản
+  dịch của slide tiếng Việt** — `assets/slides/ch1-en`..`ch3-en` và `ch5-en`
+  dựng từ tài liệu tiếng Anh riêng (chủ đề trùng nhưng nội dung/cấu trúc
+  khác), khai ở `registerSlidesEn` trong `data/slides-ch.js`. Sửa slide
+  tiếng Việt các chương này KHÔNG tự động cập nhật bản tiếng Anh và ngược
+  lại — mỗi bộ ảnh độc lập hoàn toàn, phải sửa tay từng bên nếu cần khớp
+  lại. Chương 4 vẫn chưa có bản tiếng Anh; `slide_bo_dung()` tự rơi về ảnh
+  tiếng Việt cho chương này khi giao diện đang ở tiếng Anh.
+
+  `ch5-en` dựng chủ yếu từ MỘT tài liệu ("The Blueprint for Professional
+  Documentation", 14 trang, chia sẵn 3 trụ cột Thể thức / Văn bản hành
+  chính / Văn bản thương mại) — 13 trang đầu giữ nguyên thứ tự, chèn thêm
+  1 trang tình huống "20 máy tính" lấy từ một tài liệu tiếng Anh Chương 5
+  thứ hai (tài liệu thứ hai còn lại bị bỏ vì trùng gần hết nội dung tài
+  liệu thứ nhất, riêng trang "vòng đời giao dịch" của nó còn lỗi tạo sinh:
+  một ô "Panetane (Nghiệm thu)" lặp lại nguyên văn ô "Hợp đồng" phía trước
+  với nhãn vô nghĩa — không dùng trang đó), rồi mới tới trang chốt (đã vá
+  lỗi ở khối "Resources": tài liệu bịa ra một mã học phần "EC6000TX" và gắn
+  vào tên cô — mẫu lỗi lặp lại nhiều lần ở các tài liệu AI tạo cho dự án
+  này, bất kỳ tài liệu nguồn mới nào cũng nên rà lại trước khi dựng ảnh).
+
+  Ba bài thực hành cũng có bản tiếng Anh (`th1-en`, `th2-en`, `th3-en`),
+  khai chung trong `data/slides-ch.js` chứ không phải `data/slides.js` (xem
+  ghi chú ngay trong tệp) — lấy TỪ CHÍNH tài liệu dựng `ch5-en` (không phải
+  bản dịch của slide tiếng Việt th1-th3), vì tài liệu đó vốn đã chia sẵn 3
+  trụ cột khớp thẳng 3 bài: th1 lấy các trang Thể thức, th2 lấy các trang
+  Văn bản hành chính, th3 lấy các trang Văn bản thương mại (kể cả trang
+  chốt đã vá lỗi, vì trang đó nằm trong nhóm Thương mại). Do đó `ch5-en` và
+  `th3-en` dùng chung một vài trang giống hệt nhau — không phải trùng lặp
+  ngoài ý muốn, mà vì cùng một trụ cột vừa là một phần bài giảng vừa là
+  toàn bộ nội dung một bài thực hành.
 - `scripts/dich_deck_en.py` dịch trọn tám bộ (Chương 1–5 và ba bài thực hành)
   ra hẳn một bộ deck tiếng Anh riêng ở `slides-en/` và `practice-en/`, để phát
   hoặc mở bằng PowerPoint — không phải cho trình xem trong ứng dụng. Từ điển
@@ -132,7 +155,7 @@ thử được ở máy có trình duyệt thường. Báo "đã chạy thử" c
 | `data/ch1..5.js` | Ngân hàng 200 câu trắc nghiệm |
 | `data/slides.js` | Số trang mỗi bộ slide — **do máy sinh**, chỉ ba bài thực hành (`th1`-`th3`) |
 | `data/slides-gt.js` | Số trang bộ slide "Giới thiệu chung học phần" — **tự tay ghi**, không qua `xuat_slide.py` vì không có nguồn `.pptx` (dựng từ ảnh PDF ngoài); gọi `registerSlides`/`registerSlidesEn` gộp thêm vào, không phải bộ nào trong ba bài trên |
-| `data/slides-ch.js` | Số trang năm bộ slide Chương 1-5 (`ch1`-`ch5`), cả bản tiếng Anh của Chương 1-3 (`registerSlidesEn`) — **tự tay ghi**, cùng lý do như `slides-gt.js`: ảnh dựng từ tài liệu ngoài do cô Hương chọn, không phải từ `slides/0N-*.pptx` nữa. Bản tiếng Anh Chương 1-3 dựng từ tài liệu tiếng Anh riêng, không phải bản dịch — xem mục "Sửa bản tiếng Việt thì dựng lại bản tiếng Anh" |
+| `data/slides-ch.js` | Số trang năm bộ slide Chương 1-5 (`ch1`-`ch5`), cả bản tiếng Anh của Chương 1-3 và Chương 5, cộng cả ba bài thực hành (`registerSlidesEn`: `ch1`-`ch3`, `ch5`, `th1`-`th3`) — **tự tay ghi**, cùng lý do như `slides-gt.js`: ảnh dựng từ tài liệu ngoài do cô Hương chọn, không phải từ `slides/0N-*.pptx` hay `practice/*.pptx`. Các bản tiếng Anh này dựng từ tài liệu tiếng Anh riêng, không phải bản dịch — xem mục "Sửa bản tiếng Việt thì dựng lại bản tiếng Anh" |
 | `tests/kiem_tra.py` | Bộ kiểm tra |
 
 **Trong `scripts/` là các trình sinh. Sửa ở trình sinh rồi chạy lại, đừng sửa
