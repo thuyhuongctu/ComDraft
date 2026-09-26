@@ -65,11 +65,12 @@ def kiem_phu_de():
 
 def kiem_so_slide():
     """Số ảnh slide thật phải đúng bằng con số ghi trong data/slides.js
-    (cả bản tiếng Việt registerSlides và bản tiếng Anh registerSlidesEn) và
-    trong data/slides-gt.js — bộ "Giới thiệu chung học phần" ghi tay, không
-    qua xuat_slide.py, nhưng vẫn phải khớp ảnh thật như tám bộ kia."""
+    (cả bản tiếng Việt registerSlides và bản tiếng Anh registerSlidesEn),
+    trong data/slides-gt.js — bộ "Giới thiệu chung học phần" — và trong
+    data/slides-ch.js — năm bộ Chương 1-5; cả hai đều ghi tay, không qua
+    xuat_slide.py, nhưng vẫn phải khớp ảnh thật như ba bài thực hành."""
     khai, khai_en = {}, {}
-    for tep in ("data/slides.js", "data/slides-gt.js"):
+    for tep in ("data/slides.js", "data/slides-gt.js", "data/slides-ch.js"):
         s = open(os.path.join(GOC_REPO, tep), encoding="utf-8").read()
         khai.update(json.loads(re.search(r"registerSlides\((\{.*?\})\)", s, re.S).group(1)))
         m_en = re.search(r"registerSlidesEn\((\{.*?\})\)", s, re.S)
@@ -192,19 +193,22 @@ def kiem_tren_trinh_duyet(pw):
     ghi("Chương 5 có đủ 9 mục học liệu", so_muc == 9, "%d mục" % so_muc)
     ghi("Không mục nào là đường dẫn tải thẳng", p.locator(".tai-nguyen a").count() == 0)
 
-    p.locator(".tai-nguyen button").first.click(); p.wait_for_timeout(600)
+    # Slide của Chương 5 (mục #0) không còn taiVe — nội dung dựng tay từ tài
+    # liệu ngoài, không có .pptx gốc để tải (xem data/slides-ch.js). Phép thử
+    # cổng tải/ghi danh dùng slide Bài 1 (mục #2) vì đó vẫn còn taiVe thật.
+    p.locator(".tai-nguyen button").nth(2).click(); p.wait_for_timeout(600)
     ghi("Trình xem slide mở và đếm đúng trang",
-        p.locator(".xem .dem").inner_text().endswith("/21"),
+        p.locator(".xem .dem").inner_text().endswith("/11"),
         p.locator(".xem .dem").inner_text())
     ghi("Khách chưa ghi danh thì khoá nút tải",
         p.locator(".xem .tai.khoa").count() == 1 and p.locator(".xem a.tai").count() == 0)
     p.keyboard.press("ArrowRight"); p.wait_for_timeout(400)
-    ghi("Lật trang bằng phím mũi tên", "2/21" in p.locator(".xem .dem").inner_text())
+    ghi("Lật trang bằng phím mũi tên", "2/11" in p.locator(".xem .dem").inner_text())
     p.keyboard.press("Escape"); p.wait_for_timeout(250)
 
     # cổng ghi danh: chỉ nhận đúng DẠNG email trường (đuôi .edu/.ac), vẫn
     # không xác minh thật — chỉ là cổng lịch sự chặt hơn email bất kỳ.
-    p.locator(".tai-nguyen button").first.click(); p.wait_for_timeout(500)
+    p.locator(".tai-nguyen button").nth(2).click(); p.wait_for_timeout(500)
     p.locator(".xem .tai.khoa").click(); p.wait_for_timeout(300)
     p.locator(".lop-ghi-danh input[type='text']").fill("Sinh Viên Test")
     p.locator(".lop-ghi-danh input[type='email']").fill("test@gmail.com")
