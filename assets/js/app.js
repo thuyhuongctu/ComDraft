@@ -11,8 +11,11 @@
   var SO_SLIDE_EN = {}; // bộ nào đã có bản tiếng Anh (xem scripts/dich_slide_en.py)
   window.registerBank = function (b) { KHO.push(b); };
   window.registerLectures = function (ds) { BAI = ds; };
-  window.registerSlides = function (d) { SO_SLIDE = d; };
-  window.registerSlidesEn = function (d) { SO_SLIDE_EN = d; };
+  // Gộp thay vì ghi đè: data/slides.js (do xuat_slide.py sinh, tám bộ theo
+  // chương) và data/slides-gt.js (tự tay đăng ký bộ giới thiệu học phần) đều
+  // gọi hàm này — ghi đè sẽ làm bộ gọi sau xoá mất bộ gọi trước.
+  window.registerSlides = function (d) { for (var k in d) SO_SLIDE[k] = d[k]; };
+  window.registerSlidesEn = function (d) { for (var k in d) SO_SLIDE_EN[k] = d[k]; };
 
   // Bộ nào chưa dịch (đa số th1-th3 và các chương còn lại) thì rơi về bản
   // tiếng Việt, giống cơ chế cau_q/cau_a cho ngân hàng câu hỏi.
@@ -544,10 +547,30 @@
     return n;
   }
 
+  // Slide tổng quan học phần — không phải một chương nên không nằm trong BAI,
+  // không gắn ngân hàng câu hỏi hay điểm số. Dùng thẳng xem_slide() với bộ
+  // 'gt', tự chọn ảnh tiếng Việt/Anh giống mọi bộ slide khác qua slide_bo_dung().
+  function khoi_gioi_thieu_hp() {
+    var d = el('div', 'the gt-hp');
+    var ds = el('div', 'tai-nguyen');
+    var a = el('button'); a.type = 'button';
+    a.appendChild(bieu_tuong('i-slide', 'bt'));
+    var x = el('span');
+    x.appendChild(el('b', null, t('gt.tieude')));
+    var n = slide_bo_dung('gt').so;
+    x.appendChild(el('small', null, t('gt.mota') + (n ? ' · ' + n + ' ' + t('xem.trangs') : '')));
+    a.appendChild(x);
+    a.addEventListener('click', function () { xem_slide(t('gt.tieude'), 'gt', null); });
+    ds.appendChild(a);
+    d.appendChild(ds);
+    return d;
+  }
+
   // ---------------------------------------------------------------- bài giảng
   function ve_bai() {
     var v = $('#khung'); v.innerHTML = '';
     v.appendChild(mu(t('bai.tieude'), t('bai.mo'), { khung: './assets/icons/lop-hoc.jpg' }));
+    v.appendChild(khoi_gioi_thieu_hp());
     var luoi = el('div', 'luoi');
     BAI.forEach(function (b) { luoi.appendChild(the_chuong(b, function () { ve_chi_tiet(b); })); });
     v.appendChild(luoi);
