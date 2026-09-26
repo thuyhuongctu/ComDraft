@@ -577,11 +577,18 @@
     them_chan(v);
   }
 
+  // Ảnh bìa riêng cho bản tiếng Anh của ba chương đã có tư liệu minh hoạ phù
+  // hợp (Chương 1, 2 chưa có nên vẫn dùng ảnh chung của cô).
+  var BIA_CHUONG_EN = { ch3: './assets/icons/bia-ch3-en.jpg',
+                         ch4: './assets/icons/bia-ch4-en.jpg',
+                         ch5: './assets/icons/bia-ch5-en.jpg' };
+
   function ve_chi_tiet(b) {
     var v = $('#khung'); v.innerHTML = '';
+    var bia = (ngu() === 'en' && BIA_CHUONG_EN[b.id]) || './assets/icons/co-huong-chi.jpg';
     v.appendChild(mu((ngu() === 'en' ? 'Chapter ' : 'Chương ') + b.so + ' — ' + (ngu() === 'en' ? b.en : b.vi),
                      ngu() === 'en' ? b.tomTatEn : b.tomTatVi,
-                     { khung: './assets/icons/co-huong-chi.jpg' }));
+                     { khung: bia }));
 
     var the = el('div', 'the');
     var ds = el('div', 'tai-nguyen');
