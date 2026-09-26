@@ -114,7 +114,8 @@ thử được ở máy có trình duyệt thường. Báo "đã chạy thử" c
 | `assets/css/style.css` | Giao diện đất sét, biến màu, chế độ sáng tối |
 | `data/lectures.js` | Danh mục học liệu từng chương |
 | `data/ch1..5.js` | Ngân hàng 200 câu trắc nghiệm |
-| `data/slides.js` | Số trang mỗi bộ slide — **do máy sinh** |
+| `data/slides.js` | Số trang mỗi bộ slide — **do máy sinh**, chỉ tám bộ theo chương |
+| `data/slides-gt.js` | Số trang bộ slide "Giới thiệu chung học phần" — **tự tay ghi**, không qua `xuat_slide.py` vì không có nguồn `.pptx` (dựng từ ảnh PDF ngoài); gọi `registerSlides`/`registerSlidesEn` gộp thêm vào, không phải bộ nào trong tám bộ trên |
 | `tests/kiem_tra.py` | Bộ kiểm tra |
 
 **Trong `scripts/` là các trình sinh. Sửa ở trình sinh rồi chạy lại, đừng sửa
