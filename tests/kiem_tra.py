@@ -189,14 +189,16 @@ def kiem_tren_trinh_duyet(pw):
     p.locator('.menu button[data-trang="bai"]').click(); p.wait_for_timeout(300)
     p.locator(".chuong").nth(4).click(); p.wait_for_timeout(300)
     so_muc = p.locator(".tai-nguyen button").count()
-    # 1 slide + 1 video + 3 bài thực hành (slide và video) + 1 bài tập thể thức
-    ghi("Chương 5 có đủ 9 mục học liệu", so_muc == 9, "%d mục" % so_muc)
+    # 1 slide (video Chương 5 đang ẩn tạm, xem data/lectures.js) + 3 bài thực
+    # hành (slide và video) + 1 bài tập thể thức
+    ghi("Chương 5 có đủ 8 mục học liệu", so_muc == 8, "%d mục" % so_muc)
     ghi("Không mục nào là đường dẫn tải thẳng", p.locator(".tai-nguyen a").count() == 0)
 
     # Slide của Chương 5 (mục #0) không còn taiVe — nội dung dựng tay từ tài
     # liệu ngoài, không có .pptx gốc để tải (xem data/slides-ch.js). Phép thử
-    # cổng tải/ghi danh dùng slide Bài 1 (mục #2) vì đó vẫn còn taiVe thật.
-    p.locator(".tai-nguyen button").nth(2).click(); p.wait_for_timeout(600)
+    # cổng tải/ghi danh dùng slide Bài 1 (mục #1 — video Chương 5 đang ẩn tạm
+    # nên không còn chiếm mục #1 như trước) vì đó vẫn còn taiVe thật.
+    p.locator(".tai-nguyen button").nth(1).click(); p.wait_for_timeout(600)
     ghi("Trình xem slide mở và đếm đúng trang",
         p.locator(".xem .dem").inner_text().endswith("/11"),
         p.locator(".xem .dem").inner_text())
@@ -208,7 +210,7 @@ def kiem_tren_trinh_duyet(pw):
 
     # cổng ghi danh: chỉ nhận đúng DẠNG email trường (đuôi .edu/.ac), vẫn
     # không xác minh thật — chỉ là cổng lịch sự chặt hơn email bất kỳ.
-    p.locator(".tai-nguyen button").nth(2).click(); p.wait_for_timeout(500)
+    p.locator(".tai-nguyen button").nth(1).click(); p.wait_for_timeout(500)
     p.locator(".xem .tai.khoa").click(); p.wait_for_timeout(300)
     p.locator(".lop-ghi-danh input[type='text']").fill("Sinh Viên Test")
     p.locator(".lop-ghi-danh input[type='email']").fill("test@gmail.com")
