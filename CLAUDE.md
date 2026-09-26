@@ -82,14 +82,16 @@ nhau, đừng lẫn:**
   nào dùng tới; đừng chạy lại `xuat_slide.py` với `ch1`..`ch5` để "khôi
   phục" bản tiếng Anh — xem cảnh báo ngay trong tệp đó.
 
-  **Bản tiếng Anh của Chương 1-3 và Chương 5 đã có lại, nhưng KHÔNG phải bản
-  dịch của slide tiếng Việt** — `assets/slides/ch1-en`..`ch3-en` và `ch5-en`
-  dựng từ tài liệu tiếng Anh riêng (chủ đề trùng nhưng nội dung/cấu trúc
-  khác), khai ở `registerSlidesEn` trong `data/slides-ch.js`. Sửa slide
-  tiếng Việt các chương này KHÔNG tự động cập nhật bản tiếng Anh và ngược
-  lại — mỗi bộ ảnh độc lập hoàn toàn, phải sửa tay từng bên nếu cần khớp
-  lại. Chương 4 vẫn chưa có bản tiếng Anh; `slide_bo_dung()` tự rơi về ảnh
-  tiếng Việt cho chương này khi giao diện đang ở tiếng Anh.
+  **Cả năm chương giờ đã có bản tiếng Anh, nhưng KHÔNG phải bản dịch của
+  slide tiếng Việt** — `assets/slides/ch1-en`..`ch5-en` dựng từ tài liệu
+  tiếng Anh riêng (chủ đề trùng nhưng nội dung/cấu trúc khác), khai ở
+  `registerSlidesEn` trong `data/slides-ch.js`. Sửa slide tiếng Việt một
+  chương KHÔNG tự động cập nhật bản tiếng Anh của chương đó và ngược lại —
+  mỗi bộ ảnh độc lập hoàn toàn, phải sửa tay từng bên nếu cần khớp lại.
+
+  `ch4-en` (15 trang) dựng từ một tài liệu duy nhất ("The Art of Business
+  Negotiation") — không dính lỗi EC6000TX hay lỗi tạo sinh nào khi rà lại,
+  khác với các tài liệu Chương 5 bên dưới.
 
   `ch5-en` dựng chủ yếu từ MỘT tài liệu ("The Blueprint for Professional
   Documentation", 14 trang, chia sẵn 3 trụ cột Thể thức / Văn bản hành
@@ -155,7 +157,7 @@ thử được ở máy có trình duyệt thường. Báo "đã chạy thử" c
 | `data/ch1..5.js` | Ngân hàng 200 câu trắc nghiệm |
 | `data/slides.js` | Số trang mỗi bộ slide — **do máy sinh**, chỉ ba bài thực hành (`th1`-`th3`) |
 | `data/slides-gt.js` | Số trang bộ slide "Giới thiệu chung học phần" — **tự tay ghi**, không qua `xuat_slide.py` vì không có nguồn `.pptx` (dựng từ ảnh PDF ngoài); gọi `registerSlides`/`registerSlidesEn` gộp thêm vào, không phải bộ nào trong ba bài trên |
-| `data/slides-ch.js` | Số trang năm bộ slide Chương 1-5 (`ch1`-`ch5`), cả bản tiếng Anh của Chương 1-3 và Chương 5, cộng cả ba bài thực hành (`registerSlidesEn`: `ch1`-`ch3`, `ch5`, `th1`-`th3`) — **tự tay ghi**, cùng lý do như `slides-gt.js`: ảnh dựng từ tài liệu ngoài do cô Hương chọn, không phải từ `slides/0N-*.pptx` hay `practice/*.pptx`. Các bản tiếng Anh này dựng từ tài liệu tiếng Anh riêng, không phải bản dịch — xem mục "Sửa bản tiếng Việt thì dựng lại bản tiếng Anh" |
+| `data/slides-ch.js` | Số trang năm bộ slide Chương 1-5 (`ch1`-`ch5`), cả bản tiếng Anh của cả năm chương và ba bài thực hành (`registerSlidesEn`: `ch1`-`ch5`, `th1`-`th3`) — **tự tay ghi**, cùng lý do như `slides-gt.js`: ảnh dựng từ tài liệu ngoài do cô Hương chọn, không phải từ `slides/0N-*.pptx` hay `practice/*.pptx`. Các bản tiếng Anh này dựng từ tài liệu tiếng Anh riêng, không phải bản dịch — xem mục "Sửa bản tiếng Việt thì dựng lại bản tiếng Anh" |
 | `tests/kiem_tra.py` | Bộ kiểm tra |
 
 **Trong `scripts/` là các trình sinh. Sửa ở trình sinh rồi chạy lại, đừng sửa

@@ -14,4 +14,4 @@
    cột của tài liệu tiếng Anh khớp thẳng ba bài, xem CLAUDE.md), không qua
    xuat_slide.py nên không thể nằm trong tệp máy sinh đó. */
 registerSlides({"ch1": 14, "ch2": 15, "ch3": 15, "ch4": 11, "ch5": 14});
-registerSlidesEn({"ch1": 12, "ch2": 13, "ch3": 15, "ch5": 15, "th1": 5, "th2": 4, "th3": 5});
+registerSlidesEn({"ch1": 12, "ch2": 13, "ch3": 15, "ch4": 15, "ch5": 15, "th1": 5, "th2": 4, "th3": 5});
