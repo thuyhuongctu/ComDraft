@@ -1591,6 +1591,27 @@
     if (m) m.setAttribute('content', x === 'dark' ? '#241D1B' : '#DC756A');
   }
 
+  // Nút "làm mới": xoá sạch bộ nhớ đệm của service worker rồi tải lại
+  // trang, thay vì chỉ reload() suông. Trang này chạy cache-first (xem
+  // sw.js) nên F5 thường vẫn trả về ảnh/mã cũ đã lưu; sinh viên không biết
+  // việc đó nên hay tưởng ứng dụng "bị đứng" ở bản cũ dù cô đã cập nhật.
+  function lam_moi_ung_dung() {
+    var nut = $('#nut-lam-moi');
+    if (nut) { nut.disabled = true; nut.classList.add('dang-quay'); }
+    var tai_lai = function () { location.reload(); };
+    if (!('caches' in window) && !('serviceWorker' in navigator)) { tai_lai(); return; }
+    Promise.all([
+      'caches' in window
+        ? caches.keys().then(function (ds) { return Promise.all(ds.map(function (d) { return caches.delete(d); })); })
+        : Promise.resolve(),
+      'serviceWorker' in navigator
+        ? navigator.serviceWorker.getRegistrations().then(function (rs) {
+            return Promise.all(rs.map(function (r) { return r.unregister(); }));
+          })
+        : Promise.resolve()
+    ]).then(tai_lai, tai_lai);
+  }
+
   function khoi_dong() {
     var th;
     try { th = localStorage.getItem('comdraft.theme'); } catch (e) {}
@@ -1606,6 +1627,8 @@
     document.querySelectorAll('[data-theme-btn]').forEach(function (b) {
       b.addEventListener('click', function () { dat_theme(b.dataset.themeBtn); });
     });
+    var nut_lam_moi = $('#nut-lam-moi');
+    if (nut_lam_moi) nut_lam_moi.addEventListener('click', lam_moi_ung_dung);
     document.querySelectorAll('.menu button, .thanh-duoi button').forEach(function (b) {
       b.addEventListener('click', function () { di(b.dataset.trang); });
     });
