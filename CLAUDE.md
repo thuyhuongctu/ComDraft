@@ -196,6 +196,25 @@ sinh xong thì chạy `dung_slide.py` không cờ, phải ra "khớp hoàn toàn
 Một lần đã trả giá cho luật này: `extend_ch4.py` lấy đầu vào chính là tệp nó ghi
 đè, chạy lần thứ hai ra deck 53 slide thay vì 43.
 
+`add_images.py` có một danh sách `KHONG_ANH_NHAN_VAT` — ba bài thực hành không
+còn dùng ảnh nhân vật cô Hương (áo dài) ở slide bìa và slide "Hoạt động nhóm"
+nữa, theo yêu cầu của cô (ảnh này do AI dựng người, không phải ảnh thật, dễ gây
+hiểu lầm). Năm bộ Chương 1-5 không đụng tới, vẫn giữ ảnh nhân vật như cũ.
+
+Có lần môi trường làm việc bị hỏng đúng lúc cần dựng lại sau khi sửa
+`add_images.py`: LibreOffice (`soffice`) không chuyển được **bất kỳ** tệp nào
+sang PDF (kể cả một `.pptx` trống mới tạo hay một tệp `.txt` thường), luôn báo
+"source file could not be loaded" nhưng mã thoát vẫn là 0 — `dung_slide.py`
+không phát hiện ra vì nó chỉ so khớp số slide/chữ/ghi chú, không so ảnh (đúng
+như cảnh báo ở trên: **soát chữ không phải soát ảnh**). Khi đó `practice/*.pptx`
+đã ghi đè đúng (không cần soffice), nhưng `assets/slides/th1..th3/001.jpg` và
+`009.jpg` (hai trang có ảnh nhân vật) phải vá tay bằng cách lấp vùng ảnh cũ
+bằng đúng màu nền của slide — làm trái luật "đừng sửa tay tệp kết quả" một lần,
+có ghi lại ở đây để ai đó sau này thấy ảnh khớp mà `.pptx` cũng khớp thì đừng
+ngạc nhiên. Hễ máy nào chạy được `soffice --convert-to pdf` thật thì nên chạy
+lại `xuat_slide.py` một lần cho chắc — kết quả phải giống hệt bản đã vá tay,
+nếu khác thì bản vá tay sai chỗ nào đó.
+
 **Dựng lại 8 video có kèm sơ đồ hoạt hình:** chạy `cd remotion && npm install`
 một lần (cài `remotion`/`@remotion/cli` — cần mạng, hoặc chép `node_modules` từ
 máy đã cài); rồi `python3 scripts/build_videos.py` như cũ. `build_videos.py` cần
