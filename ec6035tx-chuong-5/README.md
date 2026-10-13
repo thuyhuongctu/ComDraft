@@ -2,7 +2,7 @@
 
 *Communication and Negotiation Skills in Business* (course code **EC6035TX**,
 distance-learning track), Faculty of Business and Law, Vinh Long University
-of Technology. Chapter 5: *Drafting and Presenting Business
+of Technology and Engineering. Chapter 5: *Drafting and Presenting Business
 Documents*. Author: Lecturer Do Thuy Huong.
 
 This folder is **separate from the ComDraft app** at the repository root
