@@ -97,8 +97,8 @@ def kiem_so_slide():
 # ------------------------------------------------------- kiểm tra trên trình duyệt
 # Tên các cơ sở đào tạo. Giấy do trình duyệt sinh ra với cái tên người học tự
 # gõ thì không xác thực được gì, nên không được mang tên trường nào.
-TEN_TRUONG = ["Vĩnh Long", "Cần Thơ", "Sư phạm Kỹ thuật", "VLUTE",
-              "Trường Đại học", "University", "Khoa "]
+TEN_TRUONG = ["Vĩnh Long", "Cần Thơ", "Sư phạm Kỹ thuật", "Công nghệ Kỹ thuật",
+              "VLUTE", "Trường Đại học", "University", "Khoa "]
 # Những chữ chỉ được xuất hiện trong câu phủ nhận, không được ở chỗ nào khác.
 CHU_VAN_BANG = ["chứng chỉ", "văn bằng", "certificate", "diploma"]
 
