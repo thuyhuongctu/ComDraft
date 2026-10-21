@@ -39,6 +39,14 @@ rất dễ bị hiểu là giấy của nhà trường.
   (bản tiếng Anh là bản dịch, sinh bởi `scripts/lam_phu_de.py`, khung thời
   gian chia đều theo tỉ lệ ký tự chứ không bám giọng đọc như bản tiếng Việt),
   không được nói "giọng đọc của giảng viên" cho tới khi cô thu lại thật.
+- Tour "Hương AI" (`assets/js/tour.js`) từng bị đúng lỗi này: tệp
+  `assets/audio/<vi|en>/*.mp3` là do một công cụ tạo giọng sinh ra, nhưng
+  commit thêm chúng vào lại ghi là "bản thu giọng thật" và bật cờ
+  `CO_THU_AM = true` — khiến app phát giọng không phải giọng cô mà tưởng là
+  thật. Đã tắt `CO_THU_AM` (về `false`) để tour quay lại dùng giọng trình
+  duyệt, không giả vờ là giọng người, cho tới khi có bản ghi thật của cô.
+  Bật `CO_THU_AM` lại thì phải chắc chắn tệp mp3 đúng là giọng cô, không
+  phải giọng công cụ nào khác.
 - Cổng ghi danh chỉ khoá cái nút tải, và từ khi thêm điều kiện email đuôi
   `.edu`/`.ac` (`email_hop_le` trong `assets/js/app.js`) cũng chỉ xét ĐÚNG
   DẠNG chữ, không xác minh ai đó có thật là sinh viên hay không — ai gõ một
