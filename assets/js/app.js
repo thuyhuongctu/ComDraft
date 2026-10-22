@@ -1624,6 +1624,52 @@
     ]).then(tai_lai, tai_lai);
   }
 
+  /* Mặc định giao diện là tiếng Anh (xem ghi chú ở I18n.khoi_dong). Khách
+     chưa từng chọn ngôn ngữ mà trình duyệt báo tiếng Việt thì gợi ý chuyển
+     — không tự đổi, vì khách đọc được tiếng Anh vẫn có thể cố ý ở lại EN.
+     Bấm "Bỏ qua" thì nhớ luôn, không hỏi lại ở lần mở sau.
+
+     `tung_chon` PHẢI đọc TRƯỚC khi gọi I18n.khoi_dong(): hàm đó tự ghi
+     'en' vào localStorage ngay cả khi chỉ đang rơi về mặc định (xem
+     I18n.dat()), nên đọc sau thì lúc nào cũng thấy "đã chọn" dù khách
+     chưa bấm gì — gợi ý sẽ không bao giờ hiện. */
+  function goi_y_doi_ngu(tung_chon) {
+    var da_bo_qua;
+    try {
+      da_bo_qua = localStorage.getItem('comdraft.goi-y-ngu-an');
+    } catch (e) { return; }
+    if (tung_chon || da_bo_qua) return;
+    var ngu_trinh_duyet = ((navigator.language || navigator.userLanguage || '') + '').toLowerCase();
+    if (ngu_trinh_duyet.indexOf('vi') !== 0) return;
+
+    var an = function () {
+      try { localStorage.setItem('comdraft.goi-y-ngu-an', '1'); } catch (e) {}
+      thanh.remove();
+    };
+    var thanh = document.createElement('div');
+    thanh.className = 'goi-y-ngu';
+    var chu = document.createElement('span');
+    chu.textContent = 'Xem trang bằng tiếng Việt? · View this site in Vietnamese?';
+    var nut_chuyen = document.createElement('button');
+    nut_chuyen.type = 'button';
+    nut_chuyen.className = 'nut nho chinh';
+    nut_chuyen.textContent = 'Chuyển';
+    nut_chuyen.addEventListener('click', function () {
+      window.I18n.dat('vi');
+      thanh.remove();
+    });
+    var nut_an = document.createElement('button');
+    nut_an.type = 'button';
+    nut_an.className = 'dong';
+    nut_an.setAttribute('aria-label', 'Đóng / Dismiss');
+    nut_an.textContent = '×';
+    nut_an.addEventListener('click', an);
+    thanh.appendChild(chu);
+    thanh.appendChild(nut_chuyen);
+    thanh.appendChild(nut_an);
+    document.body.insertBefore(thanh, document.body.firstChild);
+  }
+
   function khoi_dong() {
     var th;
     try { th = localStorage.getItem('comdraft.theme'); } catch (e) {}
@@ -1631,7 +1677,10 @@
       th = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
     }
     dat_theme(th);
+    var tung_chon_ngu;
+    try { tung_chon_ngu = !!localStorage.getItem('comdraft.lang'); } catch (e) {}
     window.I18n.khoi_dong();
+    goi_y_doi_ngu(tung_chon_ngu);
 
     document.querySelectorAll('[data-lang]').forEach(function (b) {
       b.addEventListener('click', function () { window.I18n.dat(b.dataset.lang); });
