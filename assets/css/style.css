@@ -346,6 +346,22 @@ h2.muc {
 .nut.nho { font-size: 13px; padding: 8px 16px; }
 .nut:disabled { opacity: .45; cursor: not-allowed; transform: none; }
 
+/* Thanh gợi ý đổi ngôn ngữ — chỉ hiện cho khách chưa từng chọn ngôn ngữ mà
+   trình duyệt báo tiếng Việt (xem goi_y_doi_ngu() trong app.js). Đặt trên
+   cùng, trên cả header, để không đẩy lệch bố cục bên dưới khi xuất hiện. */
+.goi-y-ngu {
+  display: flex; align-items: center; justify-content: center; gap: 14px;
+  flex-wrap: wrap;
+  padding: 10px 18px; background: var(--chinh-nen); color: var(--chu);
+  font-family: var(--body); font-size: 14px; text-align: center;
+  border-bottom: 1px solid var(--vien);
+}
+.goi-y-ngu .dong {
+  background: none; border: none; color: var(--chu-mo); cursor: pointer;
+  font-size: 20px; line-height: 1; padding: 2px 6px;
+}
+.goi-y-ngu .dong:hover { color: var(--chu); }
+
 /* ---------------------------------------------------------------- chương */
 .chuong {
   display: flex; gap: 15px; align-items: center; text-align: left; width: 100%;
