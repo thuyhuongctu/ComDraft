@@ -1,26 +1,57 @@
+<div align="center">
+
+<img src="assets/icons/apple-touch-icon.png" width="72" alt="">
+
 # ComDraft
 
-**Teaching materials for *Communication and Document Drafting Skills* (EC1103)**
-Bộ học liệu giảng dạy trực tiếp - Học phần Kỹ năng giao tiếp và soạn thảo văn bản
+**Teaching materials for _Communication and Document Drafting Skills_ (EC1103)**
+Bộ học liệu giảng dạy trực tiếp · Học phần Kỹ năng giao tiếp và soạn thảo văn bản
 
 [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.22003676.svg)](https://doi.org/10.5281/zenodo.22003676)
-[![app](https://img.shields.io/badge/app-thuyhuongctu.github.io%2FComDraft-DC756A?style=flat-square)](https://thuyhuongctu.github.io/ComDraft/)
+[![Live app](https://img.shields.io/badge/app-thuyhuongctu.github.io%2FComDraft-DC756A?style=flat-square)](https://thuyhuongctu.github.io/ComDraft/)
 ![course](https://img.shields.io/badge/course-EC1103-AC4D33?style=flat-square)
 ![credits](https://img.shields.io/badge/credits-3%20(2%3A1)-DC756A?style=flat-square)
 ![license](https://img.shields.io/badge/license-All%20rights%20reserved-red?style=flat-square)
 
-**Author** - Do Thuy Huong (Đỗ Thùy Hương), [ORCID 0000-0002-7711-2487](https://orcid.org/0000-0002-7711-2487)
+<a href="https://thuyhuongctu.github.io/ComDraft/">
+  <picture>
+    <source media="(prefers-color-scheme: dark)" srcset="assets/img/readme-hero-dark.png">
+    <img src="assets/img/readme-hero-light.png" width="820" alt="ComDraft revision app — home screen">
+  </picture>
+</a>
+
+</div>
+
+<br>
+
+**Author** — Do Thuy Huong (Đỗ Thùy Hương) · [ORCID 0000-0002-7711-2487](https://orcid.org/0000-0002-7711-2487)
 PhD Candidate, School of Economics, Can Tho University.
 
 Every slide, figure, question, script and video in this repository was authored by the
 lecturer named above for the classes she teaches in person. Nothing here is derived from
 a colleague's material.
 
-[![Watch the course introduction: the communication model](assets/img/video-gioi-thieu-en.jpg)](assets/video/gioi-thieu-en.mp4)
-<br>▶ Click the frame above to play the course introduction video (~72 seconds, ~5.6 MB;
-the home screen plays this same file). Its Vietnamese counterpart,
-`assets/video/gioi-thieu.mp4`, played when the app language is set to Vietnamese, covers
-a different topic — the 55-38-7 communication rule.
+<div align="center">
+
+[![Watch the course introduction](assets/img/video-gioi-thieu-en.jpg)](assets/video/gioi-thieu-en.mp4)
+
+▶ **Course introduction** (~72 s, ~5.6 MB) — the home screen plays this same file.
+The Vietnamese counterpart, `assets/video/gioi-thieu.mp4`, covers a different topic —
+the 55-38-7 communication rule.
+
+</div>
+
+---
+
+## Contents
+
+- [The revision app](#the-revision-app)
+- [What this repository holds](#what-this-repository-holds)
+- [How the materials were built](#how-the-materials-were-built)
+- [Using these materials](#using-these-materials)
+- [Related work by the same author](#related-work-by-the-same-author)
+- [Project rules](#project-rules)
+- [Automated tests](#automated-tests)
 
 ---
 
@@ -33,27 +64,22 @@ The repository root is also a small offline-first web app for students —
 200-question bank with the explanation for every question, and needs no account, no
 server and no network once it has been opened for the first time.
 
-- A 10-second introduction video on the home screen, behind a cover image and a play
-  button — not downloaded until a visitor presses play, so opening the app costs no
-  extra data unless they choose to watch it.
-- **Practice mode** marks each answer immediately and shows why it is right or wrong;
-  **test mode** withholds the marking until the end.
-- Pick a single chapter or mix all five, choose 10 / 20 / 40 / all questions, and
-  filter by cognitive level (recall, comprehension, application).
-- Questions and options are shuffled, so a second attempt is not the same paper.
-- The result screen breaks the score down by cognitive level and reprints every
-  missed question with its explanation; one button re-runs just the ones missed.
-- Students can star hard questions and drill only those later.
-- Progress and best scores live in the browser's own storage — nothing leaves the
-  device, so no student data is collected.
-- Installable to a phone's home screen, and works fully offline.
-- A refresh button in the toolbar clears the offline cache and reloads, so a
-  student stuck on a stale cached version can pull the newest one on demand
-  instead of waiting for the browser to notice an update on its own.
+| | |
+|---|---|
+| 🎬 **Intro on open** | A 10-second video behind a cover image and a play button — not downloaded until a visitor presses play, so opening the app costs no extra data unless they choose to watch it |
+| ✅ **Practice mode** | Marks each answer immediately and shows why it is right or wrong |
+| ⏱️ **Test mode** | Withholds the marking until the end, for a timed-exam feel |
+| 📚 **Flexible sets** | Pick a single chapter or mix all five, choose 10 / 20 / 40 / all questions, filter by cognitive level (recall, comprehension, application) |
+| 🔀 **Shuffled** | Questions and options are shuffled, so a second attempt is not the same paper |
+| 📊 **Breakdown** | The result screen splits the score by cognitive level and reprints every missed question with its explanation — one button re-runs just those |
+| ⭐ **Star & drill** | Students can star hard questions and drill only those later |
+| 🔒 **Private by design** | Progress and best scores live in the browser's own storage — nothing leaves the device, so no student data is collected |
+| 📱 **Installable, offline** | Add to a phone's home screen; works fully offline once opened |
+| 🔄 **One-tap refresh** | A toolbar button clears the offline cache and reloads, so a student on a stale cached version can pull the newest one on demand |
 
-Built as plain HTML, CSS and JavaScript with no framework and no build step: the
-question data is the same `registerBank(...)` format used by the author's earlier
-EnQuiz app, so a chapter can be edited and reloaded without touching the code.
+Built as plain HTML, CSS and JavaScript — no framework, no build step. The question
+data uses the same `registerBank(...)` format as the author's earlier EnQuiz app, so a
+chapter can be edited and reloaded without touching the code.
 
 ## What this repository holds
 
@@ -63,7 +89,7 @@ the 2026–2027 academic year.
 
 | Folder | Contents |
 |---|---|
-| `slides/` | Five lecture decks, one per chapter — 18 to 21 slides each, every slide carrying a speaker-note script for PowerPoint Presenter View. `slides-en/` and `practice-en/` hold English translations of all eight decks, generated from these Vietnamese originals. **Note:** the revision app's own chapter viewer (below) no longer shows these five decks — it shows separate, shorter material the lecturer chose to display there instead; these `.pptx` files remain the source for anyone who wants the full speaker-noted decks |
+| `slides/` | Five lecture decks, one per chapter — 18 to 21 slides each, every slide carrying a speaker-note script for PowerPoint Presenter View. `slides-en/` and `practice-en/` hold English translations of all eight decks, generated from these Vietnamese originals. **Note:** the revision app's own chapter viewer (above) no longer shows these five decks — it shows separate, shorter material the lecturer chose to display there instead; these `.pptx` files remain the source for anyone who wants the full speaker-noted decks |
 | `practice/` | Three computer-lab workbooks: document formality, administrative documents, commercial documents |
 | `quiz/` | A 200-question bank (40 per chapter) in two Word editions — with answers for the lecturer, question-only for students — plus the same bank as JavaScript data ready for a quiz app |
 | `videos/` | Eight Full-HD videos: five chapter revision videos and three lab walkthroughs, with the narration script in JSON. **Note:** the five chapter revision videos were made for the old chapter decks (see the `slides/` note above) and are temporarily hidden from the app's chapter pages until they're rebuilt to match the new content; the three lab walkthroughs are unaffected and still shown |
@@ -93,7 +119,10 @@ students see one continuous professional workflow rather than disconnected exerc
 
 ## How the materials were built
 
-Everything is generated from source, so the whole package can be rebuilt after any edit:
+Everything is generated from source, so the whole package can be rebuilt after any edit.
+
+<details>
+<summary><strong>Build pipeline</strong> — click to expand</summary>
 
 ```bash
 node scripts/build_decks.js          # chapters 1–4
@@ -105,11 +134,13 @@ node  scripts/build_bank_docx.js     # the question bank, both editions
 python3 scripts/build_videos.py      # the eight videos
 ```
 
-Decks are produced with **PptxGenJS**; figures are rendered from hand-written HTML and CSS
-through headless Chromium; the question bank is written with **docx**; videos combine the
-rendered slides with Vietnamese speech from **Piper** and are assembled with **FFmpeg**.
-The visual identity — colour, typography, layout grammar — is the author's own and is
-documented in `scripts/design.js`.
+</details>
+
+Decks are produced with **PptxGenJS**; figures are rendered from hand-written HTML and
+CSS through headless Chromium; the question bank is written with **docx**; videos
+combine the rendered slides with Vietnamese speech from **Piper** and are assembled with
+**FFmpeg**. The visual identity — colour, typography, layout grammar — is the author's
+own and is documented in `scripts/design.js`.
 
 ---
 
@@ -123,12 +154,13 @@ permission.
 
 When you use anything from this repository, cite it. See `CITATION.cff`, or:
 
-> Do, T. H. (2026). *ComDraft: teaching materials for Communication and Document Drafting
-> Skills (EC1103)* (Version 1.0) [Data set]. Zenodo.
+> Do, T. H. (2026). _ComDraft: teaching materials for Communication and Document Drafting
+> Skills (EC1103)_ (Version 1.0) [Data set]. Zenodo.
 > https://doi.org/10.5281/zenodo.22003676
 
-The DOI above is the *concept DOI* — it always resolves to the newest release. To cite
-this exact release instead, use [10.5281/zenodo.22003677](https://doi.org/10.5281/zenodo.22003677).
+The DOI above is the _concept DOI_ — it always resolves to the newest release. To cite
+this exact release instead, use
+[10.5281/zenodo.22003677](https://doi.org/10.5281/zenodo.22003677).
 
 ---
 
@@ -170,4 +202,8 @@ The same suite also runs automatically on GitHub on every push
 
 ---
 
-© 2026 Do Thuy Huong. All rights reserved. See `LICENSE`.
+<div align="center">
+
+© 2026 Do Thuy Huong. All rights reserved. See [`LICENSE`](LICENSE).
+
+</div>
