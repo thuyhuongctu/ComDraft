@@ -268,7 +268,7 @@
       chay();
     }, 1000);
 
-    // --- nhạc: bản nhạc do chính giảng viên sáng tác
+    // --- nhạc: bài hát giảng viên làm bằng Suno (công cụ tạo nhạc AI), không phải bản tự sáng tác
     var n = el('div', 'khoi-nhac');
     n.appendChild(el('h3', null, t('nhac.tieude')));
     n.appendChild(el('p', 'gioi-thieu', t('nhac.mo')));
