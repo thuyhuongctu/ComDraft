@@ -38,7 +38,7 @@ jobs:
       - name: Gom tệp của ứng dụng
         run: |
           mkdir -p _site
-          cp index.html manifest.webmanifest sw.js .nojekyll _site/
+          cp index.html chinh-sach.html manifest.webmanifest sw.js .nojekyll _site/
           cp -r assets data videos _site/
           rm -f _site/videos/kich_ban_video.json
           du -sh _site _site/videos _site/assets/slides
