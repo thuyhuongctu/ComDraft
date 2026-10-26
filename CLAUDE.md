@@ -47,6 +47,12 @@ rất dễ bị hiểu là giấy của nhà trường.
   duyệt, không giả vờ là giọng người, cho tới khi có bản ghi thật của cô.
   Bật `CO_THU_AM` lại thì phải chắc chắn tệp mp3 đúng là giọng cô, không
   phải giọng công cụ nào khác.
+- Bài hát "Le ciel que tu n'as jamais" (`assets/audio/le-ciel-que-tu-nas-jamais.mp3`)
+  được cô làm bằng Suno (công cụ tạo nhạc AI, gói Pro), không phải bản cô tự
+  sáng tác. Trước 26/10/2026 giao diện ghi "nhạc do cô sáng tác" / "composed
+  by", đã sửa. Đừng viết lại "sáng tác", "composed by" hay "nhạc của cô"; theo
+  điều khoản Suno, người dùng gói trả phí có quyền dùng thương mại nhưng nói
+  chung không được coi là chủ sở hữu bài hát.
 - Cổng ghi danh chỉ khoá cái nút tải, và từ khi thêm điều kiện email đuôi
   `.edu`/`.ac` (`email_hop_le` trong `assets/js/app.js`) cũng chỉ xét ĐÚNG
   DẠNG chữ, không xác minh ai đó có thật là sinh viên hay không — ai gõ một
