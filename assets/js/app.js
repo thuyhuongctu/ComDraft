@@ -1589,6 +1589,11 @@
       ': <a href="https://doi.org/10.5281/zenodo.22003676" rel="noopener">10.5281/zenodo.22003676</a>';
     ct.appendChild(p3);
     ct.appendChild(el('p', null, t('ct.banquyen')));
+    var p4 = el('p');
+    var lk = el('a', null, t('ct.riengtu'));
+    lk.href = './chinh-sach.html';
+    p4.appendChild(lk);
+    ct.appendChild(p4);
     v.appendChild(f);
   }
 
