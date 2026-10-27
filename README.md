@@ -16,7 +16,7 @@ Bộ học liệu giảng dạy trực tiếp · Học phần Kỹ năng giao ti
 <a href="https://thuyhuongctu.github.io/ComDraft/">
   <picture>
     <source media="(prefers-color-scheme: dark)" srcset="assets/img/readme-hero-dark.png">
-    <img src="assets/img/readme-hero-light.png" width="820" alt="ComDraft revision app — home screen">
+    <img src="assets/img/readme-hero-light.png" width="820" alt="ComDraft revision app: home screen">
   </picture>
 </a>
 
@@ -24,7 +24,7 @@ Bộ học liệu giảng dạy trực tiếp · Học phần Kỹ năng giao ti
 
 <br>
 
-**Author** — Do Thuy Huong (Đỗ Thùy Hương) · [ORCID 0000-0002-7711-2487](https://orcid.org/0000-0002-7711-2487)
+**Author:** Do Thuy Huong (Đỗ Thùy Hương) · [ORCID 0000-0002-7711-2487](https://orcid.org/0000-0002-7711-2487)
 PhD Candidate, School of Economics, Can Tho University.
 
 Every slide, figure, question, script and video in this repository was authored by the
@@ -35,8 +35,8 @@ a colleague's material.
 
 [![Watch the course introduction](assets/img/video-gioi-thieu-en.jpg)](assets/video/gioi-thieu-en.mp4)
 
-▶ **Course introduction** (~72 s, ~5.6 MB) — the home screen plays this same file.
-The Vietnamese counterpart, `assets/video/gioi-thieu.mp4`, covers a different topic —
+▶ **Course introduction** (~72 s, ~5.6 MB). The home screen plays this same file.
+The Vietnamese counterpart, `assets/video/gioi-thieu.mp4`, covers a different topic:
 the 55-38-7 communication rule.
 
 </div>
@@ -59,25 +59,25 @@ the 55-38-7 communication rule.
 
 ### ▶ [thuyhuongctu.github.io/ComDraft](https://thuyhuongctu.github.io/ComDraft/)
 
-The repository root is also a small offline-first web app for students —
+The repository root is also a small offline-first web app for students,
 **ComDraft**, published from this repository via GitHub Pages. It serves the whole
 200-question bank with the explanation for every question, and needs no account, no
 server and no network once it has been opened for the first time.
 
 | | |
 |---|---|
-| 🎬 **Intro on open** | A 10-second video behind a cover image and a play button — not downloaded until a visitor presses play, so opening the app costs no extra data unless they choose to watch it |
+| 🎬 **Intro on open** | A 10-second video behind a cover image and a play button. It is not downloaded until a visitor presses play, so opening the app costs no extra data unless they choose to watch it |
 | ✅ **Practice mode** | Marks each answer immediately and shows why it is right or wrong |
 | ⏱️ **Test mode** | Withholds the marking until the end, for a timed-exam feel |
 | 📚 **Flexible sets** | Pick a single chapter or mix all five, choose 10 / 20 / 40 / all questions, filter by cognitive level (recall, comprehension, application) |
 | 🔀 **Shuffled** | Questions and options are shuffled, so a second attempt is not the same paper |
-| 📊 **Breakdown** | The result screen splits the score by cognitive level and reprints every missed question with its explanation — one button re-runs just those |
+| 📊 **Breakdown** | The result screen splits the score by cognitive level and reprints every missed question with its explanation. One button re-runs just those |
 | ⭐ **Star & drill** | Students can star hard questions and drill only those later |
-| 🔒 **Private by design** | Progress and best scores live in the browser's own storage — nothing leaves the device, so no student data is collected |
+| 🔒 **Private by design** | Progress and best scores live in the browser's own storage. Nothing leaves the device, so no student data is collected |
 | 📱 **Installable, offline** | Add to a phone's home screen; works fully offline once opened |
 | 🔄 **One-tap refresh** | A toolbar button clears the offline cache and reloads, so a student on a stale cached version can pull the newest one on demand |
 
-Built as plain HTML, CSS and JavaScript — no framework, no build step. The question
+Built as plain HTML, CSS and JavaScript, with no framework and no build step. The question
 data uses the same `registerBank(...)` format as the author's earlier EnQuiz app, so a
 chapter can be edited and reloaded without touching the code.
 
@@ -89,20 +89,20 @@ the 2026–2027 academic year.
 
 | Folder | Contents |
 |---|---|
-| `slides/` | Five lecture decks, one per chapter — 18 to 21 slides each, every slide carrying a speaker-note script for PowerPoint Presenter View. `slides-en/` and `practice-en/` hold English translations of all eight decks, generated from these Vietnamese originals. **Note:** the revision app's own chapter viewer (above) no longer shows these five decks — it shows separate, shorter material the lecturer chose to display there instead; these `.pptx` files remain the source for anyone who wants the full speaker-noted decks |
+| `slides/` | Five lecture decks, one per chapter (18 to 21 slides each), every slide carrying a speaker-note script for PowerPoint Presenter View. `slides-en/` and `practice-en/` hold English translations of all eight decks, generated from these Vietnamese originals. **Note:** the revision app's own chapter viewer (above) no longer shows these five decks; it shows separate, shorter material the lecturer chose to display there instead. These `.pptx` files remain the source for anyone who wants the full speaker-noted decks |
 | `practice/` | Three computer-lab workbooks: document formality, administrative documents, commercial documents |
-| `quiz/` | A 200-question bank (40 per chapter) in two Word editions — with answers for the lecturer, question-only for students — plus the same bank as JavaScript data ready for a quiz app |
+| `quiz/` | A 200-question bank (40 per chapter) in two Word editions (with answers for the lecturer, question-only for students), plus the same bank as JavaScript data ready for a quiz app |
 | `videos/` | Eight Full-HD videos: five chapter revision videos and three lab walkthroughs, with the narration script in JSON. **Note:** the five chapter revision videos were made for the old chapter decks (see the `slides/` note above) and are temporarily hidden from the app's chapter pages until they're rebuilt to match the new content; the three lab walkthroughs are unaffected and still shown |
 | `figures/` | Eight author-drawn diagrams rendered from code, plus the course persona artwork |
-| `scripts/` | The generators that produce everything above — decks, figures, question bank, videos |
+| `scripts/` | The generators that produce everything above: decks, figures, question bank, videos |
 
 ### The five chapters
 
-1. **An overview of business communication** — the four pillars of business communication, the five-step model and noise, verbal and non-verbal channels (the 7-38-55 rule), forms of communication, diagnosing noise through a real scenario
-2. **Professional communication skills** — first impressions and the 4×20 rule, business etiquette, presenting, listening and questioning, telephone skills
-3. **Communication in specific settings** — internal communication, customers and the LAST complaint procedure, partners, state agencies and press, banquet etiquette, cross-cultural work
-4. **Business negotiation** — nature and styles of negotiation, the five-stage process, BATNA and ZOPA, negotiation skills, recognising common tactics
-5. **Drafting and formatting documents** — document types, the nine formality components of Decree 30/2020/NĐ-CP, five administrative documents, commercial documents
+1. **An overview of business communication**: the four pillars of business communication, the five-step model and noise, verbal and non-verbal channels (the 7-38-55 rule), forms of communication, diagnosing noise through a real scenario
+2. **Professional communication skills**: first impressions and the 4×20 rule, business etiquette, presenting, listening and questioning, telephone skills
+3. **Communication in specific settings**: internal communication, customers and the LAST complaint procedure, partners, state agencies and press, banquet etiquette, cross-cultural work
+4. **Business negotiation**: nature and styles of negotiation, the five-stage process, BATNA and ZOPA, negotiation skills, recognising common tactics
+5. **Drafting and formatting documents**: document types, the nine formality components of Decree 30/2020/NĐ-CP, five administrative documents, commercial documents
 
 ### The three lab sessions
 
@@ -111,7 +111,7 @@ alone → peer-review → submit and revise), the exact Word menu paths for each
 step, a list of the mistakes students actually make, an eight-point self-check list, the
 assignment and the marking scheme.
 
-A single business case — a company buying twenty computers — runs from the Chapter 4
+A single business case (a company buying twenty computers) runs from the Chapter 4
 negotiation role-play through the Chapter 5 document chain into both lab assignments, so
 students see one continuous professional workflow rather than disconnected exercises.
 
@@ -122,7 +122,7 @@ students see one continuous professional workflow rather than disconnected exerc
 Everything is generated from source, so the whole package can be rebuilt after any edit.
 
 <details>
-<summary><strong>Build pipeline</strong> — click to expand</summary>
+<summary><strong>Build pipeline</strong> (click to expand)</summary>
 
 ```bash
 node scripts/build_decks.js          # chapters 1–4
@@ -139,7 +139,7 @@ python3 scripts/build_videos.py      # the eight videos
 Decks are produced with **PptxGenJS**; figures are rendered from hand-written HTML and
 CSS through headless Chromium; the question bank is written with **docx**; videos
 combine the rendered slides with Vietnamese speech from **Piper** and are assembled with
-**FFmpeg**. The visual identity — colour, typography, layout grammar — is the author's
+**FFmpeg**. The visual identity (colour, typography, layout grammar) is the author's
 own and is documented in `scripts/design.js`.
 
 ---
@@ -147,9 +147,9 @@ own and is documented in `scripts/design.js`.
 ## Using these materials
 
 Free to use for personal study and for teaching the students of this course. Any other
-use — republishing the slides or the question bank elsewhere, uploading the videos to a
+use (republishing the slides or the question bank elsewhere, uploading the videos to a
 channel that is not the author's, reusing the material under another lecturer's or an
-institution's name, commercial use, or derivative works — requires the author's written
+institution's name, commercial use, or derivative works) requires the author's written
 permission.
 
 When you use anything from this repository, cite it. See `CITATION.cff`, or:
@@ -158,7 +158,7 @@ When you use anything from this repository, cite it. See `CITATION.cff`, or:
 > Skills (EC1103)_ (Version 1.0) [Data set]. Zenodo.
 > https://doi.org/10.5281/zenodo.22003676
 
-The DOI above is the _concept DOI_ — it always resolves to the newest release. To cite
+The DOI above is the _concept DOI_: it always resolves to the newest release. To cite
 this exact release instead, use
 [10.5281/zenodo.22003677](https://doi.org/10.5281/zenodo.22003677).
 
@@ -166,17 +166,17 @@ this exact release instead, use
 
 ## Related work by the same author
 
-- **[EnQuiz](https://github.com/thuyhuongctu/EnQuiz)** — an offline-first bilingual
+- **[EnQuiz](https://github.com/thuyhuongctu/EnQuiz)**: an offline-first bilingual
   revision app for an Entrepreneurship course
   ([10.5281/zenodo.21850735](https://doi.org/10.5281/zenodo.21850735))
 
 ## Project rules
 
-The constraints that must hold whenever this repository is edited — no student
+The constraints that must hold whenever this repository is edited (no student
 data collection, only material authored by the lecturer herself, keep the
-author's mark, and what must be checked before calling a change done — are
+author's mark, and what must be checked before calling a change done) are
 written down in [`CLAUDE.md`](CLAUDE.md) (in Vietnamese, the language of the
-course). Anyone editing here, human or assistant, should read that page first.
+course). Anyone editing here should read that page first.
 
 ## Automated tests
 
