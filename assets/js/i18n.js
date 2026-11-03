@@ -142,7 +142,7 @@
       'tour.s0': 'Bonjour! Je m’appelle Hương. Cô sẽ dẫn các bạn đi một vòng ứng dụng, chỉ khoảng hai phút thôi.',
       'tour.s1': 'Đây là ComDraft, học liệu của học phần Kỹ năng giao tiếp và soạn thảo văn bản: năm chương bài giảng và hai trăm câu trắc nghiệm có giải thích.',
       'tour.s2': 'Hai nút này là hai lối vào nhanh nhất: bắt đầu ôn tập ngay, hoặc xem bài giảng trước rồi ôn sau.',
-      'tour.s3': 'Chỗ này có đồng hồ hai múi giờ Việt Nam và Pháp, kèm một bài hát cô làm bằng công cụ tạo nhạc AI để các bạn nghe trong lúc học.',
+      'tour.s3': 'Chỗ này có đồng hồ hai múi giờ Việt Nam và Pháp, kèm một bài hát các bạn có thể nghe thư giãn.',
       'tour.s4': 'Bấm vào khung này là xem thử video giới thiệu ComDraft.',
       'tour.s5': 'Mỗi chương có bộ slide xem tại chỗ, video ôn tập và bài trắc nghiệm riêng. Thanh màu dưới tên chương cho biết điểm cao nhất các bạn đã đạt.',
       'tour.nav': 'Cột bên trái để chuyển giữa Trang chủ, Bài giảng, Ôn tập và Hồ sơ.',
