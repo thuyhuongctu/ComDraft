@@ -45,32 +45,29 @@
   /* Bật lên CHỈ sau khi assets/audio/<ngôn ngữ>/ có giọng THẬT của cô Hương.
      Để false thì tour dùng thẳng giọng đọc của trình duyệt; nếu cứ gọi tệp
      chưa có thì trình duyệt ghi một loạt lỗi 404 vào bảng điều khiển.
-     Đang TẮT: các tệp .mp3 hiện có trong assets/audio/ không phải giọng cô
-     Hương (một trình tạo giọng đã sinh ra rồi bị ghi nhầm là "bản thu thật"
-     trong lịch sử commit) — xem CLAUDE.md, mục "Nói đúng ứng dụng làm được
-     gì". Giữ nguyên các tệp cũ trong assets/audio/ để đối chiếu, nhưng
-     KHÔNG dùng tới khi cờ này còn false. Bật lại khi đã có giọng thật. */
-  var CO_THU_AM = { vi: false, en: false };
+     vi: BẬT — cô đã gửi 10 tệp thu giọng thật (03/11/2026), khớp đúng kịch
+     bản tiếng Việt hiện có trong i18n.js. en: còn TẮT — 10 tệp tiếng Anh cô
+     gửi trước đó đặt tên theo kiểu "[happy] ...", "[warmly] ..." — đúng kiểu
+     tên một công cụ tạo giọng AI thường xuất ra khi câu lệnh có chỉ dẫn cảm
+     xúc trong ngoặc vuông, khác hẳn kiểu tên của 10 tệp tiếng Việt (đặt theo
+     nguyên văn câu nói, không có thẻ cảm xúc). Chưa có xác nhận của cô nên
+     chưa bật — xem CLAUDE.md, mục "Nói đúng ứng dụng làm được gì". */
+  var CO_THU_AM = { vi: true, en: false };
 
   /* Mỗi ngôn ngữ chỉ liệt kê bước đã có tệp thật trong assets/audio/<ngôn
      ngữ>/ — bước nào chưa có thì bỏ khỏi bảng để tep_thu() trả về null và
      rơi thẳng về giọng máy, không gọi tới tệp chưa tồn tại (gọi tệp 404 thì
      trình duyệt tự in lỗi ra bảng điều khiển, dù đã bắt onerror trong JS).
-     Bảng dưới đây liệt kê đủ cả 12 bước, nhưng vô hiệu vì CO_THU_AM=false ở
-     trên — xem ghi chú ngay phía trên. */
+     vi: đủ 10 bước (s0..s8 trừ s... + nav), còn navm (thanh dưới màn hẹp) và
+     xong (lời kết) chưa có bản thu — tự rơi về giọng máy cho tới khi có. */
   var THU = {
     vi: {
       'tour.s0': 's0.mp3', 'tour.s1': 's1.mp3', 'tour.s2': 's2.mp3',
       'tour.s3': 's3.mp3', 'tour.s4': 's4.mp3', 'tour.s5': 's5.mp3',
-      'tour.nav': 'nav.mp3', 'tour.navm': 'navm.mp3', 'tour.s6': 's6.mp3',
-      'tour.s7': 's7.mp3', 'tour.s8': 's8.mp3', 'tour.xong': 'xong.mp3'
+      'tour.nav': 'nav.mp3', 'tour.s6': 's6.mp3',
+      'tour.s7': 's7.mp3', 'tour.s8': 's8.mp3'
     },
-    en: {
-      'tour.s0': 's0.mp3', 'tour.s1': 's1.mp3', 'tour.s2': 's2.mp3',
-      'tour.s3': 's3.mp3', 'tour.s4': 's4.mp3', 'tour.s5': 's5.mp3',
-      'tour.nav': 'nav.mp3', 'tour.navm': 'navm.mp3', 'tour.s6': 's6.mp3',
-      'tour.s7': 's7.mp3', 'tour.s8': 's8.mp3', 'tour.xong': 'xong.mp3'
-    }
+    en: {}
   };
 
   var tieng = null;                 // thẻ Audio dùng cho bản thu
