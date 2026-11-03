@@ -338,7 +338,7 @@
       'tour.s0': 'Bonjour! Je m’appelle Hương. Let me walk you round the app — it takes about two minutes.',
       'tour.s1': 'This is ComDraft, the course material for Communication and Document Drafting Skills: five lecture chapters and two hundred explained questions.',
       'tour.s2': 'These two buttons are the quickest ways in: start practising straight away, or read the lectures first.',
-      'tour.s3': 'Here you get clocks for Vietnam and France, and a song the lecturer made with an AI music tool to keep you company while you study.',
+      'tour.s3': 'Here you get clocks for Vietnam and France, and a song you can listen to and relax.',
       'tour.s4': 'Tap this frame to watch the ComDraft introduction video.',
       'tour.s5': 'Every chapter has its own slides, revision video and question set. The bar under each title shows your best score so far.',
       'tour.nav': 'The left column switches between Home, Lectures, Practice and Profile.',
