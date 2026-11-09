@@ -85,6 +85,19 @@
   var vi_tri = 0, dang_chay = false, tam_dung = false, da_xong = false;
   var cac_buoc = [], vung_sang = null, ngu_doc_cuoi = null;
 
+  /* Đếm thế hệ: mỗi lần doc_buoc() chạy thì tăng lên một, callback của lượt
+     cũ (onended/onerror/catch của tieng, onend của doc) tự so lại số này
+     trước khi làm gì — lượt đã bị lượt mới đè lên thì coi như không còn
+     hiệu lực. Không có cái này thì bấm Tiếp/Trước giữa lúc bản thu đang
+     phát sẽ làm promise play() cũ bị huỷ ngang (AbortError), rơi về giọng
+     máy đọc nốt câu CŨ trong khi bản thu MỚI vẫn đang phát — hai giọng
+     chồng nhau. */
+  var the_he = 0;
+
+  /* Người học tự tắt/bật giọng đọc bằng nút loa; nhớ lựa chọn cho lần sau. */
+  var tat_tieng = false;
+  try { tat_tieng = localStorage.getItem('comdraft.tour-tat-tieng') === '1'; } catch (e) {}
+
   /* ---------------- dáng nhân vật ---------------- */
   function dat_dang(d) {
     var a = $('#tour-nv'), src = ANH_DANG[d || 'dung'];
@@ -128,8 +141,13 @@
     n.classList.toggle('an', !co);
   }
 
-  function doc_may(chu, ng_ep, xong) {
-    if (!doc) { bao_thieu_giong(true); if (xong) setTimeout(xong, 2600); return; }
+  function doc_may(chu, ng_ep, xong, gen) {
+    var con_hieu_luc = function () { return gen === undefined || gen === the_he; };
+    if (!doc) {
+      bao_thieu_giong(true);
+      if (xong) setTimeout(function () { if (con_hieu_luc()) xong(); }, 2600);
+      return;
+    }
     doc.cancel();
     var u = new SpeechSynthesisUtterance(chu);
     var ng = ng_ep || global.I18n.lang;
@@ -137,26 +155,34 @@
     if (v) u.voice = v;
     u.lang = v ? v.lang : (NGU_DU[ng] || 'vi-VN');
     u.pitch = 1.05;
-    u.onend = function () { if (xong) xong(); };
+    u.onend = function () { if (con_hieu_luc() && xong) xong(); };
     bao_thieu_giong(!v);
     ngu_doc_cuoi = ng;
     doc.speak(u);
   }
 
   /* Ưu tiên bản thu của cô; tệp chưa có hoặc hỏng thì rơi về giọng máy,
-     không để tour đứng im. */
+     không để tour đứng im. Người học tắt loa thì im lặng, chỉ hiện chữ,
+     nhưng vẫn tự chuyển bước sau một khoảng dừng vừa đọc. */
   function doc_buoc(ma, chu, ng_ep, xong) {
-    var src = tep_thu(ma);
-    if (!src) { doc_may(chu, ng_ep, xong); return; }
+    var gen = ++the_he;
     ngung_doc();
+    if (tieng) tieng.pause();
+    if (tat_tieng) {
+      bao_thieu_giong(false);
+      if (xong) setTimeout(function () { if (gen === the_he) xong(); }, 2600);
+      return;
+    }
+    var src = tep_thu(ma);
+    if (!src) { doc_may(chu, ng_ep, xong, gen); return; }
     bao_thieu_giong(false);
     if (!tieng) tieng = new Audio();
     tieng.onended = null; tieng.onerror = null;
     tieng.src = src;
-    tieng.onended = function () { if (xong) xong(); };
-    tieng.onerror = function () { doc_may(chu, ng_ep, xong); };
+    tieng.onended = function () { if (gen === the_he && xong) xong(); };
+    tieng.onerror = function () { if (gen === the_he) doc_may(chu, ng_ep, xong, gen); };
     var p = tieng.play();
-    if (p && p.catch) p.catch(function () { doc_may(chu, ng_ep, xong); });
+    if (p && p.catch) p.catch(function () { if (gen === the_he) doc_may(chu, ng_ep, xong, gen); });
   }
 
   /* ---------------- vùng được làm nổi ---------------- */
@@ -247,6 +273,27 @@
     }
   }
 
+  /* ---------------- nút loa: người học tự tắt/bật giọng đọc ---------------- */
+  function cap_nhat_nut_loa() {
+    var n = $('#tour-loa');
+    if (!n) return;
+    n.textContent = tat_tieng ? '🔇' : '🔊';
+    var nhan = t(tat_tieng ? 'tour.loa.bat' : 'tour.loa.tat');
+    n.setAttribute('aria-label', nhan);
+    n.setAttribute('title', nhan);
+  }
+
+  function bat_tat_loa() {
+    tat_tieng = !tat_tieng;
+    try { localStorage.setItem('comdraft.tour-tat-tieng', tat_tieng ? '1' : ''); } catch (e) {}
+    cap_nhat_nut_loa();
+    the_he++;                         // vô hiệu callback của lượt phát dở dang
+    ngung_doc();
+    if (tieng) tieng.pause();
+    bao_thieu_giong(false);
+    if (dang_chay && !da_xong && !tam_dung) di(vi_tri);   // phát/ngừng lại đúng bước đang xem
+  }
+
   var Tour = {
     bat_dau: bat_dau,
     dung_lai: dung_lai,
@@ -256,6 +303,7 @@
     lam_moi: function () {
       var n = $('#tour-nhan');
       if (n) n.textContent = t('tour.goi');
+      cap_nhat_nut_loa();
       if (dang_chay && !da_xong) {
         ve();
         if (!tam_dung) doc_buoc(cac_buoc[vi_tri].ma, t(cac_buoc[vi_tri].ma), cac_buoc[vi_tri].ngu);
@@ -264,7 +312,9 @@
 
     khoi_dong: function () {
       $('#tour-nhan').textContent = t('tour.goi');
+      cap_nhat_nut_loa();
       $('#tour-goi').addEventListener('click', bat_dau);
+      $('#tour-loa').addEventListener('click', bat_tat_loa);
       $('#tour-dong').addEventListener('click', dung_lai);
       $('#tour-truoc').addEventListener('click', function () { di(vi_tri - 1); });
       $('#tour-sau').addEventListener('click', function () { di(vi_tri + 1); });
