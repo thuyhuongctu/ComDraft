@@ -878,7 +878,7 @@ p.rieng { font-size: 12.5px; color: var(--chu-mo); margin-top: 10px; line-height
   /* Nhân vật (.nv) cao 162px, đứng bằng chân ở đáy khối nhờ bottom:0 — khối
      phải cao ít nhất chừng đó, không thì overflow:hidden cắt mất đầu nhân
      vật khi lời dẫn ngắn (hộp co theo chữ). */
-  min-height: 170px;
+  min-height: 176px;
   background: var(--mat); border-radius: var(--bo-lon);
   box-shadow: var(--clay); padding: 15px 17px 17px;
   overflow: hidden;
@@ -894,8 +894,11 @@ p.rieng { font-size: 12.5px; color: var(--chu-mo); margin-top: 10px; line-height
   background: var(--mat-2); color: var(--chinh); box-shadow: var(--clay-nho); flex: none;
 }
 /* Nhân vật nép bên phải bảng, chữ chừa lề để không bị đè */
+/* Trước đặt right:-14px/bottom:0 — nhân vật đứng sát đúng góc dưới-phải, là
+   chỗ bị bo tròn (--bo-lon: 30px) vát mất, nên chân/tay trông như lọt ra
+   ngoài khung. Lùi vào một chút theo cả hai chiều để nằm hẳn trong khung. */
 .tour-bang .nv {
-  position: absolute; right: -14px; bottom: 0; height: 162px; width: auto;
+  position: absolute; right: 10px; bottom: 14px; height: 162px; width: auto;
   pointer-events: none; transition: opacity .18s var(--nhanh-ra);
 }
 @media (max-width: 480px) { .tour-bang .nv { display: none; } }
