@@ -901,12 +901,17 @@ p.rieng { font-size: 12.5px; color: var(--chu-mo); margin-top: 10px; line-height
   position: absolute; right: 10px; bottom: 14px; height: 162px; width: auto;
   pointer-events: none; transition: opacity .18s var(--nhanh-ra);
 }
-@media (max-width: 480px) { .tour-bang .nv { display: none; } }
+/* Màn hẹp: thu nhỏ nhân vật thay vì ẩn hẳn — trước đây ẩn vì sợ đè chữ, giờ
+   thu nhỏ và chừa đủ lề (right/bottom) để vẫn nằm trong góc bo tròn, như đã
+   sửa ở bản màn rộng. */
+@media (max-width: 480px) {
+  .tour-bang .nv { right: 14px; bottom: 16px; height: 100px; }
+}
 .tour-bang .loi {
   font-size: 14px; line-height: 1.55; color: var(--chu); margin: 12px 0 14px;
   padding-right: 84px; min-height: 74px;
 }
-@media (max-width: 480px) { .tour-bang .loi { padding-right: 0; min-height: 0; } }
+@media (max-width: 480px) { .tour-bang .loi { padding-right: 64px; min-height: 0; } }
 .tour-bang .nut-hang { display: flex; gap: 8px; flex-wrap: wrap; }
 .tour-bang .nhac { font-size: 11.5px; color: var(--chu-mo); margin-top: 9px; }
 
